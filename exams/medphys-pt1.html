@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Physics · PT1 Practice Exam</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root {
+  --bg:#05070c;
+  --bg2:#080c14;
+  --bg-glow:rgba(34,211,238,.06);
+  --grid-tint:transparent;
+  --surface:rgba(14,22,40,0.72);
+  --border:rgba(34,211,238,0.35);
+  --cyan:#22d3ee;
+  --cyan-bright:#67e8f9;
+  --teal:#2dd4bf;
+  --gold:#fbbf24;
+  --amber:#f59e0b;
+  --lavender:#82b1ff;
+  --violet:#a78bfa;
+  --text:#e8edf5;
+  --text-dim:#94a3b8;
+  --success:#34d399;
+  --error:#fb7185;
+  --accent:#22d3ee;
+  --accent-2:#fbbf24;
+  --mood-glow:rgba(34,211,238,.22);
+  --anim-speed:1;
+  --pulse-ms:1600ms;
+  --transition-ms:280ms;
+  --particle-speed:1;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+/* Mood themes — accents + full page background atmosphere (no pink) */
+html.mood-happy {
+  --bg:#0c0904; --bg2:#140e06; --bg-glow:rgba(251,191,36,.08); --grid-tint:transparent;
+  --accent:#fbbf24; --accent-2:#f59e0b; --cyan:#fbbf24; --cyan-bright:#fde68a; --teal:#f59e0b;
+  --border:rgba(251,191,36,.4); --mood-glow:rgba(251,191,36,.28); --gold:#fcd34d;
+  --anim-speed:.72; --pulse-ms:2200ms; --transition-ms:380ms; --particle-speed:.65;
+}
+html.mood-calm {
+  --bg:#040c0b; --bg2:#071412; --bg-glow:rgba(45,212,191,.07); --grid-tint:transparent;
+  --accent:#34d399; --accent-2:#6ee7b7; --cyan:#34d399; --cyan-bright:#6ee7b7; --teal:#2dd4bf;
+  --border:rgba(52,211,153,.4); --mood-glow:rgba(52,211,153,.25); --gold:#a7f3d0;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-neutral {
+  --bg:#06080e; --bg2:#0a0e16; --bg-glow:rgba(96,165,250,.06); --grid-tint:transparent;
+  --accent:#60a5fa; --accent-2:#93c5fd; --cyan:#60a5fa; --cyan-bright:#93c5fd; --teal:#38bdf8;
+  --border:rgba(96,165,250,.4); --mood-glow:rgba(96,165,250,.25); --gold:#93c5fd;
+  --anim-speed:1; --pulse-ms:1600ms; --transition-ms:280ms; --particle-speed:1;
+}
+html.mood-sleepy {
+  --bg:#020208; --bg2:#05040c; --bg-glow:rgba(99,102,241,.035); --grid-tint:transparent;
+  --accent:#6d5bbd; --accent-2:#5b4a9e; --cyan:#7c6bb8; --cyan-bright:#9b8fd4; --teal:#5b5f9a;
+  --border:rgba(99,102,241,.28); --mood-glow:rgba(99,102,241,.14); --gold:#8b83b8;
+  --anim-speed:1.05; --pulse-ms:1800ms; --transition-ms:300ms; --particle-speed:.9;
+}
+html.mood-fierce {
+  --bg:#070301; --bg2:#0e0603; --bg-glow:rgba(194,65,12,.05); --grid-tint:transparent;
+  --accent:#fb923c; --accent-2:#f97316; --cyan:#fb923c; --cyan-bright:#fdba74; --teal:#ea580c;
+  --border:rgba(251,146,60,.42); --mood-glow:rgba(251,146,60,.28); --gold:#fdba74;
+  --anim-speed:1.55; --pulse-ms:900ms; --transition-ms:160ms; --particle-speed:1.7;
+}
+html.mood-mad {
+  --bg:#050101; --bg2:#0a0303; --bg-glow:rgba(185,28,28,.045); --grid-tint:transparent;
+  --accent:#f87171; --accent-2:#ef4444; --cyan:#f87171; --cyan-bright:#fca5a5; --teal:#dc2626;
+  --border:rgba(248,113,113,.45); --mood-glow:rgba(239,68,68,.3); --gold:#fca5a5;
+  --anim-speed:1.75; --pulse-ms:750ms; --transition-ms:140ms; --particle-speed:1.9;
+}
+html.mood-sad {
+  --bg:#020406; --bg2:#05080c; --bg-glow:rgba(71,85,105,.03); --grid-tint:transparent;
+  --accent:#7dd3fc; --accent-2:#64748b; --cyan:#7dd3fc; --cyan-bright:#bae6fd; --teal:#64748b;
+  --border:rgba(125,211,252,.32); --mood-glow:rgba(100,116,139,.22); --gold:#94a3b8;
+  --anim-speed:.55; --pulse-ms:2800ms; --transition-ms:450ms; --particle-speed:.45;
+}
+html.mood-crying {
+  --bg:#01020a; --bg2:#040612; --bg-glow:rgba(67,56,202,.03); --grid-tint:transparent;
+  --accent:#818cf8; --accent-2:#6366f1; --cyan:#818cf8; --cyan-bright:#a5b4fc; --teal:#6366f1;
+  --border:rgba(129,140,248,.35); --mood-glow:rgba(99,102,241,.2); --gold:#a5b4fc;
+  --anim-speed:.48; --pulse-ms:3200ms; --transition-ms:500ms; --particle-speed:.38;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock{cursor:none!important}
+#cursor{
+  position:fixed;width:var(--cur-w,28px);height:var(--cur-h,28px);
+  border:var(--cur-border,2px solid var(--cyan));border-radius:var(--cur-radius,50%);
+  background:var(--cur-bg,transparent);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%) var(--cur-rot,);
+  transition:width .12s,height .12s,border-color var(--transition-ms),background var(--transition-ms),border-radius .2s,box-shadow .2s;
+  mix-blend-mode:var(--cur-blend,screen);box-shadow:var(--cur-shadow,0 0 18px var(--mood-glow));
+}
+#cursor.core{
+  width:var(--cur-core-w,7px);height:var(--cur-core-h,7px);background:var(--cur-core-bg,var(--gold));
+  border:none;border-radius:var(--cur-core-radius,50%);z-index:10000;
+  box-shadow:var(--cur-core-shadow,0 0 12px var(--gold));
+  transform:translate(-50%,-50%) var(--cur-core-rot,);
+  mix-blend-mode:normal;
+}
+#cursor.active{
+  width:var(--cur-active-w,50px);height:var(--cur-active-h,50px);
+  border-color:var(--cur-active-border,var(--gold));
+  background:var(--cur-active-bg,rgba(251,191,36,.22));
+  border-radius:var(--cur-active-radius,var(--cur-radius,50%));
+}
+/* cursor skins inspired by SS_Lecture samples */
+html[data-cursor="ring-screen"]{--cur-w:28px;--cur-h:28px;--cur-border:2px solid var(--cyan);--cur-radius:50%;--cur-blend:screen;--cur-shadow:0 0 18px var(--mood-glow);--cur-core-w:7px;--cur-core-h:7px;--cur-core-bg:var(--gold);--cur-core-radius:50%;--cur-active-w:50px;--cur-active-h:50px}
+html[data-cursor="ring-tight"]{--cur-w:16px;--cur-h:16px;--cur-border:2px solid var(--cyan);--cur-radius:50%;--cur-blend:normal;--cur-shadow:0 0 14px var(--mood-glow);--cur-core-w:7px;--cur-core-h:7px;--cur-core-bg:var(--gold);--cur-active-w:34px;--cur-active-h:34px}
+html[data-cursor="ring-gold"]{--cur-w:18px;--cur-h:18px;--cur-border:2px solid var(--gold);--cur-radius:50%;--cur-blend:normal;--cur-shadow:0 0 16px color-mix(in srgb,var(--gold) 55%,transparent);--cur-core-w:7px;--cur-core-h:7px;--cur-core-bg:var(--cyan);--cur-core-shadow:0 0 12px var(--cyan);--cur-active-w:36px;--cur-active-h:36px;--cur-active-border:var(--cyan);--cur-active-bg:color-mix(in srgb,var(--cyan) 18%,transparent)}
+html[data-cursor="pill"]{--cur-w:26px;--cur-h:10px;--cur-border:1.5px solid var(--cyan);--cur-radius:8px;--cur-blend:normal;--cur-shadow:0 0 12px var(--mood-glow);--cur-core-w:7px;--cur-core-h:7px;--cur-core-bg:var(--gold);--cur-core-radius:50%;--cur-active-w:40px;--cur-active-h:16px;--cur-active-radius:10px}
+html[data-cursor="beam-v"]{--cur-w:3px;--cur-h:22px;--cur-border:none;--cur-radius:1px;--cur-bg:var(--accent-2);--cur-blend:normal;--cur-shadow:0 0 10px var(--mood-glow);--cur-core-w:8px;--cur-core-h:8px;--cur-core-bg:var(--gold);--cur-core-radius:1px;--cur-active-w:6px;--cur-active-h:36px;--cur-active-bg:var(--gold);--cur-active-border:transparent}
+html[data-cursor="beam-h"]{--cur-w:26px;--cur-h:3px;--cur-border:none;--cur-radius:1px;--cur-bg:var(--cyan-bright);--cur-blend:normal;--cur-shadow:0 0 12px var(--mood-glow);--cur-core-w:6px;--cur-core-h:6px;--cur-core-bg:var(--accent-2);--cur-core-radius:1px;--cur-active-w:40px;--cur-active-h:5px;--cur-active-bg:var(--gold)}
+html[data-cursor="diamond"]{--cur-w:22px;--cur-h:22px;--cur-border:2px solid var(--cyan);--cur-radius:2px;--cur-rot:rotate(45deg);--cur-blend:normal;--cur-shadow:0 0 14px var(--mood-glow);--cur-core-w:6px;--cur-core-h:6px;--cur-core-bg:var(--accent-2);--cur-core-radius:1px;--cur-core-rot:rotate(45deg);--cur-active-w:34px;--cur-active-h:34px;--cur-active-radius:2px}
+html[data-cursor="comma"]{--cur-w:18px;--cur-h:18px;--cur-border:2px solid var(--cyan);--cur-radius:50% 50% 50% 2px;--cur-rot:rotate(-20deg);--cur-blend:normal;--cur-shadow:0 0 12px var(--mood-glow);--cur-core-w:5px;--cur-core-h:5px;--cur-core-bg:var(--gold);--cur-core-radius:50%;--cur-active-w:32px;--cur-active-h:32px;--cur-active-radius:50% 50% 50% 4px}
+body{
+  background:
+    radial-gradient(ellipse var(--skin-glow-a, 90% 60%) at var(--skin-pos-a, 50% -20%), var(--bg-glow), transparent 60%),
+    radial-gradient(ellipse var(--skin-glow-b, 50% 40%) at var(--skin-pos-b, 85% 95%), var(--mood-glow), transparent 55%),
+    radial-gradient(ellipse var(--skin-glow-c, 40% 35%) at var(--skin-pos-c, 50% 50%), var(--skin-mid, transparent), transparent 65%),
+    linear-gradient(165deg,var(--bg) 0%,var(--bg2) 48%,var(--bg) 100%);
+  background-color:var(--bg);
+  color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh;overflow-x:hidden;position:relative;
+  transition:background var(--transition-ms),background-color .5s,color .3s;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--skin-pattern-opacity,.0);
+  background-image:var(--skin-pattern,none);
+  background-size:var(--skin-pattern-size,56px 56px);
+  mask-image:radial-gradient(ellipse at 50% 42%, black 28%, transparent 88%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 42%, black 28%, transparent 88%);
+}
+/* —— Pomodoro skins (mood palette + cycle design) —— */
+html[data-skin="aurora"]{
+  --skin-pos-a:18% -8%; --skin-glow-a:70% 55%;
+  --skin-pos-b:88% 108%; --skin-glow-b:55% 45%;
+  --skin-pos-c:48% 48%; --skin-glow-c:42% 38%;
+  --skin-mid:color-mix(in srgb, var(--mood-glow) 55%, transparent);
+  --skin-pattern-opacity:.55;
+  --skin-pattern:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--cyan) 12%, transparent) 0 1.1px, transparent 1.7px);
+  --skin-pattern-size:28px 28px;
+}
+html[data-skin="grid-haze"]{
+  --skin-pos-a:12% -10%; --skin-glow-a:65% 50%;
+  --skin-pos-b:92% 110%; --skin-glow-b:50% 42%;
+  --skin-pos-c:50% 50%; --skin-glow-c:38% 34%;
+  --skin-mid:color-mix(in srgb, var(--bg-glow) 70%, transparent);
+  --skin-pattern-opacity:.42;
+  --skin-pattern:
+    linear-gradient(color-mix(in srgb, var(--cyan) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cyan) 8%, transparent) 1px, transparent 1px);
+  --skin-pattern-size:64px 64px;
+}
+html[data-skin="amber-tide"]{
+  --skin-pos-a:15% -5%; --skin-glow-a:72% 52%;
+  --skin-pos-b:88% 105%; --skin-glow-b:52% 48%;
+  --skin-pos-c:50% 50%; --skin-glow-c:45% 40%;
+  --skin-mid:rgba(14,42,61,.35);
+  --skin-pattern-opacity:.5;
+  --skin-pattern:
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--gold) 10%, transparent) 0 1px, transparent 1px 60px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--gold) 10%, transparent) 0 1px, transparent 1px 60px);
+  --skin-pattern-size:auto;
+}
+html[data-skin="summit-amber"]{
+  /* from Summit Lattice sample — warm gold→orange happy family */
+  --bg:#0a0703; --bg2:#140a04;
+  --bg-glow:rgba(251,191,36,.14);
+  --mood-glow:rgba(249,115,22,.22);
+  --skin-pos-a:22% -12%; --skin-glow-a:75% 58%;
+  --skin-pos-b:78% 100%; --skin-glow-b:60% 50%;
+  --skin-pos-c:45% 55%; --skin-glow-c:40% 36%;
+  --skin-mid:rgba(251,146,60,.08);
+  --skin-pattern-opacity:.35;
+  --skin-pattern:
+    repeating-linear-gradient(125deg, rgba(251,191,36,.04) 0 1px, transparent 1px 48px);
+  --skin-pattern-size:auto;
+}
+html[data-skin="violet-mist"]{
+  --skin-pos-a:20% -10%; --skin-glow-a:68% 54%;
+  --skin-pos-b:85% 108%; --skin-glow-b:55% 46%;
+  --skin-pos-c:50% 50%; --skin-glow-c:42% 38%;
+  --skin-mid:color-mix(in srgb, var(--violet, #a78bfa) 18%, transparent);
+  --skin-pattern-opacity:.4;
+  --skin-pattern:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--lavender, #82b1ff) 14%, transparent) 0 1.2px, transparent 1.8px);
+  --skin-pattern-size:32px 32px;
+}
+html[data-skin="copper-ember"]{
+  --skin-pos-a:12% -8%; --skin-glow-a:66% 50%;
+  --skin-pos-b:92% 108%; --skin-glow-b:52% 46%;
+  --skin-pos-c:50% 50%; --skin-glow-c:40% 35%;
+  --skin-mid:rgba(232,160,76,.07);
+  --skin-pattern-opacity:.45;
+  --skin-pattern:
+    linear-gradient(color-mix(in srgb, var(--gold) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--teal) 7%, transparent) 1px, transparent 1px);
+  --skin-pattern-size:64px 64px;
+}
+html[data-skin="deep-ink"]{
+  --skin-pos-a:50% -30%; --skin-glow-a:80% 40%;
+  --skin-pos-b:15% 100%; --skin-glow-b:40% 35%;
+  --skin-pos-c:80% 60%; --skin-glow-c:30% 28%;
+  --skin-mid:transparent;
+  --skin-pattern-opacity:.22;
+  --skin-pattern:
+    repeating-linear-gradient(-18deg, color-mix(in srgb, var(--cyan) 6%, transparent) 0 1px, transparent 1px 42px);
+  --skin-pattern-size:auto;
+}
+html[data-skin="teal-rift"]{
+  --skin-pos-a:8% 0%; --skin-glow-a:60% 55%;
+  --skin-pos-b:95% 95%; --skin-glow-b:55% 50%;
+  --skin-pos-c:40% 70%; --skin-glow-c:45% 40%;
+  --skin-mid:color-mix(in srgb, var(--teal) 14%, transparent);
+  --skin-pattern-opacity:.38;
+  --skin-pattern:
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--teal) 8%, transparent) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--gold) 6%, transparent) 0 1px, transparent 1px 40px);
+  --skin-pattern-size:auto;
+}
+html[data-skin="rib-haze"]{
+  --skin-pos-a:30% -15%; --skin-glow-a:85% 50%;
+  --skin-pos-b:70% 110%; --skin-glow-b:60% 45%;
+  --skin-pos-c:20% 60%; --skin-glow-c:35% 40%;
+  --skin-mid:color-mix(in srgb, var(--bg-glow) 60%, transparent);
+  --skin-pattern-opacity:.3;
+  --skin-pattern:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--cyan) 5%, transparent) 0 2px, transparent 2px 28px);
+  --skin-pattern-size:auto;
+}
+/* gloomy moods stay darker regardless of skin */
+html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-skin]{
+  --skin-pattern-opacity:calc(var(--skin-pattern-opacity, .3) * .65);
+}
+#fxCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.app{position:relative;z-index:5;max-width:1800px;margin:0 auto;padding:36px 32px 96px}
+.view{display:none}
+.view.active{display:block}
+
+.hub-wrap{max-width:1600px;margin:0 auto}
+.hub-wrap h1{font-size:2.45rem;font-weight:900;background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 35%,var(--teal) 65%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hub-wrap .hub-kicker{color:var(--text-dim);font-family:var(--mono);font-size:.95rem;margin:6px 0 0;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
+.hub-wrap .sub{color:var(--text-dim);font-family:var(--mono);font-size:1rem;margin:10px 0 28px}
+.timer-dock{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:.65rem;background:rgba(8,12,20,.55);border:1px solid var(--border);border-radius:1.35rem;padding:.7rem .85rem;backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px var(--mood-glow);width:min(94vw,420px);max-width:min(94vw,420px);min-width:min(94vw,280px);min-height:5.6rem;height:5.6rem;box-sizing:border-box}
+.timer-dock .timer-copy{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:.12rem;overflow:hidden}
+.timer-dock .timer-display{font-size:1.55rem;font-weight:600;letter-spacing:1.5px;font-variant-numeric:tabular-nums;font-family:var(--mono);min-width:76px;color:var(--text);user-select:none;line-height:1.1}
+.timer-dock .timer-mode{font-size:.78rem;letter-spacing:.01em;font-family:var(--mono);color:var(--teal);opacity:.92;line-height:1.3;max-width:100%;width:100%;min-height:2.6em;max-height:2.6em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-transform:none}
+.timer-dock .timer-author{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.72rem;color:var(--text-dim);opacity:0;line-height:1.2;min-height:1.1em;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:translateY(4px);transition:opacity 1.6s ease,transform 1.6s ease}
+.timer-dock .timer-author.show{opacity:.78;transform:translateY(0)}
+.timer-dock-main{position:relative;display:flex;align-items:center;gap:.65rem;min-width:0;flex:1}
+.mood-live{font-size:1.65rem;line-height:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50%;width:2.6rem;height:2.6rem;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow var(--transition-ms),border-color var(--transition-ms);padding:0}
+.mood-live:hover,.mood-wrap-live.open .mood-live{transform:scale(1.08);box-shadow:0 0 16px var(--mood-glow)}
+.mood-live:active{transform:scale(.94)}
+.mood-live:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px;box-shadow:0 0 0 4px var(--mood-glow)}
+.mood-tray{
+  position:absolute;left:0;right:0;bottom:calc(100% + 10px);
+  display:flex;flex-direction:column;align-items:stretch;gap:.45rem;
+  padding:.65rem .7rem;border-radius:1.25rem;
+  background:rgba(8,12,20,.55);border:1px solid var(--border);backdrop-filter:blur(20px) saturate(1.15);
+  box-shadow:0 12px 36px rgba(0,0,0,.5),0 0 16px var(--mood-glow);
+  opacity:0;pointer-events:none;transform:translateY(10px) scale(.98);
+  transform-origin:bottom center;
+  transition:opacity .22s,transform .22s;z-index:50;
+}
+.timer-dock.open .mood-tray{
+  opacity:1;pointer-events:auto;transform:translateY(0) scale(1);
+}
+.mood-tray-row{display:flex;flex-wrap:wrap;gap:.3rem;justify-content:center}
+.mood-tray-sep{width:100%;height:1px;background:var(--border);opacity:.7;margin:.1rem 0}
+
+.mood-pick{font-size:1.45rem;background:transparent;border:1px solid transparent;border-radius:50%;width:2.35rem;height:2.35rem;display:inline-flex;align-items:center;justify-content:center;transition:transform .18s,background .18s,border-color .18s,box-shadow .18s;padding:0;line-height:1}
+.mood-pick:hover{transform:scale(1.18) translateY(-1px);background:rgba(255,255,255,.08);border-color:var(--border);box-shadow:0 0 14px var(--mood-glow)}
+.mood-pick:active{transform:scale(.92)}
+.mood-pick:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
+.mood-pick.active{background:var(--mood-glow);border-color:var(--cyan);box-shadow:0 0 12px var(--mood-glow)}
+
+.mood-reset-item{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:.85rem;padding:.45rem .55rem;width:100%;white-space:nowrap;transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s}
+.mood-reset-item:hover{background:var(--mood-glow);border-color:var(--cyan);color:var(--cyan-bright);transform:translateY(-1px);box-shadow:0 6px 18px var(--mood-glow)}
+.mood-reset-item:active{transform:scale(.97)}
+.mood-reset-item:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
+
+.mood-tray-tools{display:flex;flex-direction:column;align-items:center;gap:.28rem;padding:.1rem 0 .05rem}
+.mood-cursor-btn{
+  width:2.55rem;height:2.55rem;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  color:var(--cyan-bright);padding:0;
+  transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.mood-cursor-btn svg{width:1.15rem;height:1.15rem;pointer-events:none}
+.mood-cursor-btn:hover{
+  background:var(--mood-glow);border-color:var(--cyan);color:var(--cyan-bright);
+  transform:translateY(-1px) scale(1.06);box-shadow:0 6px 18px var(--mood-glow);
+}
+.mood-cursor-btn:active{transform:scale(.94)}
+.mood-cursor-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
+.mood-cursor-hint{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;
+  color:var(--muted);opacity:.85;text-align:center;line-height:1.2;
+  user-select:none;pointer-events:none;
+}
+.modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.modal-actions .btn-ghost,.modal-actions .btn-gold{min-width:120px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{display:block;text-decoration:none;color:inherit;background:rgba(14,22,40,.55);border:1.5px solid var(--border);border-radius:20px;padding:24px 22px;transition:transform var(--transition-ms),border-color var(--transition-ms),box-shadow var(--transition-ms);box-shadow:0 18px 40px -16px rgba(0,0,0,.55);text-align:left;width:100%;font:inherit;backdrop-filter:blur(16px);position:relative}
+.card:hover{transform:translateY(-4px);border-color:var(--cyan-bright);box-shadow:0 0 28px var(--mood-glow),0 18px 40px -12px rgba(0,0,0,.55)}
+.card:active{transform:translateY(-1px) scale(.985)}
+.card:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px;box-shadow:0 0 0 4px var(--mood-glow),0 0 28px var(--mood-glow)}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.form-letter{font-family:var(--mono);font-weight:800;font-size:1.05rem;color:var(--gold)}
+.mood-stamp{font-size:1.7rem;min-height:1.7rem}
+.card-title{font-weight:800;font-size:1.2rem;margin-bottom:4px}
+.card-sub{color:var(--text-dim);font-size:.88rem;font-family:var(--mono)}
+.card-pct{margin-top:14px;font-family:var(--mono);font-size:1.15rem;font-weight:700;color:var(--cyan-bright);letter-spacing:.3px}
+.card-meta{margin-top:6px;font-family:var(--mono);font-size:.78rem;color:var(--cyan);opacity:.85}
+.note{margin-top:28px;padding:18px 20px;border-radius:16px;background:rgba(14,22,40,.42);border:1px solid var(--border);color:var(--text-dim);font-size:.95rem;line-height:1.55;backdrop-filter:blur(14px)}
+.foot{margin-top:24px;text-align:center;font-family:var(--mono);font-size:.62rem;color:var(--text-dim);opacity:.4}
+
+.header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;gap:18px;flex-wrap:wrap}
+.header-left h1{font-size:1.85rem;font-weight:900;background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 40%,var(--teal) 70%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-left .sub{color:var(--text-dim);font-size:.92rem;margin-top:6px;font-family:var(--mono)}
+.header-right{display:flex;gap:10px;flex-wrap:wrap}
+.fs-btn{font-family:var(--mono);font-size:.88rem;color:var(--cyan-bright);border:1px solid var(--border);padding:10px 18px;border-radius:999px;background:color-mix(in srgb, var(--cyan) 12%, transparent);transition:transform .2s,background .2s,border-color .2s,box-shadow .2s,color .2s}
+.fs-btn:hover{background:var(--mood-glow);border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 0 22px var(--mood-glow)}
+.fs-btn:active{transform:scale(.97)}
+.fs-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px}
+.panel{background:rgba(14,22,40,.58);backdrop-filter:blur(22px) saturate(1.1);border:1.5px solid var(--border);border-radius:22px;box-shadow:0 28px 64px -18px rgba(0,0,0,.65);transition:box-shadow var(--transition-ms)}
+.panel.correct-pulse{box-shadow:0 0 0 1px rgba(52,211,153,.55),0 0 56px rgba(52,211,153,.32)}
+.panel.wrong-pulse{box-shadow:0 0 0 1px rgba(251,113,133,.5),0 0 40px rgba(251,113,133,.22);animation:softReject calc(420ms / var(--anim-speed)) ease}
+@keyframes softReject{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.status-bar{display:flex;align-items:center;gap:12px;padding:14px 28px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.55);font-family:var(--mono);font-size:.88rem;color:var(--text-dim)}
+.status-dot{width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--cyan-bright),var(--cyan) 50%,#0e7490);box-shadow:0 0 18px var(--mood-glow);animation:pulse var(--pulse-ms) ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35);opacity:.6}}
+.panel-body{padding:32px 36px}
+.quiz-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.elapsed{font-family:var(--mono);font-size:1.05rem;font-weight:600;color:var(--lavender);min-width:70px}
+.track{flex:1;height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;min-width:120px}
+.track-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--teal),var(--gold));border-radius:99px;transition:width .35s}
+.q-count{font-family:var(--mono);font-size:.95rem;color:var(--text-dim)}
+.cat-tag{font-family:var(--mono);font-size:.72rem;padding:4px 10px;border-radius:999px;border:1px solid rgba(167,139,250,.4);color:var(--violet);background:rgba(167,139,250,.1)}
+.question{font-size:1.55rem;font-weight:650;line-height:1.55;margin-bottom:22px}
+.options{display:flex;flex-direction:column;gap:14px}
+.opt{position:relative;background:rgba(0,0,0,.42);border:1.5px solid var(--border);border-radius:14px;padding:18px 20px 18px 58px;font-size:1.22rem;line-height:1.45;text-align:left;color:var(--text);width:100%;font-family:inherit;transition:transform var(--transition-ms),border-color var(--transition-ms),background var(--transition-ms),box-shadow var(--transition-ms)}
+.opt::before{content:attr(data-key);position:absolute;left:16px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.85rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(0,0,0,.45);border:1px solid var(--border);color:var(--text-dim);transition:border-color var(--transition-ms),color var(--transition-ms),background var(--transition-ms)}
+.opt:hover:not(:disabled){border-color:var(--cyan);background:var(--mood-glow);transform:translateX(5px);box-shadow:0 0 20px var(--mood-glow)}
+.opt:active:not(:disabled){transform:translateX(3px) scale(.985)}
+.opt:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px;box-shadow:0 0 0 3px var(--mood-glow)}
+.opt.correct{border-color:var(--success);background:rgba(52,211,153,.15);color:var(--success)}
+.opt.soft-wrong{border-color:rgba(251,113,133,.55);background:rgba(251,113,133,.1);animation:softReject calc(420ms / var(--anim-speed)) ease}
+.opt.wrong{border-color:var(--error);background:rgba(251,113,133,.12);color:var(--error)}
+.feedback{margin-top:16px;padding:16px 18px;border-radius:12px;font-size:1.08rem;line-height:1.55;min-height:52px}
+.feedback.good{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:var(--success)}
+.feedback.soft{background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.28);color:var(--error)}
+.feedback.bad{background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.3);color:var(--error)}
+.feedback.idle{background:transparent;border:none;color:var(--text-dim);font-family:var(--mono);font-size:.88rem}
+.nav{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.nav-btn{font-family:var(--mono);font-size:.95rem;padding:12px 20px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);transition:transform .2s,border-color .2s,box-shadow .2s,background .2s,color .2s}
+.nav-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 22px var(--mood-glow)}
+.nav-btn:active:not(:disabled){transform:scale(.97)}
+.nav-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px}
+.nav-btn:disabled{opacity:.28}
+.nav-btn.primary{background:linear-gradient(135deg,var(--cyan),var(--gold));color:#0a0e17;border:none;font-weight:800;position:relative;overflow:hidden;box-shadow:0 12px 32px color-mix(in srgb, var(--cyan) 28%, transparent),0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent)}
+.nav-btn.primary::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.28) 45%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.nav-btn.primary:hover:not(:disabled){transform:translateY(-2px) scale(1.015);box-shadow:0 18px 42px color-mix(in srgb, var(--gold) 35%, transparent),0 0 0 1px color-mix(in srgb, var(--gold) 65%, transparent);color:#0a0e17;border:none}
+.nav-btn.primary:hover:not(:disabled)::after{animation:btnShimmer .85s ease}
+.nav-btn.primary:active:not(:disabled){transform:scale(.98)}
+.kbd-hint{margin-top:16px;text-align:center;font-family:var(--mono);font-size:.8rem;color:var(--text-dim)}
+.kbd{display:inline-block;padding:2px 6px;border-radius:4px;border:1px solid var(--border);background:rgba(0,0,0,.45);font-size:.62rem}
+.final,.review{display:none}
+.final{text-align:center;padding:22px 10px 12px}
+.final h2{font-size:1.75rem;background:linear-gradient(120deg,var(--cyan-bright),var(--cyan),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.final p{color:var(--text-dim);font-family:var(--mono);font-size:1rem;margin-bottom:6px}
+.final .score-big{font-size:2.8rem;font-weight:900;color:var(--gold);font-family:var(--mono);margin:12px 0}
+.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.final-actions button,.review-actions button{padding:13px 22px;border:none;border-radius:12px;font-weight:800;font-family:var(--mono);font-size:.95rem}
+.btn-gold{background:linear-gradient(135deg,var(--cyan),var(--gold));color:#0a0e17;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 12px 36px color-mix(in srgb, var(--cyan) 30%, transparent),0 0 0 1px color-mix(in srgb, var(--gold) 40%, transparent)}
+.btn-gold::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.3) 45%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.btn-gold:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 18px 48px color-mix(in srgb, var(--gold) 38%, transparent),0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent)}
+.btn-gold:hover::after{animation:btnShimmer .85s ease}
+.btn-gold:active{transform:scale(.98)}
+.btn-gold:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border)!important;transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--cyan)!important;box-shadow:0 8px 22px var(--mood-glow);background:var(--mood-glow)}
+.btn-ghost:active{transform:scale(.97)}
+.btn-ghost:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:3px}
+@keyframes btnShimmer{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+.mood-wrap{margin-top:24px;padding-top:18px;border-top:1px solid var(--border)}
+.mood-prompt{font-weight:400;opacity:.55;font-size:1rem;margin-bottom:.55rem}
+.mood-row{display:flex;gap:.55rem;flex-wrap:wrap;justify-content:center;margin-bottom:.4rem}
+.mood-btn{font-size:1.95rem;background:none;border:none;transition:.2s;filter:grayscale(.8);opacity:.5;padding:.25rem .45rem;border-radius:1rem}
+.mood-btn:hover{transform:scale(1.2);filter:grayscale(0);opacity:1}
+.mood-btn.selected{filter:grayscale(0);opacity:1;background:rgba(255,255,255,.08)}
+.mood-label{text-align:center;font-size:.85rem;opacity:.4;margin-top:.15rem;font-family:var(--mono)}
+.review h2{font-size:1.45rem;margin-bottom:14px;color:var(--cyan)}
+.review-item{text-align:left;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.review-item .rq{font-weight:650;margin-bottom:8px;font-size:1.1rem}
+.review-item .rline{font-size:.95rem;margin:4px 0;font-family:var(--mono)}
+.review-item .rok{color:var(--success)}
+.review-item .rbad{color:var(--error)}
+.review-item .rex{color:var(--text-dim);margin-top:8px;font-size:.95rem;line-height:1.45}
+.review-actions{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.confetti{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:99;animation:fall 1.3s ease-out forwards}
+@keyframes fall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+.modal-overlay{position:fixed;inset:0;z-index:80;background:rgba(4,8,16,.72);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.modal-overlay.show{display:flex}
+.modal-card{background:rgba(14,22,40,.62);backdrop-filter:blur(22px);border:1.5px solid var(--border);border-radius:22px;padding:32px 28px;max-width:400px;width:100%;text-align:center;box-shadow:0 0 48px var(--mood-glow)}
+.modal-card h3{font-size:1.45rem;margin-bottom:8px;color:var(--gold)}
+.modal-card p{color:var(--text-dim);font-size:1rem;line-height:1.5;margin-bottom:14px}
+.modal-card .break-clock{font-family:var(--mono);font-size:2.8rem;font-weight:700;color:var(--cyan-bright);letter-spacing:2px;margin:8px 0 4px}
+.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(20px);z-index:90;background:rgba(14,22,40,.55);backdrop-filter:blur(16px);border:1px solid var(--border);color:var(--text);padding:12px 22px;border-radius:999px;font-family:var(--mono);font-size:.92rem;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (max-width:900px){
+  .app{padding:24px 16px 96px;max-width:100%}
+  .question{font-size:1.35rem}
+  .opt{font-size:1.12rem;padding:15px 16px 15px 52px}
+  .timer-dock{right:12px;left:12px;width:auto;max-width:none;min-width:0}
+  .mood-tray{transform:translateY(10px) scale(.98)}
+  .timer-dock.open .mood-tray{transform:translateY(0) scale(1)}
+}
+@media (max-width:640px){
+  .timer-dock{bottom:10px;right:10px;left:10px;justify-content:center}
+  .app{padding-bottom:100px}
+  .hub-wrap h1{font-size:1.85rem}
+}
+</style>
+</head>
+<body>
+<canvas id="fxCanvas"></canvas>
+<div id="cursor"></div>
+<div id="cursor" class="core"></div>
+
+<!-- Fixed cute timer + live mood tray (whole app) -->
+<div class="timer-dock" id="timerDock">
+  <div class="timer-dock-main" id="moodWrapLive">
+    <button type="button" class="mood-live" id="liveMoodBtn" title="Choose mood theme" aria-haspopup="true" aria-expanded="false">😊</button>
+    <div class="timer-copy">
+      <div class="timer-display" id="globalTimerDisplay">25:00</div>
+      <div class="timer-mode" id="globalTimerMode">…</div>
+      <div class="timer-author" id="globalTimerAuthor"></div>
+    </div>
+  </div>
+  <div class="mood-tray" id="moodTray" role="listbox" aria-label="Mood themes">
+    <div class="mood-tray-row">
+      <button type="button" class="mood-pick" data-mood="😊" title="Happy">😊</button>
+      <button type="button" class="mood-pick" data-mood="🤩" title="Starstruck">🤩</button>
+      <button type="button" class="mood-pick" data-mood="😎" title="Cool">😎</button>
+      <button type="button" class="mood-pick" data-mood="🙂" title="Smile">🙂</button>
+      <button type="button" class="mood-pick" data-mood="😐" title="Neutral">😐</button>
+      <button type="button" class="mood-pick" data-mood="😌" title="Calm">😌</button>
+      <button type="button" class="mood-pick" data-mood="🧘" title="Zen">🧘</button>
+      <button type="button" class="mood-pick" data-mood="😤" title="Frustrated">😤</button>
+      <button type="button" class="mood-pick" data-mood="🔥" title="Fired up">🔥</button>
+      <button type="button" class="mood-pick" data-mood="😠" title="Mad">😠</button>
+      <button type="button" class="mood-pick" data-mood="😢" title="Sad">😢</button>
+      <button type="button" class="mood-pick" data-mood="😭" title="Crying">😭</button>
+      <button type="button" class="mood-pick" data-mood="🥱" title="Sleepy">🥱</button>
+      <button type="button" class="mood-pick" data-mood="😴" title="Sleep">😴</button>
+      <button type="button" class="mood-pick" data-mood="🤔" title="Thinking">🤔</button>
+      <button type="button" class="mood-pick" data-mood="💪" title="Strong">💪</button>
+    </div>
+    <div class="mood-tray-sep" aria-hidden="true"></div>
+    <div class="mood-tray-tools">
+      <button type="button" class="mood-cursor-btn" id="cursorRandomBtn" title="Randomize mouse cursor" aria-label="Randomize mouse cursor">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 3.5L19.5 11.2l-6.2 1.6 2.9 6.6-2.4 1.1-2.9-6.6L5 18.8V3.5z" fill="currentColor" opacity=".92"/>
+          <path d="M16.2 4.2a4.6 4.6 0 0 1 3.6 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+          <path d="M18.1 3.1l1.7 1.1-1.1 1.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+        </svg>
+      </button>
+      <span class="mood-cursor-hint">Change cursor</span>
+    </div>
+    <div class="mood-tray-sep" aria-hidden="true"></div>
+    <button type="button" class="mood-reset-item" id="timerResetBtn" title="Reset timer">↺ Reset timer</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="breakModal" role="dialog" aria-modal="true" aria-labelledby="breakTitle">
+  <div class="modal-card">
+    <h3 id="breakTitle">Take a break</h3>
+    <p>Focus session done. Stretch, sip water, rest your eyes — break countdown is running.</p>
+    <div class="break-clock" id="breakModalClock">05:00</div>
+    <p style="font-size:.75rem;opacity:.55;font-family:var(--mono);margin:0">auto · timer keeps going in the dock</p>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" id="breakCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetTitle">
+  <div class="modal-card">
+    <h3 id="resetTitle">Reset the timer?</h3>
+    <p>This restarts a fresh 25:00 focus phase from now.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" id="resetCancelBtn">Cancel</button>
+      <button type="button" class="btn-gold" id="resetConfirmBtn">Yes, reset</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- ========== HUB VIEW ========== -->
+<div class="app view active" id="hubView">
+  <div class="hub-wrap">
+    <p style="margin:0 0 10px"><a href="../index.html" style="color:var(--cyan-bright);text-decoration:none;font-family:var(--mono);font-size:.85rem">← Study Portal</a></p>
+    <h1>Periodic Test 1</h1>
+    <p class="hub-kicker">Practice exam hub · Forms A–H</p>
+    <div class="sub">Medical Physics · Periodic Test 1 · Phys101 · practice simulation (not official)</div>
+    <div class="grid" id="formGrid">
+      <button class="card" type="button" data-form="A">
+        <div class="card-top"><span class="form-letter">Form A</span><span class="mood-stamp" id="stamp_A"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_A">0%</div>
+        <div class="card-meta" id="meta_A">not started</div>
+      </button>
+      <button class="card" type="button" data-form="B">
+        <div class="card-top"><span class="form-letter">Form B</span><span class="mood-stamp" id="stamp_B"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_B">0%</div>
+        <div class="card-meta" id="meta_B">not started</div>
+      </button>
+      <button class="card" type="button" data-form="C">
+        <div class="card-top"><span class="form-letter">Form C</span><span class="mood-stamp" id="stamp_C"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_C">0%</div>
+        <div class="card-meta" id="meta_C">not started</div>
+      </button>
+      <button class="card" type="button" data-form="D">
+        <div class="card-top"><span class="form-letter">Form D</span><span class="mood-stamp" id="stamp_D"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_D">0%</div>
+        <div class="card-meta" id="meta_D">not started</div>
+      </button>
+      <button class="card" type="button" data-form="E">
+        <div class="card-top"><span class="form-letter">Form E</span><span class="mood-stamp" id="stamp_E"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_E">0%</div>
+        <div class="card-meta" id="meta_E">not started</div>
+      </button>
+      <button class="card" type="button" data-form="F">
+        <div class="card-top"><span class="form-letter">Form F</span><span class="mood-stamp" id="stamp_F"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_F">0%</div>
+        <div class="card-meta" id="meta_F">not started</div>
+      </button>
+      <button class="card" type="button" data-form="G">
+        <div class="card-top"><span class="form-letter">Form G</span><span class="mood-stamp" id="stamp_G"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_G">0%</div>
+        <div class="card-meta" id="meta_G">not started</div>
+      </button>
+      <button class="card" type="button" data-form="H">
+        <div class="card-top"><span class="form-letter">Form H</span><span class="mood-stamp" id="stamp_H"></span></div>
+        <div class="card-sub">20 MCQs</div>
+        <div class="card-pct" id="pct_H">0%</div>
+        <div class="card-meta" id="meta_H">not started</div>
+      </button>
+    </div>
+    <div class="note">
+      Each form has <strong>exactly 20</strong> questions covering the <strong>whole exam</strong>
+      (~4 fundamentals, ~4–6 elasticity, ~7 fluids-static, ~3–4 fluids-flow — balanced mix, not topic-specialized).
+      Chapter 3 exclusions: viscosity, Poiseuille, Laplace, Reynolds.
+      Hub shows completion % (best progress kept after Restart). Timer auto-starts (25:00 focus → break → 5:00 → focus).
+      Hover/click the dock emoji for a mood tray (themes background + motion). Bank: 160 · Forms A–H · zero question-ID overlap.
+    </div>
+    <div class="foot">Forms: A–H · offline-friendly · moods + completion in localStorage · single-file exam</div>
+  </div>
+</div>
+
+<!-- ========== QUIZ VIEW ========== -->
+<div class="app view" id="quizView">
+  <div class="header">
+    <div class="header-left">
+      <h1 id="quizTitle">Medical Physics · Periodic Test 1 · Form A</h1>
+      <div class="sub">Phys101 · practice simulation (not official) · 20 MCQs</div>
+    </div>
+    <div class="header-right">
+      <button class="fs-btn" type="button" id="hubBtn">← Main Menu</button>
+      <button class="fs-btn" type="button" id="fsBtn">Fullscreen · F</button>
+    </div>
+  </div>
+  <div class="panel" id="mainPanel">
+    <div class="status-bar">
+      <div class="status-dot"></div>
+      <span id="statusText">form A</span>
+      <span>·</span>
+      <span id="statusDetail">ready</span>
+    </div>
+    <div class="panel-body">
+      <div id="quizScreen">
+        <div class="quiz-meta">
+          <div class="elapsed" id="elapsed">00:00</div>
+          <div class="track"><div class="track-fill" id="progressBar"></div></div>
+          <div class="q-count"><span id="qNum">1</span> / 20</div>
+          <span class="cat-tag" id="catTag">—</span>
+        </div>
+        <div class="question" id="qText"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback idle" id="feedback"></div>
+        <div class="nav">
+          <button class="nav-btn" id="backBtn" type="button" disabled>← Back</button>
+          <button class="nav-btn primary" id="nextBtn" type="button" disabled>Next →</button>
+        </div>
+        <div class="kbd-hint"><span class="kbd">A–D</span> / <span class="kbd">1–4</span> choose · <span class="kbd">Enter</span> next · <span class="kbd">F</span> fullscreen · <span class="kbd">Esc</span> menu</div>
+      </div>
+      <div class="final" id="finalScreen">
+        <h2 id="finalHeading">Form A complete</h2>
+        <div class="score-big" id="scoreBig">0 / 20</div>
+        <p id="finalStats"></p>
+        <p style="opacity:.55;font-size:.78rem;margin-top:4px">practice simulation · not an official grade</p>
+        <div class="mood-wrap">
+          <div class="mood-prompt">how did that form feel?</div>
+          <div class="mood-row" id="moodContainer">
+            <button class="mood-btn" type="button" data-mood="😊">😊</button>
+            <button class="mood-btn" type="button" data-mood="😐">😐</button>
+            <button class="mood-btn" type="button" data-mood="😌">😌</button>
+            <button class="mood-btn" type="button" data-mood="😤">😤</button>
+            <button class="mood-btn" type="button" data-mood="😠">😠</button>
+            <button class="mood-btn" type="button" data-mood="😢">😢</button>
+            <button class="mood-btn" type="button" data-mood="😭">😭</button>
+            <button class="mood-btn" type="button" data-mood="🥱">🥱</button>
+          </div>
+          <div class="mood-label" id="moodLabel">tap one · stamps this form on the hub</div>
+        </div>
+        <div class="final-actions">
+          <button class="btn-ghost" type="button" id="reviewBtn">Stay &amp; review answers</button>
+          <button class="btn-ghost" type="button" id="restartBtn">Restart form</button>
+          <button class="btn-gold" type="button" id="menuBtn">Main Menu</button>
+        </div>
+      </div>
+      <div class="review" id="reviewScreen">
+        <h2 id="reviewHeading">Answer review · Form A</h2>
+        <div id="reviewList"></div>
+        <div class="review-actions">
+          <button class="btn-ghost" type="button" id="reviewBackBtn">← Results</button>
+          <button class="btn-gold" type="button" id="reviewMenuBtn">Main Menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot" id="quizFoot">Phys101 Medical Physics · PT1 practice</div>
+</div>
+
+<script>
+let FORM_BANK = {};
+let FORMS = [];
+let __bankReady = false;
+let __bankError = null;
+
+async function loadBankFromQuery(){
+  const params = new URLSearchParams(location.search);
+  let bankPath = params.get('bank') || '../banks/medphys/pt1.json';
+  // If opened from exams/, relative banks path is ../banks/...
+  try {
+    const res = await fetch(bankPath, { cache: 'no-cache' });
+    if(!res.ok) throw new Error('bank HTTP ' + res.status);
+    const data = await res.json();
+    FORM_BANK = data.bank || data.FORM_BANK || {};
+    FORMS = data.forms || Object.keys(FORM_BANK);
+    __bankReady = true;
+    document.title = (data.title || 'Periodic Test 1') + ' · Study Portal';
+    const hubTitle = document.querySelector('#hubView h1');
+    if(hubTitle && data.title) hubTitle.textContent = data.title;
+    const hubKicker = document.querySelector('#hubView .hub-kicker');
+    if(hubKicker) hubKicker.textContent = (data.subject || 'Medical Physics') + ' · Forms A–H';
+    return data;
+  } catch(err){
+    __bankError = err;
+    console.error(err);
+    const hub = document.getElementById('hubView');
+    if(hub){
+      const msg = document.createElement('p');
+      msg.className = 'sub';
+      msg.style.color = '#f88';
+      msg.textContent = 'Could not load question bank. Check bank path / Pages deploy. ' + (err && err.message ? err.message : '');
+      hub.querySelector('.hub-wrap')?.prepend(msg);
+    }
+    throw err;
+  }
+}
+
+
+let currentForm = null;
+let questions = [];
+let current = 0;
+let answers = [];
+let locked = false;
+let startTime = 0;
+let elapsedTimer = null;
+let quizActive = false;
+let timerMode = 'focus'; // hoisted for mood quote init
+
+/* —— FX canvas (speed from --particle-speed) —— */
+const canvas = document.getElementById('fxCanvas');
+const ctx = canvas.getContext('2d');
+let W, H;
+const streams = [], orbs = [], sparks = [];
+let FX_COLS = ['#22d3ee','#67e8f9','#2dd4bf','#fbbf24','#82b1ff'];
+function cssNum(name, fallback){
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const n = parseFloat(v);
+  return Number.isFinite(n) ? n : fallback;
+}
+function moodFxColors(){
+  const cs = getComputedStyle(document.documentElement);
+  return [cs.getPropertyValue('--cyan').trim()||'#22d3ee', cs.getPropertyValue('--cyan-bright').trim()||'#67e8f9', cs.getPropertyValue('--teal').trim()||'#2dd4bf', cs.getPropertyValue('--gold').trim()||'#fbbf24', cs.getPropertyValue('--accent-2').trim()||'#82b1ff'];
+}
+function resize(){ W=canvas.width=innerWidth; H=canvas.height=innerHeight; }
+addEventListener('resize', resize); resize();
+for (let i=0;i<14;i++) streams.push({x:Math.random()*W,y:Math.random()*H,len:30+Math.random()*70,speed:.45+Math.random()*1.1,a:.07+Math.random()*.14,color:Math.random()>.4?'#22d3ee':'#fbbf24'});
+for (let i=0;i<22;i++) orbs.push({x:Math.random()*W,y:Math.random()*H,r:2+Math.random()*6,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.22,a:.12+Math.random()*.28,color:FX_COLS[i%FX_COLS.length],pulse:Math.random()*6});
+function spawnFireworkBurst(cx,cy,count=28){
+  FX_COLS = moodFxColors();
+  for(let i=0;i<count;i++){const angle=(Math.PI*2*i)/count+Math.random()*.3,speed=2.2+Math.random()*4.5;
+    sparks.push({x:cx,y:cy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,life:1,decay:.012+Math.random()*.018,color:FX_COLS[i%FX_COLS.length],r:1.5+Math.random()*2.5});}
+}
+setInterval(()=>{if(Math.random()>.55)spawnFireworkBurst(Math.random()*W,Math.random()*H*.7,14);},2800);
+(function draw(){
+  const spd = cssNum('--particle-speed', 1);
+  FX_COLS = moodFxColors();
+  ctx.clearRect(0,0,W,H);
+  const glow = getComputedStyle(document.documentElement).getPropertyValue('--bg-glow').trim() || 'rgba(12,40,70,.32)';
+  const g=ctx.createRadialGradient(W*.5,H*.15,0,W*.5,H*.5,Math.max(W,H)*.9);
+  g.addColorStop(0, glow); g.addColorStop(1,'rgba(0,0,0,.55)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  streams.forEach(s=>{s.y+=s.speed*spd;if(s.y>H+s.len){s.y=-s.len;s.x=Math.random()*W;}ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x,s.y-s.len);ctx.strokeStyle=s.color;ctx.globalAlpha=s.a;ctx.lineWidth=1.5;ctx.stroke();});
+  orbs.forEach((o,i)=>{o.x+=o.vx*spd;o.y+=o.vy*spd;o.pulse+=.024*spd;o.color=FX_COLS[i%FX_COLS.length];if(o.x<-20)o.x=W+20;if(o.x>W+20)o.x=-20;if(o.y<-20)o.y=H+20;if(o.y>H+20)o.y=-20;ctx.beginPath();ctx.arc(o.x,o.y,o.r*(.7+.35*Math.sin(o.pulse)),0,Math.PI*2);ctx.fillStyle=o.color;ctx.globalAlpha=o.a*(.5+.5*Math.sin(o.pulse));ctx.fill();});
+  for(let i=sparks.length-1;i>=0;i--){const s=sparks[i];s.x+=s.vx*spd;s.y+=s.vy*spd;s.vy+=.06*spd;s.life-=s.decay*Math.max(.5,spd);if(s.life<=0){sparks.splice(i,1);continue;}ctx.beginPath();ctx.arc(s.x,s.y,s.r*s.life,0,Math.PI*2);ctx.fillStyle=s.color;ctx.globalAlpha=s.life*.9;ctx.fill();}
+  ctx.globalAlpha=1;requestAnimationFrame(draw);
+})();
+
+/* —— Custom cursor —— */
+const cursor=document.getElementById('cursor'), core=document.querySelector('#cursor.core');
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';core.style.left=e.clientX+'px';core.style.top=e.clientY+'px';});
+document.addEventListener('mousedown',()=>cursor.classList.add('active'));
+document.addEventListener('mouseup',()=>cursor.classList.remove('active'));
+
+/* —— Live mood tray (not click-to-cycle) —— */
+const MOODS = [
+  {emoji:'😊', cls:'mood-happy', label:'Happy'},
+  {emoji:'🤩', cls:'mood-happy', label:'Starstruck'},
+  {emoji:'😎', cls:'mood-happy', label:'Cool'},
+  {emoji:'🙂', cls:'mood-happy', label:'Smile'},
+  {emoji:'🥳', cls:'mood-happy', label:'Party'},
+  {emoji:'😄', cls:'mood-happy', label:'Grin'},
+  {emoji:'😐', cls:'mood-neutral', label:'Neutral'},
+  {emoji:'🤔', cls:'mood-neutral', label:'Thinking'},
+  {emoji:'🤓', cls:'mood-neutral', label:'Nerd'},
+  {emoji:'🧐', cls:'mood-neutral', label:'Study'},
+  {emoji:'🎯', cls:'mood-neutral', label:'Focus'},
+  {emoji:'😌', cls:'mood-calm', label:'Calm'},
+  {emoji:'🧘', cls:'mood-calm', label:'Zen'},
+  {emoji:'🌿', cls:'mood-calm', label:'Nature'},
+  {emoji:'✨', cls:'mood-calm', label:'Sparkle'},
+  {emoji:'☕', cls:'mood-calm', label:'Coffee'},
+  {emoji:'🌙', cls:'mood-calm', label:'Moon'},
+  {emoji:'😤', cls:'mood-fierce', label:'Frustrated'},
+  {emoji:'🔥', cls:'mood-fierce', label:'Fired up'},
+  {emoji:'💪', cls:'mood-fierce', label:'Strong'},
+  {emoji:'⚡', cls:'mood-fierce', label:'Electric'},
+  {emoji:'😠', cls:'mood-mad', label:'Mad'},
+  {emoji:'😢', cls:'mood-sad', label:'Sad'},
+  {emoji:'😭', cls:'mood-crying', label:'Crying'},
+  {emoji:'🥱', cls:'mood-sleepy', label:'Sleepy'},
+  {emoji:'😴', cls:'mood-sleepy', label:'Sleep'},
+  {emoji:'🧸', cls:'mood-sleepy', label:'Cozy'},
+  {emoji:'💭', cls:'mood-sleepy', label:'Daydream'},
+  {emoji:'🫧', cls:'mood-calm', label:'Bubbles'},
+  {emoji:'☁️', cls:'mood-calm', label:'Cloud'},
+  {emoji:'🎧', cls:'mood-calm', label:'Headphones'},
+  {emoji:'🚿', cls:'mood-calm', label:'Reset'}
+];
+const FOCUS_MOOD_POOL = ['😊','🤩','😎','🙂','🥳','😄','😐','🤔','🤓','🧐','🎯','😌','😤','🔥','💪','⚡','😠','😢','😭','🥱','😴'];
+const BREAK_MOOD_POOL = ['😌','😴','🧘','🌿','🥱','☕','🌙','✨','🧸','💭','🫧','☁️','🎧','🚿'];
+const MOOD_CLASSES = ['mood-happy','mood-neutral','mood-calm','mood-fierce','mood-mad','mood-sad','mood-crying','mood-sleepy'];
+let currentMoodEmoji = '😊';
+let moodAutoMode = true; // auto-rotate each focus/break unless user just picked
+const moodWrap = document.getElementById('moodWrapLive');
+const liveMoodBtn = document.getElementById('liveMoodBtn');
+function resolveMood(emoji){
+  return MOODS.find(x=>x.emoji===emoji) || {emoji:emoji||'😊', cls:'mood-neutral', label:'Mood'};
+}
+function applyLiveMood(emoji, opts){
+  opts = opts || {};
+  const m = resolveMood(emoji);
+  currentMoodEmoji = m.emoji;
+  document.documentElement.classList.remove(...MOOD_CLASSES);
+  document.documentElement.classList.add(m.cls);
+  liveMoodBtn.textContent = m.emoji;
+  liveMoodBtn.title = 'Mood: '+m.label+' · hover or click for options';
+  document.querySelectorAll('.mood-pick').forEach(p=>p.classList.toggle('active', p.dataset.mood===m.emoji));
+  try{ localStorage.setItem('pt1_live_mood', m.emoji); }catch(e){}
+  streams.forEach((s,i)=>{ const cols=moodFxColors(); s.color = (i%2? cols[0] : cols[3]); });
+  if(window.__skinsReady){
+    if(typeof applySkin==='function') applySkin();
+    if(typeof applyCursorSkin==='function') applyCursorSkin();
+  }
+  if(opts.skipQuote) return;
+  if(window.__timerUiReady && typeof refreshTimerQuote==='function') refreshTimerQuote(true);
+}
+let moodCloseTimer=null;
+const MOOD_CLOSE_DELAY=420; // ms — bridge gap from emoji → tray
+function openMoodTray(open){
+  const dock = document.getElementById('timerDock');
+  if(open){
+    if(moodCloseTimer){ clearTimeout(moodCloseTimer); moodCloseTimer=null; }
+    if(dock) dock.classList.add('open');
+    if(moodWrap) moodWrap.classList.add('open');
+    liveMoodBtn.setAttribute('aria-expanded','true');
+  } else {
+    if(dock) dock.classList.remove('open');
+    if(moodWrap) moodWrap.classList.remove('open');
+    liveMoodBtn.setAttribute('aria-expanded','false');
+  }
+}
+function scheduleMoodClose(){
+  if(moodCloseTimer) clearTimeout(moodCloseTimer);
+  moodCloseTimer=setTimeout(()=>openMoodTray(false), MOOD_CLOSE_DELAY);
+}
+function cancelMoodClose(){
+  if(moodCloseTimer){ clearTimeout(moodCloseTimer); moodCloseTimer=null; }
+}
+(function initMood(){
+  let saved=null; try{ saved=localStorage.getItem('pt1_live_mood'); }catch(e){}
+  applyLiveMood(saved || '😊');
+})();
+function onMoodZoneEnter(){
+  cancelMoodClose();
+  openMoodTray(true);
+}
+function onMoodZoneLeave(){
+  scheduleMoodClose();
+}
+moodWrap.addEventListener('mouseenter', onMoodZoneEnter);
+moodWrap.addEventListener('mouseleave', onMoodZoneLeave);
+// Hovering the pomodoro dock also reveals the emoji list
+const _timerDock = document.getElementById('timerDock');
+if(_timerDock){
+  _timerDock.addEventListener('mouseenter', onMoodZoneEnter);
+  _timerDock.addEventListener('mouseleave', onMoodZoneLeave);
+}
+liveMoodBtn.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  window.__audioGesture = true;
+  unlockAudio();
+  cancelMoodClose();
+  const dock = document.getElementById('timerDock');
+  openMoodTray(!(dock && dock.classList.contains('open')));
+});
+document.getElementById('moodTray').addEventListener('click', (e)=>{
+  const pick = e.target.closest('.mood-pick');
+  if(!pick) return;
+  e.stopPropagation();
+  window.__audioGesture = true;
+  unlockAudio();
+  if(typeof moodAutoMode!=='undefined') moodAutoMode = false;
+  applyLiveMood(pick.dataset.mood);
+  cancelMoodClose();
+  openMoodTray(true);
+});
+document.addEventListener('click', (e)=>{
+  const dock = document.getElementById('timerDock');
+  if(dock && !dock.contains(e.target)) openMoodTray(false);
+});
+document.addEventListener('keydown', (e)=>{
+  if(e.key==='Escape') openMoodTray(false);
+});
+
+/* —— Web Audio bells (offline, no MP3) —— */
+let audioCtx=null, bellPersistTimer=null, bellOscNodes=[];
+function unlockAudio(){
+  // Browsers block AudioContext until a real user gesture (click/keydown) — never from hover/timers
+  if(!window.__audioGesture) return;
+  try{
+    if(!audioCtx){
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return;
+      audioCtx = new AC();
+    }
+    if(audioCtx.state==='suspended'){
+      const p = audioCtx.resume();
+      if(p && typeof p.catch==='function') p.catch(function(){});
+    }
+  }catch(e){}
+}
+document.addEventListener('pointerdown', function(){ window.__audioGesture=true; unlockAudio(); }, {passive:true});
+document.addEventListener('keydown', function(){ window.__audioGesture=true; unlockAudio(); }, {passive:true});
+function stopBellPersist(){
+  if(bellPersistTimer){ clearInterval(bellPersistTimer); bellPersistTimer=null; }
+  bellOscNodes.forEach(n=>{ try{n.stop();}catch(e){} });
+  bellOscNodes=[];
+}
+function playTone(freq, dur, type, gainPeak, when){
+  if(!audioCtx) return;
+  const t0 = (when!=null?when:audioCtx.currentTime);
+  const osc = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  osc.type = type||'sine';
+  osc.frequency.setValueAtTime(freq, t0);
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(gainPeak||0.18, t0+0.02);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0+dur);
+  osc.connect(g); g.connect(audioCtx.destination);
+  osc.start(t0); osc.stop(t0+dur+0.05);
+  bellOscNodes.push(osc);
+}
+function chimeOnce(){
+  if(!window.__audioGesture) return;
+  unlockAudio();
+  if(!audioCtx || audioCtx.state!=='running') return;
+  const t = audioCtx.currentTime;
+  playTone(784, 0.55, 'sine', 0.2, t);
+  playTone(1046.5, 0.7, 'triangle', 0.12, t+0.08);
+}
+function chimePersist10s(){
+  if(!window.__audioGesture) return;
+  unlockAudio();
+  if(!audioCtx || audioCtx.state!=='running') return;
+  stopBellPersist();
+  const strike = ()=>{
+    const t = audioCtx.currentTime;
+    playTone(659.25, 0.9, 'sine', 0.22, t);
+    playTone(830.61, 1.1, 'triangle', 0.14, t+0.05);
+    playTone(987.77, 0.8, 'sine', 0.1, t+0.12);
+  };
+  strike();
+  let elapsed=0;
+  bellPersistTimer = setInterval(()=>{
+    elapsed+=1200;
+    if(elapsed>=10000){ stopBellPersist(); return; }
+    strike();
+  }, 1200);
+  setTimeout(stopBellPersist, 10500);
+}
+
+/* —— Global auto timer + persist + mood quotes —— */
+const FOCUS_SEC = 25*60, BREAK_SEC = 5*60;
+const TIMER_LS = 'pt1_pomodoro_v1';
+const CYCLE_LS = 'pt1_pomo_cycle_v1';
+const QUOTE_META_LS = 'pt1_quote_meta_v1';
+timerMode = 'focus';
+let secondsLeft = FOCUS_SEC;
+let phaseEndsAt = 0; // epoch ms when current phase hits 0
+let timerInterval = null;
+let pomodoroCycle = 0;
+let lastQuoteThreshold = null; // number (focus) or 'break'
+let quoteMeta = { threshold: null, text: '', mood: '', mode: 'focus' };
+const timerDisplay = document.getElementById('globalTimerDisplay');
+const timerModeLabel = document.getElementById('globalTimerMode');
+const breakModal = document.getElementById('breakModal');
+const breakModalClock = document.getElementById('breakModalClock');
+const timerDock = document.getElementById('timerDock');
+const timerResetBtn = document.getElementById('timerResetBtn');
+
+const MOOD_QUOTES = {
+  '😊': [
+    {text:"Joy is not in things; it is in us.", author:"Richard Wagner"},
+    {text:"Happiness depends upon ourselves.", author:"Aristotle"},
+    {text:"The most wasted of days is one without laughter.", author:"e. e. cummings"},
+    {text:"It is the mark of an educated mind to be able to entertain a thought without accepting it.", author:"Aristotle"},
+    {text:"Raise your words, not voice. It is rain that grows flowers, not thunder.", author:"Rumi"}
+  ],
+  '🤩': [
+    {text:"Wonder is the beginning of wisdom.", author:"Socrates"},
+    {text:"The important thing is not to stop questioning.", author:"Albert Einstein"},
+    {text:"In all things of nature there is something of the marvelous.", author:"Aristotle"},
+    {text:"Curiosity is the wick in the candle of learning.", author:"William Arthur Ward"},
+    {text:"The more I learn, the more I realize how much I don’t know.", author:"Albert Einstein"}
+  ],
+  '😎': [
+    {text:"Keep cool; anger is not an argument.", author:"Daniel Webster"},
+    {text:"Nothing can bring you peace but yourself.", author:"Ralph Waldo Emerson"},
+    {text:"He who is not everyday conquering some fear has not learned the secret of life.", author:"Ralph Waldo Emerson"},
+    {text:"Style is a simple way of saying complicated things.", author:"Jean Cocteau"},
+    {text:"Knowledge without action is wastefulness and action without knowledge is foolishness.", author:"Al-Ghazali"}
+  ],
+  '🙂': [
+    {text:"Be not like a bell, which summons others to prayer but itself remains outside.", author:"Saadi Shirazi"},
+    {text:"You become what you give your attention to.", author:"Epictetus"},
+    {text:"True happiness is to enjoy the present, without anxious dependence upon the future.", author:"Seneca"},
+    {text:"Simplicity is the ultimate sophistication.", author:"Leonardo da Vinci"},
+    {text:"Do what you can, with what you have, where you are.", author:"Theodore Roosevelt"}
+  ],
+  '😐': [
+    {text:"A man’s worth lies in what he pursues.", author:"Al-Mutanabbi"},
+    {text:"It is not that we have so little time, but that we lose so much.", author:"Seneca"},
+    {text:"Silence is the garden of thought.", author:"Ali ibn Abi Talib"},
+    {text:"Contentment is a treasure that never decreases.", author:"Popular Islamic saying"},
+    {text:"Patience is bitter, but its fruit is sweet.", author:"Aristotle"}
+  ],
+  '😌': [
+    {text:"What you seek is seeking you.", author:"Rumi"},
+    {text:"Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.", author:"Rumi"},
+    {text:"Rest and be thankful.", author:"William Wordsworth"},
+    {text:"Be still, and the quiet will teach you.", author:"Popular saying"},
+    {text:"There is virtue in work and there is virtue in rest.", author:"Anne Morrow Lindbergh"}
+  ],
+  '😤': [
+    {text:"In the middle of difficulty lies opportunity.", author:"Albert Einstein"},
+    {text:"The pen is mightier than the sword.", author:"Edward Bulwer-Lytton"},
+    {text:"The best way out is always through.", author:"Robert Frost"},
+    {text:"Energy and persistence conquer all things.", author:"Benjamin Franklin"},
+    {text:"Difficulty is what wakes up the genius.", author:"Al-Mutanabbi"}
+  ],
+  '😠': [
+    {text:"Anybody can become angry — that is easy; but to be angry with the right person… that is not easy.", author:"Aristotle"},
+    {text:"Speak when you are angry and you will make the best speech you will ever regret.", author:"Ambrose Bierce"},
+    {text:"Anger, if not restrained, is frequently more hurtful to us than the injury that provokes it.", author:"Seneca"},
+    {text:"Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.", author:"Mark Twain"},
+    {text:"How much more grievous are the consequences of anger than the causes of it.", author:"Marcus Aurelius"}
+  ],
+  '😢': [
+    {text:"Shared joy is a double joy; shared sorrow is half a sorrow.", author:"Swedish proverb"},
+    {text:"Heavy hearts, like heavy clouds in the sky, are best relieved by the letting of a little water.", author:"Christopher Morley"},
+    {text:"There is a sacredness in tears.", author:"Washington Irving"},
+    {text:"The wound is the place where the Light enters you.", author:"Rumi"},
+    {text:"Grief is the price we pay for love.", author:"Queen Elizabeth II"}
+  ],
+  '😭': [
+    {text:"You cannot protect yourself from sadness without protecting yourself from happiness.", author:"Jonathan Safran Foer"},
+    {text:"Heaven knows we need never be ashamed of our tears.", author:"Charles Dickens"},
+    {text:"Give sorrow words; the grief that does not speak whispers the o’er-fraught heart and bids it break.", author:"William Shakespeare"},
+    {text:"To weep is to make less the depth of grief.", author:"William Shakespeare"},
+    {text:"The deeper that sorrow carves into your being, the more joy you can contain.", author:"Kahlil Gibran"}
+  ],
+  '🥱': [
+    {text:"Dawn does not come twice to awaken a person.", author:"Arab proverb"},
+    {text:"A well-spent day brings happy sleep.", author:"Leonardo da Vinci"},
+    {text:"Early to bed and early to rise makes a man healthy, wealthy, and wise.", author:"Benjamin Franklin"},
+    {text:"How much more grievous are the consequences of anger than the causes of it.", author:"Marcus Aurelius"},
+    {text:"Even a soul submerged in sleep is hard at work.", author:"Heraclitus"}
+  ],
+  '😴': [
+    {text:"Sleep that knits up the ravelled sleeve of care.", author:"William Shakespeare"},
+    {text:"There is a time for many words, and there is also a time for sleep.", author:"Homeros (Ὅμηρος)"},
+    {text:"A good laugh and a long sleep are the best cures.", author:"Irish proverb"},
+    {text:"Dreams are the touchstones of our characters.", author:"Henry David Thoreau"},
+    {text:"Sleep is the twin of death.", author:"Homeros (Ὅμηρος)"}
+  ],
+  '🧘': [
+    {text:"The happiness of your life depends upon the quality of your thoughts.", author:"Marcus Aurelius"},
+    {text:"To know yourself is to know the world.", author:"Al-Biruni"},
+    {text:"Take from your health for your illness, and from your youth for your age.", author:"Popular Arabic saying"},
+    {text:"Let the beauty of what you love be what you do.", author:"Rumi"},
+    {text:"Silence is a source of great strength.", author:"Lao Tzu"}
+  ],
+  '🌿': [
+    {text:"Adopt the pace of nature: her secret is patience.", author:"Ralph Waldo Emerson"},
+    {text:"In every walk with nature one receives far more than he seeks.", author:"John Muir"},
+    {text:"Nature does not hurry, yet everything is accomplished.", author:"Lao Tzu"},
+    {text:"Look deep into nature, and then you will understand everything better.", author:"Albert Einstein"},
+    {text:"The clearest way into the Universe is through a forest wilderness.", author:"John Muir"}
+  ],
+  '☕': [
+    {text:"A cup of tea brings a moment of stillness.", author:"Popular saying"},
+    {text:"I have measured out my life with coffee spoons.", author:"T. S. Eliot"},
+    {text:"With food enough and a quiet mind, little else is needed.", author:"Popular saying"},
+    {text:"First rest, then clarity.", author:"Popular saying"},
+    {text:"Small habits, repeated, remake a life.", author:"Popular saying"}
+  ],
+  '🌙': [
+    {text:"The moon is a friend for the lonesome to talk to.", author:"Carl Sandburg"},
+    {text:"Words are the voice of the heart.", author:"Ibn Khaldun"},
+    {text:"Night is a time of rigor, but also of mercy.", author:"Colette"},
+    {text:"The night is long that never finds the day.", author:"William Shakespeare"},
+    {text:"A book is a garden carried in the pocket.", author:"Arab proverb"}
+  ],
+  '✨': [
+    {text:"There are more things in heaven and earth than are dreamt of in your philosophy.", author:"William Shakespeare"},
+    {text:"Even the darkest night will end and the sun will rise.", author:"Victor Hugo"},
+    {text:"We are all like the bright moon; we still have our darker side.", author:"Kahlil Gibran"},
+    {text:"Do not go where the path may lead, go instead where there is no path and leave a trail.", author:"Ralph Waldo Emerson"},
+    {text:"Dwell on the beauty of life. Watch the stars, and see yourself running with them.", author:"Marcus Aurelius"}
+  ]
+};
+const BREAK_QUOTES = [
+  {text:"Rest when you're weary. Refresh and renew yourself.", author:"Ralph Marston"},
+  {text:"Take rest; a field that has rested gives a beautiful crop.", author:"Ovid"},
+  {text:"Almost everything will work again if you unplug it for a few minutes, including you.", author:"Anne Lamott"},
+  {text:"There is virtue in work and there is virtue in rest.", author:"Anne Morrow Lindbergh"},
+  {text:"Nowhere can man find a quieter or more untroubled retreat than in his own soul.", author:"Marcus Aurelius"},
+  {text:"To do two things at once is to do neither.", author:"Publilius Syrus"},
+  {text:"He that can take rest is greater than he that can take cities.", author:"Benjamin Franklin"}
+];
+let quotePoolUsed = {};
+
+/* —— Skins by mood family + pomodoro cycle —— */
+const SKINS_BY_FAMILY = {
+  'mood-happy': ['summit-amber','amber-tide','aurora','copper-ember'],
+  'mood-calm': ['teal-rift','aurora','rib-haze','grid-haze'],
+  'mood-neutral': ['grid-haze','violet-mist','aurora','rib-haze'],
+  'mood-fierce': ['copper-ember','amber-tide','deep-ink','rib-haze'],
+  'mood-mad': ['deep-ink','copper-ember','amber-tide'],
+  'mood-sad': ['deep-ink','violet-mist','teal-rift','rib-haze'],
+  'mood-crying': ['deep-ink','violet-mist','aurora'],
+  'mood-sleepy': ['violet-mist','deep-ink','grid-haze','rib-haze']
+};
+const CURSOR_SKINS = ['ring-screen','ring-tight','ring-gold','pill','beam-v','beam-h','diamond','comma'];
+window.__skinsReady = false;
+
+function currentMoodFamily(){
+  const m = (typeof resolveMood==='function') ? resolveMood(currentMoodEmoji) : {cls:'mood-neutral'};
+  return m.cls || 'mood-neutral';
+}
+function loadCycle(){
+  try{
+    const n = parseInt(localStorage.getItem(CYCLE_LS)||'0',10);
+    pomodoroCycle = Number.isFinite(n) && n>=0 ? n : 0;
+  }catch(e){ pomodoroCycle = 0; }
+}
+function saveCycle(){
+  try{ localStorage.setItem(CYCLE_LS, String(pomodoroCycle)); }catch(e){}
+}
+function applySkin(){
+  if(!window.__skinsReady) return;
+  const fam = currentMoodFamily();
+  const list = SKINS_BY_FAMILY[fam] || SKINS_BY_FAMILY['mood-neutral'];
+  // cycle selects skin within mood family — new focus cycle => new index
+  const skin = list[Math.abs(pomodoroCycle|0) % list.length];
+  document.documentElement.setAttribute('data-skin', skin);
+}
+function applyCursorSkin(forceNew){
+  if(!window.__skinsReady) return;
+  const cur = document.documentElement.getAttribute('data-cursor');
+  let next;
+  if(forceNew){
+    next = pickRandomFrom(CURSOR_SKINS, cur);
+  } else {
+    next = CURSOR_SKINS[Math.abs(pomodoroCycle|0) % CURSOR_SKINS.length];
+  }
+  document.documentElement.setAttribute('data-cursor', next);
+}
+function pickRandomFrom(pool, avoid){
+  const opts = pool.filter(x => x !== avoid);
+  const src = opts.length ? opts : pool.slice();
+  return src[Math.floor(Math.random()*src.length)];
+}
+function randomizeFocusMood(){
+  const next = pickRandomFrom(FOCUS_MOOD_POOL, currentMoodEmoji);
+  moodAutoMode = true;
+  applyLiveMood(next, {skipQuote:true});
+}
+function randomizeBreakMood(){
+  const next = pickRandomFrom(BREAK_MOOD_POOL, currentMoodEmoji);
+  moodAutoMode = true;
+  applyLiveMood(next, {skipQuote:true});
+}
+function bumpFocusCycle(){
+  pomodoroCycle = (pomodoroCycle|0) + 1;
+  saveCycle();
+  // Every pomodoro cycle = new theme: background skin + cursor skin
+  applySkin();
+  applyCursorSkin(true);
+}
+window.__skinsReady = true;
+loadCycle();
+applySkin();
+applyCursorSkin(false);
+
+function normalizeQuote(q){
+  if(q && typeof q==='object') return {text:q.text||'', author:q.author||''};
+  return {text:String(q||''), author:''};
+}
+function pickQuote(emoji, isBreak){
+  const pool = isBreak ? BREAK_QUOTES : (MOOD_QUOTES[emoji] || MOOD_QUOTES['😐'] || BREAK_QUOTES);
+  const key = (isBreak?'break:':'mood:') + (isBreak?'x':emoji);
+  if(!quotePoolUsed[key]) quotePoolUsed[key] = [];
+  let used = quotePoolUsed[key];
+  let options = pool.filter(q => !used.includes(normalizeQuote(q).text));
+  if(!options.length){ used = []; quotePoolUsed[key] = used; options = pool.slice(); }
+  const q = normalizeQuote(options[Math.floor(Math.random()*options.length)]);
+  used.push(q.text);
+  quotePoolUsed[key] = used;
+  try{ localStorage.setItem('pt1_quote_used', JSON.stringify(quotePoolUsed)); }catch(e){}
+  return q;
+}
+(function loadQuoteUsed(){
+  try{
+    const raw = localStorage.getItem('pt1_quote_used');
+    if(raw) quotePoolUsed = JSON.parse(raw) || {};
+  }catch(e){}
+})();
+(function loadQuoteMeta(){
+  try{
+    const raw = localStorage.getItem(QUOTE_META_LS);
+    if(raw) quoteMeta = Object.assign(quoteMeta, JSON.parse(raw)||{});
+    lastQuoteThreshold = quoteMeta.threshold;
+  }catch(e){}
+})();
+loadCycle();
+
+function focusQuoteThreshold(sec){
+  // remaining-seconds bands for 25→20→15→10→5 (last holds 5→0)
+  if(sec > 1200) return 1500;
+  if(sec > 900) return 1200;
+  if(sec > 600) return 900;
+  if(sec > 300) return 600;
+  return 300;
+}
+function currentQuoteThreshold(){
+  if(timerMode==='break') return 'break';
+  return focusQuoteThreshold(secondsLeft);
+}
+function saveQuoteMeta(){
+  try{ localStorage.setItem(QUOTE_META_LS, JSON.stringify(quoteMeta)); }catch(e){}
+}
+function setQuoteText(q, threshold){
+  const label = document.getElementById('globalTimerMode');
+  const by = document.getElementById('globalTimerAuthor');
+  if(!label) return;
+  const item = normalizeQuote(q);
+  label.textContent = item.text;
+  label.title = item.author ? (item.text + ' — ' + item.author) : item.text;
+  label.dataset.q = item.text;
+  if(by){
+    by.classList.remove('show');
+    by.textContent = item.author ? ('— ' + item.author) : '';
+    by.title = item.author || '';
+    // slow italic reveal
+    void by.offsetWidth;
+    requestAnimationFrame(()=>{ requestAnimationFrame(()=> by.classList.add('show')); });
+  }
+  lastQuoteThreshold = threshold;
+  quoteMeta = {
+    threshold: threshold,
+    text: item.text,
+    author: item.author || '',
+    mood: currentMoodEmoji,
+    mode: timerMode
+  };
+  saveQuoteMeta();
+}
+function fmt(sec){
+  sec = Math.max(0, Math.floor(sec));
+  const m=Math.floor(sec/60), s=sec%60;
+  return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+function syncSecondsFromDeadline(){
+  secondsLeft = Math.max(0, Math.ceil((phaseEndsAt - Date.now())/1000));
+}
+function persistTimer(){
+  try{
+    localStorage.setItem(TIMER_LS, JSON.stringify({
+      mode: timerMode,
+      endsAt: phaseEndsAt,
+      focusSec: FOCUS_SEC,
+      breakSec: BREAK_SEC,
+      quoteThreshold: lastQuoteThreshold,
+      cycle: pomodoroCycle
+    }));
+  }catch(e){}
+}
+function refreshTimerQuote(forceNew){
+  if(!window.__timerUiReady) return;
+  const label = document.getElementById('globalTimerMode');
+  if(!label) return;
+  const emoji = (typeof currentMoodEmoji!=='undefined' && currentMoodEmoji) ? currentMoodEmoji : '😊';
+  const isBreak = (typeof timerMode!=='undefined' && timerMode==='break');
+  const th = currentQuoteThreshold();
+  if(!forceNew && quoteMeta && quoteMeta.text && quoteMeta.threshold===th && quoteMeta.mode===(isBreak?'break':'focus')){
+    label.textContent = quoteMeta.text;
+    label.title = quoteMeta.author ? (quoteMeta.text + ' — ' + quoteMeta.author) : quoteMeta.text;
+    label.dataset.q = quoteMeta.text;
+    const by = document.getElementById('globalTimerAuthor');
+    if(by){
+      by.textContent = quoteMeta.author ? ('— ' + quoteMeta.author) : '';
+      by.classList.add('show');
+    }
+    lastQuoteThreshold = th;
+    return;
+  }
+  if(forceNew || !label.dataset.q || lastQuoteThreshold!==th){
+    const q = pickQuote(emoji, isBreak);
+    setQuoteText(q, th);
+  }
+}
+function maybeAdvanceQuoteOnTick(){
+  if(!window.__timerUiReady) return;
+  const th = currentQuoteThreshold();
+  if(th !== lastQuoteThreshold){
+    // crossed a 5-min mark or phase differs — new quote once
+    const emoji = currentMoodEmoji || '😊';
+    const isBreak = timerMode==='break';
+    const q = pickQuote(emoji, isBreak);
+    setQuoteText(q, th);
+    persistTimer();
+  }
+}
+function setPhase(mode, durationSec, announceQuote){
+  const prev = timerMode;
+  timerMode = mode;
+  phaseEndsAt = Date.now() + durationSec*1000;
+  syncSecondsFromDeadline();
+  // reset threshold tracking on phase change so break/focus get fresh quote
+  if(prev !== mode){
+    lastQuoteThreshold = null;
+    quoteMeta.threshold = null;
+  }
+  persistTimer();
+  if(typeof applySkin==='function') applySkin();
+  if(typeof applyCursorSkin==='function') applyCursorSkin();
+  if(announceQuote !== false) refreshTimerQuote(true);
+  renderTimer();
+}
+let breakModalDismissed = false;
+function dismissBreakModal(){
+  breakModalDismissed = true;
+  if(breakModal) breakModal.classList.remove('show');
+}
+function renderTimer(){
+  syncSecondsFromDeadline();
+  timerDisplay.textContent = fmt(secondsLeft);
+  if(timerMode==='break'){
+    if(breakModalClock) breakModalClock.textContent = fmt(secondsLeft);
+    if(!breakModalDismissed) breakModal.classList.add('show');
+    else breakModal.classList.remove('show');
+  } else {
+    breakModalDismissed = false;
+    breakModal.classList.remove('show');
+  }
+  if(window.__timerUiReady){
+    if(!timerModeLabel.dataset.q) refreshTimerQuote(true);
+    else maybeAdvanceQuoteOnTick();
+  }
+}
+function showToast(msg, ms){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t=setTimeout(()=>el.classList.remove('show'), ms||2800);
+}
+function enterBreak(){
+  breakModalDismissed = false;
+  randomizeBreakMood();
+  setPhase('break', BREAK_SEC, true);
+  chimeOnce();
+  showToast('Break · 5:00', 2800);
+}
+function enterFocus(fromBreak){
+  bumpFocusCycle();
+  randomizeFocusMood();
+  setPhase('focus', FOCUS_SEC, true);
+  if(fromBreak){
+    chimePersist10s();
+    showToast('Back at it · 25:00', 2800);
+  } else {
+    showToast('Focus · 25:00', 1800);
+  }
+}
+function resetTimer(){
+  unlockAudio();
+  if(typeof stopBellPersist==='function') stopBellPersist();
+  bumpFocusCycle();
+  randomizeFocusMood();
+  setPhase('focus', FOCUS_SEC, true);
+  showToast('Timer reset · 25:00', 2200);
+}
+function tickTimer(){
+  syncSecondsFromDeadline();
+  renderTimer();
+  if(secondsLeft<=0){
+    timerDisplay.style.color='var(--gold)';
+    setTimeout(()=>{timerDisplay.style.color='';},900);
+    if(timerMode==='focus') enterBreak();
+    else enterFocus(true);
+  } else {
+    if(Date.now() % 15000 < 1000) persistTimer();
+  }
+}
+function restoreTimer(){
+  try{
+    const raw = localStorage.getItem(TIMER_LS);
+    if(raw){
+      const data = JSON.parse(raw);
+      if(data && data.endsAt){
+        timerMode = (data.mode==='break') ? 'break' : 'focus';
+        phaseEndsAt = data.endsAt;
+        if(typeof data.cycle==='number'){ pomodoroCycle = data.cycle; saveCycle(); }
+        if(data.quoteThreshold!=null) lastQuoteThreshold = data.quoteThreshold;
+        syncSecondsFromDeadline();
+        let guard=0;
+        let crossedPhases=0;
+        while(secondsLeft<=0 && guard++<20){
+          if(timerMode==='focus'){
+            timerMode='break';
+            phaseEndsAt = Date.now() + BREAK_SEC*1000;
+          } else {
+            timerMode='focus';
+            phaseEndsAt = Date.now() + FOCUS_SEC*1000;
+            bumpFocusCycle();
+          }
+          crossedPhases++;
+          syncSecondsFromDeadline();
+        }
+        // Only auto-roll mood if we crossed into a new phase while away
+        if(crossedPhases>0){
+          if(timerMode==='break') randomizeBreakMood();
+          else randomizeFocusMood();
+        }
+        if(typeof applySkin==='function') applySkin();
+        if(typeof applyCursorSkin==='function') applyCursorSkin();
+        persistTimer();
+        // recompute quote from remaining — reuse persisted if same threshold
+        lastQuoteThreshold = null; // force check via meta
+        if(quoteMeta && quoteMeta.text){
+          const th = currentQuoteThreshold();
+          if(quoteMeta.threshold===th && quoteMeta.mode===(timerMode==='break'?'break':'focus')){
+            const label=document.getElementById('globalTimerMode');
+            if(label){ label.textContent=quoteMeta.text; label.title=quoteMeta.text; label.dataset.q=quoteMeta.text; }
+            lastQuoteThreshold = th;
+          }
+        }
+        renderTimer();
+        if(window.__timerUiReady) refreshTimerQuote(false);
+        return;
+      }
+    }
+  }catch(e){}
+  setPhase('focus', FOCUS_SEC, true);
+}
+function startGlobalTimer(){
+  if(timerInterval) clearInterval(timerInterval);
+  restoreTimer();
+  timerInterval = setInterval(tickTimer, 1000);
+}
+const resetModal = document.getElementById('resetModal');
+function openResetConfirm(show){
+  if(!resetModal) return;
+  resetModal.classList.toggle('show', !!show);
+}
+const cursorRandomBtn = document.getElementById('cursorRandomBtn');
+if(cursorRandomBtn){
+  cursorRandomBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    window.__audioGesture = true;
+    unlockAudio();
+    if(typeof applyCursorSkin==='function') applyCursorSkin(true);
+    cancelMoodClose();
+    openMoodTray(true);
+  });
+}
+const breakCloseBtn = document.getElementById('breakCloseBtn');
+if(breakCloseBtn){
+  breakCloseBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    dismissBreakModal();
+  });
+}
+if(breakModal){
+  breakModal.addEventListener('click', (e)=>{
+    if(e.target===breakModal) dismissBreakModal();
+  });
+}
+timerResetBtn.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  unlockAudio();
+  openMoodTray(false);
+  openResetConfirm(true);
+});
+document.getElementById('resetCancelBtn').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  openResetConfirm(false);
+});
+document.getElementById('resetConfirmBtn').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  openResetConfirm(false);
+  resetTimer();
+});
+resetModal.addEventListener('click', (e)=>{
+  if(e.target===resetModal) openResetConfirm(false);
+});
+timerDisplay.addEventListener('dblclick',()=>{
+  if(timerMode==='focus'){ enterBreak(); }
+  else { enterFocus(false); }
+});
+if(typeof applySkin==='function') applySkin();
+if(typeof applyCursorSkin==='function') applyCursorSkin();
+startGlobalTimer();
+
+window.__timerUiReady = true;
+refreshTimerQuote(false);
+if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true);
+
+/* —— Progress storage (best ever + current run) —— */
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function formBestPct(L){
+  const v = parseInt(lsGet('pt1_form_'+L+'_best_pct')||'0',10);
+  return Number.isFinite(v)? Math.max(0,Math.min(100,v)) : 0;
+}
+function formRunPct(L){
+  const v = parseInt(lsGet('pt1_form_'+L+'_run_pct')||'0',10);
+  return Number.isFinite(v)? Math.max(0,Math.min(100,v)) : 0;
+}
+function formHubPct(L){
+  return Math.max(formBestPct(L), formRunPct(L));
+}
+function setBestPct(L, pct){
+  const next = Math.max(formBestPct(L), Math.max(0,Math.min(100, Math.round(pct))));
+  lsSet('pt1_form_'+L+'_best_pct', String(next));
+  return next;
+}
+function setRunPct(L, pct){
+  const p = Math.max(0,Math.min(100, Math.round(pct)));
+  lsSet('pt1_form_'+L+'_run_pct', String(p));
+  return p;
+}
+function runStateKey(L){ return 'pt1_form_'+L+'_run_state'; }
+function clearRunProgress(L){
+  lsSet('pt1_form_'+L+'_run_pct', '0');
+  try{ localStorage.removeItem(runStateKey(L)); }catch(e){}
+  // do NOT touch best_pct / done / score / mood stamp
+}
+function saveRunState(){
+  if(!currentForm || !questions.length) return;
+  const lockedCount = answers.filter(a=>a!==null).length;
+  const pct = Math.round((lockedCount / Math.max(1,questions.length)) * 100);
+  setRunPct(currentForm, pct);
+  // mid-run best tracks progress; finished 100% stays forever via setBestPct on finish
+  if(pct < 100) setBestPct(currentForm, pct);
+  const payload = {
+    answers: answers.slice(),
+    current: current,
+    lockedCount: lockedCount,
+    updated: Date.now()
+  };
+  lsSet(runStateKey(currentForm), JSON.stringify(payload));
+}
+function loadRunState(L){
+  const raw = lsGet(runStateKey(L));
+  if(!raw) return null;
+  try{
+    const data = JSON.parse(raw);
+    if(!data || !Array.isArray(data.answers)) return null;
+    return data;
+  }catch(e){ return null; }
+}
+function firstUnansweredIndex(ans){
+  for(let i=0;i<ans.length;i++){ if(ans[i]===null) return i; }
+  return Math.max(0, ans.length-1);
+}
+function updateRunFromAnswers(){
+  if(!currentForm) return;
+  saveRunState();
+}
+
+function refreshHubCards(){
+  FORMS.forEach(L=>{
+    let mood=null, done=null, score=null;
+    mood=lsGet('pt1_form_'+L+'_mood');
+    done=lsGet('pt1_form_'+L+'_done');
+    score=lsGet('pt1_form_'+L+'_score');
+    const stamp=document.getElementById('stamp_'+L);
+    const meta=document.getElementById('meta_'+L);
+    const pctEl=document.getElementById('pct_'+L);
+    stamp.textContent=mood||'';
+    const hubPct = formHubPct(L);
+    const best = formBestPct(L);
+    const run = formRunPct(L);
+    const answeredApprox = Math.round(hubPct/100*20);
+    pctEl.textContent = answeredApprox+'/20 · '+hubPct+'%';
+    if(hubPct>=100 || done){
+      meta.textContent='complete'+(score!=null?(' · last '+score+'/20'):'')+(mood?(' · '+mood):'');
+    } else if(hubPct>0 || run>0){
+      meta.textContent='in progress'+(best>=100?' · best 100%':' · best '+best+'%');
+    } else {
+      meta.textContent='not started';
+    }
+  });
+}
+refreshHubCards();
+
+document.querySelectorAll('.card[data-form]').forEach(card=>{
+  card.addEventListener('click',()=>{ unlockAudio(); openForm(card.dataset.form); });
+});
+
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function openForm(letter, opts){
+  opts = opts || {};
+  const forceFresh = !!opts.fresh; // Restart path
+  currentForm = letter;
+  questions = FORM_BANK[letter].slice();
+  const n = questions.length;
+  const done = lsGet('pt1_form_'+letter+'_done');
+  const saved = forceFresh ? null : loadRunState(letter);
+
+  // Finished form with no active mid-run → show results + Restart (don't wipe best %)
+  if(!forceFresh && done && (!saved || (saved.answers||[]).every(a=>a!==null))){
+    current = n-1;
+    answers = (saved && saved.answers && saved.answers.length===n) ? saved.answers.slice() : new Array(n).fill(0);
+    // if no answer detail, still show results from last score
+    quizActive = false;
+    startTime = Date.now();
+    document.getElementById('quizTitle').textContent='Form '+letter;
+    document.getElementById('finalHeading').textContent='Form '+letter+' complete';
+    document.getElementById('reviewHeading').textContent='Answer review · Form '+letter;
+    document.getElementById('quizFoot').textContent='Phys101 Medical Physics · PT1 practice · Form '+letter;
+    document.getElementById('statusText').textContent='form '+letter;
+    document.getElementById('quizScreen').style.display='none';
+    document.getElementById('reviewScreen').style.display='none';
+    document.getElementById('finalScreen').style.display='block';
+    const sc = lsGet('pt1_form_'+letter+'_score');
+    const s = sc!=null ? parseInt(sc,10) : score();
+    document.getElementById('scoreBig').textContent = s+' / '+questions.length;
+    document.getElementById('finalStats').textContent = (Number.isFinite(s)?Math.round(s/questions.length*100):0)+'%  ·  already finished · Restart keeps hub 100%';
+    document.getElementById('statusText').textContent='results';
+    document.getElementById('statusDetail').textContent='finished · restart available';
+    showView('quizView');
+    refreshHubCards();
+    return;
+  }
+
+  if(saved && Array.isArray(saved.answers) && saved.answers.length===n){
+    answers = saved.answers.map(a => (a===null || a===undefined) ? null : a);
+    // Resume at first unanswered so Back walks answered queue
+    current = firstUnansweredIndex(answers);
+    // If everything answered but not marked done, go to finish
+    if(answers.every(a=>a!==null)){
+      current = n-1;
+    }
+  } else {
+    answers = new Array(n).fill(null);
+    current = 0;
+  }
+  locked = answers[current]!==null;
+  startTime = Date.now();
+  quizActive = true;
+  refreshHubCards();
+  if(elapsedTimer) clearInterval(elapsedTimer);
+  elapsedTimer = setInterval(()=>{
+    const e=Math.floor((Date.now()-startTime)/1000);
+    document.getElementById('elapsed').textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
+  },1000);
+  document.getElementById('quizTitle').textContent='Form '+letter;
+  document.getElementById('finalHeading').textContent='Form '+letter+' complete';
+  document.getElementById('reviewHeading').textContent='Answer review · Form '+letter;
+  document.getElementById('quizFoot').textContent='Phys101 Medical Physics · PT1 practice · Form '+letter;
+  document.getElementById('statusText').textContent='form '+letter;
+  document.getElementById('quizScreen').style.display='block';
+  document.getElementById('finalScreen').style.display='none';
+  document.getElementById('reviewScreen').style.display='none';
+  showView('quizView');
+  // If all answered mid-restore, finish
+  if(answers.every(a=>a!==null)){
+    finishQuiz(true);
+    return;
+  }
+  renderQuestion();
+  saveRunState();
+}
+
+function goHub(){
+  if(quizActive && currentForm){
+    saveRunState();
+  }
+  quizActive = false;
+  if(elapsedTimer){clearInterval(elapsedTimer);elapsedTimer=null;}
+  refreshHubCards();
+  showView('hubView');
+}
+
+function restartForm(){
+  if(!currentForm) return;
+  // Restart clears ONLY current run; best completion % stays
+  const L = currentForm;
+  clearRunProgress(L);
+  // keep done/best; allow a new attempt from Q1
+  lsSet('pt1_form_'+L+'_done', ''); // clear done flag for new attempt UI, best_pct untouched
+  // Actually: user wants 100% on hub to remain — keep done flag for hub display
+  // Re-set done if best is 100 so hub still shows complete
+  if(formBestPct(L)>=100) lsSet('pt1_form_'+L+'_done', '1');
+  openForm(L, {fresh:true});
+  showToast('Restarted · hub best % kept', 2600);
+}
+
+const catLabel={fundamentals:'fundamentals',elasticity:'elasticity',fluids_static:'fluids · static',fluids_flow:'fluids · flow'};
+
+function renderQuestion(){
+  const q=questions[current];
+  document.getElementById('qText').textContent=q.q;
+  document.getElementById('qNum').textContent=current+1;
+  const answeredN = answers.filter(a=>a!==null).length;
+  document.getElementById('progressBar').style.width=Math.round((answeredN/questions.length)*100)+'%';
+  document.getElementById('statusDetail').textContent='item '+(current+1)+' / 20 · '+answeredN+' locked';
+  document.getElementById('catTag').textContent=catLabel[q.cat]||q.cat;
+  const opts=document.getElementById('options'); opts.innerHTML='';
+  const answered=answers[current]!==null;
+  locked = answered;
+  q.options.forEach((opt,i)=>{
+    const btn=document.createElement('button');
+    btn.className='opt'; btn.type='button'; btn.dataset.key=String.fromCharCode(65+i);
+    btn.textContent=opt; btn.onclick=()=>selectAnswer(i);
+    if(answered){
+      btn.disabled=true;
+      if(i===q.correct) btn.classList.add('correct');
+      // do not grey/spoil other options as "wrong reveal" — only mark correct after lock
+    }
+    opts.appendChild(btn);
+  });
+  const fb=document.getElementById('feedback');
+  if(answered){
+    fb.className='feedback good';
+    fb.textContent='✓ '+q.explain;
+    document.getElementById('nextBtn').disabled=false;
+  } else {
+    fb.className='feedback idle';
+    fb.textContent='';
+    document.getElementById('nextBtn').disabled=true;
+  }
+  // Back walks the answered queue (any earlier index)
+  document.getElementById('backBtn').disabled = current===0;
+  document.getElementById('nextBtn').textContent=current===questions.length-1?'Finish ✓':'Next →';
+}
+
+function selectAnswer(idx){
+  if(!quizActive || locked || answers[current]!==null) return;
+  if(document.getElementById('quizScreen').style.display==='none') return;
+  const q=questions[current];
+  const panel=document.getElementById('mainPanel');
+  const fb=document.getElementById('feedback');
+  const opts=[...document.querySelectorAll('.opt')];
+
+  // REFUSE wrong — soft reject, do not advance, do not reveal correct by greying others
+  if(idx !== q.correct){
+    const btn = opts[idx];
+    if(btn){
+      btn.classList.remove('soft-wrong');
+      void btn.offsetWidth;
+      btn.classList.add('soft-wrong');
+      setTimeout(()=>btn.classList.remove('soft-wrong'), 480);
+    }
+    panel.classList.remove('wrong-pulse'); void panel.offsetWidth;
+    panel.classList.add('wrong-pulse');
+    setTimeout(()=>panel.classList.remove('wrong-pulse'), 500);
+    fb.className='feedback soft';
+    fb.textContent='not that one · try again';
+    clearTimeout(selectAnswer._softT);
+    selectAnswer._softT=setTimeout(()=>{
+      if(!locked){ fb.className='feedback idle'; fb.textContent=''; }
+    }, 900);
+    return;
+  }
+
+  // Correct — lock in, show explain, allow Next
+  locked = true;
+  answers[current] = idx;
+  opts.forEach((o,i)=>{ o.disabled=true; if(i===idx) o.classList.add('correct'); });
+  fb.className='feedback good';
+  fb.textContent='✓ '+q.explain;
+  panel.classList.add('correct-pulse');
+  setTimeout(()=>panel.classList.remove('correct-pulse'),650);
+  spawnConfetti();
+  spawnFireworkBurst(W*.5,H*.35,22);
+  document.getElementById('nextBtn').disabled=false;
+  updateRunFromAnswers();
+  refreshHubCards();
+}
+
+function goNext(){
+  if(!locked || answers[current]===null) return;
+  if(current<questions.length-1){
+    current++;
+    locked = answers[current]!==null;
+    renderQuestion();
+    saveRunState();
+  } else finishQuiz();
+}
+function goBack(){
+  if(current>0){
+    current--;
+    locked = answers[current]!==null;
+    renderQuestion();
+    saveRunState();
+  }
+}
+function score(){ let c=0; answers.forEach((a,i)=>{ if(a===questions[i].correct) c++; }); return c; }
+
+function finishQuiz(){
+  document.getElementById('quizScreen').style.display='none';
+  document.getElementById('reviewScreen').style.display='none';
+  document.getElementById('finalScreen').style.display='block';
+  const s=score(), e=Math.floor((Date.now()-startTime)/1000);
+  document.getElementById('scoreBig').textContent=s+' / '+questions.length;
+  document.getElementById('finalStats').textContent=Math.round(s/questions.length*100)+'%  ·  elapsed '+String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
+  document.getElementById('statusText').textContent='results';
+  document.getElementById('progressBar').style.width='100%';
+  const FORM_ID='pt1_form_'+currentForm;
+  lsSet(FORM_ID+'_score', String(s));
+  lsSet(FORM_ID+'_done', '1');
+  setRunPct(currentForm, 100);
+  setBestPct(currentForm, 100); // lock hub at 100% after first finish
+  // keep full answers so Back/review/resume still know the queue
+  lsSet(runStateKey(currentForm), JSON.stringify({answers:answers.slice(), current:questions.length-1, lockedCount:questions.length, updated:Date.now(), finished:true}));
+  quizActive = false;
+  spawnFireworkBurst(W*.5,H*.3,36);
+  restoreMoodUI();
+  refreshHubCards();
+}
+
+function showReview(){
+  document.getElementById('finalScreen').style.display='none';
+  document.getElementById('reviewScreen').style.display='block';
+  const list=document.getElementById('reviewList'); list.innerHTML='';
+  questions.forEach((q,i)=>{
+    const pick=answers[i], ok=pick===q.correct;
+    const div=document.createElement('div'); div.className='review-item';
+    div.innerHTML='<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div>'+
+      '<div class="rline '+(ok?'rok':'rbad')+'">Your pick: '+(pick==null?'—':String.fromCharCode(65+pick)+') '+escapeHtml(q.options[pick]))+'</div>'+
+      '<div class="rline rok">Correct: '+String.fromCharCode(65+q.correct)+') '+escapeHtml(q.options[q.correct])+'</div>'+
+      '<div class="rex">'+escapeHtml(q.explain)+'</div>';
+    list.appendChild(div);
+  });
+  document.getElementById('statusText').textContent='review';
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function restoreMoodUI(){
+  const MOOD_KEY='pt1_form_'+currentForm+'_mood';
+  let saved=null; try{saved=localStorage.getItem(MOOD_KEY);}catch(e){}
+  document.querySelectorAll('.mood-btn').forEach(btn=>btn.classList.toggle('selected',!!(saved&&btn.dataset.mood===saved)));
+  document.getElementById('moodLabel').textContent=saved?('stamped '+saved+' · saved on hub'):'tap one · stamps this form on the hub';
+}
+document.getElementById('moodContainer').addEventListener('click',e=>{
+  const btn=e.target.closest('.mood-btn'); if(!btn||!currentForm)return;
+  unlockAudio();
+  const mood=btn.dataset.mood;
+  try{localStorage.setItem('pt1_form_'+currentForm+'_mood',mood);}catch(err){}
+  document.querySelectorAll('.mood-btn').forEach(b=>b.classList.toggle('selected',b===btn));
+  document.getElementById('moodLabel').textContent='stamped '+mood+' · saved on hub';
+});
+
+function spawnConfetti(n=16){
+  const colors=moodFxColors();
+  for(let i=0;i<n;i++){const el=document.createElement('div');el.className='confetti';el.style.left=Math.random()*100+'vw';el.style.background=colors[i%colors.length];document.body.appendChild(el);setTimeout(()=>el.remove(),1400);}
+}
+function toggleFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});else document.exitFullscreen();}
+
+document.getElementById('fsBtn').onclick=toggleFullscreen;
+document.getElementById('hubBtn').onclick=goHub;
+document.getElementById('menuBtn').onclick=goHub;
+document.getElementById('reviewMenuBtn').onclick=goHub;
+document.getElementById('reviewBtn').onclick=showReview;
+document.getElementById('restartBtn').onclick=restartForm;
+document.getElementById('reviewBackBtn').onclick=()=>{document.getElementById('reviewScreen').style.display='none';document.getElementById('finalScreen').style.display='block';document.getElementById('statusText').textContent='results';};
+document.getElementById('backBtn').onclick=goBack;
+document.getElementById('nextBtn').onclick=goNext;
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='f'||e.key==='F'){ if(document.getElementById('quizView').classList.contains('active')) toggleFullscreen(); }
+  if(e.key==='Escape' && document.getElementById('quizView').classList.contains('active')){
+    if(moodWrap.classList.contains('open')){ openMoodTray(false); return; }
+    goHub(); return;
+  }
+  if(!document.getElementById('quizView').classList.contains('active')) return;
+  if(document.getElementById('quizScreen').style.display==='none') return;
+  const map={a:0,b:1,c:2,d:3,A:0,B:1,C:2,D:3,'1':0,'2':1,'3':2,'4':3};
+  if(map[e.key]!==undefined) selectAnswer(map[e.key]);
+  if(e.key==='Enter'||e.key==='ArrowRight') goNext();
+  if(e.key==='ArrowLeft') goBack();
+});
+
+
+/* —— Boot: load cloud bank then init hub —— */
+(function bootPortalExam(){
+  const gate = document.createElement('div');
+  gate.id = 'bankBootGate';
+  gate.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);z-index:9999;color:#dff;font-family:system-ui;';
+  gate.innerHTML = '<div style="padding:1.2rem 1.5rem;border-radius:1rem;background:rgba(10,16,28,.9);border:1px solid rgba(120,200,255,.25)">Loading Medical Physics bank…</div>';
+  document.body.appendChild(gate);
+  loadBankFromQuery().then(()=>{
+    gate.remove();
+    if(typeof refreshHubCards==='function') refreshHubCards();
+    // re-bind form cards if needed
+    document.querySelectorAll('#formGrid .card[data-form]').forEach(card=>{
+      // already bound in original; openForm uses FORM_BANK
+    });
+  }).catch(()=>{
+    gate.innerHTML = '<div style="padding:1.2rem 1.5rem;border-radius:1rem;background:rgba(40,10,10,.95);border:1px solid #f66;color:#fee">Failed to load question bank.<br><a href="../index.html" style="color:#8cf">Back to Study Portal</a></div>';
+  });
+})();
+
+</script>
+</body>
+</html>

@@ -79,11 +79,22 @@
       } else {
         const a = document.createElement('a');
         a.className = 'card';
-        a.href = `exam.html?bank=${encodeURIComponent(m.bank)}`;
+        if (m.href) {
+          const q = m.bank ? `?bank=${encodeURIComponent(m.bank)}` : '';
+          // banks path is from site root; rich exam lives under exams/ so rewrite
+          let bankParam = m.bank || '';
+          if (m.href.startsWith('exams/') && bankParam.startsWith('banks/')) {
+            bankParam = '../' + bankParam;
+          }
+          a.href = bankParam
+            ? `${m.href}?bank=${encodeURIComponent(bankParam)}`
+            : m.href;
+        } else {
+          a.href = `exam.html?bank=${encodeURIComponent(m.bank)}`;
+        }
         a.innerHTML = `
           <h3>${escapeHtml(m.title)}</h3>
           <p class="sub">${escapeHtml(m.subtitle || '')}</p>
-          <span class="meta">${escapeHtml(m.bank)}</span>
           <span class="go">Open exam →</span>
         `;
         cardsEl.appendChild(a);

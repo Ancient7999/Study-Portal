@@ -12,7 +12,8 @@
           "title": "Periodic Test 1",
           "subtitle": "Forms A\u2013H \u00b7 20 MCQs each",
           "bank": "banks/medphys/pt1.json",
-          "locked": false
+          "locked": false,
+          "href": "exams/medphys-pt1.html"
         },
         {
           "id": "pt2",
