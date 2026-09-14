@@ -11,25 +11,29 @@ service cloud.firestore {
       return v is string && v.size() >= minLen && v.size() <= maxLen;
     }
 
-    // Public catalog-like config (optional future). Read-only for clients.
     match /config/{docId} {
       allow read: if true;
       allow write: if false;
     }
 
-    // User profiles — owner write; anyone signed in can read basic profile
     match /profiles/{uid} {
       allow read: if signedIn();
       allow create, update: if isSelf(uid)
         && request.resource.data.keys().hasOnly([
-          'displayName', 'photoURL', 'bio', 'createdAt', 'updatedAt', 'mood'
+          'displayName', 'photoURL', 'bio', 'createdAt', 'updatedAt', 'mood',
+          'level', 'questionsAnswered'
         ])
         && isString(request.resource.data.displayName, 1, 40)
+        && request.resource.data.level is number
+        && request.resource.data.level >= 1
+        && request.resource.data.level <= 999
+        && request.resource.data.questionsAnswered is number
+        && request.resource.data.questionsAnswered >= 0
+        && request.resource.data.questionsAnswered <= 1000000
         && (!('bio' in request.resource.data) || isString(request.resource.data.bio, 0, 160));
       allow delete: if isSelf(uid);
     }
 
-    // Score history — append-only by owner
     match /scores/{scoreId} {
       allow read: if signedIn();
       allow create: if signedIn()
@@ -44,7 +48,6 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
-    // Best scores / leaderboard entry per user per material
     match /leaderboards/{materialId}/entries/{uid} {
       allow read: if signedIn();
       allow create, update: if isSelf(uid)
@@ -55,7 +58,6 @@ service cloud.firestore {
       allow delete: if isSelf(uid);
     }
 
-    // Study rooms metadata
     match /rooms/{roomId} {
       allow read: if signedIn();
       allow create: if signedIn()
@@ -66,7 +68,6 @@ service cloud.firestore {
       allow delete: if signedIn()
         && resource.data.hostUid == request.auth.uid;
 
-      // Chat messages (bounded fields; no edits)
       match /messages/{messageId} {
         allow read: if signedIn();
         allow create: if signedIn()
@@ -79,7 +80,6 @@ service cloud.firestore {
       }
     }
 
-    // Default deny
     match /{document=**} {
       allow read, write: if false;
     }
