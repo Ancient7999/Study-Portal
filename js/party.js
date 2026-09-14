@@ -67,17 +67,27 @@
   }
 
   function renderChips() {
+    let stack = document.getElementById('partyPresenceStack');
+    if (!stack) {
+      stack = document.createElement('div');
+      stack.id = 'partyPresenceStack';
+      stack.className = 'party-presence-stack';
+      document.body.appendChild(stack);
+    }
     let wrap = document.getElementById('partyChipRail');
     if (!wrap) {
       wrap = document.createElement('div');
       wrap.id = 'partyChipRail';
       wrap.className = 'party-chip-rail';
       wrap.setAttribute('aria-label', 'Party members');
-      document.body.appendChild(wrap);
+      stack.appendChild(wrap);
+    } else if (wrap.parentNode !== stack) {
+      stack.appendChild(wrap);
     }
     wrap.innerHTML = '';
     if (!state.party || !state.party.members) {
       wrap.classList.remove('show');
+      stack.classList.remove('show');
       return;
     }
     const entries = Object.keys(state.party.members).map((uid) => {
@@ -88,6 +98,7 @@
     entries.forEach((m) => {
       const chip = document.createElement('div');
       chip.className = 'party-mini-chip' + (m.leader ? ' leader' : '');
+      chip.setAttribute('data-uid', m.uid);
       chip.title = m.displayName + (m.leader ? ' (leader)' : '');
       const hue = hueFromName(m.displayName);
       chip.innerHTML =
@@ -103,6 +114,8 @@
       wrap.appendChild(chip);
     });
     wrap.classList.add('show');
+    const stackEl = document.getElementById('partyPresenceStack');
+    if (stackEl) stackEl.classList.add('show');
   }
 
   function initials(name) {
@@ -128,6 +141,7 @@
       state.partyId = null;
       state.party = null;
       renderChips();
+      if (global.StudyPartyTimers && StudyPartyTimers.stop) StudyPartyTimers.stop();
       if (global.StudyChat && StudyChat.onPartyChanged) StudyChat.onPartyChanged(null);
       return;
     }
@@ -142,6 +156,7 @@
         state.partyId = null;
         state.party = null;
         renderChips();
+        if (global.StudyPartyTimers && StudyPartyTimers.stop) StudyPartyTimers.stop();
         if (global.StudyChat && StudyChat.onPartyChanged) StudyChat.onPartyChanged(null);
         return;
       }
@@ -394,7 +409,7 @@
         );
         if (!t) return;
         // Allow profile chip / leave / chat / lobby UI
-        if (e.target.closest('#profileChip, #profileModal, #chatDock, #lobbyPanel, #partyNavLockBanner, .party-chip-rail'))
+        if (e.target.closest('#profileChip, #profileModal, #chatDock, #lobbyPanel, #partyNavLockBanner, .party-chip-rail, .party-presence-stack'))
           return;
         e.preventDefault();
         e.stopPropagation();
@@ -411,6 +426,7 @@
   renderChips = function () {
     _origRender();
     applyNavLock();
+    if (global.StudyPartyTimers && StudyPartyTimers.refreshUi) StudyPartyTimers.refreshUi();
   };
 
   global.StudyParty = {

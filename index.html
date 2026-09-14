@@ -83,7 +83,7 @@ html.mood-crying {
   --anim-speed:.48; --pulse-ms:3200ms; --transition-ms:500ms; --particle-speed:.38;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.party-mini-chip,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
+body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.party-mini-chip,.party-timer-chip,.party-sync-timers-btn,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
 #cursor{
   position:fixed;width:var(--cur-w,28px);height:var(--cur-h,28px);
   border:var(--cur-border,2px solid var(--cyan));border-radius:var(--cur-radius,50%);
@@ -762,8 +762,12 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   font-size:.75rem;background:rgba(251,191,36,.08);border-top:1px solid rgba(251,191,36,.25);
 }
 .chat-invite-banner[hidden]{display:none!important}
-.party-chip-rail{
+.party-presence-stack{
   position:fixed;top:88px;left:16px;z-index:55;
+  display:none;flex-direction:column;gap:8px;max-width:210px;pointer-events:none;
+}
+.party-presence-stack.show{display:flex}
+.party-chip-rail{
   display:none;flex-direction:column;gap:8px;max-width:200px;pointer-events:none;
 }
 .party-chip-rail.show{display:flex}
@@ -783,10 +787,33 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .pmc-meta{min-width:0;display:flex;flex-direction:column}
 .pmc-name{font-size:.72rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}
 .pmc-lvl{font-family:var(--mono);font-size:.58rem;color:var(--cyan-bright)}
+.pmc-timer{
+  font-family:var(--mono);font-size:.58rem;margin-top:1px;opacity:.95;
+}
+.pmc-timer--focus{color:var(--cyan-bright)}
+.pmc-timer--break{color:#fbbf24}
+.party-timer-sync-wrap{pointer-events:none}
+.party-timer-sync-wrap .party-sync-timers-btn{pointer-events:auto;font-family:var(--mono);font-size:.65rem;padding:5px 9px}
+.party-timer-rail{
+  display:none;flex-direction:column;gap:6px;max-width:200px;pointer-events:none;
+}
+.party-timer-rail.show{display:flex}
+.party-timer-chip{
+  display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:10px;
+  background:rgba(8,12,20,.7);border:1px solid var(--border);
+  backdrop-filter:blur(12px);font-family:var(--mono);font-size:.62rem;
+  pointer-events:auto;
+}
+.party-timer-chip--focus{border-color:rgba(34,211,238,.4)}
+.party-timer-chip--break{border-color:rgba(251,191,36,.45)}
+.ptc-name{font-weight:700;max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
+.ptc-mode{color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em;font-size:.55rem}
+.ptc-time{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--cyan-bright)}
+.party-timer-chip--break .ptc-time{color:#fbbf24}
 .toast{bottom:auto;top:auto}
 @media (max-width:900px){
   .chat-dock{left:12px;right:12px;width:auto;bottom:96px;min-width:0}
-  .party-chip-rail{top:78px;left:10px}
+  .party-presence-stack{top:78px;left:10px}
 }
 @media (max-width:640px){
   .chat-dock{bottom:108px}
@@ -1209,11 +1236,12 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="js/profiles.js?v=5"></script>
 <script src="js/achievements.js?v=2"></script>
 <script src="js/mastery.js?v=2"></script>
-<script src="js/party.js?v=2"></script>
+<script src="js/party.js?v=3"></script>
+<script src="js/party-timers.js?v=1"></script>
 <script src="js/cursors.js?v=1"></script>
 <script src="js/lobby.js?v=2"></script>
 <script src="js/split-quiz.js?v=4"></script>
-<script src="js/chat.js?v=3"></script>
+<script src="js/chat.js?v=4"></script>
 <script>
 let FORM_BANK = {};
 let FORMS = [];
@@ -1875,6 +1903,7 @@ function setPhase(mode, durationSec, announceQuote){
   if(typeof applyCursorSkin==='function') applyCursorSkin();
   if(announceQuote !== false) refreshTimerQuote(true);
   renderTimer();
+  if(window.StudyPartyTimers && StudyPartyTimers.onLocalChange) StudyPartyTimers.onLocalChange();
 }
 let breakModalDismissed = false;
 function dismissBreakModal(){
@@ -2088,10 +2117,60 @@ function setPomodoroEnabled(on, opts){
   }
   const toggle = document.getElementById('profilePomoToggle');
   if(toggle && toggle.checked !== pomodoroEnabled) toggle.checked = pomodoroEnabled;
+  if(!opts.fromPartySync && window.StudyPartyTimers && StudyPartyTimers.onLocalChange){
+    StudyPartyTimers.onLocalChange();
+  }
   return pomodoroEnabled;
 }
 window.setPomodoroEnabled = setPomodoroEnabled;
 window.getPomodoroEnabled = function(){ return !!pomodoroEnabled; };
+
+function getPomodoroState(){
+  let name = 'Scholar';
+  try{
+    const p = window.StudyProfiles && StudyProfiles.getProfile && StudyProfiles.getProfile();
+    if(p && p.displayName) name = p.displayName;
+  }catch(e){}
+  syncSecondsFromDeadline();
+  return {
+    enabled: !!pomodoroEnabled,
+    mode: timerMode === 'break' ? 'break' : 'focus',
+    phaseEndsAt: phaseEndsAt || 0,
+    secondsLeft: secondsLeft,
+    displayName: name,
+    updatedAt: Date.now()
+  };
+}
+function applyPomodoroState(state, opts){
+  opts = opts || {};
+  if(!state || typeof state !== 'object') return;
+  if(state.enabled === false){
+    setPomodoroEnabled(false, { fromSync:true });
+    if(window.StudyPartyTimers && StudyPartyTimers.onLocalChange) StudyPartyTimers.onLocalChange();
+    return;
+  }
+  if(!pomodoroEnabled) setPomodoroEnabled(true, { fromSync:true });
+  const mode = state.mode === 'break' ? 'break' : 'focus';
+  timerMode = mode;
+  if(typeof state.phaseEndsAt === 'number' && state.phaseEndsAt > 0){
+    phaseEndsAt = state.phaseEndsAt;
+  } else if(typeof state.secondsLeft === 'number'){
+    phaseEndsAt = Date.now() + Math.max(0, state.secondsLeft) * 1000;
+  }
+  lastQuoteThreshold = null;
+  if(quoteMeta) quoteMeta.threshold = null;
+  syncSecondsFromDeadline();
+  persistTimer();
+  if(!timerInterval) startGlobalTimer();
+  renderTimer();
+  if(window.__timerUiReady) refreshTimerQuote(true);
+  if(!opts.silent){
+    showToast('Timer synced · ' + (mode==='break'?'Break':'Focus') + ' ' + fmt(secondsLeft), 2200);
+  }
+  if(window.StudyPartyTimers && StudyPartyTimers.onLocalChange) StudyPartyTimers.onLocalChange();
+}
+window.getPomodoroState = getPomodoroState;
+window.applyPomodoroState = applyPomodoroState;
 
 applyPomodoroUi();
 if(pomodoroEnabled) startGlobalTimer();
@@ -2714,6 +2793,7 @@ document.addEventListener('keydown',e=>{
           if(window.StudyChat) return StudyChat.start();
         }).then(()=>{
           if(window.StudyCursors) StudyCursors.syncFromParty();
+          if(window.StudyPartyTimers) StudyPartyTimers.syncFromParty();
           if(window.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
           // Mastery+ progressive restart hook
           if(window.StudyMastery){

@@ -747,10 +747,19 @@
             (leader
               ? '<input class="chat-tool-input" id="partyInviteInput" placeholder="Invite @name" maxlength="40" />' +
                 '<button type="button" class="chat-tool-btn" id="partyInviteBtn">Invite</button>' +
-                '<button type="button" class="chat-tool-btn danger" id="partyKickBtn">Kick…</button>'
+                '<button type="button" class="chat-tool-btn danger" id="partyKickBtn">Kick…</button>' +
+                '<button type="button" class="chat-tool-btn" id="partySyncTimersBtn" title="Push your Pomodoro to all members">Sync timers</button>'
               : '') +
             '<button type="button" class="chat-tool-btn danger" id="partyLeaveBtn">Leave</button>';
           if (leader) {
+            const syncBtn = partyEl.querySelector('#partySyncTimersBtn');
+            if (syncBtn) {
+              syncBtn.onclick = () => {
+                if (global.StudyPartyTimers && StudyPartyTimers.pushLeaderSync) {
+                  StudyPartyTimers.pushLeaderSync().catch((e) => toast(e.message || 'Sync failed'));
+                } else toast('Timer sync unavailable');
+              };
+            }
             partyEl.querySelector('#partyInviteBtn').onclick = () => {
               const name = partyEl.querySelector('#partyInviteInput').value.replace(/^@/, '').trim();
               const hit = getOnlineList().find((p) => p.displayName.toLowerCase() === name.toLowerCase());
@@ -933,6 +942,7 @@
     listenMessages();
     publishPresence();
     if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
+    if (global.StudyPartyTimers && StudyPartyTimers.syncFromParty) StudyPartyTimers.syncFromParty();
     if (global.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
   }
 

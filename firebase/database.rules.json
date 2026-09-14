@@ -95,6 +95,18 @@
             ".write": "auth != null && auth.uid == $uid",
             ".validate": "newData.hasChildren(['x','y','updatedAt']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('updatedAt').isNumber()"
           }
+        },
+        "timers": {
+          "$uid": {
+            ".read": "auth != null",
+            ".write": "auth != null && auth.uid == $uid",
+            ".validate": "newData.hasChildren(['enabled','mode','phaseEndsAt','displayName','updatedAt']) && newData.child('enabled').isBoolean() && newData.child('mode').val().matches(/^(focus|break)$/) && newData.child('phaseEndsAt').isNumber() && newData.child('displayName').isString() && newData.child('displayName').val().length <= 40 && newData.child('updatedAt').isNumber() && (!newData.hasChild('secondsLeft') || newData.child('secondsLeft').isNumber())"
+          }
+        },
+        "timerSync": {
+          ".read": "auth != null",
+          ".write": "auth != null && root.child('parties').child($partyId).child('leader').val() == auth.uid",
+          ".validate": "newData.hasChildren(['by','mode','phaseEndsAt','at']) && newData.child('by').isString() && newData.child('by').val() == auth.uid && newData.child('mode').val().matches(/^(focus|break)$/) && newData.child('phaseEndsAt').isNumber() && newData.child('at').isNumber()"
         }
       }
     },
