@@ -1,6 +1,6 @@
-/* Local only — gitignored. Loaded before any Firebase feature code. */
+/* Web client config — public by design; rules protect data. */
 window.FIREBASE_CONFIG = {
-  apiKey: "AIzaSyCqzEw48OgqPPz2njqgCOm5yTcQ4fYwxzQ",
+  apiKey: "AIzaSyCqzEw480gqPPz2njqgCOm5yTcQ4fYwxzQ",
   authDomain: "study-portal-7b492.firebaseapp.com",
   databaseURL: "https://study-portal-7b492-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "study-portal-7b492",
