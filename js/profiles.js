@@ -407,56 +407,6 @@
     return signed.user;
   }
 
-  async function linkOrSignInGoogle() {
-    const { auth } = ensureFirebase();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' });
-    const user = auth.currentUser;
-    const guestSnap =
-      global.StudyProgress && StudyProgress.snapshotLocal ? StudyProgress.snapshotLocal() : null;
-
-    async function afterGoogle(resultUser) {
-      state.user = resultUser;
-      await ensureProfile(resultUser.uid);
-      await mergeAfterAccountSwitch(guestSnap);
-      renderChip();
-      fillModal();
-      toast('Signed in with Google — progress saved');
-      return resultUser;
-    }
-
-    try {
-      if (user && user.isAnonymous) {
-        try {
-          const linked = await user.linkWithPopup(provider);
-          return afterGoogle(linked.user);
-        } catch (e) {
-          if (e.code === 'auth/credential-already-in-use' || e.code === 'auth/email-already-in-use') {
-            return handleCredentialInUse(e, guestSnap);
-          }
-          if (e.code === 'auth/popup-blocked') {
-            setAuthStatus('Popup blocked — redirecting to Google…');
-            await user.linkWithRedirect(provider);
-            return null;
-          }
-          throw e;
-        }
-      }
-      try {
-        const signed = await auth.signInWithPopup(provider);
-        return afterGoogle(signed.user);
-      } catch (e) {
-        if (e.code === 'auth/popup-blocked') {
-          setAuthStatus('Popup blocked — redirecting to Google…');
-          await auth.signInWithRedirect(provider);
-          return null;
-        }
-        throw e;
-      }
-    } catch (e) {
-      throw e;
-    }
-  }
 
   async function signOutKeepSession() {
     const { auth } = ensureFirebase();
@@ -489,8 +439,7 @@
       '<input id="profileAuthPassword" class="profile-input" type="password" autocomplete="new-password" placeholder="At least 6 characters" />' +
       '<div class="profile-auth-actions">' +
       '<button type="button" class="btn-gold" id="profileAuthEmailBtn">Register</button>' +
-      '<button type="button" class="btn-ghost profile-auth-google" id="profileAuthGoogleBtn">Continue with Google</button>' +
-      '</div>' +
+            '</div>' +
       '<p class="profile-auth-status" id="profileAuthStatus"></p>' +
       '</div>' +
       '<div class="profile-auth-signed" id="profileAuthSigned" hidden>' +
@@ -515,7 +464,6 @@
     const tabReg = overlay.querySelector('#profileAuthTabRegister');
     const tabIn = overlay.querySelector('#profileAuthTabSignin');
     const emailBtn = overlay.querySelector('#profileAuthEmailBtn');
-    const googleBtn = overlay.querySelector('#profileAuthGoogleBtn');
     const signOutBtn = overlay.querySelector('#profileSignOutBtn');
     const pass = overlay.querySelector('#profileAuthPassword');
 
@@ -562,24 +510,6 @@
         try {
           if (state.authTab === 'register') await registerWithEmail(email, password);
           else await signInWithEmail(email, password);
-          setAuthStatus('Done — progress is linked to your account.');
-          fillModal();
-        } catch (e) {
-          console.warn(e);
-          setAuthStatus(friendlyAuthError(e), true);
-        } finally {
-          state.authBusy = false;
-        }
-      });
-    }
-    if (googleBtn && !googleBtn._wired) {
-      googleBtn._wired = true;
-      googleBtn.addEventListener('click', async function () {
-        if (state.authBusy) return;
-        state.authBusy = true;
-        setAuthStatus('Opening Google…');
-        try {
-          await linkOrSignInGoogle();
           setAuthStatus('Done — progress is linked to your account.');
           fillModal();
         } catch (e) {

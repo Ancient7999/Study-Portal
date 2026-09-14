@@ -6,7 +6,6 @@ Banks stay on GitHub Pages. Firebase is for **Auth + profiles + scores + chat + 
 
 1. Open [Firebase Console](https://console.firebase.google.com/).
 2. **Add project** → name it (e.g. `study-portal`) → continue.
-3. Google Analytics: optional (Off is fine for class use).
 4. Create project → **Continue**.
 
 ## 2) Enable the products you’ll need
@@ -67,7 +66,6 @@ Success looks like each ruleset **released**.
 
 ## 6) Budget / free tier tips
 
-- Set a Google Cloud **budget alert** ($5 / $10) under Billing.  
 - Keep chat + cursors inside small rooms (not site-wide broadcast).  
 - Banks on GitHub Pages = almost no Firebase bandwidth for quizzes.
 
@@ -82,7 +80,6 @@ Guest users start with **Anonymous** auth. To claim progress (and sync across de
 1. **Authentication → Sign-in method**
    - **Anonymous** — Enable (keep as default entry)
    - **Email/Password** — Enable (no need for Email link)
-   - **Google** — Enable → set a support email
 2. **Authentication → Settings → Authorized domains**
    - Include `ancient7999.github.io`
    - Include `localhost` (for local testing)
@@ -91,7 +88,6 @@ Guest users start with **Anonymous** auth. To claim progress (and sync across de
    - Or CLI: `firebase deploy --only firestore:rules`
 4. Confirm `progress/{uid}` is allowed (self read/write) after publish — used for mastery, achievements, form best %, and Pomodoro preference.
 
-Without steps 1–3, “Register / Sign in / Continue with Google” in the profile modal will fail with `auth/operation-not-allowed` or redirect errors.
 
 ## Checklist
 
