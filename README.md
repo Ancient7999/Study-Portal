@@ -4,10 +4,9 @@ Static practice hub for GitHub Pages. Question banks are JSON files in this repo
 
 ## What’s included
 
-- **Portal** (`index.html`) — subjects, materials, locked online placeholders
-- **Exam player** (`exam.html`) — Forms A–H, 20 MCQs, lock-in until correct, local progress
-- **Unlocked** — Medical Physics → Periodic Test 1
-- **Locked** — Periodic Test 2, Medical Terminology, Profiles / Scores / Chat / Live room
+- **Unified SPA** (`index.html`) — rich glass UI (moods, timer, skins, Forms A–H) with portal home in the same page
+- **Unlocked** — Medical Physics → Periodic Test 1 (loads `banks/…` via fetch; no separate exam HTML)
+- **Locked** — other subjects + Online tiles (Profiles / Scores / Chat / Live)
 
 ## Publish on GitHub Pages (new repo)
 

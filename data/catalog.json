@@ -10,10 +10,9 @@
         {
           "id": "pt1",
           "title": "Periodic Test 1",
-          "subtitle": "Forms A\u2013H \u00b7 20 MCQs each",
+          "subtitle": "Forms A–H · 20 MCQs each",
           "bank": "banks/medphys/pt1.json",
-          "locked": false,
-          "href": "exams/medphys-pt1.html"
+          "locked": false
         },
         {
           "id": "pt2",
@@ -114,25 +113,25 @@
     {
       "id": "profiles",
       "title": "Profiles",
-      "icon": "\ud83d\udc64",
+      "icon": "👤",
       "locked": true
     },
     {
       "id": "scores",
       "title": "Scores",
-      "icon": "\ud83c\udfc6",
+      "icon": "🏆",
       "locked": true
     },
     {
       "id": "chat",
       "title": "Chat",
-      "icon": "\ud83d\udcac",
+      "icon": "💬",
       "locked": true
     },
     {
       "id": "live",
       "title": "Live room",
-      "icon": "\ud83d\udce1",
+      "icon": "📡",
       "locked": true
     }
   ]
