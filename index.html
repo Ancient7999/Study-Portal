@@ -875,6 +875,35 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 @keyframes friend-cursor-spawn{0%{transform:translate(-50%,-50%) scale(0);opacity:0}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
 .friend-cursor.spawning{animation:friend-cursor-spawn .4s ease-out forwards}
 
+.net-status{
+  position:fixed;top:16px;right:16px;z-index:60;
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.38rem .7rem .4rem;
+  border-radius:999px;
+  background:rgba(8,12,20,.62);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px) saturate(1.1);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.02em;
+  color:var(--text-dim);pointer-events:none;user-select:none;
+}
+.net-status .net-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#64748b;box-shadow:0 0 0 0 rgba(100,116,139,.4);
+}
+.net-status.is-on .net-dot{
+  background:#34d399;
+  box-shadow:0 0 8px rgba(52,211,153,.55);
+  animation:netPulse 2.2s ease-in-out infinite;
+}
+.net-status.is-off .net-dot{background:#f87171;box-shadow:0 0 8px rgba(248,113,113,.45)}
+.net-status.is-on{color:var(--text)}
+@keyframes netPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media (max-width:720px){
+  .net-status{top:10px;right:10px;font-size:.62rem;padding:.32rem .55rem}
+}
+
+
 /* Nav lock */
 .party-nav-lock-banner{
   position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:95;
@@ -1285,6 +1314,7 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="js/party.js?v=3"></script>
 <script src="js/party-timers.js?v=1"></script>
 <script src="js/cursors.js?v=3"></script>
+<script src="js/net-status.js?v=1"></script>
 <script src="js/lobby.js?v=3"></script>
 <script src="js/split-quiz.js?v=4"></script>
 <script src="js/chat.js?v=5"></script>
@@ -2869,6 +2899,7 @@ document.addEventListener('keydown',e=>{
         });
       } else if(window.StudyChat){
         StudyChat.start().catch(err=>console.warn(err));
+      if(window.StudyNetStatus) StudyNetStatus.start();
       }
     })
     .catch(err=>{
