@@ -93,7 +93,7 @@
           "$uid": {
             ".read": "auth != null",
             ".write": "auth != null && auth.uid == $uid",
-            ".validate": "newData.hasChildren(['x','y','updatedAt']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('updatedAt').isNumber()"
+            ".validate": "newData.hasChildren(['x','y','updatedAt']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('updatedAt').isNumber() && (!newData.hasChild('displayName') || newData.child('displayName').isString()) && (!newData.hasChild('hue') || newData.child('hue').isNumber()) && (!newData.hasChild('mood') || newData.child('mood').isString())"
           }
         },
         "timers": {

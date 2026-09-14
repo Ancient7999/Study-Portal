@@ -19,6 +19,18 @@
     return u ? u.uid : null;
   }
 
+  /* Mood theme → hue (matches html.mood-* palette accents) */
+  const MOOD_HUE = {
+    'mood-happy': 42,
+    'mood-neutral': 217,
+    'mood-calm': 160,
+    'mood-fierce': 28,
+    'mood-mad': 0,
+    'mood-sad': 200,
+    'mood-crying': 240,
+    'mood-sleepy': 250
+  };
+
   function hueFromName(name) {
     let h = 0;
     const s = String(name || 'x');
@@ -26,11 +38,28 @@
     return h % 360;
   }
 
+  function currentMoodMeta() {
+    const html = document.documentElement;
+    let cls = 'mood-neutral';
+    Object.keys(MOOD_HUE).forEach((c) => {
+      if (html.classList.contains(c)) cls = c;
+    });
+    let emoji = '😊';
+    try {
+      if (typeof currentMoodEmoji !== 'undefined' && currentMoodEmoji) emoji = currentMoodEmoji;
+      else emoji = localStorage.getItem('pt1_live_mood') || emoji;
+    } catch (e) {}
+    return { cls: cls, emoji: emoji, hue: MOOD_HUE[cls] != null ? MOOD_HUE[cls] : 190 };
+  }
+
   function profileBits() {
     const p = global.StudyProfiles && StudyProfiles.getProfile && StudyProfiles.getProfile();
+    const mood = currentMoodMeta();
     return {
       displayName: (p && p.displayName) || 'Scholar',
-      level: (p && p.level) || 1
+      level: (p && p.level) || 1,
+      mood: mood.emoji,
+      hue: mood.hue
     };
   }
 
@@ -81,7 +110,8 @@
       y: Math.round(y),
       updatedAt: now,
       displayName: bits.displayName,
-      hue: hueFromName(bits.displayName)
+      mood: bits.mood || '😊',
+      hue: bits.hue != null ? bits.hue : hueFromName(bits.displayName)
     });
     await ref.onDisconnect().remove();
   }
@@ -142,5 +172,14 @@
     else stop();
   }
 
-  global.StudyCursors = { listen, stop, syncFromParty, publish };
+  function onMoodChange() {
+    // Force next cursor write to pick up new mood hue immediately
+    lastWrite = 0;
+    if (!partyId) return;
+    const x = window._lastPointerX;
+    const y = window._lastPointerY;
+    if (x != null && y != null) publish(x, y).catch(function () {});
+  }
+
+  global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange };
 })(window);
