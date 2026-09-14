@@ -67,7 +67,6 @@
         ".write": "auth != null && ((!data.exists() && newData.child('leader').val() == auth.uid) || (data.exists() && (data.child('leader').val() == auth.uid || data.child('members').child(auth.uid).exists() || newData.child('members').child(auth.uid).exists())))",
         ".validate": "newData.hasChild('leader') && newData.child('leader').isString()",
         "members": {
-          ".validate": "newData.numChildren() <= 4",
           "$uid": {
             ".validate": "newData.hasChildren(['displayName', 'joinedAt']) && newData.child('displayName').isString() && newData.child('joinedAt').isNumber()"
           }
@@ -125,9 +124,8 @@
         ".write": "auth != null",
         ".validate": "newData.hasChildren(['leader','status','createdAt']) && newData.child('leader').isString() && newData.child('status').isString() && newData.child('createdAt').isNumber()",
         "seats": {
-          ".validate": "newData.numChildren() <= 4",
           "$seat": {
-            ".validate": "!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString())"
+            ".validate": "$seat.matches(/^[0-3]$/) && (!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString()))"
           }
         },
         "session": {
