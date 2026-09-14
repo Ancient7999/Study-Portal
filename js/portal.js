@@ -47,9 +47,10 @@
   function renderMaterials() {
     const subject = catalog.subjects.find((s) => s.id === activeSubjectId);
     if (!subject) return;
+    const extra = subject.subtitle ? ` — ${subject.subtitle}` : '';
     labelEl.textContent = subject.locked
-      ? `${subject.name} (locked)`
-      : `${subject.name} materials`;
+      ? `${subject.name}${extra} (locked)`
+      : `${subject.name}${extra} · materials`;
 
     cardsEl.innerHTML = '';
     const materials = subject.materials || [];

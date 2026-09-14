@@ -1,6 +1,6 @@
 {
   "title": "Study Portal",
-  "version": 1,
+  "version": 2,
   "subjects": [
     {
       "id": "medphys",
@@ -10,13 +10,55 @@
         {
           "id": "pt1",
           "title": "Periodic Test 1",
-          "subtitle": "Forms A–H · 20 MCQs each",
+          "subtitle": "Forms A\u2013H \u00b7 20 MCQs each",
           "bank": "banks/medphys/pt1.json",
           "locked": false
         },
         {
           "id": "pt2",
           "title": "Periodic Test 2",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "studyskills",
+      "name": "Study Skills",
+      "locked": true,
+      "materials": [
+        {
+          "id": "ss1",
+          "title": "Lecture 4 practice",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        },
+        {
+          "id": "ss2",
+          "title": "Study habits quiz",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "locked": true,
+      "materials": [
+        {
+          "id": "en1",
+          "title": "Reading & vocab",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        },
+        {
+          "id": "en2",
+          "title": "Practice set",
           "subtitle": "Coming soon",
           "bank": null,
           "locked": true
@@ -31,24 +73,66 @@
         {
           "id": "mt1",
           "title": "Foundations Quiz",
-          "subtitle": "Locked",
+          "subtitle": "Coming soon",
           "bank": null,
           "locked": true
         },
         {
           "id": "mt2",
           "title": "Systems Review",
-          "subtitle": "Locked",
+          "subtitle": "Coming soon",
           "bank": null,
           "locked": true
         }
       ]
+    },
+    {
+      "id": "iths",
+      "name": "ITHS",
+      "locked": true,
+      "materials": [
+        {
+          "id": "iths1",
+          "title": "Information Technology for Health Sciences",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        },
+        {
+          "id": "iths2",
+          "title": "Practice set",
+          "subtitle": "Coming soon",
+          "bank": null,
+          "locked": true
+        }
+      ],
+      "subtitle": "Information Technology for Health Sciences"
     }
   ],
   "online": [
-    { "id": "profiles", "title": "Profiles", "icon": "👤", "locked": true },
-    { "id": "scores", "title": "Scores", "icon": "🏆", "locked": true },
-    { "id": "chat", "title": "Chat", "icon": "💬", "locked": true },
-    { "id": "live", "title": "Live room", "icon": "📡", "locked": true }
+    {
+      "id": "profiles",
+      "title": "Profiles",
+      "icon": "\ud83d\udc64",
+      "locked": true
+    },
+    {
+      "id": "scores",
+      "title": "Scores",
+      "icon": "\ud83c\udfc6",
+      "locked": true
+    },
+    {
+      "id": "chat",
+      "title": "Chat",
+      "icon": "\ud83d\udcac",
+      "locked": true
+    },
+    {
+      "id": "live",
+      "title": "Live room",
+      "icon": "\ud83d\udce1",
+      "locked": true
+    }
   ]
 }
