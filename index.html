@@ -2040,6 +2040,23 @@ function openForm(letter, opts){
     const bk = StudyMastery.bankKeyFromPath((__activeMaterial && __activeMaterial.bank) || 'banks/medphys/pt1.json');
     StudyMastery.beginSession(bk, letter, questions.length);
   }
+  // Mastery+ progressive: keep full bank indices via clearCount; skip DNSA / already-cleared-at-layer by rebuilding answers/current from queue
+  if(opts.masteryPlus && window.__masteryPlusQueue && window.__masteryPlusQueue.length && window.StudyMastery){
+    // Keep questions array intact for scoring; jump to first uncleared index
+    const q0 = window.__masteryPlusQueue[0];
+    // Mark already-cleared-at-layer as locked answers so user only plays remaining
+    const sess = StudyMastery.getSession();
+    const f = StudyMastery.getOrInitForm(sess.bankKey, letter, questions.length);
+    const level = sess.masteryPlusLevel|0;
+    answers = questions.map((_,i)=>{
+      if((f.clearCount[i]|0) > level) return questions[i].correct;
+      if(StudyMastery.isDNSA(sess.bankKey, letter, i)) return questions[i].correct;
+      return null;
+    });
+    current = answers.findIndex(a=>a===null);
+    if(current<0) current = 0;
+    locked = answers[current]!==null;
+  }
   const n = questions.length;
   const done = lsGet('pt1_form_'+letter+'_done');
   const saved = forceFresh ? null : loadRunState(letter);
