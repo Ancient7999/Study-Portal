@@ -3,8 +3,10 @@
  */
 (function (global) {
   const MSG_LIMIT = 50;
+  const MSG_CAP = 70;
   const LS_GUILD = 'study_portal_guild_v1';
   const LS_DOCK = 'study_portal_chat_open_v1';
+  const LS_VISIBLE = 'study_portal_chat_visible_v1';
 
   const CHANNELS = [
     { id: 'local', label: 'Local', enc: false },
@@ -14,6 +16,7 @@
     { id: 'whisper', label: 'Whisper', enc: true },
     { id: 'party', label: 'Party', enc: true }
   ];
+  const ALL_CHANNEL_IDS = CHANNELS.map((c) => c.id);
 
   const state = {
     ready: false,
@@ -22,6 +25,7 @@
     guild: null, // { id, name, secret }
     whisperTarget: null, // { uid, displayName }
     online: {}, // uid -> presence
+    visible: null, // Set of channel ids
     unsubMsgs: null,
     unsubPresence: null,
     unsubInvite: null,
@@ -115,8 +119,31 @@
     return [a, b].sort().join('_');
   }
 
-  function channelPath() {
-    const ch = state.channel;
+  function loadVisible() {
+    try {
+      const raw = localStorage.getItem(LS_VISIBLE);
+      if (!raw) return new Set(ALL_CHANNEL_IDS);
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr) || !arr.length) return new Set(ALL_CHANNEL_IDS);
+      const filtered = arr.filter((id) => ALL_CHANNEL_IDS.indexOf(id) !== -1);
+      return filtered.length ? new Set(filtered) : new Set(ALL_CHANNEL_IDS);
+    } catch (e) {
+      return new Set(ALL_CHANNEL_IDS);
+    }
+  }
+
+  function saveVisible() {
+    try {
+      localStorage.setItem(LS_VISIBLE, JSON.stringify(Array.from(state.visible)));
+    } catch (e) {}
+  }
+
+  function ensureVisible() {
+    if (!state.visible) state.visible = loadVisible();
+    return state.visible;
+  }
+
+  function channelPathFor(ch) {
     if (ch === 'world') return 'chat/world';
     if (ch === 'trade') return 'chat/trade';
     if (ch === 'local') return 'chat/local/' + (state.localRoom || 'lobby');
@@ -137,8 +164,11 @@
     return null;
   }
 
-  async function channelCrypto() {
-    const ch = state.channel;
+  function channelPath() {
+    return channelPathFor(state.channel);
+  }
+
+  async function channelCryptoFor(ch) {
     if (ch === 'whisper' && state.whisperTarget) {
       const me = uid();
       const secret = whisperPair(me, state.whisperTarget.uid);
@@ -156,8 +186,16 @@
     return null;
   }
 
+  async function channelCrypto() {
+    return channelCryptoFor(state.channel);
+  }
+
+  function needsEncFor(ch) {
+    return ch === 'whisper' || ch === 'party' || ch === 'guild';
+  }
+
   function needsEnc() {
-    return state.channel === 'whisper' || state.channel === 'party' || state.channel === 'guild';
+    return needsEncFor(state.channel);
   }
 
   /* —— Presence —— */
@@ -171,10 +209,10 @@
       state: 'online',
       displayName: bits.displayName,
       level: bits.level,
-      updatedAt: Date.now(),
-      partyId: partyId || null,
-      guildId: (state.guild && state.guild.id) || null
+      updatedAt: Date.now()
     };
+    if (partyId) payload.partyId = partyId;
+    if (state.guild && state.guild.id) payload.guildId = state.guild.id;
     const ref = db.ref('presence/' + me);
     await ref.set(payload);
     await ref.onDisconnect().remove();
@@ -215,53 +253,87 @@
 
   function listenMessages() {
     stopMsgs();
-    const path = channelPath();
+    ensureVisible();
     const log = document.getElementById('chatLog');
-    if (!path) {
+    const listening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id));
+    if (!listening.length) {
       if (log) {
-        let hint = 'Select a channel to chat.';
-        if (state.channel === 'guild' && !state.guild) hint = 'Create or join a guild first.';
-        if (state.channel === 'party' && !(StudyParty && StudyParty.getPartyId && StudyParty.getPartyId()))
-          hint = 'Create or join a party (max 4) to use Party chat.';
-        if (state.channel === 'whisper' && !state.whisperTarget) hint = 'Type @name to whisper someone online.';
+        let hint = 'No visible channels to show. Use the eye icons in the channel menu.';
+        if (state.visible.has('guild') && !state.guild) hint = 'Create or join a guild, or hide Guild in the filter.';
+        else if (state.visible.has('party') && !(StudyParty && StudyParty.getPartyId && StudyParty.getPartyId()))
+          hint = 'Create or join a party, or hide Party in the filter.';
+        else if (state.visible.has('whisper') && !state.whisperTarget) hint = 'Type @name to whisper, or hide Whisper in the filter.';
         log.innerHTML = '<div class="chat-empty">' + esc(hint) + '</div>';
       }
       return;
     }
     const { db } = ensureFirebase();
-    const q = db.ref(path).orderByChild('ts').limitToLast(MSG_LIMIT);
-    const handler = async (snap) => {
-      const rows = [];
-      snap.forEach((child) => {
-        rows.push({ id: child.key, ...(child.val() || {}) });
-      });
-      rows.sort((a, b) => (a.ts || 0) - (b.ts || 0));
-      await renderMessages(rows);
+    const buckets = {};
+    const unsubs = [];
+    let refreshTimer = null;
+
+    const refresh = () => {
+      if (refreshTimer) clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(async () => {
+        let all = [];
+        listening.forEach((c) => {
+          (buckets[c.id] || []).forEach((m) => {
+            all.push(Object.assign({ _channel: c.id }, m));
+          });
+        });
+        all.sort((a, b) => (a.ts || 0) - (b.ts || 0));
+        if (all.length > MSG_CAP) all = all.slice(all.length - MSG_CAP);
+        await renderMessages(all);
+      }, 40);
     };
-    q.on('value', handler);
-    state.unsubMsgs = () => q.off('value', handler);
+
+    listening.forEach((c) => {
+      buckets[c.id] = [];
+      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').limitToLast(MSG_LIMIT);
+      const handler = (snap) => {
+        const rows = [];
+        snap.forEach((child) => {
+          rows.push(Object.assign({ id: child.key }, child.val() || {}));
+        });
+        buckets[c.id] = rows;
+        refresh();
+      };
+      q.on('value', handler);
+      unsubs.push(() => q.off('value', handler));
+    });
+
+    state.unsubMsgs = () => {
+      if (refreshTimer) clearTimeout(refreshTimer);
+      unsubs.forEach((fn) => fn());
+    };
+  }
+
+  function channelTagLabel(id) {
+    const ch = CHANNELS.find((c) => c.id === id);
+    return ch ? ch.label : id;
   }
 
   async function renderMessages(rows) {
     const log = document.getElementById('chatLog');
     if (!log) return;
-    const cryptoInfo = needsEnc() ? await channelCrypto() : null;
     const me = uid();
+    const cryptoCache = {};
     const html = [];
     for (const m of rows) {
-      let text = m.text || '';
-      if (m.ct && m.iv && cryptoInfo) {
-        text = await decryptText(m.ct, m.iv, cryptoInfo.secret, cryptoInfo.salt);
-      } else if (m.ct && !cryptoInfo) {
-        text = '[encrypted]';
-      }
+      const ch = m._channel || state.channel;
       const mine = m.uid === me;
       const t = m.ts ? new Date(m.ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
       html.push(
         '<div class="chat-msg' +
           (mine ? ' mine' : '') +
+          '" data-channel="' +
+          esc(ch) +
           '">' +
-          '<span class="chat-msg-head"><span class="chat-msg-name"></span><span class="chat-msg-time">' +
+          '<span class="chat-msg-head"><span class="chat-msg-tag tag-' +
+          esc(ch) +
+          '">[' +
+          esc(channelTagLabel(ch)) +
+          ']</span><span class="chat-msg-name"></span><span class="chat-msg-time">' +
           esc(t) +
           '</span></span>' +
           '<span class="chat-msg-body"></span></div>'
@@ -269,17 +341,25 @@
     }
     log.innerHTML = html.length ? html.join('') : '<div class="chat-empty">No messages yet — say hi.</div>';
     const nodes = log.querySelectorAll('.chat-msg');
-    rows.forEach(async (m, i) => {
+    for (let i = 0; i < rows.length; i++) {
+      const m = rows[i];
       const node = nodes[i];
-      if (!node) return;
+      if (!node) continue;
+      const ch = m._channel || state.channel;
       const nameEl = node.querySelector('.chat-msg-name');
       const bodyEl = node.querySelector('.chat-msg-body');
       if (nameEl) nameEl.textContent = (m.displayName || '?') + (m.level ? ' · LV' + m.level : '');
       let text = m.text || '';
-      if (m.ct && m.iv && cryptoInfo) text = await decryptText(m.ct, m.iv, cryptoInfo.secret, cryptoInfo.salt);
-      else if (m.ct && !cryptoInfo) text = '[encrypted]';
+      if (m.ct && m.iv) {
+        if (!Object.prototype.hasOwnProperty.call(cryptoCache, ch)) {
+          cryptoCache[ch] = needsEncFor(ch) ? await channelCryptoFor(ch) : null;
+        }
+        const cryptoInfo = cryptoCache[ch];
+        if (cryptoInfo) text = await decryptText(m.ct, m.iv, cryptoInfo.secret, cryptoInfo.salt);
+        else text = '[encrypted]';
+      }
       if (bodyEl) bodyEl.textContent = text;
-    });
+    }
     log.scrollTop = log.scrollHeight;
   }
 
@@ -430,6 +510,7 @@
   /* —— UI —— */
   function ensureDock() {
     if (document.getElementById('chatDock')) return;
+    ensureVisible();
     const dock = document.createElement('div');
     dock.id = 'chatDock';
     dock.className = 'chat-dock';
@@ -458,21 +539,7 @@
       '</div>';
     document.body.appendChild(dock);
 
-    // Channel menu
-    const menu = document.getElementById('chatChannelMenu');
-    CHANNELS.forEach((c) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.role = 'option';
-      btn.className = 'chat-channel-opt' + (c.accent === 'trade' ? ' trade' : '');
-      btn.dataset.channel = c.id;
-      btn.textContent = c.label;
-      btn.addEventListener('click', () => {
-        setChannel(c.id);
-        closeChannelMenu();
-      });
-      menu.appendChild(btn);
-    });
+    rebuildChannelMenu();
 
     document.getElementById('chatToggleBtn').addEventListener('click', () => setOpen(!state.open));
     document.getElementById('chatMinBtn').addEventListener('click', () => setOpen(false));
@@ -506,6 +573,61 @@
     });
   }
 
+  function rebuildChannelMenu() {
+    const menu = document.getElementById('chatChannelMenu');
+    if (!menu) return;
+    ensureVisible();
+    menu.innerHTML = '';
+    CHANNELS.forEach((c) => {
+      const row = document.createElement('div');
+      const isVis = state.visible.has(c.id);
+      const isActive = state.channel === c.id;
+      row.className =
+        'chat-channel-opt' +
+        (c.accent === 'trade' ? ' trade' : '') +
+        (isActive ? ' active' : '') +
+        (isVis ? '' : ' dimmed');
+      row.dataset.channel = c.id;
+
+      const visBtn = document.createElement('button');
+      visBtn.type = 'button';
+      visBtn.className = 'chat-vis-btn' + (isVis ? '' : ' off');
+      visBtn.title = isVis ? 'Hide ' + c.label + ' from feed' : 'Show ' + c.label + ' in feed';
+      visBtn.setAttribute('aria-label', (isVis ? 'Hide ' : 'Show ') + c.label);
+      visBtn.setAttribute('aria-pressed', isVis ? 'true' : 'false');
+      visBtn.textContent = '👁';
+      visBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleChannelVisible(c.id);
+      });
+
+      const labelBtn = document.createElement('button');
+      labelBtn.type = 'button';
+      labelBtn.setAttribute('role', 'option');
+      labelBtn.className = 'chat-channel-label';
+      labelBtn.textContent = c.label;
+      labelBtn.title = 'Send on ' + c.label;
+      labelBtn.addEventListener('click', () => {
+        setChannel(c.id);
+        closeChannelMenu();
+      });
+
+      row.appendChild(visBtn);
+      row.appendChild(labelBtn);
+      menu.appendChild(row);
+    });
+  }
+
+  function toggleChannelVisible(id) {
+    ensureVisible();
+    if (state.visible.has(id)) state.visible.delete(id);
+    else state.visible.add(id);
+    saveVisible();
+    rebuildChannelMenu();
+    listenMessages();
+    updateChannelMeta();
+  }
+
   function setOpen(open) {
     state.open = !!open;
     const dock = document.getElementById('chatDock');
@@ -532,6 +654,7 @@
     const btn = document.getElementById('chatChannelBtn');
     if (!menu) return;
     const open = menu.hidden;
+    if (open) rebuildChannelMenu();
     menu.hidden = !open;
     if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
@@ -562,21 +685,29 @@
       dock.dataset.channel = state.channel;
       dock.classList.toggle('accent-trade', state.channel === 'trade');
     }
+    rebuildChannelMenu();
     updateChannelMeta();
   }
 
   function updateChannelMeta() {
     const el = document.getElementById('chatDockMeta');
     if (!el) return;
+    ensureVisible();
+    const ch = CHANNELS.find((c) => c.id === state.channel) || CHANNELS[1];
+    const onlineN = Object.keys(state.online).length;
+    const visListening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id)).length;
     let meta = '';
-    if (state.channel === 'local') meta = '#' + (state.localRoom || 'lobby');
-    else if (state.channel === 'whisper' && state.whisperTarget) meta = '@' + state.whisperTarget.displayName;
-    else if (state.channel === 'guild' && state.guild) meta = state.guild.name;
+    if (visListening <= 1) {
+      meta = ch.label + ' · ' + onlineN + ' online';
+    } else {
+      meta = 'sending ' + ch.label + ' · ' + visListening + ' channels';
+    }
+    if (state.channel === 'local') meta += ' · #' + (state.localRoom || 'lobby');
+    else if (state.channel === 'whisper' && state.whisperTarget) meta += ' · @' + state.whisperTarget.displayName;
+    else if (state.channel === 'guild' && state.guild) meta += ' · ' + state.guild.name;
     else if (state.channel === 'party') {
       const p = StudyParty && StudyParty.getParty && StudyParty.getParty();
-      meta = p ? 'party · ' + Object.keys(p.members || {}).length + '/4' : 'no party';
-    } else if (state.channel === 'world' || state.channel === 'trade') {
-      meta = Object.keys(state.online).length + ' online';
+      meta += p ? ' · ' + Object.keys(p.members || {}).length + '/4' : ' · no party';
     }
     el.textContent = meta;
   }
@@ -798,8 +929,8 @@
     updateChannelMeta();
     if (state.channel === 'party') {
       renderChannelTools();
-      listenMessages();
     }
+    listenMessages();
     publishPresence();
     if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
     if (global.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
@@ -838,6 +969,7 @@
 
   async function start() {
     try {
+      ensureVisible();
       ensureDock();
       ensureFirebase();
       let tries = 0;
@@ -876,8 +1008,9 @@
 
   function setLocalRoom(roomId) {
     state.localRoom = String(roomId || 'lobby').slice(0, 64) || 'lobby';
-    if (state.channel === 'local') {
-      updateChannelMeta();
+    updateChannelMeta();
+    ensureVisible();
+    if (state.visible.has('local') || state.channel === 'local') {
       listenMessages();
     }
   }

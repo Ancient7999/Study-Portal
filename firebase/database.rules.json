@@ -3,8 +3,8 @@
     ".read": false,
     ".write": false,
     "presence": {
+      ".read": "auth != null",
       "$uid": {
-        ".read": "auth != null",
         ".write": "auth != null && auth.uid == $uid",
         ".validate": "newData.hasChildren(['state', 'updatedAt']) && newData.child('state').isString() && newData.child('updatedAt').isNumber() && (!newData.hasChild('displayName') || newData.child('displayName').isString()) && (!newData.hasChild('level') || newData.child('level').isNumber()) && (!newData.hasChild('partyId') || newData.child('partyId').isString()) && (!newData.hasChild('guildId') || newData.child('guildId').isString())"
       }
