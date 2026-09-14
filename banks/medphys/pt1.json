@@ -1,0 +1,2115 @@
+{
+  "id": "pt1",
+  "subject": "Medical Physics",
+  "subjectId": "medphys",
+  "title": "Periodic Test 1",
+  "formSize": 20,
+  "forms": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "FD_22",
+        "cat": "fluids_static",
+        "q": "A hydraulic system has a small piston of area 0.02 m² and a large piston of area 0.8 m². If 150 N is applied on the small piston, what is the output force on the large piston?",
+        "options": [
+          "6000 N",
+          "12000 N",
+          "3000 N",
+          "1500 N"
+        ],
+        "correct": 0,
+        "explain": "F_out = 150 × (0.8/0.02) = 6000 N."
+      },
+      {
+        "id": "QV_E_9",
+        "cat": "fundamentals",
+        "q": "The strength of a material refers to its ability to:",
+        "options": [
+          "Conduct electricity",
+          "Bend without breaking",
+          "Dissolve in water",
+          "Withstand applied stress without failure"
+        ],
+        "correct": 3,
+        "explain": "Strength = ability to withstand applied stress without failure."
+      },
+      {
+        "id": "AU_buoy2",
+        "cat": "fluids_static",
+        "q": "A fully submerged object has volume 0.050 m³ in fresh water (ρ=1000 kg/m³, g=9.8). Buoyant force?",
+        "options": [
+          "980 N",
+          "49 N",
+          "490 N",
+          "4900 N"
+        ],
+        "correct": 2,
+        "explain": "F_b = ρVg = 1000×0.050×9.8 = 490 N."
+      },
+      {
+        "id": "FD_9",
+        "cat": "fluids_static",
+        "q": "The force exerted by a fluid on a submerged object is always:",
+        "options": [
+          "Zero at any depth",
+          "Perpendicular to the object's surface, and increases with depth",
+          "Parallel to the object's surface",
+          "Tangent to the object's surface"
+        ],
+        "correct": 1,
+        "explain": "Fluid force on a surface is perpendicular (normal) to it and increases with depth."
+      },
+      {
+        "id": "QV_E_10",
+        "cat": "elasticity",
+        "q": "A strain value is best characterised as:",
+        "options": [
+          "Newtons per square metre",
+          "Pascals",
+          "Dimensionless (no units)",
+          "Metres"
+        ],
+        "correct": 2,
+        "explain": "Strain = ΔL / L₀ — a ratio of two lengths, so units cancel. It is dimensionless."
+      },
+      {
+        "id": "AU_prefix3",
+        "cat": "fundamentals",
+        "q": "How many nanometres (nm) are in 1 micrometre (µm)?",
+        "options": [
+          "100 nm",
+          "10 nm",
+          "1000 nm",
+          "1 000 000 nm"
+        ],
+        "correct": 2,
+        "explain": "1 µm = 10⁻⁶ m and 1 nm = 10⁻⁹ m, so 1 µm = 10³ nm = 1000 nm."
+      },
+      {
+        "id": "L3_C_8",
+        "cat": "fluids_flow",
+        "q": "The equation of continuity in its general form is:",
+        "options": [
+          "P₁ + ½ ρ v₁² = P₂ + ½ ρ v₂²",
+          "A₁ v₁ = A₂ v₂",
+          "ρ₁ A₁ v₁ = ρ₂ A₂ v₂",
+          "F = η (A v / y)"
+        ],
+        "correct": 2,
+        "explain": "As long as no fluid is being added or taken out, the flow rate between any two points must be equal: ρ₁ A₁ v₁ = ρ₂ A₂ v₂."
+      },
+      {
+        "id": "FD_E7",
+        "cat": "fluids_static",
+        "q": "Convert a systolic pressure of 150 mmHg to pascals. (1 mmHg ≈ 133.3 Pa)",
+        "options": [
+          "150 Pa",
+          "2000 Pa",
+          "20,000 Pa",
+          "200,000 Pa"
+        ],
+        "correct": 2,
+        "explain": "150 × 133.3 ≈ 19 995 Pa ≈ 20 000 Pa."
+      },
+      {
+        "id": "L3_E_0",
+        "cat": "fluids_flow",
+        "q": "In laminar flow, where is the velocity of the blood highest?",
+        "options": [
+          "In the centre of the vessel",
+          "Halfway between wall and centre",
+          "At the vessel wall",
+          "It is uniform across the vessel"
+        ],
+        "correct": 0,
+        "explain": "Velocity is highest in the centre of the vessel and lowest near the vessel wall. The profile is parabolic."
+      },
+      {
+        "id": "FD_8",
+        "cat": "fluids_static",
+        "q": "In a static fluid, how does pressure behave at a given depth?",
+        "options": [
+          "It acts equally in all directions",
+          "It acts only downward",
+          "It acts only sideways",
+          "It acts only upward"
+        ],
+        "correct": 0,
+        "explain": "At a given depth in a static fluid, pressure acts equally in all directions."
+      },
+      {
+        "id": "QV_E_3",
+        "cat": "fundamentals",
+        "q": "A bone that bends slightly under load and returns to its original shape when the load is removed is displaying:",
+        "options": [
+          "Ductility",
+          "Plasticity",
+          "Malleability",
+          "Elasticity"
+        ],
+        "correct": 3,
+        "explain": "Elasticity = returns to original shape after force removal. This is normal bone behaviour under physiological loads."
+      },
+      {
+        "id": "EG_E_9",
+        "cat": "elasticity",
+        "q": "The modulus of elasticity reflects which property of a material?",
+        "options": [
+          "Its color",
+          "Its temperature",
+          "Its stiffness or resistance to deformation",
+          "Its electrical conductivity"
+        ],
+        "correct": 2,
+        "explain": "Modulus = Stress / Strain. High modulus means a lot of stress is needed to produce a small strain — that is stiffness."
+      },
+      {
+        "id": "AU_mass2",
+        "cat": "fluids_flow",
+        "q": "Blood (ρ ≈ 1050 kg/m³) flows through a vessel of area 2.0×10⁻⁴ m² at 0.40 m/s. Mass flow rate ṁ?",
+        "options": [
+          "8.4×10⁻² kg/s",
+          "8.4×10⁻³ kg/s",
+          "2.1×10⁻¹ kg/s",
+          "0.40 kg/s"
+        ],
+        "correct": 0,
+        "explain": "ṁ = ρAv = 1050 × 2.0×10⁻⁴ × 0.40 = 0.084 = 8.4×10⁻² kg/s."
+      },
+      {
+        "id": "EG_C_12",
+        "cat": "elasticity",
+        "q": "Cortical bone specimen: L = 0.20 m, A = 1.0×10⁻⁴ m², F = 1000 N, ΔL = 0.12 mm. Calculate the Young's modulus.",
+        "options": [
+          "1.67 × 10⁹ Pa",
+          "1.67 × 10¹⁰ Pa",
+          "Both A and B are the same number",
+          "16.7 × 10⁹ Pa"
+        ],
+        "correct": 2,
+        "explain": "Stress = 1000 / 1×10⁻⁴ = 1.0×10⁷ Pa. Strain = 1.2×10⁻⁴ / 0.20 = 6.0×10⁻⁴. Young's modulus = 1.0×10⁷ / 6.0×10⁻⁴ = 1.67×10¹⁰ Pa = 16.7×10⁹ Pa. A and B describe the same value."
+      },
+      {
+        "id": "L3_C_11",
+        "cat": "fluids_flow",
+        "q": "Bernoulli's Principle states that for a steady, incompressible, negligible-viscosity, streamline flow, the total energy per unit volume — consisting of which three components — is constant throughout the flow?",
+        "options": [
+          "Force, mass, and acceleration",
+          "Pressure, temperature, and volume",
+          "Pressure, potential energy, and kinetic energy",
+          "Density, velocity, and area"
+        ],
+        "correct": 2,
+        "explain": "The total energy per unit volume — pressure plus potential energy plus kinetic energy — is constant throughout a streamline flow."
+      },
+      {
+        "id": "EG_C_4",
+        "cat": "elasticity",
+        "q": "Longitudinal stress is applied:",
+        "options": [
+          "Parallel to the surface",
+          "Along the axis (length) of the object",
+          "Uniformly from all sides",
+          "Only at the endpoints"
+        ],
+        "correct": 1,
+        "explain": "Longitudinal stress acts along the length of the material, either as tensile (stretching) or compressive (squeezing)."
+      },
+      {
+        "id": "AU_baro1",
+        "cat": "fluids_static",
+        "q": "In Torricelli’s mercury barometer, a column height of about 76 cm of Hg corresponds to:",
+        "options": [
+          "Absolute zero pressure",
+          "1 mmHg only",
+          "1 Pa",
+          "1 atm (≈ 1.013×10⁵ Pa)"
+        ],
+        "correct": 3,
+        "explain": "Standard atmospheric pressure supports ~76 cm (760 mm) of mercury ≈ 1.013×10⁵ Pa."
+      },
+      {
+        "id": "EG_E_6",
+        "cat": "elasticity",
+        "q": "Osteogenesis imperfecta is a condition in which:",
+        "options": [
+          "Bones have unusually high Young's modulus",
+          "Only the joints are affected",
+          "Bones are brittle with lower Young's modulus and easily fractured",
+          "Bones become more elastic"
+        ],
+        "correct": 2,
+        "explain": "Osteogenesis imperfecta is a genetic condition producing brittle bones with lower Young's modulus and high fracture risk."
+      },
+      {
+        "id": "FD_E14",
+        "cat": "fluids_static",
+        "q": "Which best explains why our cells are not crushed by atmospheric pressure?",
+        "options": [
+          "The body has no pressure",
+          "Atmospheric pressure is small",
+          "The body is shielded by a vacuum",
+          "Cells maintain an internal pressure that balances atmospheric pressure"
+        ],
+        "correct": 3,
+        "explain": "Internal pressure balances external atmospheric pressure."
+      },
+      {
+        "id": "L1_13",
+        "cat": "fundamentals",
+        "q": "Density ρ equals mass m divided by volume V. With m in grams and V in cm³, ρ is in:",
+        "options": [
+          "kg·m⁻³ only",
+          "mmHg",
+          "g·cm⁻³",
+          "newtons"
+        ],
+        "correct": 2,
+        "explain": "Matching units: grams over cubic centimetres give g·cm⁻³. Water is about 1.00 g·cm⁻³. 1 g·cm⁻³ = 1000 kg·m⁻³."
+      }
+    ],
+    "B": [
+      {
+        "id": "EG_C_3",
+        "cat": "elasticity",
+        "q": "How many types of modulus of elasticity exist, and what are they?",
+        "options": [
+          "Two: linear and nonlinear",
+          "Three: Young's modulus, Shear modulus, Bulk modulus",
+          "Four: tensile, compressive, shear, torsional",
+          "Only one: Young's modulus"
+        ],
+        "correct": 1,
+        "explain": "Three types, each matched to a specific geometry of stress and strain: Young's modulus (longitudinal), Shear modulus (tangential), Bulk modulus (volume)."
+      },
+      {
+        "id": "FD_23",
+        "cat": "fluids_static",
+        "q": "The buoyant force on a submerged object arises because:",
+        "options": [
+          "The object has density",
+          "The fluid has weight",
+          "Pressures at the top and bottom of the object are different",
+          "Gravity acts only on the object"
+        ],
+        "correct": 2,
+        "explain": "Pressure increases with depth, so the bottom face feels a larger upward force than the top face."
+      },
+      {
+        "id": "QV_E_0",
+        "cat": "fundamentals",
+        "q": "Which of the following is an ADDITIONAL state of matter beyond solid, liquid, and gas?",
+        "options": [
+          "Bose–Einstein condensate",
+          "Ice",
+          "Steam",
+          "Vapour"
+        ],
+        "correct": 0,
+        "explain": "Plasma and Bose–Einstein condensate (BEC) are the additional states mentioned in the lecture."
+      },
+      {
+        "id": "FD_E13",
+        "cat": "fluids_static",
+        "q": "In Pascal's principle, if the area of the small piston is halved while the applied force stays the same, what happens to the pressure in the hydraulic fluid?",
+        "options": [
+          "It becomes zero",
+          "It halves",
+          "It doubles",
+          "It stays the same"
+        ],
+        "correct": 2,
+        "explain": "P = F/A. Same F, half A → pressure doubles."
+      },
+      {
+        "id": "EG_E_2",
+        "cat": "elasticity",
+        "q": "Diagram (b) shows a cylinder whose top face slides sideways by Δx. This represents:",
+        "options": [
+          "Tensile stress",
+          "Hydraulic stress",
+          "Compressive stress",
+          "Shear stress"
+        ],
+        "correct": 3,
+        "explain": "Force parallel to the surface causing sliding is shear stress. The cylinder deforms like a pack of playing cards pushed sideways."
+      },
+      {
+        "id": "FD_7",
+        "cat": "fluids_static",
+        "q": "Pressure is defined as:",
+        "options": [
+          "Force / area",
+          "Mass / volume",
+          "Force × area",
+          "Area / force"
+        ],
+        "correct": 0,
+        "explain": "P = F/A. SI unit: pascal (Pa) = N/m²."
+      },
+      {
+        "id": "FD_5",
+        "cat": "fluids_static",
+        "q": "What is the specific gravity of a substance?",
+        "options": [
+          "Its mass divided by its volume",
+          "Its volume divided by its mass",
+          "Its density multiplied by g",
+          "The ratio of its density to the density of water"
+        ],
+        "correct": 3,
+        "explain": "Specific gravity = ρ_substance / ρ_water (dimensionless)."
+      },
+      {
+        "id": "L3_E_2",
+        "cat": "fluids_flow",
+        "q": "In turbulent blood flow, how do the layers move?",
+        "options": [
+          "Both radially and axially — the layers mix",
+          "Only radially (sideways)",
+          "Only axially (along the vessel)",
+          "They do not move at all"
+        ],
+        "correct": 0,
+        "explain": "In turbulent flow, blood layers mix and run radially and axially — sideways and along the vessel."
+      },
+      {
+        "id": "QV_E_15",
+        "cat": "elasticity",
+        "q": "What is the correct relationship between stress and strain within the elastic limit?",
+        "options": [
+          "Stress and strain are unrelated",
+          "Stress and strain are inversely proportional",
+          "Stress is always numerically equal to strain",
+          "Stress and strain are directly proportional"
+        ],
+        "correct": 3,
+        "explain": "Within the elastic limit, stress ∝ strain — the slope of that line is the Young's modulus."
+      },
+      {
+        "id": "EG_E_11",
+        "cat": "elasticity",
+        "q": "Compressive stress applied to a material causes it to:",
+        "options": [
+          "Stretch in length",
+          "Shorten (compress) in length",
+          "Change volume without changing length",
+          "Rotate about its axis"
+        ],
+        "correct": 1,
+        "explain": "Compressive stress pushes the ends together, shortening the material. It is a form of longitudinal stress."
+      },
+      {
+        "id": "AU_cont3",
+        "cat": "fluids_flow",
+        "q": "An artery has cross-section A₁ = 4.0×10⁻⁴ m² with blood speed 0.25 m/s. After a narrowing to A₂ = 1.0×10⁻⁴ m², what is the new speed (incompressible)?",
+        "options": [
+          "0.25 m/s",
+          "1.0 m/s",
+          "0.0625 m/s",
+          "4.0 m/s"
+        ],
+        "correct": 1,
+        "explain": "A₁v₁ = A₂v₂ → v₂ = (4.0/1.0)×0.25 = 1.0 m/s."
+      },
+      {
+        "id": "QV_E_14",
+        "cat": "fundamentals",
+        "q": "Which of the following is NOT one of the four unit systems named in the lecture?",
+        "options": [
+          "MKS",
+          "GPS",
+          "SI",
+          "CGS"
+        ],
+        "correct": 1,
+        "explain": "The lecture names CGS, FPS, MKS, and SI. GPS is a positioning system, not a unit system."
+      },
+      {
+        "id": "L3_E_13",
+        "cat": "fluids_flow",
+        "q": "What is the difference between mass flow rate and volume flow rate?",
+        "options": [
+          "They are exactly the same quantity",
+          "Mass flow rate is only used for gases, volume flow rate only for liquids",
+          "Mass flow rate tracks volume per unit time; volume flow rate tracks mass per unit time",
+          "Mass flow rate tracks mass per unit time (ρAv); volume flow rate tracks volume per unit time (Av)"
+        ],
+        "correct": 3,
+        "explain": "Mass flow rate = ρAv, with SI unit kg/s. Volume flow rate = Av, with SI unit m³/s."
+      },
+      {
+        "id": "AU_cont1",
+        "cat": "fluids_flow",
+        "q": "A vessel narrows from A₁ = 0.08 m² (v₁ = 0.4 m/s) to A₂ = 0.02 m². For incompressible flow, v₂?",
+        "options": [
+          "1.6 m/s",
+          "3.2 m/s",
+          "0.1 m/s",
+          "0.8 m/s"
+        ],
+        "correct": 0,
+        "explain": "v₂ = (0.08×0.4)/0.02 = 1.6 m/s."
+      },
+      {
+        "id": "AU_symbol1",
+        "cat": "fundamentals",
+        "q": "In these Medical Physics lectures, the symbol ρ (rho) stands for:",
+        "options": [
+          "Strain",
+          "Pressure",
+          "Stress",
+          "Density (mass/volume)"
+        ],
+        "correct": 3,
+        "explain": "ρ = density (m/V). P = pressure. σ = stress. ε = strain."
+      },
+      {
+        "id": "QV_E_8",
+        "cat": "fundamentals",
+        "q": "Malleability is the property of being:",
+        "options": [
+          "Hammered or rolled into sheets",
+          "Vaporised at low temperature",
+          "Sublimated directly to gas",
+          "Drawn into thin wires"
+        ],
+        "correct": 0,
+        "explain": "Malleable = can be hammered/rolled into sheets. Ductile = can be drawn into wires."
+      },
+      {
+        "id": "FD_2",
+        "cat": "fluids_static",
+        "q": "The density (ρ) of an object is defined as:",
+        "options": [
+          "mass / volume",
+          "volume / mass",
+          "mass × volume",
+          "force / area"
+        ],
+        "correct": 0,
+        "explain": "ρ = m/V. SI unit kg/m³ (also g/cm³ on the bench)."
+      },
+      {
+        "id": "EG_C_7",
+        "cat": "elasticity",
+        "q": "Shear strain is calculated as:",
+        "options": [
+          "ΔL / L",
+          "Δx × L",
+          "Δx / L",
+          "ΔV / V"
+        ],
+        "correct": 2,
+        "explain": "Shear strain = Δx / L, where Δx is the horizontal displacement of one face and L is the perpendicular height."
+      },
+      {
+        "id": "FT_7",
+        "cat": "fluids_static",
+        "q": "Which law states that if an external pressure is applied to a confined fluid, the pressure at every point increases by the same amount?",
+        "options": [
+          "Bernoulli's law",
+          "Archimedes' Law",
+          "Pascal's Law",
+          "Newton's Law"
+        ],
+        "correct": 2,
+        "explain": "That is Pascal's Law (P_in = P_out)."
+      },
+      {
+        "id": "AU_hyd1",
+        "cat": "fluids_static",
+        "q": "Hydraulic lift: A_small = 0.01 m², A_large = 0.10 m². Input force to lift 1500 N?",
+        "options": [
+          "150 N",
+          "15 N",
+          "15 000 N",
+          "1500 N"
+        ],
+        "correct": 0,
+        "explain": "F_in = 1500 × (0.01/0.10) = 150 N."
+      }
+    ],
+    "C": [
+      {
+        "id": "FT_12",
+        "cat": "fluids_static",
+        "q": "Systolic arterial pressure 145 mm Hg in kPa approximately? (1 mmHg ≈ 133.3 Pa)",
+        "options": [
+          "10.54 kPa",
+          "14.61 kPa",
+          "25.41 kPa",
+          "19.32 kPa"
+        ],
+        "correct": 3,
+        "explain": "145 × 133.3 ≈ 19.32 kPa."
+      },
+      {
+        "id": "AU_pascal2",
+        "cat": "fluids_static",
+        "q": "Pascal’s principle states that an external pressure applied to a confined fluid:",
+        "options": [
+          "Doubles only at the bottom",
+          "Increases the pressure by that amount at every point in the fluid",
+          "Acts only at the free surface",
+          "Is cancelled by buoyancy"
+        ],
+        "correct": 1,
+        "explain": "In a confined fluid, applied pressure is transmitted undiminished to every point (basis of hydraulics)."
+      },
+      {
+        "id": "EG_E_1",
+        "cat": "elasticity",
+        "q": "The lecture diagram (a) shows a cylinder being stretched lengthwise by ΔL. This represents:",
+        "options": [
+          "Shear stress",
+          "Tensile longitudinal stress",
+          "Hydraulic stress",
+          "Compressive stress"
+        ],
+        "correct": 1,
+        "explain": "Force along the axis pulling the ends apart = tensile longitudinal stress. Result: elongation ΔL."
+      },
+      {
+        "id": "FT_6",
+        "cat": "fluids_static",
+        "q": "Buoyant force on a box of volume 0.24 m³ fully submerged in fresh water (ρ=1000 kg/m³, g=9.8)?",
+        "options": [
+          "4310 N",
+          "1000 N",
+          "1890 N",
+          "2352 N"
+        ],
+        "correct": 3,
+        "explain": "F_b = 1000×0.24×9.8 = 2352 N."
+      },
+      {
+        "id": "FD_E12",
+        "cat": "fluids_static",
+        "q": "How much does the gauge pressure increase for every 10 m of depth in fresh water? (ρ = 1000 kg/m³, g = 9.8 m/s²)",
+        "options": [
+          "About 980 kPa",
+          "About 98 kPa — nearly 1 atm",
+          "About 9.8 kPa",
+          "About 980 Pa"
+        ],
+        "correct": 1,
+        "explain": "ΔP = 1000×9.8×10 = 9.8×10⁴ Pa ≈ 98 kPa ≈ 1 atm."
+      },
+      {
+        "id": "AU_bern1",
+        "cat": "fluids_flow",
+        "q": "Bernoulli's equation can be written compactly as:",
+        "options": [
+          "P + ½ρv² + ρgh = constant",
+          "F = ρgh",
+          "P × ½ρv² × ρgh = constant",
+          "A₁v₁ = ρ₂A₂v₂"
+        ],
+        "correct": 0,
+        "explain": "P + ½ρv² + ρgh = const along a streamline."
+      },
+      {
+        "id": "AU_depth1",
+        "cat": "fluids_static",
+        "q": "Gauge pressure at depth 12 m in fresh water (ρ=1000 kg/m³, g=9.8)?",
+        "options": [
+          "1.176 × 10⁴ Pa",
+          "2.45 × 10⁵ Pa",
+          "1.176 × 10⁵ Pa",
+          "1.013 × 10⁵ Pa"
+        ],
+        "correct": 2,
+        "explain": "P = 1000×9.8×12 = 1.176×10⁵ Pa."
+      },
+      {
+        "id": "L3_C_4",
+        "cat": "fluids_flow",
+        "q": "Blood flow through a narrowed artery is expected to be:",
+        "options": [
+          "Independent of area",
+          "Laminar",
+          "Stationary",
+          "Turbulent"
+        ],
+        "correct": 3,
+        "explain": "Blood flow through a narrowed artery becomes turbulent. Heart valve disease may also produce turbulence and heart murmurs."
+      },
+      {
+        "id": "QV_E_13",
+        "cat": "fundamentals",
+        "q": "Blood in the human body is best classified, in this lecture's terms, as which state of matter?",
+        "options": [
+          "Gas",
+          "Solid",
+          "Plasma",
+          "Liquid"
+        ],
+        "correct": 3,
+        "explain": "Blood behaves as a liquid: no definite shape, nearly fixed volume, moderate intermolecular forces, not easily compressible."
+      },
+      {
+        "id": "QV_C_9",
+        "cat": "fundamentals",
+        "q": "What is the difference between ductility and malleability?",
+        "options": [
+          "Both mean resistance to fracture",
+          "Ductility = hammered into sheets; Malleability = drawn into thin wires",
+          "Both mean the same: compressibility",
+          "Ductility = drawn into thin wires; Malleability = hammered or rolled into sheets"
+        ],
+        "correct": 3,
+        "explain": "Ductile = can be drawn into wires. Malleable = can be hammered into sheets."
+      },
+      {
+        "id": "AU_cont2",
+        "cat": "fluids_flow",
+        "q": "Blood flows at 0.3 m/s where area is 2.0×10⁻⁴ m². Stenosis to 0.5×10⁻⁴ m². New speed (incompressible)?",
+        "options": [
+          "0.3 m/s",
+          "0.075 m/s",
+          "0.6 m/s",
+          "1.2 m/s"
+        ],
+        "correct": 3,
+        "explain": "v₂ = (2.0/0.5)×0.3 = 1.2 m/s."
+      },
+      {
+        "id": "EG_C_10",
+        "cat": "elasticity",
+        "q": "Hydraulic (volume) stress is:",
+        "options": [
+          "Force applied at a single point",
+          "Uniform pressure applied from all sides by a fluid",
+          "Force applied tangentially to the surface",
+          "Force applied along the length"
+        ],
+        "correct": 1,
+        "explain": "Hydraulic stress is uniform pressure distributed equally from all directions — like an object submerged in fluid."
+      },
+      {
+        "id": "FD_E5",
+        "cat": "fluids_static",
+        "q": "A hydraulic press has a small piston of area 0.015 m² and a large piston of area 1.2 m². What output force results from an input force of 200 N?",
+        "options": [
+          "8000 N",
+          "16000 N",
+          "24000 N",
+          "2400 N"
+        ],
+        "correct": 1,
+        "explain": "F_out = 200 × (1.2/0.015) = 16000 N."
+      },
+      {
+        "id": "L3_E_4",
+        "cat": "fluids_flow",
+        "q": "Which of the following is a consequence of turbulent blood flow?",
+        "options": [
+          "Faster nutrient delivery",
+          "Decreased resistance to flow",
+          "Reduced energy loss",
+          "Reduced tissue perfusion and possible murmur"
+        ],
+        "correct": 3,
+        "explain": "Turbulent flow can result in reduced tissue perfusion, and vessels may produce a murmur."
+      },
+      {
+        "id": "YM_1",
+        "cat": "elasticity",
+        "q": "A cortical bone specimen is 0.15 m long with cross-sectional area 0.80 × 10⁻⁴ m². A tensile force of 720 N elongates it by 0.09 mm. What is Young’s modulus of this specimen?",
+        "options": [
+          "150 GPa",
+          "15 GPa",
+          "1.5 GPa",
+          "1.5 × 10⁶ Pa"
+        ],
+        "correct": 1,
+        "explain": "<div class=\"extract\">EXTRACT — L = 0.15 m · A = 0.80 × 10⁻⁴ m² = 8.0 × 10⁻⁵ m² · F = 720 N · ΔL = 0.09 mm = 9.0 × 10⁻⁵ m</div>\n        <div class=\"step\"><strong>Step 1.</strong> Convert 0.09 mm before anything else. 0.09 mm = 0.09 × 10⁻³ m = 9.0 × 10⁻⁵ m.</div>\n        <div class=\"step\"><strong>Step 2.</strong> Y = (F × L) / (A × ΔL)<br>\n        Numerator: 720 × 0.15 = 108<br>\n        Denominator: (8.0 × 10⁻⁵) × (9.0 × 10⁻⁵) = 7.2 × 10⁻⁹<br>\n        Y = 108 / 7.2 × 10⁻⁹ = 1.5 × 10¹⁰ Pa = 15 GPa</div>\n        <div class=\"step\">Trap 1.5 GPa is a missing power of ten. Trap 150 GPa used ΔL still in millimetres.</div>"
+      },
+      {
+        "id": "EG_E_12",
+        "cat": "elasticity",
+        "q": "The shear deformation in the lecture is described as being 'somewhat like':",
+        "options": [
+          "A balloon expanding",
+          "A pack of playing cards being pushed sideways",
+          "A spring being stretched",
+          "A sponge soaking water"
+        ],
+        "correct": 1,
+        "explain": "The lecture compares shear deformation to a pack of playing cards — the top card slides horizontally relative to the bottom, with each intermediate card sliding a bit less."
+      },
+      {
+        "id": "QV_C_0",
+        "cat": "fundamentals",
+        "q": "Which of the following is the cleanest definition of a physical quantity?",
+        "options": [
+          "Any number you can write down",
+          "Only things you can touch with your hands",
+          "A property that can be measured, expressed by a numerical value AND a unit, describing the state of a system",
+          "Any word that ends in -meter"
+        ],
+        "correct": 2,
+        "explain": "A physical quantity requires BOTH a number and a unit."
+      },
+      {
+        "id": "QV_C_13",
+        "cat": "elasticity",
+        "q": "Which of the following is a medical example of stress in the human body?",
+        "options": [
+          "Light passing through the eye",
+          "Blood pressure acting on vessel walls",
+          "Sound travelling in the ear",
+          "Photosynthesis in leaves"
+        ],
+        "correct": 1,
+        "explain": "Blood pressure pushing on artery walls is stress — a force distributed over an area."
+      },
+      {
+        "id": "AU_prefix4",
+        "cat": "fundamentals",
+        "q": "The SI prefix micro (µ) means which power of ten?",
+        "options": [
+          "10⁻³",
+          "10⁻⁶",
+          "10⁶",
+          "10⁻⁹"
+        ],
+        "correct": 1,
+        "explain": "Micro (µ) = 10⁻⁶. Nano (n) = 10⁻⁹. So 1 µm = 1000 nm."
+      },
+      {
+        "id": "FT_13",
+        "cat": "fluids_static",
+        "q": "Buoyant force 2352 N on a fully submerged box in fresh water (ρ=1000, g=9.8). Volume?",
+        "options": [
+          "1.94 m³",
+          "0.24 m³",
+          "43.41 m³",
+          "23.24 m³"
+        ],
+        "correct": 1,
+        "explain": "V = 2352/(1000×9.8) = 0.24 m³."
+      }
+    ],
+    "D": [
+      {
+        "id": "FT_2",
+        "cat": "fluids_static",
+        "q": "What is the density of a wooden block of dimensions 6 cm × 7 cm × 8 cm with mass 120 g?",
+        "options": [
+          "2.55 g/cm³",
+          "1.15 g/cm³",
+          "0.75 g/cm³",
+          "0.35 g/cm³"
+        ],
+        "correct": 3,
+        "explain": "V = 336 cm³. ρ = 120/336 ≈ 0.35 g/cm³."
+      },
+      {
+        "id": "EG_C_9",
+        "cat": "elasticity",
+        "q": "Bulk modulus is calculated as:",
+        "options": [
+          "(F/A) × (ΔV/V)",
+          "(ΔV/V) / (F/A)",
+          "(F/A) / (ΔL/L)",
+          "(F/A) / (ΔV/V)"
+        ],
+        "correct": 3,
+        "explain": "Bulk modulus = Hydraulic stress / Hydraulic strain = (F/A) / (ΔV/V). Units: Pa."
+      },
+      {
+        "id": "FD_E9",
+        "cat": "fluids_static",
+        "q": "What is the net upward force on a submerged object if its weight is 250 N and the buoyant force is 320 N?",
+        "options": [
+          "320 N upward",
+          "250 N upward",
+          "70 N upward",
+          "570 N upward"
+        ],
+        "correct": 2,
+        "explain": "Net = F_b − W = 320 − 250 = 70 N upward."
+      },
+      {
+        "id": "L3_C_10",
+        "cat": "fluids_flow",
+        "q": "A blood vessel narrows from A₁ = 0.1 m² (V₁ = 0.5 m/s) to A₂ = 0.01 m². What is V₂?",
+        "options": [
+          "0.5 m/s",
+          "5 m/s",
+          "0.05 m/s",
+          "50 m/s"
+        ],
+        "correct": 1,
+        "explain": "Using A₁V₁ = A₂V₂: V₂ = (A₁V₁) / A₂ = (0.1 × 0.5) / 0.01 = 5 m/s."
+      },
+      {
+        "id": "FD_21",
+        "cat": "fluids_static",
+        "q": "Pascal's principle states that:",
+        "options": [
+          "Pressure in a confined fluid is transmitted equally in all directions",
+          "Pressure equals density × gravity × height",
+          "Buoyant force equals the weight of the fluid displaced",
+          "Pressure decreases with depth"
+        ],
+        "correct": 0,
+        "explain": "Pascal: an external pressure applied to a confined fluid is transmitted equally throughout."
+      },
+      {
+        "id": "FD_20",
+        "cat": "fluids_static",
+        "q": "What is the absolute pressure at a depth of 20 m in fresh water, given ρ = 1000 kg/m³, g = 9.8 m/s², and P_atm = 1.013 × 10⁵ Pa?",
+        "options": [
+          "9.8 × 10⁵ Pa",
+          "3.5 × 10⁵ Pa",
+          "2.973 × 10⁵ Pa",
+          "1.013 × 10⁵ Pa"
+        ],
+        "correct": 2,
+        "explain": "P_abs = P_atm + ρgh = 1.013×10⁵ + 1.96×10⁵ = 2.973×10⁵ Pa."
+      },
+      {
+        "id": "QV_E_5",
+        "cat": "fundamentals",
+        "q": "Which of the following has BOTH a numerical value AND a unit, making it a complete physical quantity?",
+        "options": [
+          "Length",
+          "10 kg",
+          "metres",
+          "5"
+        ],
+        "correct": 1,
+        "explain": "10 kg has both a number (10) and a unit (kg). The others are missing one part."
+      },
+      {
+        "id": "FD_19",
+        "cat": "fluids_static",
+        "q": "A diver is at a depth where the gauge pressure reads 4.41 × 10⁵ Pa in fresh water (ρ = 1000 kg/m³, g = 9.8 m/s²). How deep is the diver?",
+        "options": [
+          "22.5 m",
+          "45.0 m",
+          "49.0 m",
+          "35.0 m"
+        ],
+        "correct": 1,
+        "explain": "h = P/(ρg) = 4.41×10⁵ / (1000×9.8) = 45.0 m."
+      },
+      {
+        "id": "EG_C_6",
+        "cat": "elasticity",
+        "q": "Young's modulus is calculated as:",
+        "options": [
+          "(ΔL/L) / (F/A)",
+          "(F/A) / (ΔL/L)",
+          "F/A × ΔL/L",
+          "F × A × ΔL / L"
+        ],
+        "correct": 1,
+        "explain": "Young's modulus = Longitudinal stress / Longitudinal strain = (F/A) / (ΔL/L). Units: Pa."
+      },
+      {
+        "id": "L3_C_5",
+        "cat": "fluids_flow",
+        "q": "Mass flow rate is defined as:",
+        "options": [
+          "The pressure divided by the area",
+          "The force exerted by a fluid on the tube wall",
+          "The amount of volume passing a point per unit time",
+          "The amount of mass passing a given point per unit time"
+        ],
+        "correct": 3,
+        "explain": "Mass flow rate is the amount of mass that passes a given point per unit time."
+      },
+      {
+        "id": "EG_E_4",
+        "cat": "elasticity",
+        "q": "In the bone diagram, the side being compressed is under ______ stress, while the side being stretched is under ______ stress.",
+        "options": [
+          "compressive; tensile",
+          "tensile; compressive",
+          "hydraulic; tensile",
+          "shear; bulk"
+        ],
+        "correct": 0,
+        "explain": "When a long bone bends, one side is squeezed (compressive) and the opposite side is stretched (tensile). Both are forms of longitudinal stress."
+      },
+      {
+        "id": "EG_E_14",
+        "cat": "elasticity",
+        "q": "Why is the Young's modulus clinically useful for assessing bone health?",
+        "options": [
+          "It determines bone age",
+          "It measures bone color",
+          "It indicates bone stiffness and resistance to elastic deformation, predicting fracture risk",
+          "It measures bone temperature"
+        ],
+        "correct": 2,
+        "explain": "The Young's modulus reflects bone stiffness. A lower value (from osteoporosis or osteogenesis imperfecta) means greater fracture risk under normal loads."
+      },
+      {
+        "id": "FT_8",
+        "cat": "fluids_static",
+        "q": "Volume of a metal ball with mass 18 g and density 8 g/cm³?",
+        "options": [
+          "2.25 cm³",
+          "1.11 cm³",
+          "6.84 cm³",
+          "3.75 cm³"
+        ],
+        "correct": 0,
+        "explain": "V = m/ρ = 18/8 = 2.25 cm³."
+      },
+      {
+        "id": "AU_crystal1",
+        "cat": "fundamentals",
+        "q": "Which of the following is an example of a crystalline solid from the curriculum review?",
+        "options": [
+          "Rubber",
+          "Glass",
+          "Many polymers",
+          "Gold (Au)"
+        ],
+        "correct": 3,
+        "explain": "Crystalline solids have a regular lattice. Curriculum examples: Ag, Au, Pb, Sn. Rubber is amorphous."
+      },
+      {
+        "id": "FD_13",
+        "cat": "fluids_static",
+        "q": "Which of the following is a correct equivalent for 1 atm?",
+        "options": [
+          "1 atm = 1000 torr = 100 lb/in²",
+          "1 atm = 76 torr = 10 lb/in²",
+          "1 atm = 760 torr = 14.7 lb/in²",
+          "1 atm = 100 torr = 1 lb/in²"
+        ],
+        "correct": 2,
+        "explain": "1 atm = 760 torr (mmHg) = 14.7 lb/in² ≈ 1.013×10⁵ Pa."
+      },
+      {
+        "id": "EG_E_10",
+        "cat": "elasticity",
+        "q": "Tensile stress applied to a material causes it to:",
+        "options": [
+          "Change shape without changing length",
+          "Stretch in length",
+          "Decrease in volume",
+          "Shorten in length"
+        ],
+        "correct": 1,
+        "explain": "Tensile stress pulls the material along its axis, causing elongation (stretching)."
+      },
+      {
+        "id": "QV_C_6",
+        "cat": "fundamentals",
+        "q": "Which ordering of DIFFUSION rate is correct?",
+        "options": [
+          "Liquid > Gas > Solid",
+          "Diffusion is equal in all three",
+          "Solid > Liquid > Gas",
+          "Gas > Liquid > Solid"
+        ],
+        "correct": 3,
+        "explain": "Diffusion is fastest in gases because their molecules move fastest and are furthest apart."
+      },
+      {
+        "id": "QV_E_7",
+        "cat": "fundamentals",
+        "q": "Which statement about solids is FALSE?",
+        "options": [
+          "They are highly dense",
+          "They have a definite shape",
+          "They have strong intermolecular forces",
+          "They are easily compressed"
+        ],
+        "correct": 3,
+        "explain": "Solids are NOT easily compressed — strong intermolecular forces lock particles in place."
+      },
+      {
+        "id": "L3_C_0",
+        "cat": "fluids_flow",
+        "q": "What are the two types of fluid flow described in the lecture?",
+        "options": [
+          "Steady and unsteady",
+          "Streamline (laminar) and turbulent",
+          "Viscous and non-viscous",
+          "Compressible and incompressible"
+        ],
+        "correct": 1,
+        "explain": "The lecture names two types of fluid flow: streamline (also called laminar) and turbulent."
+      },
+      {
+        "id": "EG_E_0",
+        "cat": "elasticity",
+        "q": "What happens to a material loaded beyond its elastic limit?",
+        "options": [
+          "It loses mass",
+          "It returns to its original shape",
+          "It deforms permanently and eventually breaks",
+          "It becomes more elastic"
+        ],
+        "correct": 2,
+        "explain": "Past the elastic limit, deformation becomes permanent. Further loading reaches the breaking point where the material fractures."
+      }
+    ],
+    "E": [
+      {
+        "id": "EG_C_2",
+        "cat": "elasticity",
+        "q": "Which formula correctly represents the modulus of elasticity?",
+        "options": [
+          "Strain / Stress",
+          "Stress / Strain",
+          "Stress × Strain",
+          "Stress + Strain"
+        ],
+        "correct": 1,
+        "explain": "Modulus = Stress / Strain. Units: pascal (Pa), because strain is dimensionless."
+      },
+      {
+        "id": "L3_C_6",
+        "cat": "fluids_flow",
+        "q": "Which of the following is the correct final formula for mass flow rate?",
+        "options": [
+          "A v / ρ",
+          "ρ A / v",
+          "ρ A v",
+          "ρ v / A"
+        ],
+        "correct": 2,
+        "explain": "Mass flow rate = ρ A v, where ρ is density, A is cross-sectional area, and v is the velocity of the fluid."
+      },
+      {
+        "id": "EG_E_5",
+        "cat": "elasticity",
+        "q": "How does osteoporosis affect the Young's modulus of bone?",
+        "options": [
+          "It increases bone mass",
+          "It lowers it, making bone brittle and easily fractured",
+          "It raises it, making bone stiffer",
+          "It has no effect"
+        ],
+        "correct": 1,
+        "explain": "Osteoporosis reduces bone density and lowers the Young's modulus. The bone becomes brittle and fractures under loads a healthy bone would tolerate."
+      },
+      {
+        "id": "QV_C_1",
+        "cat": "fundamentals",
+        "q": "How many base quantities does the SI system have, and what is the SI unit of temperature?",
+        "options": [
+          "3 base quantities; kelvin (K)",
+          "5 base quantities; degree Celsius",
+          "9 base quantities; degree Fahrenheit",
+          "7 base quantities; kelvin (K)"
+        ],
+        "correct": 3,
+        "explain": "The SI system has 7 base quantities, and temperature's base unit is the kelvin."
+      },
+      {
+        "id": "QV_C_5",
+        "cat": "fundamentals",
+        "q": "Rank the intermolecular forces from strongest to weakest across the three common states:",
+        "options": [
+          "Liquid > Solid > Gas",
+          "Gas > Solid > Liquid",
+          "Solid > Liquid > Gas",
+          "Gas > Liquid > Solid"
+        ],
+        "correct": 2,
+        "explain": "Solids hold their molecules most tightly, gases least tightly."
+      },
+      {
+        "id": "FD_10",
+        "cat": "fluids_static",
+        "q": "Which expression gives the pressure at a depth h below the surface of a liquid of density ρ?",
+        "options": [
+          "P = gh / ρ",
+          "P = ρg / h",
+          "P = ρgh",
+          "P = ρ / (gh)"
+        ],
+        "correct": 2,
+        "explain": "Gauge (hydrostatic) pressure: P = ρgh."
+      },
+      {
+        "id": "FD_18",
+        "cat": "fluids_static",
+        "q": "In a manometer, the gauge pressure of a gas in a container is given by:",
+        "options": [
+          "P_atm + ρgh",
+          "ρgh",
+          "ρg / h",
+          "P_atm − ρgh"
+        ],
+        "correct": 1,
+        "explain": "Manometer gauge pressure equals the hydrostatic column: P_gauge = ρgh."
+      },
+      {
+        "id": "EG_C_1",
+        "cat": "elasticity",
+        "q": "What is the constant of proportionality between stress and strain called?",
+        "options": [
+          "Strain coefficient",
+          "Elastic limit",
+          "Hooke constant",
+          "Modulus of elasticity"
+        ],
+        "correct": 3,
+        "explain": "Modulus of elasticity = Stress / Strain. It is a material property within the elastic limit."
+      },
+      {
+        "id": "L1_0",
+        "cat": "fundamentals",
+        "q": "In the Système International (SI), which is the base unit of mass?",
+        "options": [
+          "Pound (lb)",
+          "Newton (N)",
+          "Gram (g)",
+          "Kilogram (kg)"
+        ],
+        "correct": 3,
+        "explain": "The SI base unit of mass is the kilogram (kg). A newton is force. Grams are used on the bench but are 10⁻³ kg."
+      },
+      {
+        "id": "YM_3",
+        "cat": "elasticity",
+        "q": "A femur 0.38 m long has cross-sectional area 3.0 × 10⁻⁴ m² and Young’s modulus 17 × 10⁹ Pa. The bone must not exceed a compressive strain of 0.008. What is the maximum compressive force it may carry?",
+        "options": [
+          "4.08 × 10³ N",
+          "1.36 × 10⁸ N",
+          "4.08 × 10⁴ N",
+          "5.10 × 10⁴ N"
+        ],
+        "correct": 2,
+        "explain": "<div class=\"extract\">EXTRACT — L = 0.38 m (not needed for force) · A = 3.0 × 10⁻⁴ m² · Y = 17 × 10⁹ Pa · max strain = 0.008 · find F</div>\n        <div class=\"step\"><strong>Step 1.</strong> Stress = Y × Strain = (17 × 10⁹) × 0.008 = 1.36 × 10⁸ Pa</div>\n        <div class=\"step\"><strong>Step 2.</strong> F = Stress × A = (1.36 × 10⁸) × (3.0 × 10⁻⁴) = 4.08 × 10⁴ N = 40 800 N</div>\n        <div class=\"step\">L was a decoy. Strain was already given, so you never compute ΔL. Trap 1.36 × 10⁸ N is the stress mistaken for a force.</div>"
+      },
+      {
+        "id": "FD_E2",
+        "cat": "fluids_static",
+        "q": "Which of the following is the SI unit of pressure?",
+        "options": [
+          "Kilogram (kg)",
+          "Newton (N)",
+          "Joule (J)",
+          "Pascal (Pa)"
+        ],
+        "correct": 3,
+        "explain": "Pascal (Pa) = N/m² is the SI unit of pressure."
+      },
+      {
+        "id": "FT_5",
+        "cat": "fluids_static",
+        "q": "A patient has a diastolic arterial pressure of 80 mm Hg. Approximately in kPa? (1 mmHg ≈ 133.3 Pa)",
+        "options": [
+          "10.66 kPa",
+          "20.32 kPa",
+          "15.21 kPa",
+          "2.41 kPa"
+        ],
+        "correct": 0,
+        "explain": "80 × 133.3 ≈ 10.66 kPa."
+      },
+      {
+        "id": "FD_E4",
+        "cat": "fluids_static",
+        "q": "What is the buoyant force on a sphere of volume 0.6 m³ fully submerged in a fluid of density 850 kg/m³? (g = 9.8 m/s²)",
+        "options": [
+          "4998 N",
+          "5100 N",
+          "5010 N",
+          "6000 N"
+        ],
+        "correct": 0,
+        "explain": "F_b = ρVg = 850 × 0.6 × 9.8 = 4998 N."
+      },
+      {
+        "id": "EG_E_7",
+        "cat": "elasticity",
+        "q": "Loss of elasticity in blood vessels is significant because it:",
+        "options": [
+          "Leads to cardiovascular diseases",
+          "Only affects the veins",
+          "Has no clinical effect",
+          "Improves circulation"
+        ],
+        "correct": 0,
+        "explain": "Arterial walls need elasticity to buffer the pulse and maintain diastolic pressure. Loss of elasticity contributes directly to cardiovascular disease."
+      },
+      {
+        "id": "EG_E_13",
+        "cat": "elasticity",
+        "q": "Hydraulic stress produces which kind of deformation?",
+        "options": [
+          "Both length and shape change",
+          "Length change only",
+          "Angular distortion only",
+          "Volume change without shape change"
+        ],
+        "correct": 3,
+        "explain": "Uniform pressure from all sides shrinks volume but preserves shape. The sphere in diagram (c) stays spherical."
+      },
+      {
+        "id": "FT_1",
+        "cat": "fluids_static",
+        "q": "Which one of the following three cubes of equal dimensions has the highest density?",
+        "options": [
+          "Wood",
+          "All have equal densities",
+          "Gold",
+          "Paper"
+        ],
+        "correct": 2,
+        "explain": "Same volume → highest mass means highest density. Gold ≫ wood or paper."
+      },
+      {
+        "id": "L3_C_3",
+        "cat": "fluids_flow",
+        "q": "According to the lecture, normal blood flow in a healthy artery is:",
+        "options": [
+          "Laminar",
+          "Always stationary",
+          "A mix of laminar and turbulent",
+          "Turbulent"
+        ],
+        "correct": 0,
+        "explain": "Normal blood flow in a healthy artery is laminar — smooth and orderly."
+      },
+      {
+        "id": "QV_E_1",
+        "cat": "fundamentals",
+        "q": "Which statement about ideal liquids is correct according to the lecture?",
+        "options": [
+          "Ideal liquids have stronger intermolecular forces than solids",
+          "Ideal liquids are perfectly compressible",
+          "Ideal liquids exist only as pure water",
+          "Ideal liquids are NOT compressible, but no ideal liquid exists in nature"
+        ],
+        "correct": 3,
+        "explain": "Ideal liquids are theoretically incompressible, but no real liquid achieves this."
+      },
+      {
+        "id": "FD_3",
+        "cat": "fluids_static",
+        "q": "A block measures 5.0 cm × 6.0 cm × 8.0 cm and has a mass of 960 g. What is its density?",
+        "options": [
+          "4.0 g/cm³",
+          "3.0 g/cm³",
+          "4.8 g/cm³",
+          "2.5 g/cm³"
+        ],
+        "correct": 0,
+        "explain": "V = 5×6×8 = 240 cm³. ρ = 960/240 = 4.0 g/cm³."
+      },
+      {
+        "id": "AU_bern2",
+        "cat": "fluids_flow",
+        "q": "Along a horizontal streamline (same height), Bernoulli says that if speed increases, pressure:",
+        "options": [
+          "Must also increase",
+          "Becomes equal to atmospheric pressure only",
+          "Stays exactly the same",
+          "Decreases"
+        ],
+        "correct": 3,
+        "explain": "At constant h, P + ½ρv² = const → higher v means lower P."
+      }
+    ],
+    "F": [
+      {
+        "id": "EG_E_8",
+        "cat": "elasticity",
+        "q": "Which pairing of stress and unit is correct?",
+        "options": [
+          "Stress — pascal (Pa) = N/m²",
+          "Stress — joule",
+          "Stress — metre",
+          "Stress — dimensionless"
+        ],
+        "correct": 0,
+        "explain": "Stress = Force / Area, so its SI unit is N/m² = pascal (Pa)."
+      },
+      {
+        "id": "L3_C_2",
+        "cat": "fluids_flow",
+        "q": "Which statement best describes turbulent blood flow?",
+        "options": [
+          "Smooth, orderly parallel layers with no mixing",
+          "Flow that only happens in the aorta",
+          "Flow that has no effect on energy or resistance",
+          "Irregular swirling movement that occurs when velocity becomes very high"
+        ],
+        "correct": 3,
+        "explain": "Turbulent flow is irregular swirling movement. It occurs when velocity becomes very high, and it increases energy loss and resistance."
+      },
+      {
+        "id": "QV_C_11",
+        "cat": "elasticity",
+        "q": "Strain is best described as:",
+        "options": [
+          "Force × area; units are N·m²",
+          "Deformation relative to original length; dimensionless with no units",
+          "The same thing as stress",
+          "Force per unit area; units are N/m²"
+        ],
+        "correct": 1,
+        "explain": "Strain = ΔL / L₀. It is a ratio, so it has no units."
+      },
+      {
+        "id": "EG_C_5",
+        "cat": "elasticity",
+        "q": "Longitudinal strain is calculated as:",
+        "options": [
+          "ΔL / L",
+          "ΔL + L",
+          "L / ΔL",
+          "ΔL × L"
+        ],
+        "correct": 0,
+        "explain": "Longitudinal strain = ΔL / L, where ΔL is the change in length and L is the original length. It is dimensionless."
+      },
+      {
+        "id": "FD_E11",
+        "cat": "fluids_static",
+        "q": "Which is the MOST convenient reason mercury is used in barometers instead of water?",
+        "options": [
+          "Mercury is cheaper than water",
+          "Mercury has no vapour pressure",
+          "Mercury is safer than water",
+          "Mercury's high density gives a manageable column height"
+        ],
+        "correct": 3,
+        "explain": "High ρ_Hg → ~76 cm column vs ~10.3 m for water."
+      },
+      {
+        "id": "L3_C_12",
+        "cat": "fluids_flow",
+        "q": "Which of the following is the correct form of Bernoulli's equation?",
+        "options": [
+          "P₁ + ½ ρ v₁² + ρ g y₁ = P₂ + ½ ρ v₂² + ρ g y₂",
+          "P₁ × ½ ρ v₁² × ρ g y₁ = P₂ × ½ ρ v₂² × ρ g y₂",
+          "P₁ / ρ₁ = P₂ / ρ₂",
+          "A₁ v₁ = A₂ v₂"
+        ],
+        "correct": 0,
+        "explain": "Bernoulli's equation: P₁ + ½ ρ v₁² + ρ g y₁ = P₂ + ½ ρ v₂² + ρ g y₂, or compactly P + ½ ρ v² + ρ g h = Constant."
+      },
+      {
+        "id": "EG_C_8",
+        "cat": "elasticity",
+        "q": "Shear modulus is calculated as:",
+        "options": [
+          "(F/A) / (Δx/L)",
+          "(Δx/L) / (F/A)",
+          "(F/A) / (ΔV/V)",
+          "(F/A) / (ΔL/L)"
+        ],
+        "correct": 0,
+        "explain": "Shear modulus = Shear stress / Shear strain = (F/A) / (Δx/L). Units: Pa."
+      },
+      {
+        "id": "FD_E3",
+        "cat": "fluids_static",
+        "q": "How much mass of fluid does a box of volume 0.4 m³ displace when fully submerged in fresh water (ρ = 1000 kg/m³)?",
+        "options": [
+          "0.4 kg",
+          "4000 kg",
+          "40 kg",
+          "400 kg"
+        ],
+        "correct": 3,
+        "explain": "m = ρV = 1000 × 0.4 = 400 kg."
+      },
+      {
+        "id": "L3_C_9",
+        "cat": "fluids_flow",
+        "q": "For an incompressible fluid, the equation of continuity simplifies to:",
+        "options": [
+          "P₁ v₁ = P₂ v₂",
+          "ρ₁ A₁ = ρ₂ A₂",
+          "v₁ / A₁ = v₂ / A₂",
+          "A₁ v₁ = A₂ v₂"
+        ],
+        "correct": 3,
+        "explain": "When density is constant (typical for liquids), the ρ terms cancel: A₁ v₁ = A₂ v₂."
+      },
+      {
+        "id": "QV_C_12",
+        "cat": "elasticity",
+        "q": "Hooke's Law states that stress and strain are proportional up to which point?",
+        "options": [
+          "The proportional limit (also called the elastic limit)",
+          "The breaking point",
+          "The melting point",
+          "The boiling point"
+        ],
+        "correct": 0,
+        "explain": "Up to the elastic limit, stress/strain = constant (Young's modulus). Beyond it, permanent deformation occurs."
+      },
+      {
+        "id": "FD_6",
+        "cat": "fluids_static",
+        "q": "How do you convert a density given in g/cm³ to kg/m³?",
+        "options": [
+          "Add 1000",
+          "Multiply by 100",
+          "Multiply by 1000",
+          "Divide by 1000"
+        ],
+        "correct": 2,
+        "explain": "1 g/cm³ = 1000 kg/m³. Multiply g/cm³ by 1000 to get kg/m³."
+      },
+      {
+        "id": "FD_12",
+        "cat": "fluids_static",
+        "q": "At sea level, what is the value of standard atmospheric pressure in pascals?",
+        "options": [
+          "1.013 × 10³ Pa",
+          "1.013 × 10⁵ Pa",
+          "1.013 × 10⁴ Pa",
+          "1.013 × 10⁶ Pa"
+        ],
+        "correct": 1,
+        "explain": "1 atm ≈ 1.013 × 10⁵ Pa (= 760 torr ≈ 14.7 lb/in²)."
+      },
+      {
+        "id": "EG_C_14",
+        "cat": "elasticity",
+        "q": "What are the units of strain?",
+        "options": [
+          "Dimensionless (no units)",
+          "N",
+          "Pa",
+          "N/m²"
+        ],
+        "correct": 0,
+        "explain": "Strain = ΔL/L — a length divided by a length, so the units cancel. Strain has no units."
+      },
+      {
+        "id": "AU_crystal2",
+        "cat": "fundamentals",
+        "q": "Amorphous solids are characterised by:",
+        "options": [
+          "No long-range orderly structure; they soften over a temperature range",
+          "Always being metals",
+          "A regular repeating atomic lattice and a sharp melting point",
+          "Being unable to deform under any load"
+        ],
+        "correct": 0,
+        "explain": "Amorphous = no long-range order; softens over a range. Rubber (and glass/polymers) are typical."
+      },
+      {
+        "id": "QV_C_3",
+        "cat": "fundamentals",
+        "q": "In the CGS system, the units of length, mass, and time are:",
+        "options": [
+          "foot, pound, second",
+          "centimetre, gram, second",
+          "metre, gram, second",
+          "metre, kilogram, second"
+        ],
+        "correct": 1,
+        "explain": "CGS = centimetre – gram – second. FPS = foot – pound – second. MKS = metre – kilogram – second."
+      },
+      {
+        "id": "FT_4",
+        "cat": "fluids_static",
+        "q": "The pressure in a room is 1.368 × 10⁵ Pa. What force acts on a floor 5 m × 5 m?",
+        "options": [
+          "4.68 × 10⁷ N",
+          "3.42 × 10⁶ N",
+          "1.68 × 10⁵ N",
+          "7.883 × 10⁸ N"
+        ],
+        "correct": 1,
+        "explain": "F = PA = 1.368×10⁵ × 25 = 3.42 × 10⁶ N."
+      },
+      {
+        "id": "FD_24",
+        "cat": "fluids_static",
+        "q": "Archimedes' Principle states that the magnitude of the buoyant force is equal to:",
+        "options": [
+          "The weight of the fluid displaced by the object",
+          "The density of the object times volume",
+          "The weight of the submerged object",
+          "The mass of the object times g"
+        ],
+        "correct": 0,
+        "explain": "F_b = weight of fluid displaced = ρ_fluid V_displaced g."
+      },
+      {
+        "id": "QV_E_4",
+        "cat": "fundamentals",
+        "q": "What happens when a material is loaded beyond its elastic limit?",
+        "options": [
+          "It returns to its original shape",
+          "It permanently deforms",
+          "It melts",
+          "It gains mass"
+        ],
+        "correct": 1,
+        "explain": "Beyond the elastic limit, deformation becomes permanent. Continue loading and the material reaches its breaking point."
+      },
+      {
+        "id": "FT_9",
+        "cat": "fluids_static",
+        "q": "Mass of a wooden block 6 cm × 8 cm × 4 cm with density 0.35 g/cm³?",
+        "options": [
+          "41.45 g",
+          "7.20 g",
+          "67.20 g",
+          "13.15 g"
+        ],
+        "correct": 2,
+        "explain": "m = 0.35 × 192 = 67.2 g."
+      },
+      {
+        "id": "QV_C_2",
+        "cat": "fundamentals",
+        "q": "Which of the following is a DERIVED quantity, not a base quantity?",
+        "options": [
+          "Mass",
+          "Length",
+          "Area",
+          "Time"
+        ],
+        "correct": 2,
+        "explain": "Area = length × length, so it is built from base quantities and is derived."
+      }
+    ],
+    "G": [
+      {
+        "id": "FD_16",
+        "cat": "fluids_static",
+        "q": "An open-tube manometer is used primarily to measure:",
+        "options": [
+          "Velocity of a moving fluid",
+          "Fluid density",
+          "Gas pressure in a container",
+          "Buoyant force"
+        ],
+        "correct": 2,
+        "explain": "Open-tube manometers measure gas pressure in a container via the liquid column difference."
+      },
+      {
+        "id": "FT_3",
+        "cat": "fluids_static",
+        "q": "What is the SI unit of pressure (P)?",
+        "options": [
+          "kelvin (K)",
+          "newton (N)",
+          "ampere (A)",
+          "pascal (Pa)"
+        ],
+        "correct": 3,
+        "explain": "SI unit of pressure is the pascal (Pa) = N/m²."
+      },
+      {
+        "id": "QV_C_8",
+        "cat": "fundamentals",
+        "q": "Which pair correctly distinguishes elasticity from plasticity?",
+        "options": [
+          "Elasticity → returns to original shape after force removed; Plasticity → permanent deformation",
+          "Elasticity applies only to gases",
+          "Both mean the same thing",
+          "Elasticity → permanent deformation; Plasticity → returns to original shape"
+        ],
+        "correct": 0,
+        "explain": "Elasticity = reversible deformation. Plasticity = permanent deformation."
+      },
+      {
+        "id": "FD_14",
+        "cat": "fluids_static",
+        "q": "What is the purpose of the mercury barometer developed by Torricelli?",
+        "options": [
+          "To measure fluid density",
+          "To measure atmospheric pressure",
+          "To measure buoyancy",
+          "To measure blood pressure"
+        ],
+        "correct": 1,
+        "explain": "Torricelli's mercury barometer measures atmospheric pressure (~76 cm Hg column at 1 atm)."
+      },
+      {
+        "id": "QV_E_11",
+        "cat": "elasticity",
+        "q": "A bone under 5 × 10⁶ Pa of stress shows a strain of 0.0025. What is the Young's modulus of this sample?",
+        "options": [
+          "2 × 10⁶ Pa",
+          "1.25 × 10⁴ Pa",
+          "0.0005 Pa",
+          "2 × 10⁹ Pa"
+        ],
+        "correct": 3,
+        "explain": "Y = stress / strain = (5×10⁶) / (2.5×10⁻³) = 2 × 10⁹ Pa = 2 GPa."
+      },
+      {
+        "id": "FT_10",
+        "cat": "fluids_static",
+        "q": "Air pressure 1.368×10⁵ Pa exerts force 3.42×10⁵ N on a table. Area of the table?",
+        "options": [
+          "10 m²",
+          "1.5 m²",
+          "2.5 m²",
+          "5 m²"
+        ],
+        "correct": 2,
+        "explain": "A = F/P = 2.5 m²."
+      },
+      {
+        "id": "YM_4",
+        "cat": "elasticity",
+        "q": "A lumbar vertebral body is 25 mm high. Treat its effective Young’s modulus as 10 × 10⁹ Pa. The maximum compressive stress before collapse is 20 × 10⁶ Pa. How much can the vertebral height shorten?",
+        "options": [
+          "0.50 mm",
+          "2.0 mm",
+          "0.050 mm",
+          "5.0 mm"
+        ],
+        "correct": 2,
+        "explain": "<div class=\"extract\">EXTRACT — L = 25 mm = 0.025 m · Y = 10 × 10⁹ Pa · max stress = 20 × 10⁶ Pa · find ΔL</div>\n        <div class=\"step\"><strong>Step 1.</strong> Convert height first. 25 mm = 0.025 m.</div>\n        <div class=\"step\"><strong>Step 2.</strong> Strain = Stress / Y = (20 × 10⁶) / (10 × 10⁹) = 0.002</div>\n        <div class=\"step\"><strong>Step 3.</strong> ΔL = 0.002 × 0.025 = 5.0 × 10⁻⁵ m = 0.050 mm</div>\n        <div class=\"step\">Cancellous-style bone + short L → tiny shortening. Trap 5.0 mm used L still in millimetres inside Strain × L without converting.</div>"
+      },
+      {
+        "id": "QV_C_10",
+        "cat": "elasticity",
+        "q": "Stress is defined as:",
+        "options": [
+          "Force × time",
+          "Force × Area",
+          "Area / Force",
+          "Force / Area"
+        ],
+        "correct": 3,
+        "explain": "Stress = F / A. SI unit: N/m² = Pascal (Pa)."
+      },
+      {
+        "id": "QV_C_4",
+        "cat": "fundamentals",
+        "q": "Which of the following is NOT matter?",
+        "options": [
+          "Blood",
+          "Light",
+          "Air in the lungs",
+          "Bone"
+        ],
+        "correct": 1,
+        "explain": "Matter must have mass and occupy space. Light has neither rest mass nor volume — it is not matter."
+      },
+      {
+        "id": "FT_11",
+        "cat": "fluids_static",
+        "q": "Pressure gauge reads 1.39×10⁵ Pa (gauge) in fresh water (ρ=1000, g=9.8). Diver depth?",
+        "options": [
+          "5.18 m",
+          "11.54 m",
+          "8.95 m",
+          "14.18 m"
+        ],
+        "correct": 3,
+        "explain": "h = 1.39×10⁵/(1000×9.8) ≈ 14.18 m."
+      },
+      {
+        "id": "EG_C_13",
+        "cat": "elasticity",
+        "q": "Femur: L = 0.4 m, Young's modulus = 16×10⁹ Pa, max stress = 150×10⁶ Pa. Find maximum compression ΔL before breaking.",
+        "options": [
+          "37.5 mm",
+          "0.00375 mm",
+          "3.75 mm",
+          "0.375 mm"
+        ],
+        "correct": 2,
+        "explain": "Strain = stress / Young's modulus = 150×10⁶ / 16×10⁹ = 0.009375. ΔL = strain × L = 0.009375 × 0.4 = 0.00375 m = 3.75 mm."
+      },
+      {
+        "id": "YM_0",
+        "cat": "elasticity",
+        "q": "A tibia 0.35 m long has Young’s modulus 18 × 10⁹ Pa. It can withstand a maximum compressive stress of 140 × 10⁶ Pa before fracture. How much can this tibia compress before it breaks?",
+        "options": [
+          "27.2 mm",
+          "7.78 mm",
+          "0.97 mm",
+          "2.72 mm"
+        ],
+        "correct": 3,
+        "explain": "<div class=\"extract\">EXTRACT from the story — L = 0.35 m · Y = 18 × 10⁹ Pa · max stress = 140 × 10⁶ Pa · find ΔL</div>\n        <div class=\"step\"><strong>Step 1.</strong> Definition: Y = Stress / Strain, so Strain = Stress / Y<br>\n        Strain = (140 × 10⁶) / (18 × 10⁹) = 0.140 / 18 = 0.007778 (no units)</div>\n        <div class=\"step\"><strong>Step 2.</strong> Strain = ΔL / L, so ΔL = Strain × L<br>\n        ΔL = 0.007778 × 0.35 = 0.002722 m = 2.72 mm</div>\n        <div class=\"step\">Trap option 7.78 mm is the strain written as if it were millimetres. Trap 27.2 mm forgot to convert metres.</div>"
+      },
+      {
+        "id": "L3_E_1",
+        "cat": "fluids_flow",
+        "q": "What is the velocity profile of laminar blood flow described as?",
+        "options": [
+          "Random",
+          "Rectangular",
+          "Flat",
+          "Parabolic"
+        ],
+        "correct": 3,
+        "explain": "Laminar blood flow has a parabolic velocity profile — highest in the centre, lowest near the wall."
+      },
+      {
+        "id": "AU_symbol2",
+        "cat": "elasticity",
+        "q": "Strain (ε) as used in these lectures is:",
+        "options": [
+          "Force per unit area (Pa)",
+          "Energy per unit volume",
+          "Relative deformation (e.g. ΔL/L₀); dimensionless",
+          "Mass per unit volume"
+        ],
+        "correct": 2,
+        "explain": "ε = ΔL/L₀. Strain is dimensionless. Stress σ = F/A has units of Pa."
+      },
+      {
+        "id": "L3_C_7",
+        "cat": "fluids_flow",
+        "q": "Volume flow rate is calculated as:",
+        "options": [
+          "A v",
+          "A / v",
+          "ρ A v",
+          "ρ / (A v)"
+        ],
+        "correct": 0,
+        "explain": "Volume flow rate Q = A v, where A is cross-sectional area and v is velocity."
+      },
+      {
+        "id": "L3_C_14",
+        "cat": "fluids_flow",
+        "q": "In a narrowed artery, Bernoulli's principle predicts:",
+        "options": [
+          "Velocity increases and pressure decreases",
+          "Velocity and pressure both increase",
+          "Velocity and pressure both decrease",
+          "Velocity decreases and pressure increases"
+        ],
+        "correct": 0,
+        "explain": "In a narrowed artery, velocity increases and pressure decreases. Blood supply to tissues may be reduced."
+      },
+      {
+        "id": "QV_E_2",
+        "cat": "fundamentals",
+        "q": "Which of the following is NOT one of the five mechanical properties listed in the lecture?",
+        "options": [
+          "Malleability",
+          "Conductivity",
+          "Elasticity",
+          "Strength"
+        ],
+        "correct": 1,
+        "explain": "The five mechanical properties are elasticity, plasticity, ductility, malleability, and strength. Conductivity is an electrical/thermal property."
+      },
+      {
+        "id": "FD_E6",
+        "cat": "fluids_static",
+        "q": "What is the gauge pressure at a depth of 25 m in a lake (ρ = 1000 kg/m³, g = 9.8 m/s²)?",
+        "options": [
+          "2.45 × 10⁴ Pa",
+          "3.46 × 10⁵ Pa",
+          "1.013 × 10⁵ Pa",
+          "2.45 × 10⁵ Pa"
+        ],
+        "correct": 3,
+        "explain": "P = ρgh = 1000 × 9.8 × 25 = 2.45 × 10⁵ Pa."
+      },
+      {
+        "id": "QV_C_14",
+        "cat": "fundamentals",
+        "q": "Which state of matter is described as having a definite size and shape and being unable to be compressed?",
+        "options": [
+          "Plasma",
+          "Gas",
+          "Liquid",
+          "Solid"
+        ],
+        "correct": 3,
+        "explain": "Solids have definite shape and volume, high density, strong intermolecular forces, and cannot be compressed."
+      },
+      {
+        "id": "FT_15",
+        "cat": "fluids_static",
+        "q": "Hydraulic press: large piston 0.20 m², small 0.02 m². Force on small piston to lift 3000 N?",
+        "options": [
+          "50 N",
+          "300 N",
+          "150 N",
+          "450 N"
+        ],
+        "correct": 1,
+        "explain": "F_in = 3000 × (0.02/0.20) = 300 N."
+      }
+    ],
+    "H": [
+      {
+        "id": "QV_E_12",
+        "cat": "elasticity",
+        "q": "Which is the correct formula for stress?",
+        "options": [
+          "A / F",
+          "F / A",
+          "ΔL / L₀",
+          "F × A"
+        ],
+        "correct": 1,
+        "explain": "Stress = Force / Area. Units: N/m² = Pa."
+      },
+      {
+        "id": "AU_crystal3",
+        "cat": "fundamentals",
+        "q": "Which set correctly pairs crystalline vs amorphous examples?",
+        "options": [
+          "Crystalline: rubber · Amorphous: gold",
+          "Crystalline: Ag, Au, Pb, Sn · Amorphous: rubber",
+          "Both rubber and gold are crystalline",
+          "Crystalline: glass · Amorphous: tin"
+        ],
+        "correct": 1,
+        "explain": "Crystalline: Ag, Au, Pb, Sn. Amorphous: rubber (also glass, many polymers)."
+      },
+      {
+        "id": "L3_C_13",
+        "cat": "fluids_flow",
+        "q": "According to Bernoulli's principle, as velocity increases:",
+        "options": [
+          "Pressure increases",
+          "Pressure stays the same",
+          "Pressure decreases",
+          "Temperature increases"
+        ],
+        "correct": 2,
+        "explain": "As velocity increases, pressure decreases. In symbols: v ↑ ⇒ P ↓."
+      },
+      {
+        "id": "L3_C_1",
+        "cat": "fluids_flow",
+        "q": "Which statement best describes laminar blood flow?",
+        "options": [
+          "Irregular swirling movement with mixing layers",
+          "Flow that always produces a murmur",
+          "Smooth and orderly movement; blood moves in parallel layers",
+          "Flow that only happens in veins"
+        ],
+        "correct": 2,
+        "explain": "Laminar blood flow is smooth and orderly. Blood moves in parallel layers. It is the normal flow in healthy arteries."
+      },
+      {
+        "id": "QV_C_7",
+        "cat": "fundamentals",
+        "q": "Kinetic energy of particles is temperature-dependent. Which statement is correct?",
+        "options": [
+          "Kinetic energy does not depend on temperature",
+          "All three states have equal kinetic energy at the same temperature",
+          "Gases have the highest kinetic energy, solids the lowest",
+          "Solids have the highest kinetic energy"
+        ],
+        "correct": 2,
+        "explain": "Gases have the highest kinetic energy, solids the lowest — at the same temperature."
+      },
+      {
+        "id": "AU_prefix1",
+        "cat": "fundamentals",
+        "q": "The SI prefix micro (µ) means which power of ten?",
+        "options": [
+          "10⁻⁹",
+          "10⁻¹²",
+          "10⁻⁶",
+          "10⁻³"
+        ],
+        "correct": 2,
+        "explain": "Micro (µ) = 10⁻⁶. Nano (n) = 10⁻⁹. Example: 1 µm = 10⁻⁶ m = 1000 nm."
+      },
+      {
+        "id": "AU_mass1",
+        "cat": "fluids_flow",
+        "q": "Mass flow rate ṁ through a tube equals:",
+        "options": [
+          "ρ A v",
+          "ρ / (A v)",
+          "A / v",
+          "A v only (no density)"
+        ],
+        "correct": 0,
+        "explain": "ṁ = ρAv (kg/s). Volume flow Q = Av (m³/s)."
+      },
+      {
+        "id": "EG_E_3",
+        "cat": "elasticity",
+        "q": "Diagram (c) shows a sphere shrinking in volume under pressure from a fluid. This represents:",
+        "options": [
+          "Hydraulic (volume) stress",
+          "Shear stress",
+          "Longitudinal stress",
+          "Tensile stress at a point"
+        ],
+        "correct": 0,
+        "explain": "Uniform pressure applied from all directions producing a volume change ΔV without shape change is hydraulic stress."
+      },
+      {
+        "id": "AU_prefix2",
+        "cat": "fundamentals",
+        "q": "The SI prefix nano (n) means which power of ten?",
+        "options": [
+          "10⁻⁹",
+          "10⁶",
+          "10⁻⁶",
+          "10⁻³"
+        ],
+        "correct": 0,
+        "explain": "Nano (n) = 10⁻⁹. Micro (µ) = 10⁻⁶. So 1 µm = 1000 nm."
+      },
+      {
+        "id": "FD_1",
+        "cat": "fluids_static",
+        "q": "Which statement best explains why liquids and gases are both classified as fluids?",
+        "options": [
+          "They flow from higher to lower pressures and continuously deform under shear stress",
+          "They both have the same density",
+          "They both have fixed shape",
+          "They both contain only one type of molecule"
+        ],
+        "correct": 0,
+        "explain": "Fluids continuously deform under shear and can flow. Solids keep a fixed shape."
+      },
+      {
+        "id": "QV_E_6",
+        "cat": "elasticity",
+        "q": "Pressure on teeth during chewing is an example of:",
+        "options": [
+          "Sublimation",
+          "Diffusion",
+          "Elasticity only",
+          "Stress on the tooth surface"
+        ],
+        "correct": 3,
+        "explain": "Chewing applies force over the tooth's contact area — force per area = stress."
+      },
+      {
+        "id": "FD_4",
+        "cat": "fluids_static",
+        "q": "A glass block measures 8 cm × 5 cm × 3 cm and has a density of 2.5 g/cm³. What is its mass?",
+        "options": [
+          "375 g",
+          "150 g",
+          "240 g",
+          "300 g"
+        ],
+        "correct": 3,
+        "explain": "V = 8×5×3 = 120 cm³. m = ρV = 2.5×120 = 300 g."
+      },
+      {
+        "id": "FD_E8",
+        "cat": "fluids_static",
+        "q": "A wooden block floats in water with 40% of its volume submerged. Total volume 0.02 m³, ρ_water = 1000 kg/m³, g = 9.8 m/s². Buoyant force?",
+        "options": [
+          "98 N",
+          "78.4 N",
+          "200 N",
+          "196 N"
+        ],
+        "correct": 1,
+        "explain": "V_disp = 0.008 m³. F_b = 1000×0.008×9.8 = 78.4 N."
+      },
+      {
+        "id": "FT_14",
+        "cat": "fluids_static",
+        "q": "Absolute pressure on a swimmer 30 m deep in fresh water (ρ=1000, P_atm=1.0123×10⁵ Pa, g=9.8)?",
+        "options": [
+          "1.93×10⁵ Pa",
+          "2.45×10⁶ Pa",
+          "4.21×10⁶ Pa",
+          "3.95×10⁵ Pa"
+        ],
+        "correct": 3,
+        "explain": "P_abs = 1.0123×10⁵ + 2.94×10⁵ ≈ 3.95×10⁵ Pa."
+      },
+      {
+        "id": "FD_15",
+        "cat": "fluids_static",
+        "q": "A mercury barometer shows a column of 76 cm. If water were used instead, approximately how tall would the column need to be?",
+        "options": [
+          "About 76 m",
+          "About 1 m",
+          "About 10.3 m",
+          "About 5 m"
+        ],
+        "correct": 2,
+        "explain": "Water is ~13.6× less dense than Hg, so the column is ~13.6× taller ≈ 10.3 m."
+      },
+      {
+        "id": "FD_11",
+        "cat": "fluids_static",
+        "q": "The pressure on an object at depth h in a liquid, measured from atmospheric level, is called:",
+        "options": [
+          "Dynamic pressure",
+          "Absolute pressure",
+          "Vapour pressure",
+          "Gauge pressure"
+        ],
+        "correct": 3,
+        "explain": "Gauge pressure is the excess over atmosphere: P_gauge = ρgh. Absolute = atm + gauge."
+      },
+      {
+        "id": "FD_17",
+        "cat": "fluids_static",
+        "q": "Which equation correctly relates absolute pressure, atmospheric pressure, and gauge pressure?",
+        "options": [
+          "P_abs = P_atm − P_gauge",
+          "P_abs = P_atm + P_gauge",
+          "P_atm = P_abs + P_gauge",
+          "P_gauge = P_abs + P_atm"
+        ],
+        "correct": 1,
+        "explain": "P_abs = P_atm + P_gauge."
+      },
+      {
+        "id": "YM_2",
+        "cat": "elasticity",
+        "q": "A patellar tendon is 0.12 m long and has Young’s modulus 1.2 × 10⁹ Pa. The maximum tensile stress it can carry before failing is 60 × 10⁶ Pa. What is the maximum elongation?",
+        "options": [
+          "60 mm",
+          "1.20 mm",
+          "0.60 mm",
+          "6.0 mm"
+        ],
+        "correct": 3,
+        "explain": "<div class=\"extract\">EXTRACT — L = 0.12 m · Y = 1.2 × 10⁹ Pa · max tensile stress = 60 × 10⁶ Pa · find ΔL</div>\n        <div class=\"step\"><strong>Step 1.</strong> Strain = Stress / Y = (60 × 10⁶) / (1.2 × 10⁹) = 60 / 1200 = 0.05</div>\n        <div class=\"step\"><strong>Step 2.</strong> ΔL = Strain × L = 0.05 × 0.12 = 0.006 m = 6.0 mm</div>\n        <div class=\"step\">This is tensile (قوة الشد), not compression — same two-step algebra as the femur. Tendon Y is much smaller than bone Y, so strain is larger.</div>"
+      },
+      {
+        "id": "AU_Y1",
+        "cat": "elasticity",
+        "q": "A bone under stress 5×10⁶ Pa shows strain 0.0025. Young's modulus?",
+        "options": [
+          "2.0 × 10³ Pa",
+          "1.25 × 10⁴ Pa",
+          "2.0 × 10⁹ Pa",
+          "1.25 × 10⁹ Pa"
+        ],
+        "correct": 2,
+        "explain": "Y = stress/strain = 5×10⁶/0.0025 = 2.0×10⁹ Pa."
+      },
+      {
+        "id": "EG_C_11",
+        "cat": "elasticity",
+        "q": "Larger the Young's modulus of a material means:",
+        "options": [
+          "Less stress is required to produce a small deformation",
+          "More stress is required to produce a small change in length",
+          "The material is softer",
+          "The material is more brittle"
+        ],
+        "correct": 1,
+        "explain": "Higher Young's modulus = stiffer material. More stress is required for the same strain."
+      }
+    ]
+  }
+}

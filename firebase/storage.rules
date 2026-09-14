@@ -1,0 +1,34 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+    function isImage() {
+      return request.resource.contentType.matches('image/(png|jpeg|jpg|webp|gif)');
+    }
+    function under2MB() {
+      return request.resource.size < 2 * 1024 * 1024;
+    }
+
+    // Optional future cloud banks — public read, admin-only write (console/CLI)
+    match /banks/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Profile avatars
+    match /avatars/{uid}/{fileName} {
+      allow read: if true;
+      allow write: if isSelf(uid) && isImage() && under2MB();
+      allow delete: if isSelf(uid);
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

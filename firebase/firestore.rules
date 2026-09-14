@@ -1,0 +1,87 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+    function isString(v, minLen, maxLen) {
+      return v is string && v.size() >= minLen && v.size() <= maxLen;
+    }
+
+    // Public catalog-like config (optional future). Read-only for clients.
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // User profiles — owner write; anyone signed in can read basic profile
+    match /profiles/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(uid)
+        && request.resource.data.keys().hasOnly([
+          'displayName', 'photoURL', 'bio', 'createdAt', 'updatedAt', 'mood'
+        ])
+        && isString(request.resource.data.displayName, 1, 40)
+        && (!('bio' in request.resource.data) || isString(request.resource.data.bio, 0, 160));
+      allow delete: if isSelf(uid);
+    }
+
+    // Score history — append-only by owner
+    match /scores/{scoreId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasAll(['uid', 'subjectId', 'materialId', 'form', 'percent', 'createdAt'])
+        && request.resource.data.percent is number
+        && request.resource.data.percent >= 0
+        && request.resource.data.percent <= 100
+        && isString(request.resource.data.subjectId, 1, 64)
+        && isString(request.resource.data.materialId, 1, 64)
+        && isString(request.resource.data.form, 1, 8);
+      allow update, delete: if false;
+    }
+
+    // Best scores / leaderboard entry per user per material
+    match /leaderboards/{materialId}/entries/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(uid)
+        && request.resource.data.uid == uid
+        && request.resource.data.bestPercent is number
+        && request.resource.data.bestPercent >= 0
+        && request.resource.data.bestPercent <= 100;
+      allow delete: if isSelf(uid);
+    }
+
+    // Study rooms metadata
+    match /rooms/{roomId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.hostUid == request.auth.uid
+        && isString(request.resource.data.title, 1, 80);
+      allow update: if signedIn()
+        && resource.data.hostUid == request.auth.uid;
+      allow delete: if signedIn()
+        && resource.data.hostUid == request.auth.uid;
+
+      // Chat messages (bounded fields; no edits)
+      match /messages/{messageId} {
+        allow read: if signedIn();
+        allow create: if signedIn()
+          && request.resource.data.uid == request.auth.uid
+          && isString(request.resource.data.text, 1, 500)
+          && request.resource.data.keys().hasAll(['uid', 'text', 'createdAt']);
+        allow update: if false;
+        allow delete: if signedIn()
+          && resource.data.uid == request.auth.uid;
+      }
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Portal</title>
+  <link rel="stylesheet" href="css/portal.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <h1>Study Portal</h1>
+        <p class="tag">Static practice hub · banks load as project files</p>
+      </div>
+      <span class="badge">Offline-first · GitHub Pages</span>
+    </header>
+
+    <nav class="tabs" id="subjectTabs" aria-label="Subjects"></nav>
+
+    <p class="section-label" id="materialsLabel">Materials</p>
+    <div class="cards" id="materialCards"></div>
+
+    <section class="online-panel" aria-label="Online features">
+      <h2>Online</h2>
+      <p class="hint">Profiles, scores, chat, and live room are placeholders for a future Firebase layer.</p>
+      <div class="online-grid" id="onlineGrid"></div>
+    </section>
+
+    <p class="foot">Serve over HTTP (GitHub Pages or <code>python -m http.server</code>). <code>file://</code> cannot fetch banks.</p>
+  </div>
+
+  <div class="toast-host" id="toastHost" aria-live="polite"></div>
+  <script src="js/portal.js"></script>
+</body>
+</html>

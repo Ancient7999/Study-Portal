@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exam · Study Portal</title>
+  <link rel="stylesheet" href="css/portal.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="exam-top">
+      <a class="back-link" href="index.html">← Portal</a>
+      <div class="exam-title-block">
+        <h1 id="examTitle">Loading…</h1>
+        <p class="sub" id="examSub"></p>
+      </div>
+      <span class="badge" id="examBadge">Forms A–H</span>
+    </div>
+
+    <div id="loadStatus" class="status-msg">Fetching question bank…</div>
+
+    <!-- Form hub -->
+    <section class="view" id="hubView">
+      <p class="section-label">Choose a form</p>
+      <div class="hub-actions">
+        <button type="button" class="btn btn-ghost" id="restartBtn" title="Reset current progress; best 100% scores are kept">Restart progress</button>
+      </div>
+      <div class="hub-grid" id="hubGrid"></div>
+      <p class="foot" id="hubHint">Wrong answers lock in until you pick the correct one. Progress saves in localStorage.</p>
+    </section>
+
+    <!-- Quiz -->
+    <section class="view" id="quizView">
+      <div class="quiz-bar">
+        <button type="button" class="btn btn-ghost" id="backHubBtn">← Forms</button>
+        <span class="progress-pill" id="progressPill">1 / 20</span>
+      </div>
+      <div class="panel" id="quizPanel">
+        <div class="q-cat" id="qCat"></div>
+        <div class="q-text" id="qText"></div>
+        <div class="options" id="options"></div>
+        <div class="explain" id="explain"></div>
+      </div>
+      <div class="quiz-nav">
+        <button type="button" class="btn btn-ghost" id="prevBtn" disabled>Previous</button>
+        <button type="button" class="btn btn-amber" id="nextBtn" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- Form complete -->
+    <section class="view" id="doneView">
+      <div class="panel done-banner">
+        <h2 id="doneTitle">Form complete</h2>
+        <p id="doneMsg">Nice work — 100% locked in for this form.</p>
+        <button type="button" class="btn btn-amber" id="doneHubBtn">Back to forms</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Pomodoro dock (optional-lite) -->
+  <div class="pomodoro-dock" id="pomodoroDock" hidden>
+    <span class="phase" id="pomoPhase">Focus</span>
+    <span class="clock" id="pomoClock">25:00</span>
+    <button type="button" id="pomoToggle" title="Pause / resume">❚❚</button>
+    <button type="button" id="pomoSkip" title="Skip phase">⏭</button>
+  </div>
+
+  <!-- Break modal: Close dismisses overlay; timer keeps running -->
+  <div class="modal-overlay" id="breakModal" role="dialog" aria-modal="true" aria-labelledby="breakTitle">
+    <div class="modal-card">
+      <h3 id="breakTitle">Take a break</h3>
+      <p>Focus session done. Stretch, sip water, rest your eyes — break countdown is running.</p>
+      <div class="break-clock" id="breakModalClock">05:00</div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="breakCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-host" id="toastHost" aria-live="polite"></div>
+  <script src="js/exam.js"></script>
+</body>
+</html>
