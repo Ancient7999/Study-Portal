@@ -623,7 +623,10 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   transform:translateX(20px);background:var(--cyan-bright);
 }
 .profile-switch input:focus-visible + .profile-switch-slider{outline:2px solid var(--cyan-bright);outline-offset:2px}
-.timer-dock.is-pomo-off{display:none!important}
+.timer-dock.is-pomo-off .timer-copy,
+.timer-dock.is-pomo-off #timerResetBtn,
+.timer-dock.is-pomo-off .mood-tray-sep{display:none!important}
+.timer-dock.is-pomo-off{min-width:auto;width:auto;max-width:none;height:auto;min-height:0;padding:.55rem .7rem}
 
 .hub-back{margin:0 0 14px}
 .hub-back button{font-family:var(--mono);font-size:.85rem;color:var(--cyan-bright);background:transparent;border:1px solid var(--border);border-radius:999px;padding:8px 14px;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
@@ -2144,7 +2147,7 @@ function stopGlobalTimer(){
 function applyPomodoroUi(){
   if(timerDock){
     timerDock.classList.toggle('is-pomo-off', !pomodoroEnabled);
-    timerDock.style.display = pomodoroEnabled ? '' : 'none';
+    timerDock.style.display = ''; // keep dock for mood/emoji tray
   }
   if(!pomodoroEnabled){
     if(breakModal) breakModal.classList.remove('show');

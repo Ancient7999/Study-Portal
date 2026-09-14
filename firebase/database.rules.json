@@ -150,6 +150,9 @@
     },
     "lobbies": {
       ".read": "auth != null",
+      ".indexOn": [
+        "createdAt"
+      ],
       "$lobbyId": {
         ".write": "auth != null",
         ".validate": "newData.hasChildren(['leader','status','createdAt']) && newData.child('leader').isString() && newData.child('status').isString() && newData.child('createdAt').isNumber()",
