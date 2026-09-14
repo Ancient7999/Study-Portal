@@ -10,7 +10,7 @@
         {
           "id": "pt1",
           "title": "Periodic Test 1",
-          "subtitle": "Forms A\u2013H \u00b7 20 MCQs each",
+          "subtitle": "Forms A–H · 20 MCQs each",
           "bank": "banks/medphys/pt1.json",
           "locked": false
         },
@@ -113,29 +113,36 @@
     {
       "id": "profiles",
       "title": "Profiles",
-      "icon": "\ud83d\udc64",
+      "icon": "👤",
       "locked": false,
       "blurb": "Name, level, questions answered"
     },
     {
+      "id": "achievements",
+      "title": "Achievements",
+      "icon": "🏆",
+      "locked": false,
+      "blurb": "Milestones · streaks · mastery"
+    },
+    {
       "id": "scores",
       "title": "Scores",
-      "icon": "\ud83c\udfc6",
+      "icon": "🏆",
       "locked": true
     },
     {
       "id": "chat",
       "title": "Chat",
-      "icon": "\ud83d\udcac",
+      "icon": "💬",
       "locked": false,
-      "blurb": "Dock \u00b7 channels \u00b7 party (max 4)"
+      "blurb": "Dock · channels · party (max 4)"
     },
     {
       "id": "live",
       "title": "Lobby",
-      "icon": "\ud83d\udce1",
+      "icon": "📡",
       "locked": false,
-      "blurb": "Party lobbies \u00b7 4 seats \u00b7 Start quiz"
+      "blurb": "Party lobbies · 4 seats · Start quiz"
     }
   ]
 }

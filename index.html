@@ -835,6 +835,45 @@ body.split-quiz-active #chatDock{z-index:60}
   .lobby-panel{right:8px;left:8px;width:auto;top:60px}
 }
 
+
+/* Achievements (ATC port) */
+.achievement-card{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.28);margin-bottom:10px;transition:border-color .3s,box-shadow .3s;position:relative}
+.achievement-card.unlocked{border-color:#b8860b;background:rgba(255,215,0,.05);box-shadow:0 0 12px rgba(255,215,0,.15)}
+.achievement-icon{font-size:2em;flex-shrink:0;width:44px;text-align:center;filter:grayscale(1) opacity(.35)}
+.achievement-card.unlocked .achievement-icon{filter:none;text-shadow:0 0 10px rgba(255,215,0,.6),0 0 20px rgba(255,215,0,.3)}
+.achievement-body{flex:1;min-width:0;padding-right:72px}
+.achievement-name{font-weight:700;font-size:.95em;color:var(--text-dim);margin-bottom:3px}
+.achievement-card.unlocked .achievement-name{color:#ffd700}
+.achievement-desc{font-size:.8em;color:var(--text-dim);line-height:1.4}
+.achievement-card.unlocked .achievement-desc{color:var(--text)}
+.achievement-status{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:20px;flex-shrink:0;position:absolute;top:14px;right:14px;font-family:var(--mono)}
+.achievement-status.locked-badge{background:rgba(255,255,255,.05);color:var(--text-dim);border:1px solid var(--border)}
+.achievement-status.unlocked-badge{background:rgba(255,215,0,.12);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
+.achievement-date{font-size:.72em;color:var(--text-dim);margin-top:4px;font-family:var(--mono)}
+.achievement-stats{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.achievement-stat{background:rgba(0,0,0,.35);padding:10px 14px;border-radius:10px;border:1px solid var(--border);min-width:90px}
+.achievement-stat-n{font-size:1.35em;font-weight:800}
+.achievement-stat-l{font-size:.72em;color:var(--text-dim);font-family:var(--mono)}
+.achievement-count-line{font-size:.82em;color:var(--text-dim);margin:0 0 12px}
+.achievement-empty{color:var(--text-dim);text-align:center;padding:20px}
+.achievements-card{max-width:520px;text-align:left;max-height:min(88vh,720px);display:flex;flex-direction:column}
+.achievements-hero{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.achievements-hero-icon{font-size:2rem;filter:drop-shadow(0 0 10px rgba(255,215,0,.45))}
+.achievements-list{overflow:auto;flex:1;padding-right:4px;margin-bottom:8px;max-height:52vh}
+#achievement-popup{
+  position:fixed;top:80px;right:20px;z-index:100000;
+  background:linear-gradient(135deg,rgba(251,191,36,.92),rgba(245,158,11,.88));
+  border:2px solid #ffd700;border-radius:12px;padding:14px 18px;
+  box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 24px rgba(255,215,0,.45);
+  color:#1a1200;max-width:300px;
+  animation:achievementSlideIn .4s ease-out,achievementFadeOut .5s ease-in 3.5s forwards;
+}
+.achievement-popup-content{display:flex;align-items:center;gap:12px}
+.achievement-popup-icon{font-size:2em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.achievement-popup-text{text-align:left}
+.achievement-popup-title{font-size:.7em;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:2px;font-family:var(--mono)}
+.achievement-popup-name{font-size:1.05em;font-weight:800;margin-bottom:2px;color:#3b2a00}
+.achievement-popup-desc{font-size:.8em;opacity:.92;color:#4a3500}
 </style>
 </head>
 <body>
@@ -1078,11 +1117,12 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script src="js/firebase-config.js?v=4"></script>
 <script src="js/profiles.js?v=4"></script>
+<script src="js/achievements.js?v=1"></script>
 <script src="js/mastery.js?v=1"></script>
 <script src="js/party.js?v=2"></script>
 <script src="js/cursors.js?v=1"></script>
 <script src="js/lobby.js?v=1"></script>
-<script src="js/split-quiz.js?v=1"></script>
+<script src="js/split-quiz.js?v=2"></script>
 <script src="js/chat.js?v=2"></script>
 <script>
 let FORM_BANK = {};
@@ -2219,6 +2259,9 @@ function selectAnswer(idx){
 
   // REFUSE wrong — soft reject, do not advance, do not reveal correct by greying others
   if(idx !== q.correct){
+    if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function'){
+      StudyAchievements.recordWrong();
+    }
     const btn = opts[idx];
     if(btn){
       btn.classList.remove('soft-wrong');
@@ -2252,11 +2295,18 @@ function selectAnswer(idx){
   if(window.StudyProfiles && typeof StudyProfiles.bumpQuestionsAnswered==='function'){
     StudyProfiles.bumpQuestionsAnswered(1);
   }
+  if(window.StudyAchievements && typeof StudyAchievements.recordCorrect==='function'){
+    StudyAchievements.recordCorrect();
+  }
   if(window.StudyMastery){
     const bk = StudyMastery.bankKeyFromPath((__activeMaterial && __activeMaterial.bank) || 'banks/medphys/pt1.json');
     StudyMastery.recordClear(bk, currentForm, current, questions.length);
     StudyMastery.updateProgressBar();
     StudyMastery.updateDNSAUI();
+    if(window.StudyAchievements && typeof StudyAchievements.recordFormMastery==='function'){
+      const pct = StudyMastery.getPct(bk, currentForm);
+      if(pct >= 100) StudyAchievements.recordFormMastery(currentForm, bk);
+    }
   }
   updateRunFromAnswers();
   refreshHubCards();
@@ -2485,6 +2535,7 @@ document.addEventListener('keydown',e=>{
           '<span class="ttl">' + esc(item.title) + '</span>';
         btn.addEventListener('click', ()=>{
           if(item.id==='profiles' && window.StudyProfiles) StudyProfiles.open();
+          else if(item.id==='achievements' && window.StudyAchievements) StudyAchievements.openPanel();
           else if(item.id==='chat' && window.StudyChat) StudyChat.open();
           else if(item.id==='live' && window.StudyLobby) StudyLobby.open();
           else portalToast('Coming soon');
@@ -2507,6 +2558,7 @@ document.addEventListener('keydown',e=>{
       renderMaterials();
       renderOnline();
       showView('portalView');
+      if(window.StudyAchievements) StudyAchievements.start();
       if(window.StudyProfiles){
         StudyProfiles.start().then(()=>{
           if(window.StudyChat) return StudyChat.start();

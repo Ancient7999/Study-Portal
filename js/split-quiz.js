@@ -226,6 +226,9 @@
 
     // Refuse wrong locally (match solo flow)
     if (optIdx !== q.correct) {
+      if (window.StudyAchievements && typeof StudyAchievements.recordWrong === 'function') {
+        StudyAchievements.recordWrong();
+      }
       toast('not that one · try again');
       return;
     }
@@ -264,8 +267,15 @@
     if (window.StudyMastery && state.session.bank) {
       const bk = StudyMastery.bankKeyFromPath(state.session.bank);
       StudyMastery.recordClear(bk, state.form, qIndex, state.questions.length);
+      if (window.StudyAchievements && typeof StudyAchievements.recordFormMastery === 'function') {
+        const pct = StudyMastery.getPct(bk, state.form);
+        if (pct >= 100) StudyAchievements.recordFormMastery(state.form, bk);
+      }
     }
     if (window.StudyProfiles) StudyProfiles.bumpQuestionsAnswered(1);
+    if (window.StudyAchievements && typeof StudyAchievements.recordCorrect === 'function') {
+      StudyAchievements.recordCorrect();
+    }
   }
 
   function leave() {
