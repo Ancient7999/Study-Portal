@@ -1,4 +1,4 @@
-/* Study Portal — Profiles (Anonymous Auth + Firestore) — ATC-inspired HUD */
+/* Study Portal — Profiles (Anonymous Auth + claim/register + Firestore) — ATC-inspired HUD */
 (function (global) {
   const LEVEL_EVERY = 10;
 
@@ -36,11 +36,14 @@
     user: null,
     profile: null,
     error: null,
-    lastLevel: null
+    lastLevel: null,
+    authBusy: false,
+    authTab: 'register'
   };
 
   function toast(msg) {
     if (typeof showToast === 'function') showToast(msg, 2800);
+    else if (typeof portalToast === 'function') portalToast(msg);
   }
 
   function ensureFirebase() {
@@ -69,6 +72,22 @@
     };
   }
 
+  function isAnonymousUser(user) {
+    return !!(user && user.isAnonymous);
+  }
+
+  function accountLabel(user) {
+    if (!user) return '';
+    if (user.isAnonymous) return 'Guest';
+    if (user.email) return user.email;
+    const g = (user.providerData || []).find(function (p) {
+      return p && p.providerId === 'google.com';
+    });
+    if (g && g.email) return g.email;
+    if (g && g.displayName) return g.displayName;
+    return 'Registered account';
+  }
+
   async function ensureProfile(uid) {
     const { db } = ensureFirebase();
     const ref = db.collection('profiles').doc(uid);
@@ -91,31 +110,53 @@
     return profile;
   }
 
+  async function afterAuthUser(user) {
+    state.user = user;
+    await ensureProfile(user.uid);
+    if (global.StudyProgress && typeof StudyProgress.onAuthReady === 'function') {
+      await StudyProgress.onAuthReady(user);
+    }
+    state.ready = true;
+    state.error = null;
+    renderChip();
+    fillModal();
+  }
+
   async function start() {
     try {
       const { auth } = ensureFirebase();
-      await new Promise((resolve, reject) => {
-        const unsub = auth.onAuthStateChanged(async (user) => {
+      if (global.StudyProgress && typeof StudyProgress.start === 'function') {
+        await StudyProgress.start();
+      }
+      await new Promise(function (resolve, reject) {
+        let settled = false;
+        const unsub = auth.onAuthStateChanged(async function (user) {
           try {
             if (!user) {
               const cred = await auth.signInAnonymously();
-              state.user = cred.user;
-              await ensureProfile(cred.user.uid);
+              await afterAuthUser(cred.user);
             } else {
-              state.user = user;
-              await ensureProfile(user.uid);
+              await afterAuthUser(user);
             }
-            state.ready = true;
-            state.error = null;
-            unsub();
-            resolve();
+            if (!settled) {
+              settled = true;
+              resolve();
+            } else {
+              // Later auth changes (claim / sign-in)
+              renderChip();
+              fillModal();
+            }
           } catch (e) {
-            unsub();
-            reject(e);
+            if (!settled) {
+              settled = true;
+              unsub();
+              reject(e);
+            } else {
+              console.warn('auth state update failed', e);
+            }
           }
         }, reject);
       });
-      renderChip();
       return state.profile;
     } catch (e) {
       console.error(e);
@@ -154,7 +195,9 @@
       chip.classList.remove('lvl-up');
       void chip.offsetWidth;
       chip.classList.add('lvl-up');
-      setTimeout(() => chip.classList.remove('lvl-up'), 1400);
+      setTimeout(function () {
+        chip.classList.remove('lvl-up');
+      }, 1400);
     }
     let tag = document.getElementById('profileLvlToast');
     if (!tag) {
@@ -166,7 +209,9 @@
     tag.textContent = 'LEVEL UP! ' + newLevel;
     tag.classList.add('show');
     clearTimeout(celebrateLevelUp._t);
-    celebrateLevelUp._t = setTimeout(() => tag.classList.remove('show'), 1600);
+    celebrateLevelUp._t = setTimeout(function () {
+      tag.classList.remove('show');
+    }, 1600);
     toast('Level ' + newLevel + ' — nice');
   }
 
@@ -178,16 +223,18 @@
       const uid = state.user.uid;
       const ref = db.collection('profiles').doc(uid);
       let leveled = null;
-      await db.runTransaction(async (tx) => {
+      await db.runTransaction(async function (tx) {
         const snap = await tx.get(ref);
         const cur = snap.exists ? normalizeProfile(snap.data()) : normalizeProfile({});
         const questionsAnswered = asInt(cur.questionsAnswered) + add;
         const level = levelFromAnswered(questionsAnswered);
-        const payload = normalizeProfile(Object.assign({}, cur, {
-          questionsAnswered,
-          level,
-          updatedAt: Date.now()
-        }));
+        const payload = normalizeProfile(
+          Object.assign({}, cur, {
+            questionsAnswered,
+            level,
+            updatedAt: Date.now()
+          })
+        );
         tx.set(ref, payload);
         if (state.lastLevel != null && level > state.lastLevel) leveled = level;
         state.lastLevel = level;
@@ -209,7 +256,9 @@
       chip.id = 'profileChip';
       chip.className = 'profile-chip';
       chip.title = 'Your profile';
-      chip.addEventListener('click', () => openProfileModal());
+      chip.addEventListener('click', function () {
+        openProfileModal();
+      });
       const dock = document.getElementById('timerDock');
       if (dock && dock.parentNode) dock.parentNode.insertBefore(chip, dock);
       else document.body.appendChild(chip);
@@ -221,21 +270,394 @@
     }
     const prog = expProgress(p.questionsAnswered);
     const hue = hueFromName(p.displayName);
+    const guest = isAnonymousUser(state.user);
     chip.innerHTML =
-      '<span class="pc-avatar" style="--av-hue:' + hue + '"><span class="pc-av-aura"></span><span class="pc-av-core">' +
+      '<span class="pc-avatar" style="--av-hue:' +
+      hue +
+      '"><span class="pc-av-aura"></span><span class="pc-av-core">' +
       initials(p.displayName) +
       '</span></span>' +
       '<span class="pc-body">' +
-      '<span class="pc-top"><span class="pc-name"></span><span class="pc-lvl">LV ' + prog.level + '</span></span>' +
+      '<span class="pc-top"><span class="pc-name"></span><span class="pc-lvl">LV ' +
+      prog.level +
+      '</span></span>' +
       '<span class="pc-bars">' +
       '<span class="pc-bar-row"><span class="pc-bar-lab exp">XP</span>' +
-      '<span class="pc-bar-track"><span class="pc-bar-fill exp" style="width:' + prog.pct + '%"></span></span></span>' +
+      '<span class="pc-bar-track"><span class="pc-bar-fill exp" style="width:' +
+      prog.pct +
+      '%"></span></span></span>' +
       '</span>' +
       '<span class="pc-meta"></span>' +
       '</span>';
     chip.querySelector('.pc-name').textContent = p.displayName;
     chip.querySelector('.pc-meta').textContent =
-      prog.into + '/' + prog.need + ' to next · ' + asInt(p.questionsAnswered) + ' Qs';
+      (guest ? 'Guest · ' : '') +
+      prog.into +
+      '/' +
+      prog.need +
+      ' to next · ' +
+      asInt(p.questionsAnswered) +
+      ' Qs';
+  }
+
+  function setAuthStatus(msg, isError) {
+    const el = document.getElementById('profileAuthStatus');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.classList.toggle('is-error', !!isError);
+  }
+
+  function friendlyAuthError(e) {
+    const code = (e && e.code) || '';
+    const map = {
+      'auth/email-already-in-use': 'That email is already registered — try Sign in.',
+      'auth/credential-already-in-use': 'That account already exists — signing you in and merging progress…',
+      'auth/invalid-email': 'Please enter a valid email address.',
+      'auth/weak-password': 'Password should be at least 6 characters.',
+      'auth/wrong-password': 'Incorrect password.',
+      'auth/user-not-found': 'No account found with that email.',
+      'auth/popup-blocked': 'Popup was blocked — trying redirect…',
+      'auth/popup-closed-by-user': 'Sign-in window closed before finishing.',
+      'auth/cancelled-popup-request': 'Sign-in cancelled.',
+      'auth/network-request-failed': 'Network error — check your connection.',
+      'auth/operation-not-allowed': 'This sign-in method is not enabled yet in Firebase Console.',
+      'auth/account-exists-with-different-credential': 'An account already exists with a different sign-in method.'
+    };
+    if (map[code]) return map[code];
+    return (e && e.message) || 'Something went wrong. Please try again.';
+  }
+
+  async function mergeAfterAccountSwitch(guestSnapshot) {
+    if (global.StudyProgress && typeof StudyProgress.pullAndMerge === 'function') {
+      await StudyProgress.pullAndMerge(guestSnapshot || null);
+    }
+  }
+
+  async function handleCredentialInUse(error, guestSnapshot) {
+    const { auth } = ensureFirebase();
+    const cred = error.credential;
+    if (!cred) throw error;
+    setAuthStatus('Account exists — signing in and carrying over your progress…');
+    const result = await auth.signInWithCredential(cred);
+    state.user = result.user;
+    await ensureProfile(result.user.uid);
+    await mergeAfterAccountSwitch(guestSnapshot);
+    renderChip();
+    fillModal();
+    toast('Signed in — progress carried over');
+    return result.user;
+  }
+
+  async function registerWithEmail(email, password) {
+    const { auth } = ensureFirebase();
+    const user = auth.currentUser;
+    const guestSnap =
+      global.StudyProgress && StudyProgress.snapshotLocal ? StudyProgress.snapshotLocal() : null;
+    const cred = firebase.auth.EmailAuthProvider.credential(email, password);
+    if (user && user.isAnonymous) {
+      try {
+        const linked = await user.linkWithCredential(cred);
+        state.user = linked.user;
+        await ensureProfile(linked.user.uid);
+        await mergeAfterAccountSwitch(guestSnap);
+        toast('Account created — progress saved to your profile');
+        return linked.user;
+      } catch (e) {
+        if (e.code === 'auth/credential-already-in-use' || e.code === 'auth/email-already-in-use') {
+          return handleCredentialInUse(
+            Object.assign(e, {
+              credential: e.credential || cred
+            }),
+            guestSnap
+          );
+        }
+        throw e;
+      }
+    }
+    // Not anonymous — create / sign in fresh
+    try {
+      const created = await auth.createUserWithEmailAndPassword(email, password);
+      state.user = created.user;
+      await ensureProfile(created.user.uid);
+      await mergeAfterAccountSwitch(guestSnap);
+      toast('Account created');
+      return created.user;
+    } catch (e) {
+      if (e.code === 'auth/email-already-in-use') {
+        const signed = await auth.signInWithEmailAndPassword(email, password);
+        state.user = signed.user;
+        await ensureProfile(signed.user.uid);
+        await mergeAfterAccountSwitch(guestSnap);
+        toast('Signed in — progress carried over');
+        return signed.user;
+      }
+      throw e;
+    }
+  }
+
+  async function signInWithEmail(email, password) {
+    const { auth } = ensureFirebase();
+    const guestSnap =
+      global.StudyProgress && StudyProgress.snapshotLocal ? StudyProgress.snapshotLocal() : null;
+    const signed = await auth.signInWithEmailAndPassword(email, password);
+    state.user = signed.user;
+    await ensureProfile(signed.user.uid);
+    await mergeAfterAccountSwitch(guestSnap);
+    toast('Signed in — progress synced');
+    return signed.user;
+  }
+
+  async function linkOrSignInGoogle() {
+    const { auth } = ensureFirebase();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    const user = auth.currentUser;
+    const guestSnap =
+      global.StudyProgress && StudyProgress.snapshotLocal ? StudyProgress.snapshotLocal() : null;
+
+    async function afterGoogle(resultUser) {
+      state.user = resultUser;
+      await ensureProfile(resultUser.uid);
+      await mergeAfterAccountSwitch(guestSnap);
+      renderChip();
+      fillModal();
+      toast('Signed in with Google — progress saved');
+      return resultUser;
+    }
+
+    try {
+      if (user && user.isAnonymous) {
+        try {
+          const linked = await user.linkWithPopup(provider);
+          return afterGoogle(linked.user);
+        } catch (e) {
+          if (e.code === 'auth/credential-already-in-use' || e.code === 'auth/email-already-in-use') {
+            return handleCredentialInUse(e, guestSnap);
+          }
+          if (e.code === 'auth/popup-blocked') {
+            setAuthStatus('Popup blocked — redirecting to Google…');
+            await user.linkWithRedirect(provider);
+            return null;
+          }
+          throw e;
+        }
+      }
+      try {
+        const signed = await auth.signInWithPopup(provider);
+        return afterGoogle(signed.user);
+      } catch (e) {
+        if (e.code === 'auth/popup-blocked') {
+          setAuthStatus('Popup blocked — redirecting to Google…');
+          await auth.signInWithRedirect(provider);
+          return null;
+        }
+        throw e;
+      }
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async function signOutKeepSession() {
+    const { auth } = ensureFirebase();
+    // Prefer staying registered; optional sign-out returns to anonymous
+    await auth.signOut();
+    const cred = await auth.signInAnonymously();
+    state.user = cred.user;
+    await ensureProfile(cred.user.uid);
+    if (global.StudyProgress && typeof StudyProgress.pullAndMerge === 'function') {
+      await StudyProgress.pullAndMerge();
+    }
+    renderChip();
+    fillModal();
+    toast('Signed out — continuing as guest');
+  }
+
+  function authSectionHTML() {
+    return (
+      '<div class="profile-auth" id="profileAuthSection">' +
+      '<div class="profile-auth-banner" id="profileAuthBanner"></div>' +
+      '<div class="profile-auth-body" id="profileAuthBody">' +
+      '<div class="profile-auth-tabs" role="tablist">' +
+      '<button type="button" class="profile-auth-tab is-active" data-auth-tab="register" id="profileAuthTabRegister">Create account</button>' +
+      '<button type="button" class="profile-auth-tab" data-auth-tab="signin" id="profileAuthTabSignin">Sign in</button>' +
+      '</div>' +
+      '<p class="profile-auth-lead" id="profileAuthLead">Claim this guest progress so it follows you on any device.</p>' +
+      '<label class="profile-label" for="profileAuthEmail">Email</label>' +
+      '<input id="profileAuthEmail" class="profile-input" type="email" autocomplete="email" placeholder="you@example.com" />' +
+      '<label class="profile-label" for="profileAuthPassword">Password</label>' +
+      '<input id="profileAuthPassword" class="profile-input" type="password" autocomplete="new-password" placeholder="At least 6 characters" />' +
+      '<div class="profile-auth-actions">' +
+      '<button type="button" class="btn-gold" id="profileAuthEmailBtn">Register</button>' +
+      '<button type="button" class="btn-ghost profile-auth-google" id="profileAuthGoogleBtn">Continue with Google</button>' +
+      '</div>' +
+      '<p class="profile-auth-status" id="profileAuthStatus"></p>' +
+      '</div>' +
+      '<div class="profile-auth-signed" id="profileAuthSigned" hidden>' +
+      '<p class="profile-auth-signed-line" id="profileAuthSignedLine"></p>' +
+      '<button type="button" class="btn-ghost" id="profileSignOutBtn">Sign out</button>' +
+      '</div>' +
+      '<div class="profile-pomo-row" id="profilePomoRow">' +
+      '<div class="profile-pomo-text">' +
+      '<span class="profile-pomo-title">Pomodoro timer</span>' +
+      '<span class="profile-pomo-sub">Focus dock &amp; break reminders</span>' +
+      '</div>' +
+      '<label class="profile-switch" title="Toggle Pomodoro timer">' +
+      '<input type="checkbox" id="profilePomoToggle" checked />' +
+      '<span class="profile-switch-slider" aria-hidden="true"></span>' +
+      '</label>' +
+      '</div>' +
+      '</div>'
+    );
+  }
+
+  function wireAuthUI(overlay) {
+    const tabReg = overlay.querySelector('#profileAuthTabRegister');
+    const tabIn = overlay.querySelector('#profileAuthTabSignin');
+    const emailBtn = overlay.querySelector('#profileAuthEmailBtn');
+    const googleBtn = overlay.querySelector('#profileAuthGoogleBtn');
+    const signOutBtn = overlay.querySelector('#profileSignOutBtn');
+    const pass = overlay.querySelector('#profileAuthPassword');
+
+    function setTab(tab) {
+      state.authTab = tab;
+      if (tabReg) tabReg.classList.toggle('is-active', tab === 'register');
+      if (tabIn) tabIn.classList.toggle('is-active', tab === 'signin');
+      if (emailBtn) emailBtn.textContent = tab === 'register' ? 'Register' : 'Sign in';
+      if (pass) pass.autocomplete = tab === 'register' ? 'new-password' : 'current-password';
+      const lead = overlay.querySelector('#profileAuthLead');
+      if (lead) {
+        lead.textContent =
+          tab === 'register'
+            ? 'Claim this guest progress so it follows you on any device.'
+            : 'Welcome back — sign in to restore progress on this device.';
+      }
+      setAuthStatus('');
+    }
+
+    if (tabReg && !tabReg._wired) {
+      tabReg._wired = true;
+      tabReg.addEventListener('click', function () {
+        setTab('register');
+      });
+    }
+    if (tabIn && !tabIn._wired) {
+      tabIn._wired = true;
+      tabIn.addEventListener('click', function () {
+        setTab('signin');
+      });
+    }
+    if (emailBtn && !emailBtn._wired) {
+      emailBtn._wired = true;
+      emailBtn.addEventListener('click', async function () {
+        if (state.authBusy) return;
+        const email = (overlay.querySelector('#profileAuthEmail').value || '').trim();
+        const password = overlay.querySelector('#profileAuthPassword').value || '';
+        if (!email || !password) {
+          setAuthStatus('Enter email and password.', true);
+          return;
+        }
+        state.authBusy = true;
+        setAuthStatus(state.authTab === 'register' ? 'Creating account…' : 'Signing in…');
+        try {
+          if (state.authTab === 'register') await registerWithEmail(email, password);
+          else await signInWithEmail(email, password);
+          setAuthStatus('Done — progress is linked to your account.');
+          fillModal();
+        } catch (e) {
+          console.warn(e);
+          setAuthStatus(friendlyAuthError(e), true);
+        } finally {
+          state.authBusy = false;
+        }
+      });
+    }
+    if (googleBtn && !googleBtn._wired) {
+      googleBtn._wired = true;
+      googleBtn.addEventListener('click', async function () {
+        if (state.authBusy) return;
+        state.authBusy = true;
+        setAuthStatus('Opening Google…');
+        try {
+          await linkOrSignInGoogle();
+          setAuthStatus('Done — progress is linked to your account.');
+          fillModal();
+        } catch (e) {
+          console.warn(e);
+          setAuthStatus(friendlyAuthError(e), true);
+        } finally {
+          state.authBusy = false;
+        }
+      });
+    }
+    if (signOutBtn && !signOutBtn._wired) {
+      signOutBtn._wired = true;
+      signOutBtn.addEventListener('click', async function () {
+        if (state.authBusy) return;
+        state.authBusy = true;
+        try {
+          await signOutKeepSession();
+        } catch (e) {
+          setAuthStatus(friendlyAuthError(e), true);
+        } finally {
+          state.authBusy = false;
+        }
+      });
+    }
+    const pomoToggle = overlay.querySelector('#profilePomoToggle');
+    if (pomoToggle && !pomoToggle._wired) {
+      pomoToggle._wired = true;
+      pomoToggle.addEventListener('change', function () {
+        const on = !!pomoToggle.checked;
+        if (typeof global.setPomodoroEnabled === 'function') {
+          global.setPomodoroEnabled(on);
+        } else if (global.StudyProgress && typeof StudyProgress.setPomodoroEnabled === 'function') {
+          StudyProgress.setPomodoroEnabled(on);
+        } else {
+          try {
+            localStorage.setItem('pt1_pomodoro_enabled', on ? '1' : '0');
+          } catch (e) {}
+        }
+        toast(on ? 'Pomodoro timer on' : 'Pomodoro timer off');
+      });
+    }
+    setTab(state.authTab || 'register');
+  }
+
+  function updateAuthPanel() {
+    const banner = document.getElementById('profileAuthBanner');
+    const body = document.getElementById('profileAuthBody');
+    const signed = document.getElementById('profileAuthSigned');
+    const signedLine = document.getElementById('profileAuthSignedLine');
+    const user = state.user;
+    if (!banner) return;
+    if (isAnonymousUser(user)) {
+      banner.className = 'profile-auth-banner is-guest';
+      banner.innerHTML =
+        '<strong>You’re on a guest account</strong> — progress can be lost if you clear browser data.';
+      if (body) body.hidden = false;
+      if (signed) signed.hidden = true;
+    } else if (user) {
+      banner.className = 'profile-auth-banner is-registered';
+      banner.innerHTML = '<strong>Signed in as</strong> ' + escapeHtml(accountLabel(user));
+      if (body) body.hidden = true;
+      if (signed) signed.hidden = false;
+      if (signedLine) {
+        signedLine.textContent =
+          'Your quiz progress, mastery, and achievements sync with this account.';
+      }
+    } else {
+      banner.className = 'profile-auth-banner';
+      banner.textContent = '';
+    }
+  }
+
+  function escapeHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
 
   function openProfileModal() {
@@ -262,6 +684,7 @@
         '<div><span class="ps-k">Level</span><span class="ps-v" id="profileLevelVal">1</span></div>' +
         '<div><span class="ps-k">Questions answered</span><span class="ps-v" id="profileQsVal">0</span></div>' +
         '</div>' +
+        authSectionHTML() +
         '<div class="modal-actions">' +
         '<button type="button" class="btn-ghost" id="profileCloseBtn">Close</button>' +
         '<button type="button" class="btn-gold" id="profileSaveBtn">Save callsign</button>' +
@@ -269,11 +692,11 @@
         '<p class="profile-foot" id="profileStatus"></p>' +
         '</div>';
       document.body.appendChild(overlay);
-      overlay.addEventListener('click', (e) => {
+      overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeProfileModal();
       });
       overlay.querySelector('#profileCloseBtn').addEventListener('click', closeProfileModal);
-      overlay.querySelector('#profileSaveBtn').addEventListener('click', async () => {
+      overlay.querySelector('#profileSaveBtn').addEventListener('click', async function () {
         const input = overlay.querySelector('#profileNameInput');
         const status = overlay.querySelector('#profileStatus');
         try {
@@ -285,17 +708,20 @@
           status.textContent = e.message || 'Save failed';
         }
       });
-      overlay.querySelector('#profileNameInput').addEventListener('input', () => {
+      overlay.querySelector('#profileNameInput').addEventListener('input', function () {
         const v = overlay.querySelector('#profileNameInput').value || 'S';
         const el = document.getElementById('profileHeroInit');
         const av = document.getElementById('profileHeroAv');
         if (el) el.textContent = initials(v);
         if (av) av.style.setProperty('--av-hue', hueFromName(v));
       });
+      wireAuthUI(overlay);
+    } else {
+      wireAuthUI(overlay);
     }
     fillModal();
     overlay.classList.add('show');
-    setTimeout(() => {
+    setTimeout(function () {
       const input = overlay.querySelector('#profileNameInput');
       if (input) input.focus();
     }, 50);
@@ -318,6 +744,20 @@
     if (lab) lab.textContent = prog.into + ' / ' + prog.need + ' to LV ' + (prog.level + 1);
     if (init) init.textContent = initials(p.displayName);
     if (av) av.style.setProperty('--av-hue', hueFromName(p.displayName));
+    updateAuthPanel();
+    const pomoToggle = document.getElementById('profilePomoToggle');
+    if (pomoToggle) {
+      var enabled = true;
+      if (global.StudyProgress && typeof StudyProgress.getPomodoroEnabled === 'function') {
+        enabled = StudyProgress.getPomodoroEnabled();
+      } else {
+        try {
+          var raw = localStorage.getItem('pt1_pomodoro_enabled');
+          if (raw === '0' || raw === 'false') enabled = false;
+        } catch (e) {}
+      }
+      pomoToggle.checked = !!enabled;
+    }
   }
 
   function closeProfileModal() {
@@ -326,10 +766,20 @@
   }
 
   global.StudyProfiles = {
-    start,
+    start: start,
     open: openProfileModal,
-    bumpQuestionsAnswered,
-    getProfile: () => state.profile,
-    isReady: () => state.ready
+    bumpQuestionsAnswered: bumpQuestionsAnswered,
+    getProfile: function () {
+      return state.profile;
+    },
+    getUser: function () {
+      return state.user;
+    },
+    isReady: function () {
+      return state.ready;
+    },
+    isAnonymous: function () {
+      return isAnonymousUser(state.user);
+    }
   };
 })(window);

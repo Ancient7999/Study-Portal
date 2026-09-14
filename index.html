@@ -565,6 +565,66 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   .profile-chip .pc-name{max-width:120px;font-size:.82rem}
 }
 
+
+/* Profile claim / auth + Pomodoro switch */
+.profile-card{max-width:480px}
+.profile-auth{margin:12px 0 4px}
+.profile-auth-banner{
+  padding:10px 12px;border-radius:12px;font-size:.82rem;line-height:1.35;margin:0 0 12px;
+  border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.1);color:#fde68a;
+}
+.profile-auth-banner.is-guest{
+  border-color:rgba(251,191,36,.4);background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(34,211,238,.08));
+  color:#fde68a;
+}
+.profile-auth-banner.is-registered{
+  border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.1);color:var(--cyan-bright);
+}
+.profile-auth-tabs{display:flex;gap:6px;margin:0 0 10px}
+.profile-auth-tab{
+  flex:1;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.02em;
+  padding:8px 10px;border-radius:999px;cursor:pointer;color:var(--text-dim);
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+}
+.profile-auth-tab.is-active{
+  color:var(--cyan-bright);border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.12);
+}
+.profile-auth-lead{font-size:.8rem;color:var(--text-dim);margin:0 0 10px}
+.profile-auth-actions{display:flex;flex-direction:column;gap:8px;margin:4px 0 8px}
+.profile-auth-actions .btn-gold,.profile-auth-actions .btn-ghost{width:100%;min-width:0}
+.profile-auth-google{border-color:rgba(34,211,238,.35)!important}
+.profile-auth-status{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);min-height:1.2em;margin:0 0 8px}
+.profile-auth-status.is-error{color:#fca5a5}
+.profile-auth-signed{display:flex;flex-direction:column;gap:8px;margin:0 0 10px}
+.profile-auth-signed[hidden],.profile-auth-body[hidden]{display:none!important}
+.profile-auth-signed-line{font-size:.8rem;color:var(--text-dim);margin:0}
+.profile-pomo-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;border-radius:12px;margin:8px 0 4px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+}
+.profile-pomo-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.profile-pomo-title{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--text)}
+.profile-pomo-sub{font-size:.72rem;color:var(--text-dim)}
+.profile-switch{position:relative;display:inline-block;width:46px;height:26px;flex-shrink:0;cursor:pointer}
+.profile-switch input{opacity:0;width:0;height:0;position:absolute}
+.profile-switch-slider{
+  position:absolute;inset:0;border-radius:999px;background:rgba(255,255,255,.12);
+  border:1px solid var(--border);transition:background .2s,border-color .2s;
+}
+.profile-switch-slider::before{
+  content:'';position:absolute;width:20px;height:20px;left:2px;top:2px;border-radius:50%;
+  background:#e2e8f0;transition:transform .2s;box-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+.profile-switch input:checked + .profile-switch-slider{
+  background:rgba(34,211,238,.25);border-color:rgba(34,211,238,.55);
+}
+.profile-switch input:checked + .profile-switch-slider::before{
+  transform:translateX(20px);background:var(--cyan-bright);
+}
+.profile-switch input:focus-visible + .profile-switch-slider{outline:2px solid var(--cyan-bright);outline-offset:2px}
+.timer-dock.is-pomo-off{display:none!important}
+
 .hub-back{margin:0 0 14px}
 .hub-back button{font-family:var(--mono);font-size:.85rem;color:var(--cyan-bright);background:transparent;border:1px solid var(--border);border-radius:999px;padding:8px 14px;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
 .hub-back button:hover{background:var(--mood-glow);border-color:var(--cyan);transform:translateY(-1px);box-shadow:0 0 18px var(--mood-glow)}
@@ -902,6 +962,7 @@ body.split-quiz-active #chatDock{z-index:60}
 .achievement-popup-title{font-size:.7em;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:2px;font-family:var(--mono)}
 .achievement-popup-name{font-size:1.05em;font-weight:800;margin-bottom:2px;color:#3b2a00}
 .achievement-popup-desc{font-size:.8em;opacity:.92;color:#4a3500}
+
 </style>
 </head>
 <body>
@@ -1144,9 +1205,10 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script src="js/firebase-config.js?v=4"></script>
-<script src="js/profiles.js?v=4"></script>
-<script src="js/achievements.js?v=1"></script>
-<script src="js/mastery.js?v=1"></script>
+<script src="js/progress-sync.js?v=1"></script>
+<script src="js/profiles.js?v=5"></script>
+<script src="js/achievements.js?v=2"></script>
+<script src="js/mastery.js?v=2"></script>
 <script src="js/party.js?v=2"></script>
 <script src="js/cursors.js?v=1"></script>
 <script src="js/lobby.js?v=2"></script>
@@ -1442,6 +1504,14 @@ const FOCUS_SEC = 25*60, BREAK_SEC = 5*60;
 const TIMER_LS = 'pt1_pomodoro_v1';
 const CYCLE_LS = 'pt1_pomo_cycle_v1';
 const QUOTE_META_LS = 'pt1_quote_meta_v1';
+const POMO_ENABLED_LS = 'pt1_pomodoro_enabled';
+let pomodoroEnabled = (function(){
+  try{
+    const v = localStorage.getItem(POMO_ENABLED_LS);
+    if(v==='0' || v==='false') return false;
+  }catch(e){}
+  return true;
+})();
 timerMode = 'focus';
 let secondsLeft = FOCUS_SEC;
 let phaseEndsAt = 0; // epoch ms when current phase hits 0
@@ -1834,6 +1904,7 @@ function showToast(msg, ms){
   showToast._t=setTimeout(()=>el.classList.remove('show'), ms||2800);
 }
 function enterBreak(){
+  if(!pomodoroEnabled) return;
   breakModalDismissed = false;
   randomizeBreakMood();
   setPhase('break', BREAK_SEC, true);
@@ -1860,6 +1931,7 @@ function resetTimer(){
   showToast('Timer reset · 25:00', 2200);
 }
 function tickTimer(){
+  if(!pomodoroEnabled) return;
   syncSecondsFromDeadline();
   renderTimer();
   if(secondsLeft<=0){
@@ -1979,7 +2051,51 @@ timerDisplay.addEventListener('dblclick',()=>{
 });
 if(typeof applySkin==='function') applySkin();
 if(typeof applyCursorSkin==='function') applyCursorSkin();
-startGlobalTimer();
+
+/* —— Pomodoro enable/disable (profile toggle + progress sync) —— */
+function stopGlobalTimer(){
+  if(timerInterval){ clearInterval(timerInterval); timerInterval = null; }
+  if(breakModal) breakModal.classList.remove('show');
+  breakModalDismissed = true;
+  if(typeof stopBellPersist==='function') try{ stopBellPersist(); }catch(e){}
+}
+function applyPomodoroUi(){
+  if(timerDock){
+    timerDock.classList.toggle('is-pomo-off', !pomodoroEnabled);
+    timerDock.style.display = pomodoroEnabled ? '' : 'none';
+  }
+  if(!pomodoroEnabled){
+    if(breakModal) breakModal.classList.remove('show');
+    openResetConfirm(false);
+  }
+}
+function setPomodoroEnabled(on, opts){
+  opts = opts || {};
+  pomodoroEnabled = !!on;
+  try{ localStorage.setItem(POMO_ENABLED_LS, pomodoroEnabled ? '1' : '0'); }catch(e){}
+  applyPomodoroUi();
+  if(pomodoroEnabled){
+    if(!timerInterval) startGlobalTimer();
+  } else {
+    stopGlobalTimer();
+  }
+  if(!opts.fromSync && window.StudyProgress && typeof StudyProgress.setPomodoroEnabled==='function'){
+    // Persist to cloud without re-entering setPomodoroEnabled loop
+    try{
+      localStorage.setItem(POMO_ENABLED_LS, pomodoroEnabled ? '1' : '0');
+      StudyProgress.schedulePush();
+    }catch(e){}
+  }
+  const toggle = document.getElementById('profilePomoToggle');
+  if(toggle && toggle.checked !== pomodoroEnabled) toggle.checked = pomodoroEnabled;
+  return pomodoroEnabled;
+}
+window.setPomodoroEnabled = setPomodoroEnabled;
+window.getPomodoroEnabled = function(){ return !!pomodoroEnabled; };
+
+applyPomodoroUi();
+if(pomodoroEnabled) startGlobalTimer();
+else stopGlobalTimer();
 
 window.__timerUiReady = true;
 refreshTimerQuote(false);
@@ -2002,6 +2118,9 @@ function formHubPct(L){
 function setBestPct(L, pct){
   const next = Math.max(formBestPct(L), Math.max(0,Math.min(100, Math.round(pct))));
   lsSet('pt1_form_'+L+'_best_pct', String(next));
+  if(window.StudyProgress && typeof StudyProgress.syncFormsFromLocal==='function'){
+    StudyProgress.syncFormsFromLocal();
+  }
   return next;
 }
 function setRunPct(L, pct){
@@ -2589,6 +2708,9 @@ document.addEventListener('keydown',e=>{
       if(window.StudyAchievements) StudyAchievements.start();
       if(window.StudyProfiles){
         StudyProfiles.start().then(()=>{
+          if(window.StudyProgress && typeof StudyProgress.getPomodoroEnabled==='function'){
+            setPomodoroEnabled(StudyProgress.getPomodoroEnabled(), { fromSync:true });
+          }
           if(window.StudyChat) return StudyChat.start();
         }).then(()=>{
           if(window.StudyCursors) StudyCursors.syncFromParty();

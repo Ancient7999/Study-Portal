@@ -15,7 +15,7 @@ In the left menu of your project:
 
 | Product | Path | Why |
 |--------|------|-----|
-| **Authentication** | Build → Authentication → Get started → Sign-in method → **Email/Password** and/or **Anonymous** | Profiles / scores |
+| **Authentication** | Build → Authentication → Get started → Sign-in method → **Anonymous** (default guest) + **Email/Password** + **Google** | Guest entry, claim/register, scores |
 | **Firestore** | Build → Firestore Database → Create database → **Start in production mode** → pick a region close to you | Profiles, scores, chat |
 | **Realtime Database** | Build → Realtime Database → Create → **Start in locked mode** → region | Live cursors / presence |
 | **Storage** | Build → Storage → Get started → production rules → region | Avatars (optional) |
@@ -55,6 +55,7 @@ Success looks like each ruleset **released**.
 ## 5) What the rules allow (summary)
 
 - **profiles/{uid}** — only you write your profile; signed-in users can read  
+- **progress/{uid}** — only you read/write your solo progress (mastery, achievements, forms, pomodoroEnabled)  
 - **scores/** — you can create your own score rows; no edits/deletes  
 - **leaderboards/.../entries/{uid}** — only you upsert your best %  
 - **rooms/.../messages** — signed-in create/read; edit blocked; delete own  
@@ -73,6 +74,24 @@ Success looks like each ruleset **released**.
 ## 7) Wire the HTML later
 
 Online tiles stay locked until you add the Firebase JS SDK and turn features on. Rules can (and should) be live **before** you unlock the UI.
+
+## Account claiming (Email / Google) — required for progress sync
+
+Guest users start with **Anonymous** auth. To claim progress (and sync across devices):
+
+1. **Authentication → Sign-in method**
+   - **Anonymous** — Enable (keep as default entry)
+   - **Email/Password** — Enable (no need for Email link)
+   - **Google** — Enable → set a support email
+2. **Authentication → Settings → Authorized domains**
+   - Include `ancient7999.github.io`
+   - Include `localhost` (for local testing)
+3. **Publish updated Firestore rules** (GitHub Pages does **not** deploy rules):
+   - Console → Firestore → Rules → paste `firebase/firestore.rules` → **Publish**
+   - Or CLI: `firebase deploy --only firestore:rules`
+4. Confirm `progress/{uid}` is allowed (self read/write) after publish — used for mastery, achievements, form best %, and Pomodoro preference.
+
+Without steps 1–3, “Register / Sign in / Continue with Google” in the profile modal will fail with `auth/operation-not-allowed` or redirect errors.
 
 ## Checklist
 

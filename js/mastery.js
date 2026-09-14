@@ -36,13 +36,29 @@
     }
   }
 
-  function save() {
+  function save(opts) {
+    opts = opts || {};
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       localStorage.setItem(DNSA_KEY, JSON.stringify(dnsa));
     } catch (e) {
       console.warn('mastery save failed', e);
     }
+    if (!opts.skipCloud && global.StudyProgress && typeof StudyProgress.notifyMasterySaved === 'function') {
+      StudyProgress.notifyMasterySaved();
+    }
+  }
+
+  function getDnsa() {
+    return dnsa;
+  }
+
+  /** Replace in-memory + localStorage mastery/dnsa (used by progress sync). */
+  function importData(masteryData, dnsaData, opts) {
+    opts = opts || {};
+    data = masteryData && typeof masteryData === 'object' ? masteryData : {};
+    dnsa = dnsaData && typeof dnsaData === 'object' ? dnsaData : {};
+    save({ skipCloud: !!opts.skipCloud });
   }
 
   function bankKeyFromPath(path) {
@@ -411,6 +427,8 @@
   global.StudyMastery = {
     load,
     save,
+    getDnsa,
+    importData,
     bankKeyFromPath,
     getOrInitForm,
     getPct,

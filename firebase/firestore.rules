@@ -58,6 +58,24 @@ service cloud.firestore {
       allow delete: if isSelf(uid);
     }
 
+    // Solo quiz progress (mastery, achievements, form best %, settings)
+    match /progress/{uid} {
+      allow read: if isSelf(uid);
+      allow create, update: if isSelf(uid)
+        && request.resource.data.keys().hasOnly([
+          'mastery', 'dnsa', 'achievements', 'forms', 'pomodoroEnabled', 'updatedAt'
+        ])
+        && request.resource.data.updatedAt is number
+        && (!('pomodoroEnabled' in request.resource.data)
+            || request.resource.data.pomodoroEnabled is bool)
+        && (!('mastery' in request.resource.data) || request.resource.data.mastery is map)
+        && (!('dnsa' in request.resource.data) || request.resource.data.dnsa is map)
+        && (!('achievements' in request.resource.data) || request.resource.data.achievements is map)
+        && (!('forms' in request.resource.data) || request.resource.data.forms is map)
+        && request.resource.data.keys().size() <= 8;
+      allow delete: if isSelf(uid);
+    }
+
     match /rooms/{roomId} {
       allow read: if signedIn();
       allow create: if signedIn()

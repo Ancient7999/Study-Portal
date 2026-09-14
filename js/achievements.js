@@ -44,12 +44,32 @@
     }
   }
 
-  function saveAchievementData() {
+  function saveAchievementData(opts) {
+    opts = opts || {};
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
       console.warn('Failed to save achievements:', e);
     }
+    if (!opts.skipCloud && global.StudyProgress && typeof StudyProgress.notifyAchievementsSaved === 'function') {
+      StudyProgress.notifyAchievementsSaved();
+    }
+  }
+
+  function importData(incoming, opts) {
+    opts = opts || {};
+    const parsed = incoming && typeof incoming === 'object' ? incoming : {};
+    data = Object.assign(defaultData(), parsed);
+    data.correct = Object.assign(defaultData().correct, parsed.correct || {});
+    data.wrong = Object.assign(defaultData().wrong, parsed.wrong || {});
+    data.streak = Object.assign(defaultData().streak, parsed.streak || {});
+    data.forms = Object.assign(defaultData().forms, parsed.forms || {});
+    data.mastery = Object.assign(defaultData().mastery, parsed.mastery || {});
+    data.unlockDates = parsed.unlockDates || {};
+    if (!Array.isArray(data.forms.completed)) data.forms.completed = [];
+    if (!Array.isArray(data.mastery.unlocked)) data.mastery.unlocked = [];
+    saveAchievementData({ skipCloud: !!opts.skipCloud });
+    refreshPanelIfOpen();
   }
 
   function getAchievementName(id) {
@@ -512,6 +532,8 @@
   global.StudyAchievements = {
     start: start,
     loadAchievementData: loadAchievementData,
+    importData: importData,
+    saveAchievementData: saveAchievementData,
     recordCorrect: recordCorrect,
     recordWrong: recordWrong,
     recordFormMastery: recordFormMastery,
