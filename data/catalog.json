@@ -127,13 +127,15 @@
       "id": "chat",
       "title": "Chat",
       "icon": "\ud83d\udcac",
-      "locked": true
+      "locked": false,
+      "blurb": "Dock \u00b7 channels \u00b7 party (max 4)"
     },
     {
       "id": "live",
-      "title": "Live room",
+      "title": "Lobby",
       "icon": "\ud83d\udce1",
-      "locked": true
+      "locked": false,
+      "blurb": "Party lobbies \u00b7 4 seats \u00b7 Start quiz"
     }
   ]
 }

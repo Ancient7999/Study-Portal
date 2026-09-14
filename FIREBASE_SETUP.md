@@ -58,6 +58,7 @@ Success looks like each ruleset **released**.
 - **scores/** — you can create your own score rows; no edits/deletes  
 - **leaderboards/.../entries/{uid}** — only you upsert your best %  
 - **rooms/.../messages** — signed-in create/read; edit blocked; delete own  
+- **RTDB presence / chat / parties / lobbies / invites** — auth required; own presence; party members ≤4; whisper pair scoped  
 - **RTDB rooms/.../cursors|presence** — only write your own uid path  
 - **Storage avatars/{uid}/** — only you upload &lt;2MB images  
 - **Storage banks/** — public read, no client writes (optional cloud banks later)  
@@ -81,3 +82,14 @@ Online tiles stay locked until you add the Firebase JS SDK and turn features on.
 - [ ] Web app config in `js/firebase-config.js`  
 - [ ] Rules deployed  
 - [ ] Budget alert set  
+
+
+## Chat / party / lobby rules deploy
+
+Repo rules do **not** auto-deploy with GitHub Pages. After pulling rules changes:
+
+```bash
+firebase deploy --only database
+```
+
+Or paste `firebase/database.rules.json` into Firebase Console → Realtime Database → Rules.

@@ -6,7 +6,8 @@ Static practice hub for GitHub Pages. Question banks are JSON files in this repo
 
 - **Unified SPA** (`index.html`) — rich glass UI (moods, timer, skins, Forms A–H) with portal home in the same page
 - **Unlocked** — Medical Physics → Periodic Test 1 (loads `banks/…` via fetch; no separate exam HTML)
-- **Locked** — other subjects + Online tiles (Profiles / Scores / Chat / Live)
+- **Online** — Profiles, Chat (channels/party), Lobby (4-seat party quiz). Scores still locked.
+- **Locked** — other subjects
 
 ## Publish on GitHub Pages (new repo)
 
@@ -50,7 +51,7 @@ Open `http://localhost:8080/`.
 
 ## Online features
 
-Profiles, Scores, Chat, and Live room are locked UI placeholders for a future backend (e.g. Firebase). Banks stay static project files.
+Profiles (anonymous auth), Chat dock (World/Trade/Local/Guild/Whisper/Party), Party (max 4), Lobbies + 1–4 split quiz, live party cursors, and local Mastery/Mastery+/DNSA. Scores still locked. Banks stay static JSON.
 
 ## Firebase (rules shipped)
 
