@@ -4,6 +4,7 @@
   const DEBOUNCE_MS = 1200;
   const FORM_PREFIX = 'pt1_form_';
   const POMO_LS = 'pt1_pomodoro_enabled';
+  const FRIENDS_LS = 'study_portal_friends_v1';
 
   let pushTimer = null;
   let syncing = false;
@@ -43,6 +44,69 @@
         global.setPomodoroEnabled(!!on, { fromSync: true });
       } catch (e) {}
     }
+  }
+
+  function getFriendsLocal() {
+    try {
+      const raw = lsGet(FRIENDS_LS);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return [];
+      return arr
+        .filter(function (f) {
+          return f && typeof f.uid === 'string' && f.uid;
+        })
+        .map(function (f) {
+          return {
+            uid: String(f.uid),
+            displayName: String(f.displayName || 'Scholar').slice(0, 40)
+          };
+        })
+        .slice(0, 40);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function setFriendsLocal(list) {
+    const cleaned = (list || [])
+      .filter(function (f) {
+        return f && f.uid;
+      })
+      .map(function (f) {
+        return {
+          uid: String(f.uid),
+          displayName: String(f.displayName || 'Scholar').slice(0, 40)
+        };
+      })
+      .slice(0, 40);
+    try {
+      lsSet(FRIENDS_LS, JSON.stringify(cleaned));
+    } catch (e) {}
+    if (global.StudyChat && typeof StudyChat.applyFriendsFromCloud === 'function') {
+      try {
+        StudyChat.applyFriendsFromCloud(cleaned);
+      } catch (e) {}
+    }
+  }
+
+  function mergeFriends(localF, cloudF) {
+    const byUid = {};
+    (cloudF || []).forEach(function (f) {
+      if (f && f.uid) byUid[String(f.uid)] = { uid: String(f.uid), displayName: String(f.displayName || 'Scholar').slice(0, 40) };
+    });
+    (localF || []).forEach(function (f) {
+      if (!f || !f.uid) return;
+      const id = String(f.uid);
+      const name = String(f.displayName || 'Scholar').slice(0, 40);
+      if (!byUid[id]) byUid[id] = { uid: id, displayName: name };
+      else if (name && name !== 'Scholar') byUid[id].displayName = name;
+    });
+    return Object.keys(byUid)
+      .map(function (k) {
+        return byUid[k];
+      })
+      .slice(0, 40);
   }
 
   function currentUid() {
@@ -142,6 +206,7 @@
       achievements: achievements,
       forms: collectLocalForms(),
       pomodoroEnabled: getPomodoroEnabledLocal(),
+      friends: getFriendsLocal(),
       updatedAt: Date.now()
     };
   }
@@ -322,6 +387,7 @@
       achievements: mergeAchievements(L.achievements, C.achievements),
       forms: mergeForms(L.forms, C.forms),
       pomodoroEnabled: pomo,
+      friends: mergeFriends(L.friends, C.friends),
       updatedAt: Date.now()
     };
   }
@@ -338,6 +404,9 @@
     applyFormsToLocal(bundle.forms || {});
     if (typeof bundle.pomodoroEnabled === 'boolean') {
       setPomodoroEnabledLocal(bundle.pomodoroEnabled);
+    }
+    if (Array.isArray(bundle.friends)) {
+      setFriendsLocal(bundle.friends);
     }
     if (opts.refreshHub && typeof global.renderFormCards === 'function') {
       try {
@@ -362,6 +431,7 @@
       forms: bundle.forms || {},
       pomodoroEnabled:
         typeof bundle.pomodoroEnabled === 'boolean' ? bundle.pomodoroEnabled : getPomodoroEnabledLocal(),
+      friends: Array.isArray(bundle.friends) ? bundle.friends : getFriendsLocal(),
       updatedAt: Date.now()
     };
     await db.collection('progress').doc(uid).set(payload, { merge: true });
@@ -474,6 +544,11 @@
     getPomodoroEnabled: getPomodoroEnabledLocal,
     setPomodoroEnabled: function (on) {
       setPomodoroEnabledLocal(!!on);
+      schedulePush();
+    },
+    getFriends: getFriendsLocal,
+    setFriends: function (list) {
+      setFriendsLocal(list);
       schedulePush();
     },
     notifyMasterySaved: notifyMasterySaved,

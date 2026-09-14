@@ -86,7 +86,8 @@ Guest users start with **Anonymous** auth. To claim progress (and sync across de
 3. **Publish updated Firestore rules** (GitHub Pages does **not** deploy rules):
    - Console → Firestore → Rules → paste `firebase/firestore.rules` → **Publish**
    - Or CLI: `firebase deploy --only firestore:rules`
-4. Confirm `progress/{uid}` is allowed (self read/write) after publish — used for mastery, achievements, form best %, and Pomodoro preference.
+4. Confirm `progress/{uid}` is allowed (self read/write) after publish — used for mastery, achievements, form best %, Pomodoro preference, and `friends`.
+5. After presence/chat updates, also **Publish RTDB rules** (`firebase/database.rules.json`) so `presence` may include `activity`, `quiz`, and `partySize`.
 
 
 ## Checklist

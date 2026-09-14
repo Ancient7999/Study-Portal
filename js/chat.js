@@ -7,6 +7,11 @@
   const LS_GUILD = 'study_portal_guild_v1';
   const LS_DOCK = 'study_portal_chat_open_v1';
   const LS_VISIBLE = 'study_portal_chat_visible_v1';
+  const LS_MUTE_NUDGES = 'study_portal_mute_nudges_v1';
+  const LS_FRIENDS = 'study_portal_friends_v1';
+  const PRESENCE_MIN_MS = 4000;
+  const PRESENCE_HEARTBEAT_MS = 55000;
+  const FRIENDS_MAX = 40;
 
   const CHANNELS = [
     { id: 'local', label: 'Local', enc: false },
@@ -29,8 +34,16 @@
     unsubMsgs: null,
     unsubPresence: null,
     unsubInvite: null,
+    unsubWhisperNudges: null,
     keyCache: {},
-    open: false
+    open: false,
+    muteNudges: false,
+    friends: [], // [{ uid, displayName }]
+    activity: 'hub', // hub | quiz | lobby | party
+    quiz: null, // { bank, form } | null
+    lastPresenceAt: 0,
+    lastPresenceSig: '',
+    presenceTimer: null
   };
 
   function toast(msg) {
@@ -198,21 +211,252 @@
     return needsEncFor(state.channel);
   }
 
+  /* —— Mute nudges / friends —— */
+  function loadMuteNudges() {
+    try {
+      return localStorage.getItem(LS_MUTE_NUDGES) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function saveMuteNudges(on) {
+    state.muteNudges = !!on;
+    try {
+      localStorage.setItem(LS_MUTE_NUDGES, state.muteNudges ? '1' : '0');
+    } catch (e) {}
+    syncMuteBtn();
+  }
+
+  function loadFriends() {
+    try {
+      const raw = localStorage.getItem(LS_FRIENDS);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return [];
+      return arr
+        .filter((f) => f && typeof f.uid === 'string' && f.uid)
+        .map((f) => ({
+          uid: String(f.uid),
+          displayName: String(f.displayName || 'Scholar').slice(0, 40)
+        }))
+        .slice(0, FRIENDS_MAX);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveFriends(list, opts) {
+    opts = opts || {};
+    const cleaned = (list || [])
+      .filter((f) => f && f.uid)
+      .map((f) => ({
+        uid: String(f.uid),
+        displayName: String(f.displayName || 'Scholar').slice(0, 40)
+      }));
+    const byUid = {};
+    cleaned.forEach((f) => {
+      byUid[f.uid] = f;
+    });
+    state.friends = Object.keys(byUid)
+      .map((k) => byUid[k])
+      .slice(0, FRIENDS_MAX);
+    try {
+      localStorage.setItem(LS_FRIENDS, JSON.stringify(state.friends));
+    } catch (e) {}
+    if (!opts.skipCloud && global.StudyProgress && StudyProgress.schedulePush) {
+      try {
+        StudyProgress.schedulePush();
+      } catch (e) {}
+    }
+    listenWhisperNudges();
+    renderFriendsPanel();
+  }
+
+  function addFriend(uidStr, displayName) {
+    const id = String(uidStr || '');
+    if (!id) return false;
+    const me = uid();
+    if (me && id === me) {
+      toast('Cannot add yourself');
+      return false;
+    }
+    const name = String(displayName || 'Scholar').slice(0, 40);
+    const next = state.friends.slice();
+    const idx = next.findIndex((f) => f.uid === id);
+    if (idx >= 0) {
+      next[idx] = { uid: id, displayName: name || next[idx].displayName };
+      toast('Friend updated');
+    } else {
+      if (next.length >= FRIENDS_MAX) {
+        toast('Friends list full');
+        return false;
+      }
+      next.push({ uid: id, displayName: name });
+      toast('Added ' + name);
+    }
+    saveFriends(next);
+    return true;
+  }
+
+  function removeFriend(uidStr) {
+    const id = String(uidStr || '');
+    saveFriends(state.friends.filter((f) => f.uid !== id));
+    toast('Friend removed');
+  }
+
+  function bankShort(bank) {
+    if (!bank) return 'Quiz';
+    const s = String(bank);
+    if (/pt1/i.test(s)) return 'PT1';
+    const m = s.match(/([^/]+)\.json$/i);
+    if (m) return m[1].replace(/[-_]/g, ' ').slice(0, 12).toUpperCase();
+    return s.slice(0, 12);
+  }
+
+  function currentBankLabel() {
+    try {
+      if (global.__activeMaterial && __activeMaterial.bank) return bankShort(__activeMaterial.bank);
+      if (global.__activeMaterial && __activeMaterial.title) return String(__activeMaterial.title).slice(0, 16);
+    } catch (e) {}
+    return 'PT1';
+  }
+
+  function partySizeNow() {
+    try {
+      const p = global.StudyParty && StudyParty.getParty && StudyParty.getParty();
+      if (p && p.members) return Object.keys(p.members).length;
+    } catch (e) {}
+    return null;
+  }
+
+  function deriveActivity() {
+    const inParty = !!(global.StudyParty && StudyParty.getPartyId && StudyParty.getPartyId());
+    if (inParty) return 'party';
+    if (state.activity === 'lobby') return 'lobby';
+    if (state.localRoom && /^form_/i.test(state.localRoom)) return 'quiz';
+    if (state.activity === 'quiz' && state.quiz) return 'quiz';
+    return state.activity === 'lobby' ? 'lobby' : 'hub';
+  }
+
+  function presenceStatusLabel(p) {
+    if (!p) return 'Online';
+    if (p.partyId) {
+      const n = typeof p.partySize === 'number' ? p.partySize : null;
+      return n ? 'Party ' + n + '/4' : 'In party';
+    }
+    if (p.activity === 'quiz' && p.quiz) {
+      const bank = p.quiz.bank || 'Quiz';
+      const form = p.quiz.form ? ' Form ' + p.quiz.form : '';
+      return bank + form;
+    }
+    if (p.activity === 'lobby') return 'In lobby';
+    if (p.activity === 'party') return 'In party';
+    return 'Online';
+  }
+
+  function playWhisperNudge() {
+    if (state.muteNudges) return;
+    if (typeof global.playNudgeBell === 'function') {
+      try {
+        global.playNudgeBell();
+      } catch (e) {}
+    }
+  }
+
+  function stopWhisperNudges() {
+    if (state.unsubWhisperNudges) {
+      state.unsubWhisperNudges();
+      state.unsubWhisperNudges = null;
+    }
+  }
+
+  function whisperPathsToWatch() {
+    const me = uid();
+    if (!me) return [];
+    const set = {};
+    (state.friends || []).forEach((f) => {
+      if (f && f.uid) set['chat/whisper/' + whisperPair(me, f.uid)] = true;
+    });
+    if (state.whisperTarget && state.whisperTarget.uid) {
+      set['chat/whisper/' + whisperPair(me, state.whisperTarget.uid)] = true;
+    }
+    return Object.keys(set);
+  }
+
+  function listenWhisperNudges() {
+    stopWhisperNudges();
+    const me = uid();
+    if (!me) return;
+    let db;
+    try {
+      db = ensureFirebase().db;
+    } catch (e) {
+      return;
+    }
+    const startTs = Date.now() - 500; // slight skew allowance; skip older history via startAt
+    const unsubs = [];
+    whisperPathsToWatch().forEach((path) => {
+      const q = db.ref(path).orderByChild('ts').startAt(startTs);
+      const handler = (snap) => {
+        const m = snap.val() || {};
+        if (!m.uid || m.uid === me) return;
+        if (state.muteNudges) return;
+        playWhisperNudge();
+      };
+      q.on('child_added', handler);
+      unsubs.push(() => q.off('child_added', handler));
+    });
+    state.unsubWhisperNudges = () => unsubs.forEach((fn) => fn());
+  }
+
   /* —— Presence —— */
-  async function publishPresence() {
+  function schedulePresencePublish() {
+    if (state.presenceTimer) clearTimeout(state.presenceTimer);
+    state.presenceTimer = setTimeout(() => {
+      state.presenceTimer = null;
+      publishPresence();
+    }, PRESENCE_MIN_MS);
+  }
+
+  async function publishPresence(force) {
     const me = uid();
     if (!me) return;
     const { db } = ensureFirebase();
     const bits = profileBits();
     const partyId = (global.StudyParty && StudyParty.getPartyId && StudyParty.getPartyId()) || null;
+    const activity = deriveActivity();
+    const pSize = partyId ? partySizeNow() : null;
     const payload = {
       state: 'online',
       displayName: bits.displayName,
       level: bits.level,
-      updatedAt: Date.now()
+      updatedAt: Date.now(),
+      activity: activity
     };
     if (partyId) payload.partyId = partyId;
     if (state.guild && state.guild.id) payload.guildId = state.guild.id;
+    if (pSize != null && pSize > 0) payload.partySize = pSize;
+    if (activity === 'quiz' && state.quiz && (state.quiz.bank || state.quiz.form)) {
+      payload.quiz = {};
+      if (state.quiz.bank) payload.quiz.bank = String(state.quiz.bank).slice(0, 32);
+      if (state.quiz.form) payload.quiz.form = String(state.quiz.form).slice(0, 8);
+    }
+    const sigObj = Object.assign({}, payload);
+    delete sigObj.updatedAt;
+    const sig = JSON.stringify(sigObj);
+    const now = Date.now();
+    if (!force) {
+      if (sig === state.lastPresenceSig && now - state.lastPresenceAt < PRESENCE_HEARTBEAT_MS) {
+        return;
+      }
+      if (sig !== state.lastPresenceSig && now - state.lastPresenceAt < PRESENCE_MIN_MS) {
+        schedulePresencePublish();
+        return;
+      }
+    }
+    state.lastPresenceSig = sig;
+    state.lastPresenceAt = now;
     const ref = db.ref('presence/' + me);
     await ref.set(payload);
     await ref.onDisconnect().remove();
@@ -226,6 +470,7 @@
       state.online = snap.val() || {};
       renderAutocomplete();
       updateChannelMeta();
+      renderFriendsPanel();
     };
     ref.on('value', handler);
     state.unsubPresence = () => ref.off('value', handler);
@@ -238,7 +483,8 @@
       .map((id) => ({
         uid: id,
         displayName: state.online[id].displayName || 'Scholar',
-        level: state.online[id].level || 1
+        level: state.online[id].level || 1,
+        presence: state.online[id]
       }))
       .sort((a, b) => a.displayName.localeCompare(b.displayName));
   }
@@ -435,6 +681,7 @@
     }
     state.whisperTarget = hit;
     updateChannelMeta();
+    listenWhisperNudges();
     return hit;
   }
 
@@ -518,7 +765,14 @@
       '<div class="chat-dock-bar">' +
       '<button type="button" class="chat-toggle" id="chatToggleBtn" title="Toggle chat" aria-expanded="false">💬 Chat</button>' +
       '<span class="chat-dock-meta" id="chatDockMeta"></span>' +
+      '<div class="chat-dock-actions">' +
+      '<button type="button" class="chat-icon-btn" id="chatMuteNudgesBtn" title="Mute whisper nudges" aria-pressed="false">🔔</button>' +
+      '<div class="chat-friends-wrap">' +
+      '<button type="button" class="chat-icon-btn chat-friends-btn" id="chatFriendsBtn" title="Friends" aria-haspopup="true" aria-expanded="false">Friends</button>' +
+      '<div class="chat-friends-panel" id="chatFriendsPanel" hidden></div>' +
+      '</div>' +
       '<button type="button" class="chat-minimize" id="chatMinBtn" title="Minimize" aria-label="Minimize">–</button>' +
+      '</div>' +
       '</div>' +
       '<div class="chat-dock-body" id="chatDockBody" hidden>' +
       '<div class="chat-party-tools" id="chatPartyTools" hidden></div>' +
@@ -540,11 +794,22 @@
     document.body.appendChild(dock);
 
     rebuildChannelMenu();
+    syncMuteBtn();
 
     document.getElementById('chatToggleBtn').addEventListener('click', () => setOpen(!state.open));
     document.getElementById('chatMinBtn').addEventListener('click', () => setOpen(false));
+    document.getElementById('chatMuteNudgesBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      saveMuteNudges(!state.muteNudges);
+      toast(state.muteNudges ? 'Whisper nudges muted' : 'Whisper nudges on');
+    });
+    document.getElementById('chatFriendsBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFriendsPanel();
+    });
     document.getElementById('chatChannelBtn').addEventListener('click', (e) => {
       e.stopPropagation();
+      closeFriendsPanel();
       toggleChannelMenu();
     });
     document.getElementById('chatSendBtn').addEventListener('click', () => {
@@ -570,7 +835,187 @@
     document.addEventListener('click', (e) => {
       const wrap = document.querySelector('.chat-channel-wrap');
       if (wrap && !wrap.contains(e.target)) closeChannelMenu();
+      const fwrap = document.querySelector('.chat-friends-wrap');
+      if (fwrap && !fwrap.contains(e.target)) closeFriendsPanel();
     });
+  }
+
+  function syncMuteBtn() {
+    const btn = document.getElementById('chatMuteNudgesBtn');
+    if (!btn) return;
+    btn.textContent = state.muteNudges ? '🔕' : '🔔';
+    btn.setAttribute('aria-pressed', state.muteNudges ? 'true' : 'false');
+    btn.title = state.muteNudges ? 'Unmute whisper nudges' : 'Mute whisper nudges';
+    btn.classList.toggle('muted', !!state.muteNudges);
+  }
+
+  function toggleFriendsPanel() {
+    const panel = document.getElementById('chatFriendsPanel');
+    const btn = document.getElementById('chatFriendsBtn');
+    if (!panel) return;
+    const open = panel.hidden;
+    if (open) {
+      closeChannelMenu();
+      renderFriendsPanel();
+    }
+    panel.hidden = !open;
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function closeFriendsPanel() {
+    const panel = document.getElementById('chatFriendsPanel');
+    const btn = document.getElementById('chatFriendsBtn');
+    if (panel) panel.hidden = true;
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function openWhisperTo(friend) {
+    if (!friend || !friend.uid) return;
+    state.whisperTarget = { uid: friend.uid, displayName: friend.displayName || 'Scholar' };
+    state.channel = 'whisper';
+    ensureVisible();
+    if (!state.visible.has('whisper')) {
+      state.visible.add('whisper');
+      saveVisible();
+    }
+    syncChannelUI();
+    setOpen(true);
+    listenMessages();
+    listenWhisperNudges();
+    updateChannelMeta();
+    closeFriendsPanel();
+    const inputEl = document.getElementById('chatInput');
+    if (inputEl) inputEl.focus();
+  }
+
+  function renderFriendsPanel() {
+    const panel = document.getElementById('chatFriendsPanel');
+    if (!panel) return;
+    const me = uid();
+    const friends = state.friends || [];
+    const onlineFriends = [];
+    const offlineFriends = [];
+    friends.forEach((f) => {
+      if (me && f.uid === me) return;
+      if (state.online[f.uid]) {
+        const p = state.online[f.uid];
+        onlineFriends.push({
+          uid: f.uid,
+          displayName: p.displayName || f.displayName || 'Scholar',
+          level: p.level || 1,
+          presence: p
+        });
+      } else {
+        offlineFriends.push(f);
+      }
+    });
+    onlineFriends.sort((a, b) => a.displayName.localeCompare(b.displayName));
+
+    let html = '<div class="chat-friends-head">Friends</div>';
+    if (!onlineFriends.length) {
+      html += '<div class="chat-friends-empty">No friends online</div>';
+    } else {
+      onlineFriends.forEach((f) => {
+        const status = presenceStatusLabel(f.presence);
+        html +=
+          '<div class="chat-friends-row" data-uid="' +
+          esc(f.uid) +
+          '">' +
+          '<button type="button" class="chat-friends-main" data-act="whisper">' +
+          '<span class="chat-friends-name"></span>' +
+          '<span class="chat-friends-status">' +
+          esc(status) +
+          '</span>' +
+          '</button>' +
+          '<button type="button" class="chat-friends-x" data-act="remove" title="Remove friend">×</button>' +
+          '</div>';
+      });
+    }
+    if (offlineFriends.length) {
+      html +=
+        '<div class="chat-friends-foot">' +
+        offlineFriends.length +
+        ' offline friend' +
+        (offlineFriends.length === 1 ? '' : 's') +
+        '</div>';
+    }
+    html +=
+      '<div class="chat-friends-actions">' +
+      '<button type="button" class="chat-tool-btn" id="chatAddFriendBtn">Add friend…</button>' +
+      '</div>';
+
+    // Online non-friends quick-add (presence)
+    const friendIds = {};
+    friends.forEach((f) => {
+      friendIds[f.uid] = true;
+    });
+    const addable = getOnlineList()
+      .filter((p) => !friendIds[p.uid])
+      .slice(0, 6);
+    if (addable.length) {
+      html += '<div class="chat-friends-head subtle">Online — add</div>';
+      addable.forEach((p) => {
+        html +=
+          '<div class="chat-friends-row addable" data-uid="' +
+          esc(p.uid) +
+          '">' +
+          '<button type="button" class="chat-friends-main" data-act="add">' +
+          '<span class="chat-friends-name"></span>' +
+          '<span class="chat-friends-status">' +
+          esc(presenceStatusLabel(p.presence)) +
+          '</span>' +
+          '</button>' +
+          '<button type="button" class="chat-friends-add" data-act="add" title="Add friend">＋</button>' +
+          '</div>';
+      });
+    }
+
+    panel.innerHTML = html;
+
+    const nameNodes = panel.querySelectorAll('.chat-friends-row');
+    const nameSources = onlineFriends.concat(
+      addable.map((p) => ({ uid: p.uid, displayName: p.displayName }))
+    );
+    // Set names safely via textContent — walk rows in order
+    let oi = 0;
+    Array.from(panel.querySelectorAll('.chat-friends-row:not(.addable)')).forEach((row, i) => {
+      const f = onlineFriends[i];
+      if (!f) return;
+      const nameEl = row.querySelector('.chat-friends-name');
+      if (nameEl) nameEl.textContent = f.displayName;
+      row.querySelectorAll('[data-act="whisper"]').forEach((btn) => {
+        btn.addEventListener('click', () => openWhisperTo(f));
+      });
+      row.querySelectorAll('[data-act="remove"]').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          removeFriend(f.uid);
+        });
+      });
+    });
+    Array.from(panel.querySelectorAll('.chat-friends-row.addable')).forEach((row, i) => {
+      const p = addable[i];
+      if (!p) return;
+      const nameEl = row.querySelector('.chat-friends-name');
+      if (nameEl) nameEl.textContent = p.displayName;
+      const add = () => addFriend(p.uid, p.displayName);
+      row.querySelectorAll('[data-act="add"]').forEach((btn) => btn.addEventListener('click', add));
+    });
+
+    const addBtn = panel.querySelector('#chatAddFriendBtn');
+    if (addBtn) {
+      addBtn.onclick = () => {
+        const name = prompt('Add friend by exact @name (must be online):');
+        if (!name) return;
+        const n = String(name).replace(/^@/, '').trim().toLowerCase();
+        const hit = getOnlineList().find((p) => p.displayName.toLowerCase() === n);
+        if (!hit) {
+          toast('Not online — need uid via presence');
+          return;
+        }
+        addFriend(hit.uid, hit.displayName);
+      };
+    }
   }
 
   function rebuildChannelMenu() {
@@ -897,32 +1342,54 @@
       return;
     }
     ac.hidden = false;
+    const friendIds = {};
+    (state.friends || []).forEach((f) => {
+      friendIds[f.uid] = true;
+    });
     ac.innerHTML = rows
       .map(
         (p) =>
-          '<button type="button" class="chat-ac-item" data-uid="' +
+          '<div class="chat-ac-row" data-uid="' +
           esc(p.uid) +
-          '"><span></span><em>LV ' +
+          '"><button type="button" class="chat-ac-item" data-act="whisper"><span></span><em>LV ' +
           p.level +
-          '</em></button>'
+          '</em></button>' +
+          (friendIds[p.uid]
+            ? ''
+            : '<button type="button" class="chat-ac-add" data-act="add" title="Add friend">＋</button>') +
+          '</div>'
       )
       .join('');
-    Array.from(ac.querySelectorAll('.chat-ac-item')).forEach((btn, i) => {
-      btn.querySelector('span').textContent = rows[i].displayName;
-      btn.addEventListener('click', () => {
-        state.whisperTarget = rows[i];
-        state.channel = 'whisper';
-        syncChannelUI();
-        const inputEl = document.getElementById('chatInput');
-        if (inputEl) {
-          // Replace trailing @partial or set placeholder context
-          inputEl.value = inputEl.value.replace(/(^|\s)@\w*$/, '$1').replace(/^@\S*\s*/, '');
-          inputEl.focus();
-        }
-        hideAc();
-        listenMessages();
-        updateChannelMeta();
-      });
+    Array.from(ac.querySelectorAll('.chat-ac-row')).forEach((row, i) => {
+      const p = rows[i];
+      if (!p) return;
+      const span = row.querySelector('.chat-ac-item span');
+      if (span) span.textContent = p.displayName;
+      const whisperBtn = row.querySelector('[data-act="whisper"]');
+      if (whisperBtn) {
+        whisperBtn.addEventListener('click', () => {
+          state.whisperTarget = { uid: p.uid, displayName: p.displayName };
+          state.channel = 'whisper';
+          syncChannelUI();
+          const inputEl = document.getElementById('chatInput');
+          if (inputEl) {
+            inputEl.value = inputEl.value.replace(/(^|\s)@\w*$/, '$1').replace(/^@\S*\s*/, '');
+            inputEl.focus();
+          }
+          hideAc();
+          listenMessages();
+          listenWhisperNudges();
+          updateChannelMeta();
+        });
+      }
+      const addBtn = row.querySelector('[data-act="add"]');
+      if (addBtn) {
+        addBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          addFriend(p.uid, p.displayName);
+          onInputAc();
+        });
+      }
     });
   }
 
@@ -940,7 +1407,8 @@
       renderChannelTools();
     }
     listenMessages();
-    publishPresence();
+    // Party join/leave / size change — force presence so partySize updates promptly
+    publishPresence(true);
     if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
     if (global.StudyPartyTimers && StudyPartyTimers.syncFromParty) StudyPartyTimers.syncFromParty();
     if (global.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
@@ -992,18 +1460,23 @@
         return;
       }
       state.guild = loadGuild();
-      await publishPresence();
+      state.muteNudges = loadMuteNudges();
+      state.friends = loadFriends();
+      syncMuteBtn();
+      await publishPresence(true);
       listenPresence();
+      listenWhisperNudges();
       if (global.StudyParty && StudyParty.start) await StudyParty.start();
       watchInvites();
       syncChannelUI();
       renderChannelTools();
+      renderFriendsPanel();
       try {
         if (localStorage.getItem(LS_DOCK) === '1') setOpen(true);
       } catch (e) {}
-      // Refresh presence when profile name changes — poll lightly
+      // Heartbeat presence — force so RTDB onDisconnect stays fresh
       setInterval(() => {
-        if (uid()) publishPresence();
+        if (uid()) publishPresence(true);
       }, 60000);
       state.ready = true;
     } catch (e) {
@@ -1018,19 +1491,74 @@
 
   function setLocalRoom(roomId) {
     state.localRoom = String(roomId || 'lobby').slice(0, 64) || 'lobby';
+    if (/^form_/i.test(state.localRoom)) {
+      const letter = state.localRoom.replace(/^form_/i, '').slice(0, 8);
+      state.activity = 'quiz';
+      state.quiz = { bank: currentBankLabel(), form: letter };
+    } else if (state.localRoom === 'lobby' || state.localRoom === 'hub') {
+      if (state.activity === 'quiz') state.activity = 'hub';
+      state.quiz = null;
+      if (state.activity !== 'lobby' && state.activity !== 'party') state.activity = 'hub';
+    }
     updateChannelMeta();
     ensureVisible();
     if (state.visible.has('local') || state.channel === 'local') {
       listenMessages();
     }
+    publishPresence();
+  }
+
+  function setActivity(info) {
+    info = info || {};
+    if (info.activity) state.activity = String(info.activity).slice(0, 16);
+    if (Object.prototype.hasOwnProperty.call(info, 'quiz')) {
+      state.quiz = info.quiz
+        ? {
+            bank: info.quiz.bank ? String(info.quiz.bank).slice(0, 32) : currentBankLabel(),
+            form: info.quiz.form ? String(info.quiz.form).slice(0, 8) : undefined
+          }
+        : null;
+      if (state.quiz && !state.quiz.form) delete state.quiz.form;
+      if (state.quiz && !state.quiz.bank) delete state.quiz.bank;
+      if (state.quiz && !state.quiz.bank && !state.quiz.form) state.quiz = null;
+    }
+    if (info.localRoom) {
+      state.localRoom = String(info.localRoom).slice(0, 64);
+    }
+    publishPresence(!!info.force);
+  }
+
+  function applyFriendsFromCloud(list) {
+    if (!Array.isArray(list)) return;
+    const local = loadFriends();
+    const byUid = {};
+    local.forEach((f) => {
+      byUid[f.uid] = f;
+    });
+    list.forEach((f) => {
+      if (!f || !f.uid) return;
+      const id = String(f.uid);
+      const name = String(f.displayName || 'Scholar').slice(0, 40);
+      if (!byUid[id]) byUid[id] = { uid: id, displayName: name };
+      else if (name && name !== 'Scholar') byUid[id].displayName = name;
+    });
+    saveFriends(
+      Object.keys(byUid).map((k) => byUid[k]),
+      { skipCloud: true }
+    );
   }
 
   global.StudyChat = {
     start,
     open,
     setLocalRoom,
+    setActivity,
     getOnlineList,
     onPartyChanged,
+    addFriend,
+    removeFriend,
+    getFriends: () => state.friends.slice(),
+    applyFriendsFromCloud,
     isReady: () => state.ready
   };
 })(window);

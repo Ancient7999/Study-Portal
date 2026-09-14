@@ -63,7 +63,7 @@ service cloud.firestore {
       allow read: if isSelf(uid);
       allow create, update: if isSelf(uid)
         && request.resource.data.keys().hasOnly([
-          'mastery', 'dnsa', 'achievements', 'forms', 'pomodoroEnabled', 'updatedAt'
+          'mastery', 'dnsa', 'achievements', 'forms', 'pomodoroEnabled', 'friends', 'updatedAt'
         ])
         && request.resource.data.updatedAt is number
         && (!('pomodoroEnabled' in request.resource.data)
@@ -72,7 +72,10 @@ service cloud.firestore {
         && (!('dnsa' in request.resource.data) || request.resource.data.dnsa is map)
         && (!('achievements' in request.resource.data) || request.resource.data.achievements is map)
         && (!('forms' in request.resource.data) || request.resource.data.forms is map)
-        && request.resource.data.keys().size() <= 8;
+        && (!('friends' in request.resource.data)
+            || (request.resource.data.friends is list
+                && request.resource.data.friends.size() <= 40))
+        && request.resource.data.keys().size() <= 9;
       allow delete: if isSelf(uid);
     }
 

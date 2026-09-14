@@ -83,7 +83,7 @@ html.mood-crying {
   --anim-speed:.48; --pulse-ms:3200ms; --transition-ms:500ms; --particle-speed:.38;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.party-mini-chip,.party-timer-chip,.party-sync-timers-btn,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
+body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.chat-icon-btn,.chat-friends-btn,.chat-friends-main,.chat-friends-x,.chat-friends-add,.chat-ac-add,.party-mini-chip,.party-timer-chip,.party-sync-timers-btn,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
 #cursor{
   position:fixed;width:var(--cur-w,28px);height:var(--cur-h,28px);
   border:var(--cur-border,2px solid var(--cyan));border-radius:var(--cur-radius,50%);
@@ -649,7 +649,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   border-bottom:1px solid transparent;
 }
 .chat-dock.open .chat-dock-bar{border-bottom-color:rgba(255,255,255,.06)}
-.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-tool-btn,.chat-ac-item{
+.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-tool-btn,.chat-ac-item,.chat-icon-btn{
   font:inherit;cursor:pointer;color:var(--text);
   background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:999px;
 }
@@ -658,8 +658,51 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   padding:6px 12px;background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.35);color:var(--cyan-bright);
 }
 .chat-toggle:hover{box-shadow:0 0 14px var(--mood-glow)}
-.chat-minimize{width:28px;height:28px;padding:0;line-height:1;margin-left:auto;opacity:.75}
-.chat-dock-meta{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46%}
+.chat-minimize{width:28px;height:28px;padding:0;line-height:1;opacity:.75}
+.chat-dock-actions{display:flex;align-items:center;gap:6px;margin-left:auto;flex-shrink:0}
+.chat-icon-btn{
+  font-family:var(--mono);font-size:.72rem;font-weight:700;padding:5px 9px;line-height:1.1;
+  background:rgba(8,12,20,.85);
+}
+.chat-icon-btn.muted{opacity:.55;filter:grayscale(.35)}
+.chat-friends-wrap{position:relative}
+.chat-friends-btn{letter-spacing:.02em}
+.chat-friends-panel{
+  position:absolute;right:0;bottom:calc(100% + 6px);z-index:6;
+  width:min(260px,72vw);max-height:min(42vh,320px);overflow:auto;
+  padding:8px;border-radius:12px;
+  background:rgba(8,12,20,.96);border:1px solid var(--border);
+  box-shadow:0 12px 28px rgba(0,0,0,.55);backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;gap:4px;
+}
+.chat-friends-panel[hidden]{display:none!important}
+.chat-friends-head{
+  font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.04em;
+  color:var(--cyan-bright);text-transform:uppercase;padding:2px 4px 6px;
+}
+.chat-friends-head.subtle{color:var(--text-dim);margin-top:6px}
+.chat-friends-empty,.chat-friends-foot{
+  font-family:var(--mono);font-size:.65rem;color:var(--text-dim);padding:6px 4px;text-align:center;
+}
+.chat-friends-row{display:flex;align-items:stretch;gap:4px}
+.chat-friends-main{
+  flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;gap:1px;
+  font:inherit;padding:6px 8px;border-radius:8px;border:1px solid transparent;
+  background:transparent;color:var(--text);cursor:pointer;
+}
+.chat-friends-main:hover{border-color:var(--border);background:rgba(34,211,238,.08)}
+.chat-friends-name{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--cyan-bright);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chat-friends-status{font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
+.chat-friends-x,.chat-friends-add,.chat-ac-add{
+  flex-shrink:0;width:28px;align-self:center;height:28px;padding:0;line-height:1;
+  border-radius:8px;border:1px solid transparent;background:transparent;color:var(--text-dim);cursor:pointer;
+}
+.chat-friends-x:hover{color:#fda4af;border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.1)}
+.chat-friends-add:hover,.chat-ac-add:hover{color:var(--cyan-bright);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.1)}
+.chat-friends-actions{display:flex;gap:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.06);margin-top:4px}
+.chat-ac-row{display:flex;align-items:center;gap:4px}
+.chat-ac-row .chat-ac-item{flex:1}
+.chat-dock-meta{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:36%}
 .chat-dock-body{display:flex;flex-direction:column;max-height:min(42vh,340px);padding:0 0 8px}
 .chat-dock-body[hidden]{display:none!important}
 .chat-log{
@@ -1232,16 +1275,16 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script src="js/firebase-config.js?v=4"></script>
-<script src="js/progress-sync.js?v=1"></script>
+<script src="js/progress-sync.js?v=2"></script>
 <script src="js/profiles.js?v=5"></script>
 <script src="js/achievements.js?v=2"></script>
 <script src="js/mastery.js?v=2"></script>
 <script src="js/party.js?v=3"></script>
 <script src="js/party-timers.js?v=1"></script>
 <script src="js/cursors.js?v=1"></script>
-<script src="js/lobby.js?v=2"></script>
+<script src="js/lobby.js?v=3"></script>
 <script src="js/split-quiz.js?v=4"></script>
-<script src="js/chat.js?v=4"></script>
+<script src="js/chat.js?v=5"></script>
 <script>
 let FORM_BANK = {};
 let FORMS = [];
@@ -1506,6 +1549,16 @@ function chimeOnce(){
   playTone(784, 0.55, 'sine', 0.2, t);
   playTone(1046.5, 0.7, 'triangle', 0.12, t+0.08);
 }
+/** Soft whisper nudge — same Web Audio aesthetic, higher pitch, shorter */
+function playNudgeBell(){
+  if(!window.__audioGesture) return;
+  unlockAudio();
+  if(!audioCtx || audioCtx.state!=='running') return;
+  const t = audioCtx.currentTime;
+  playTone(880, 0.32, 'sine', 0.15, t);
+  playTone(1174.66, 0.42, 'triangle', 0.09, t+0.05);
+}
+window.playNudgeBell = playNudgeBell;
 function chimePersist10s(){
   if(!window.__audioGesture) return;
   unlockAudio();
@@ -2402,6 +2455,7 @@ function goHub(){
   quizActive = false;
   if(elapsedTimer){clearInterval(elapsedTimer);elapsedTimer=null;}
   if(window.StudyMastery) StudyMastery.endSession();
+  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'hub', quiz:null, localRoom:'hub', force:true });
   refreshHubCards();
   showView('hubView');
 }
@@ -2414,6 +2468,7 @@ function goPortal(){
   if(elapsedTimer){clearInterval(elapsedTimer);elapsedTimer=null;}
   if(window.StudyMastery) StudyMastery.endSession();
   if(window.StudyChat && StudyChat.setLocalRoom) StudyChat.setLocalRoom('lobby');
+  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'hub', quiz:null, force:true });
   showView('portalView');
   document.title = 'Study Portal';
 }

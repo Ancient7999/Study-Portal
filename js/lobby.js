@@ -403,6 +403,11 @@
 
   function open() {
     setOpen(true);
+    if (global.StudyChat && StudyChat.setActivity) {
+      try {
+        StudyChat.setActivity({ activity: 'lobby', force: true });
+      } catch (e) {}
+    }
   }
 
   global.StudyLobby = {
