@@ -2087,7 +2087,10 @@ function openForm(letter, opts){
     return;
   }
 
-  if(saved && Array.isArray(saved.answers) && saved.answers.length===n){
+  if(opts.masteryPlus && Array.isArray(answers) && answers.length===n){
+    // keep Mastery+ prefilled answers/current from above
+    if(current==null || current<0) current = firstUnansweredIndex(answers);
+  } else if(saved && Array.isArray(saved.answers) && saved.answers.length===n){
     answers = saved.answers.map(a => (a===null || a===undefined) ? null : a);
     // Resume at first unanswered so Back walks answered queue
     current = firstUnansweredIndex(answers);
