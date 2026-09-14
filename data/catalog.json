@@ -111,13 +111,6 @@
   ],
   "online": [
     {
-      "id": "profiles",
-      "title": "Profiles",
-      "icon": "👤",
-      "locked": false,
-      "blurb": "Name, level, questions answered"
-    },
-    {
       "id": "achievements",
       "title": "Achievements",
       "icon": "🏆",
