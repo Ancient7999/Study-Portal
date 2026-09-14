@@ -125,12 +125,6 @@
       "blurb": "Milestones · streaks · mastery"
     },
     {
-      "id": "scores",
-      "title": "Scores",
-      "icon": "🏆",
-      "locked": true
-    },
-    {
       "id": "chat",
       "title": "Chat",
       "icon": "💬",

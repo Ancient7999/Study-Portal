@@ -83,7 +83,7 @@ html.mood-crying {
   --anim-speed:.48; --pulse-ms:3200ms; --transition-ms:500ms; --particle-speed:.38;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-tool-btn,.chat-ac-item,.party-mini-chip,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
+body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.party-mini-chip,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
 #cursor{
   position:fixed;width:var(--cur-w,28px);height:var(--cur-h,28px);
   border:var(--cur-border,2px solid var(--cyan));border-radius:var(--cur-radius,50%);
@@ -609,9 +609,20 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .chat-empty{color:var(--text-dim);font-family:var(--mono);font-size:.72rem;padding:12px 4px;text-align:center}
 .chat-msg{margin:0 0 8px;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,.03)}
 .chat-msg.mine{background:rgba(34,211,238,.08)}
-.chat-msg-head{display:flex;justify-content:space-between;gap:8px;margin-bottom:2px}
-.chat-msg-name{font-family:var(--mono);font-size:.68rem;color:var(--cyan-bright);font-weight:700}
-.chat-msg-time{font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
+.chat-msg-head{display:flex;align-items:center;justify-content:flex-start;gap:6px;margin-bottom:2px;flex-wrap:wrap}
+.chat-msg-tag{
+  font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.02em;
+  padding:1px 6px;border-radius:999px;border:1px solid transparent;flex-shrink:0;
+  color:var(--text-dim);background:rgba(255,255,255,.05);
+}
+.chat-msg-tag.tag-local{color:#86efac;border-color:rgba(134,239,172,.35);background:rgba(34,197,94,.12)}
+.chat-msg-tag.tag-world{color:var(--cyan-bright);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.12)}
+.chat-msg-tag.tag-trade{color:#93c5fd;border-color:rgba(59,130,246,.45);background:rgba(37,99,235,.15)}
+.chat-msg-tag.tag-guild{color:#d8b4fe;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.12)}
+.chat-msg-tag.tag-whisper{color:#fda4af;border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.12)}
+.chat-msg-tag.tag-party{color:#fcd34d;border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.12)}
+.chat-msg-name{font-family:var(--mono);font-size:.68rem;color:var(--cyan-bright);font-weight:700;flex:1;min-width:0}
+.chat-msg-time{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);margin-left:auto}
 .chat-msg-body{display:block;line-height:1.35;word-break:break-word;color:var(--text)}
 .chat-compose{display:flex;align-items:flex-end;gap:6px;padding:0 10px;position:relative}
 .chat-channel-wrap{position:relative;flex-shrink:0}
@@ -619,20 +630,37 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   font-family:var(--mono);font-size:.68rem;font-weight:700;padding:8px 10px;min-width:72px;
   background:rgba(8,12,20,.85);
 }
-.chat-channel-btn.trade,.chat-channel-opt.trade{color:#93c5fd;border-color:rgba(59,130,246,.5)}
+.chat-channel-btn.trade,.chat-channel-opt.trade .chat-channel-label{color:#93c5fd}
+.chat-channel-btn.trade{border-color:rgba(59,130,246,.5)}
 .chat-channel-menu{
   position:absolute;left:0;bottom:calc(100% + 6px);z-index:5;
-  min-width:120px;padding:6px;border-radius:12px;
+  min-width:148px;padding:6px;border-radius:12px;
   background:rgba(8,12,20,.95);border:1px solid var(--border);
   box-shadow:0 12px 28px rgba(0,0,0,.5);backdrop-filter:blur(12px);
   display:flex;flex-direction:column;gap:4px;
 }
 .chat-channel-menu[hidden]{display:none!important}
 .chat-channel-opt{
-  font-family:var(--mono);font-size:.72rem;text-align:left;padding:8px 10px;border-radius:8px;
-  background:transparent;border:1px solid transparent;color:var(--text);cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:.72rem;text-align:left;padding:4px 6px;border-radius:8px;
+  background:transparent;border:1px solid transparent;color:var(--text);
 }
 .chat-channel-opt:hover{border-color:var(--border);background:rgba(34,211,238,.08)}
+.chat-channel-opt.active{border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.1)}
+.chat-channel-opt.dimmed{opacity:.72}
+.chat-vis-btn{
+  flex-shrink:0;width:28px;height:28px;padding:0;line-height:1;font-size:.85rem;
+  border-radius:8px;border:1px solid transparent;background:transparent;color:var(--text);
+  cursor:pointer;opacity:1;
+}
+.chat-vis-btn:hover{border-color:var(--border);background:rgba(255,255,255,.06)}
+.chat-vis-btn.off{opacity:.32;filter:grayscale(.4)}
+.chat-channel-label{
+  flex:1;text-align:left;font:inherit;font-family:var(--mono);font-size:.72rem;font-weight:700;
+  padding:6px 8px;border-radius:8px;border:1px solid transparent;background:transparent;color:inherit;cursor:pointer;
+}
+.chat-channel-label:hover{background:rgba(255,255,255,.04)}
+.chat-channel-opt.active .chat-channel-label{color:var(--cyan-bright)}
 .chat-input-wrap{flex:1;min-width:0;position:relative}
 .chat-input{
   width:100%;box-sizing:border-box;padding:9px 12px;border-radius:12px;
@@ -961,7 +989,7 @@ body.split-quiz-active #chatDock{z-index:60}
     <div class="portal-cards" id="materialCards"></div>
     <section class="online-panel" aria-label="Online features">
       <h2>Online</h2>
-      <p class="hint">Profiles, chat &amp; lobbies are live · scores still warming up.</p>
+      <p class="hint">Profiles, achievements, chat &amp; lobbies are live.</p>
       <div class="online-grid" id="onlineGrid"></div>
     </section>
     <div class="foot" id="portalFoot">Study Portal · progress saved on this device</div>
@@ -1123,7 +1151,7 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="js/cursors.js?v=1"></script>
 <script src="js/lobby.js?v=1"></script>
 <script src="js/split-quiz.js?v=2"></script>
-<script src="js/chat.js?v=2"></script>
+<script src="js/chat.js?v=3"></script>
 <script>
 let FORM_BANK = {};
 let FORMS = [];
