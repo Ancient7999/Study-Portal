@@ -185,9 +185,12 @@
         updatedAt: Date.now()
       };
     });
+    // Keep bank/form on the session too: clients consume session directly.
+    const sessionBank = lobby.bank || 'banks/medphys/pt1.json';
+    const sessionForm = lobby.form || 'A';
     await db.ref('lobbies/' + lobbyId + '/session').set({
-      bank: lobby.bank,
-      form: lobby.form,
+      bank: sessionBank,
+      form: sessionForm,
       startedAt: Date.now(),
       leader: lobby.leader,
       panes: panes

@@ -5,6 +5,7 @@
     lobbyId: null,
     session: null,
     bank: null,
+    bankPath: 'banks/medphys/pt1.json',
     questions: [],
     form: 'A',
     unsub: null,
@@ -87,9 +88,13 @@
       return;
     }
     state.form = lobby.session.form || lobby.form || 'A';
-    const bankPath = lobby.session.bank || lobby.bank || 'banks/medphys/pt1.json';
-    state.questions = await loadBank(bankPath, state.form);
+    state.bankPath = lobby.session.bank || lobby.bank || 'banks/medphys/pt1.json';
+    state.questions = await loadBank(state.bankPath, state.form);
     state.session = lobby.session;
+    if (window.StudyMastery) {
+      const bankKey = StudyMastery.bankKeyFromPath(state.bankPath);
+      StudyMastery.beginSession(bankKey, state.form, state.questions.length);
+    }
 
     // Ensure my pane exists
     if (state.myUid && (!lobby.session.panes || !lobby.session.panes[state.myUid])) {
@@ -263,19 +268,43 @@
       toast('Pane complete');
     }
 
-    // Mastery clear for own pane
-    if (window.StudyMastery && state.session.bank) {
-      const bk = StudyMastery.bankKeyFromPath(state.session.bank);
+    // Mastery clear for own pane; mirror solo hub progress immediately.
+    if (window.StudyMastery) {
+      const bk = StudyMastery.bankKeyFromPath(state.bankPath);
       StudyMastery.recordClear(bk, state.form, qIndex, state.questions.length);
-      if (window.StudyAchievements && typeof StudyAchievements.recordFormMastery === 'function') {
-        const pct = StudyMastery.getPct(bk, state.form);
-        if (pct >= 100) StudyAchievements.recordFormMastery(state.form, bk);
+      const pct = StudyMastery.getPct(bk, state.form);
+      if (typeof setBestPct === 'function' && typeof setRunPct === 'function') {
+        setBestPct(state.form, pct);
+        setRunPct(state.form, pct);
+      } else {
+        try {
+          const bestKey = 'pt1_form_' + state.form + '_best_pct';
+          const runKey = 'pt1_form_' + state.form + '_run_pct';
+          const existingBest = parseInt(localStorage.getItem(bestKey) || '0', 10) || 0;
+          const nextPct = Math.round(pct);
+          localStorage.setItem(bestKey, String(Math.max(existingBest, nextPct)));
+          localStorage.setItem(runKey, String(nextPct));
+        } catch (e) {}
       }
+      if (pct >= 100) {
+        try { localStorage.setItem('pt1_form_' + state.form + '_done', '1'); } catch (e) {}
+      }
+      if (typeof StudyMastery.updateProgressBar === 'function') StudyMastery.updateProgressBar();
+      if (window.StudyAchievements && typeof StudyAchievements.recordFormMastery === 'function' && pct >= 100) {
+        StudyAchievements.recordFormMastery(state.form, bk);
+      }
+      refreshHub();
     }
     if (window.StudyProfiles) StudyProfiles.bumpQuestionsAnswered(1);
     if (window.StudyAchievements && typeof StudyAchievements.recordCorrect === 'function') {
       StudyAchievements.recordCorrect();
     }
+  }
+
+  function refreshHub() {
+    if (typeof renderForms === 'function') renderForms();
+    else if (typeof buildFormCards === 'function') buildFormCards();
+    else if (typeof refreshHubCards === 'function') refreshHubCards();
   }
 
   function leave() {
@@ -285,6 +314,7 @@
     }
     state.lobbyId = null;
     state.session = null;
+    state.bankPath = 'banks/medphys/pt1.json';
     const container = document.getElementById('multi-quiz-container');
     if (container) {
       container.classList.add('hidden');
@@ -294,6 +324,7 @@
     const bar = document.getElementById('splitModeBar');
     if (bar) bar.classList.add('hidden');
     document.body.classList.remove('split-quiz-active');
+    refreshHub();
   }
 
   global.StudySplitQuiz = {
