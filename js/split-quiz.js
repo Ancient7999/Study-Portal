@@ -324,7 +324,18 @@
     const bar = document.getElementById('splitModeBar');
     if (bar) bar.classList.add('hidden');
     document.body.classList.remove('split-quiz-active');
+    if (global.StudyMastery && typeof StudyMastery.endSession === 'function') {
+      try { StudyMastery.endSession(); } catch (e) {}
+    }
     refreshHub();
+    // Solo→lobby→exit previously left no .view.active (blank page). Always restore hub.
+    if (typeof goHub === 'function') goHub();
+    else if (typeof showView === 'function') showView('hubView');
+    else {
+      document.querySelectorAll('.view').forEach((v) => v.classList.remove('active'));
+      const hub = document.getElementById('hubView');
+      if (hub) hub.classList.add('active');
+    }
   }
 
   global.StudySplitQuiz = {
