@@ -1,6 +1,6 @@
-/* Study Portal — Profiles (Anonymous Auth + Firestore) */
+/* Study Portal — Profiles (Anonymous Auth + Firestore) — ATC-inspired HUD */
 (function (global) {
-  const LEVEL_EVERY = 10; // 10 correct answers → +1 level
+  const LEVEL_EVERY = 10;
 
   function levelFromAnswered(n) {
     return 1 + Math.floor(Math.max(0, n | 0) / LEVEL_EVERY);
@@ -8,65 +8,86 @@
   function asInt(n) {
     return Math.floor(Number(n) || 0);
   }
+  function expProgress(questionsAnswered) {
+    const q = asInt(questionsAnswered);
+    const into = q % LEVEL_EVERY;
+    return {
+      into,
+      need: LEVEL_EVERY,
+      pct: Math.min(100, (into / LEVEL_EVERY) * 100),
+      level: levelFromAnswered(q)
+    };
+  }
+  function initials(name) {
+    const p = String(name || 'S').trim().split(/\s+/).filter(Boolean);
+    if (!p.length) return 'S';
+    if (p.length === 1) return p[0].slice(0, 2).toUpperCase();
+    return (p[0][0] + p[1][0]).toUpperCase();
+  }
+  function hueFromName(name) {
+    let h = 0;
+    const s = String(name || 'x');
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return h % 360;
+  }
 
   const state = {
     ready: false,
     user: null,
     profile: null,
-    error: null
+    error: null,
+    lastLevel: null
   };
 
   function toast(msg) {
     if (typeof showToast === 'function') showToast(msg, 2800);
-    else if (typeof portalToast === 'function') portalToast(msg);
   }
 
   function ensureFirebase() {
     if (!global.firebase) throw new Error('Firebase SDK missing');
     if (!global.FIREBASE_CONFIG) throw new Error('FIREBASE_CONFIG missing');
     if (!firebase.apps.length) firebase.initializeApp(global.FIREBASE_CONFIG);
-    return {
-      auth: firebase.auth(),
-      db: firebase.firestore()
-    };
+    return { auth: firebase.auth(), db: firebase.firestore() };
   }
 
   function defaultName() {
-    const n = Math.floor(1000 + Math.random() * 9000);
-    return 'Scholar ' + n;
+    return 'Scholar ' + Math.floor(1000 + Math.random() * 9000);
+  }
+
+  function normalizeProfile(data) {
+    const questionsAnswered = asInt(data && data.questionsAnswered);
+    const level = asInt((data && data.level) || levelFromAnswered(questionsAnswered)) || 1;
+    return {
+      displayName: String((data && data.displayName) || defaultName()).slice(0, 40),
+      photoURL: (data && data.photoURL) || '',
+      bio: (data && data.bio) || '',
+      mood: (data && data.mood) || '',
+      questionsAnswered,
+      level,
+      createdAt: (data && data.createdAt) || Date.now(),
+      updatedAt: (data && data.updatedAt) || Date.now()
+    };
   }
 
   async function ensureProfile(uid) {
     const { db } = ensureFirebase();
     const ref = db.collection('profiles').doc(uid);
     const snap = await ref.get();
-    const now = Date.now();
     if (snap.exists) {
-      const data = snap.data();
-      // normalize fields
-      const questionsAnswered = (data.questionsAnswered | 0);
-      const level = data.level | 0 || levelFromAnswered(questionsAnswered);
-      const profile = Object.assign({}, data, {
-        displayName: (data.displayName || defaultName()).slice(0, 40),
-        questionsAnswered,
-        level,
-        updatedAt: data.updatedAt || now
-      });
-      state.profile = profile;
-      return profile;
+      state.profile = normalizeProfile(snap.data());
+      state.lastLevel = state.profile.level;
+      return state.profile;
     }
-    const profile = {
+    const profile = normalizeProfile({
       displayName: defaultName(),
-      photoURL: '',
-      bio: '',
-      mood: '',
       questionsAnswered: 0,
       level: 1,
-      createdAt: now,
-      updatedAt: now
-    };
+      createdAt: Date.now(),
+      updatedAt: Date.now()
+    });
     await ref.set(profile);
     state.profile = profile;
+    state.lastLevel = profile.level;
     return profile;
   }
 
@@ -109,23 +130,44 @@
     if (cleaned.length < 1) throw new Error('Name is required');
     if (!state.user) await start();
     const { db } = ensureFirebase();
-    const uid = state.user.uid;
-    const questionsAnswered = (state.profile && state.profile.questionsAnswered) | 0;
-    const payload = {
+    const q = asInt(state.profile && state.profile.questionsAnswered);
+    const payload = normalizeProfile({
       displayName: cleaned,
       photoURL: (state.profile && state.profile.photoURL) || '',
       bio: (state.profile && state.profile.bio) || '',
       mood: (state.profile && state.profile.mood) || '',
-      questionsAnswered,
-      level: Math.floor(levelFromAnswered(questionsAnswered)),
-      questionsAnswered: Math.floor(questionsAnswered),
+      questionsAnswered: q,
+      level: levelFromAnswered(q),
       createdAt: (state.profile && state.profile.createdAt) || Date.now(),
       updatedAt: Date.now()
-    };
-    await db.collection('profiles').doc(uid).set(payload, { merge: false });
+    });
+    await db.collection('profiles').doc(state.user.uid).set(payload);
     state.profile = payload;
     renderChip();
+    fillModal();
     return payload;
+  }
+
+  function celebrateLevelUp(newLevel) {
+    const chip = document.getElementById('profileChip');
+    if (chip) {
+      chip.classList.remove('lvl-up');
+      void chip.offsetWidth;
+      chip.classList.add('lvl-up');
+      setTimeout(() => chip.classList.remove('lvl-up'), 1400);
+    }
+    let tag = document.getElementById('profileLvlToast');
+    if (!tag) {
+      tag = document.createElement('div');
+      tag.id = 'profileLvlToast';
+      tag.className = 'profile-lvl-toast';
+      document.body.appendChild(tag);
+    }
+    tag.textContent = 'LEVEL UP! ' + newLevel;
+    tag.classList.add('show');
+    clearTimeout(celebrateLevelUp._t);
+    celebrateLevelUp._t = setTimeout(() => tag.classList.remove('show'), 1600);
+    toast('Level ' + newLevel + ' — nice');
   }
 
   async function bumpQuestionsAnswered(by) {
@@ -135,25 +177,25 @@
       const { db } = ensureFirebase();
       const uid = state.user.uid;
       const ref = db.collection('profiles').doc(uid);
+      let leveled = null;
       await db.runTransaction(async (tx) => {
         const snap = await tx.get(ref);
-        const cur = snap.exists ? snap.data() : null;
-        const questionsAnswered = ((cur && cur.questionsAnswered) | 0) + add;
+        const cur = snap.exists ? normalizeProfile(snap.data()) : normalizeProfile({});
+        const questionsAnswered = asInt(cur.questionsAnswered) + add;
         const level = levelFromAnswered(questionsAnswered);
-        const payload = {
-          displayName: (cur && cur.displayName) || (state.profile && state.profile.displayName) || defaultName(),
-          photoURL: (cur && cur.photoURL) || '',
-          bio: (cur && cur.bio) || '',
-          mood: (cur && cur.mood) || '',
+        const payload = normalizeProfile(Object.assign({}, cur, {
           questionsAnswered,
           level,
-          createdAt: (cur && cur.createdAt) || Date.now(),
           updatedAt: Date.now()
-        };
+        }));
         tx.set(ref, payload);
+        if (state.lastLevel != null && level > state.lastLevel) leveled = level;
+        state.lastLevel = level;
         state.profile = payload;
       });
       renderChip();
+      fillModal();
+      if (leveled != null) celebrateLevelUp(leveled);
     } catch (e) {
       console.warn('profile bump failed', e);
     }
@@ -174,14 +216,26 @@
     }
     const p = state.profile;
     if (!p) {
-      chip.textContent = 'Profile';
+      chip.innerHTML = '<span class="pc-name">Profile</span>';
       return;
     }
+    const prog = expProgress(p.questionsAnswered);
+    const hue = hueFromName(p.displayName);
     chip.innerHTML =
-      '<span class="pc-name"></span><span class="pc-meta"></span>';
-    chip.querySelector('.pc-name').textContent = p.displayName || 'Profile';
+      '<span class="pc-avatar" style="--av-hue:' + hue + '"><span class="pc-av-aura"></span><span class="pc-av-core">' +
+      initials(p.displayName) +
+      '</span></span>' +
+      '<span class="pc-body">' +
+      '<span class="pc-top"><span class="pc-name"></span><span class="pc-lvl">LV ' + prog.level + '</span></span>' +
+      '<span class="pc-bars">' +
+      '<span class="pc-bar-row"><span class="pc-bar-lab exp">XP</span>' +
+      '<span class="pc-bar-track"><span class="pc-bar-fill exp" style="width:' + prog.pct + '%"></span></span></span>' +
+      '</span>' +
+      '<span class="pc-meta"></span>' +
+      '</span>';
+    chip.querySelector('.pc-name').textContent = p.displayName;
     chip.querySelector('.pc-meta').textContent =
-      'Lv ' + (p.level || 1) + ' · ' + ((p.questionsAnswered | 0)) + ' Qs';
+      prog.into + '/' + prog.need + ' to next · ' + asInt(p.questionsAnswered) + ' Qs';
   }
 
   function openProfileModal() {
@@ -192,17 +246,25 @@
       overlay.className = 'modal-overlay';
       overlay.innerHTML =
         '<div class="modal-card profile-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">' +
-        '<h3 id="profileTitle">Your profile</h3>' +
-        '<p class="profile-help">Pick a display name. Level rises every 10 questions you answer correctly.</p>' +
-        '<label class="profile-label" for="profileNameInput">Display name</label>' +
-        '<input id="profileNameInput" class="profile-input" maxlength="40" autocomplete="nickname" />' +
+        '<div class="profile-hero">' +
+        '<div class="profile-hero-av" id="profileHeroAv"><span class="pc-av-aura"></span><span class="pc-av-core" id="profileHeroInit">S</span></div>' +
+        '<div class="profile-hero-text">' +
+        '<h3 id="profileTitle">Commander profile</h3>' +
+        '<p class="profile-help">Callsign, rank, and sortie count. Level rises every 10 correct lock-ins.</p>' +
+        '</div></div>' +
+        '<label class="profile-label" for="profileNameInput">Callsign</label>' +
+        '<input id="profileNameInput" class="profile-input" maxlength="40" autocomplete="nickname" placeholder="Your display name" />' +
+        '<div class="profile-xp-wrap">' +
+        '<div class="profile-xp-head"><span>EXP</span><span id="profileXpLabel">0 / 10</span></div>' +
+        '<div class="pc-bar-track lg"><span class="pc-bar-fill exp" id="profileXpFill" style="width:0%"></span></div>' +
+        '</div>' +
         '<div class="profile-stats">' +
         '<div><span class="ps-k">Level</span><span class="ps-v" id="profileLevelVal">1</span></div>' +
         '<div><span class="ps-k">Questions answered</span><span class="ps-v" id="profileQsVal">0</span></div>' +
         '</div>' +
         '<div class="modal-actions">' +
         '<button type="button" class="btn-ghost" id="profileCloseBtn">Close</button>' +
-        '<button type="button" class="btn-gold" id="profileSaveBtn">Save name</button>' +
+        '<button type="button" class="btn-gold" id="profileSaveBtn">Save callsign</button>' +
         '</div>' +
         '<p class="profile-foot" id="profileStatus"></p>' +
         '</div>';
@@ -217,28 +279,45 @@
         try {
           status.textContent = 'Saving…';
           await saveDisplayName(input.value);
-          fillModal();
           status.textContent = 'Saved';
-          toast('Profile saved');
+          toast('Callsign locked in');
         } catch (e) {
           status.textContent = e.message || 'Save failed';
         }
       });
+      overlay.querySelector('#profileNameInput').addEventListener('input', () => {
+        const v = overlay.querySelector('#profileNameInput').value || 'S';
+        const el = document.getElementById('profileHeroInit');
+        const av = document.getElementById('profileHeroAv');
+        if (el) el.textContent = initials(v);
+        if (av) av.style.setProperty('--av-hue', hueFromName(v));
+      });
     }
     fillModal();
     overlay.classList.add('show');
-    const input = overlay.querySelector('#profileNameInput');
-    setTimeout(() => input && input.focus(), 50);
+    setTimeout(() => {
+      const input = overlay.querySelector('#profileNameInput');
+      if (input) input.focus();
+    }, 50);
   }
 
   function fillModal() {
-    const p = state.profile || { displayName: '', level: 1, questionsAnswered: 0 };
+    const p = state.profile || normalizeProfile({});
+    const prog = expProgress(p.questionsAnswered);
     const input = document.getElementById('profileNameInput');
     const lv = document.getElementById('profileLevelVal');
     const qs = document.getElementById('profileQsVal');
+    const fill = document.getElementById('profileXpFill');
+    const lab = document.getElementById('profileXpLabel');
+    const init = document.getElementById('profileHeroInit');
+    const av = document.getElementById('profileHeroAv');
     if (input) input.value = p.displayName || '';
-    if (lv) lv.textContent = String(p.level || 1);
-    if (qs) qs.textContent = String(p.questionsAnswered | 0);
+    if (lv) lv.textContent = String(prog.level);
+    if (qs) qs.textContent = String(asInt(p.questionsAnswered));
+    if (fill) fill.style.width = prog.pct + '%';
+    if (lab) lab.textContent = prog.into + ' / ' + prog.need + ' to LV ' + (prog.level + 1);
+    if (init) init.textContent = initials(p.displayName);
+    if (av) av.style.setProperty('--av-hue', hueFromName(p.displayName));
   }
 
   function closeProfileModal() {
