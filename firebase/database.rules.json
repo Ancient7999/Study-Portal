@@ -12,6 +12,9 @@
     "chat": {
       "world": {
         ".read": "auth != null",
+        ".indexOn": [
+          "ts"
+        ],
         "$msgId": {
           ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
@@ -19,6 +22,9 @@
       },
       "trade": {
         ".read": "auth != null",
+        ".indexOn": [
+          "ts"
+        ],
         "$msgId": {
           ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
@@ -27,6 +33,9 @@
       "local": {
         "$roomId": {
           ".read": "auth != null",
+          ".indexOn": [
+            "ts"
+          ],
           "$msgId": {
             ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
@@ -36,6 +45,9 @@
       "guild": {
         "$guildId": {
           ".read": "auth != null",
+          ".indexOn": [
+            "ts"
+          ],
           "$msgId": {
             ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
@@ -45,6 +57,9 @@
       "whisper": {
         "$pairId": {
           ".read": "auth != null && ($pairId.contains(auth.uid))",
+          ".indexOn": [
+            "ts"
+          ],
           "$msgId": {
             ".write": "auth != null && $pairId.contains(auth.uid) && (!data.exists() && newData.child('uid').val() == auth.uid)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
@@ -54,6 +69,9 @@
       "party": {
         "$partyId": {
           ".read": "auth != null",
+          ".indexOn": [
+            "ts"
+          ],
           "$msgId": {
             ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
