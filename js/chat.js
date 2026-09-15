@@ -43,7 +43,8 @@
     quiz: null, // { bank, form } | null
     lastPresenceAt: 0,
     lastPresenceSig: '',
-    presenceTimer: null
+    presenceTimer: null,
+    rateLimits: { global: [], world: 0, trade: 0 }
   };
 
   function toast(msg) {
@@ -535,7 +536,8 @@
 
     listening.forEach((c) => {
       buckets[c.id] = [];
-      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').limitToLast(MSG_LIMIT);
+      const startTs = Date.now() - 3000; 
+      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').startAt(startTs);
       const handler = (snap) => {
         const rows = [];
         snap.forEach((child) => {
@@ -619,6 +621,45 @@
       return;
     }
 
+    const now = Date.now();
+
+    // —— 1. CHECK LIMITS BEFORE SENDING ——
+    if (state.channel === 'world') {
+      if (now - state.rateLimits.world < 30000) {
+        toast('Please, do not flood.');
+        return;
+      }
+    } else if (state.channel === 'trade') {
+      if (now - state.rateLimits.trade < 30000) {
+        toast('Please, do not flood.');
+        return;
+      }
+    } else {
+      // Keep only messages from the last 60 seconds
+      state.rateLimits.global = state.rateLimits.global.filter(t => now - t < 60000);
+      if (state.rateLimits.global.length >= 15) {
+        toast('Please, do not flood.');
+        return;
+      }
+      const recent5s = state.rateLimits.global.filter(t => now - t < 5000);
+      if (recent5s.length >= 3) {
+        toast('Please, do not flood.');
+        return;
+      }
+    }
+
+    // —— 2. WHISPER OFFLINE CHECK ——
+    if (state.channel === 'whisper') {
+      if (!state.whisperTarget) {
+        toast('Pick someone with @name');
+        return;
+      }
+      if (!state.online[state.whisperTarget.uid]) {
+        toast('User is offline');
+        return;
+      }
+    }
+
     // Whisper @mention shortcut from any channel
     if (state.channel === 'whisper' || text.startsWith('@')) {
       const m = text.match(/^@(\S+)\s+([\s\S]+)$/);
@@ -668,8 +709,50 @@
       payload.text = text;
     }
 
+    // —— 3. PROVISIONALLY ADD TO LIMITS (prevents rapid double-clicks) ——
+    if (state.channel === 'world') {
+      state.rateLimits.world = now;
+    } else if (state.channel === 'trade') {
+      state.rateLimits.trade = now;
+    } else {
+      state.rateLimits.global.push(now);
+    }
+
+    // —— 4. SEND TO FIREBASE WITH REVERT ON FAILURE ——
     const { db } = ensureFirebase();
-    await db.ref(path).push(payload);
+    const newMsgRef = db.ref(path).push();
+    
+    const updates = {};
+    updates[newMsgRef.toString()] = payload;
+    
+    if (state.channel === 'world') {
+      updates['rate_limits/' + me + '/world_last'] = now;
+    } else if (state.channel === 'trade') {
+      updates['rate_limits/' + me + '/trade_last'] = now;
+    } else {
+      updates['rate_limits/' + me + '/chat_last'] = now;
+    }
+
+    try {
+      await db.ref().update(updates);
+    } catch (e) {
+      // REVERT: If Firebase rejects it (e.g., network drop or rule block), 
+      // undo the provisional limit so the user isn't unfairly penalized.
+      if (state.channel === 'world') {
+        state.rateLimits.world = 0; // Reset to allow immediate retry
+      } else if (state.channel === 'trade') {
+        state.rateLimits.trade = 0;
+      } else {
+        state.rateLimits.global.pop(); // Remove the timestamp we just added
+      }
+      
+      if (e.code === 'PERMISSION_DENIED') {
+        toast('Rate limit exceeded. Please wait a moment.');
+      } else {
+        toast('Message failed to send. Check connection.');
+      }
+      console.warn('Chat send failed:', e);
+    }
   }
 
   function pickWhisperByName(name) {
