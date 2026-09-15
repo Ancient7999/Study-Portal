@@ -723,7 +723,7 @@
     const newMsgRef = db.ref(path).push();
     
     const updates = {};
-    updates[newMsgRef.toString()] = payload;
+    updates[path + '/' + newMsgRef.key] = payload;
     
     if (state.channel === 'world') {
       updates['rate_limits/' + me + '/world_last'] = now;
