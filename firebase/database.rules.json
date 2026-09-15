@@ -16,7 +16,7 @@
           "ts"
         ],
         "$msgId": {
-          ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
+          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('world_last').exists() || now - root.child('rate_limits').child(auth.uid).child('world_last').val() >= 30000)",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
@@ -26,7 +26,7 @@
           "ts"
         ],
         "$msgId": {
-          ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
+          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('trade_last').exists() || now - root.child('rate_limits').child(auth.uid).child('trade_last').val() >= 30000)",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
@@ -37,7 +37,7 @@
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
@@ -49,7 +49,7 @@
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
@@ -61,7 +61,7 @@
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && $pairId.contains(auth.uid) && (!data.exists() && newData.child('uid').val() == auth.uid)",
+            ".write": "auth != null && $pairId.contains(auth.uid) && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
           }
         }
@@ -73,7 +73,7 @@
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && (!data.exists() && newData.child('uid').val() == auth.uid)",
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
