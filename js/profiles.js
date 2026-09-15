@@ -605,7 +605,7 @@
         '<p class="profile-help">Callsign, rank, and sortie count. Level rises every 10 correct lock-ins.</p>' +
         '</div></div>' +
         '<label class="profile-label" for="profileNameInput">Callsign</label>' +
-        '<input id="profileNameInput" class="profile-input" maxlength="40" autocomplete="nickname" placeholder="Your display name" />' +
+        '<input id="profileNameInput" class="profile-input" maxlength="16" autocomplete="nickname" placeholder="Your display name" />' +
         '<div class="profile-xp-wrap">' +
         '<div class="profile-xp-head"><span>EXP</span><span id="profileXpLabel">0 / 10</span></div>' +
         '<div class="pc-bar-track lg"><span class="pc-bar-fill exp" id="profileXpFill" style="width:0%"></span></div>' +
