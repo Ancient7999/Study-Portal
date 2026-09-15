@@ -61,7 +61,7 @@
     const questionsAnswered = asInt(data && data.questionsAnswered);
     const level = asInt((data && data.level) || levelFromAnswered(questionsAnswered)) || 1;
     return {
-      displayName: String((data && data.displayName) || defaultName()).slice(0, 40),
+      displayName: String((data && data.displayName) || defaultName()).slice(0, 16),
       photoURL: (data && data.photoURL) || '',
       bio: (data && data.bio) || '',
       mood: (data && data.mood) || '',
@@ -167,7 +167,7 @@
   }
 
   async function saveDisplayName(name) {
-    const cleaned = String(name || '').trim().slice(0, 40);
+    const cleaned = String(name || '').trim().slice(0, 16);
     if (cleaned.length < 1) throw new Error('Name is required');
     if (!state.user) await start();
     const { db } = ensureFirebase();
