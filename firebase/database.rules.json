@@ -9,6 +9,16 @@
         ".validate": "newData.hasChildren(['state', 'updatedAt']) && newData.child('state').isString() && newData.child('updatedAt').isNumber() && (!newData.hasChild('displayName') || newData.child('displayName').isString()) && (!newData.hasChild('level') || newData.child('level').isNumber()) && (!newData.hasChild('partyId') || newData.child('partyId').isString()) && (!newData.hasChild('guildId') || newData.child('guildId').isString()) && (!newData.hasChild('activity') || newData.child('activity').isString()) && (!newData.hasChild('partySize') || (newData.child('partySize').isNumber() && newData.child('partySize').val() >= 1 && newData.child('partySize').val() <= 4)) && (!newData.hasChild('quiz') || (newData.child('quiz').hasChildren() && (!newData.child('quiz').hasChild('bank') || newData.child('quiz').child('bank').isString()) && (!newData.child('quiz').hasChild('form') || newData.child('quiz').child('form').isString())))"
       }
     },
+        
+    "rate_limits": {
+      "$uid": {
+        ".write": "auth != null && auth.uid == $uid",
+        "world_last": { ".validate": "newData.isNumber()" },
+        "trade_last": { ".validate": "newData.isNumber()" },
+        "chat_last": { ".validate": "newData.isNumber()" }
+      }
+    },
+    
     "chat": {
       "world": {
         ".read": "auth != null",
