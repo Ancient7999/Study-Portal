@@ -23,7 +23,7 @@ service cloud.firestore {
           'displayName', 'photoURL', 'bio', 'createdAt', 'updatedAt', 'mood',
           'level', 'questionsAnswered'
         ])
-        && isString(request.resource.data.displayName, 1, 40)
+        && isString(request.resource.data.displayName, 1, 16)
         && request.resource.data.level is number
         && request.resource.data.level >= 1
         && request.resource.data.level <= 999
