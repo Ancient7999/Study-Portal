@@ -9,6 +9,9 @@
   const LS_VISIBLE = 'study_portal_chat_visible_v1';
   const LS_MUTE_NUDGES = 'study_portal_mute_nudges_v1';
   const LS_FRIENDS = 'study_portal_friends_v1';
+  const LS_RATE_GENERAL = 'study_portal_chat_rate_general_v1';
+  const LS_RATE_WORLD = 'study_portal_chat_rate_world_v1';
+  const LS_RATE_TRADE = 'study_portal_chat_rate_trade_v1';
   const PRESENCE_MIN_MS = 4000;
   const PRESENCE_HEARTBEAT_MS = 55000;
   const FRIENDS_MAX = 40;
@@ -22,7 +25,37 @@
     { id: 'party', label: 'Party', enc: true }
   ];
   const ALL_CHANNEL_IDS = CHANNELS.map((c) => c.id);
+  function loadRateLimits() {
+    const limits = { global: [], world: 0, trade: 0 };
+    try {
+      const worldRaw = localStorage.getItem(LS_RATE_WORLD);
+      if (worldRaw) limits.world = parseInt(worldRaw, 10) || 0;
 
+      const tradeRaw = localStorage.getItem(LS_RATE_TRADE);
+      if (tradeRaw) limits.trade = parseInt(tradeRaw, 10) || 0;
+
+      const globalRaw = localStorage.getItem(LS_RATE_GENERAL);
+      if (globalRaw) {
+        const arr = JSON.parse(globalRaw);
+        if (Array.isArray(arr)) {
+          const now = Date.now();
+          // Clean out timestamps older than 60 seconds so we don't load stale data
+          limits.global = arr.filter(t => typeof t === 'number' && now - t < 60000);
+        }
+      }
+    } catch (e) {}
+    return limits;
+  }
+
+  function saveRateLimits() {
+    try {
+      localStorage.setItem(LS_RATE_WORLD, String(state.rateLimits.world || 0));
+      localStorage.setItem(LS_RATE_TRADE, String(state.rateLimits.trade || 0));
+      const now = Date.now();
+      const cleaned = (state.rateLimits.global || []).filter(t => typeof t === 'number' && now - t < 60000);
+      localStorage.setItem(LS_RATE_GENERAL, JSON.stringify(cleaned));
+    } catch (e) {}
+  }
   const state = {
     ready: false,
     channel: 'world',
@@ -44,7 +77,7 @@
     lastPresenceAt: 0,
     lastPresenceSig: '',
     presenceTimer: null,
-    rateLimits: { global: [], world: 0, trade: 0 }
+    rateLimits: loadRateLimits()
   };
 
   function toast(msg) {
@@ -733,8 +766,10 @@
       updates['rate_limits/' + me + '/chat_last'] = now;
     }
 
-    try {
+      try {
       await db.ref().update(updates);
+      // Persist rate limit state to localStorage so it survives page refreshes
+      saveRateLimits();
     } catch (e) {
       // REVERT: If Firebase rejects it (e.g., network drop or rule block), 
       // undo the provisional limit so the user isn't unfairly penalized.
