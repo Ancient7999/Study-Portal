@@ -72,14 +72,14 @@
     const db = ensureDb();
     const t0 = performance.now();
     try {
-      // Lightweight write — same path already used for presence heartbeat
-      await db.ref('presence/' + me + '/updatedAt').set(Date.now());
+      // A lightweight write that passes security rules to measure true RTT
+      await db.ref('rate_limits/' + me + '/world_last').set(Math.floor(t0));
       state.pingMs = performance.now() - t0;
     } catch (e) {
-      // Fallback: server time offset read (not full RTT, but shows liveness)
+      // Fallback if the primary path fails
       try {
         const t1 = performance.now();
-        await db.ref('.info/serverTimeOffset').once('value');
+        await db.ref('rate_limits/' + me + '/chat_last').set(Math.floor(t1));
         state.pingMs = performance.now() - t1;
       } catch (e2) {
         state.pingMs = null;
