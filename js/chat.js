@@ -1679,9 +1679,6 @@
     );
   }
 
-    // Listen for ping updates to refresh the chatbox meta text
-  try { window.addEventListener('net-status-update', updateChannelMeta); } catch(e) {}
-
   global.StudyChat = {
     start,
     open,
