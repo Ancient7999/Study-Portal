@@ -17,7 +17,8 @@
     pingMs: null,
     timer: null,
     started: false,
-    onlineCount: 0
+    onlineCount: 0,
+    hasConnected: false
   };
 
   function ensureDb() {
@@ -55,7 +56,8 @@
     // Determine color class based on connection and ping thresholds
     let colorClass = 'is-on'; // Default Green
     if (!state.connected) {
-      colorClass = 'is-off'; // Red
+      // Show yellow if still trying to connect, red if it dropped after being connected
+      colorClass = state.hasConnected ? 'is-off' : 'is-connecting'; 
     } else if (state.pingMs != null && state.pingMs > 500) {
       colorClass = 'is-bad'; // Orange
     } else if (state.pingMs != null && state.pingMs > 200) {
@@ -63,11 +65,15 @@
     }
 
     // Apply classes safely (remove all possible states first)
-    root.classList.remove('is-on', 'is-off', 'is-warn', 'is-bad');
+    root.classList.remove('is-on', 'is-off', 'is-warn', 'is-bad', 'is-connecting');
     root.classList.add(colorClass);
 
     if (!state.connected) {
-      text.textContent = 'Offline · Firebase-' + REGION;
+      if (!state.hasConnected) {
+        text.textContent = 'Connecting…';
+      } else {
+        text.textContent = 'Offline · Firebase-' + REGION;
+      }
     } else {
       const pingStr =
         state.pingMs != null && Number.isFinite(state.pingMs)
@@ -125,6 +131,7 @@
       const db = ensureDb();
       db.ref('.info/connected').on('value', function (snap) {
         state.connected = !!snap.val();
+        if (state.connected) state.hasConnected = true;
         render();
         if (state.connected) measurePing();
       });
