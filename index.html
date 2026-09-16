@@ -876,32 +876,32 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .friend-cursor.spawning{animation:friend-cursor-spawn .4s ease-out forwards}
 
 .net-status{
-  position:fixed;top:16px;right:16px;z-index:60;
-  display:inline-flex;align-items:center;gap:.45rem;
-  padding:.38rem .7rem .4rem;
-  border-radius:999px;
-  background:rgba(8,12,20,.62);
-  border:1px solid var(--border);
-  backdrop-filter:blur(14px) saturate(1.1);
-  box-shadow:0 8px 24px rgba(0,0,0,.35);
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.02em;
-  color:var(--text-dim);pointer-events:none;user-select:none;
+  position:fixed;z-index:9999;display:flex;align-items:center;gap:6px;
+  font-family:var(--mono,monospace);color:var(--text-dim);
+  background:rgba(8,12,20,.55);border:1px solid var(--border);
+  border-radius:999px;backdrop-filter:blur(12px);
+  transition: color 0.2s ease;
 }
 .net-status .net-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:#64748b;box-shadow:0 0 0 0 rgba(100,116,139,.4);
+  width:8px;height:8px;border-radius:50%;background:#888;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
-.net-status.is-on .net-dot{
-  background:#34d399;
-  box-shadow:0 0 8px rgba(52,211,153,.55);
-  animation:netPulse 2.2s ease-in-out infinite;
-}
-.net-status.is-off .net-dot{background:#f87171;box-shadow:0 0 8px rgba(248,113,113,.45)}
-.net-status.is-on{color:var(--text)}
-@keyframes netPulse{0%,100%{opacity:1}50%{opacity:.55}}
-@media (max-width:720px){
-  .net-status{top:10px;right:10px;font-size:.62rem;padding:.32rem .55rem}
-}
+
+/* Online (Green) */
+.net-status.is-on { color: #34d399; }
+.net-status.is-on .net-dot { background: #34d399; box-shadow: 0 0 8px rgba(52, 211, 153, 0.6); }
+
+/* Offline (Red) */
+.net-status.is-off { color: #fb7185; }
+.net-status.is-off .net-dot { background: #fb7185; box-shadow: 0 0 8px rgba(251, 113, 133, 0.6); }
+
+/* Warning > 200ms (Yellow) */
+.net-status.is-warn { color: #fbbf24; }
+.net-status.is-warn .net-dot { background: #fbbf24; box-shadow: 0 0 8px rgba(251, 191, 36, 0.6); }
+
+/* Bad > 500ms (Orange) */
+.net-status.is-bad { color: #fb923c; }
+.net-status.is-bad .net-dot { background: #fb923c; box-shadow: 0 0 8px rgba(251, 146, 60, 0.6); }
 
 
 /* Nav lock */
