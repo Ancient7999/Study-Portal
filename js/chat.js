@@ -28,11 +28,19 @@
   function loadRateLimits() {
     const limits = { global: [], world: 0, trade: 0 };
     try {
+      const now = Date.now();
       const worldRaw = localStorage.getItem(LS_RATE_WORLD);
-      if (worldRaw) limits.world = parseInt(worldRaw, 10) || 0;
+      if (worldRaw) {
+        const w = parseInt(worldRaw, 10) || 0;
+        // Ignore future / absurd timestamps that soft-lock World chat.
+        limits.world = w > now + 60000 ? 0 : w;
+      }
 
       const tradeRaw = localStorage.getItem(LS_RATE_TRADE);
-      if (tradeRaw) limits.trade = parseInt(tradeRaw, 10) || 0;
+      if (tradeRaw) {
+        const t = parseInt(tradeRaw, 10) || 0;
+        limits.trade = t > now + 60000 ? 0 : t;
+      }
 
       const globalRaw = localStorage.getItem(LS_RATE_GENERAL);
       if (globalRaw) {
@@ -765,39 +773,44 @@ const { db } = ensureFirebase();
 const newMsgRef = db.ref(path).push();
 
 try {
-  // Write the message first
+  // Write the message first (server no longer gates writes on rate_limits timestamps).
   await newMsgRef.set(payload);
-  
-  // Then update the rate limit separately
-  if (state.channel === 'world') {
-    await db.ref('rate_limits/' + me + '/world_last').set(now);
-  } else if (state.channel === 'trade') {
-    await db.ref('rate_limits/' + me + '/trade_last').set(now);
-  } else {
-    await db.ref('rate_limits/' + me + '/chat_last').set(now);
+
+  // Best-effort server-side last-sent markers for ops/debug; ignore failures.
+  try {
+    if (state.channel === 'world') {
+      await db.ref('rate_limits/' + me + '/world_last').set(firebase.database.ServerValue.TIMESTAMP);
+    } else if (state.channel === 'trade') {
+      await db.ref('rate_limits/' + me + '/trade_last').set(firebase.database.ServerValue.TIMESTAMP);
+    } else {
+      await db.ref('rate_limits/' + me + '/chat_last').set(firebase.database.ServerValue.TIMESTAMP);
+    }
+  } catch (markErr) {
+    console.warn('Chat rate mark failed:', markErr);
   }
-  
+
   saveRateLimits();
 } catch (e) {
-  if (e.code === 'PERMISSION_DENIED') {
-    if (state.channel === 'world') {
-      state.rateLimits.world = now;
-    } else if (state.channel === 'trade') {
-      state.rateLimits.trade = now;
-    } else {
-      state.rateLimits.global.push(now);
-    }
-    saveRateLimits();
-    toast('Please wait a moment before sending another message.');
+  // Always revert provisional client limits so a denied send does not soft-lock the UI.
+  if (state.channel === 'world') {
+    state.rateLimits.world = 0;
+  } else if (state.channel === 'trade') {
+    state.rateLimits.trade = 0;
+  } else if (state.rateLimits.global.length) {
+    state.rateLimits.global.pop();
+  }
+  saveRateLimits();
+
+  const code = (e && e.code) || '';
+  const msg = String((e && e.message) || e || '');
+  const denied = code === 'PERMISSION_DENIED' || /PERMISSION_DENIED/i.test(msg);
+  if (denied) {
+    if (state.channel === 'guild') toast('Guild chat denied — rejoin the guild.');
+    else if (state.channel === 'party') toast('Party chat denied — rejoin the party.');
+    else if (state.channel === 'whisper') toast('Whisper denied — check the recipient path.');
+    else toast('Message blocked by server rules. Try again or re-sign in.');
   } else {
     toast('Message failed to send. Check connection.');
-    if (state.channel === 'world') {
-      state.rateLimits.world = 0;
-    } else if (state.channel === 'trade') {
-      state.rateLimits.trade = 0;
-    } else {
-      state.rateLimits.global.pop();
-    }
   }
   console.warn('Chat send failed:', e);
 }

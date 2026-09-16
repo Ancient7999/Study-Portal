@@ -9,83 +9,92 @@
         ".validate": "newData.hasChildren(['state', 'updatedAt']) && newData.child('state').isString() && newData.child('updatedAt').isNumber() && (!newData.hasChild('displayName') || newData.child('displayName').isString()) && (!newData.hasChild('level') || newData.child('level').isNumber()) && (!newData.hasChild('partyId') || newData.child('partyId').isString()) && (!newData.hasChild('guildId') || newData.child('guildId').isString()) && (!newData.hasChild('activity') || newData.child('activity').isString()) && (!newData.hasChild('partySize') || (newData.child('partySize').isNumber() && newData.child('partySize').val() >= 1 && newData.child('partySize').val() <= 4)) && (!newData.hasChild('quiz') || (newData.child('quiz').hasChildren() && (!newData.child('quiz').hasChild('bank') || newData.child('quiz').child('bank').isString()) && (!newData.child('quiz').hasChild('form') || newData.child('quiz').child('form').isString())))"
       }
     },
-        
     "rate_limits": {
-  "$uid": {
-    ".write": "auth != null && auth.uid == $uid",
-    "world_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" },
-    "trade_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" },
-    "chat_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" }
-  }
-},
-    
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid",
+        "world_last": {
+          ".validate": "newData.isNumber()"
+        },
+        "trade_last": {
+          ".validate": "newData.isNumber()"
+        },
+        "chat_last": {
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
     "chat": {
-   "world": {
-  ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+      "world": {
+        ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
         ".indexOn": [
           "ts"
         ],
         "$msgId": {
-          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('world_last').exists() || now - root.child('rate_limits').child(auth.uid).child('world_last').val() >= 30000)",
+          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
-   "trade": {
-  ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+      "trade": {
+        ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
         ".indexOn": [
           "ts"
         ],
         "$msgId": {
-          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('trade_last').exists() || now - root.child('rate_limits').child(auth.uid).child('trade_last').val() >= 30000)",
+          ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid",
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
       "local": {
-     "$roomId": {
-     ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+        "$roomId": {
+          ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
       },
-   "guild": {
-   "$guildId": {
-    ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+      "guild": {
+        "$guildId": {
+          ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
           "$msgId": {
-      ".write": "auth != null && root.child('guilds').child($guildId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
+            ".write": "auth != null && root.child('guilds').child($guildId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
       },
-"whisper": {
-  "$uid1": {
-    "$uid2": {
-      ".read": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
-      ".indexOn": ["ts"],
-      "$msgId": {
-        ".write": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
-        ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
+      "whisper": {
+        "$uid1": {
+          "$uid2": {
+            ".read": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+            ".indexOn": [
+              "ts"
+            ],
+            "$msgId": {
+              ".write": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && !data.exists() && newData.child('uid').val() == auth.uid",
+              ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
+            }
+          }
+        }
+      },
+      "party": {
+        "$partyId": {
+          ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+          ".indexOn": [
+            "ts"
+          ],
+          "$msgId": {
+            ".write": "auth != null && root.child('parties').child($partyId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid",
+            ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
+          }
+        }
       }
-    }
-  }
-},
-"party": {
-  "$partyId": {
-    ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
-    ".indexOn": ["ts"],
-    "$msgId": {
-      ".write": "auth != null && root.child('parties').child($partyId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
-      ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
-    }
-  }
-}
     },
     "parties": {
       "$partyId": {
