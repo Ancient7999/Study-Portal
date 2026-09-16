@@ -162,8 +162,15 @@
     }
   }
 
-  function whisperPair(a, b) {
+    function whisperPair(a, b) {
+    // Kept as-is so existing encrypted messages can still be decrypted!
     return [a, b].sort().join('_');
+  }
+
+  function whisperPath(a, b) {
+    // New function to build the secure nested database path
+    const sorted = [a, b].sort();
+    return 'chat/whisper/' + sorted[0] + '/' + sorted[1];
   }
 
   function loadVisible() {
@@ -206,7 +213,7 @@
     if (ch === 'whisper') {
       const me = uid();
       if (!me || !state.whisperTarget) return null;
-      return 'chat/whisper/' + whisperPair(me, state.whisperTarget.uid);
+      return whisperPath(me, state.whisperTarget.uid);
     }
     return null;
   }
@@ -410,10 +417,10 @@
     if (!me) return [];
     const set = {};
     (state.friends || []).forEach((f) => {
-      if (f && f.uid) set['chat/whisper/' + whisperPair(me, f.uid)] = true;
+      if (f && f.uid) set[whisperPath(me, f.uid)] = true;
     });
     if (state.whisperTarget && state.whisperTarget.uid) {
-      set['chat/whisper/' + whisperPair(me, state.whisperTarget.uid)] = true;
+      set[whisperPath(me, state.whisperTarget.uid)] = true;
     }
     return Object.keys(set);
   }
