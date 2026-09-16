@@ -74,7 +74,7 @@
           ? Math.max(1, Math.round(state.pingMs)) + 'ms'
           : '...';
 
-      text.textContent = 'Firebase-' + REGION + ' · ' + state.onlineCount + ' online · ' + pingStr;
+      text.textContent = state.onlineCount + ' online · Firebase-' + REGION + ' · ' + pingStr;
     }
     
     // Dispatch event so other modules (like chat) can update when ping/online changes
