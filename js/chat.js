@@ -761,51 +761,46 @@ function whisperPair(a, b) {
     }
 
     // —— 4. SEND TO FIREBASE WITH REVERT ON FAILURE ——
-    const { db } = ensureFirebase();
-    const newMsgRef = db.ref(path).push();
-    
-    const updates = {};
-    updates[path + '/' + newMsgRef.key] = payload;
-    
-    if (state.channel === 'world') {
-      updates['rate_limits/' + me + '/world_last'] = now;
-    } else if (state.channel === 'trade') {
-      updates['rate_limits/' + me + '/trade_last'] = now;
-    } else {
-      updates['rate_limits/' + me + '/chat_last'] = now;
-    }
+const { db } = ensureFirebase();
+const newMsgRef = db.ref(path).push();
 
-      try {
-      await db.ref().update(updates);
-      // Persist rate limit state to localStorage so it survives page refreshes
-      saveRateLimits();
-    } catch (e) {
-      if (e.code === 'PERMISSION_DENIED') {
-        // The server blocked it (likely rate limit or clock skew).
-        // Sync the local limit to 'now' so the client catches the next click instantly.
-        if (state.channel === 'world') {
-          state.rateLimits.world = now;
-        } else if (state.channel === 'trade') {
-          state.rateLimits.trade = now;
-        } else {
-          state.rateLimits.global.push(now);
-        }
-        saveRateLimits(); // Save to localStorage so it persists across refreshes
-        
-        toast('Please wait a moment before sending another message.');
-      } else {
-        // Network error or connection drop. Revert the local limit so they can retry.
-        toast('Message failed to send. Check connection.');
-        if (state.channel === 'world') {
-          state.rateLimits.world = 0; 
-        } else if (state.channel === 'trade') {
-          state.rateLimits.trade = 0;
-        } else {
-          state.rateLimits.global.pop(); 
-        }
-      }
-      console.warn('Chat send failed:', e);
+try {
+  // Write the message first
+  await newMsgRef.set(payload);
+  
+  // Then update the rate limit separately
+  if (state.channel === 'world') {
+    await db.ref('rate_limits/' + me + '/world_last').set(now);
+  } else if (state.channel === 'trade') {
+    await db.ref('rate_limits/' + me + '/trade_last').set(now);
+  } else {
+    await db.ref('rate_limits/' + me + '/chat_last').set(now);
+  }
+  
+  saveRateLimits();
+} catch (e) {
+  if (e.code === 'PERMISSION_DENIED') {
+    if (state.channel === 'world') {
+      state.rateLimits.world = now;
+    } else if (state.channel === 'trade') {
+      state.rateLimits.trade = now;
+    } else {
+      state.rateLimits.global.push(now);
     }
+    saveRateLimits();
+    toast('Please wait a moment before sending another message.');
+  } else {
+    toast('Message failed to send. Check connection.');
+    if (state.channel === 'world') {
+      state.rateLimits.world = 0;
+    } else if (state.channel === 'trade') {
+      state.rateLimits.trade = 0;
+    } else {
+      state.rateLimits.global.pop();
+    }
+  }
+  console.warn('Chat send failed:', e);
+}
   }
 
   function pickWhisperByName(name) {
