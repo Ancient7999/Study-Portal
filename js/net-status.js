@@ -45,7 +45,7 @@
     return el;
   }
 
-  function render() {
+    function render() {
     ensureEl();
     const text = document.getElementById('netStatusText');
     const root = document.getElementById('netStatus');
@@ -61,6 +61,9 @@
         ? Math.max(1, Math.round(state.pingMs)) + ' ms'
         : '…';
     text.textContent = 'Connected to ' + REGION + ' · ' + ping;
+    
+    // Dispatch event so other modules (like chat) can update when ping changes
+    try { window.dispatchEvent(new CustomEvent('net-status-update', { detail: { ping: state.pingMs, connected: state.connected } })); } catch(e) {}
   }
 
   async function measurePing() {
@@ -106,10 +109,5 @@
     }
   }
 
-  global.StudyNetStatus = {
-  start: start,
-  REGION: REGION,
-  getPing: function () { return state.pingMs; },
-  isConnected: function () { return state.connected; }
-};
+  global.StudyNetStatus = { start: start, REGION: REGION, getPing: function() { return state.pingMs; } };
 })(window);
