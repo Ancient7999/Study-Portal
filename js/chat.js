@@ -1519,17 +1519,25 @@
     }
   }
 
+  let _partySyncInProgress = false;
+
   function onPartyChanged() {
-    updateChannelMeta();
-    if (state.channel === 'party') {
-      renderChannelTools();
+    if (_partySyncInProgress) return;
+    _partySyncInProgress = true;
+    try {
+      updateChannelMeta();
+      if (state.channel === 'party') {
+        renderChannelTools();
+      }
+      listenMessages();
+      // Party join/leave / size change — force presence so partySize updates promptly
+      publishPresence(true);
+      if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
+      if (global.StudyPartyTimers && StudyPartyTimers.syncFromParty) StudyPartyTimers.syncFromParty();
+      if (global.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
+    } finally {
+      _partySyncInProgress = false;
     }
-    listenMessages();
-    // Party join/leave / size change — force presence so partySize updates promptly
-    publishPresence(true);
-    if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
-    if (global.StudyPartyTimers && StudyPartyTimers.syncFromParty) StudyPartyTimers.syncFromParty();
-    if (global.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
   }
 
   function watchInvites() {
