@@ -66,20 +66,29 @@
     try { window.dispatchEvent(new CustomEvent('net-status-update', { detail: { ping: state.pingMs, connected: state.connected } })); } catch(e) {}
   }
 
-  async function measurePing() {
-    const me = uid();
+    async function measurePing() {
+    let me = uid();
+    let tries = 0;
+    
+    // Wait up to 5 seconds for anonymous auth to finish
+    while (!me && tries < 50) {
+      await new Promise((r) => setTimeout(r, 100));
+      tries++;
+      me = uid();
+    }
     if (!me || !state.connected) return;
+    
     const db = ensureDb();
     const t0 = performance.now();
     try {
       // A lightweight write that passes security rules to measure true RTT
-      await db.ref('rate_limits/' + me + '/world_last').set(Math.floor(t0));
+      await db.ref('rate_limits/' + me + '/world_last').set(Date.now());
       state.pingMs = performance.now() - t0;
     } catch (e) {
       // Fallback if the primary path fails
       try {
         const t1 = performance.now();
-        await db.ref('rate_limits/' + me + '/chat_last').set(Math.floor(t1));
+        await db.ref('rate_limits/' + me + '/chat_last').set(Date.now());
         state.pingMs = performance.now() - t1;
       } catch (e2) {
         state.pingMs = null;
