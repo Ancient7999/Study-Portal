@@ -552,7 +552,7 @@
     const unsubs = [];
     let refreshTimer = null;
 
-    const refresh = () => {
+        const refresh = () => {
       if (refreshTimer) clearTimeout(refreshTimer);
       refreshTimer = setTimeout(async () => {
         let all = [];
@@ -569,8 +569,17 @@
 
     listening.forEach((c) => {
       buckets[c.id] = [];
-      // Fetch the latest MSG_CAP messages so history loads on refresh
-      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').limitToLast(MSG_CAP);
+      
+      // Calculate the 24-hour cutoff once when the listener starts
+      const cutoff = Date.now() - (24 * 60 * 60 * 1000);
+      
+      // Fetch the latest MSG_CAP messages from the last 24 hours
+      // This satisfies the Firebase security rule requiring startAt()
+      const q = db.ref(channelPathFor(c.id))
+        .orderByChild('ts')
+        .startAt(cutoff)
+        .limitToLast(MSG_CAP);
+        
       const handler = (snap) => {
         const rows = [];
         snap.forEach((child) => {
