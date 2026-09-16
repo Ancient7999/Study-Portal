@@ -20,8 +20,8 @@
     },
     
     "chat": {
-      "world": {
-        ".read": "auth != null",
+   "world": {
+  ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
         ".indexOn": [
           "ts"
         ],
@@ -30,8 +30,8 @@
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
-      "trade": {
-        ".read": "auth != null",
+   "trade": {
+  ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
         ".indexOn": [
           "ts"
         ],
@@ -41,8 +41,8 @@
         }
       },
       "local": {
-        "$roomId": {
-          ".read": "auth != null",
+     "$roomId": {
+     ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
@@ -52,9 +52,9 @@
           }
         }
       },
-      "guild": {
-        "$guildId": {
-          ".read": "auth != null",
+   "guild": {
+   "$guildId": {
+    ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
@@ -64,9 +64,9 @@
           }
         }
       },
-      "whisper": {
-        "$pairId": {
-          ".read": "auth != null && ($pairId.contains(auth.uid))",
+  "whisper": {
+  "$pairId": {
+    ".read": "auth != null && $pairId.contains(auth.uid) && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
@@ -76,9 +76,9 @@
           }
         }
       },
-      "party": {
-        "$partyId": {
-          ".read": "auth != null",
+  "party": {
+  "$partyId": {
+    ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
           ".indexOn": [
             "ts"
           ],
