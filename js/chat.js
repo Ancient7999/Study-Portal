@@ -569,6 +569,7 @@
 
     listening.forEach((c) => {
       buckets[c.id] = [];
+      // Fetch the latest MSG_CAP messages so history loads on refresh
       const q = db.ref(channelPathFor(c.id)).orderByChild('ts').limitToLast(MSG_CAP);
       const handler = (snap) => {
         const rows = [];
@@ -587,7 +588,7 @@
       unsubs.forEach((fn) => fn());
     };
   }
-
+  
   function channelTagLabel(id) {
     const ch = CHANNELS.find((c) => c.id === id);
     return ch ? ch.label : id;
@@ -769,21 +770,21 @@
       await db.ref().update(updates);
       // Persist rate limit state to localStorage so it survives page refreshes
       saveRateLimits();
-    } catch (e) {
-      // REVERT: If Firebase rejects it (e.g., network drop or rule block), 
-      // undo the provisional limit so the user isn't unfairly penalized.
-      if (state.channel === 'world') {
-        state.rateLimits.world = 0; // Reset to allow immediate retry
-      } else if (state.channel === 'trade') {
-        state.rateLimits.trade = 0;
-      } else {
-        state.rateLimits.global.pop(); // Remove the timestamp we just added
-      }
-      
+        } catch (e) {
       if (e.code === 'PERMISSION_DENIED') {
-        toast('Rate limit exceeded. Please wait a moment.');
+        // The server blocked it (likely rate limit or clock skew). 
+        // DO NOT reset the local limit, or the client will spam the server in a loop.
+        toast('Please wait a moment before sending another message.');
       } else {
+        // Network error or connection drop. Revert the local limit so they can retry.
         toast('Message failed to send. Check connection.');
+        if (state.channel === 'world') {
+          state.rateLimits.world = 0; 
+        } else if (state.channel === 'trade') {
+          state.rateLimits.trade = 0;
+        } else {
+          state.rateLimits.global.pop(); 
+        }
       }
       console.warn('Chat send failed:', e);
     }
