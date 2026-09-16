@@ -137,10 +137,14 @@
     }
   }
 
-  global.StudyNetStatus = { 
-  start: start, 
-  REGION: REGION, 
-  getPing: function() { return state.pingMs; },
-  isConnected: function() { return state.connected; }
-};
+    global.StudyNetStatus = { 
+    start: start, 
+    REGION: REGION, 
+    getPing: function() { return state.pingMs; },
+    isConnected: function() { return state.connected; },
+    setOnlineCount: function(n) { 
+    state.onlineCount = n; 
+    render(); 
+    }
+  };
 })(window);
