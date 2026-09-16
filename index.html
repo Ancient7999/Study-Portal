@@ -876,10 +876,21 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .friend-cursor.spawning{animation:friend-cursor-spawn .4s ease-out forwards}
 
 .net-status{
-  position:fixed;z-index:9999;display:flex;align-items:center;gap:6px;
-  font-family:var(--mono,monospace);color:var(--text-dim);
-  background:rgba(8,12,20,.55);border:1px solid var(--border);
-  border-radius:999px;backdrop-filter:blur(12px);
+  position:fixed;
+  top:10px;
+  right:10px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--mono,monospace);
+  font-size:.62rem;
+  padding:.32rem .55rem;
+  color:var(--text-dim);
+  background:rgba(8,12,20,.55);
+  border:1px solid var(--border);
+  border-radius:999px;
+  backdrop-filter:blur(12px);
   transition: color 0.2s ease;
 }
 .net-status .net-dot{
