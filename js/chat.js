@@ -162,16 +162,9 @@
     }
   }
 
-    function whisperPair(a, b) {
-    // Kept as-is so existing encrypted messages can still be decrypted!
-    return [a, b].sort().join('_');
-  }
-
-  function whisperPath(a, b) {
-    // New function to build the secure nested database path
-    const sorted = [a, b].sort();
-    return 'chat/whisper/' + sorted[0] + '/' + sorted[1];
-  }
+function whisperPair(a, b) {
+  return [a, b].sort().join('/');
+}
 
   function loadVisible() {
     try {
@@ -213,7 +206,7 @@
     if (ch === 'whisper') {
       const me = uid();
       if (!me || !state.whisperTarget) return null;
-      return whisperPath(me, state.whisperTarget.uid);
+      return 'chat/whisper/' + whisperPair(me, state.whisperTarget.uid);
     }
     return null;
   }
@@ -417,10 +410,10 @@
     if (!me) return [];
     const set = {};
     (state.friends || []).forEach((f) => {
-      if (f && f.uid) set[whisperPath(me, f.uid)] = true;
+      if (f && f.uid) set['chat/whisper/' + whisperPair(me, f.uid)] = true;
     });
     if (state.whisperTarget && state.whisperTarget.uid) {
-      set[whisperPath(me, state.whisperTarget.uid)] = true;
+      set['chat/whisper/' + whisperPair(me, state.whisperTarget.uid)] = true;
     }
     return Object.keys(set);
   }
@@ -1439,14 +1432,24 @@
             esc(state.guild.id) +
             '</span>' +
             '<button type="button" class="chat-tool-btn danger" id="guildLeaveBtn">Leave guild</button>';
-          guildEl.querySelector('#guildLeaveBtn').onclick = () => {
-            saveGuild(null);
-            publishPresence();
-            renderChannelTools();
-            listenMessages();
-            updateChannelMeta();
-            toast('Left guild');
-          };
+guildEl.querySelector('#guildLeaveBtn').onclick = async () => {
+  const oldGuild = state.guild;
+  saveGuild(null);
+  renderChannelTools();
+  listenMessages();
+  updateChannelMeta();
+  toast('Left guild');
+  publishPresence();
+  if (oldGuild && oldGuild.id) {
+    try {
+      const me = uid();
+      const { db } = ensureFirebase();
+      await db.ref('guilds/' + oldGuild.id + '/members/' + me).remove();
+    } catch (e) {
+      console.warn('guild leave cleanup', e);
+    }
+  }
+};
         }
       } else {
         guildEl.hidden = true;
