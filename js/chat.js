@@ -1252,38 +1252,33 @@
     updateChannelMeta();
   }
 
-  function updateChannelMeta() {
+    function updateChannelMeta() {
     const el = document.getElementById('chatDockMeta');
     if (!el) return;
     ensureVisible();
-
+    const ch = CHANNELS.find((c) => c.id === state.channel) || CHANNELS[1];
     const onlineN = Object.keys(state.online).length;
-
-    /* --- Ping from net-status module --- */
-    let pingText = '…';
-    if (window.StudyNetStatus && StudyNetStatus.getPing) {
-        const ms = StudyNetStatus.getPing();
-        if (ms != null && Number.isFinite(ms)) {
-            pingText = Math.max(1, Math.round(ms)) + 'ms';
-        }
+    const visListening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id)).length;
+    
+    let meta = '';
+    const pingMs = window.StudyNetStatus && window.StudyNetStatus.getPing ? window.StudyNetStatus.getPing() : null;
+    const pingStr = pingMs != null && Number.isFinite(pingMs) ? Math.max(1, Math.round(pingMs)) + 'ms' : '...';
+    
+    if (visListening <= 1) {
+      meta = ch.label + ' · ' + onlineN + ' online · ' + pingStr;
+    } else {
+      meta = onlineN + ' online · ' + pingStr;
     }
-
-    /* --- Connection dot (optional visual cue) --- */
-    const connected = !window.StudyNetStatus || StudyNetStatus.isConnected();
-
-    let meta = (connected ? '🟢 ' : '🔴 ') + onlineN + ' online · ' + pingText;
-
-    /* --- Contextual suffixes (kept from original) --- */
+    
     if (state.channel === 'local') meta += ' · #' + (state.localRoom || 'lobby');
     else if (state.channel === 'whisper' && state.whisperTarget) meta += ' · @' + state.whisperTarget.displayName;
     else if (state.channel === 'guild' && state.guild) meta += ' · ' + state.guild.name;
     else if (state.channel === 'party') {
-        const p = StudyParty && StudyParty.getParty && StudyParty.getParty();
-        meta += p ? ' · ' + Object.keys(p.members || {}).length + '/4' : ' · no party';
+      const p = StudyParty && StudyParty.getParty && StudyParty.getParty();
+      meta += p ? ' · ' + Object.keys(p.members || {}).length + '/4' : ' · no party';
     }
-
     el.textContent = meta;
-}
+  }
 
   function renderChannelTools() {
     const partyEl = document.getElementById('chatPartyTools');
@@ -1683,6 +1678,9 @@
       { skipCloud: true }
     );
   }
+
+    // Listen for ping updates to refresh the chatbox meta text
+  try { window.addEventListener('net-status-update', updateChannelMeta); } catch(e) {}
 
   global.StudyChat = {
     start,
