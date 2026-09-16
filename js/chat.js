@@ -806,6 +806,7 @@
       }
       console.warn('Chat send failed:', e);
     }
+  }
 
   function pickWhisperByName(name) {
     const n = String(name || '').replace(/^@/, '').toLowerCase();
