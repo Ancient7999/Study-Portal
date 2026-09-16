@@ -118,5 +118,10 @@
     }
   }
 
-  global.StudyNetStatus = { start: start, REGION: REGION, getPing: function() { return state.pingMs; } };
+  global.StudyNetStatus = { 
+  start: start, 
+  REGION: REGION, 
+  getPing: function() { return state.pingMs; },
+  isConnected: function() { return state.connected; }
+};
 })(window);
