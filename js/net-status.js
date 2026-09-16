@@ -16,7 +16,8 @@
     connected: false,
     pingMs: null,
     timer: null,
-    started: false
+    started: false,
+    onlineCount: 0
   };
 
   function ensureDb() {
@@ -45,25 +46,43 @@
     return el;
   }
 
-    function render() {
+      function render() {
     ensureEl();
     const text = document.getElementById('netStatusText');
     const root = document.getElementById('netStatus');
     if (!text || !root) return;
-    root.classList.toggle('is-on', !!state.connected);
-    root.classList.toggle('is-off', !state.connected);
+
+    // Determine color class based on connection and ping thresholds
+    let colorClass = 'is-on'; // Default Green
     if (!state.connected) {
-      text.textContent = 'Disconnected';
-      return;
+      colorClass = 'is-off'; // Red
+    } else if (state.pingMs != null && state.pingMs > 500) {
+      colorClass = 'is-bad'; // Orange
+    } else if (state.pingMs != null && state.pingMs > 200) {
+      colorClass = 'is-warn'; // Yellow
     }
-    const ping =
-      state.pingMs != null && Number.isFinite(state.pingMs)
-        ? Math.max(1, Math.round(state.pingMs)) + ' ms'
-        : '…';
-    text.textContent = 'Connected to ' + REGION + ' · ' + ping;
+
+    // Apply classes safely (remove all possible states first)
+    root.classList.remove('is-on', 'is-off', 'is-warn', 'is-bad');
+    root.classList.add(colorClass);
+
+    if (!state.connected) {
+      text.textContent = 'Offline · Firebase-' + REGION;
+    } else {
+      const pingStr =
+        state.pingMs != null && Number.isFinite(state.pingMs)
+          ? Math.max(1, Math.round(state.pingMs)) + 'ms'
+          : '...';
+
+      text.textContent = 'Firebase-' + REGION + ' · ' + state.onlineCount + ' online · ' + pingStr;
+    }
     
-    // Dispatch event so other modules (like chat) can update when ping changes
-    try { window.dispatchEvent(new CustomEvent('net-status-update', { detail: { ping: state.pingMs, connected: state.connected } })); } catch(e) {}
+    // Dispatch event so other modules (like chat) can update when ping/online changes
+    try { 
+      window.dispatchEvent(new CustomEvent('net-status-update', { 
+        detail: { ping: state.pingMs, connected: state.connected, online: state.onlineCount } 
+      })); 
+    } catch(e) {}
   }
 
     async function measurePing() {
