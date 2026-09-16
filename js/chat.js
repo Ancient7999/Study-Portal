@@ -779,10 +779,19 @@
       await db.ref().update(updates);
       // Persist rate limit state to localStorage so it survives page refreshes
       saveRateLimits();
-        } catch (e) {
+    } catch (e) {
       if (e.code === 'PERMISSION_DENIED') {
-        // The server blocked it (likely rate limit or clock skew). 
-        // DO NOT reset the local limit, or the client will spam the server in a loop.
+        // The server blocked it (likely rate limit or clock skew).
+        // Sync the local limit to 'now' so the client catches the next click instantly.
+        if (state.channel === 'world') {
+          state.rateLimits.world = now;
+        } else if (state.channel === 'trade') {
+          state.rateLimits.trade = now;
+        } else {
+          state.rateLimits.global.push(now);
+        }
+        saveRateLimits(); // Save to localStorage so it persists across refreshes
+        
         toast('Please wait a moment before sending another message.');
       } else {
         // Network error or connection drop. Revert the local limit so they can retry.
@@ -797,7 +806,6 @@
       }
       console.warn('Chat send failed:', e);
     }
-  }
 
   function pickWhisperByName(name) {
     const n = String(name || '').replace(/^@/, '').toLowerCase();
