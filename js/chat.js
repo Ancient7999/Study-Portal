@@ -1252,7 +1252,7 @@
     updateChannelMeta();
   }
 
-    function updateChannelMeta() {
+  function updateChannelMeta() {
     const el = document.getElementById('chatDockMeta');
     if (!el) return;
     ensureVisible();
@@ -1261,13 +1261,10 @@
     const visListening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id)).length;
     
     let meta = '';
-    const pingMs = window.StudyNetStatus && window.StudyNetStatus.getPing ? window.StudyNetStatus.getPing() : null;
-    const pingStr = pingMs != null && Number.isFinite(pingMs) ? Math.max(1, Math.round(pingMs)) + 'ms' : '...';
-    
     if (visListening <= 1) {
-      meta = ch.label + ' · ' + onlineN + ' online · ' + pingStr;
+      meta = ch.label + ' · ' + onlineN + ' online';
     } else {
-      meta = onlineN + ' online · ' + pingStr;
+      meta = onlineN + ' online';
     }
     
     if (state.channel === 'local') meta += ' · #' + (state.localRoom || 'lobby');
@@ -1277,7 +1274,63 @@
       const p = StudyParty && StudyParty.getParty && StudyParty.getParty();
       meta += p ? ' · ' + Object.keys(p.members || {}).length + '/4' : ' · no party';
     }
-    el.textContent = meta;
+    
+    // Clear previous content safely to prevent HTML injection issues
+    el.innerHTML = '';
+    const textSpan = document.createElement('span');
+    textSpan.textContent = meta;
+    el.appendChild(textSpan);
+    
+    // --- Ping Indicator Logic ---
+    const pingMs = window.StudyNetStatus && window.StudyNetStatus.getPing ? window.StudyNetStatus.getPing() : null;
+    const isConnected = window.StudyNetStatus && window.StudyNetStatus.isConnected ? window.StudyNetStatus.isConnected() : false;
+    
+    let pingColor = '#34d399'; // green default
+    let pingText = '...';
+    let regionName = 'EU West';
+    
+    if (window.StudyNetStatus) {
+       // Dynamically map Firebase region codes to friendly names
+       const r = (window.StudyNetStatus.REGION || '').toLowerCase();
+       if (r.includes('eu-west') || r.includes('europe-west')) regionName = 'EU West';
+       else if (r.includes('us-central')) regionName = 'US Central';
+       else if (r.includes('us-east')) regionName = 'US East';
+       else if (r.includes('us-west')) regionName = 'US West';
+       else if (r.includes('asia')) regionName = 'Asia';
+       else if (r.includes('australia')) regionName = 'Australia';
+       else regionName = r.toUpperCase().replace(/-/g, ' ');
+       
+       // Apply color thresholds
+       if (!isConnected) {
+           pingColor = '#fb7185'; // red
+           pingText = 'Offline';
+       } else if (pingMs === null) {
+           pingColor = '#34d399'; // green dot while waiting for first measure
+           pingText = '...';
+       } else if (pingMs > 500) {
+           pingColor = '#fb923c'; // orange
+           pingText = Math.round(pingMs) + 'ms';
+       } else if (pingMs > 200) {
+           pingColor = '#fbbf24'; // yellow
+           pingText = Math.round(pingMs) + 'ms';
+       } else {
+           pingColor = '#34d399'; // green
+           pingText = Math.round(pingMs) + 'ms';
+       }
+    }
+    
+    let pingSpan = document.getElementById('chatDockPingIndicator');
+    if (!pingSpan) {
+        pingSpan = document.createElement('span');
+        pingSpan.id = 'chatDockPingIndicator';
+        pingSpan.style.cssText = 'display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding-left:8px;border-left:1px solid var(--border, rgba(255,255,255,0.15));font-family:var(--mono, monospace);font-size:0.82em;vertical-align:middle;';
+    }
+    
+    pingSpan.innerHTML = `<span style="color:${pingColor};font-size:1.1em;line-height:1;">●</span>` +
+                         `<span style="color:var(--text-dim, #94a3b8);letter-spacing:0.5px;opacity:0.9;">${regionName}</span>` +
+                         `<span style="color:${pingColor};font-weight:600;min-width:3.5em;text-align:right;">${pingText}</span>`;
+                         
+    el.appendChild(pingSpan);
   }
 
   function renderChannelTools() {
