@@ -569,8 +569,7 @@
 
     listening.forEach((c) => {
       buckets[c.id] = [];
-      const startTs = Date.now() - 3000; 
-      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').startAt(startTs);
+      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').limitToLast(MSG_CAP);
       const handler = (snap) => {
         const rows = [];
         snap.forEach((child) => {
