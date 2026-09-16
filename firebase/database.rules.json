@@ -11,13 +11,13 @@
     },
         
     "rate_limits": {
-      "$uid": {
-        ".write": "auth != null && auth.uid == $uid",
-        "world_last": { ".validate": "newData.isNumber()" },
-        "trade_last": { ".validate": "newData.isNumber()" },
-        "chat_last": { ".validate": "newData.isNumber()" }
-      }
-    },
+  "$uid": {
+    ".write": "auth != null && auth.uid == $uid",
+    "world_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" },
+    "trade_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" },
+    "chat_last": { ".validate": "newData.isNumber() && newData.val() >= now - 5000" }
+  }
+},
     
     "chat": {
    "world": {
@@ -59,35 +59,33 @@
             "ts"
           ],
           "$msgId": {
-            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
+      ".write": "auth != null && root.child('guilds').child($guildId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
             ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
           }
         }
       },
-  "whisper": {
-  "$pairId": {
-    ".read": "auth != null && $pairId.contains(auth.uid) && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
-          ".indexOn": [
-            "ts"
-          ],
-          "$msgId": {
-            ".write": "auth != null && $pairId.contains(auth.uid) && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
-            ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
-          }
-        }
-      },
-  "party": {
+"whisper": {
+  "$uid1": {
+    "$uid2": {
+      ".read": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
+      ".indexOn": ["ts"],
+      "$msgId": {
+        ".write": "auth != null && (auth.uid == $uid1 || auth.uid == $uid2) && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
+        ".validate": "newData.hasChildren(['uid', 'displayName', 'ts', 'ct', 'iv']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ct').isString() && newData.child('iv').isString()"
+      }
+    }
+  }
+},
+"party": {
   "$partyId": {
     ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
-          ".indexOn": [
-            "ts"
-          ],
-          "$msgId": {
-            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
-            ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
-          }
-        }
-      }
+    ".indexOn": ["ts"],
+    "$msgId": {
+      ".write": "auth != null && root.child('parties').child($partyId).child('members').child(auth.uid).exists() && !data.exists() && newData.child('uid').val() == auth.uid && (!root.child('rate_limits').child(auth.uid).child('chat_last').exists() || now - root.child('rate_limits').child(auth.uid).child('chat_last').val() >= 1500)",
+      ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
+    }
+  }
+}
     },
     "parties": {
       "$partyId": {
