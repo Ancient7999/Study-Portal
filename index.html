@@ -2884,11 +2884,9 @@ document.addEventListener('keydown',e=>{
           if(window.StudyCursors) StudyCursors.syncFromParty();
           if(window.StudyPartyTimers) StudyPartyTimers.syncFromParty();
           if(window.StudyParty && StudyParty.applyNavLock) StudyParty.applyNavLock();
-          // Mastery+ progressive restart hook
           if(window.StudyMastery){
             StudyMastery._onMasteryPlusActivate = function(bk, form, queue){
               if(!queue || !queue.length){ portalToast('Mastery+ complete for this form'); return; }
-              // Re-open form fresh but only progressive indices via session flag
               window.__masteryPlusQueue = queue.slice();
               openForm(form, {fresh:true, masteryPlus:true});
             };
@@ -2899,8 +2897,9 @@ document.addEventListener('keydown',e=>{
         });
       } else if(window.StudyChat){
         StudyChat.start().catch(err=>console.warn(err));
-      if(window.StudyNetStatus) StudyNetStatus.start();
       }
+      // Now it will actually run!
+      if(window.StudyNetStatus) StudyNetStatus.start();
     })
     .catch(err=>{
       console.error(err);
