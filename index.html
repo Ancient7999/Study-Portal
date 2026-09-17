@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Portal</title>
+<script>
+(function(){
+  try{
+    var q=localStorage.getItem('pt1_quality_mode');
+    var c=localStorage.getItem('pt1_custom_cursor');
+    var basic=(q==='basic'||q==='1'||q==='true');
+    var curOn=!(c==='0'||c==='false'||c==='off');
+    document.documentElement.setAttribute('data-quality', basic?'basic':'full');
+    document.documentElement.setAttribute('data-custom-cursor', curOn?'on':'off');
+  }catch(e){
+    document.documentElement.setAttribute('data-quality','full');
+    document.documentElement.setAttribute('data-custom-cursor','on');
+  }
+})();
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
 :root {
@@ -114,6 +129,86 @@ html[data-cursor="beam-v"]{--cur-w:3px;--cur-h:22px;--cur-border:none;--cur-radi
 html[data-cursor="beam-h"]{--cur-w:26px;--cur-h:3px;--cur-border:none;--cur-radius:1px;--cur-bg:var(--cyan-bright);--cur-blend:normal;--cur-shadow:0 0 12px var(--mood-glow);--cur-core-w:6px;--cur-core-h:6px;--cur-core-bg:var(--accent-2);--cur-core-radius:1px;--cur-active-w:40px;--cur-active-h:5px;--cur-active-bg:var(--gold)}
 html[data-cursor="diamond"]{--cur-w:22px;--cur-h:22px;--cur-border:2px solid var(--cyan);--cur-radius:2px;--cur-rot:rotate(45deg);--cur-blend:normal;--cur-shadow:0 0 14px var(--mood-glow);--cur-core-w:6px;--cur-core-h:6px;--cur-core-bg:var(--accent-2);--cur-core-radius:1px;--cur-core-rot:rotate(45deg);--cur-active-w:34px;--cur-active-h:34px;--cur-active-radius:2px}
 html[data-cursor="comma"]{--cur-w:18px;--cur-h:18px;--cur-border:2px solid var(--cyan);--cur-radius:50% 50% 50% 2px;--cur-rot:rotate(-20deg);--cur-blend:normal;--cur-shadow:0 0 12px var(--mood-glow);--cur-core-w:5px;--cur-core-h:5px;--cur-core-bg:var(--gold);--cur-core-radius:50%;--cur-active-w:32px;--cur-active-h:32px;--cur-active-radius:50% 50% 50% 4px}
+
+/* Display quality + system cursor overrides */
+html[data-quality="basic"]{
+  --bg:#0b0f14; --bg2:#0b0f14; --bg-glow:transparent; --grid-tint:transparent;
+  --surface:#121820; --border:rgba(148,163,184,.35);
+  --cyan:#94a3b8; --cyan-bright:#cbd5e1; --teal:#94a3b8;
+  --gold:#cbd5e1; --amber:#94a3b8; --lavender:#94a3b8; --violet:#94a3b8;
+  --accent:#94a3b8; --accent-2:#cbd5e1; --mood-glow:transparent;
+  --anim-speed:0; --pulse-ms:0ms; --transition-ms:0ms; --particle-speed:0;
+}
+html[data-quality="basic"] body{
+  background:#0b0f14!important;
+}
+html[data-quality="basic"] *,
+html[data-quality="basic"] *::before,
+html[data-quality="basic"] *::after{
+  animation:none!important;
+  transition:none!important;
+  backdrop-filter:none!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+html[data-quality="basic"] #fxCanvas,
+html[data-quality="basic"] .friend-cursor-aura{display:none!important}
+html[data-quality="basic"] .portal-card,
+html[data-quality="basic"] .modal-card,
+html[data-quality="basic"] .chat-dock,
+html[data-quality="basic"] .timer-dock{
+  background:#121820!important;
+  border-color:rgba(148,163,184,.35)!important;
+}
+html[data-custom-cursor="off"] body,
+html[data-custom-cursor="off"] button,
+html[data-custom-cursor="off"] .opt,
+html[data-custom-cursor="off"] .nav-btn,
+html[data-custom-cursor="off"] .fs-btn,
+html[data-custom-cursor="off"] .card,
+html[data-custom-cursor="off"] .mood-live,
+html[data-custom-cursor="off"] .mood-pick,
+html[data-custom-cursor="off"] .mood-tray,
+html[data-custom-cursor="off"] .timer-dock-main,
+html[data-custom-cursor="off"] .mood-reset-item,
+html[data-custom-cursor="off"] .mood-cursor-btn,
+html[data-custom-cursor="off"] .mood-tray-tools,
+html[data-custom-cursor="off"] .timer-dock,
+html[data-custom-cursor="off"] .chat-dock,
+html[data-custom-cursor="off"] .chat-toggle,
+html[data-custom-cursor="off"] .chat-minimize,
+html[data-custom-cursor="off"] .chat-send,
+html[data-custom-cursor="off"] .chat-channel-btn,
+html[data-custom-cursor="off"] .chat-channel-opt,
+html[data-custom-cursor="off"] .chat-channel-label,
+html[data-custom-cursor="off"] .chat-vis-btn,
+html[data-custom-cursor="off"] .chat-tool-btn,
+html[data-custom-cursor="off"] .chat-ac-item,
+html[data-custom-cursor="off"] .chat-icon-btn,
+html[data-custom-cursor="off"] .chat-friends-btn,
+html[data-custom-cursor="off"] .chat-friends-main,
+html[data-custom-cursor="off"] .chat-friends-x,
+html[data-custom-cursor="off"] .chat-friends-add,
+html[data-custom-cursor="off"] .chat-ac-add,
+html[data-custom-cursor="off"] .party-mini-chip,
+html[data-custom-cursor="off"] .party-timer-chip,
+html[data-custom-cursor="off"] .party-sync-timers-btn,
+html[data-custom-cursor="off"] .lobby-panel,
+html[data-custom-cursor="off"] .lobby-row,
+html[data-custom-cursor="off"] .lobby-seat-occ,
+html[data-custom-cursor="off"] .lobby-bench-chip,
+html[data-custom-cursor="off"] .kb-mode-btn,
+html[data-custom-cursor="off"] .pane-opt-btn,
+html[data-custom-cursor="off"] .mastery-dnsa-btn,
+html[data-custom-cursor="off"] .portal-card,
+html[data-custom-cursor="off"] .online-tile.open,
+html[data-custom-cursor="off"] .profile-switch{
+  cursor:auto!important;
+}
+html[data-custom-cursor="off"] #cursor,
+html[data-custom-cursor="off"] #cursor.core{display:none!important}
+html[data-custom-cursor="off"] #cursorRandomBtn,
+html[data-custom-cursor="off"] .mood-cursor-hint{display:none!important}
 body{
   background:
     radial-gradient(ellipse var(--skin-glow-a, 90% 60%) at var(--skin-pos-a, 50% -20%), var(--bg-glow), transparent 60%),
@@ -1327,7 +1422,8 @@ body.split-quiz-active #chatDock{z-index:60}
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script src="js/firebase-config.js?v=4"></script>
 <script src="js/progress-sync.js?v=2"></script>
-<script src="js/profiles.js?v=5"></script>
+<script src="js/prefs.js?v=1"></script>
+<script src="js/profiles.js?v=6"></script>
 <script src="js/achievements.js?v=2"></script>
 <script src="js/mastery.js?v=2"></script>
 <script src="js/party.js?v=3"></script>
@@ -1403,8 +1499,15 @@ function spawnFireworkBurst(cx,cy,count=28){
   for(let i=0;i<count;i++){const angle=(Math.PI*2*i)/count+Math.random()*.3,speed=2.2+Math.random()*4.5;
     sparks.push({x:cx,y:cy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,life:1,decay:.012+Math.random()*.018,color:FX_COLS[i%FX_COLS.length],r:1.5+Math.random()*2.5});}
 }
-setInterval(()=>{if(Math.random()>.55)spawnFireworkBurst(Math.random()*W,Math.random()*H*.7,14);},2800);
-(function draw(){
+setInterval(()=>{var basic=document.documentElement.getAttribute('data-quality')==='basic'; if(basic)return; if(Math.random()>.55)spawnFireworkBurst(Math.random()*W,Math.random()*H*.7,14);},2800);
+var __fxRunning=false;
+function fxAllowed(){
+  if(window.StudyPrefs&&typeof StudyPrefs.isBasic==='function') return !StudyPrefs.isBasic();
+  return document.documentElement.getAttribute('data-quality')!=='basic';
+}
+function draw(){
+  if(!fxAllowed()){ __fxRunning=false; ctx.clearRect(0,0,W,H); return; }
+  __fxRunning=true;
   const spd = cssNum('--particle-speed', 1);
   FX_COLS = moodFxColors();
   ctx.clearRect(0,0,W,H);
@@ -1415,14 +1518,28 @@ setInterval(()=>{if(Math.random()>.55)spawnFireworkBurst(Math.random()*W,Math.ra
   streams.forEach(s=>{s.y+=s.speed*spd;if(s.y>H+s.len){s.y=-s.len;s.x=Math.random()*W;}ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x,s.y-s.len);ctx.strokeStyle=s.color;ctx.globalAlpha=s.a;ctx.lineWidth=1.5;ctx.stroke();});
   orbs.forEach((o,i)=>{o.x+=o.vx*spd;o.y+=o.vy*spd;o.pulse+=.024*spd;o.color=FX_COLS[i%FX_COLS.length];if(o.x<-20)o.x=W+20;if(o.x>W+20)o.x=-20;if(o.y<-20)o.y=H+20;if(o.y>H+20)o.y=-20;ctx.beginPath();ctx.arc(o.x,o.y,o.r*(.7+.35*Math.sin(o.pulse)),0,Math.PI*2);ctx.fillStyle=o.color;ctx.globalAlpha=o.a*(.5+.5*Math.sin(o.pulse));ctx.fill();});
   for(let i=sparks.length-1;i>=0;i--){const s=sparks[i];s.x+=s.vx*spd;s.y+=s.vy*spd;s.vy+=.06*spd;s.life-=s.decay*Math.max(.5,spd);if(s.life<=0){sparks.splice(i,1);continue;}ctx.beginPath();ctx.arc(s.x,s.y,s.r*s.life,0,Math.PI*2);ctx.fillStyle=s.color;ctx.globalAlpha=s.life*.9;ctx.fill();}
-  ctx.globalAlpha=1;requestAnimationFrame(draw);
-})();
+  ctx.globalAlpha=1;
+  requestAnimationFrame(draw);
+}
+draw();
+window.addEventListener('study-prefs-changed',function(){
+  var basic=!fxAllowed();
+  if(canvas) canvas.style.display=basic?'none':'';
+  if(!basic && !__fxRunning) requestAnimationFrame(draw);
+});
 
 /* —— Custom cursor —— */
 const cursor=document.getElementById('cursor'), core=document.querySelector('#cursor.core');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';core.style.left=e.clientX+'px';core.style.top=e.clientY+'px';});
-document.addEventListener('mousedown',()=>cursor.classList.add('active'));
-document.addEventListener('mouseup',()=>cursor.classList.remove('active'));
+function customCursorOn(){
+  if(window.StudyPrefs && typeof StudyPrefs.isCustomCursorEnabled==='function') return StudyPrefs.isCustomCursorEnabled();
+  return document.documentElement.getAttribute('data-custom-cursor')!=='off';
+}
+document.addEventListener('mousemove',e=>{
+  if(!customCursorOn()||!cursor||!core) return;
+  cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';core.style.left=e.clientX+'px';core.style.top=e.clientY+'px';
+});
+document.addEventListener('mousedown',()=>{ if(customCursorOn()&&cursor) cursor.classList.add('active'); });
+document.addEventListener('mouseup',()=>{ if(cursor) cursor.classList.remove('active'); });
 
 /* —— Live mood tray (not click-to-cycle) —— */
 const MOODS = [

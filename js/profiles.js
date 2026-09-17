@@ -456,6 +456,26 @@
       '<span class="profile-switch-slider" aria-hidden="true"></span>' +
       '</label>' +
       '</div>' +
+      '<div class="profile-pomo-row" id="profileQualityRow">' +
+      '<div class="profile-pomo-text">' +
+      '<span class="profile-pomo-title">Basic quality</span>' +
+      '<span class="profile-pomo-sub">Flat colors, no animations</span>' +
+      '</div>' +
+      '<label class="profile-switch" title="Use basic colors and disable animations">' +
+      '<input type="checkbox" id="profileQualityToggle" />' +
+      '<span class="profile-switch-slider" aria-hidden="true"></span>' +
+      '</label>' +
+      '</div>' +
+      '<div class="profile-pomo-row" id="profileCursorRow">' +
+      '<div class="profile-pomo-text">' +
+      '<span class="profile-pomo-title">Custom cursor</span>' +
+      '<span class="profile-pomo-sub">Fancy mouse pointer skins</span>' +
+      '</div>' +
+      '<label class="profile-switch" title="Toggle custom cursor">' +
+      '<input type="checkbox" id="profileCursorToggle" checked />' +
+      '<span class="profile-switch-slider" aria-hidden="true"></span>' +
+      '</label>' +
+      '</div>' +
       '</div>'
     );
   }
@@ -549,6 +569,38 @@
           } catch (e) {}
         }
         toast(on ? 'Pomodoro timer on' : 'Pomodoro timer off');
+      });
+    }
+    const qualityToggle = overlay.querySelector('#profileQualityToggle');
+    if (qualityToggle && !qualityToggle._wired) {
+      qualityToggle._wired = true;
+      qualityToggle.addEventListener('change', function () {
+        const basic = !!qualityToggle.checked;
+        if (global.StudyPrefs && typeof StudyPrefs.setQuality === 'function') {
+          StudyPrefs.setQuality(basic ? 'basic' : 'full');
+        } else {
+          try {
+            localStorage.setItem('pt1_quality_mode', basic ? 'basic' : 'full');
+            document.documentElement.setAttribute('data-quality', basic ? 'basic' : 'full');
+          } catch (e) {}
+        }
+        toast(basic ? 'Basic quality on' : 'Full visual quality on');
+      });
+    }
+    const cursorToggle = overlay.querySelector('#profileCursorToggle');
+    if (cursorToggle && !cursorToggle._wired) {
+      cursorToggle._wired = true;
+      cursorToggle.addEventListener('change', function () {
+        const on = !!cursorToggle.checked;
+        if (global.StudyPrefs && typeof StudyPrefs.setCustomCursor === 'function') {
+          StudyPrefs.setCustomCursor(on);
+        } else {
+          try {
+            localStorage.setItem('pt1_custom_cursor', on ? '1' : '0');
+            document.documentElement.setAttribute('data-custom-cursor', on ? 'on' : 'off');
+          } catch (e) {}
+        }
+        toast(on ? 'Custom cursor on' : 'System cursor on');
       });
     }
     setTab(state.authTab || 'register');
@@ -687,6 +739,32 @@
         } catch (e) {}
       }
       pomoToggle.checked = !!enabled;
+    }
+    const qualityToggle = document.getElementById('profileQualityToggle');
+    if (qualityToggle) {
+      var basic = false;
+      if (global.StudyPrefs && typeof StudyPrefs.isBasic === 'function') {
+        basic = StudyPrefs.isBasic();
+      } else {
+        try {
+          var q = localStorage.getItem('pt1_quality_mode');
+          basic = q === 'basic' || q === '1' || q === 'true';
+        } catch (e) {}
+      }
+      qualityToggle.checked = !!basic;
+    }
+    const cursorToggle = document.getElementById('profileCursorToggle');
+    if (cursorToggle) {
+      var curOn = true;
+      if (global.StudyPrefs && typeof StudyPrefs.isCustomCursorEnabled === 'function') {
+        curOn = StudyPrefs.isCustomCursorEnabled();
+      } else {
+        try {
+          var c = localStorage.getItem('pt1_custom_cursor');
+          if (c === '0' || c === 'false' || c === 'off') curOn = false;
+        } catch (e) {}
+      }
+      cursorToggle.checked = !!curOn;
     }
   }
 
