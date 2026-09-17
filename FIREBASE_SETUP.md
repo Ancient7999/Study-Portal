@@ -109,3 +109,9 @@ firebase deploy --only database
 ```
 
 Or paste `firebase/database.rules.json` into Firebase Console → Realtime Database → Rules.
+
+## Publish RTDB rules (required after lobby/chat overhaul)
+
+Rules live in `firebase/database.rules.json`. For project **study-portal-7b492**, open Firebase Console → Realtime Database → Rules → paste/publish the file contents.
+
+Lobby chat is session-scoped under `chat/lobby/$lobbyId/session/$sessionId` and reads require `startAt >= members/$uid/joinedAt`, so late joiners cannot dump prior lobby/quiz messages. World/Trade keep the 24h query lock.

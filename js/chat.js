@@ -17,7 +17,7 @@
   const FRIENDS_MAX = 40;
 
   const CHANNELS = [
-    { id: 'local', label: 'Local', enc: false },
+    { id: 'lobby', label: 'Lobby', enc: false },
     { id: 'world', label: 'World', enc: false },
     { id: 'trade', label: 'Trade', enc: false, accent: 'trade' },
     { id: 'guild', label: 'Guild', enc: true },
@@ -67,7 +67,8 @@
   const state = {
     ready: false,
     channel: 'world',
-    localRoom: 'lobby',
+    localRoom: 'hub', // legacy activity hint only (Local channel removed)
+    lobbyCtx: null, // { lobbyId, chatSessionId, joinedAt }
     guild: null, // { id, name, secret }
     whisperTarget: null, // { uid, displayName }
     online: {}, // uid -> presence
@@ -180,7 +181,10 @@ function whisperPair(a, b) {
       if (!raw) return new Set(ALL_CHANNEL_IDS);
       const arr = JSON.parse(raw);
       if (!Array.isArray(arr) || !arr.length) return new Set(ALL_CHANNEL_IDS);
-      const filtered = arr.filter((id) => ALL_CHANNEL_IDS.indexOf(id) !== -1);
+      const filtered = arr
+        .filter((id) => id !== 'local' && ALL_CHANNEL_IDS.indexOf(id) !== -1);
+      // Migrate: if user had Local visible, keep Lobby visible instead
+      if (arr.indexOf('local') !== -1 && filtered.indexOf('lobby') === -1) filtered.push('lobby');
       return filtered.length ? new Set(filtered) : new Set(ALL_CHANNEL_IDS);
     } catch (e) {
       return new Set(ALL_CHANNEL_IDS);
@@ -201,7 +205,10 @@ function whisperPair(a, b) {
   function channelPathFor(ch) {
     if (ch === 'world') return 'chat/world';
     if (ch === 'trade') return 'chat/trade';
-    if (ch === 'local') return 'chat/local/' + (state.localRoom || 'lobby');
+    if (ch === 'lobby') {
+      if (!state.lobbyCtx || !state.lobbyCtx.lobbyId || !state.lobbyCtx.chatSessionId) return null;
+      return 'chat/lobby/' + state.lobbyCtx.lobbyId + '/session/' + state.lobbyCtx.chatSessionId;
+    }
     if (ch === 'guild') {
       if (!state.guild || !state.guild.id) return null;
       return 'chat/guild/' + state.guild.id;
@@ -550,6 +557,8 @@ function whisperPair(a, b) {
         if (state.visible.has('guild') && !state.guild) hint = 'Create or join a guild, or hide Guild in the filter.';
         else if (state.visible.has('party') && !(StudyParty && StudyParty.getPartyId && StudyParty.getPartyId()))
           hint = 'Create or join a party, or hide Party in the filter.';
+        else if (state.visible.has('lobby') && !(state.lobbyCtx && state.lobbyCtx.lobbyId))
+          hint = 'Join a lobby to use Lobby chat, or hide Lobby in the filter.';
         else if (state.visible.has('whisper') && !state.whisperTarget) hint = 'Type @name to whisper, or hide Whisper in the filter.';
         log.innerHTML = '<div class="chat-empty">' + esc(hint) + '</div>';
       }
@@ -577,12 +586,13 @@ function whisperPair(a, b) {
 
     listening.forEach((c) => {
       buckets[c.id] = [];
-      
-      // Calculate the 24-hour cutoff once when the listener starts
-      const cutoff = Date.now() - (24 * 60 * 60 * 1000);
-      
-      // Fetch the latest MSG_CAP messages from the last 24 hours
-      // This satisfies the Firebase security rule requiring startAt()
+
+      // World/Trade/etc: 24h lock. Lobby/quiz: member joinedAt (session isolation).
+      let cutoff = Date.now() - (24 * 60 * 60 * 1000);
+      if (c.id === 'lobby' && state.lobbyCtx && state.lobbyCtx.joinedAt) {
+        cutoff = Math.max(cutoff, Number(state.lobbyCtx.joinedAt) || cutoff);
+      }
+
       const q = db.ref(channelPathFor(c.id))
         .orderByChild('ts')
         .startAt(cutoff)
@@ -733,6 +743,7 @@ function whisperPair(a, b) {
     if (!path) {
       if (state.channel === 'guild') toast('Join a guild first');
       else if (state.channel === 'party') toast('Join a party first');
+      else if (state.channel === 'lobby') toast('Join a lobby first');
       else if (state.channel === 'whisper') toast('Pick someone with @name');
       else toast('No channel path');
       return;
@@ -1294,7 +1305,8 @@ try {
     // Keep the chat meta simple (Channel Name + Context)
     let meta = ch.label;
     
-    if (state.channel === 'local') meta += ' · #' + (state.localRoom || 'lobby');
+    if (state.channel === 'lobby' && state.lobbyCtx && state.lobbyCtx.lobbyId)
+      meta += ' · lobby ' + String(state.lobbyCtx.lobbyId).slice(0, 6);
     else if (state.channel === 'whisper' && state.whisperTarget) meta += ' · @' + state.whisperTarget.displayName;
     else if (state.channel === 'guild' && state.guild) meta += ' · ' + state.guild.name;
     else if (state.channel === 'party') {
@@ -1657,7 +1669,8 @@ guildEl.querySelector('#guildLeaveBtn').onclick = async () => {
   }
 
   function setLocalRoom(roomId) {
-    state.localRoom = String(roomId || 'lobby').slice(0, 64) || 'lobby';
+    // Legacy no-op for Local channel (removed). Still updates activity hints for presence.
+    state.localRoom = String(roomId || 'hub').slice(0, 64) || 'hub';
     if (/^form_/i.test(state.localRoom)) {
       const letter = state.localRoom.replace(/^form_/i, '').slice(0, 8);
       state.activity = 'quiz';
@@ -1668,11 +1681,46 @@ guildEl.querySelector('#guildLeaveBtn').onclick = async () => {
       if (state.activity !== 'lobby' && state.activity !== 'party') state.activity = 'hub';
     }
     updateChannelMeta();
-    ensureVisible();
-    if (state.visible.has('local') || state.channel === 'local') {
-      listenMessages();
-    }
     publishPresence();
+  }
+
+  function setLobbyContext(ctx) {
+    if (!ctx || !ctx.lobbyId || !ctx.chatSessionId) {
+      const had = !!state.lobbyCtx;
+      state.lobbyCtx = null;
+      if (state.channel === 'lobby') state.channel = 'world';
+      ensureVisible();
+      if (had) {
+        syncChannelUI();
+        listenMessages();
+      }
+      publishPresence();
+      return;
+    }
+    const next = {
+      lobbyId: String(ctx.lobbyId).slice(0, 64),
+      chatSessionId: String(ctx.chatSessionId).slice(0, 64),
+      joinedAt: Number(ctx.joinedAt) || Date.now()
+    };
+    const same =
+      state.lobbyCtx &&
+      state.lobbyCtx.lobbyId === next.lobbyId &&
+      state.lobbyCtx.chatSessionId === next.chatSessionId &&
+      state.lobbyCtx.joinedAt === next.joinedAt;
+    state.lobbyCtx = next;
+    state.activity = 'lobby';
+    ensureVisible();
+    if (!state.visible.has('lobby')) {
+      state.visible.add('lobby');
+      saveVisible();
+    }
+    // Auto-focus lobby chat when entering a lobby
+    if (state.channel === 'world' || state.channel === 'lobby' || !channelPathFor(state.channel)) {
+      state.channel = 'lobby';
+    }
+    syncChannelUI();
+    if (!same) listenMessages();
+    publishPresence(true);
   }
 
   function setActivity(info) {
@@ -1691,6 +1739,10 @@ guildEl.querySelector('#guildLeaveBtn').onclick = async () => {
     }
     if (info.localRoom) {
       state.localRoom = String(info.localRoom).slice(0, 64);
+    }
+    if (Object.prototype.hasOwnProperty.call(info, 'lobbyCtx')) {
+      setLobbyContext(info.lobbyCtx);
+      return;
     }
     publishPresence(!!info.force);
   }
@@ -1719,6 +1771,7 @@ guildEl.querySelector('#guildLeaveBtn').onclick = async () => {
     start,
     open,
     setLocalRoom,
+    setLobbyContext,
     setActivity,
     getOnlineList,
     onPartyChanged,

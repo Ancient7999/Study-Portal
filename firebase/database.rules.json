@@ -45,15 +45,19 @@
           ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
         }
       },
-      "local": {
-        "$roomId": {
-          ".read": "auth != null && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= now - 86400000 - 60000",
-          ".indexOn": [
-            "ts"
-          ],
-          "$msgId": {
-            ".write": "auth != null && !data.exists() && newData.child('uid').val() == auth.uid",
-            ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
+      "lobby": {
+        "$lobbyId": {
+          "session": {
+            "$sessionId": {
+              ".read": "auth != null && root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists() && root.child('lobbies').child($lobbyId).child('chatSessionId').val() == $sessionId && query.orderByChild == 'ts' && query.startAt != null && query.startAt >= root.child('lobbies').child($lobbyId).child('members').child(auth.uid).child('joinedAt').val()",
+              ".indexOn": [
+                "ts"
+              ],
+              "$msgId": {
+                ".write": "auth != null && root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists() && root.child('lobbies').child($lobbyId).child('chatSessionId').val() == $sessionId && !data.exists() && newData.child('uid').val() == auth.uid",
+                ".validate": "newData.hasChildren(['uid', 'displayName', 'ts']) && newData.child('uid').isString() && newData.child('displayName').isString() && newData.child('ts').isNumber() && newData.child('ts').val() >= root.child('lobbies').child($lobbyId).child('members').child(auth.uid).child('joinedAt').val() && ((!newData.hasChild('text') && newData.hasChild('ct') && newData.hasChild('iv')) || (newData.hasChild('text') && newData.child('text').isString() && newData.child('text').val().length <= 500))"
+              }
+            }
           }
         }
       },
@@ -171,19 +175,26 @@
         "createdAt"
       ],
       "$lobbyId": {
-        ".write": "auth != null",
-        ".validate": "newData.hasChildren(['leader','status','createdAt']) && newData.child('leader').isString() && newData.child('status').isString() && newData.child('createdAt').isNumber()",
+        ".write": "auth != null && ((!data.exists() && newData.child('leader').val() == auth.uid) || (data.exists() && (data.child('leader').val() == auth.uid || data.child('members').child(auth.uid).exists() || newData.child('members').child(auth.uid).exists() || (!newData.exists() && (!data.hasChild('members') || data.child('members').val() == null)))))",
+        ".validate": "!newData.exists() || (newData.hasChildren(['leader','status','createdAt','chatSessionId']) && newData.child('leader').isString() && newData.child('status').isString() && newData.child('createdAt').isNumber() && newData.child('chatSessionId').isString())",
+        "members": {
+          "$uid": {
+            ".write": "auth != null && (auth.uid == $uid || root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid || (data.exists() && root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists()))",
+            ".validate": "!newData.exists() || (newData.hasChildren(['displayName','joinedAt','lastSeen']) && newData.child('displayName').isString() && newData.child('joinedAt').isNumber() && newData.child('lastSeen').isNumber() && (!newData.hasChild('role') || newData.child('role').val().matches(/^(play|spectate)$/)))"
+          }
+        },
         "seats": {
           "$seat": {
-            ".validate": "$seat.matches(/^[0-3]$/) && (!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString()))"
+            ".write": "auth != null",
+            ".validate": "$seat.matches(/^[0-3]$/) && (!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString() && (!newData.hasChild('role') || newData.child('role').val().matches(/^(play|spectate)$/)) && (!newData.hasChild('bank') || newData.child('bank').isString()) && (!newData.hasChild('form') || newData.child('form').isString())))"
           }
         },
         "session": {
           ".write": "auth != null",
           "panes": {
             "$uid": {
-              ".write": "auth != null && auth.uid == $uid",
-              ".validate": "newData.hasChildren(['qIndex','updatedAt']) && newData.child('qIndex').isNumber() && newData.child('updatedAt').isNumber()"
+              ".write": "auth != null && (auth.uid == $uid || root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid)",
+              ".validate": "!newData.exists() || (newData.hasChildren(['qIndex','updatedAt']) && newData.child('qIndex').isNumber() && newData.child('updatedAt').isNumber())"
             }
           }
         }
