@@ -741,7 +741,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px var(--mood-glow);
   overflow:visible;pointer-events:auto;
 }
-.chat-dock.accent-trade{border-color:rgba(59,130,246,.55);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px rgba(37,99,235,.28)}
 .chat-dock-bar{
   display:flex;align-items:center;gap:8px;padding:8px 10px;
   border-bottom:1px solid transparent;
@@ -817,11 +816,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   color:var(--text-dim);background:rgba(255,255,255,.05);
 }
 .chat-msg-tag.tag-local{color:#86efac;border-color:rgba(134,239,172,.35);background:rgba(34,197,94,.12)}
-.chat-msg-tag.tag-world{color:var(--cyan-bright);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.12)}
-.chat-msg-tag.tag-trade{color:#93c5fd;border-color:rgba(59,130,246,.45);background:rgba(37,99,235,.15)}
-.chat-msg-tag.tag-guild{color:#d8b4fe;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.12)}
-.chat-msg-tag.tag-whisper{color:#fda4af;border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.12)}
-.chat-msg-tag.tag-party{color:#fcd34d;border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.12)}
 .chat-msg-name{font-family:var(--mono);font-size:.68rem;color:var(--cyan-bright);font-weight:700;flex:1;min-width:0}
 .chat-msg-time{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);margin-left:auto}
 .chat-msg-body{display:block;line-height:1.35;word-break:break-word;color:var(--text)}
@@ -831,8 +825,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   font-family:var(--mono);font-size:.68rem;font-weight:700;padding:8px 10px;min-width:72px;
   background:rgba(8,12,20,.85);
 }
-.chat-channel-btn.trade,.chat-channel-opt.trade .chat-channel-label{color:#93c5fd}
-.chat-channel-btn.trade{border-color:rgba(59,130,246,.5)}
 .chat-channel-menu{
   position:absolute;left:0;bottom:calc(100% + 6px);z-index:5;
   min-width:148px;padding:6px;border-radius:12px;
@@ -875,22 +867,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   border-color:rgba(34,211,238,.45);color:var(--cyan-bright);font-size:1rem;
 }
 .chat-send:hover{box-shadow:0 0 14px var(--mood-glow)}
-.chat-ac{
-  position:absolute;left:0;right:0;bottom:calc(100% + 4px);z-index:6;
-  background:rgba(8,12,20,.96);border:1px solid var(--border);border-radius:10px;
-  max-height:160px;overflow:auto;box-shadow:0 10px 24px rgba(0,0,0,.45);
-}
-.chat-ac[hidden]{display:none!important}
-.chat-ac-item{
-  display:flex;justify-content:space-between;width:100%;padding:8px 10px;border:0;border-radius:0;
-  background:transparent;text-align:left;font-size:.8rem;
-}
-.chat-ac-item:hover{background:rgba(34,211,238,.1)}
-.chat-ac-item em{font-style:normal;font-family:var(--mono);font-size:.65rem;color:var(--text-dim)}
-.chat-ac-empty{padding:10px;font-family:var(--mono);font-size:.7rem;color:var(--text-dim);text-align:center}
-.chat-party-tools,.chat-guild-tools{
-  display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 10px 0;
-}
 .chat-tool-btn{font-family:var(--mono);font-size:.65rem;padding:5px 9px}
 .chat-tool-btn.danger{color:#fda4af;border-color:rgba(251,113,133,.4)}
 .chat-tool-input{
