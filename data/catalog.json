@@ -30,14 +30,14 @@
       "materials": [
         {
           "id": "ss1",
-          "title": "Lecture 4 practice",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true
+          "title": "Periodic Test 1",
+          "subtitle": "Forms A–H · 21 MCQs each",
+          "bank": "banks/studyskills/ss1.json",
+          "locked": false
         },
         {
           "id": "ss2",
-          "title": "Study habits quiz",
+          "title": "Periodic Test 2",
           "subtitle": "Coming soon",
           "bank": null,
           "locked": true
