@@ -1,0 +1,2206 @@
+{
+  "id": "ss_pt1",
+  "subject": "Study Skills",
+  "subjectId": "studyskills",
+  "title": "Periodic Test 1",
+  "formSize": 21,
+  "forms": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "A04",
+        "cat": "learning_styles",
+        "q": "People with which of the following learning styles learn better when information is presented in a picture format?",
+        "options": [
+          "Auditory",
+          "Kinesthetic",
+          "Non-Verbal – Visual",
+          "Verbal – Visual"
+        ],
+        "correct": 2,
+        "explain": "Non-verbal visual learners learn from picture format — videos, maps, charts, diagrams. Verbal-visual learners prefer written words."
+      },
+      {
+        "id": "A12",
+        "cat": "learning_styles",
+        "q": "Which learning style generally prefers pictures, diagrams, maps, and demonstrations?",
+        "options": [
+          "Kinesthetic",
+          "Auditory",
+          "Olfactory",
+          "Visual"
+        ],
+        "correct": 3,
+        "explain": "Visual learners prefer to see information: pictures, diagrams, cartoons, maps, and demonstrations."
+      },
+      {
+        "id": "A20",
+        "cat": "learning_styles",
+        "q": "Which activity best supports a kinesthetic learner?",
+        "options": [
+          "Memorizing diagrams without interaction",
+          "Avoiding movement while studying",
+          "Completing hands-on activities",
+          "Listening to a lecture without taking action"
+        ],
+        "correct": 2,
+        "explain": "Hands-on work — touching, building, moving, acting out — supports kinesthetic learning."
+      },
+      {
+        "id": "A28",
+        "cat": "learning_styles",
+        "q": "According to the lecture, which group includes most people?",
+        "options": [
+          "Most people are auditory learners",
+          "Most people are visual learners",
+          "Most people are purely kinesthetic learners",
+          "Most people have no identifiable style"
+        ],
+        "correct": 1,
+        "explain": "The lecture states most people are visual learners."
+      },
+      {
+        "id": "A36",
+        "cat": "learning_styles",
+        "q": "Is chewing gum or rocking in a chair treated as acceptable for a kinesthetic learner?",
+        "options": [
+          "No — both are forbidden because they look informal",
+          "Yes — the lecture says it is acceptable while reading or studying",
+          "Only chewing is allowed; rocking is not",
+          "Only if the instructor has left the room"
+        ],
+        "correct": 1,
+        "explain": "Chewing gum, walking around, or rocking in a chair is acceptable while reading or studying."
+      },
+      {
+        "id": "B05",
+        "cat": "goals",
+        "q": "What does the 'M' in SMART goals stand for?",
+        "options": [
+          "Motivational",
+          "Measurable",
+          "Mandatory",
+          "Mysterious"
+        ],
+        "correct": 1,
+        "explain": "M = Measurable — you can count whether it happened."
+      },
+      {
+        "id": "B13",
+        "cat": "goals",
+        "q": "The lecture compares a person without goals to which image?",
+        "options": [
+          "A clock that never stops",
+          "A sheep in the pasture living from day to day",
+          "A mountain that cannot be climbed",
+          "A library with no books"
+        ],
+        "correct": 1,
+        "explain": "'A person without goals is like a sheep out in the pasture just living from day to day.'"
+      },
+      {
+        "id": "B21",
+        "cat": "goals",
+        "q": "Short-term goals in this lecture are mainly:",
+        "options": [
+          "Five-year career titles",
+          "Daily and weekly habits and assignments",
+          "Retirement plans",
+          "Other people's expectations"
+        ],
+        "correct": 1,
+        "explain": "Short-term goals are daily and weekly habits and assignments — the pyramid's foundation."
+      },
+      {
+        "id": "B29",
+        "cat": "goals",
+        "q": "The opening quotation by J.C. Penney contrasts a stock clerk who has a goal with:",
+        "options": [
+          "A stock clerk who has no goal",
+          "A professor who has no students",
+          "A student who has no textbooks",
+          "A clock with no hands"
+        ],
+        "correct": 0,
+        "explain": "'Give me a stock clerk with a goal and I'll give you a man who will make history. Give me a man with no goals and I'll give you a stock clerk.'"
+      },
+      {
+        "id": "B37",
+        "cat": "goals",
+        "q": "For a goal to be realized, the lecture says you must develop:",
+        "options": [
+          "Only a motivational quotation",
+          "An action plan and implementation intentions",
+          "A new personality",
+          "A promise with no calendar"
+        ],
+        "correct": 1,
+        "explain": "A goal needs an action plan and implementation intentions."
+      },
+      {
+        "id": "C02",
+        "cat": "time_management",
+        "q": "What does 'urgent' mean?",
+        "options": [
+          "Tasks you can do anytime",
+          "Tasks for long-term goals",
+          "Tasks that require attention NOW"
+        ],
+        "correct": 2,
+        "explain": "Urgent means it requires attention NOW."
+      },
+      {
+        "id": "C10",
+        "cat": "time_management",
+        "q": "What is likely to happen when a person consistently neglects Quadrant II activities?",
+        "options": [
+          "All tasks will become less important.",
+          "The person will eliminate interruptions permanently.",
+          "The person will have no need to prioritize tasks.",
+          "Important activities may become urgent crises in Quadrant I."
+        ],
+        "correct": 3,
+        "explain": "Neglected QII items get promoted into Quadrant I as urgent crises."
+      },
+      {
+        "id": "C18",
+        "cat": "time_management",
+        "q": "Which outcome is a direct benefit of effective time management?",
+        "options": [
+          "A guarantee that no urgent tasks will ever occur",
+          "Reduced anxiety through better preparation and prioritization",
+          "The ability to complete all tasks simultaneously",
+          "Elimination of every responsibility"
+        ],
+        "correct": 1,
+        "explain": "Better preparation and prioritization reduce anxiety."
+      },
+      {
+        "id": "C26",
+        "cat": "time_management",
+        "q": "Which items belong to Quadrant I (Urgent & Important)?",
+        "options": [
+          "Trivia and busy work",
+          "Crisis, pressing problems, and deadline-driven projects critical to your strategic priorities",
+          "Some calls, some mails, and some meetings",
+          "Chatting and games"
+        ],
+        "correct": 1,
+        "explain": "QI: crisis, pressing problems, deadline-driven projects critical to strategic priorities."
+      },
+      {
+        "id": "C34",
+        "cat": "time_management",
+        "q": "Good time management helps you assign time to tasks:",
+        "options": [
+          "Equally, regardless of the task",
+          "In the order the tasks arrive",
+          "In proportion to their importance — prioritizing",
+          "According to how enjoyable they are"
+        ],
+        "correct": 2,
+        "explain": "Assign time in proportion to importance — prioritizing."
+      },
+      {
+        "id": "C42",
+        "cat": "time_management",
+        "q": "A call interrupts your study session. It demands attention now, but it contributes nothing to your mission or values. Which quadrant does it belong to?",
+        "options": [
+          "Quadrant I",
+          "Quadrant II",
+          "Quadrant III",
+          "Quadrant IV"
+        ],
+        "correct": 2,
+        "explain": "Some calls and interruptions = urgent but not important = QIII."
+      },
+      {
+        "id": "C50",
+        "cat": "time_management",
+        "q": "Successful time management requires:",
+        "options": [
+          "Expensive software and a private office",
+          "Permission from the dean",
+          "Self-evaluation and the desire to improve",
+          "A lighter course load"
+        ],
+        "correct": 2,
+        "explain": "Self-evaluation and the desire to improve."
+      },
+      {
+        "id": "D02",
+        "cat": "writing_presentation",
+        "q": "Which of the following combinations is considered most readable for text?",
+        "options": [
+          "Light font on a light background (e.g., yellow on white)",
+          "Dark font on a light background (e.g., blue on white)",
+          "Dark font on a dark background (e.g., black on navy)"
+        ],
+        "correct": 1,
+        "explain": "Dark font on light background gives the strongest, most readable contrast."
+      },
+      {
+        "id": "D10",
+        "cat": "writing_presentation",
+        "q": "Which set of actions belongs to the PLAN stage?",
+        "options": [
+          "Choosing fonts, checking spelling, thanking the audience",
+          "Setting your goal, collecting ideas and information, locating suitable resources, and knowing your audience beforehand",
+          "Scanning the audience's eyes and diversifying your voice",
+          "Handling nasty questions with humor"
+        ],
+        "correct": 1,
+        "explain": "Plan = goal + ideas + resources + knowing your audience beforehand."
+      },
+      {
+        "id": "D18",
+        "cat": "writing_presentation",
+        "q": "Which rule matches the lecture's advice on animation?",
+        "options": [
+          "Use a different noisy animation on every slide",
+          "The more animation, the better the talk",
+          "Do not use distracting animation, avoid noisy effects, do not go overboard — be consistent",
+          "Animation must never be used at all"
+        ],
+        "correct": 2,
+        "explain": "No distracting/noisy animation, don't overdo it, be consistent."
+      },
+      {
+        "id": "D26",
+        "cat": "writing_presentation",
+        "q": "Why does the lecture recommend graphs rather than just tables and words?",
+        "options": [
+          "Graphs take less time to draw",
+          "Data in graphs is easier to comprehend and retain, and trends are easier to visualize",
+          "Graphs do not need titles",
+          "Tables are forbidden in scientific talks"
+        ],
+        "correct": 1,
+        "explain": "Data in graphs is easier to comprehend and retain; trends are easier to visualize. Title every graph."
+      }
+    ],
+    "B": [
+      {
+        "id": "A05",
+        "cat": "learning_styles",
+        "q": "Which learning style primarily uses finger spelling?",
+        "options": [
+          "Auditory",
+          "Kinesthetic",
+          "Non-Verbal – Visual",
+          "Verbal – Visual"
+        ],
+        "correct": 1,
+        "explain": "Finger spelling (tracing words with your finger to learn spelling) is listed among the KINESTHETIC study tools in the lecture. NOTE: corrected from the earlier quiz — verify against your official key."
+      },
+      {
+        "id": "A13",
+        "cat": "learning_styles",
+        "q": "Which behavior is characteristic of a visual learner?",
+        "options": [
+          "Avoiding all diagrams and charts",
+          "Absorbing spoken lectures without effort",
+          "Preferring to learn only through physical movement",
+          "Being distracted during lectures without visual aids"
+        ],
+        "correct": 3,
+        "explain": "Visual learners are easily distracted in lectures with no visual aids; absorbing spoken lectures effortlessly is auditory; movement-first is kinesthetic."
+      },
+      {
+        "id": "A21",
+        "cat": "learning_styles",
+        "q": "What should a kinesthetic learner do during a traditional lecture?",
+        "options": [
+          "Avoid recording any information",
+          "Write out important facts",
+          "Use only unrelated background music",
+          "Listen without participating in any way"
+        ],
+        "correct": 1,
+        "explain": "During a traditional lecture, the kinesthetic learner should write out important facts."
+      },
+      {
+        "id": "A29",
+        "cat": "learning_styles",
+        "q": "A visual learner who hears a new concept typically does which of the following?",
+        "options": [
+          "Stores the concept only as sound",
+          "Pictures the words and concepts as images",
+          "Must stand up before any encoding occurs",
+          "Ignores the spoken words completely"
+        ],
+        "correct": 1,
+        "explain": "Visual learners picture the words and concepts they hear as images."
+      },
+      {
+        "id": "A37",
+        "cat": "learning_styles",
+        "q": "How should a kinesthetic learner use flashcards, according to the lecture?",
+        "options": [
+          "Avoid flashcards entirely",
+          "Read each card once and throw it away",
+          "Use flashcards and arrange them in groups to show relationships between ideas",
+          "Look at flashcards only from across the room"
+        ],
+        "correct": 2,
+        "explain": "Arrange flashcards in groups to show relationships between ideas — motion plus spatial structure."
+      },
+      {
+        "id": "B06",
+        "cat": "goals",
+        "q": "What does the 'A' in SMART goals stand for?",
+        "options": [
+          "Abstract",
+          "Ambitious",
+          "Action-Oriented (Attainable)",
+          "Automatic"
+        ],
+        "correct": 2,
+        "explain": "A = Action-Oriented (Attainable) — requires doing and can be reached."
+      },
+      {
+        "id": "B14",
+        "cat": "goals",
+        "q": "In SMART goals, the letter S stands for:",
+        "options": [
+          "Spontaneous",
+          "Specific",
+          "Seasonal",
+          "Silent"
+        ],
+        "correct": 1,
+        "explain": "S is Specific — 'Complete 33 credits by May', not 'do better'."
+      },
+      {
+        "id": "B22",
+        "cat": "goals",
+        "q": "What happens once short-term goals are met, according to the pyramid slide?",
+        "options": [
+          "Mid-range goals follow more easily",
+          "Long-term goals become unnecessary",
+          "You should stop writing new goals",
+          "Study hours can drop to zero"
+        ],
+        "correct": 0,
+        "explain": "Once short-term goals are met, mid-range goals follow more easily."
+      },
+      {
+        "id": "B30",
+        "cat": "goals",
+        "q": "Which of the following is an example of a short-term academic block on the pyramid slide?",
+        "options": [
+          "Owning a three-bedroom house with a pool",
+          "Create a study schedule and go to every class",
+          "Financial independence in late career",
+          "A dream job at a named salary only"
+        ],
+        "correct": 1,
+        "explain": "The foundation row: study schedule, every class, office hours, weekly reading, tutor, advisor."
+      },
+      {
+        "id": "B38",
+        "cat": "goals",
+        "q": "An action plan should specify which four points?",
+        "options": [
+          "Why other people should work, who to blame, which app to buy, and a motto",
+          "When, where, how, and for how long one is to act",
+          "Only the dream outcome and the feeling after success",
+          "The grade you want and nothing else"
+        ],
+        "correct": 1,
+        "explain": "When, where, how, and for how long — closing the door that time opens for distraction."
+      },
+      {
+        "id": "C03",
+        "cat": "time_management",
+        "q": "Which of the following means making a value judgment on each task you need to complete based on its worth and when it must be completed?",
+        "options": [
+          "Scheduling",
+          "Planning",
+          "Priorities"
+        ],
+        "correct": 2,
+        "explain": "Priorities = a value judgment on each task by its worth and its deadline."
+      },
+      {
+        "id": "C11",
+        "cat": "time_management",
+        "q": "Which is the most appropriate first priority when several tasks compete for attention?",
+        "options": [
+          "The task with the greatest value and the nearest deadline",
+          "The task that was assigned most recently",
+          "The easiest task, regardless of its importance",
+          "The task that is most enjoyable"
+        ],
+        "correct": 0,
+        "explain": "First priority = greatest value + nearest deadline."
+      },
+      {
+        "id": "C19",
+        "cat": "time_management",
+        "q": "A student wants to spend more time on important activities and reduce last-minute crises. Which strategy is best?",
+        "options": [
+          "Focus mainly on interruptions because they are immediate",
+          "Plan important activities early and review them in a weekly schedule",
+          "Wait until tasks become urgent before starting them"
+        ],
+        "correct": 1,
+        "explain": "Plan important activities early and review them weekly — deliberate QII investment."
+      },
+      {
+        "id": "C27",
+        "cat": "time_management",
+        "q": "Which items belong to Quadrant II (Not urgent & Important)?",
+        "options": [
+          "Preventing problems, strategy planning, relationship building, and recognizing new opportunities",
+          "Crisis management and deadline all-nighters",
+          "Interruptions and pressing matters",
+          "Trivia, busy work, and distractions"
+        ],
+        "correct": 0,
+        "explain": "QII: prevention, anticipation, strategy planning, relationship building, new opportunities."
+      },
+      {
+        "id": "C35",
+        "cat": "time_management",
+        "q": "Which of the following is listed as an early warning sign of time management problems?",
+        "options": [
+          "Finishing every task before its deadline",
+          "Keeping a tidy weekly schedule",
+          "Asking teachers for extensions regularly",
+          "Sleeping eight hours a night"
+        ],
+        "correct": 2,
+        "explain": "Asking teachers for extensions regularly is on the warning-sign list."
+      },
+      {
+        "id": "C43",
+        "cat": "time_management",
+        "q": "You spend an afternoon creating next term's study strategy and building a relationship with a study partner. Nothing is due today. Which quadrant are you working in?",
+        "options": [
+          "Quadrant I",
+          "Quadrant II",
+          "Quadrant III",
+          "Quadrant IV"
+        ],
+        "correct": 1,
+        "explain": "Strategy planning + relationship building, no deadline = QII."
+      },
+      {
+        "id": "C51",
+        "cat": "time_management",
+        "q": "The conclusion warns that effective time management will require you to:",
+        "options": [
+          "Do things you don't want to do when you don't want to do them — you have to push yourself",
+          "Wait until motivation arrives on its own",
+          "Study only your favorite subjects",
+          "Avoid every unpleasant task"
+        ],
+        "correct": 0,
+        "explain": "Do things you don't want to do when you don't want to do them — push yourself; the pay-off is always worth the effort."
+      },
+      {
+        "id": "D03",
+        "cat": "writing_presentation",
+        "q": "Which of the following is a recommended way to end a presentation effectively?",
+        "options": [
+          "Stop immediately when you run out of time.",
+          "End with a strong closing that summarizes key take-home messages.",
+          "Repeat the first slide to finish."
+        ],
+        "correct": 1,
+        "explain": "End with a strong closing summarizing the key take-home messages — never end abruptly."
+      },
+      {
+        "id": "D11",
+        "cat": "writing_presentation",
+        "q": "In the three-part organization, 'Tell them what you told them' is which part?",
+        "options": [
+          "The opening",
+          "The message",
+          "The closing",
+          "The cover slide"
+        ],
+        "correct": 2,
+        "explain": "Closing = tell them what you told them."
+      },
+      {
+        "id": "D19",
+        "cat": "writing_presentation",
+        "q": "According to the font guidance (Verdana), content text should be no smaller than:",
+        "options": [
+          "12 point",
+          "24 point",
+          "32 point",
+          "40 point"
+        ],
+        "correct": 1,
+        "explain": "Title ≈ 40 pt, bullets ≈ 32 pt, content no smaller than 24 pt."
+      },
+      {
+        "id": "D27",
+        "cat": "writing_presentation",
+        "q": "In the faulty-graph example, which faults were called out?",
+        "options": [
+          "Minor gridlines are unnecessary, the font is too small, colors are illogical, the title is missing, and shading is distracting",
+          "The graph had too few colors",
+          "Bars were used instead of lines",
+          "The graph was too small to see"
+        ],
+        "correct": 0,
+        "explain": "Unnecessary gridlines, too-small font, illogical colors, missing title, distracting shading."
+      }
+    ],
+    "C": [
+      {
+        "id": "A06",
+        "cat": "learning_styles",
+        "q": "Which learning style learns best by attending discussions and tutorials?",
+        "options": [
+          "Visual",
+          "Auditory",
+          "Kinesthetic"
+        ],
+        "correct": 1,
+        "explain": "Auditory learners learn best by listening — discussions and tutorials deliver information as speech."
+      },
+      {
+        "id": "A14",
+        "cat": "learning_styles",
+        "q": "What is the main difference between verbal and non-verbal visual learners?",
+        "options": [
+          "There is no difference between the two types",
+          "Verbal learners prefer movement, whereas non-verbal learners prefer sound",
+          "Verbal learners avoid reading, whereas non-verbal learners avoid images",
+          "Verbal visual learners prefer written information, whereas non-verbal visual learners prefer pictures"
+        ],
+        "correct": 3,
+        "explain": "Both use the visual channel. Verbal visual = written words; non-verbal visual = pictures."
+      },
+      {
+        "id": "A22",
+        "cat": "learning_styles",
+        "q": "Which strategy is recommended for kinesthetic learners when studying for extended periods?",
+        "options": [
+          "Take frequent, short breaks",
+          "Remain completely still throughout study",
+          "Study continuously without moving",
+          "Avoid using flashcards"
+        ],
+        "correct": 0,
+        "explain": "Take frequent but not long breaks; arrange flashcards in groups."
+      },
+      {
+        "id": "A30",
+        "cat": "learning_styles",
+        "q": "Which classroom placement tip is given specifically to visual learners?",
+        "options": [
+          "Sit at the back so the whole board is visible at once",
+          "Sit near the front of the classroom",
+          "Sit wherever the loudspeakers are strongest",
+          "Stand for the entire lecture"
+        ],
+        "correct": 1,
+        "explain": "Visual tips begin with: sit near the front of the classroom."
+      },
+      {
+        "id": "A38",
+        "cat": "learning_styles",
+        "q": "What is 'finger spelling' in the kinesthetic study tips?",
+        "options": [
+          "Signing a full language instead of studying",
+          "Tracing words with your finger to learn spelling",
+          "Typing without looking at the keys",
+          "Asking someone else to write for you"
+        ],
+        "correct": 1,
+        "explain": "Trace words with your finger to learn spelling — a kinesthetic tool."
+      },
+      {
+        "id": "B07",
+        "cat": "goals",
+        "q": "What does the 'R' in SMART goals stand for?",
+        "options": [
+          "Rigid",
+          "Realistic (Relevant)",
+          "Random",
+          "Reserved"
+        ],
+        "correct": 1,
+        "explain": "R = Realistic (Relevant) — fits your life and matters to your values."
+      },
+      {
+        "id": "B15",
+        "cat": "goals",
+        "q": "In SMART goals, the letter M stands for:",
+        "options": [
+          "Motivational",
+          "Mysterious",
+          "Measurable",
+          "Maximum"
+        ],
+        "correct": 2,
+        "explain": "M is Measurable — credits, GPA, hours studied."
+      },
+      {
+        "id": "B23",
+        "cat": "goals",
+        "q": "Which hint is given for keeping goals visible?",
+        "options": [
+          "Keep them only in your head so they stay private",
+          "Write them down and put them where you will see them every day",
+          "Tell no one and review them once a year",
+          "Write them on an exam script only"
+        ],
+        "correct": 1,
+        "explain": "Write goals down and put them where you will see them every day."
+      },
+      {
+        "id": "B31",
+        "cat": "goals",
+        "q": "As the semester or year ends, what should happen to short-term and mid-range goals?",
+        "options": [
+          "They should be frozen forever",
+          "They should be replaced with new ones",
+          "They should be deleted and never rewritten",
+          "They should be converted into quotes only"
+        ],
+        "correct": 1,
+        "explain": "Replace short-term and mid-range goals with new ones; the long-term peak can remain."
+      },
+      {
+        "id": "B39",
+        "cat": "goals",
+        "q": "In Pham and Taylor (1999), students who focused mental simulation on the outcome (seeing the high grade and the feeling) tended to:",
+        "options": [
+          "Study more and earn better grades",
+          "Study less and earn poorer grades",
+          "Need no action plan at all",
+          "Sleep through the midterm with no cost"
+        ],
+        "correct": 1,
+        "explain": "The outcome group studied less and earned poorer grades — fantasy of the trophy is not rehearsal of the work."
+      },
+      {
+        "id": "C04",
+        "cat": "time_management",
+        "q": "Which of the following is known as the enemy of time management?",
+        "options": [
+          "Setting goals",
+          "Procrastination",
+          "Prioritizing tasks"
+        ],
+        "correct": 1,
+        "explain": "Procrastination is the enemy of time management."
+      },
+      {
+        "id": "C12",
+        "cat": "time_management",
+        "q": "Which combination represents the three key steps to good time management?",
+        "options": [
+          "Hourly meetings, continuous messaging, and task avoidance",
+          "Daily exercise, social media review, and spontaneous planning",
+          "Weekly schedule, daily to-do-list, and long-term planning",
+          "Crisis response, multitasking, and delaying difficult tasks"
+        ],
+        "correct": 2,
+        "explain": "Weekly schedule + daily to-do list + long-term planning."
+      },
+      {
+        "id": "C20",
+        "cat": "time_management",
+        "q": "Which statement best defines Time Management in this lecture?",
+        "options": [
+          "A natural talent that some people are born with",
+          "The number of hours a student spends studying each week",
+          "A method of avoiding all urgent tasks",
+          "The development of processes and tools that increase efficiency and productivity"
+        ],
+        "correct": 3,
+        "explain": "TM = development of processes and tools that increase efficiency and productivity."
+      },
+      {
+        "id": "C28",
+        "cat": "time_management",
+        "q": "Which items belong to Quadrant III (Urgent & Not important)?",
+        "options": [
+          "Interruptions, some calls, some mails, some reports, some meetings, and pressing matters",
+          "Strategy planning and relationship building",
+          "Deadline-driven projects on your strategic priorities",
+          "Anticipating future activities"
+        ],
+        "correct": 0,
+        "explain": "QIII: interruptions, some calls/mails/reports/meetings, pressing matters."
+      },
+      {
+        "id": "C36",
+        "cat": "time_management",
+        "q": "'Your grades don't reflect your ability' is presented in the lecture as:",
+        "options": [
+          "An early warning sign of time management problems",
+          "Proof that the examinations were unfair",
+          "A reason to change majors immediately",
+          "A rule about fixed intelligence"
+        ],
+        "correct": 0,
+        "explain": "It is an early warning sign — the remedy starts with completing the Time Management Matrix."
+      },
+      {
+        "id": "C44",
+        "cat": "time_management",
+        "q": "Two hours disappear into trivia, busy work, and chatting-and-games time wasters. Which quadrant absorbed the time?",
+        "options": [
+          "Quadrant I",
+          "Quadrant II",
+          "Quadrant III",
+          "Quadrant IV"
+        ],
+        "correct": 3,
+        "explain": "Trivia, busy work, chatting and games = QIV."
+      },
+      {
+        "id": "C52",
+        "cat": "time_management",
+        "q": "Which early warning sign of TM problems involves the quality of submitted work?",
+        "options": [
+          "Submitting work that is not up to your usual standard",
+          "Attending every lecture on time",
+          "Finishing tasks early",
+          "Keeping every commitment in a calendar"
+        ],
+        "correct": 0,
+        "explain": "Submitting work below your usual standard is a listed warning sign."
+      },
+      {
+        "id": "D04",
+        "cat": "writing_presentation",
+        "q": "Which statement best defines a presentation, as given in this lecture?",
+        "options": [
+          "A written exam paper submitted for grading",
+          "An informal chat between classmates about a lecture",
+          "A process of communicating knowledge, thoughts, ideas, and/or research results to specific audiences",
+          "A printed handout distributed after class"
+        ],
+        "correct": 2,
+        "explain": "A presentation communicates knowledge, thoughts, ideas, and/or research results to specific audiences."
+      },
+      {
+        "id": "D12",
+        "cat": "writing_presentation",
+        "q": "What should the OPENING of your talk do, according to the organization rule?",
+        "options": [
+          "Tell them what you are going to say",
+          "Tell them what you told them",
+          "Invite nasty questions",
+          "Show the conclusion graph"
+        ],
+        "correct": 0,
+        "explain": "Opening = tell them what you are going to say."
+      },
+      {
+        "id": "D20",
+        "cat": "writing_presentation",
+        "q": "Which fonts are named as standard, readable choices for slides?",
+        "options": [
+          "Garamond Italic, Gill Sans Condensed, and Century Gothic",
+          "Decorative script fonts",
+          "Any font smaller than 12 point",
+          "Times New Roman, Tahoma, Verdana, or Arial"
+        ],
+        "correct": 3,
+        "explain": "Times New Roman, Tahoma, Verdana, or Arial."
+      },
+      {
+        "id": "D28",
+        "cat": "writing_presentation",
+        "q": "About spelling and syntax, the lecture advises you to:",
+        "options": [
+          "Trust the audience to correct your spelling",
+          "Check spelling only after the presentation",
+          "Proofread your presentation before they see it — and asking a friend for help is OK",
+          "Ignore spelling because content matters more"
+        ],
+        "correct": 2,
+        "explain": "Proofread before they see it — asking a friend for help is OK."
+      }
+    ],
+    "D": [
+      {
+        "id": "A07",
+        "cat": "learning_styles",
+        "q": "A student who prefers to see information presented in the form of pictures, diagrams, cartoons, or demonstrations is best described as having which type of learning style?",
+        "options": [
+          "Visual",
+          "Auditory",
+          "Kinesthetic"
+        ],
+        "correct": 0,
+        "explain": "Preferring pictures, diagrams, cartoons, or demonstrations defines a visual learner."
+      },
+      {
+        "id": "A15",
+        "cat": "learning_styles",
+        "q": "Which study strategy is especially appropriate for a visual learner?",
+        "options": [
+          "Listen to lectures without looking at any materials",
+          "Use charts, maps, notes, and flashcards",
+          "Study only by walking around",
+          "Avoid writing down key ideas"
+        ],
+        "correct": 1,
+        "explain": "Charts, maps, notes, and flashcards are core visual study tools; also sit near the front and use highlighters."
+      },
+      {
+        "id": "A23",
+        "cat": "learning_styles",
+        "q": "Which statement best reflects the lecture's conclusion about learning styles?",
+        "options": [
+          "Learners should be flexible and adapt to different styles",
+          "Each person is purely one learning style",
+          "Learning styles cannot change or overlap",
+          "Learners should use only their preferred style"
+        ],
+        "correct": 0,
+        "explain": "Be flexible and adapt to different styles as much as you can."
+      },
+      {
+        "id": "A31",
+        "cat": "learning_styles",
+        "q": "Which of the following is a listed study tip for visual learners?",
+        "options": [
+          "Color things and use highlighter pens",
+          "Avoid all written notes",
+          "Study only with loud background speech",
+          "Never draw a concept"
+        ],
+        "correct": 0,
+        "explain": "Coloring, highlighters, drawing concepts, and writing key words are visual tips."
+      },
+      {
+        "id": "A39",
+        "cat": "learning_styles",
+        "q": "The handout points to which questionnaire as the practical inventory?",
+        "options": [
+          "A personality test that ignores sensory channels",
+          "The Visual, Aural, Read/Write, Kinesthetic (VARK) questionnaire",
+          "A one-question 'are you smart?' survey",
+          "An athletic fitness inventory"
+        ],
+        "correct": 1,
+        "explain": "The VARK questionnaire (Visual, Aural, Read/Write, Kinesthetic) at vark-learn.com."
+      },
+      {
+        "id": "B08",
+        "cat": "goals",
+        "q": "What does the 'T' in SMART goals stand for?",
+        "options": [
+          "Temporary",
+          "Theoretical",
+          "Trendy",
+          "Time-bound"
+        ],
+        "correct": 3,
+        "explain": "T = Time-bound — a deadline exists."
+      },
+      {
+        "id": "B16",
+        "cat": "goals",
+        "q": "In this lecture's SMART list, A stands for Action-oriented, which is also glossed as:",
+        "options": [
+          "Abstract",
+          "Automatic",
+          "Attainable",
+          "Avoidant"
+        ],
+        "correct": 2,
+        "explain": "A is Action-Oriented, with Attainable in parentheses."
+      },
+      {
+        "id": "B24",
+        "cat": "goals",
+        "q": "If a short-term goal is not working, the lecture says you should:",
+        "options": [
+          "Abandon the long-term goal immediately",
+          "Change the short-term goal",
+          "Study in one 12-hour marathon to force it",
+          "Ignore the problem until the year ends"
+        ],
+        "correct": 1,
+        "explain": "Change short-term goals if they are not working — the peak stays, the weekly block is redesigned."
+      },
+      {
+        "id": "B32",
+        "cat": "goals",
+        "q": "Dr. Boyce Watkins is quoted as saying the path to greatness is usually paved with:",
+        "options": [
+          "Perfect first attempts",
+          "Failure, after trying over and over again",
+          "A single lucky weekend",
+          "Avoiding all feedback"
+        ],
+        "correct": 1,
+        "explain": "'The path to greatness is usually paved with failure' — most big successes come after repeated failure."
+      },
+      {
+        "id": "B40",
+        "cat": "goals",
+        "q": "In the same study, students who focused mental simulation on the process (seeing themselves actually studying) tended to:",
+        "options": [
+          "Study more and earn better grades",
+          "Abandon the midterm",
+          "Need more outcome daydreaming",
+          "Perform worse than the outcome group"
+        ],
+        "correct": 0,
+        "explain": "The process group studied more and earned better grades — picture the work, not the trophy."
+      },
+      {
+        "id": "C05",
+        "cat": "time_management",
+        "q": "Which statement best defines time management?",
+        "options": [
+          "Completing as many tasks as possible without planning",
+          "Developing processes and tools to improve efficiency and productivity",
+          "Using every available hour for academic work",
+          "Avoiding all activities that require immediate attention"
+        ],
+        "correct": 1,
+        "explain": "Time management = developing processes and tools that increase efficiency and productivity."
+      },
+      {
+        "id": "C13",
+        "cat": "time_management",
+        "q": "What is the primary purpose of developing a weekly schedule?",
+        "options": [
+          "To replace the need for daily planning",
+          "To ensure every minute is spent working",
+          "To provide an overview of committed time and available time",
+          "To record only tasks that were not completed"
+        ],
+        "correct": 2,
+        "explain": "A weekly schedule shows committed time against available time."
+      },
+      {
+        "id": "C21",
+        "cat": "time_management",
+        "q": "Time management is also defined as the ability to:",
+        "options": [
+          "Work only on the tasks you enjoy most",
+          "Get things done when they should be done",
+          "Memorize the college timetable",
+          "Avoid deadlines by renegotiating them"
+        ],
+        "correct": 1,
+        "explain": "Get things done when they should be done — right task, right time."
+      },
+      {
+        "id": "C29",
+        "cat": "time_management",
+        "q": "Which items belong to Quadrant IV (Not urgent & Not important)?",
+        "options": [
+          "Crisis and pressing problems",
+          "Relationship building",
+          "Trivia, busy work, distractions, and time wasters such as chatting and games",
+          "Preventing future problems"
+        ],
+        "correct": 2,
+        "explain": "QIV: trivia, busy work, distractions, time wasters (chatting and games)."
+      },
+      {
+        "id": "C37",
+        "cat": "time_management",
+        "q": "Procrastination may give immediate satisfaction, but the lecture says it brings:",
+        "options": [
+          "Anxiety, reduced sleep, illness, lower grades, poorer quality of work, less learning from being rushed, and a personal sense of disappointment",
+          "Better learning through last-minute focus",
+          "More free time and higher-quality work",
+          "Stronger relationships with instructors"
+        ],
+        "correct": 0,
+        "explain": "The full bill: anxiety, reduced sleep, illness, lower grades, poorer work, less learning, disappointment."
+      },
+      {
+        "id": "C45",
+        "cat": "time_management",
+        "q": "In the practical task, a person works 42 hours a week and spends 21 of those hours on urgent and important work. What share of the workweek is that?",
+        "options": [
+          "25%",
+          "33%",
+          "50%",
+          "75%"
+        ],
+        "correct": 2,
+        "explain": "21 of 42 hours = 50% in Quadrant I."
+      },
+      {
+        "id": "C53",
+        "cat": "time_management",
+        "q": "Which warning sign involves sacrificing things you like?",
+        "options": [
+          "Reading for pleasure on weekends",
+          "Joining a study group",
+          "Sleeping early before exams",
+          "Having to let go of activities you enjoy because of a lack of time or low grades"
+        ],
+        "correct": 3,
+        "explain": "Letting go of activities you enjoy due to lack of time or low grades is a warning sign."
+      },
+      {
+        "id": "D05",
+        "cat": "writing_presentation",
+        "q": "The 'presentation circuit' consists of which four components?",
+        "options": [
+          "Presenter, audience, message, and setting/context",
+          "Slides, projector, podium, and microphone",
+          "Title, outline, body, and references",
+          "Writer, editor, reviewer, and publisher"
+        ],
+        "correct": 0,
+        "explain": "Presenter and audience around a message, all inside a setting/context."
+      },
+      {
+        "id": "D13",
+        "cat": "writing_presentation",
+        "q": "The first slide of a presentation must contain:",
+        "options": [
+          "The complete text of the talk",
+          "The title of the presentation and your name, position, and affiliation",
+          "Only the institution logo",
+          "The list of references"
+        ],
+        "correct": 1,
+        "explain": "Title + name, position, and affiliation (± date, institution logo)."
+      },
+      {
+        "id": "D21",
+        "cat": "writing_presentation",
+        "q": "Why should you NOT use all capital letters?",
+        "options": [
+          "Capital letters are not allowed by the software",
+          "It shortens the presentation",
+          "It makes text hard to read, conceals acronyms, and denies capitals for EMPHASIS",
+          "It only affects the footer"
+        ],
+        "correct": 2,
+        "explain": "ALL CAPS is hard to read, conceals acronyms, and denies capitals for emphasis."
+      },
+      {
+        "id": "D29",
+        "cat": "writing_presentation",
+        "q": "Why does the lecture insist on an effective and strong closing?",
+        "options": [
+          "It reduces the number of slides",
+          "Your audience is likely to remember your last words",
+          "It prevents the audience from asking questions",
+          "It replaces the outline slide"
+        ],
+        "correct": 1,
+        "explain": "The audience is likely to remember your last words — take-home messages, no abrupt ending."
+      }
+    ],
+    "E": [
+      {
+        "id": "A08",
+        "cat": "learning_styles",
+        "q": "Which statement best defines learning styles?",
+        "options": [
+          "The subjects students choose to study",
+          "The grades students receive in examinations",
+          "The length of time required to complete a course",
+          "The processes and techniques people use to learn"
+        ],
+        "correct": 3,
+        "explain": "Learning styles are the processes and techniques people use to learn things (facts, skills, attitudes)."
+      },
+      {
+        "id": "A16",
+        "cat": "learning_styles",
+        "q": "Which characteristic is most typical of an auditory learner?",
+        "options": [
+          "Preferring diagrams over all spoken explanations",
+          "Preferring to hear information spoken",
+          "Remembering information only as written words",
+          "Learning primarily through touching objects"
+        ],
+        "correct": 1,
+        "explain": "Auditory learners prefer to hear information spoken and can often absorb a lecture with little effort."
+      },
+      {
+        "id": "A24",
+        "cat": "learning_styles",
+        "q": "Which statement about learners and learning styles is accurate?",
+        "options": [
+          "Every learner has only one permanent style",
+          "Learners cannot benefit from different approaches",
+          "Most learners are mixed rather than purely one style",
+          "Learning style is unrelated to learning preferences"
+        ],
+        "correct": 2,
+        "explain": "No one is purely one style — learners are mixed."
+      },
+      {
+        "id": "A32",
+        "cat": "learning_styles",
+        "q": "Which auditory characteristic is easy to confuse with inattention?",
+        "options": [
+          "Preferring maps over speech",
+          "Often avoiding eye contact in order to concentrate",
+          "Needing intense visual slides in every minute of class",
+          "Refusing to join any spoken activity"
+        ],
+        "correct": 1,
+        "explain": "Auditory learners often avoid eye contact to concentrate — easily mistaken for rudeness or inattention."
+      },
+      {
+        "id": "B01",
+        "cat": "goals",
+        "q": "'Something you want to achieve' is the definition of which of the following?",
+        "options": [
+          "Habit",
+          "Plan",
+          "Goal",
+          "Challenge"
+        ],
+        "correct": 2,
+        "explain": "A goal is something you want to achieve; a habit is repeated behaviour, a plan is the route, a challenge is an obstacle."
+      },
+      {
+        "id": "B09",
+        "cat": "goals",
+        "q": "Which statement best defines goals in this lecture?",
+        "options": [
+          "Vague wishes about the distant future",
+          "Well-defined plans aimed at achieving a specific result",
+          "Grades awarded by an examiner",
+          "The subjects a student is forced to take"
+        ],
+        "correct": 1,
+        "explain": "Goals are well-defined plans aimed at achieving a specific result."
+      },
+      {
+        "id": "B17",
+        "cat": "goals",
+        "q": "In this lecture's SMART list, R stands for Realistic, which is also glossed as:",
+        "options": [
+          "Random",
+          "Relevant",
+          "Rigid",
+          "Rare"
+        ],
+        "correct": 1,
+        "explain": "R is Realistic, with Relevant in parentheses."
+      },
+      {
+        "id": "B25",
+        "cat": "goals",
+        "q": "Which statement matches the lecture's advice on how high to aim?",
+        "options": [
+          "Aim far below what you can do so you never miss",
+          "Be realistic but aim higher than you think you can achieve",
+          "Aim only at what is already finished",
+          "Never write a number in a goal"
+        ],
+        "correct": 1,
+        "explain": "Be realistic but aim higher than you think you can achieve."
+      },
+      {
+        "id": "B33",
+        "cat": "goals",
+        "q": "Which morning habit is listed first among the powerful habits?",
+        "options": [
+          "Get up at a different time each day to stay flexible",
+          "Get up at the same time every morning",
+          "Sleep until noon if the night was long",
+          "Skip mornings and study only after 10:00 p.m."
+        ],
+        "correct": 1,
+        "explain": "Get up at the same time every morning, then keep a regular schedule."
+      },
+      {
+        "id": "B41",
+        "cat": "goals",
+        "q": "Keeping track of progress is described as which personal task?",
+        "options": [
+          "Self-regulation — monitor progress and modify the plan as necessary",
+          "Waiting for the college to monitor you",
+          "Checking social media for motivation only",
+          "Rewriting the long-term goal every hour"
+        ],
+        "correct": 0,
+        "explain": "Self-regulation: monitor progress, modify the plan, set intermediate milestones, keep a timetable."
+      },
+      {
+        "id": "C06",
+        "cat": "time_management",
+        "q": "Which statement best distinguishes an urgent activity from an important activity?",
+        "options": [
+          "Urgent activities are enjoyable, while important activities are difficult.",
+          "Urgent activities are always important, and important activities are never urgent.",
+          "Urgent activities require immediate attention, while important activities contribute to priorities and values.",
+          "Urgent activities are long-term goals, while important activities are interruptions."
+        ],
+        "correct": 2,
+        "explain": "Urgent = immediate attention (a timing claim); important = contributes to priorities and values (a mission claim)."
+      },
+      {
+        "id": "C14",
+        "cat": "time_management",
+        "q": "What behavior is an early warning sign of time-management problems?",
+        "options": [
+          "Frequently asking teachers for extensions",
+          "Using a long-term plan to organize future work",
+          "Completing important tasks before their deadlines",
+          "Preparing a weekly schedule in advance"
+        ],
+        "correct": 0,
+        "explain": "Regularly asking for extensions is an early warning sign."
+      },
+      {
+        "id": "C22",
+        "cat": "time_management",
+        "q": "What does the lecture say about how time management develops?",
+        "options": [
+          "It is a skill that must be worked on, and most people find it a life-long challenge",
+          "It just happens naturally with age",
+          "It can be installed once and then forgotten",
+          "It is fixed at the same level for everyone"
+        ],
+        "correct": 0,
+        "explain": "It is a skill that must be worked on — a life-long challenge for most people."
+      },
+      {
+        "id": "C30",
+        "cat": "time_management",
+        "q": "Which quadrant does the lecture call 'the heart of the personal quality management'?",
+        "options": [
+          "Quadrant I — Urgent & Important",
+          "Quadrant II — Not urgent & Important",
+          "Quadrant III — Urgent & Not important",
+          "Quadrant IV — Not urgent & Not important"
+        ],
+        "correct": 1,
+        "explain": "Quadrant II is 'the heart of the personal quality management'."
+      },
+      {
+        "id": "C38",
+        "cat": "time_management",
+        "q": "Setting priorities means making a value judgment on each task based on:",
+        "options": [
+          "Its length and its difficulty",
+          "The mood you are in that day",
+          "The alphabetical order of the task",
+          "Its worth and when it must be completed"
+        ],
+        "correct": 3,
+        "explain": "Worth and when it must be completed."
+      },
+      {
+        "id": "C46",
+        "cat": "time_management",
+        "q": "In the practical task, after listing your weekly tasks in the 'Urgent & Important' matrix, what are you asked to do?",
+        "options": [
+          "Hide the matrix from your colleagues",
+          "Put the first things first, then share and discuss with the colleague beside you",
+          "Delete every Quadrant I task",
+          "Convert the matrix into an essay"
+        ],
+        "correct": 1,
+        "explain": "Put first things first, then share and discuss with the colleague beside you."
+      },
+      {
+        "id": "C54",
+        "cat": "time_management",
+        "q": "The lecture asks how urgent activities can take us away from:",
+        "options": [
+          "Activities that enable us to carry out our mission or vision",
+          "Sleep and meals only",
+          "Social media and games",
+          "Nothing — urgency is always useful"
+        ],
+        "correct": 0,
+        "explain": "Urgent activities steal time from mission- and vision-carrying activities."
+      },
+      {
+        "id": "D06",
+        "cat": "writing_presentation",
+        "q": "According to the introduction, which tasks require the ability to write scientifically and professionally?",
+        "options": [
+          "Only multiple-choice examinations",
+          "Assignments, research activities, scientific reports, and dissertations",
+          "Social media posts only",
+          "None — writing is not needed after admission"
+        ],
+        "correct": 1,
+        "explain": "Assignments, research activities, scientific reports, dissertations."
+      },
+      {
+        "id": "D14",
+        "cat": "writing_presentation",
+        "q": "Your second slide should list:",
+        "options": [
+          "Every reference in full detail",
+          "The thank-you message",
+          "Complete paragraphs of the introduction",
+          "The objectives, agenda, or outline of your talk — main points only"
+        ],
+        "correct": 3,
+        "explain": "Objectives/agenda — main points only; follow that order for the rest of the talk."
+      },
+      {
+        "id": "D22",
+        "cat": "writing_presentation",
+        "q": "According to the lecture, italics are properly used for:",
+        "options": [
+          "Every bullet point",
+          "Quotes, highlighting thoughts or ideas, and titles of books, journals, or magazines",
+          "All headings and nothing else",
+          "Numbers only"
+        ],
+        "correct": 1,
+        "explain": "Quotes, highlighted thoughts/ideas, and book/journal/magazine titles."
+      },
+      {
+        "id": "D30",
+        "cat": "writing_presentation",
+        "q": "What is the purpose of the 'Questions' slide at the end of a presentation?",
+        "options": [
+          "Invite your audience to ask questions",
+          "List the references",
+          "Show the title again",
+          "Announce the next lecture"
+        ],
+        "correct": 0,
+        "explain": "Invite your audience to ask questions — and handle them well."
+      }
+    ],
+    "F": [
+      {
+        "id": "A09",
+        "cat": "learning_styles",
+        "q": "Which factors are included in a learner's learning style?",
+        "options": [
+          "Financial, social, and occupational factors",
+          "Physical, chemical, and environmental factors",
+          "Cognitive, affective, and physiological factors",
+          "Academic, athletic, and artistic factors only"
+        ],
+        "correct": 2,
+        "explain": "A learning style encompasses cognitive, affective, and physiological factors — how a learner perceives, interacts with, and responds to the learning environment."
+      },
+      {
+        "id": "A17",
+        "cat": "learning_styles",
+        "q": "Which study strategy is recommended for an auditory learner?",
+        "options": [
+          "Study only by drawing maps",
+          "Read study material aloud",
+          "Avoid discussions and tutorials",
+          "Use pictures without verbal explanation"
+        ],
+        "correct": 1,
+        "explain": "Read assignments, directions, and new material out loud; record and replay; have test questions read aloud."
+      },
+      {
+        "id": "A25",
+        "cat": "learning_styles",
+        "q": "A student remembers information as clear pictures and benefits from videos, maps, and diagrams. Which type of learner is most likely?",
+        "options": [
+          "Verbal visual learner",
+          "Non-verbal visual learner",
+          "Kinesthetic learner",
+          "Auditory learner"
+        ],
+        "correct": 1,
+        "explain": "Picture format + remembering clear pictures = non-verbal visual learner."
+      },
+      {
+        "id": "A33",
+        "cat": "learning_styles",
+        "q": "Which statement about notes is most true of many auditory learners?",
+        "options": [
+          "They must copy every slide word for word or they learn nothing",
+          "They may not need careful notes to learn from a spoken lecture",
+          "They cannot learn unless the page is full of diagrams",
+          "They should never listen to a recording of the class"
+        ],
+        "correct": 1,
+        "explain": "Auditory learners can absorb a lecture with little effort and may not need careful notes."
+      },
+      {
+        "id": "B02",
+        "cat": "goals",
+        "q": "Which of the following is a goal with an outcome that is based on a specific date / time?",
+        "options": [
+          "Fixed goals",
+          "Flexible goals",
+          "Condensed goals"
+        ],
+        "correct": 0,
+        "explain": "A fixed goal's outcome is based on a specific date or time — a set deadline."
+      },
+      {
+        "id": "B10",
+        "cat": "goals",
+        "q": "Besides being plans, goals are described as which of the following?",
+        "options": [
+          "Roadmaps for achieving what you want in life",
+          "Substitutes for attending class",
+          "Guarantees of a high Grade Point Average (GPA)",
+          "Personality types that cannot change"
+        ],
+        "correct": 0,
+        "explain": "Goals are roadmaps for achieving what you want in life — a course of action you intend to pursue."
+      },
+      {
+        "id": "B18",
+        "cat": "goals",
+        "q": "In SMART goals, the letter T stands for:",
+        "options": [
+          "Theoretical",
+          "Time-bound",
+          "Temporary only",
+          "Team-based"
+        ],
+        "correct": 1,
+        "explain": "T is Time-bound — a deadline turns a wish into a schedule."
+      },
+      {
+        "id": "B26",
+        "cat": "goals",
+        "q": "'Make sure you understand the price of reaching your goals' means you should:",
+        "options": [
+          "Ignore the cost and hope luck pays it",
+          "Know what time, effort, and trade-offs the goal will require",
+          "Pay someone else to hold the goal",
+          "Treat money as the only price that exists"
+        ],
+        "correct": 1,
+        "explain": "Every goal has a price in hours, sleep, social time, and attention."
+      },
+      {
+        "id": "B34",
+        "cat": "goals",
+        "q": "Which tracking tool is recommended for assignments and appointments?",
+        "options": [
+          "Memory alone",
+          "A to-do list or appointment calendar",
+          "A motivational poster with no dates",
+          "Someone else's timetable only"
+        ],
+        "correct": 1,
+        "explain": "Use a to-do list or appointment calendar for assignments and appointments."
+      },
+      {
+        "id": "B42",
+        "cat": "goals",
+        "q": "Which statement best captures the difference between outcome simulation and process simulation?",
+        "options": [
+          "Outcome simulation pictures the high grade and the feeling; process simulation pictures the studying that would produce that grade",
+          "They are identical exercises with different titles",
+          "Process simulation is only about buying stationery",
+          "Outcome simulation always produces more study hours"
+        ],
+        "correct": 0,
+        "explain": "Outcome = grade + feeling; process = the studying that leads to that grade. Only the second trained behavior."
+      },
+      {
+        "id": "C07",
+        "cat": "time_management",
+        "q": "A critical assignment due today has a major effect on a student's academic progress. In which quadrant should it be placed?",
+        "options": [
+          "Quadrant I: Urgent and Important",
+          "Quadrant IV: Not Urgent and Not Important",
+          "Quadrant III: Urgent and Not Important",
+          "Quadrant II: Not Urgent and Important"
+        ],
+        "correct": 0,
+        "explain": "Due today = urgent; major effect on progress = important → Quadrant I."
+      },
+      {
+        "id": "C15",
+        "cat": "time_management",
+        "q": "What is likely a consequence of procrastinating on an important academic task?",
+        "options": [
+          "More sleep and improved learning",
+          "Increased anxiety and poorer-quality work",
+          "Lower stress without any disadvantages",
+          "More time for completing the task carefully"
+        ],
+        "correct": 1,
+        "explain": "Procrastination → increased anxiety and poorer-quality work."
+      },
+      {
+        "id": "C23",
+        "cat": "time_management",
+        "q": "In the matrix, 'urgent' activities are those requiring:",
+        "options": [
+          "Careful long-term planning",
+          "Permission from a supervisor",
+          "Immediate attention — NOW",
+          "A written budget first"
+        ],
+        "correct": 2,
+        "explain": "Urgent = immediate attention — NOW."
+      },
+      {
+        "id": "C31",
+        "cat": "time_management",
+        "q": "To lead effectively, the lecture says you need to spend more time in:",
+        "options": [
+          "Quadrant I, personally handling every crisis",
+          "Quadrant II — Important but not Urgent",
+          "Quadrant III, answering every interruption",
+          "Quadrant IV, recovering from the week"
+        ],
+        "correct": 1,
+        "explain": "Spend more time in Quadrant II — Important but not Urgent."
+      },
+      {
+        "id": "C39",
+        "cat": "time_management",
+        "q": "According to the lecture, which tasks should be your #1 priority?",
+        "options": [
+          "The tasks you enjoy most",
+          "The easiest tasks, to build momentum",
+          "The tasks that are worth the most and due the soonest",
+          "The tasks your friends are working on"
+        ],
+        "correct": 2,
+        "explain": "Worth the most + due the soonest = #1 priority."
+      },
+      {
+        "id": "C47",
+        "cat": "time_management",
+        "q": "What is the stated purpose of writing a daily to-do list?",
+        "options": [
+          "To provide daily reminders to assure key tasks are not forgotten",
+          "To rank classmates by their grades",
+          "To replace the weekly schedule entirely",
+          "To record dreams and moods"
+        ],
+        "correct": 0,
+        "explain": "Daily reminders so key tasks are not forgotten."
+      },
+      {
+        "id": "C55",
+        "cat": "time_management",
+        "q": "In the lecture's own words, procrastination is:",
+        "options": [
+          "A harmless habit",
+          "A modern study technique",
+          "The enemy of time management",
+          "The key to creativity"
+        ],
+        "correct": 2,
+        "explain": "'Procrastination: Enemy of Time Management.'"
+      },
+      {
+        "id": "D07",
+        "cat": "writing_presentation",
+        "q": "The lecture describes a successful person as one who is capable of:",
+        "options": [
+          "Speaking without stopping for a full hour",
+          "Memorizing every slide word for word",
+          "Avoiding the audience's eyes",
+          "Communicating his knowledge, experiences, and thoughts in a professional manner"
+        ],
+        "correct": 3,
+        "explain": "Communicating knowledge, experiences, and thoughts in a professional manner."
+      },
+      {
+        "id": "D15",
+        "cat": "writing_presentation",
+        "q": "The recommended slide count is:",
+        "options": [
+          "1–2 slides per minute of your presentation",
+          "1–2 slides for the whole presentation",
+          "10 slides per minute",
+          "As many slides as the file can hold"
+        ],
+        "correct": 0,
+        "explain": "1–2 slides per minute."
+      },
+      {
+        "id": "D23",
+        "cat": "writing_presentation",
+        "q": "Which rule governs font color?",
+        "options": [
+          "Use a different color for each point or word",
+          "Use bright colors on a white background",
+          "Match the font color to the background exactly",
+          "Use a font color that contrasts sharply with the background"
+        ],
+        "correct": 3,
+        "explain": "Contrast sharply with the background — dark font on light background."
+      },
+      {
+        "id": "D31",
+        "cat": "writing_presentation",
+        "q": "'The mind… starts working the minute you're born, and never stops until you get up to speak' humorously refers to:",
+        "options": [
+          "Audience boredom",
+          "Writer's block during essays",
+          "Presentation phobia",
+          "Time management failure"
+        ],
+        "correct": 2,
+        "explain": "Presentation phobia — which can be healthy or unhealthy."
+      }
+    ],
+    "G": [
+      {
+        "id": "A10",
+        "cat": "learning_styles",
+        "q": "Why is it important for learners to know their own learning style?",
+        "options": [
+          "It determines their final examination grade",
+          "It eliminates the need to attend classes",
+          "It guarantees that they will use only one learning method",
+          "It helps them seek learning situations that suit them"
+        ],
+        "correct": 3,
+        "explain": "Knowing your style lets you seek situations and experiences that meet that style."
+      },
+      {
+        "id": "A18",
+        "cat": "learning_styles",
+        "q": "Which activity is particularly suitable for supporting an auditory learner?",
+        "options": [
+          "Studying without any discussion",
+          "Joining a study group",
+          "Replacing all spoken material with diagrams",
+          "Avoiding tutorials"
+        ],
+        "correct": 1,
+        "explain": "Join a study group, work with a study buddy, and attend discussions and tutorials — spoken, social channels."
+      },
+      {
+        "id": "A26",
+        "cat": "learning_styles",
+        "q": "A student prefers textbooks and written outlines and remembers written information mentally. Which type of learner is most likely?",
+        "options": [
+          "Verbal visual learner",
+          "Auditory learner",
+          "Non-verbal visual learner",
+          "Kinesthetic learner"
+        ],
+        "correct": 0,
+        "explain": "Written format + remembering written words in the mind's eye = verbal visual learner."
+      },
+      {
+        "id": "A34",
+        "cat": "learning_styles",
+        "q": "Which extra check does the lecture recommend for auditory learners?",
+        "options": [
+          "Have your hearing checked on a regular basis",
+          "Have your color vision checked every week",
+          "Avoid sitting where you can hear",
+          "Refuse all background music"
+        ],
+        "correct": 0,
+        "explain": "Sit where you can hear, and have your hearing checked regularly."
+      },
+      {
+        "id": "B03",
+        "cat": "goals",
+        "q": "What type of goal is usually achieved over a period of 5 years?",
+        "options": [
+          "Short-term goal",
+          "Daily goal",
+          "Long-term goal"
+        ],
+        "correct": 2,
+        "explain": "A long-term goal is usually achieved over about 5 years."
+      },
+      {
+        "id": "B11",
+        "cat": "goals",
+        "q": "What do goals reflect, according to the lecture?",
+        "options": [
+          "Only the college timetable",
+          "Only what other people expect",
+          "Your values and your priorities",
+          "Random interest with no hierarchy"
+        ],
+        "correct": 2,
+        "explain": "Goals reflect your values and your priorities."
+      },
+      {
+        "id": "B19",
+        "cat": "goals",
+        "q": "The lecture compares achieving a long-term goal to:",
+        "options": [
+          "Winning a single lottery ticket",
+          "Building a pyramid",
+          "Waiting for motivation to arrive",
+          "Memorizing one quotation"
+        ],
+        "correct": 1,
+        "explain": "Achieving a long-term goal is like building a pyramid: short-term base, medium middle, long-term peak."
+      },
+      {
+        "id": "B27",
+        "cat": "goals",
+        "q": "What should you do with obstacles to a five-year goal?",
+        "options": [
+          "Pretend they do not exist",
+          "Recognize them, judge how much control you have, then avoid or eliminate them",
+          "List them once and never look again",
+          "Treat every obstacle as fate"
+        ],
+        "correct": 1,
+        "explain": "Recognize obstacles, judge how much control you have, then avoid or eliminate them."
+      },
+      {
+        "id": "B35",
+        "cat": "goals",
+        "q": "Which human-contact habits are listed as supports for reaching goals?",
+        "options": [
+          "Avoid all instructors until the final exam",
+          "Find a study partner, use office hours, attend study-skills class, and meet the instructor after the first exam",
+          "Only message classmates the night before the test",
+          "Never form a study group"
+        ],
+        "correct": 1,
+        "explain": "Study partner, office hours, study-skills class, and meeting the instructor after the first exam."
+      },
+      {
+        "id": "B43",
+        "cat": "goals",
+        "q": "On the later 'life pyramid' slide, which sequence shows goals building toward the next?",
+        "options": [
+          "Dream house first, then a degree, then waking up",
+          "Bachelor's degree with a target Grade Point Average (GPA), then a job, then financial independence and family goals",
+          "Marriage first with no education block",
+          "A pool with no income plan"
+        ],
+        "correct": 1,
+        "explain": "Degree with target GPA → dream job → financial independence, with family goals on the map — lower blocks hold higher ones."
+      },
+      {
+        "id": "C08",
+        "cat": "time_management",
+        "q": "Which activity is the best example of Quadrant II: Not Urgent and Important?",
+        "options": [
+          "Playing games during scheduled study time",
+          "Responding to a crisis that requires immediate action",
+          "Planning a study schedule before examinations begin",
+          "Answering an unimportant interruption immediately"
+        ],
+        "correct": 2,
+        "explain": "Planning before exams is important but not pressing today — the classic Quadrant II activity."
+      },
+      {
+        "id": "C16",
+        "cat": "time_management",
+        "q": "Which task belongs in Quadrant III: Urgent and Not Important?",
+        "options": [
+          "Preparing a long-term study strategy",
+          "Completing a critical assignment due today",
+          "An interruption that demands immediate attention but does not support major priorities",
+          "Playing a game when there is no deadline or benefit"
+        ],
+        "correct": 2,
+        "explain": "QIII = urgent but does not support major priorities — the classic interruption."
+      },
+      {
+        "id": "C24",
+        "cat": "time_management",
+        "q": "In the matrix, 'important' activities are those that:",
+        "options": [
+          "Are the loudest and most visible",
+          "Appear at the top of an inbox",
+          "Can be delegated to anyone",
+          "Contribute to your mission, values, and priorities"
+        ],
+        "correct": 3,
+        "explain": "Important = contributes to your mission, values, and priorities."
+      },
+      {
+        "id": "C32",
+        "cat": "time_management",
+        "q": "According to the lecture, what happens when you do not spend enough time in Quadrant II?",
+        "options": [
+          "Your mission and values change automatically",
+          "Many items move over into Quadrant I, and you are constantly handling crises",
+          "Quadrant IV items disappear",
+          "Every task becomes enjoyable"
+        ],
+        "correct": 1,
+        "explain": "Items move into Quadrant I and you are constantly handling crises."
+      },
+      {
+        "id": "C40",
+        "cat": "time_management",
+        "q": "Which of the following are the three key steps to good time management?",
+        "options": [
+          "Cramming, napping, and repeating",
+          "Developing a weekly schedule, writing a daily to-do list, and preparing a long-term plan",
+          "Working harder, sleeping less, and skipping meals",
+          "Memorizing, highlighting, and rereading"
+        ],
+        "correct": 1,
+        "explain": "Weekly schedule, daily to-do list, long-term plan."
+      },
+      {
+        "id": "C48",
+        "cat": "time_management",
+        "q": "What is the stated purpose of preparing a long-term plan?",
+        "options": [
+          "To memorize dates for a history exam",
+          "To replace the daily to-do list entirely",
+          "To avoid ever planning the week",
+          "To promote overall organization and future planning"
+        ],
+        "correct": 3,
+        "explain": "Promotes overall organization and future planning."
+      },
+      {
+        "id": "C56",
+        "cat": "time_management",
+        "q": "According to the benefits list, good time management makes you:",
+        "options": [
+          "A more productive, successful person with a more balanced life",
+          "Isolated from friends and family",
+          "Dependent on your instructor",
+          "Immune to deadlines"
+        ],
+        "correct": 0,
+        "explain": "A more productive, successful person with a more balanced life."
+      },
+      {
+        "id": "D08",
+        "cat": "writing_presentation",
+        "q": "What are the 3 P's of presentation?",
+        "options": [
+          "Plan, Prepare, Present",
+          "Practice, Perform, Publish",
+          "Plan, Print, Prove",
+          "Prepare, Pause, Perfect"
+        ],
+        "correct": 0,
+        "explain": "Plan, Prepare, Present."
+      },
+      {
+        "id": "D16",
+        "cat": "writing_presentation",
+        "q": "Good slide structure means writing:",
+        "options": [
+          "Complete sentences with as many words as possible",
+          "Full paragraphs copied from the textbook",
+          "In point form — key words and phrases only, 4–5 points per slide",
+          "At least 12 points per slide"
+        ],
+        "correct": 2,
+        "explain": "Point form, 4–5 points per slide, key words only — avoid wordiness."
+      },
+      {
+        "id": "D24",
+        "cat": "writing_presentation",
+        "q": "What is advised about presentation backgrounds?",
+        "options": [
+          "Use light backgrounds and keep the same background consistently throughout",
+          "Use dark, busy backgrounds for drama",
+          "Change the background on every slide to keep attention",
+          "Background choice does not affect readability"
+        ],
+        "correct": 0,
+        "explain": "Light backgrounds, same background consistently throughout."
+      },
+      {
+        "id": "D32",
+        "cat": "writing_presentation",
+        "q": "Complete the lecture's key sentence about delivery: 'It is not WHAT we say, but…'",
+        "options": [
+          "…how long we speak",
+          "…HOW we say it",
+          "…how many slides we show",
+          "…how loudly we apologize"
+        ],
+        "correct": 1,
+        "explain": "It is not WHAT we say, but HOW we say it."
+      }
+    ],
+    "H": [
+      {
+        "id": "A11",
+        "cat": "learning_styles",
+        "q": "Why is it useful for teachers to understand the learning styles of others?",
+        "options": [
+          "It allows them to replace all classroom activities",
+          "It allows them to avoid using teaching aids",
+          "It helps them teach and work in groups more effectively",
+          "It proves that all learners learn identically"
+        ],
+        "correct": 2,
+        "explain": "Knowing how others learn helps you teach them and work in groups more effectively."
+      },
+      {
+        "id": "A19",
+        "cat": "learning_styles",
+        "q": "Which learning style prefers touch and motion as primary ways of taking in information?",
+        "options": [
+          "Visual",
+          "Verbal visual",
+          "Auditory",
+          "Kinesthetic"
+        ],
+        "correct": 3,
+        "explain": "Kinesthetic learners prefer touch and motion as the primary mode for taking in information."
+      },
+      {
+        "id": "A27",
+        "cat": "learning_styles",
+        "q": "Which tool was recommended in the lecture for discovering one's learning style?",
+        "options": [
+          "Physical fitness assessment",
+          "Handwriting speed test",
+          "Personality-free examination",
+          "Learning Styles Inventory"
+        ],
+        "correct": 3,
+        "explain": "Discover your style by completing the Learning Styles Inventory."
+      },
+      {
+        "id": "A35",
+        "cat": "learning_styles",
+        "q": "Which set of motions does the lecture associate with kinesthetic learning?",
+        "options": [
+          "Only silent reading in a locked chair",
+          "Jittering, walking, yo-yoing, chewing, coloring, typing, writing",
+          "Listening with eyes closed and hands still",
+          "Watching a diagram without touching anything"
+        ],
+        "correct": 1,
+        "explain": "Kinesthetic learners learn better while jittering, walking, yo-yoing, chewing, coloring, typing, or writing."
+      },
+      {
+        "id": "B04",
+        "cat": "goals",
+        "q": "What does the 'S' in SMART goals stand for?",
+        "options": [
+          "Specific",
+          "Significant",
+          "Strategic"
+        ],
+        "correct": 0,
+        "explain": "S = Specific — a named target, not a vague wish."
+      },
+      {
+        "id": "B12",
+        "cat": "goals",
+        "q": "A plan for where you want to be five years from now is classified as a:",
+        "options": [
+          "Short-term goal",
+          "Medium-range goal",
+          "Long-term goal",
+          "Daily habit only"
+        ],
+        "correct": 2,
+        "explain": "The five-year plan is a long-term goal — 'Five years from now, I will be…'"
+      },
+      {
+        "id": "B20",
+        "cat": "goals",
+        "q": "In the goal pyramid, medium-range goals sit at approximately which horizon?",
+        "options": [
+          "Today only",
+          "1–2 years from now",
+          "10–20 years from now",
+          "The next 20 minutes"
+        ],
+        "correct": 1,
+        "explain": "Medium-range = 1–2 years; long-term ≈ 5 years; short-term = daily and weekly."
+      },
+      {
+        "id": "B28",
+        "cat": "goals",
+        "q": "Which study-habit cluster is listed as a powerful way to reach academic goals?",
+        "options": [
+          "One monthly marathon, starting after midnight, with no calendar",
+          "20–25 hours a week outside class, in small bits of time, with most studying done before 10:00 p.m.",
+          "Zero hours outside class if the lecture was attended",
+          "Only group work after 1:00 a.m."
+        ],
+        "correct": 1,
+        "explain": "20–25 hours a week outside class, in small bits, most studying done before 10:00 p.m."
+      },
+      {
+        "id": "B36",
+        "cat": "goals",
+        "q": "Why meet the instructor after the first exam?",
+        "options": [
+          "To argue the grade with no plan to change anything",
+          "To learn from mistakes and get feedback",
+          "To cancel the rest of the semester",
+          "To replace the long-term goal with a complaint"
+        ],
+        "correct": 1,
+        "explain": "To learn from mistakes and get feedback."
+      },
+      {
+        "id": "C01",
+        "cat": "time_management",
+        "q": "Which quadrant has tasks that are Not Urgent and Important?",
+        "options": [
+          "Quadrant 1",
+          "Quadrant 2",
+          "Quadrant 3"
+        ],
+        "correct": 1,
+        "explain": "Quadrant 2 = Not Urgent + Important — planning, prevention, preparation."
+      },
+      {
+        "id": "C09",
+        "cat": "time_management",
+        "q": "Why is Quadrant II described as the heart of personal quality management?",
+        "options": [
+          "It consists mainly of entertainment and time-wasting activities.",
+          "It allows people to avoid all responsibilities.",
+          "It contains all urgent crises that must be solved immediately.",
+          "It focuses on planning, capacity development, prevention, and preparation."
+        ],
+        "correct": 3,
+        "explain": "Quadrant II focuses on planning, capacity development, prevention, and preparation."
+      },
+      {
+        "id": "C17",
+        "cat": "time_management",
+        "q": "Which activity is the clearest example of Quadrant IV: Not Urgent and Not Important?",
+        "options": [
+          "Preventing future academic problems through planning",
+          "Completing a high-value task due today",
+          "Responding to a serious emergency",
+          "Spending study time on games and unnecessary chatting"
+        ],
+        "correct": 3,
+        "explain": "Games and unnecessary chatting = neither deadline nor payoff = QIV."
+      },
+      {
+        "id": "C25",
+        "cat": "time_management",
+        "q": "If an activity is urgent, does that automatically mean it is important?",
+        "options": [
+          "Yes — urgency always proves importance",
+          "Only if a teacher assigned it",
+          "No — an activity can be urgent yet contribute nothing to your mission",
+          "Only during examination weeks"
+        ],
+        "correct": 2,
+        "explain": "No — urgency is a timing claim; importance is a mission claim."
+      },
+      {
+        "id": "C33",
+        "cat": "time_management",
+        "q": "Which benefit of good time management is stated in the lecture?",
+        "options": [
+          "It guarantees top grades without effort",
+          "It removes every source of stress from life",
+          "It makes you better prepared for the demands of your life — therefore decreasing anxiety",
+          "It shortens the semester"
+        ],
+        "correct": 2,
+        "explain": "Better prepared for life's demands → decreases anxiety."
+      },
+      {
+        "id": "C41",
+        "cat": "time_management",
+        "q": "What is the stated purpose of developing a weekly schedule?",
+        "options": [
+          "To provide an overview of free and committed time",
+          "To record the grades of every quiz",
+          "To list the phone numbers of classmates",
+          "To track how much money is spent"
+        ],
+        "correct": 0,
+        "explain": "An overview of free and committed time."
+      },
+      {
+        "id": "C49",
+        "cat": "time_management",
+        "q": "According to the conclusion, time management is a skill that:",
+        "options": [
+          "Only students need",
+          "Only managers need",
+          "Everyone must work on in all areas of their life — personal, academic, and work",
+          "Talented people can safely skip"
+        ],
+        "correct": 2,
+        "explain": "Everyone must work on it — personal, academic, and work."
+      },
+      {
+        "id": "D01",
+        "cat": "writing_presentation",
+        "q": "What should the first slide of a presentation typically include?",
+        "options": [
+          "Only the title of the presentation",
+          "Title, your name, position, affiliation, and optionally additional information such as date or institution logo",
+          "Only detailed content of the presentation"
+        ],
+        "correct": 1,
+        "explain": "Cover slide: title + name, position, affiliation (± date, institution logo) — not detailed content."
+      },
+      {
+        "id": "D09",
+        "cat": "writing_presentation",
+        "q": "The reminder 'A person who is going nowhere normally gets there' is attached to which planning step?",
+        "options": [
+          "Locating the suitable resources",
+          "Collecting ideas and information",
+          "Setting your goal",
+          "Designing the background colors"
+        ],
+        "correct": 2,
+        "explain": "It hangs under 'Set Your Goal'."
+      },
+      {
+        "id": "D17",
+        "cat": "writing_presentation",
+        "q": "Why does the lecture recommend showing one point at a time?",
+        "options": [
+          "It makes the slide file smaller",
+          "It helps the audience concentrate, prevents them from reading ahead, and keeps your talk focused",
+          "It hides weak points from the audience",
+          "It is required by all presentation software"
+        ],
+        "correct": 1,
+        "explain": "Helps concentration, prevents reading ahead, keeps the talk focused."
+      },
+      {
+        "id": "D25",
+        "cat": "writing_presentation",
+        "q": "Which combination appears on the lecture's 'avoid such combinations' list?",
+        "options": [
+          "Dark blue on white",
+          "Black on light grey",
+          "Green on blue (also dark yellow on green, purple on blue, orange on green, red on green)",
+          "A dark font on a light background"
+        ],
+        "correct": 2,
+        "explain": "Avoid green on blue, dark yellow on green, purple on blue, orange on green, red on green — and bright colors on white."
+      },
+      {
+        "id": "D33",
+        "cat": "writing_presentation",
+        "q": "Which treatment does the lecture give for presentation phobia?",
+        "options": [
+          "Practice, practice, practice — using colleagues, friends, or relatives as audiences — and take a couple of deep breaths before standing up",
+          "Avoid all presentations for a year",
+          "Speak only to mirrors, never to live audiences",
+          "Read slides word-for-word to avoid mistakes"
+        ],
+        "correct": 0,
+        "explain": "Practice repeatedly with friendly audiences + deep breaths before standing up. (Source file was truncated here — distractors B–D reconstructed.)"
+      }
+    ]
+  }
+}
