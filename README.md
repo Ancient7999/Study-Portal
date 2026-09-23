@@ -1,3 +1,5 @@
+*Note: The following instructions are AI generated to host your own version, to use the already hosted version use the direct link: https://ancient7999.github.io/Study-Portal/ *
+
 # Study Portal
 
 Static practice hub for GitHub Pages. Question banks are JSON files in this repo and load with relative `fetch` (not the GitHub API).
@@ -51,7 +53,7 @@ Open `http://localhost:8080/`.
 
 ## Online features
 
-Profiles (anonymous auth), Chat dock (World/Trade/Local/Guild/Whisper/Party), Party (max 4), Lobbies + 1–4 split quiz, live party cursors, and local Mastery/Mastery+/DNSA. Scores still locked. Banks stay static JSON.
+Profiles (anonymous auth), Chat dock, Party (max 4), Lobbies + 1–4 split quiz, live party cursors, and local Mastery/Mastery+/DNSA. Scores still locked. Banks stay static JSON.
 
 ## Firebase (rules shipped)
 
