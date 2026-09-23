@@ -456,6 +456,8 @@
 
   /* —— UI —— */
   function ensureDock() {
+        return; // TEMPORARILY DISABLED
+
     if (document.getElementById('chatDock')) return;
     ensureVisible();
     const dock = document.createElement('div');
