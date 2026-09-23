@@ -351,9 +351,16 @@
   async function createLobby() {
     const me = uid();
     if (!me) throw new Error('Sign in first');
+    
+    // Safety lock: prevent creating multiple lobbies
+    if (state.activeLobbyId) {
+      throw new Error('You are already in a lobby. Leave it first.');
+    }
+
     if (StudyParty && StudyParty.inParty && StudyParty.inParty() && !StudyParty.isLeader()) {
       throw new Error('Only the party leader can create a lobby');
     }
+
     let bank = state.createBank;
     let form = state.createForm;
     if (state.bankPicker && state.bankPicker.getValue) {
@@ -368,10 +375,12 @@
         form = v.form;
       }
     }
+    
     const id = randomId();
     const bits = profileBits();
     const chatSessionId = randomId() + randomId();
     const now = Date.now();
+    
     const seats = {};
     seats['0'] = {
       uid: me,
@@ -382,6 +391,7 @@
       form: form || 'A',
       updatedAt: now
     };
+    
     const members = {};
     members[me] = {
       displayName: bits.displayName,
@@ -392,6 +402,7 @@
       lastSeen: now,
       online: true
     };
+    
     const payload = {
       leader: me,
       partyId: (StudyParty && StudyParty.getPartyId && StudyParty.getPartyId()) || null,
@@ -404,16 +415,18 @@
       seats: seats,
       members: members
     };
+    
     await ensureDb().ref('lobbies/' + id).set(payload);
     state.activeLobbyId = id;
     state.mySeat = 0;
+    
     await bindPresence(id, 0, 'play');
     listenActive(id);
     notifyChatLobby(payload);
+    
     toast('Lobby created');
     render();
   }
-
   async function joinLobby(lobbyId, opts) {
     opts = opts || {};
     const me = uid();
