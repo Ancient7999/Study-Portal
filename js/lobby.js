@@ -212,9 +212,17 @@
     Object.keys(seats).forEach((k) => {
       if (seats[k] && seats[k].uid === memberUid) updates['seats/' + k] = null;
     });
+    
+    if (lobby.leader === memberUid) {
+      const remainingMembers = Object.keys(lobby.members || {}).filter(id => id !== memberUid);
+      if (remainingMembers.length > 0) {
+        remainingMembers.sort((a, b) => (lobby.members[a].joinedAt || 0) - (lobby.members[b].joinedAt || 0));
+        updates['leader'] = remainingMembers[0];
+      }
+    }
+
     await db.ref('lobbies/' + lobbyId).update(updates);
 
-    // If we removed ourselves, cancel our hooks
     if (memberUid === uid()) {
       clearDisconnectHooks();
       stopHeartbeat();
@@ -224,13 +232,6 @@
     if (!after || !isLobbyAlive(after)) {
       await db.ref('lobbies/' + lobbyId).remove();
       return;
-    }
-    if (after.leader === memberUid) {
-      const ids = Object.keys(after.members || {}).sort(
-        (a, b) => (after.members[a].joinedAt || 0) - (after.members[b].joinedAt || 0)
-      );
-      if (ids.length) await db.ref('lobbies/' + lobbyId + '/leader').set(ids[0]);
-      else await db.ref('lobbies/' + lobbyId).remove();
     }
   }
 
