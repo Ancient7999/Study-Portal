@@ -185,7 +185,7 @@
         },
         "seats": {
           "$seat": {
-            ".write": "auth != null",
+            ".write": "auth != null && (root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid || (!data.exists() && newData.child('uid').val() == auth.uid) || (data.exists() && data.child('uid').val() == auth.uid))",
             ".validate": "$seat.matches(/^[0-3]$/) && (!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString() && (!newData.hasChild('role') || newData.child('role').val().matches(/^(play|spectate)$/)) && (!newData.hasChild('bank') || newData.child('bank').isString()) && (!newData.hasChild('form') || newData.child('form').isString())))"
           }
         },
