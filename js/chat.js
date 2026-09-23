@@ -305,13 +305,16 @@
     ensureVisible();
     const log = document.getElementById('chatLog');
     const listening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id));
+    
     if (!listening.length) {
+      console.warn('[Chat] listenMessages: No channels listening. Visible:', Array.from(state.visible || []), 'Context:', state.lobbyCtx);
       if (log) {
         let hint = 'Join a lobby to use Lobby chat.';
         log.innerHTML = '<div class="chat-empty">' + esc(hint) + '</div>';
       }
       return;
     }
+    
     const { db } = ensureFirebase();
     const buckets = {};
     const unsubs = [];
@@ -792,7 +795,8 @@
   }
 
   function setLobbyContext(ctx) {
-    if (!ctx || !ctx.lobbyId || !ctx.chatSessionId) {
+    if (!ctx || !ctx.lobbyId) {
+      console.warn('[Chat] Clearing lobby context (ctx missing or no lobbyId)');
       const had = !!state.lobbyCtx;
       state.lobbyCtx = null;
       ensureVisible();
@@ -800,24 +804,41 @@
       publishPresence();
       return;
     }
+
+    let chatSessionId = ctx.chatSessionId;
+    
+    if (!chatSessionId && state.lobbyCtx && state.lobbyCtx.lobbyId === String(ctx.lobbyId).slice(0, 64)) {
+      console.log('[Chat] Preserving chatSessionId from previous context');
+      chatSessionId = state.lobbyCtx.chatSessionId;
+    }
+
+    if (!chatSessionId) {
+      console.warn('[Chat] Dropping context because chatSessionId is missing from snapshot:', ctx);
+      const had = !!state.lobbyCtx;
+      state.lobbyCtx = null;
+      ensureVisible();
+      if (had) { syncChannelUI(); listenMessages(); }
+      publishPresence();
+      return;
+    }
+
     const next = {
       lobbyId: String(ctx.lobbyId).slice(0, 64),
-      chatSessionId: String(ctx.chatSessionId).slice(0, 64),
+      chatSessionId: String(chatSessionId).slice(0, 64),
       joinedAt: Number(ctx.joinedAt) || Date.now()
     };
-    const same =
-      state.lobbyCtx &&
-      state.lobbyCtx.lobbyId === next.lobbyId &&
-      state.lobbyCtx.chatSessionId === next.chatSessionId &&
-      state.lobbyCtx.joinedAt === next.joinedAt;
+    
     state.lobbyCtx = next;
     state.activity = 'lobby';
     ensureVisible();
+    
     if (!state.visible.has('lobby')) {
       state.visible.add('lobby');
       saveVisible();
     }
     if (!channelPathFor(state.channel)) state.channel = 'lobby';
+    
+    console.log('[Chat] Setting active context:', next);
     syncChannelUI();
     listenMessages();
     publishPresence(true);
