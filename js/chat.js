@@ -364,25 +364,6 @@
       unsubs.forEach((fn) => fn());
     };
   }
-      if (c.id === 'lobby' && state.lobbyCtx && state.lobbyCtx.joinedAt) {
-        cutoff = Math.max(cutoff, Number(state.lobbyCtx.joinedAt) || cutoff);
-      }
-      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').startAt(cutoff).limitToLast(MSG_CAP);
-      const handler = (snap) => {
-        const rows = [];
-        snap.forEach((child) => { rows.push(Object.assign({ id: child.key }, child.val() || {})); });
-        buckets[c.id] = rows;
-        refresh();
-      };
-      q.on('value', handler);
-      unsubs.push(() => q.off('value', handler));
-    });
-
-    state.unsubMsgs = () => {
-      if (refreshTimer) clearTimeout(refreshTimer);
-      unsubs.forEach((fn) => fn());
-    };
-  }
   
   function channelTagLabel(id) {
     const ch = CHANNELS.find((c) => c.id === id);
