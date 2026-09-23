@@ -819,7 +819,7 @@
     }
     if (!channelPathFor(state.channel)) state.channel = 'lobby';
     syncChannelUI();
-    if (!same) listenMessages();
+    listenMessages();
     publishPresence(true);
   }
 
