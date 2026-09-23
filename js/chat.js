@@ -304,10 +304,17 @@
     stopMsgs();
     ensureVisible();
     const log = document.getElementById('chatLog');
+    
+    if (state.lobbyCtx && state.lobbyCtx.lobbyId && state.lobbyCtx.chatSessionId) {
+      if (!state.visible.has('lobby')) {
+        state.visible.add('lobby');
+        saveVisible();
+      }
+    }
+
     const listening = CHANNELS.filter((c) => state.visible.has(c.id) && channelPathFor(c.id));
     
     if (!listening.length) {
-      console.warn('[Chat] listenMessages: No channels listening. Visible:', Array.from(state.visible || []), 'Context:', state.lobbyCtx);
       if (log) {
         let hint = 'Join a lobby to use Lobby chat.';
         log.innerHTML = '<div class="chat-empty">' + esc(hint) + '</div>';
@@ -338,6 +345,25 @@
     listening.forEach((c) => {
       buckets[c.id] = [];
       let cutoff = Date.now() - (24 * 60 * 60 * 1000);
+      if (c.id === 'lobby' && state.lobbyCtx && state.lobbyCtx.joinedAt) {
+        cutoff = Math.max(cutoff, Number(state.lobbyCtx.joinedAt) || cutoff);
+      }
+      const q = db.ref(channelPathFor(c.id)).orderByChild('ts').startAt(cutoff).limitToLast(MSG_CAP);
+      const handler = (snap) => {
+        const rows = [];
+        snap.forEach((child) => { rows.push(Object.assign({ id: child.key }, child.val() || {})); });
+        buckets[c.id] = rows;
+        refresh();
+      };
+      q.on('value', handler);
+      unsubs.push(() => q.off('value', handler));
+    });
+
+    state.unsubMsgs = () => {
+      if (refreshTimer) clearTimeout(refreshTimer);
+      unsubs.forEach((fn) => fn());
+    };
+  }
       if (c.id === 'lobby' && state.lobbyCtx && state.lobbyCtx.joinedAt) {
         cutoff = Math.max(cutoff, Number(state.lobbyCtx.joinedAt) || cutoff);
       }
@@ -796,7 +822,6 @@
 
   function setLobbyContext(ctx) {
     if (!ctx || !ctx.lobbyId) {
-      console.warn('[Chat] Clearing lobby context (ctx missing or no lobbyId)');
       const had = !!state.lobbyCtx;
       state.lobbyCtx = null;
       ensureVisible();
@@ -804,28 +829,18 @@
       publishPresence();
       return;
     }
-
-    let chatSessionId = ctx.chatSessionId;
-    
-    if (!chatSessionId && state.lobbyCtx && state.lobbyCtx.lobbyId === String(ctx.lobbyId).slice(0, 64)) {
-      console.log('[Chat] Preserving chatSessionId from previous context');
-      chatSessionId = state.lobbyCtx.chatSessionId;
+    if (!ctx.chatSessionId && state.lobbyCtx && state.lobbyCtx.lobbyId === String(ctx.lobbyId).slice(0, 64)) {
+      ctx.chatSessionId = state.lobbyCtx.chatSessionId;
     }
 
-    if (!chatSessionId) {
-      console.warn('[Chat] Dropping context because chatSessionId is missing from snapshot:', ctx);
-      const had = !!state.lobbyCtx;
-      state.lobbyCtx = null;
-      ensureVisible();
-      if (had) { syncChannelUI(); listenMessages(); }
-      publishPresence();
+    if (!ctx.chatSessionId) {
       return;
     }
 
     const next = {
       lobbyId: String(ctx.lobbyId).slice(0, 64),
-      chatSessionId: String(chatSessionId).slice(0, 64),
-      joinedAt: Number(ctx.joinedAt) || Date.now()
+      chatSessionId: String(ctx.chatSessionId).slice(0, 64),
+      joinedAt: Number(ctx.joinedAt) || state.lobbyCtx?.joinedAt || Date.now()
     };
     
     state.lobbyCtx = next;
@@ -838,7 +853,6 @@
     }
     if (!channelPathFor(state.channel)) state.channel = 'lobby';
     
-    console.log('[Chat] Setting active context:', next);
     syncChannelUI();
     listenMessages();
     publishPresence(true);
