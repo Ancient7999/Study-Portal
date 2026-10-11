@@ -326,7 +326,7 @@
      "Pronunciation is identical in every language, so the same spoken form always yields the same written form."
     ],
     "correct": 0,
-    "explain": "Pronunciation is the key to understanding a term universally and to arriving at the correct spelling, because the sound of a term is what links a spoken form to its written components. The second option denies both functions; the third wrongly limits pronunciation to Latin terms; the fourth wrongly assumes an identity across languages that the many exceptions in this lecture show is not the case."
+    "explain": "Pronunciation is the key to understanding a term universally and to arriving at the correct spelling, because the sound of a term is what links a spoken form to its written components. The second option denies both functions; the third wrongly limits pronunciation to Latin terms; the fourth wrongly assumes an identity across languages that the many exceptions show is not the case."
    },
    {
     "id": "MT03019",
@@ -340,7 +340,7 @@
      "Because the letter p is always silent wherever it appears."
     ],
     "correct": 0,
-    "explain": "The general rules hold for most terms, but a few terms break them and can mislead the reader who applies the rules mechanically, which is why the lecture warns that exceptions can become tricky. The second option wrongly denies the rules any regular force; the third wrongly limits them to one origin; the fourth overgeneralizes the silent-p rule, which applies only to the initial position before s, n, or t."
+    "explain": "The general rules hold for most terms, but a few terms break them and can mislead the reader who applies the rules mechanically, which is why exceptions can become tricky. The second option wrongly denies the rules any regular force; the third wrongly limits them to one origin; the fourth overgeneralizes the silent-p rule, which applies only to the initial position before s, n, or t."
    },
    {
     "id": "MT03020",
@@ -578,7 +578,7 @@
      "Because the silent letters carry no information, the writer can safely omit them."
     ],
     "correct": 0,
-    "explain": "Pronunciation guides the writer to the correct spelling because each sound in the standard set corresponds to a recognized spelling pattern, so hearing an f sound tells the writer to write ph in words such as diaphragm or nephron. The second option ignores the many exceptions the lecture warns about, the third denies the link between sound and spelling, and the fourth wrongly permits dropping letters that the term's correct spelling requires."
+    "explain": "Pronunciation guides the writer to the correct spelling because each sound in the standard set corresponds to a recognized spelling pattern, so hearing an f sound tells the writer to write ph in words such as diaphragm or nephron. The second option ignores the many exceptions to the rules, the third denies the link between sound and spelling, and the fourth wrongly permits dropping letters that the term's correct spelling requires."
    },
    {
     "id": "MT03037",
@@ -1147,7 +1147,7 @@
      "Both patterns keep -us and add -es, and the only difference is the number of syllables."
     ],
     "correct": 0,
-    "explain": "The standard -us family replaces the ending with -i, as in thrombus to thrombi, while the special -us family keeps -us and adds -es, as in sinus to sinuses and virus to viruses. The second option reverses the two, and the third and fourth collapse them into a single pattern, ignoring the two different outcomes the lecture pairs with the two families."
+    "explain": "The standard -us family replaces the ending with -i, as in thrombus to thrombi, while the special -us family keeps -us and adds -es, as in sinus to sinuses and virus to viruses. The second option reverses the two, and the third and fourth collapse them into a single pattern, ignoring the two different outcomes of the two families."
    },
    {
     "id": "MT03058",

@@ -6,7 +6,7 @@
 
 ### What this chapter covers
 
-Chapter 8 builds electricity from the ground up: **electric charge**, the force between charges (**Coulomb's law**), the **electric field** and the **electric potential**. It then covers **current**, **Ohm's law**, **resistance and resistivity** and **current density**. The body uses electricity too, so the chapter explains **nerve conduction**: the resting potential and the **action potential**. The last part is **magnetism**: the force on a moving charge, **MRI**, and the weak magnetic fields the body makes (**biomagnetism**).
+Chapter 8 builds electricity from the ground up: **electric charge**, **Coulomb's law** for the force between charges, the **electric field** and the **electric potential**. It then covers **current**, **Ohm's law**, **resistance and resistivity** and **current density**. The body uses electricity too, so the chapter explains **nerve conduction**: the resting potential and the **action potential**. The last part is **magnetism**: the force on a moving charge, **MRI**, and **biomagnetism**, the weak magnetic fields the body makes.
 
 ### Topics map
 
@@ -20,10 +20,10 @@ Chapter 8 builds electricity from the ground up: **electric charge**, the force 
 | Ohm's law | V = I R at constant temperature |
 | Resistance | R = ρ L / A; resistivity ρ is a property of the material |
 | Current density | J = I / A = σ E |
-| Nerve conduction | Resting −70 mV; Na⁺ in (depolarization), K⁺ out (repolarization) |
+| Nerve conduction | Resting −70 mV; Na⁺ in for depolarization, K⁺ out for repolarization |
 | Magnetism | F = q v B sin θ; 1 T = 10⁴ G |
 | MRI | Strong magnet + radio waves; no ionizing radiation |
-| Biomagnetism | MEG (brain), MCG (heart) |
+| Biomagnetism | MEG for the brain, MCG for the heart |
 
 ---
 
@@ -31,7 +31,7 @@ Chapter 8 builds electricity from the ground up: **electric charge**, the force 
 
 - There are **two types of charge**, **positive** and **negative**. **Like charges repel; opposite charges attract.**
 - Charge is **conserved**: it cannot be created or destroyed, only moved from one body to another.
-- The SI unit of charge is the **coulomb (C)**. Small charges are given in **microcoulombs (1 μC = 10⁻⁶ C)**.
+- The SI unit of charge is the **coulomb (C)**. Small charges are given in **microcoulombs**: 1 μC = 10⁻⁶ C.
 - Charge is **quantized**: every charge is a whole number of electron charges:
 
 ```
@@ -40,18 +40,18 @@ Q = n e,   n = any whole number,   e = 1.602 × 10⁻¹⁹ C
 
 - A body that **gains electrons** becomes **negative**; a body that **loses electrons** becomes **positive**.
 
-### Worked examples (slide problems)
+### Worked examples
 
 **Two million electrons are transferred to a body.**
 
 ```
-Q = n e = 2 × 10⁶ × 1.602 × 10⁻¹⁹ = 3.204 × 10⁻¹³ C   (negative)
+Q = n e = 2 × 10⁶ × 1.602 × 10⁻¹⁹ = 3.204 × 10⁻¹³ C   ← negative
 ```
 
 **One billion electrons are removed from a body.**
 
 ```
-Q = 10⁹ × 1.602 × 10⁻¹⁹ = 1.602 × 10⁻¹⁰ C   (positive, because electrons left)
+Q = 10⁹ × 1.602 × 10⁻¹⁹ = 1.602 × 10⁻¹⁰ C   ← positive, because electrons left
 ```
 
 ---
@@ -62,7 +62,7 @@ The electric force between two point charges is **directly proportional to the p
 
 ```
 F = k Q₁ Q₂ / r²
-k = 8.998 × 10⁹ N·m²/C²  (in air; use 9 × 10⁹)
+k = 8.998 × 10⁹ N·m²/C²   ← in air; use 9 × 10⁹
 ```
 
 <div class="optics-diagram" role="img" aria-label="Like charges repel and opposite charges attract">
@@ -79,13 +79,13 @@ Because of the **r²**, **doubling the distance** makes the force **one quarter*
 </svg>
 </div>
 
-### Worked examples (slide problems)
+### Worked examples
 
 **−3 μC and +6 μC, 50 cm apart in air. Find the force.**
 
 ```
 F = 9 × 10⁹ × (3 × 10⁻⁶)(6 × 10⁻⁶) / (0.5)²
-F = 9 × 10⁹ × 18 × 10⁻¹² / 0.25 = 0.648 N   (attractive)
+F = 9 × 10⁹ × 18 × 10⁻¹² / 0.25 = 0.648 N   ← attractive
 ```
 
 **30 μC and 90 μC feel a force of 1.8 N. How far apart are they?**
@@ -102,9 +102,9 @@ r² = 24.3 / 1.8 = 13.5   →   r ≈ 3.67 m
 - The **electric field E** at a point is the **force on a small positive test charge divided by that charge**:
 
 ```
-E = F / q          (unit: newton per coulomb, N/C)
-E = k Q / r²       (field of a point charge Q)
-F = q E            (force on a charge q placed in a field)
+E = F / q   ← unit: newton per coulomb, N/C
+E = k Q / r²   ← field of a point charge Q
+F = q E   ← force on a charge q placed in a field
 ```
 
 - **Field lines** point the way a positive charge would be pushed: **away from positive** charges and **toward negative** charges. Around a **negatively charged sphere** the lines **come inward from every direction**.
@@ -130,15 +130,15 @@ F = q E = 5 × 10⁻⁶ × 4 × 10⁵ = 2.0 N
 - The **electric potential V** at a point is the **work per unit charge** needed to bring a positive test charge **from infinity to that point**:
 
 ```
-V = W / q = U / q          (unit: volt)
+V = W / q = U / q   ← unit: volt
 1 V = 1 J/C
-V = k Q / r = Q / (4π ε₀ r)    (potential of a point charge)
+V = k Q / r = Q / (4π ε₀ r)   ← potential of a point charge
 ```
 
-- **How V = k Q / r is linked to the field:** the slides multiply the field by the distance (W = F × r, so V = E × r = k Q / r). This is a short-cut; it gives the right answer for a point charge, which strictly needs calculus.
+- **How V = k Q / r is linked to the field:** multiply the field by the distance. Since W = F × r, V = E × r = k Q / r. This is a short-cut; it gives the right answer for a point charge, which strictly needs calculus.
 - A potential difference of 550 V means **550 J for every coulomb** that moves. A high voltage is dangerous because of the **charge and energy** it can drive through the body.
 
-### Worked examples (slide problems)
+### Worked examples
 
 **10 V between two points; 2 × 10⁻² J of work moves a charge. Find the charge.**
 
@@ -160,7 +160,7 @@ In electron-volts: 0.02 / 1.6 × 10⁻¹⁹ = 1.25 × 10¹⁷ eV
 - **Electric current** is the **rate of flow of charge** through a conductor:
 
 ```
-I = dq / dt = Q / t      (unit: ampere, 1 A = 1 C/s)
+I = dq / dt = Q / t   ← unit: ampere, 1 A = 1 C/s
 ```
 
 Example: **100 C** passing a point in **1 s** gives **I = 100 A**.
@@ -168,10 +168,10 @@ Example: **100 C** passing a point in **1 s** gives **I = 100 A**.
 - **Ohm's law:** at **constant temperature**, the current through a conductor is **directly proportional to the potential difference** across it:
 
 ```
-V = I R      (R = resistance, unit ohm: 1 Ω = 1 V/A)
+V = I R   ← R = resistance, unit ohm: 1 Ω = 1 V/A
 ```
 
-### Worked examples (slide problems)
+### Worked examples
 
 **2 mA flows when a wire is connected to a 5 V battery.**
 
@@ -196,7 +196,7 @@ R = ρ L / A        ρ = R A / L
 ```
 
 - **ρ (rho)** is the **resistivity**: the **resistance of a unit cube of the material measured between opposite faces**. Its SI unit is the **ohm-metre (Ω·m)**.
-- **Resistance** depends on the **size and shape** of the object (and on temperature). **Resistivity** is a **property of the material itself**.
+- **Resistance** depends on the **size and shape** of the object, and on temperature. **Resistivity** is a **property of the material itself**.
 - Example: a **copper** wire and an **iron** wire of the **same length and area** pass **different currents** at the same voltage, because their **resistivities** differ.
 
 <div class="optics-diagram" role="img" aria-label="Resistance of a wire grows with length and falls with cross-section area">
@@ -205,7 +205,7 @@ R = ρ L / A        ρ = R A / L
 </svg>
 </div>
 
-### Worked examples (slide problems)
+### Worked examples
 
 **A wire 20 m long, area 5 × 10⁻⁶ m², resistance 30 Ω. Find ρ.**
 
@@ -226,9 +226,9 @@ A = ρ L / R = 6.0 × 10⁻⁸ × 0.1 / 20 = 3 × 10⁻¹⁰ m²
 - **Current density J** is the **current per unit area of cross-section**:
 
 ```
-J = I / A          (unit: A/m²)
-J = σ E            (σ = conductivity = 1/ρ)
-E = V / L          (field along a wire of length L)
+J = I / A   ← unit: A/m²
+J = σ E   ← σ = conductivity = 1/ρ
+E = V / L   ← field along a wire of length L
 ρ = E / J
 ```
 
@@ -238,20 +238,20 @@ E = V / L          (field along a wire of length L)
 
 ### The neuron
 
-- A **neuron** (nerve cell) has a **cell body**, **dendrites**, an **axon** and **synapses**.
+- A **neuron**, or nerve cell, has a **cell body**, **dendrites**, an **axon** and **synapses**.
 - Signals are **received by the dendrites**, **carried along the axon**, and **passed on at the synapse** to the next cell.
 - Many axons are wrapped in a fatty **myelin sheath** with small gaps called **nodes of Ranvier**. The signal jumps from node to node, so **myelin speeds up the transmission** of the action potential.
 
 <div class="optics-diagram" role="img" aria-label="A neuron: dendrites, cell body, myelinated axon and synapse">
 <svg viewBox="0 0 640 236" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<path d="M110,110 Q78.1,85.8 44.2,86.1" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q104.6,70.4 80.4,46.6" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q141.9,134.2 175.8,133.9" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q115.4,149.6 139.6,173.4" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q85.8,141.9 86.1,175.8" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q70.4,115.4 46.6,139.6" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="110" cy="110" r="28" fill="rgba(var(--accent-3-rgb),0.4)" stroke="var(--accent-3)" stroke-width="2"/><circle cx="110" cy="110" r="7" fill="var(--accent-3)"/><line x1="138" y1="110" x2="560" y2="110" stroke="var(--accent-3)" stroke-width="3"/><rect x="170" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="240" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="310" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="380" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="450" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><line x1="560" y1="110" x2="590" y2="90" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="90" r="5" fill="var(--accent-3)"/><line x1="560" y1="110" x2="590" y2="110" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="110" r="5" fill="var(--accent-3)"/><line x1="560" y1="110" x2="590" y2="130" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="130" r="5" fill="var(--accent-3)"/><text x="60" y="28" text-anchor="start" fill="var(--accent-3)" font-family="Outfit,sans-serif" font-size="11.5">dendrites (receive)</text><text x="60" y="206" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">cell body</text><text x="330" y="82" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">axon (carries the signal)</text><text x="407" y="142" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11.5">myelin sheath</text><line x1="232" y1="112" x2="232" y2="160" stroke="var(--col-text-muted)" stroke-width="1" stroke-dasharray="2 2"/><text x="238" y="170" text-anchor="start" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="11">node of Ranvier (gap)</text><text x="590" y="160" text-anchor="end" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">synapse</text><line x1="200" y1="200" x2="480" y2="200" stroke="var(--accent-0)" stroke-width="2.5"/><polygon points="484.8,200 475.2,203.6 475.2,196.4" fill="var(--accent-0)"/><text x="340" y="222" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11.5">direction of the nerve impulse</text>
+<path d="M110,110 Q78.1,85.8 44.2,86.1" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q104.6,70.4 80.4,46.6" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q141.9,134.2 175.8,133.9" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q115.4,149.6 139.6,173.4" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q85.8,141.9 86.1,175.8" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><path d="M110,110 Q70.4,115.4 46.6,139.6" fill="none" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="110" cy="110" r="28" fill="rgba(var(--accent-3-rgb),0.4)" stroke="var(--accent-3)" stroke-width="2"/><circle cx="110" cy="110" r="7" fill="var(--accent-3)"/><line x1="138" y1="110" x2="560" y2="110" stroke="var(--accent-3)" stroke-width="3"/><rect x="170" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="240" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="310" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="380" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><rect x="450" y="98" width="54" height="24" rx="12" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.6"/><line x1="560" y1="110" x2="590" y2="90" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="90" r="5" fill="var(--accent-3)"/><line x1="560" y1="110" x2="590" y2="110" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="110" r="5" fill="var(--accent-3)"/><line x1="560" y1="110" x2="590" y2="130" stroke="var(--accent-3)" stroke-width="2.5"/><circle cx="592" cy="130" r="5" fill="var(--accent-3)"/><text x="60" y="28" text-anchor="start" fill="var(--accent-3)" font-family="Outfit,sans-serif" font-size="11.5">dendrites: receive</text><text x="60" y="206" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">cell body</text><text x="330" y="82" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">axon: carries the signal</text><text x="407" y="142" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11.5">myelin sheath</text><line x1="232" y1="112" x2="232" y2="160" stroke="var(--col-text-muted)" stroke-width="1" stroke-dasharray="2 2"/><text x="238" y="170" text-anchor="start" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="11">node of Ranvier: gap</text><text x="590" y="160" text-anchor="end" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11.5">synapse</text><line x1="200" y1="200" x2="480" y2="200" stroke="var(--accent-0)" stroke-width="2.5"/><polygon points="484.8,200 475.2,203.6 475.2,196.4" fill="var(--accent-0)"/><text x="340" y="222" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11.5">direction of the nerve impulse</text>
 </svg>
 </div>
 
 ### The resting potential
 
-- At rest the inside of the cell is **negative**: the **resting potential is about −70 mV** (one slide gives −75 mV; −70 mV is the usual value and the one the questions use).
-- It comes from **ionic concentration differences** and the membrane being **selectively permeable, mainly to K⁺**. There is more **K⁺ (and Cl⁻) inside** and more **Na⁺ outside**.
+- At rest the inside of the cell is **negative**: the **resting potential is about −70 mV**. Values near −75 mV are also quoted, but −70 mV is the usual value.
+- It comes from **ionic concentration differences** and the membrane being **selectively permeable, mainly to K⁺**. There is more **K⁺ and Cl⁻ inside** and more **Na⁺ outside**.
 - The **sodium–potassium pump** pushes **Na⁺ out** and **K⁺ in**, keeping these differences.
 
 ### Gated channels
@@ -260,7 +260,7 @@ The membrane has **three types of gated channels**:
 
 | Channel | Opens when |
 |---|---|
-| **Chemical gated** | A **chemical (neurotransmitter) binds** to it |
+| **Chemical gated** | A **chemical**, a neurotransmitter, **binds** to it |
 | **Mechanical gated** | The membrane is **stretched or pressed** |
 | **Voltage gated** | The **membrane voltage changes** |
 
@@ -269,15 +269,15 @@ The membrane has **three types of gated channels**:
 | Phase | What happens |
 |---|---|
 | **Resting** | About **−70 mV**; the cell is ready |
-| **Graded potential** | A stimulus lets a little **Na⁺ in**; the potential rises toward about −55 to −60 mV (threshold) |
-| **Depolarization** | Voltage-gated **Na⁺ channels open**, **Na⁺ rushes in**, the inside becomes positive (about +30 mV) |
+| **Graded potential** | A stimulus lets a little **Na⁺ in**; the potential rises toward the threshold of about −55 to −60 mV |
+| **Depolarization** | Voltage-gated **Na⁺ channels open**, **Na⁺ rushes in**, the inside becomes positive, about +30 mV |
 | **Repolarization** | **Na⁺ channels close** and **K⁺ moves out**; the potential falls again |
 | **Hyperpolarization** | **K⁺ channels stay open longer**, so extra K⁺ leaves; the potential dips **below −70 mV** |
-| **Refractory period** | A short time when a new stimulus **cannot** fire the cell (**absolute**) or must be **much stronger** (**relative**) |
+| **Refractory period** | A short time when a new stimulus **cannot** fire the cell, the **absolute** period, or must be **much stronger**, the **relative** period |
 
 <div class="optics-diagram" role="img" aria-label="Action potential: resting, depolarization, repolarization, hyperpolarization">
 <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<line x1="80" y1="50" x2="80" y2="274" stroke="var(--col-text-main)" stroke-width="1.3"/><line x1="80" y1="274" x2="580" y2="274" stroke="var(--col-text-main)" stroke-width="1.3"/><line x1="76" y1="76" x2="580" y2="76" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="80" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">30</text><line x1="76" y1="124" x2="580" y2="124" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="128" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">0</text><line x1="76" y1="212" x2="580" y2="212" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="216" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-55</text><line x1="76" y1="236" x2="580" y2="236" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="240" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-70</text><line x1="76" y1="268" x2="580" y2="268" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="272" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-90</text><text x="72" y="46" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">mV</text><text x="580" y="290" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">time (ms)</text><path d="M80,236.0 L140,236.0 L165,223.2 L185,212.0 L205,124.0 L220,76.0 L240,124.0 L265,212.0 L285,252.0 L320,260.0 L380,244.0 L420,236.0 L580,236.0" fill="none" stroke="var(--accent-0)" stroke-width="3"/><text x="100" y="228" text-anchor="start" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">resting −70</text><text x="196" y="100" text-anchor="end" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">depolarization: Na⁺ in</text><text x="250" y="100" text-anchor="start" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11">repolarization: K⁺ out</text><text x="410" y="255.2" text-anchor="start" fill="var(--accent-5)" font-family="Outfit,sans-serif" font-size="11">hyperpolarization (below −70)</text><text x="191" y="228" text-anchor="start" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">threshold −55</text><line x1="205" y1="58" x2="380" y2="58" stroke="var(--accent-6)" stroke-width="1.5"/><text x="292" y="52" text-anchor="middle" fill="var(--accent-6)" font-family="Outfit,sans-serif" font-size="11">refractory period</text>
+<line x1="80" y1="50" x2="80" y2="274" stroke="var(--col-text-main)" stroke-width="1.3"/><line x1="80" y1="274" x2="580" y2="274" stroke="var(--col-text-main)" stroke-width="1.3"/><line x1="76" y1="76" x2="580" y2="76" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="80" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">30</text><line x1="76" y1="124" x2="580" y2="124" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="128" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">0</text><line x1="76" y1="212" x2="580" y2="212" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="216" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-55</text><line x1="76" y1="236" x2="580" y2="236" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="240" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-70</text><line x1="76" y1="268" x2="580" y2="268" stroke="var(--col-text-muted)" stroke-width="0.8" stroke-dasharray="3 4"/><text x="72" y="272" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">-90</text><text x="72" y="46" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">mV</text><text x="580" y="290" text-anchor="end" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">time, ms</text><path d="M80,236.0 L140,236.0 L165,223.2 L185,212.0 L205,124.0 L220,76.0 L240,124.0 L265,212.0 L285,252.0 L320,260.0 L380,244.0 L420,236.0 L580,236.0" fill="none" stroke="var(--accent-0)" stroke-width="3"/><text x="100" y="228" text-anchor="start" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">resting −70</text><text x="196" y="100" text-anchor="end" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">depolarization: Na⁺ in</text><text x="250" y="100" text-anchor="start" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11">repolarization: K⁺ out</text><text x="410" y="255.2" text-anchor="start" fill="var(--accent-5)" font-family="Outfit,sans-serif" font-size="11">hyperpolarization: below −70</text><text x="191" y="228" text-anchor="start" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">threshold −55</text><line x1="205" y1="58" x2="380" y2="58" stroke="var(--accent-6)" stroke-width="1.5"/><text x="292" y="52" text-anchor="middle" fill="var(--accent-6)" font-family="Outfit,sans-serif" font-size="11">refractory period</text>
 </svg>
 </div>
 
@@ -289,12 +289,12 @@ The membrane has **three types of gated channels**:
 - A charge **q** moving with velocity **v** through a magnetic field **B** feels a force:
 
 ```
-F = q v B sin θ      (θ = angle between v and B)
-B = F / (q v)        (when v is perpendicular to B)
+F = q v B sin θ   ← θ = angle between v and B
+B = F / (q v)   ← when v is perpendicular to B
 ```
 
 - The force is **perpendicular to the velocity** and **perpendicular to the field**. It is largest when v ⟂ B and zero when v is parallel to B.
-- The SI unit of B is the **tesla**: **1 T = 1 N/(A·m)** (one newton per ampere-metre). **1 T = 10⁴ gauss (G)**.
+- The SI unit of B is the **tesla**: **1 T = 1 N/(A·m)**, one newton per ampere-metre. **1 T = 10⁴ gauss (G)**.
 
 <div class="optics-diagram" role="img" aria-label="Magnetic force on a moving positive charge is perpendicular to both v and B">
 <svg viewBox="0 0 640 262" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
@@ -304,17 +304,17 @@ B = F / (q v)        (when v is perpendicular to B)
 
 ---
 
-## 11. MRI (Magnetic Resonance Imaging)
+## 11. MRI: magnetic resonance imaging
 
-- MRI uses a **strong magnetic field and radio waves** to make detailed pictures of the inside of the body.
-- **How it works:** the strong field **lines up the hydrogen nuclei** (protons) in the body's water; **radio waves** knock them out of line; as they **relax back** they give off **signals**; a computer turns the signals into **images**.
-- **Field strength:** usually **1.5 T to 3 T**. Compare the **Earth's field (about 50 μT)** and a **fridge magnet (about 0.005 T)**.
+- Magnetic resonance imaging, **MRI**, uses a **strong magnetic field and radio waves** to make detailed pictures of the inside of the body.
+- **How it works:** the strong field **lines up the hydrogen nuclei**, which are protons, in the body's water; **radio waves** knock them out of line; as they **relax back** they give off **signals**; a computer turns the signals into **images**.
+- **Field strength:** usually **1.5 T to 3 T**. Compare the **Earth's field**, about 50 μT, and a **fridge magnet**, about 0.005 T.
 - **Advantages:** **no ionizing radiation**, and **excellent soft-tissue contrast**: brain, spinal cord, muscles, joints.
 - **Safety:** **no metal objects** in the MRI room. The strong field **pulls them in with great force**.
 
 <div class="optics-diagram" role="img" aria-label="How MRI makes an image in four steps">
 <svg viewBox="0 0 640 216" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<rect x="20" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-2-rgb),0.3)" stroke="var(--accent-2)" stroke-width="1.8"/><text x="90" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">1. strong magnet</text><text x="90" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">hydrogen nuclei line up</text><line x1="162" y1="95" x2="173" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="177.8,95 168.2,98.6 168.2,91.4" fill="var(--col-text-muted)"/><rect x="175" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-6-rgb),0.3)" stroke="var(--accent-6)" stroke-width="1.8"/><text x="245" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">2. radio waves</text><text x="245" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">knock them out of line</text><line x1="317" y1="95" x2="328" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="332.8,95 323.2,98.6 323.2,91.4" fill="var(--col-text-muted)"/><rect x="330" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-3-rgb),0.3)" stroke="var(--accent-3)" stroke-width="1.8"/><text x="400" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">3. nuclei relax</text><text x="400" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">they give off signals</text><line x1="472" y1="95" x2="483" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="487.8,95 478.2,98.6 478.2,91.4" fill="var(--col-text-muted)"/><rect x="485" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-4-rgb),0.3)" stroke="var(--accent-4)" stroke-width="1.8"/><text x="555" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">4. computer</text><text x="555" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">turns signals into images</text><text x="320" y="178" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12">field 1.5–3 T  (Earth ≈ 50 μT, fridge magnet ≈ 0.005 T)</text><text x="320" y="202" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="12">no ionizing radiation · great soft-tissue contrast · no metal in the room</text>
+<rect x="20" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-2-rgb),0.3)" stroke="var(--accent-2)" stroke-width="1.8"/><text x="90" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">1. strong magnet</text><text x="90" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">hydrogen nuclei line up</text><line x1="162" y1="95" x2="173" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="177.8,95 168.2,98.6 168.2,91.4" fill="var(--col-text-muted)"/><rect x="175" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-6-rgb),0.3)" stroke="var(--accent-6)" stroke-width="1.8"/><text x="245" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">2. radio waves</text><text x="245" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">knock them out of line</text><line x1="317" y1="95" x2="328" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="332.8,95 323.2,98.6 323.2,91.4" fill="var(--col-text-muted)"/><rect x="330" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-3-rgb),0.3)" stroke="var(--accent-3)" stroke-width="1.8"/><text x="400" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">3. nuclei relax</text><text x="400" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">they give off signals</text><line x1="472" y1="95" x2="483" y2="95" stroke="var(--col-text-muted)" stroke-width="2"/><polygon points="487.8,95 478.2,98.6 478.2,91.4" fill="var(--col-text-muted)"/><rect x="485" y="50" width="140" height="90" rx="10" fill="rgba(var(--accent-4-rgb),0.3)" stroke="var(--accent-4)" stroke-width="1.8"/><text x="555" y="86" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5" font-weight="700">4. computer</text><text x="555" y="112" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">turns signals into images</text><text x="320" y="178" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12">field 1.5–3 T · Earth ≈ 50 μT · fridge magnet ≈ 0.005 T</text><text x="320" y="202" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="12">no ionizing radiation · great soft-tissue contrast · no metal in the room</text>
 </svg>
 </div>
 
@@ -336,7 +336,7 @@ B = F / (q v)        (when v is perpendicular to B)
 | High voltage = charge and energy | Electric shock danger |
 | Ohm's law, resistance | Body tissue resistance; electrode contact |
 | Resting −70 mV, Na⁺ / K⁺ | How nerves and muscles fire |
-| Myelin speeds conduction | Demyelinating disease (e.g. multiple sclerosis) slows signals |
+| Myelin speeds conduction | Demyelinating disease, e.g. multiple sclerosis, slows signals |
 | Magnetic force | MRI, and the danger of metal near the scanner |
 | MRI | Brain, spinal cord, joint imaging without ionizing radiation |
 | MEG / MCG | Brain and heart activity measured magnetically |
@@ -350,9 +350,9 @@ Charge:            Q = n e,   e = 1.602 × 10⁻¹⁹ C
 Coulomb's law:     F = k Q₁ Q₂ / r²,   k ≈ 9 × 10⁹ N·m²/C²
 Electric field:    E = F / q = k Q / r²   (N/C);   F = q E
 Potential:         V = W / q = k Q / r   (1 V = 1 J/C);   W = q V
-Current:           I = Q / t   (1 A = 1 C/s)
-Ohm's law:         V = I R   (1 Ω = 1 V/A)
-Resistance:        R = ρ L / A;   ρ = R A / L   (Ω·m)
+Current:           I = Q / t   ← 1 A = 1 C/s
+Ohm's law:         V = I R   ← 1 Ω = 1 V/A
+Resistance:        R = ρ L / A;   ρ = R A / L   ← Ω·m
 Current density:   J = I / A = σ E;   E = V / L
 Magnetic force:    F = q v B sin θ
 Units:             1 T = 1 N/(A·m) = 10⁴ G;   1 eV = 1.6 × 10⁻¹⁹ J
@@ -365,17 +365,15 @@ Units:             1 T = 1 N/(A·m) = 10⁴ G;   1 eV = 1.6 × 10⁻¹⁹ J
 - MRI **1.5–3 T**; Earth **50 μT**; fridge magnet **0.005 T**  
 - **1 T = 10⁴ G**  
 
-### Memory anchors
+### Key Points to Remember
+- Like charges repel and opposite charges attract. Doubling the distance r makes the force ¼ as large.  
+- Electric field lines point **away from + charges** and **toward − charges**.  
+- Ohm's law: **V = I R**.  
+- **Resistance** depends on the object's size and shape; **resistivity** is a property of the material.  
+- In an action potential, **Na⁺ flowing in** causes depolarization and **K⁺ flowing out** causes repolarization.  
+- The magnetic force on a moving charge is perpendicular to both v and B.  
 
-- **Like repel, unlike attract**; **double r → ¼ F**  
-- Field lines go **out of +** and **into −**  
-- **V = I R**: "**V**ery **I**mportant **R**ule"  
-- **Resistance** = the object (size, shape); **resistivity** = the material  
-- Action potential: **Na⁺ in = up**, **K⁺ out = down**  
-- Magnetic force is **always sideways**: ⟂ to v and ⟂ to B  
-
-### Medical anchors
-
-- **Myelin** makes nerve signals faster  
-- **MRI**: no ionizing radiation, best for **soft tissue**; **no metal**  
-- **MEG = brain, MCG = heart**  
+### Medical Applications
+- **Myelin** makes nerve signals travel faster.  
+- **MRI** uses no ionizing radiation and is best for **soft tissue**; metal must be kept away from the scanner.  
+- **MEG** measures the magnetic field of the brain; **MCG** measures that of the heart.  

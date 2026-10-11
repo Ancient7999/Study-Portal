@@ -1583,7 +1583,7 @@
     "id": "PHY00104",
     "type": "mcq",
     "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-    "q": "Mass flow rate is defined as: (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "Mass flow rate is defined as: (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "options": [
      "The pressure divided by the area",
      "The amount of volume passing a point per unit time",
@@ -1597,7 +1597,7 @@
     "id": "PHY00105",
     "type": "mcq",
     "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-    "q": "Which of the following is the correct final formula for mass flow rate? (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "Which of the following is the correct final formula for mass flow rate? (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "options": [
      "ρ A / v",
      "ρ A v",
@@ -1737,7 +1737,7 @@
     "id": "PHY00130",
     "type": "mcq",
     "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-    "q": "What is the difference between mass flow rate and volume flow rate? (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "What is the difference between mass flow rate and volume flow rate? (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "options": [
      "Mass flow tracks volume per time; volume flow tracks mass per time",
      "Mass flow and volume flow track one and the same quantity",
@@ -2726,7 +2726,7 @@
     "id": "PHY00220",
     "type": "matching",
     "cat": "Chapter 1: Matter and Mechanical Properties",
-    "q": "Match each symbol to the quantity it stands for. (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "Match each symbol to the quantity it stands for. (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "leftItems": [
      {
       "id": "1",
@@ -2873,7 +2873,7 @@
     "id": "PHY00222",
     "type": "matching",
     "cat": "Chapter 2: Pressure in Fluids",
-    "q": "Match each fluid formula to the quantity it defines. (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "Match each fluid formula to the quantity it defines. (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "leftItems": [
      {
       "id": "1",
@@ -3259,7 +3259,7 @@
     "id": "PHY00237",
     "type": "mcq",
     "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-    "q": "Mass flow rate is written Q = m/Δt, with m the mass. Which unit does that expression give? (Note: mass flow rate ṁ may also be written as Q, as in the slides: Q = ρAv.)",
+    "q": "Mass flow rate is written Q = m/Δt, with m the mass. Which unit does that expression give? (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
     "options": [
      "kg/s",
      "m³/s",

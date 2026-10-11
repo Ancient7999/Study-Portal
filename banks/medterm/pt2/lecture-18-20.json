@@ -1510,7 +1510,7 @@
             "correct": 0
           }
         ],
-        "explain": "ANS stands for autonomic nervous system. Automatic is a misreading of autonomic, afferent is the other name for sensory nerves, and accessory is not a division on the slides. The ANS carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands. Voluntary control of external actions of the skin and muscles is the somatic division. Carrying sensory impulses from body parts to the brain is the job of sensory (afferent) nerves. Relaying between the cerebrum, cerebellum, and spinal cord is the brainstem. The hypothalamus is the control center for the ANS. The thalamus relays sensory information to the cortex, the cerebellum coordinates skeletal muscles, and the medulla oblongata is a level of the brainstem."
+        "explain": "ANS stands for autonomic nervous system. Automatic is a misreading of autonomic, afferent is the other name for sensory nerves, and accessory is not a division of the nervous system. The ANS carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands. Voluntary control of external actions of the skin and muscles is the somatic division. Carrying sensory impulses from body parts to the brain is the job of sensory (afferent) nerves. Relaying between the cerebrum, cerebellum, and spinal cord is the brainstem. The hypothalamus is the control center for the ANS. The thalamus relays sensory information to the cortex, the cerebellum coordinates skeletal muscles, and the medulla oblongata is a level of the brainstem."
       },
       {
         "id": "MT18072",
@@ -1554,7 +1554,7 @@
             "correct": 0
           }
         ],
-        "explain": "SNS stands for sympathetic nervous system. The somatic division has no short form on the slides, sensory nerves are the afferent nerves, and spinal nerves are the 31 pairs from the cord, so none of them is SNS. The SNS is the division of the ANS concerned with preparing the body in stressful or emergency situations, the fight-or-flight picture on the ANS slide. Restoring the body to a restful state after a stressful experience is the PSNS. Controlling external actions of the skin and muscles is the somatic division. Relaying sensory information to the cortex is the thalamus. The SNS is a division of the ANS. The CNS is the brain and spinal cord, the somatic division is the other limb of the peripheral system, and the PSNS is the partner division that counter-balances the SNS."
+        "explain": "SNS stands for sympathetic nervous system. The somatic division has no standard short form here, sensory nerves are the afferent nerves, and spinal nerves are the 31 pairs from the cord, so none of them is SNS. The SNS is the division of the ANS concerned with preparing the body in stressful or emergency situations, the fight-or-flight picture on the ANS slide. Restoring the body to a restful state after a stressful experience is the PSNS. Controlling external actions of the skin and muscles is the somatic division. Relaying sensory information to the cortex is the thalamus. The SNS is a division of the ANS. The CNS is the brain and spinal cord, the somatic division is the other limb of the peripheral system, and the PSNS is the partner division that counter-balances the SNS."
       },
       {
         "id": "MT18073",
@@ -1598,13 +1598,13 @@
             "correct": 0
           }
         ],
-        "explain": "PSNS stands for parasympathetic nervous system. Peripheral sympathetic, peripheral somatic, and paraspinal are not divisions on the slides; peripheral nervous system alone is PNS. The PSNS is most active in ordinary conditions. Stressful or emergency situations are the domain of the SNS. Voluntary muscle movement is frontal-lobe and somatic work, and relaying sensation to the cortex is the thalamus. The PSNS counter-balances the effects of the sympathetic system by restoring the body to a restful state after a stressful experience. Preparing the body for an emergency is what the SNS itself does. The control center below the thalamus is the hypothalamus, which governs the whole ANS. Carrying sensory information to the brain is the job of sensory (afferent) nerves."
+        "explain": "PSNS stands for parasympathetic nervous system. Peripheral sympathetic, peripheral somatic, and paraspinal are not divisions of the nervous system; peripheral nervous system alone is PNS. The PSNS is most active in ordinary conditions. Stressful or emergency situations are the domain of the SNS. Voluntary muscle movement is frontal-lobe and somatic work, and relaying sensation to the cortex is the thalamus. The PSNS counter-balances the effects of the sympathetic system by restoring the body to a restful state after a stressful experience. Preparing the body for an emergency is what the SNS itself does. The control center below the thalamus is the hypothalamus, which governs the whole ANS. Carrying sensory information to the brain is the job of sensory (afferent) nerves."
       },
       {
         "id": "MT18074",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "On the ventricles slide, the cavities are filled with CSF. What does CSF stand for?",
+        "q": "The brain ventricles are filled with CSF. What does CSF stand for?",
         "options": [
           "Cerebellar spinal fluid",
           "Cranial serous fluid",
@@ -1626,13 +1626,13 @@
           "CF is cranial foramen, and NS is neural signal."
         ],
         "correct": 1,
-        "explain": "CF stands for combining form, as in the CF tables of the lecture, and NS stands for nervous system. \"CF is cerebrospinal fluid, and NS is nervous system\" confuses CF with CSF. \"CF is combining form, and NS is nerve sheath\" gets CF right but invents a meaning for NS. \"CF is cranial foramen, and NS is neural signal\" invents both expansions."
+        "explain": "CF stands for combining form, as in the CF tables, and NS stands for nervous system. \"CF is cerebrospinal fluid, and NS is nervous system\" confuses CF with CSF. \"CF is combining form, and NS is nerve sheath\" gets CF right but invents a meaning for NS. \"CF is cranial foramen, and NS is neural signal\" invents both expansions."
       },
       {
         "id": "MT18076",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "On the ANS slide, a \"Fight? or Flight?\" picture sits beside one division's definition. Which division and role does the picture illustrate?",
+        "q": "\"Fight or flight\" describes one division of the ANS. Which division and role is it?",
         "options": [
           "The SNS, preparing the body in stressful or emergency situations.",
           "The PSNS, restoring the body to a restful state after a stressful experience.",
@@ -1674,7 +1674,7 @@
         "id": "MT18079",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "Which description of the brain matches the CNS slide?",
+        "q": "Which description of the brain is correct?",
         "options": [
           "The column of nervous tissue from the brainstem through the vertebrae.",
           "The nerves that branch from the CNS, including the cranial nerves.",
@@ -1716,7 +1716,7 @@
         "id": "MT18082",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "The combining form Narc/o, as in narcotic (CF+S), carries which meaning on the slides?",
+        "q": "The combining form Narc/o, as in narcotic (CF+S), carries which meaning?",
         "options": [
           "Split",
           "Speech",
@@ -1730,7 +1730,7 @@
         "id": "MT18083",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "Phob/o, as in belonephobia (R+R+S), is given two meanings on the slides. Which pair is correct?",
+        "q": "Phob/o, as in belonephobia (R+R+S), has two meanings. Which pair is correct?",
         "options": [
           "Exaggerated fear / Sensitivity",
           "Abnormal impulse / Attraction toward",
@@ -1776,7 +1776,7 @@
         "id": "MT18088",
         "type": "matching",
         "cat": "MT_lec18-20",
-        "q": "Match each example term to the word structure the slides give it.",
+        "q": "Match each example term to its word structure.",
         "leftItems": [
           {
             "id": "1",
@@ -1837,7 +1837,7 @@
           "5": "F",
           "6": "D"
         },
-        "explain": "Dyslexia is P+R+S: the prefix dys-, the root lex, and a suffix. Leukomyelopathy is CF+CF+R+S: leuk/o and myel/o as combining forms, then the root and suffix. Belonephobia is R+R+S: the roots belon and phob plus a suffix. Esthesiography is CF+S: esthesi/o plus the suffix. Glioma is R+S: gli plus -oma. Craniofacial is CF+R+S: crani/o, the root faci, and the suffix. Each term pairs with the one structure the slides print beside it."
+        "explain": "Dyslexia is P+R+S: the prefix dys-, the root lex, and a suffix. Leukomyelopathy is CF+CF+R+S: leuk/o and myel/o as combining forms, then the root and suffix. Belonephobia is R+R+S: the roots belon and phob plus a suffix. Esthesiography is CF+S: esthesi/o plus the suffix. Glioma is R+S: gli plus -oma. Craniofacial is CF+R+S: crani/o, the root faci, and the suffix. Each term pairs with its own word structure."
       },
       {
         "id": "MT18089",
@@ -1851,7 +1851,7 @@
           "Pertaining to the spine and the cerebellum"
         ],
         "correct": 2,
-        "explain": "Cerebellomedullary joins Cerebell/o, cerebellum (little brain), with medulla, which the slide glosses as the medulla oblongata. \"Pertaining to the cerebrum and the bone marrow\" uses Cerebr/o and the marrow sense of Myel/o, neither of which is in the term. \"Pertaining to the cerebellum and the meninges\" would use Mening/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar."
+        "explain": "Cerebellomedullary joins Cerebell/o, cerebellum (little brain), with medulla, here meaning the medulla oblongata. \"Pertaining to the cerebrum and the bone marrow\" uses Cerebr/o and the marrow sense of Myel/o, neither of which is in the term. \"Pertaining to the cerebellum and the meninges\" would use Mening/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar."
       },
       {
         "id": "MT18090",
@@ -1941,7 +1941,7 @@
         "id": "MT18096",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "How does the slide gloss the term somnoplasty (CF+S)?",
+        "q": "What does the term somnoplasty (CF+S) mean?",
         "options": [
           "Exaggerated fear of sleeping",
           "A state related to sleep",
@@ -1949,7 +1949,7 @@
           "Radiation surgery for proper sleep"
         ],
         "correct": 3,
-        "explain": "The slide glosses somnoplasty, from Somn/o, sleep, and -plasty, surgical repair, as radiation surgery for proper sleep. \"Exaggerated fear of sleeping\" is somniphobia. \"A state related to sleep\" is hypnosis. \"Surgical repair of a fractured vertebra\" is vertebroplasty."
+        "explain": "Somnoplasty, from Somn/o, sleep, and -plasty, surgical repair, is radiation surgery for proper sleep. \"Exaggerated fear of sleeping\" is somniphobia. \"A state related to sleep\" is hypnosis. \"Surgical repair of a fractured vertebra\" is vertebroplasty."
       },
       {
         "id": "MT18097",
@@ -1977,7 +1977,7 @@
           "Disease of the white matter of the spinal cord"
         ],
         "correct": 0,
-        "explain": "Vertebroplasty is built from Vertebr/o, vertebra, and -plasty, surgical repair; the slide picture shows a fractured site filled with cement. \"Inflammation of a vertebra\" would use -itis. \"Radiation surgery for proper sleep\" is somnoplasty. \"Disease of the white matter of the spinal cord\" is leukomyelopathy."
+        "explain": "Vertebroplasty is built from Vertebr/o, vertebra, and -plasty, surgical repair; a fractured site is filled with cement. \"Inflammation of a vertebra\" would use -itis. \"Radiation surgery for proper sleep\" is somnoplasty. \"Disease of the white matter of the spinal cord\" is leukomyelopathy."
       },
       {
         "id": "MT18099",
@@ -2000,12 +2000,12 @@
         "q": "What does the term neurotony (CF+R+S) refer to?",
         "options": [
           "Nerve weakness, an exhausted nervous system",
-          "Nerve tension, shown on the slide as nerve stretching",
+          "Nerve tension, also described as nerve stretching",
           "A tumor of the nerve tissue",
           "A nerve and its secretion"
         ],
         "correct": 1,
-        "explain": "Neurotony is built from Neur/o, nerve, and Ton/o, tone or tension; the slide picture labels it nerve stretching. \"Nerve weakness, an exhausted nervous system\" is neurasthenia. \"A tumor of the nerve tissue\" is neuroma. \"A nerve and its secretion\" is neurocrine."
+        "explain": "Neurotony is built from Neur/o, nerve, and Ton/o, tone or tension; it is also described as nerve stretching. \"Nerve weakness, an exhausted nervous system\" is neurasthenia. \"A tumor of the nerve tissue\" is neuroma. \"A nerve and its secretion\" is neurocrine."
       },
       {
         "id": "MT18101",
@@ -2033,13 +2033,13 @@
           "Loss of muscular co-ordination"
         ],
         "correct": 0,
-        "explain": "Neurasthenia is built from neur, nerve, and -asthenia, weakness; the slide picture calls it an exhausted nervous system with physical and mental fatigue, weakness, aches and pains. \"Slight paralysis or partial weakness on one half of the body\" is hemiparesis, built on -paresis. \"A seizure disorder\" is epilepsy, built on -lepsy. \"Loss of muscular co-ordination\" is ataxia, built on Tax/o."
+        "explain": "Neurasthenia is built from neur, nerve, and -asthenia, weakness: an exhausted nervous system with physical and mental fatigue, weakness, aches and pains. \"Slight paralysis or partial weakness on one half of the body\" is hemiparesis, built on -paresis. \"A seizure disorder\" is epilepsy, built on -lepsy. \"Loss of muscular co-ordination\" is ataxia, built on Tax/o."
       },
       {
         "id": "MT18103",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "What does the term necromaniac (CF+S) describe, according to the slide picture?",
+        "q": "What does the term necromaniac (CF+S) describe?",
         "options": [
           "An exaggerated fear of dead bodies",
           "A seizure brought on by the sight of death",
@@ -2047,13 +2047,13 @@
           "Partial weakness on half side of the body"
         ],
         "correct": 2,
-        "explain": "Necromaniac is built from necr/o, death or dead body, and -mania, abnormal impulse or attraction toward; the slide picture describes a morbid attraction to dead bodies. \"An exaggerated fear of dead bodies\" would need Phob/o, not -mania. \"A seizure brought on by the sight of death\" would need -lepsy. \"Partial weakness on half side of the body\" is hemiparesis."
+        "explain": "Necromaniac is built from necr/o, death or dead body, and -mania, abnormal impulse or attraction toward: a morbid attraction to dead bodies. \"An exaggerated fear of dead bodies\" would need Phob/o, not -mania. \"A seizure brought on by the sight of death\" would need -lepsy. \"Partial weakness on half side of the body\" is hemiparesis."
       },
       {
         "id": "MT18104",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "How does the slide picture describe paramania (P+S)?",
+        "q": "How is paramania (P+S) described?",
         "options": [
           "An exaggerated fear of complaining",
           "An emotional disturbance that derives pleasure from complaining",
@@ -2061,7 +2061,7 @@
           "Slight paralysis on one half of the body"
         ],
         "correct": 1,
-        "explain": "Paramania joins para-, abnormal, with -mania, abnormal impulse or attraction toward; the slide picture describes it as an emotional disturbance that derives pleasure from complaining. \"An exaggerated fear of complaining\" would need Phob/o. \"Abnormal speech, saying one word instead of another\" is paraphasia, built on Phas/o. \"Slight paralysis on one half of the body\" uses the sense of -paresis, which is not in this term."
+        "explain": "Paramania joins para-, abnormal, with -mania, abnormal impulse or attraction toward: an emotional disturbance that derives pleasure from complaining. \"An exaggerated fear of complaining\" would need Phob/o. \"Abnormal speech, saying one word instead of another\" is paraphasia, built on Phas/o. \"Slight paralysis on one half of the body\" uses the sense of -paresis, which is not in this term."
       },
       {
         "id": "MT18105",
@@ -2081,7 +2081,7 @@
         "id": "MT18106",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "The slide picture shows a person who says 'Pencil' instead of saying 'Pen'. Which term fits?",
+        "q": "A person says 'Pencil' instead of saying 'Pen'. Which term fits?",
         "options": [
           "Dyslexia",
           "Ataxia",
@@ -2109,7 +2109,7 @@
         "id": "MT18108",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "A slide image is labelled bacterial meningoencephalitis. What does meningoencephalitis mean?",
+        "q": "A patient has bacterial meningoencephalitis. What does meningoencephalitis mean?",
         "options": [
           "Inflammation of the meninges and the entire brain",
           "Inflammation of the meninges and the spinal cord",
@@ -2123,7 +2123,7 @@
         "id": "MT18109",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "A slide picture is labelled psychomotor skills. In psychomotor, the element psych refers to what?",
+        "q": "In psychomotor (as in psychomotor skills), the element psych refers to what?",
         "options": [
           "Body",
           "Nerve",
@@ -2145,7 +2145,7 @@
           "Cerebrum and cerebellum"
         ],
         "correct": 0,
-        "explain": "The slide glosses hemiparesis as partial weakness on half side of the body, e.g. limbs and facial muscles, while hemiplegia is severe weakness on one half of the body, either Rt. or Lt. side. \"Heart and smooth muscles\" are targets of the ANS, not the examples given. \"Spinal cord and meninges\" are CNS structures and coverings. \"Cerebrum and cerebellum\" are brain parts, not the affected muscles named."
+        "explain": "Hemiparesis is partial weakness on half side of the body, e.g. limbs and facial muscles, while hemiplegia is severe weakness on one half of the body, either Rt. or Lt. side. \"Heart and smooth muscles\" are targets of the ANS, not the examples given. \"Spinal cord and meninges\" are CNS structures and coverings. \"Cerebrum and cerebellum\" are brain parts, not the affected muscles named."
       }
     ]
   }

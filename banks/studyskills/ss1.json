@@ -58,7 +58,7 @@
       {
         "id": "A28",
         "cat": "learning_styles",
-        "q": "According to the lecture, which group includes most people?",
+        "q": "Which group includes most people?",
         "options": [
           "Most people are auditory learners",
           "Most people are visual learners",
@@ -66,7 +66,7 @@
           "Most people have no identifiable style"
         ],
         "correct": 1,
-        "explain": "The lecture states most people are visual learners."
+        "explain": "Most people are visual learners."
       },
       {
         "id": "A36",
@@ -74,7 +74,7 @@
         "q": "Is chewing gum or rocking in a chair treated as acceptable for a kinesthetic learner?",
         "options": [
           "No — both are forbidden because they look informal",
-          "Yes — the lecture says it is acceptable while reading or studying",
+          "Yes — it is acceptable while reading or studying",
           "Only chewing is allowed; rocking is not",
           "Only if the instructor has left the room"
         ],
@@ -97,7 +97,7 @@
       {
         "id": "B13",
         "cat": "goals",
-        "q": "The lecture compares a person without goals to which image?",
+        "q": "A person without goals is compared to which image?",
         "options": [
           "A clock that never stops",
           "A sheep in the pasture living from day to day",
@@ -110,7 +110,7 @@
       {
         "id": "B21",
         "cat": "goals",
-        "q": "Short-term goals in this lecture are mainly:",
+        "q": "Short-term goals are mainly:",
         "options": [
           "Five-year career titles",
           "Daily and weekly habits and assignments",
@@ -136,7 +136,7 @@
       {
         "id": "B37",
         "cat": "goals",
-        "q": "For a goal to be realized, the lecture says you must develop:",
+        "q": "For a goal to be realized, you must develop:",
         "options": [
           "Only a motivational quotation",
           "An action plan and implementation intentions",
@@ -264,7 +264,7 @@
       {
         "id": "D18",
         "cat": "writing_presentation",
-        "q": "Which rule matches the lecture's advice on animation?",
+        "q": "Which rule matches the advice on animation?",
         "options": [
           "Use a different noisy animation on every slide",
           "The more animation, the better the talk",
@@ -277,7 +277,7 @@
       {
         "id": "D26",
         "cat": "writing_presentation",
-        "q": "Why does the lecture recommend graphs rather than just tables and words?",
+        "q": "Why are graphs recommended rather than just tables and words?",
         "options": [
           "Graphs take less time to draw",
           "Data in graphs is easier to comprehend and retain, and trends are easier to visualize",
@@ -344,7 +344,7 @@
       {
         "id": "A37",
         "cat": "learning_styles",
-        "q": "How should a kinesthetic learner use flashcards, according to the lecture?",
+        "q": "How should a kinesthetic learner use flashcards?",
         "options": [
           "Avoid flashcards entirely",
           "Read each card once and throw it away",
@@ -383,7 +383,7 @@
       {
         "id": "B22",
         "cat": "goals",
-        "q": "What happens once short-term goals are met, according to the pyramid slide?",
+        "q": "What happens once short-term goals are met, according to the goal pyramid?",
         "options": [
           "Mid-range goals follow more easily",
           "Long-term goals become unnecessary",
@@ -396,7 +396,7 @@
       {
         "id": "B30",
         "cat": "goals",
-        "q": "Which of the following is an example of a short-term academic block on the pyramid slide?",
+        "q": "Which of the following is an example of a short-term academic block on the goal pyramid?",
         "options": [
           "Owning a three-bedroom house with a pool",
           "Create a study schedule and go to every class",
@@ -718,7 +718,7 @@
       {
         "id": "C20",
         "cat": "time_management",
-        "q": "Which statement best defines Time Management in this lecture?",
+        "q": "Which statement best defines Time Management?",
         "options": [
           "A natural talent that some people are born with",
           "The number of hours a student spends studying each week",
@@ -744,7 +744,7 @@
       {
         "id": "C36",
         "cat": "time_management",
-        "q": "'Your grades don't reflect your ability' is presented in the lecture as:",
+        "q": "'Your grades don't reflect your ability' is presented as:",
         "options": [
           "An early warning sign of time management problems",
           "Proof that the examinations were unfair",
@@ -783,7 +783,7 @@
       {
         "id": "D04",
         "cat": "writing_presentation",
-        "q": "Which statement best defines a presentation, as given in this lecture?",
+        "q": "Which statement best defines a presentation?",
         "options": [
           "A written exam paper submitted for grading",
           "An informal chat between classmates about a lecture",
@@ -822,7 +822,7 @@
       {
         "id": "D28",
         "cat": "writing_presentation",
-        "q": "About spelling and syntax, the lecture advises you to:",
+        "q": "About spelling and syntax, you are advised to:",
         "options": [
           "Trust the audience to correct your spelling",
           "Check spelling only after the presentation",
@@ -862,7 +862,7 @@
       {
         "id": "A23",
         "cat": "learning_styles",
-        "q": "Which statement best reflects the lecture's conclusion about learning styles?",
+        "q": "Which statement best reflects the conclusion about learning styles?",
         "options": [
           "Learners should be flexible and adapt to different styles",
           "Each person is purely one learning style",
@@ -914,7 +914,7 @@
       {
         "id": "B16",
         "cat": "goals",
-        "q": "In this lecture's SMART list, A stands for Action-oriented, which is also glossed as:",
+        "q": "In the SMART list, A stands for Action-oriented, which is also glossed as:",
         "options": [
           "Abstract",
           "Automatic",
@@ -927,7 +927,7 @@
       {
         "id": "B24",
         "cat": "goals",
-        "q": "If a short-term goal is not working, the lecture says you should:",
+        "q": "If a short-term goal is not working, you should:",
         "options": [
           "Abandon the long-term goal immediately",
           "Change the short-term goal",
@@ -1018,7 +1018,7 @@
       {
         "id": "C37",
         "cat": "time_management",
-        "q": "Procrastination may give immediate satisfaction, but the lecture says it brings:",
+        "q": "Procrastination may give immediate satisfaction, but it brings:",
         "options": [
           "Anxiety, reduced sleep, illness, lower grades, poorer quality of work, less learning from being rushed, and a personal sense of disappointment",
           "Better learning through last-minute focus",
@@ -1096,7 +1096,7 @@
       {
         "id": "D29",
         "cat": "writing_presentation",
-        "q": "Why does the lecture insist on an effective and strong closing?",
+        "q": "Why is an effective and strong closing important?",
         "options": [
           "It reduces the number of slides",
           "Your audience is likely to remember your last words",
@@ -1176,7 +1176,7 @@
       {
         "id": "B09",
         "cat": "goals",
-        "q": "Which statement best defines goals in this lecture?",
+        "q": "Which statement best defines goals?",
         "options": [
           "Vague wishes about the distant future",
           "Well-defined plans aimed at achieving a specific result",
@@ -1189,7 +1189,7 @@
       {
         "id": "B17",
         "cat": "goals",
-        "q": "In this lecture's SMART list, R stands for Realistic, which is also glossed as:",
+        "q": "In the SMART list, R stands for Realistic, which is also glossed as:",
         "options": [
           "Random",
           "Relevant",
@@ -1202,7 +1202,7 @@
       {
         "id": "B25",
         "cat": "goals",
-        "q": "Which statement matches the lecture's advice on how high to aim?",
+        "q": "Which statement matches the advice on how high to aim?",
         "options": [
           "Aim far below what you can do so you never miss",
           "Be realistic but aim higher than you think you can achieve",
@@ -1267,7 +1267,7 @@
       {
         "id": "C22",
         "cat": "time_management",
-        "q": "What does the lecture say about how time management develops?",
+        "q": "How does time management develop?",
         "options": [
           "It is a skill that must be worked on, and most people find it a life-long challenge",
           "It just happens naturally with age",
@@ -1280,7 +1280,7 @@
       {
         "id": "C30",
         "cat": "time_management",
-        "q": "Which quadrant does the lecture call 'the heart of the personal quality management'?",
+        "q": "Which quadrant is called 'the heart of the personal quality management'?",
         "options": [
           "Quadrant I — Urgent & Important",
           "Quadrant II — Not urgent & Important",
@@ -1319,7 +1319,7 @@
       {
         "id": "C54",
         "cat": "time_management",
-        "q": "The lecture asks how urgent activities can take us away from:",
+        "q": "Urgent activities can take us away from:",
         "options": [
           "Activities that enable us to carry out our mission or vision",
           "Sleep and meals only",
@@ -1358,7 +1358,7 @@
       {
         "id": "D22",
         "cat": "writing_presentation",
-        "q": "According to the lecture, italics are properly used for:",
+        "q": "Italics are properly used for:",
         "options": [
           "Every bullet point",
           "Quotes, highlighting thoughts or ideas, and titles of books, journals, or magazines",
@@ -1554,7 +1554,7 @@
       {
         "id": "C31",
         "cat": "time_management",
-        "q": "To lead effectively, the lecture says you need to spend more time in:",
+        "q": "To lead effectively, you need to spend more time in:",
         "options": [
           "Quadrant I, personally handling every crisis",
           "Quadrant II — Important but not Urgent",
@@ -1567,7 +1567,7 @@
       {
         "id": "C39",
         "cat": "time_management",
-        "q": "According to the lecture, which tasks should be your #1 priority?",
+        "q": "Which tasks should be your #1 priority?",
         "options": [
           "The tasks you enjoy most",
           "The easiest tasks, to build momentum",
@@ -1593,7 +1593,7 @@
       {
         "id": "C55",
         "cat": "time_management",
-        "q": "In the lecture's own words, procrastination is:",
+        "q": "By definition, procrastination is:",
         "options": [
           "A harmless habit",
           "A modern study technique",
@@ -1606,7 +1606,7 @@
       {
         "id": "D07",
         "cat": "writing_presentation",
-        "q": "The lecture describes a successful person as one who is capable of:",
+        "q": "A successful person is described as one who is capable of:",
         "options": [
           "Speaking without stopping for a full hour",
           "Memorizing every slide word for word",
@@ -1699,7 +1699,7 @@
       {
         "id": "A34",
         "cat": "learning_styles",
-        "q": "Which extra check does the lecture recommend for auditory learners?",
+        "q": "Which extra check is recommended for auditory learners?",
         "options": [
           "Have your hearing checked on a regular basis",
           "Have your color vision checked every week",
@@ -1724,7 +1724,7 @@
       {
         "id": "B11",
         "cat": "goals",
-        "q": "What do goals reflect, according to the lecture?",
+        "q": "What do goals reflect?",
         "options": [
           "Only the college timetable",
           "Only what other people expect",
@@ -1737,7 +1737,7 @@
       {
         "id": "B19",
         "cat": "goals",
-        "q": "The lecture compares achieving a long-term goal to:",
+        "q": "Achieving a long-term goal is compared to:",
         "options": [
           "Winning a single lottery ticket",
           "Building a pyramid",
@@ -1776,7 +1776,7 @@
       {
         "id": "B43",
         "cat": "goals",
-        "q": "On the later 'life pyramid' slide, which sequence shows goals building toward the next?",
+        "q": "On the 'life pyramid', which sequence shows goals building toward the next?",
         "options": [
           "Dream house first, then a degree, then waking up",
           "Bachelor's degree with a target Grade Point Average (GPA), then a job, then financial independence and family goals",
@@ -1828,7 +1828,7 @@
       {
         "id": "C32",
         "cat": "time_management",
-        "q": "According to the lecture, what happens when you do not spend enough time in Quadrant II?",
+        "q": "What happens when you do not spend enough time in Quadrant II?",
         "options": [
           "Your mission and values change automatically",
           "Many items move over into Quadrant I, and you are constantly handling crises",
@@ -1919,7 +1919,7 @@
       {
         "id": "D32",
         "cat": "writing_presentation",
-        "q": "Complete the lecture's key sentence about delivery: 'It is not WHAT we say, but…'",
+        "q": "Complete the key sentence about delivery: 'It is not WHAT we say, but…'",
         "options": [
           "…how long we speak",
           "…HOW we say it",
@@ -1960,7 +1960,7 @@
       {
         "id": "A27",
         "cat": "learning_styles",
-        "q": "Which tool was recommended in the lecture for discovering one's learning style?",
+        "q": "Which tool is recommended for discovering one's learning style?",
         "options": [
           "Physical fitness assessment",
           "Handwriting speed test",
@@ -1973,7 +1973,7 @@
       {
         "id": "A35",
         "cat": "learning_styles",
-        "q": "Which set of motions does the lecture associate with kinesthetic learning?",
+        "q": "Which set of motions is associated with kinesthetic learning?",
         "options": [
           "Only silent reading in a locked chair",
           "Jittering, walking, yo-yoing, chewing, coloring, typing, writing",
@@ -2101,7 +2101,7 @@
       {
         "id": "C33",
         "cat": "time_management",
-        "q": "Which benefit of good time management is stated in the lecture?",
+        "q": "Which is a stated benefit of good time management?",
         "options": [
           "It guarantees top grades without effort",
           "It removes every source of stress from life",
@@ -2165,7 +2165,7 @@
       {
         "id": "D17",
         "cat": "writing_presentation",
-        "q": "Why does the lecture recommend showing one point at a time?",
+        "q": "Why is showing one point at a time recommended?",
         "options": [
           "It makes the slide file smaller",
           "It helps the audience concentrate, prevents them from reading ahead, and keeps your talk focused",
@@ -2178,7 +2178,7 @@
       {
         "id": "D25",
         "cat": "writing_presentation",
-        "q": "Which combination appears on the lecture's 'avoid such combinations' list?",
+        "q": "Which combination appears on the 'avoid such combinations' list?",
         "options": [
           "Dark blue on white",
           "Black on light grey",
@@ -2191,7 +2191,7 @@
       {
         "id": "D33",
         "cat": "writing_presentation",
-        "q": "Which treatment does the lecture give for presentation phobia?",
+        "q": "Which treatment is given for presentation phobia?",
         "options": [
           "Practice, practice, practice — using colleagues, friends, or relatives as audiences — and take a couple of deep breaths before standing up",
           "Avoid all presentations for a year",

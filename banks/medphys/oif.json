@@ -968,7 +968,7 @@
      "1.19 × 10⁻¹⁴ J"
     ],
     "correct": 1,
-    "explain": "Using E = h × f, substitute h = 6.63 × 10⁻³⁴ J·s and f = 1.8 × 10¹⁸ s⁻¹. Then E = 6.63 × 10⁻³⁴ × 1.8 × 10¹⁸ = 11.93 × 10⁻¹⁶ J, which is 1.193 × 10⁻¹⁵ J (the slides write it as 11.93 × 10⁻¹⁶ J, the same value). The option 1.19 × 10⁻¹⁶ J is one power of ten too small, 1.19 × 10⁻¹⁷ J is two powers too small, and 1.19 × 10⁻¹⁴ J is one power too big."
+    "explain": "Using E = h × f, substitute h = 6.63 × 10⁻³⁴ J·s and f = 1.8 × 10¹⁸ s⁻¹. Then E = 6.63 × 10⁻³⁴ × 1.8 × 10¹⁸ = 11.93 × 10⁻¹⁶ J, which is 1.193 × 10⁻¹⁵ J (11.93 × 10⁻¹⁶ J and 1.193 × 10⁻¹⁵ J are the same value). The option 1.19 × 10⁻¹⁶ J is one power of ten too small, 1.19 × 10⁻¹⁷ J is two powers too small, and 1.19 × 10⁻¹⁴ J is one power too big."
    },
    {
     "id": "PHY70007",
@@ -1458,7 +1458,7 @@
      "Carbon-12 decays into carbon-14 at the same rate"
     ],
     "correct": 0,
-    "explain": "Living organisms constantly exchange carbon with their environment through processes such as respiration and feeding. This keeps the ratio of C-14 to C-12 at the atmospheric value of about 1 to 10¹² (the slides write 1 : 10¹³). Once the organism dies, the exchange stops, and the C-14 begins to decay without replacement. The other options describe mechanisms that do not occur."
+    "explain": "Living organisms constantly exchange carbon with their environment through processes such as respiration and feeding. This keeps the ratio of C-14 to C-12 at the atmospheric value of about 1 to 10¹². Once the organism dies, the exchange stops, and the C-14 begins to decay without replacement. The other options describe mechanisms that do not occur."
    },
    {
     "id": "PHY70042",

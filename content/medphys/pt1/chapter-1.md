@@ -18,12 +18,12 @@
 | Topic | Core idea |
 |-------|-----------|
 | Physical quantities | Measured property = number × unit |
-| Unit systems | centimetre–gram–second (CGS), foot–pound–second (FPS), metre–kilogram–second (MKS), International System of Units (SI) (7 base units) |
+| Unit systems | centimetre–gram–second (CGS), foot–pound–second (FPS), metre–kilogram–second (MKS), International System of Units, SI, with 7 base units |
 | Phases of matter | Solid / liquid / gas; fluids = liquid + gas |
 | Mechanical properties | Elasticity ↔ plasticity; ductility, malleability, strength |
 | Stress & strain | F/A and ΔL/L₀ |
 | Hooke's law | Stress ∝ strain up to elastic limit |
-| Three moduli | Y (length), G (shape), B (volume) |
+| Three moduli | Y for length, G for shape, B for volume |
 | Medical | Bone stiffness; vessel elasticity |
 
 **Study order:** Units → Phases → Mechanical properties → Stress/Strain → Hooke → Moduli → Bone. Stress is meaningless without area; Hooke's law is meaningless without stress and strain.
@@ -48,7 +48,7 @@ Both parts matter — "5" alone is not a quantity; "metres" alone is not a quant
 | Family | Meaning | Examples |
 |--------|---------|----------|
 | **Fundamental / base** | Cannot be defined in terms of other quantities | Length, mass, time, temperature, current, luminous intensity, amount of substance |
-| **Derived** | Built from base by × or ÷ | Area (L×L), speed (L/T), force (M·L/T²), pressure (force/area) |
+| **Derived** | Built from base by × or ÷ | Area (L×L), speed (L/T), force (M·L/T²), pressure = force/area |
 
 ### Four unit systems
 
@@ -59,7 +59,9 @@ Both parts matter — "5" alone is not a quantity; "metres" alone is not a quant
 | **metre–kilogram–second (MKS)** | metre, kilogram, second |
 | **International System of Units (SI)** | 7 base units |
 
-### Seven International System of Units (SI) base units
+### The seven SI base units
+
+The International System of Units, **SI**, has seven base units.
 
 | Quantity | Unit | Symbol |
 |----------|------|--------|
@@ -75,13 +77,13 @@ Both parts matter — "5" alone is not a quantity; "metres" alone is not a quant
 
 ## 3. Phases of matter
 
-### What is matter?
+### Matter
 
 Anything that has **mass** and **occupies space**. In the body: bones, blood, muscles, air in the lungs.  
-Matter is composed of atoms and molecules. **Light is NOT matter** (photons have no rest mass and take up no volume).
+Matter is composed of atoms and molecules. **Light is NOT matter**: photons have no rest mass and take up no volume.
 
 Common states: **solid, liquid, gas**. Liquids and gases together are **fluids**.  
-Additional states: **plasma** (ionised gas) and **Bose–Einstein condensate (BEC)** (near absolute zero).
+Additional states: **plasma**, an ionised gas, and the **Bose–Einstein condensate (BEC)**, which forms near absolute zero.
 
 ### Three common states
 
@@ -97,8 +99,8 @@ Additional states: **plasma** (ionised gas) and **Bose–Einstein condensate (BE
 |----------|-------|
 | Intermolecular forces | Solid > Liquid > Gas |
 | Diffusion rate | Gas > Liquid > Solid |
-| Kinetic energy (T-dependent) | Gas > Liquid > Solid |
-| Particle motion | Vibration (solid) → Flow (liquid) → Rapid/random (gas) |
+| Kinetic energy, which depends on T | Gas > Liquid > Solid |
+| Particle motion | Solid: vibration → liquid: flow → gas: rapid and random |
 | Compressibility | Gas > Liquid > Solid |
 
 ### Phase changes
@@ -129,20 +131,20 @@ Additional states: **plasma** (ionised gas) and **Bose–Einstein condensate (BE
   <text x="425" y="168" text-anchor="middle" fill="var(--col-text-muted)" font-size="11" font-family="Space Mono,monospace">condensation</text>
   <!-- Sublimation / Deposition (arcs) -->
   <path d="M110 90 C110 28, 530 28, 530 90" stroke="var(--accent-6)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-  <text x="320" y="24" text-anchor="middle" fill="var(--col-text-main)" font-size="11" font-family="Space Mono,monospace">sublimation (solid → gas)</text>
+  <text x="320" y="24" text-anchor="middle" fill="var(--col-text-main)" font-size="11" font-family="Space Mono,monospace">sublimation: solid → gas</text>
   <path d="M530 162 C530 240, 110 240, 110 162" stroke="var(--col-text-muted)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-  <text x="320" y="258" text-anchor="middle" fill="var(--col-text-muted)" font-size="11" font-family="Space Mono,monospace">deposition (gas → solid · e.g. CO₂ ↔ dry ice)</text>
+  <text x="320" y="258" text-anchor="middle" fill="var(--col-text-muted)" font-size="11" font-family="Space Mono,monospace">deposition: gas → solid · e.g. CO₂ ↔ dry ice</text>
 </svg>
 </div>
 
-### Tip — ideal liquids
+### Ideal Liquids
 
-Ideal liquids are **not** compressible — but **no ideal liquid exists in nature**. Real liquids have tiny compressibility. Blood is ~95% water and behaves almost ideally under pressure, which is why pressure waves (pulse) travel through it predictably.
+Ideal liquids are **not** compressible — but **no ideal liquid exists in nature**. Real liquids have tiny compressibility. Blood is ~95% water and behaves almost ideally under pressure, which is why pressure waves such as the pulse travel through it predictably.
 
 ### Clinical notes
 
-- **Diffusion:** O₂ moves from alveoli → blood by diffusion (short distance). Long-distance transport uses **bulk flow** (circulation).
-- **Bone vs air:** bone resists compression (rigid lattice); lung air compresses/expands for ventilation.
+- **Diffusion:** O₂ moves from alveoli → blood by diffusion over a short distance. Long-distance transport uses **bulk flow**, the circulation.
+- **Bone vs air:** bone resists compression because of its rigid lattice; lung air compresses/expands for ventilation.
 
 ---
 
@@ -156,15 +158,14 @@ Ideal liquids are **not** compressible — but **no ideal liquid exists in natur
 | **Malleability** | Ability to be hammered/rolled into sheets. |
 | **Strength** | Ability to withstand applied stress **without failure**. |
 
-### Memory cues
-
-- Elastic ↔ returns; plastic ↔ stays deformed.
-- Ductile ↔ wire (duct); malleable ↔ mallet (hammer).
-- Bone is **strong and elastic within limits** — not ductile/malleable like metals.
+### Key Points to Remember
+- An elastic material returns to its shape; a plastically deformed material stays deformed.  
+- A ductile material can be drawn into wires; a malleable material can be hammered into sheets.  
+- Bone is **strong and elastic within limits**; it is not ductile or malleable like metals.  
 
 ### Clinical tip
 
-Bone is a composite: **collagen** (elastic flex) + **hydroxyapatite** (compressive strength). Stiff enough to support, tough enough not to shatter under normal walking loads.  
+Bone is a composite: **collagen** gives elastic flex and **hydroxyapatite** gives compressive strength. Stiff enough to support, tough enough not to shatter under normal walking loads.  
 Lack of elasticity of blood vessels contributes to cardiovascular disease.
 
 ---
@@ -173,14 +174,14 @@ Lack of elasticity of blood vessels contributes to cardiovascular disease.
 
 ### Stress
 
-**Stress** is the internal **restoring force** (response to an external deforming force) **per unit area**.
+**Stress** is the internal **restoring force** **per unit area**. The restoring force is the response to an external deforming force.
 
 ```
 Stress = F / A
 SI unit: N/m² = Pascal (Pa)
 ```
 
-**How this formula is made:** F is the restoring force inside the material (newtons); A is the cross-sectional area that force acts through (m²). Stress is force divided by area — same push concentrated on a smaller area means larger stress. When you apply an external force, a restoring force develops in the opposite direction inside the material; that restoring force per unit area is stress.
+**How this formula is made:** F is the restoring force inside the material, in newtons; A is the cross-sectional area that force acts through (m²). Stress is force divided by area — same push concentrated on a smaller area means larger stress. When you apply an external force, a restoring force develops in the opposite direction inside the material; that restoring force per unit area is stress.
 
 ### Strain
 
@@ -192,7 +193,7 @@ For length: Strain = ΔL / L₀
 Dimensionless — NO units
 ```
 
-**How this formula is made:** ΔL is the change in length; L₀ is the original length. Strain is a ratio of two lengths, so the units cancel — it is a pure number. It answers “how much did the object stretch (or shorten) relative to how long it was?”
+**How this formula is made:** ΔL is the change in length; L₀ is the original length. Strain is a ratio of two lengths, so the units cancel — it is a pure number. It answers “how much did the object stretch or shorten relative to how long it was?”
 
 ### Examples of stress in the human body
 
@@ -200,7 +201,7 @@ Dimensionless — NO units
 - Forces on the knee joint during walking  
 - Pressure on teeth during chewing  
 
-### Why thinner / weaker bone fractures more easily
+### Why Thinner, Weaker Bone Fractures More Easily
 
 Same force F through a smaller cross-section A → larger stress F/A. When stress exceeds strength → fracture. Osteoporosis reduces effective load-bearing area/density → higher stress for the same fall.
 
@@ -215,20 +216,20 @@ Same force F through a smaller cross-section A → larger stress F/A. When stres
 
 ### Hooke's law
 
-Within the **elastic (proportional) limit**, stress and strain are proportional; the object still returns to its original shape after unloading.
+Within the **elastic limit**, also called the proportional limit, stress and strain are proportional; the object still returns to its original shape after unloading.
 
 ```
-Stress ∝ Strain  (within elastic limit)
+Stress ∝ Strain   ← within elastic limit
 Stress = Modulus × Strain
 Modulus = Stress / Strain
 ```
 
-**How these are assembled (each form separately):**
+**How each form is assembled:**
 - **Stress ∝ Strain:** within the elastic limit, doubling the stress doubles the strain — a direct proportion, not yet a full equation.
-- **Stress = Modulus × Strain:** insert the constant of proportionality (the modulus) so the proportion becomes an equation you can calculate with.
+- **Stress = Modulus × Strain:** insert the constant of proportionality, the modulus, so the proportion becomes an equation you can calculate with.
 - **Modulus = Stress / Strain:** rearrange to isolate that constant — how much stress you need per unit of strain. Larger modulus means stiffer material.
 
-Beyond the elastic limit → **permanent (plastic) deformation**. At the **breaking point** the material fails.
+Beyond the elastic limit → **permanent, plastic deformation**. At the **breaking point** the material fails.
 
 ### Three regimes
 
@@ -240,9 +241,9 @@ Beyond the elastic limit → **permanent (plastic) deformation**. At the **break
 
 ### Modulus of elasticity
 
-The constant of proportionality is the **modulus of elasticity**. There are **three** moduli depending on geometry (next section): Young's (Y), Shear (G), Bulk (B).
+The constant of proportionality is the **modulus of elasticity**. There are **three** moduli depending on geometry, covered in the next section: Young's (Y), Shear (G), Bulk (B).
 
-**Golden sequence:** Hooke's law → proportionality. Modulus → the constant. Stress type → the geometry. Each modulus is Stress/Strain for one geometry.
+**Sequence:** Hooke's law → proportionality. Modulus → the constant. Stress type → the geometry. Each modulus is Stress/Strain for one geometry.
 
 ---
 
@@ -250,9 +251,9 @@ The constant of proportionality is the **modulus of elasticity**. There are **th
 
 ### 1 · Longitudinal stress
 
-Force along the **axis (length)** of the object.
+Force along the **axis**, the length, of the object.
 
-- **Tensile** — ends pulled apart (stretch)  
+- **Tensile** — ends pulled apart, a stretch  
 - **Compressive** — ends pushed together  
 
 ```
@@ -263,20 +264,20 @@ Longitudinal strain = ΔL / L
 
 ### 2 · Shear stress
 
-Force **parallel to the surface** (tangential). Material slides like a pack of cards.
+Force **parallel to the surface**, a tangential force. Material slides like a pack of cards.
 
 ```
 Shear strain = Δx / L
 ```
 
-**How this formula is made:** Δx is the sideways (tangential) displacement of one face; L is the perpendicular height or thickness. Dividing sideways shift by height gives a dimensionless measure of how much the material has been skewed (like sliding a pack of cards).
+**How this formula is made:** Δx is the sideways, tangential displacement of one face; L is the perpendicular height or thickness. Dividing sideways shift by height gives a dimensionless measure of how much the material has been skewed, like sliding a pack of cards.
 
-### 3 · Hydraulic (volume) stress
+### 3 · Hydraulic stress
 
-Uniform pressure from a fluid **from all sides**. Shape unchanged; **volume** changes.
+Hydraulic stress is also called volume stress. It is a uniform pressure from a fluid **from all sides**. Shape unchanged; **volume** changes.
 
 ```
-Hydraulic (volume) strain = ΔV / V
+Hydraulic strain = ΔV / V   ← also called volume strain
 ```
 
 **How this formula is made:** ΔV is the change in volume; V is the original volume. Uniform pressure from all sides changes size, not shape — so strain is written as a volume ratio, again dimensionless.
@@ -296,7 +297,9 @@ Hydraulic (volume) strain = ΔV / V
 
 ## 8. The three moduli
 
-### Young's modulus (Y)
+### Young's modulus
+
+Young's modulus, **Y**, measures stiffness for a change in length.
 
 ```
 Y = (Longitudinal stress) / (Longitudinal strain)
@@ -306,13 +309,15 @@ Unit: Pa
 
 **How Young’s modulus is assembled:**
 - Start from Hooke: modulus = stress / strain for this geometry.
-- Longitudinal stress is F/A (axial force over cross-section).
-- Longitudinal strain is ΔL/L (length change over original length).
+- Longitudinal stress is F/A, the axial force over the cross-section.
+- Longitudinal strain is ΔL/L, the length change over the original length.
 - Divide: Y = (F/A) ÷ (ΔL/L). Multiplying by L/L flips the strain fraction and gives the compact form Y = (F L) / (A ΔL).
 
-Larger Y → stiffer → more stress needed for a small length change. Cortical bone Y ≈ **16 × 10⁹ Pa** (≈ 15–20 GPa in literature).
+Larger Y → stiffer → more stress needed for a small length change. Cortical bone Y ≈ **16 × 10⁹ Pa**; published values are about 15–20 GPa.
 
-### Shear modulus (G)
+### Shear modulus
+
+The shear modulus, **G**, measures resistance to a change in shape.
 
 ```
 G = (Shear stress) / (Shear strain)
@@ -322,7 +327,9 @@ Unit: Pa
 
 **How the shear modulus is assembled:** shear stress is the tangential force per area F/A; shear strain is Δx/L. G is that stress divided by that strain — how much tangential stress you need for a given sideways skew. Resistance to **shape** change without volume change.
 
-### Bulk modulus (B)
+### Bulk modulus
+
+The bulk modulus, **B**, measures resistance to a change in volume.
 
 ```
 B = (Hydraulic stress) / (Hydraulic strain)
@@ -330,14 +337,14 @@ B = (F / A) / (ΔV / V)
 Unit: Pa
 ```
 
-**How the bulk modulus is assembled:** hydraulic stress is the uniform pressure F/A from all sides; hydraulic strain is ΔV/V. B is pressure divided by fractional volume change — how much pressure you need to squeeze the volume by a given fraction. Resistance to **volume** change. Water B ≈ 2.2 × 10⁹ Pa (nearly incompressible).
+**How the bulk modulus is assembled:** hydraulic stress is the uniform pressure F/A from all sides; hydraulic strain is ΔV/V. B is pressure divided by fractional volume change — how much pressure you need to squeeze the volume by a given fraction. Resistance to **volume** change. Water has B ≈ 2.2 × 10⁹ Pa, so it is nearly incompressible.
 
 ### Side-by-side
 
 | Modulus | Stress | Strain | Deforms |
 |---------|--------|--------|---------|
 | Young's Y | F/A along axis | ΔL/L | Length |
-| Shear G | F/A tangential | Δx/L | Shape (angle) |
+| Shear G | F/A tangential | Δx/L | Shape, measured as an angle |
 | Bulk B | F/A uniform | ΔV/V | Volume |
 
 **Quick recall:** stretching/compression → **Y**; twisting/sliding → **G**; underwater/uniform pressure → **B**.
@@ -350,7 +357,7 @@ Unit: Pa
 
 Larger Young's modulus → more stress required for a small length change → **stiffer** bone.
 
-Under load (e.g. femur):
+Under load, for example in the femur:
 
 - One side often under **compression**, opposite under **tension**  
 - Excessive stress → **fracture / stress fracture**
@@ -369,9 +376,9 @@ Physiological behaviour of the body depends heavily on these mechanical properti
 
 ## 10. Worked problems
 
-### Problem A — Cortical bone Young's modulus
+### Problem A: Young's Modulus of Cortical Bone
 
-**Given:** L = 0.25 m; A = 1.5 × 10⁻⁴ m²; F = 1500 N (tensile); ΔL = 0.15 mm = 1.5 × 10⁻⁴ m.
+**Given:** L = 0.25 m; A = 1.5 × 10⁻⁴ m²; F = 1500 N, tensile; ΔL = 0.15 mm = 1.5 × 10⁻⁴ m.
 
 ```
 Stress = F/A = 1500 / 1.5×10⁻⁴ = 1.0 × 10⁷ Pa
@@ -379,9 +386,9 @@ Strain = ΔL/L = 1.5×10⁻⁴ / 0.25 = 6.0 × 10⁻⁴
 Y = Stress/Strain = 1.0×10⁷ / 6.0×10⁻⁴ = 1.67 × 10¹⁰ Pa ≈ 16.7 GPa
 ```
 
-Matches typical cortical bone (15–20 GPa).
+This matches typical cortical bone, 15–20 GPa.
 
-### Problem B — Femur compression before break
+### Problem B: Femur Compression Before Breaking
 
 **Given:** L = 0.50 m; Y = 18 × 10⁹ Pa; max stress = 180 × 10⁶ Pa.
 
@@ -400,7 +407,7 @@ A 50 cm femur compresses only ~5.0 mm (1%) before failure — narrow safety marg
 Physical quantity = Numerical value × Unit
 Stress = F / A                         [Pa]   ← force ÷ area
 Strain = ΔL / L₀                       [dimensionless]   ← change ÷ original
-Hooke (elastic): Stress ∝ Strain       ← proportion; modulus = stress/strain
+Hooke, elastic:  Stress ∝ Strain       ← proportion; modulus = stress/strain
 Y = (F/A) / (ΔL/L)                     ← axial stress ÷ length strain
 G = (F/A) / (Δx/L)                     ← tangential stress ÷ shear strain
 B = (F/A) / (ΔV/V)                     ← uniform pressure ÷ volume strain
@@ -412,13 +419,15 @@ B = (F/A) / (ΔV/V)                     ← uniform pressure ÷ volume strain
 - Diffusion / KE / compressibility: G > L > S  
 - Fluids = liquids + gases  
 
-### Mechanical one-liners
+### Mechanical Properties Summary
+- Elasticity: the material returns to its shape.  
+- Plasticity: the change of shape is permanent.  
+- Ductility: the material can be drawn into wires.  
+- Malleability: the material can be hammered into sheets.  
+- Strength: the material resists failure under load.  
 
-- Elasticity → returns · Plasticity → permanent · Ductility → wires · Malleability → sheets · Strength → no failure  
-
-### Medical anchors
-
-- Bone → solid, elastic then plastic then fracture  
-- Blood → liquid · Air in lungs → gas  
-- BP on vessels / knee load / chewing → stress examples  
-- High Y bone → healthy stiffness; low Y → osteoporosis / OI risk
+### Medical Applications
+- Bone is a solid: it deforms elastically, then plastically, then fractures.  
+- Blood is a liquid; the air in the lungs is a gas.  
+- Blood pressure on vessel walls, the load on the knee and chewing are examples of stress.  
+- A high Young's modulus Y means healthy, stiff bone; a low Y is linked to osteoporosis and osteogenesis imperfecta.  
