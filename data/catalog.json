@@ -15,6 +15,7 @@
           "locked": false,
           "study": {
             "title": "Study Interface",
+            "symbols": "data/symbols-medphys.json",
             "chapters": [
               {
                 "id": "ch1",
@@ -45,6 +46,7 @@
           "locked": false,
           "study": {
             "title": "Study Interface",
+            "symbols": "data/symbols-medphys.json",
             "chapters": [
               {
                 "id": "ch3",
@@ -76,6 +78,7 @@
           "draft": true,
           "study": {
             "title": "Study Interface",
+            "symbols": "data/symbols-medphys.json",
             "chapters": [
               {
                 "id": "ch6",

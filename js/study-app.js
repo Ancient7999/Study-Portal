@@ -212,6 +212,7 @@
   /* PT1 CHAPTERS list → now per material (catalog "study.chapters"):
      [{ id, src, title, meta }] — src is relative to the portal root. */
   let CHAPTERS = [];
+  let SYMBOLS = null;
 
   const cache = Object.create(null);
   const listEl = document.getElementById('chapterList');
@@ -258,6 +259,10 @@
         try {
           const md = await loadMd(ch.src);
           body.querySelector('.md').innerHTML = sanitizeSvgAttrs(renderMarkdown(md));
+          // symbol / clinical-term tooltips (catalog study.symbols → data/symbols-*.json)
+          if (SYMBOLS && window.StudySymbols) {
+            try { await window.StudySymbols.decorate(body.querySelector('.md'), SYMBOLS, ch.src); } catch (e) { /* notes still readable */ }
+          }
           body.dataset.loaded = '1';
         } catch (err) {
           body.querySelector('.md').innerHTML =
@@ -288,6 +293,8 @@
     opts = opts || {};
     const study = (material && material.study) || {};
     CHAPTERS = (study.chapters || []).slice();
+    SYMBOLS = study.symbols || null;
+    if (window.StudySymbols) window.StudySymbols.hide();
     backTo = opts.from || 'portalView';
     quizOpener = typeof opts.openQuiz === 'function' ? opts.openQuiz : null;
     const h = document.getElementById('studyTitle');

@@ -263,3 +263,35 @@
 .card-study-chip:focus-visible{outline:2px solid var(--accent-0);outline-offset:2px}
 @media (max-width:480px){#studyView .simg-card{padding:10px}#studyView .simg-head{gap:6px}#studyView .simg-title{flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){#studyView .simg-name.just-locked{animation:none}}
+
+/* —— Symbol and term tooltips (js/study-symbols.js) —— */
+#studyView .md .sym {
+  cursor: help;
+  border-bottom: 1px dotted rgba(var(--accent-0-rgb), 0.75);
+  border-radius: 2px;
+  outline: none;
+  transition: background-color .15s ease;
+}
+#studyView .md .sym.term { border-bottom-style: dotted; }
+#studyView .md .sym:hover,
+#studyView .md .sym:focus-visible,
+#studyView .md .sym.sym-on {
+  background: rgba(var(--accent-0-rgb), 0.16);
+  border-bottom-color: var(--accent-0);
+}
+#studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.55); }
+#studyView .sym-tip {
+  position: fixed; z-index: 2000; left: 0; top: 0;
+  max-width: 320px;
+  padding: 8px 12px;
+  font: 500 0.88rem/1.45 var(--body, system-ui), system-ui, sans-serif;
+  letter-spacing: 0; white-space: normal; text-align: left;
+  color: var(--text);
+  background: var(--bg2, #0a0e16);
+  background-image: linear-gradient(rgba(var(--accent-0-rgb), 0.10), rgba(var(--accent-0-rgb), 0.10));
+  border: 1px solid rgba(var(--accent-0-rgb), 0.45);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+#studyView .sym-tip[hidden] { display: none; }

@@ -1,0 +1,1238 @@
+{
+ "version": 1,
+ "subject": "medphys",
+ "note": "Symbol glossary for the study notes. Lookup: chapter symbols, then common. A list gives context variants; 'when' is a regex tested on the nearest text first (sentence or formula line, then block, then section heading). 'terms' are clinical example terms, shown in clinical and medical sections; 'case': true matches the exact spelling only.",
+ "common": {
+  "ρ": {
+   "n": "density",
+   "u": "kg/m³"
+  },
+  "η": {
+   "n": "viscosity",
+   "u": "Pa·s"
+  },
+  "g": {
+   "n": "acceleration due to gravity",
+   "u": "9.8 m/s²"
+  },
+  "v": {
+   "n": "speed",
+   "u": "m/s"
+  },
+  "v₁": {
+   "n": "speed at point 1",
+   "u": "m/s"
+  },
+  "v₂": {
+   "n": "speed at point 2",
+   "u": "m/s"
+  },
+  "A": {
+   "n": "cross-sectional area",
+   "u": "m²"
+  },
+  "A₁": {
+   "n": "area at point 1",
+   "u": "m²"
+  },
+  "A₂": {
+   "n": "area at point 2",
+   "u": "m²"
+  },
+  "P": {
+   "n": "pressure",
+   "u": "Pa"
+  },
+  "P₁": {
+   "n": "pressure at point 1",
+   "u": "Pa"
+  },
+  "P₂": {
+   "n": "pressure at point 2",
+   "u": "Pa"
+  },
+  "F": {
+   "n": "force",
+   "u": "N"
+  },
+  "m": {
+   "n": "mass",
+   "u": "kg"
+  },
+  "h": {
+   "n": "height or depth",
+   "u": "m"
+  },
+  "h₁": {
+   "n": "height of point 1",
+   "u": "m"
+  },
+  "h₂": {
+   "n": "height of point 2",
+   "u": "m"
+  },
+  "V": {
+   "n": "volume",
+   "u": "m³"
+  },
+  "t": {
+   "n": "time",
+   "u": "s"
+  },
+  "L": {
+   "n": "length",
+   "u": "m"
+  },
+  "r": {
+   "n": "radius",
+   "u": "m"
+  },
+  "R": {
+   "n": "radius",
+   "u": "m"
+  },
+  "Q": {
+   "n": "volume flow rate",
+   "u": "m³/s"
+  },
+  "ΔP": {
+   "n": "pressure difference",
+   "u": "Pa"
+  },
+  "Δt": {
+   "n": "time interval",
+   "u": "s"
+  },
+  "Δh": {
+   "n": "difference in height or depth",
+   "u": "m"
+  },
+  "θ": {
+   "n": "angle",
+   "u": "°"
+  },
+  "π": {
+   "n": "pi, about 3.14"
+  },
+  "c": {
+   "n": "speed of light",
+   "u": "3 × 10⁸ m/s"
+  }
+ },
+ "chapters": {
+  "content/medphys/pt1/chapter-1.md": {
+   "symbols": {
+    "F": {
+     "n": "force",
+     "u": "N"
+    },
+    "A": {
+     "n": "area the force acts on",
+     "u": "m²"
+    },
+    "L": [
+     {
+      "n": "the dimension length",
+      "when": "L\\s*×\\s*L|L\\s*/\\s*T|M\\s*·\\s*L|[Dd]imension"
+     },
+     {
+      "n": "original length",
+      "u": "m"
+     }
+    ],
+    "L₀": {
+     "n": "original length",
+     "u": "m"
+    },
+    "ΔL": {
+     "n": "change in length",
+     "u": "m"
+    },
+    "Y": {
+     "n": "Young's modulus",
+     "u": "Pa"
+    },
+    "G": {
+     "n": "shear modulus",
+     "u": "Pa"
+    },
+    "B": {
+     "n": "bulk modulus",
+     "u": "Pa"
+    },
+    "V": {
+     "n": "original volume",
+     "u": "m³"
+    },
+    "ΔV": {
+     "n": "change in volume",
+     "u": "m³"
+    },
+    "Δx": {
+     "n": "sideways shift of the top face",
+     "u": "m"
+    },
+    "σ": {
+     "n": "stress",
+     "u": "Pa"
+    },
+    "ε": {
+     "n": "strain",
+     "u": "no unit"
+    },
+    "P": {
+     "n": "pressure",
+     "u": "Pa"
+    }
+   },
+   "terms": [
+    {
+     "t": "Healthy bone",
+     "d": "Healthy bone has a large Young's modulus Y, so a large stress gives only a small strain. It is stiff and resists deformation."
+    },
+    {
+     "t": "Osteoporosis",
+     "d": "Bone loses mineral and density, so its structure is weaker and less stiff, with a lower Y. It breaks under stresses that healthy bone can carry."
+    },
+    {
+     "t": "Osteogenesis imperfecta",
+     "d": "An inherited collagen disorder, also called brittle bone disease. The bone has lower strength and fractures easily."
+    }
+   ]
+  },
+  "content/medphys/pt1/chapter-2.md": {
+   "symbols": {
+    "P_atm": {
+     "n": "atmospheric pressure",
+     "u": "Pa"
+    },
+    "P_abs": {
+     "n": "absolute pressure",
+     "u": "Pa"
+    },
+    "P_gauge": {
+     "n": "gauge pressure",
+     "u": "Pa"
+    },
+    "P_G": {
+     "n": "gauge pressure of the liquid column",
+     "u": "Pa"
+    },
+    "F_B": {
+     "n": "buoyant force",
+     "u": "N"
+    },
+    "ρ_water": {
+     "n": "density of water",
+     "u": "1000 kg/m³"
+    },
+    "ρ_fluid": {
+     "n": "density of the fluid",
+     "u": "kg/m³"
+    },
+    "ρ_substance": {
+     "n": "density of the substance",
+     "u": "kg/m³"
+    },
+    "F_in": {
+     "n": "input force on the small piston",
+     "u": "N"
+    },
+    "F_out": {
+     "n": "output force on the large piston",
+     "u": "N"
+    },
+    "A_in": {
+     "n": "area of the small piston",
+     "u": "m²"
+    },
+    "A_out": {
+     "n": "area of the large piston",
+     "u": "m²"
+    },
+    "P_in": {
+     "n": "pressure on the input piston",
+     "u": "Pa"
+    },
+    "P_out": {
+     "n": "pressure on the output piston",
+     "u": "Pa"
+    },
+    "V_displaced": {
+     "n": "volume of fluid displaced",
+     "u": "m³"
+    },
+    "m_fluid": {
+     "n": "mass of fluid displaced",
+     "u": "kg"
+    },
+    "SG": {
+     "n": "specific gravity",
+     "u": "no unit"
+    },
+    "W": {
+     "n": "weight",
+     "u": "N"
+    },
+    "h": {
+     "n": "height of the fluid column or depth",
+     "u": "m"
+    }
+   },
+   "terms": [
+    {
+     "t": "Sphygmomanometer",
+     "d": "A blood pressure cuff. It reads pressure in mmHg, the height of a mercury column the pressure could hold up."
+    },
+    {
+     "t": "Clinical BP",
+     "d": "Blood pressure is a gauge pressure: the amount above atmospheric pressure. A reading of 120 mmHg means 120 mmHg more than the surrounding air."
+    },
+    {
+     "t": "Hydraulic systems",
+     "d": "Pascal's principle: pressure on a confined fluid is passed on equally, so a small force on a small piston gives a large force on a large piston."
+    },
+    {
+     "t": "underwater weighing",
+     "d": "Fat is less dense than muscle and bone. Weighing a person in air and under water gives the buoyant force, then body density and body fat."
+    }
+   ]
+  },
+  "content/medphys/pt1/chapter-3.md": {
+   "symbols": {
+    "Q": [
+     {
+      "n": "flow rate: mass flow in kg/s or volume flow in m³/s",
+      "when": "mass or volume|both use|can mean"
+     },
+     {
+      "n": "mass flow rate",
+      "u": "kg/s",
+      "when": "[Mm]ass flow|ṁ|kg/s|ρ\\s*A\\s*v"
+     },
+     {
+      "n": "volume flow rate",
+      "u": "m³/s",
+      "when": "[Vv]olume|m³/s|Q\\s*=\\s*A\\s*v"
+     },
+     {
+      "n": "volume flow rate",
+      "u": "m³/s"
+     }
+    ],
+    "ṁ": {
+     "n": "mass flow rate",
+     "u": "kg/s"
+    },
+    "ℓ": {
+     "n": "distance the fluid moves in time t",
+     "u": "m"
+    },
+    "ρ₁": {
+     "n": "density at section 1",
+     "u": "kg/m³"
+    },
+    "ρ₂": {
+     "n": "density at section 2",
+     "u": "kg/m³"
+    },
+    "A": {
+     "n": "cross-sectional area",
+     "u": "m²"
+    },
+    "V": {
+     "n": "volume",
+     "u": "m³"
+    },
+    "m": {
+     "n": "mass",
+     "u": "kg"
+    }
+   },
+   "terms": [
+    {
+     "t": "Healthy artery",
+     "d": "Blood flows in smooth parallel layers, laminar flow, fastest in the centre of the vessel."
+    },
+    {
+     "t": "Narrowed artery",
+     "d": "Continuity, A₁v₁ = A₂v₂: the smaller area makes the blood flow faster there, and the flow often becomes turbulent."
+    },
+    {
+     "t": "stenosis",
+     "d": "A narrowed segment of an artery. By continuity, A₁v₁ = A₂v₂, the smaller area makes the blood flow faster there, and the flow often becomes turbulent."
+    },
+    {
+     "t": "Diseased heart valve",
+     "d": "Blood forced through a narrowed or damaged valve flows fast and becomes turbulent. The turbulence makes the sound heard as a murmur."
+    },
+    {
+     "t": "murmur",
+     "d": "A sound heard with a stethoscope. It is made by turbulent blood flow, for example through a narrowed or damaged valve."
+    },
+    {
+     "t": "tissue perfusion",
+     "d": "The blood supply reaching the tissue. Turbulence wastes energy in sideways motion, so less blood reaches the tissue."
+    }
+   ]
+  },
+  "content/medphys/pt2/chapter-3.md": {
+   "symbols": {
+    "T": [
+     {
+      "n": "wall stress when written T = Pₜ × R / μ",
+      "u": "Pa",
+      "when": "T\\s*=\\s*Pₜ|letter T"
+     },
+     {
+      "n": "surface tension",
+      "u": "N/m",
+      "when": "[Ss]urface|F\\s*/\\s*L|alveol|surfactant|2\\s*T|lung|bubble|drop|sphere"
+     },
+     {
+      "n": "wall tension",
+      "u": "N/m",
+      "when": "Laplace|wall|vessel|aneurysm|artery|arterial|T\\s*=\\s*P|T\\s*∝|Hypertension"
+     },
+     {
+      "n": "wall tension",
+      "u": "N/m"
+     }
+    ],
+    "Tₐ": {
+     "n": "wall tension of the aneurysm",
+     "u": "N/m"
+    },
+    "Tₒ": {
+     "n": "wall tension of the normal vessel",
+     "u": "N/m"
+    },
+    "Pₜ": {
+     "n": "transmural pressure, inside minus outside",
+     "u": "Pa"
+    },
+    "Pᵢ": {
+     "n": "pressure inside the vessel",
+     "u": "Pa"
+    },
+    "Pₑ": {
+     "n": "pressure outside the vessel",
+     "u": "Pa"
+    },
+    "Rₐ": {
+     "n": "radius of the aneurysm",
+     "u": "m"
+    },
+    "Rₒ": {
+     "n": "radius of the normal vessel",
+     "u": "m"
+    },
+    "μ": {
+     "n": "wall thickness, another symbol for t",
+     "u": "m"
+    },
+    "σ": {
+     "n": "wall stress",
+     "u": "Pa"
+    },
+    "t": [
+     {
+      "n": "wall thickness",
+      "u": "m",
+      "when": "σ|stress|thick"
+     },
+     {
+      "n": "time",
+      "u": "s"
+     }
+    ],
+    "γ": {
+     "n": "another symbol for surface tension",
+     "u": "N/m"
+    },
+    "y": {
+     "n": "distance between the plates, the thickness of the fluid layer",
+     "u": "m"
+    },
+    "Re": {
+     "n": "Reynolds number",
+     "u": "no unit"
+    },
+    "D": {
+     "n": "diameter of the vessel or tube",
+     "u": "m"
+    },
+    "r": [
+     {
+      "n": "radius of the alveolus or sphere",
+      "u": "m",
+      "when": "alveol|2\\s*T\\s*/\\s*r|sphere|balloon"
+     },
+     {
+      "n": "radius of the tube or vessel",
+      "u": "m"
+     }
+    ],
+    "R": {
+     "n": "radius of the vessel",
+     "u": "m"
+    },
+    "L": [
+     {
+      "n": "length of the line on the surface",
+      "u": "m",
+      "when": "[Ss]urface|T\\s*=\\s*F|line"
+     },
+     {
+      "n": "length of the tube",
+      "u": "m"
+     }
+    ],
+    "F": [
+     {
+      "n": "viscous force needed to slide the plate",
+      "u": "N",
+      "when": "η|[Vv]iscos|shear|plate|A\\s*v\\s*/\\s*y|Av/y"
+     },
+     {
+      "n": "force along the surface line",
+      "u": "N",
+      "when": "[Ss]urface|T\\s*=\\s*F|F\\s*/\\s*L|line"
+     },
+     {
+      "n": "force",
+      "u": "N"
+     }
+    ],
+    "A": [
+     {
+      "n": "cross-sectional area",
+      "u": "m²",
+      "when": "πr|[Cc]ontinuity|A₁|A\\s*v̄|Q\\s*=\\s*A|tube|narrow|constriction"
+     },
+     {
+      "n": "area of the plate",
+      "u": "m²",
+      "when": "η|[Vv]iscos|plate|shear|F\\s*/\\s*A"
+     },
+     {
+      "n": "cross-sectional area",
+      "u": "m²"
+     }
+    ],
+    "v": [
+     {
+      "n": "speed of the moving plate",
+      "u": "m/s",
+      "when": "plate|η\\s*A\\s*v|ηAv|A\\s*v\\s*/\\s*y|y\\s*/\\s*v"
+     },
+     {
+      "n": "flow speed",
+      "u": "m/s"
+     }
+    ],
+    "v̄": {
+     "n": "average flow speed in the tube",
+     "u": "m/s"
+    },
+    "P": [
+     {
+      "n": "pressure inside the vessel or alveolus",
+      "u": "Pa",
+      "when": "Laplace|wall|alveol|2\\s*T|T\\s*=\\s*P|T\\s*∝|P\\s*r\\s*/\\s*2|Hypertension|tension"
+     },
+     {
+      "n": "pressure",
+      "u": "Pa"
+     }
+    ],
+    "Q": {
+     "n": "volume flow rate",
+     "u": "m³/s"
+    }
+   },
+   "terms": [
+    {
+     "t": "Arterial stenosis",
+     "d": "Continuity, A₁v₁ = A₂v₂: the narrowed artery has a smaller area, so the blood flows faster through it."
+    },
+    {
+     "t": "Carotid stenosis",
+     "d": "A narrowed carotid artery in the neck. The blood speeds up through it by continuity, its pressure falls by Bernoulli, and the flow drops sharply by Poiseuille."
+    },
+    {
+     "t": "Venturi mask",
+     "d": "Bernoulli's principle: a fast jet of oxygen through a narrow opening has a low pressure, which draws in room air. The size of the opening sets a precise oxygen mix."
+    },
+    {
+     "t": "Blood pressure",
+     "d": "Poiseuille's law: flow depends on the vessel radius to the fourth power, r⁴. A small narrowing cuts flow sharply, so a higher pressure is needed to keep the same flow.",
+     "case": true
+    },
+    {
+     "t": "Polycythemia",
+     "d": "Too many red blood cells make the blood thicker, so its viscosity is higher and it flows with more resistance."
+    },
+    {
+     "t": "anemia",
+     "d": "Too few red blood cells make the blood less viscous, so it flows more easily, but it carries less oxygen."
+    },
+    {
+     "t": "Heart murmur",
+     "d": "Flow through a narrowed or damaged valve is fast and turbulent, with a high Reynolds number. The turbulence makes the sound."
+    },
+    {
+     "t": "Aneurysm",
+     "d": "Laplace's law, T = P × r: the bulge has a wider radius, so its wall tension is higher. The higher tension stretches the wall further, so the bulge keeps growing."
+    },
+    {
+     "t": "Neonatal RDS",
+     "d": "Premature babies may not make enough surfactant. Surface tension stays high, so by P = 2T/r small alveoli collapse and breathing is hard."
+    },
+    {
+     "t": "RDS",
+     "d": "Respiratory distress syndrome: without enough surfactant, surface tension stays high and small alveoli collapse, so breathing is hard. It affects premature babies."
+    },
+    {
+     "t": "Respiratory distress syndrome",
+     "d": "Without enough surfactant, surface tension stays high and small alveoli collapse, so breathing is hard. It affects premature babies."
+    },
+    {
+     "t": "Pulmonary surfactant",
+     "d": "A substance made in the lungs that lowers the surface tension of the fluid lining the alveoli, so they stay open with less pressure."
+    },
+    {
+     "t": "Blood collection",
+     "d": "Blood rises into a thin capillary tube by itself, because adhesion to the glass and surface tension pull it up."
+    },
+    {
+     "t": "atherosclerosis",
+     "d": "Fatty plaque builds up in the artery wall and narrows it. By continuity the blood speeds up in the narrow part, and by Bernoulli its pressure there falls."
+    },
+    {
+     "t": "DVT",
+     "d": "Deep vein thrombosis: a blood clot in a deep vein, usually in the leg. Doppler ultrasound shows where the flow is blocked or slowed."
+    },
+    {
+     "t": "TIA",
+     "d": "Transient ischaemic attack: a short-lived lack of blood to part of the brain, for example when a narrowed carotid artery greatly reduces the flow."
+    },
+    {
+     "t": "IV infusion",
+     "d": "The flow through the cannula depends on its radius to the fourth power, r⁴, so a slightly wider cannula gives a much faster infusion."
+    },
+    {
+     "t": "Hypertension",
+     "d": "High blood pressure. By Laplace's law, T = P × r, a higher pressure raises the tension in the vessel wall."
+    },
+    {
+     "t": "aorta",
+     "d": "The largest artery, with a large radius and a high pressure. By Laplace's law its wall tension is high, so it needs a thick, strong wall."
+    },
+    {
+     "t": "Doppler ultrasound",
+     "d": "Ultrasound reflected from moving red blood cells comes back at a shifted frequency. The shift gives the speed and direction of blood flow."
+    }
+   ]
+  },
+  "content/medphys/pt2/chapter-4.md": {
+   "symbols": {
+    "f": {
+     "n": "frequency",
+     "u": "Hz"
+    },
+    "f′": {
+     "n": "detected frequency",
+     "u": "Hz"
+    },
+    "λ": {
+     "n": "wavelength",
+     "u": "m"
+    },
+    "v": {
+     "n": "speed of sound or of the wave",
+     "u": "m/s"
+    },
+    "T": {
+     "n": "time period",
+     "u": "s"
+    },
+    "A": {
+     "n": "amplitude",
+     "u": "m"
+    },
+    "I": {
+     "n": "intensity",
+     "u": "W/m²"
+    },
+    "B": {
+     "n": "bulk modulus of the medium",
+     "u": "Pa"
+    },
+    "v_S": {
+     "n": "speed of the source",
+     "u": "m/s"
+    },
+    "v_D": {
+     "n": "speed of the detector or observer",
+     "u": "m/s"
+    },
+    "vₛ": {
+     "n": "speed of the source",
+     "u": "m/s"
+    },
+    "Ma": {
+     "n": "Mach number",
+     "u": "no unit"
+    },
+    "T_C": {
+     "n": "temperature in degrees Celsius",
+     "u": "°C"
+    },
+    "T_K": {
+     "n": "temperature in kelvin",
+     "u": "K"
+    },
+    "T_F": {
+     "n": "temperature in degrees Fahrenheit",
+     "u": "°F"
+    }
+   },
+   "terms": [
+    {
+     "t": "Doppler ultrasound",
+     "d": "Ultrasound reflected from moving red blood cells comes back at a shifted frequency. The shift gives the speed and direction of blood flow."
+    },
+    {
+     "t": "ESWL",
+     "d": "Extracorporeal shock wave lithotripsy: shock waves made outside the body are focused on a kidney stone and break it into small pieces that can pass out in the urine."
+    },
+    {
+     "t": "vibration-sense tests",
+     "d": "A vibrating tuning fork is held near the ear or placed on a bone to test hearing and the sense of vibration."
+    },
+    {
+     "t": "thermometer",
+     "d": "The thermometer stays in contact with the body until both reach the same temperature. By the zeroth law its reading is then the body temperature."
+    },
+    {
+     "t": "fever checks",
+     "d": "Normal body temperature is about 37 °C = 98.6 °F = 310 K. A fever is a temperature above about 38 °C."
+    },
+    {
+     "t": "X-ray / CT",
+     "d": "X-rays and CT use ionizing radiation, which can damage cells. Ultrasound uses sound waves and does not ionize."
+    }
+   ]
+  },
+  "content/medphys/pt2/chapter-5.md": {
+   "symbols": {
+    "f": {
+     "n": "focal length",
+     "u": "m or cm"
+    },
+    "r": {
+     "n": "radius of curvature",
+     "u": "m or cm"
+    },
+    "n": {
+     "n": "index of refraction",
+     "u": "no unit"
+    },
+    "n₁": {
+     "n": "index of refraction of medium 1",
+     "u": "no unit"
+    },
+    "n₂": {
+     "n": "index of refraction of medium 2",
+     "u": "no unit"
+    },
+    "v": {
+     "n": "speed of light in the medium",
+     "u": "m/s"
+    },
+    "θ₁": {
+     "n": "angle of incidence",
+     "u": "°"
+    },
+    "θ₂": {
+     "n": "angle of refraction",
+     "u": "°"
+    },
+    "θc": {
+     "n": "critical angle",
+     "u": "°"
+    },
+    "θi": {
+     "n": "angle of incidence",
+     "u": "°"
+    },
+    "θr": {
+     "n": "angle of reflection",
+     "u": "°"
+    },
+    "P": {
+     "n": "lens power",
+     "u": "dioptres, D = 1/m"
+    },
+    "m": {
+     "n": "magnification, with sign",
+     "u": "no unit"
+    },
+    "M": {
+     "n": "magnification, size ratio",
+     "u": "no unit"
+    },
+    "F": {
+     "n": "focal point of the mirror or lens"
+    },
+    "do": {
+     "n": "object distance",
+     "u": "m or cm"
+    },
+    "di": {
+     "n": "image distance",
+     "u": "m or cm"
+    },
+    "ho": {
+     "n": "height of the object",
+     "u": "m or cm"
+    },
+    "hi": {
+     "n": "height of the image",
+     "u": "m or cm"
+    }
+   },
+   "terms": [
+    {
+     "t": "Endoscopes",
+     "d": "A thin, flexible bundle of optical fibres. One bundle carries light in and another carries the image out by total internal reflection, so organs are seen without open surgery."
+    },
+    {
+     "t": "endoscope",
+     "d": "A thin, flexible bundle of optical fibres. One bundle carries light in and another carries the image out by total internal reflection, so organs are seen without open surgery."
+    },
+    {
+     "t": "Surgical lasers",
+     "d": "Optical fibres carry laser light by total internal reflection to the exact spot where tissue is cut or sealed."
+    },
+    {
+     "t": "prescriptions",
+     "d": "A lens prescription gives the power in dioptres, P = 1/f with f in metres: + for a converging, convex lens and − for a diverging, concave lens."
+    }
+   ]
+  },
+  "content/medphys/oif/chapter-6.md": {
+   "symbols": {
+    "f": {
+     "n": "focal length of the combination",
+     "u": "m or cm"
+    },
+    "f₁": {
+     "n": "focal length of lens 1",
+     "u": "m or cm"
+    },
+    "f₂": {
+     "n": "focal length of lens 2",
+     "u": "m or cm"
+    },
+    "fₒ": {
+     "n": "focal length of the objective",
+     "u": "cm"
+    },
+    "fₑ": {
+     "n": "focal length of the eyepiece",
+     "u": "cm"
+    },
+    "P": {
+     "n": "power of the combination",
+     "u": "dioptres, D"
+    },
+    "P₁": {
+     "n": "power of lens 1",
+     "u": "D"
+    },
+    "P₂": {
+     "n": "power of lens 2",
+     "u": "D"
+    },
+    "r": {
+     "n": "distance between the two lenses",
+     "u": "m"
+    },
+    "M": {
+     "n": "angular magnification",
+     "u": "no unit"
+    },
+    "m": {
+     "n": "magnification",
+     "u": "no unit"
+    },
+    "θ": {
+     "n": "angle the image fills at the eye",
+     "u": "rad"
+    },
+    "θ₀": {
+     "n": "angle the object fills at the eye without the lens",
+     "u": "rad"
+    },
+    "N": {
+     "n": "near point distance",
+     "u": "25 cm"
+    },
+    "I₁": {
+     "n": "first image, made by the objective lens"
+    },
+    "I₂": {
+     "n": "final image, made by the eyepiece"
+    },
+    "Fₒ": {
+     "n": "focal point of the objective lens"
+    },
+    "F": {
+     "n": "focal point of the mirror or lens"
+    },
+    "L": {
+     "n": "tube length of the microscope",
+     "u": "cm"
+    }
+   },
+   "terms": [
+    {
+     "t": "LASIK",
+     "d": "Laser eye surgery that reshapes the cornea. The cornea does most of the eye's refraction, so changing its curve corrects myopia or hyperopia."
+    },
+    {
+     "t": "Presbyopia",
+     "d": "With age the eye lens stiffens and cannot focus close up, so the near point moves farther away. Convex reading glasses help."
+    },
+    {
+     "t": "Minus-power glasses",
+     "d": "Myopia: the eye focuses light in front of the retina. A diverging, concave lens with negative power moves the focus back onto the retina."
+    },
+    {
+     "t": "Plus-power glasses",
+     "d": "Hyperopia: the eye focuses light behind the retina. A converging, convex lens with positive power moves the focus forward onto the retina."
+    },
+    {
+     "t": "Micro-surgery",
+     "d": "A focused laser beam cuts tissue and its heat seals small blood vessels at the same time, so there is little bleeding."
+    },
+    {
+     "t": "bloodless knife",
+     "d": "A focused laser beam cuts tissue and its heat seals small blood vessels at the same time, so there is little bleeding."
+    },
+    {
+     "t": "Sealing leaking retinal vessels",
+     "d": "Photocoagulation: laser heat clots the blood and seals or blocks leaking vessels in the retina, for example in diabetic retinopathy."
+    },
+    {
+     "t": "Photocoagulation",
+     "d": "Laser heat clots the blood and seals or blocks the vessel, for example leaking retinal vessels in diabetic retinopathy."
+    },
+    {
+     "t": "Eye protection",
+     "d": "Laser light is intense and directional. The eye can focus it to a tiny spot on the retina and burn it, so goggles made for that laser are worn."
+    }
+   ]
+  },
+  "content/medphys/oif/chapter-7.md": {
+   "symbols": {
+    "E": {
+     "n": "photon energy",
+     "u": "J or eV"
+    },
+    "h": {
+     "n": "Planck's constant",
+     "u": "6.63 × 10⁻³⁴ J·s"
+    },
+    "f": {
+     "n": "frequency",
+     "u": "Hz"
+    },
+    "λ": [
+     {
+      "n": "decay constant",
+      "u": "s⁻¹",
+      "when": "decay|half|T½|N₀|R\\s*=|activity|0\\.693|e\\^"
+     },
+     {
+      "n": "wavelength",
+      "u": "m"
+     }
+    ],
+    "Kₘₐₓ": {
+     "n": "maximum kinetic energy of the ejected electron",
+     "u": "J or eV"
+    },
+    "φ": {
+     "n": "work function",
+     "u": "J or eV"
+    },
+    "m": {
+     "n": "mass of the particle",
+     "u": "kg"
+    },
+    "v": {
+     "n": "speed of the particle",
+     "u": "m/s"
+    },
+    "A": {
+     "n": "mass number, protons + neutrons",
+     "u": "no unit"
+    },
+    "Z": {
+     "n": "atomic number, number of protons",
+     "u": "no unit"
+    },
+    "N": [
+     {
+      "n": "number of undecayed nuclei",
+      "u": "no unit",
+      "when": "N₀|decay|half|R\\s*=|e\\^|dN"
+     },
+     {
+      "n": "neutron number",
+      "u": "no unit"
+     }
+    ],
+    "N₀": {
+     "n": "number of nuclei at the start",
+     "u": "no unit"
+    },
+    "R": {
+     "n": "activity",
+     "u": "Bq"
+    },
+    "R₀": {
+     "n": "nuclear radius constant",
+     "u": "1.2 × 10⁻¹⁵ m"
+    },
+    "r": {
+     "n": "radius of the nucleus",
+     "u": "m"
+    },
+    "r₁": {
+     "n": "radius of nucleus 1",
+     "u": "m"
+    },
+    "r₂": {
+     "n": "radius of nucleus 2",
+     "u": "m"
+    },
+    "T½": {
+     "n": "half-life",
+     "u": "s, days or years"
+    },
+    "α": {
+     "n": "alpha particle: a helium-4 nucleus, 2 protons and 2 neutrons"
+    },
+    "β": {
+     "n": "beta particle: an electron, β⁻, or a positron, β⁺"
+    },
+    "γ": {
+     "n": "gamma ray: a high-energy photon with no charge and no mass"
+    },
+    "QF": {
+     "n": "quality factor",
+     "u": "no unit"
+    },
+    "t": {
+     "n": "time",
+     "u": "s"
+    }
+   },
+   "terms": [
+    {
+     "t": "Radiotherapy",
+     "d": "Ionizing radiation kills tumour cells. Rotating the source around the patient keeps the tumour in the beam all the time, while each part of the healthy tissue gets only a small dose."
+    },
+    {
+     "t": "Treating deep tumours",
+     "d": "Gamma rays have no charge and penetrate deeply, so they can reach tumours deep in the body. Staff are protected by lead shielding."
+    },
+    {
+     "t": "short-lived tracers",
+     "d": "A tracer with a short half-life gives enough radiation for imaging, then decays away quickly, so the patient's dose stays low."
+    },
+    {
+     "t": "Checking for contamination",
+     "d": "A Geiger-Müller counter detects and counts ionizing radiation, so it shows where radioactive material has spread. It cannot tell which type of radiation it is."
+    },
+    {
+     "t": "GM counter",
+     "d": "A Geiger-Müller counter detects and counts ionizing radiation, so it shows where radioactive material has spread. It cannot tell which type of radiation it is."
+    },
+    {
+     "t": "dose records",
+     "d": "Absorbed dose is recorded in gray, 1 Gy = 1 J/kg. Dose equivalent in sievert, dose × QF, allows for the type of radiation and so shows the biological risk."
+    },
+    {
+     "t": "Radiation worker safety",
+     "d": "Dose limits cap the radiation a worker may receive: 20 mSv per year averaged over 5 years by the IAEA, and 50 mSv, 5 rem, per year by the US NRC."
+    },
+    {
+     "t": "Dating ancient remains",
+     "d": "Living things take in carbon-14. After death it decays with a half-life of about 5730 years, so the C-14 left shows the age."
+    },
+    {
+     "t": "Alpha emitters",
+     "d": "Alpha particles are stopped by paper or the skin, but inside the body they put all their energy into a small volume of tissue and do great damage."
+    }
+   ]
+  },
+  "content/medphys/oif/chapter-8.md": {
+   "symbols": {
+    "Q": {
+     "n": "charge",
+     "u": "C"
+    },
+    "q": {
+     "n": "charge",
+     "u": "C"
+    },
+    "Q₁": {
+     "n": "charge 1",
+     "u": "C"
+    },
+    "Q₂": {
+     "n": "charge 2",
+     "u": "C"
+    },
+    "n": {
+     "n": "number of electrons",
+     "u": "no unit"
+    },
+    "e": {
+     "n": "charge of one electron",
+     "u": "1.602 × 10⁻¹⁹ C"
+    },
+    "k": {
+     "n": "Coulomb's constant",
+     "u": "8.998 × 10⁹ N·m²/C²"
+    },
+    "F": {
+     "n": "force",
+     "u": "N"
+    },
+    "r": {
+     "n": "distance between the charges",
+     "u": "m"
+    },
+    "E": [
+     {
+      "n": "electric field along the wire",
+      "u": "V/m",
+      "when": "V\\s*/\\s*L|J\\s*=\\s*σ"
+     },
+     {
+      "n": "electric field",
+      "u": "N/C"
+     }
+    ],
+    "V": {
+     "n": "electric potential or voltage",
+     "u": "V"
+    },
+    "W": {
+     "n": "work done",
+     "u": "J"
+    },
+    "U": {
+     "n": "potential energy",
+     "u": "J"
+    },
+    "I": {
+     "n": "current",
+     "u": "A"
+    },
+    "R": {
+     "n": "resistance",
+     "u": "Ω"
+    },
+    "ρ": {
+     "n": "resistivity",
+     "u": "Ω·m"
+    },
+    "L": {
+     "n": "length of the wire",
+     "u": "m"
+    },
+    "A": {
+     "n": "cross-sectional area",
+     "u": "m²"
+    },
+    "J": {
+     "n": "current density",
+     "u": "A/m²"
+    },
+    "σ": {
+     "n": "conductivity",
+     "u": "S/m"
+    },
+    "ε₀": {
+     "n": "permittivity of free space",
+     "u": "8.85 × 10⁻¹² C²/(N·m²)"
+    },
+    "B": {
+     "n": "magnetic field",
+     "u": "T"
+    },
+    "θ": {
+     "n": "angle between v and B",
+     "u": "°"
+    },
+    "v": {
+     "n": "speed of the charge",
+     "u": "m/s"
+    },
+    "t": {
+     "n": "time",
+     "u": "s"
+    }
+   },
+   "terms": [
+    {
+     "t": "ECG",
+     "d": "Electrocardiogram: electrodes on the skin record the potential differences made by the heart's electrical activity."
+    },
+    {
+     "t": "EEG",
+     "d": "Electroencephalogram: electrodes on the scalp record the potential differences made by brain activity."
+    },
+    {
+     "t": "Electric shock",
+     "d": "A high voltage can drive a large current through the body. The current can disturb the heart rhythm and burn tissue."
+    },
+    {
+     "t": "Body tissue resistance",
+     "d": "Body tissue resists current like any conductor, R = ρL/A. Dry skin has a high resistance, so gel is used to give electrodes good contact."
+    },
+    {
+     "t": "How nerves and muscles fire",
+     "d": "At rest the inside of the cell is about −70 mV. Na⁺ flowing in depolarizes the membrane and K⁺ flowing out repolarizes it; this is the action potential."
+    },
+    {
+     "t": "multiple sclerosis",
+     "d": "The myelin sheath around nerve fibres is damaged, so nerve signals travel more slowly or are blocked."
+    },
+    {
+     "t": "Myelin",
+     "d": "An insulating fatty sheath around nerve fibres. It makes nerve signals travel much faster."
+    },
+    {
+     "t": "MRI",
+     "d": "Magnetic resonance imaging uses a strong magnetic field and radio waves, not ionizing radiation, and shows soft tissue in detail. The magnet pulls hard on metal objects, so metal is dangerous near the scanner."
+    },
+    {
+     "t": "MEG",
+     "d": "Magnetoencephalography: measures the tiny magnetic fields made by electric currents in the brain."
+    },
+    {
+     "t": "MCG",
+     "d": "Magnetocardiography: measures the magnetic fields made by the heart's electrical activity."
+    }
+   ]
+  }
+ }
+}

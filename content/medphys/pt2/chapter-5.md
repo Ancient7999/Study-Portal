@@ -521,7 +521,7 @@ Refractive index: n = c / v             ← c = 3 × 10⁸ m/s; higher n → slo
 Snell's law: n₁ sin θ₁ = n₂ sin θ₂      ← angles from the normal
 Critical angle: sin θc = n₂ / n₁        ← dense (n₁) → rare (n₂), θ₂ = 90°
 TIR: n₁ > n₂ and θ > θc                 ← all light reflects back inside
-Lens power: P = 1 / f  (f in m)         ← dioptre D = m⁻¹; convex +, concave −
+Lens power: P = 1 / f                   ← f in metres; dioptre D = m⁻¹; convex +, concave −
 Thin lens / mirror: 1/do + 1/di = 1/f   ← same equation for both
 Magnification: m = hi / ho = −di / do   ← sign: − inverted, + upright
 Size ratio: M = image size / object size = |m|

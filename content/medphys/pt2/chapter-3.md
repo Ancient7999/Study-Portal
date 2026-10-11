@@ -374,7 +374,6 @@ Laplace's law links the **pressure inside a vessel**, its **radius**, and the **
 
 ```
 Cylindrical blood vessel:   T = P × r
-T = wall tension (N/m),  P = internal pressure (Pa),  r = radius of the vessel (m)
 
 Thin-walled vessel, wall stress:   σ = P r / t
 σ = wall stress,  t = wall thickness
@@ -480,7 +479,6 @@ Surface tension is the property of a liquid surface that makes it behave like a 
 
 ```
 T = F / L
-T = surface tension (N/m),  F = force on the liquid surface (N),  L = length over which the force acts (m)
 ```
 
 **How T = F/L is made:** take a line of length L on the surface; the surface pulls along the surface on that line with force F. Force per unit length is the surface tension. Some books write it as **γ**. Do not mix it up with the **wall tension T** of Laplace's law, which also has units N/m.
