@@ -308,7 +308,7 @@
     const summary = document.getElementById('studySummary');
     if (summary) { summary.hidden = true; summary.innerHTML = ''; }
     const back = document.getElementById('studyBackBtn');
-    if (back) back.textContent = backTo === 'hubView' ? '← Practice hub' : '← Study Portal';
+    if (back) back.textContent = backTo === 'setsView' ? '← Practice sets' : '← Study Portal';
     const q = document.getElementById('studyQuizBtn');
     if (q) q.hidden = !quizOpener;
     // picture study (catalog "study.images"): same chapter cards, pictures instead of Markdown

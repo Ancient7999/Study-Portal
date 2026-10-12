@@ -10,7 +10,7 @@
  *   }
  *   dnsa[bankKey] = { "id:<questionId>": true }     // legacy "A_3" keys are migrated
  *
- * A "card" is a hub card (category or chunk). The quiz engine registers each
+ * A "card" is a set card (category or chunk). The quiz engine registers each
  * card's question ids with registerCard(), so percentages are computed from
  * the real bank contents.
  */

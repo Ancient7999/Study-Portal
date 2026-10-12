@@ -504,7 +504,7 @@
     if (!lobbyId || !me) return;
     if (global.StudySplitQuiz && StudySplitQuiz.leave) {
       try {
-        StudySplitQuiz.leave({ skipHub: false, silent: true });
+        StudySplitQuiz.leave({ skipSets: false, silent: true });
       } catch (e) {}
     }
     await removeMemberFromLobby(lobbyId, me, { reason: 'leave' });
@@ -681,7 +681,7 @@
           notifyChatLeave();
           if (global.StudySplitQuiz && StudySplitQuiz.leave) {
             try {
-              StudySplitQuiz.leave({ skipHub: false });
+              StudySplitQuiz.leave({ skipSets: false });
             } catch (e) {}
           }
           toast('Lobby closed');
@@ -701,7 +701,7 @@
         notifyChatLeave();
         if (global.StudySplitQuiz && StudySplitQuiz.leave) {
           try {
-            StudySplitQuiz.leave({ skipHub: false });
+            StudySplitQuiz.leave({ skipSets: false });
           } catch (e) {}
         }
       }

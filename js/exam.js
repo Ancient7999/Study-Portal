@@ -7,12 +7,12 @@
   const examTitle = document.getElementById('examTitle');
   const examSub = document.getElementById('examSub');
   const examBadge = document.getElementById('examBadge');
-  const hubView = document.getElementById('hubView');
+  const setsView = document.getElementById('setsView');
   const quizView = document.getElementById('quizView');
   const doneView = document.getElementById('doneView');
-  const hubGrid = document.getElementById('hubGrid');
+  const setsGrid = document.getElementById('setsGrid');
   const restartBtn = document.getElementById('restartBtn');
-  const backHubBtn = document.getElementById('backHubBtn');
+  const backSetsBtn = document.getElementById('backSetsBtn');
   const progressPill = document.getElementById('progressPill');
   const quizPanel = document.getElementById('quizPanel');
   const qCat = document.getElementById('qCat');
@@ -23,7 +23,7 @@
   const nextBtn = document.getElementById('nextBtn');
   const doneTitle = document.getElementById('doneTitle');
   const doneMsg = document.getElementById('doneMsg');
-  const doneHubBtn = document.getElementById('doneHubBtn');
+  const doneSetsBtn = document.getElementById('doneSetsBtn');
   const toastHost = document.getElementById('toastHost');
 
   const pomoDock = document.getElementById('pomodoroDock');
@@ -66,8 +66,8 @@
   }
 
   function showView(name) {
-    [hubView, quizView, doneView].forEach((v) => v.classList.remove('active'));
-    if (name === 'hub') hubView.classList.add('active');
+    [setsView, quizView, doneView].forEach((v) => v.classList.remove('active'));
+    if (name === 'sets') setsView.classList.add('active');
     if (name === 'quiz') quizView.classList.add('active');
     if (name === 'done') doneView.classList.add('active');
   }
@@ -112,13 +112,13 @@
 
   function displayPct(letter) {
     const { pct, best } = computePct(letter);
-    // Show best for hub (keeps 100% after restart of current run if best was 100)
+    // Show best for sets (keeps 100% after restart of current run if best was 100)
     return Math.max(pct, best);
   }
 
-  function renderHub() {
+  function renderSets() {
     const forms = bank.forms || Object.keys(bank.bank || {});
-    hubGrid.innerHTML = '';
+    setsGrid.innerHTML = '';
     forms.forEach((letter) => {
       const shown = displayPct(letter);
       const btn = document.createElement('button');
@@ -129,7 +129,7 @@
         <div class="pct">${shown}%</div>
       `;
       btn.addEventListener('click', () => startForm(letter));
-      hubGrid.appendChild(btn);
+      setsGrid.appendChild(btn);
     });
     saveProgress();
   }
@@ -271,7 +271,7 @@
       doneTitle.textContent = `Form ${currentForm} complete`;
       doneMsg.textContent = `Score ${pct}% · Best kept ${best}%`;
       showView('done');
-      renderHub();
+      renderSets();
       return;
     }
     qIndex++;
@@ -296,17 +296,17 @@
       if (!progress[letter]) progress[letter] = defaultFormState();
     });
     saveProgress();
-    renderHub();
+    renderSets();
     toast('Progress reset — best scores kept');
   });
 
-  backHubBtn.addEventListener('click', () => {
-    renderHub();
-    showView('hub');
+  backSetsBtn.addEventListener('click', () => {
+    renderSets();
+    showView('sets');
   });
-  doneHubBtn.addEventListener('click', () => {
-    renderHub();
-    showView('hub');
+  doneSetsBtn.addEventListener('click', () => {
+    renderSets();
+    showView('sets');
   });
   prevBtn.addEventListener('click', goPrev);
   nextBtn.addEventListener('click', goNext);
@@ -409,8 +409,8 @@
       document.title = `${bank.title || 'Exam'} · Portal`;
 
       loadStatus.style.display = 'none';
-      renderHub();
-      showView('hub');
+      renderSets();
+      showView('sets');
       startPomo();
     })
     .catch((err) => {

@@ -183,9 +183,9 @@
 }
 .portal-card-wrap .study-chip:hover { border-color: var(--cyan-bright); box-shadow: 0 0 18px var(--mood-glow); transform: translateY(-2px); }
 .portal-card-wrap .study-chip:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
-.pt1q .hub-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.pt1q .hub-tools .quiz-settings-wrap { margin: 0; }
-.pt1q .hub-tools { margin: 0 0 18px; }
+.pt1q .sets-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.pt1q .sets-tools .quiz-settings-wrap { margin: 0; }
+.pt1q .sets-tools { margin: 0 0 18px; }
 #studyNotesBtn[hidden]{display:none!important}
 
 /* —— PICTURE STUDY (Medical Terminology PT2) —— */
@@ -255,7 +255,7 @@
 #studyView .simg-index-chip.extra{border-style:dashed}
 #studyView .simg-title .note-badge{vertical-align:middle;margin-left:6px}
 @media (max-width:480px){#studyView .simg-mode{padding:6px 8px;font-size:.7rem}#studyView .simg-modes{width:100%}#studyView .simg-mode{flex:1}}
-/* lecture cards in the PT2 hub: card + its own 📖 Study button */
+/* lecture cards in the PT2 sets: card + its own 📖 Study button */
 .card-study-wrap{position:relative;display:flex}
 .card-study-wrap>.card{flex:1;padding-bottom:52px}
 .card-study-chip{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:.74rem;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(var(--accent-0-rgb),.1);color:var(--accent-0);cursor:pointer;z-index:2}

@@ -3,7 +3,7 @@
 Plain-language notes on how the quiz behaves. It is a copy of the Med Physics
 PT1 quiz, with the Study Portal extras kept on top.
 
-## 1. Hub cards: how questions are grouped
+## 1. Set cards: how questions are grouped
 
 - **Several topics in a bank:** each topic (`cat` in the bank file) gets its own card, in the order the topics first appear.
 - **One topic with 100 questions or fewer:** one card.
@@ -59,7 +59,7 @@ Each card shows:
 
 ## 3. Runs: leaving, coming back, finishing
 
-- **Esc** or "← Return to interface" goes back to the hub. On the way out the
+- **Esc** or "← Return to interface" goes back to the sets. On the way out the
   run is saved and the clock stops.
 - Clicking a card with a half-done run **resumes** it: same order, same shuffled choices, same answers, same linking lines.
   The clock continues from where it stopped.
@@ -164,7 +164,7 @@ A question without an explanation just shows ✓ (never "undefined").
 
 ## 7. Shuffle settings
 
-"⚙ Quiz settings" on the hub has three switches. All are on by default and saved on this device:
+"⚙ Quiz settings" on the sets has three switches. All are on by default and saved on this device:
 - **Shuffle questions**
 - **Shuffle choices** (for stepped questions, per step)
 - **Insert linking questions randomly** (linking questions are dropped at random places in the run)
@@ -247,7 +247,7 @@ That is all: the cards, counts and progress come from the file.
 
 ### Lecture sets: one card per lecture (Medical Terminology Periodic Test 2)
 
-A material can list its lectures instead of having one `bank`. The hub then shows
+A material can list its lectures instead of having one `bank`. The sets then shows
 **one card per lecture, in the order listed**, and each lecture keeps its own
 progress, run, Mastery and mood stamp (saved under its own file path, for example
 `medterm/pt2/lecture-11`).
@@ -280,7 +280,7 @@ the moment, but the option is still there for future lectures:
 
 - `"draft": true` on a **material** puts a gold "Draft" badge on its portal card.
   The card stays clickable.
-- `"draft": true` on a **lecture** puts a "Draft" badge on its hub card. A lecture
+- `"draft": true` on a **lecture** puts a "Draft" badge on its set card. A lecture
   that is both draft and "soon" shows "Draft" and "Coming soon".
 - To clear a mark, set `draft` to `false` (or delete it). Nothing else changes.
 - The badges use the theme's accent colours, so they follow the mood themes.
@@ -316,7 +316,7 @@ A material can have study notes next to its quiz:
                   "title": "Chapter 1 · Matter & mechanics", "meta": "Units · phases · …" } ] }
 ```
 
-- The material card gets a **📖 Study** button and the practice hub gets a
+- The material card gets a **📖 Study** button and the practice sets gets a
   **📖 Study notes** button. Both open the notes inside the portal page, so mood themes apply.
 - The notes view is PT1's `study.html` page. It shows one foldable card per
   chapter, and a chapter loads the first time you open it.
@@ -324,7 +324,7 @@ A material can have study notes next to its quiz:
   - headings, lists, tables, code/formula blocks and quotes;
   - HTML blocks such as the phase diagram.
 - **Esc** or **Backspace** goes back to wherever the notes were opened from.
-  "Open Quiz" opens the material's practice hub.
+  "Open Quiz" opens the material's practice sets.
 - Medical Physics PT1 notes are in `content/medphys/pt1/`.
   - Chapters 1 and 2 are PT1's files, unchanged.
   - Chapter 3 has the Bernoulli parts removed: they were not in the PT1 exam.
@@ -339,8 +339,8 @@ A material can have a picture study instead of Markdown notes:
 
 - It opens in the same study screen as the Medical Physics notes (same header, buttons,
   foldable chapter cards, themes, Esc/Backspace back). Buttons: **📖 Study** on the PT2
-  portal card, **📖 Picture study** in the PT2 hub, and **📖 Study** on every lecture card
-  in the hub (opens that lecture's chapter).
+  portal card, **📖 Picture study** in the PT2 sets, and **📖 Study** on every lecture card
+  in the sets (opens that lecture's chapter).
 - Each lecture is a chapter. Its line shows the number of pictures and "k / n solved",
   with a thin progress bar; a summary bar above the chapters shows all solved labels.
   A chapter (and its pictures) loads the first time it is opened; pictures are lazy-loaded.
@@ -390,7 +390,7 @@ A material can have a picture study instead of Markdown notes:
   typed progress) and is separate from quiz progress (no solved questions, Mastery or
   rewards). The chosen mode is not saved.
 - PT2 is draft-marked, so the study header shows the Draft badge, and so do the chapters of
-  draft lectures (14–15, 16–17, 18–20), matching the hub.
+  draft lectures (14–15, 16–17, 18–20), matching the sets.
 - At narrow widths a labeled diagram keeps a readable minimum size and scrolls sideways
   inside its frame, like the labeling type.
 - Files: `banks/medterm/study/study-images.json` (chapters by lecture id) and
@@ -560,7 +560,7 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
     Trickier" badge, tip "Good for practice. Some definitions overlap, so learn each
     term's function exactly as the slides word it." (Study Skills · Periodic Test 1).
     It shows on the portal card with the tooltip only (no note line under the title) and
-    **once** in the hub, next to the ⚙ Quiz settings button (`#hubBadges`), not on each
+    **once** in the sets, next to the ⚙ Quiz settings button (`#setsBadges`), not on each
     form card.
   - A `badges[]` entry may set `"note": false` (no note line on the portal card) and
     `"where": ["card"]` (portal card only, not the form cards).
@@ -600,7 +600,7 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
   split is recorded under `source.forms`. Question content is unchanged.
 - Card rule: one category with ≤ 100 questions gives one card. The bank's
   `cards: [{id:"lec1-4", title:"Lectures 1–4", cats:["ITHS_L1_L4"]}]` gives it a readable label
-  in the hub and in party mode. Card id is `grp:lec1-4`.
+  in the sets and in party mode. Card id is `grp:lec1-4`.
 - Catalog: subject `iths` is unlocked. `iths1` is "Periodic Test 1" (Lectures 1–4 · 64
   questions) wired to this bank; `iths2` "Practice set" stays locked.
 - Progress and mastery are namespaced by bank path (`iths/pt1`). The party/lobby bank
@@ -624,7 +624,7 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
   - forms **O** and **P**: the two video categories on their own ("Video: Insomnia" 36,
     "Video: Healers" 38), each with the grey "Not In Exam" badge
     ("These video questions weren't part of the exam.").
-- The bank's `cards: [{id, title, forms:["A"], badges?}]` maps each form to one hub card
+- The bank's `cards: [{id, title, forms:["A"], badges?}]` maps each form to one set card
   (the engine's group spec takes `forms` as well as `cats`). `showCardCounts: true` puts the
   question count first on each card ("117 questions · …").
 - Catalog `en1` carries `badges: [{text:"Excessive", tone:"amber", tip:"Far more questions
@@ -679,4 +679,4 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
   "title", "scope", "draft"}` in the catalog. A wrong answer greys that option and shows the formula with
   its values; each further wrong answer adds working. After a correct answer a bar empties and the next
   item comes from the least-answered formula; "New question" skips the wait with a random one. Counts are
-  saved as `fp_count:<key>` and `fp_mastery:<key>`. Keys A–D answer, Esc returns to the hub.
+  saved as `fp_count:<key>` and `fp_mastery:<key>`. Keys A–D answer, Esc returns to the sets.

@@ -63,7 +63,7 @@
       document.body.appendChild(bar);
       bar.querySelector('#splitExitBtn').onclick = () => {
         const id = state.lobbyId;
-        leave({ skipHub: false, silent: true });
+        leave({ skipSets: false, silent: true });
         if (id && global.StudyLobby && StudyLobby.leave) {
           StudyLobby.leave(id).catch(() => {});
         }
@@ -125,7 +125,7 @@
 
   async function joinLobbySession(lobbyId) {
     if (state.lobbyId === lobbyId && state.session) return;
-    leave({ skipHub: true, silent: true });
+    leave({ skipSets: true, silent: true });
     state.lobbyId = lobbyId;
     state.myUid = uid();
     const db = ensureDb();
@@ -236,7 +236,7 @@
       state.session = s.val();
       if (!state.session) {
         // Session wiped — others may still be in lobby; exit quiz UI
-        leave({ skipHub: false });
+        leave({ skipSets: false });
         return;
       }
       // Sync role if changed
@@ -526,7 +526,7 @@
         if (window.StudyStore) StudyStore.markSolved(bk, q.__id);
       }
       if (typeof StudyMastery.updateProgressBar === 'function') StudyMastery.updateProgressBar();
-      refreshHub();
+      refreshSets();
     }
     if (window.StudyProfiles) StudyProfiles.bumpQuestionsAnswered(1);
     if (window.StudyAchievements && typeof StudyAchievements.recordCorrect === 'function') {
@@ -534,10 +534,10 @@
     }
   }
 
-  function refreshHub() {
+  function refreshSets() {
     if (typeof renderForms === 'function') renderForms();
     else if (typeof buildFormCards === 'function') buildFormCards();
-    else if (typeof refreshHubCards === 'function') refreshHubCards();
+    else if (typeof refreshSetsCards === 'function') refreshSetsCards();
   }
 
   function leave(opts) {
@@ -569,15 +569,15 @@
         StudyMastery.endSession();
       } catch (e) {}
     }
-    refreshHub();
+    refreshSets();
 
-    if (!opts.skipHub) {
-      if (typeof goHub === 'function') goHub();
-      else if (typeof showView === 'function') showView('hubView');
+    if (!opts.skipSets) {
+      if (typeof goSets === 'function') goSets();
+      else if (typeof showView === 'function') showView('setsView');
       else {
         document.querySelectorAll('.view').forEach((v) => v.classList.remove('active'));
-        const hub = document.getElementById('hubView');
-        if (hub) hub.classList.add('active');
+        const sets = document.getElementById('setsView');
+        if (sets) sets.classList.add('active');
       }
     }
   }

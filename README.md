@@ -2,7 +2,7 @@
 
 # Study Portal
 
-Static practice hub for GitHub Pages. Question banks are JSON files in this repo and load with relative `fetch` (not the GitHub API).
+Static practice site for GitHub Pages. Question banks are JSON files in this repo and load with relative `fetch` (not the GitHub API).
 
 ## What’s included
 

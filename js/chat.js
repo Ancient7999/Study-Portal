@@ -41,7 +41,7 @@
   const state = {
     ready: false,
     channel: 'lobby', // Default to lobby
-    localRoom: 'hub',
+    localRoom: 'sets',
     lobbyCtx: null,
     online: {},
     visible: null,
@@ -49,7 +49,7 @@
     unsubPresence: null,
     open: false,
     friends: [],
-    activity: 'hub',
+    activity: 'sets',
     quiz: null,
     lastPresenceAt: 0,
     lastPresenceSig: '',
@@ -207,7 +207,7 @@
     if (state.activity === 'lobby') return 'lobby';
     if (state.localRoom && /^form_/i.test(state.localRoom)) return 'quiz';
     if (state.activity === 'quiz' && state.quiz) return 'quiz';
-    return state.activity === 'lobby' ? 'lobby' : 'hub';
+    return state.activity === 'lobby' ? 'lobby' : 'sets';
   }
 
   function presenceStatusLabel(p) {
@@ -732,15 +732,28 @@
     updateChannelMeta();
   }
 
+  /* Online count: every presence entry, plus this user while signed in (their own
+     entry can arrive after the first snapshot). Pushed to the status pill even
+     when the chat dock is not on the page. */
+  function countOnline(online, me) {
+    const ids = new Set(Object.keys(online || {}));
+    if (me) ids.add(me);
+    return ids.size;
+  }
+  function onlineCount() {
+    let me = null;
+    try { me = uid(); } catch (e) {}
+    return countOnline(state.online, me);
+  }
+
   function updateChannelMeta() {
+    if (window.StudyNetStatus && window.StudyNetStatus.setOnlineCount) {
+      window.StudyNetStatus.setOnlineCount(onlineCount());
+    }
     const el = document.getElementById('chatDockMeta');
     if (!el) return;
     ensureVisible();
     const ch = CHANNELS.find((c) => c.id === state.channel) || CHANNELS[0];
-    const onlineN = Object.keys(state.online).length;
-    if (window.StudyNetStatus && window.StudyNetStatus.setOnlineCount) {
-      window.StudyNetStatus.setOnlineCount(onlineN);
-    }
     let meta = ch.label;
     if (state.channel === 'lobby' && state.lobbyCtx && state.lobbyCtx.lobbyId) {
       meta += ' · lobby ' + String(state.lobbyCtx.lobbyId).slice(0, 6);
@@ -766,7 +779,12 @@
         await new Promise((r) => setTimeout(r, 100));
         tries++;
       }
-      if (!uid()) { console.warn('chat: no auth yet'); return; }
+      if (!uid()) {
+        // Sign-in can take longer than 5 s: start presence once it lands.
+        const off = firebase.auth().onAuthStateChanged((u) => { if (u && !state.ready) { off(); start(); } });
+        return;
+      }
+      if (state.ready) return;
       
       state.friends = loadFriends();
       await publishPresence(true);
@@ -789,15 +807,15 @@
   }
 
   function setLocalRoom(roomId) {
-    state.localRoom = String(roomId || 'hub').slice(0, 64) || 'hub';
+    state.localRoom = String(roomId || 'sets').slice(0, 64) || 'sets';
     if (/^form_/i.test(state.localRoom)) {
       const letter = state.localRoom.replace(/^form_/i, '').slice(0, 8);
       state.activity = 'quiz';
       state.quiz = { bank: currentBankLabel(), form: letter };
-    } else if (state.localRoom === 'lobby' || state.localRoom === 'hub') {
-      if (state.activity === 'quiz') state.activity = 'hub';
+    } else if (state.localRoom === 'lobby' || state.localRoom === 'sets') {
+      if (state.activity === 'quiz') state.activity = 'sets';
       state.quiz = null;
-      if (state.activity !== 'lobby') state.activity = 'hub';
+      if (state.activity !== 'lobby') state.activity = 'sets';
     }
     updateChannelMeta();
     publishPresence();
@@ -887,6 +905,8 @@
     removeFriend,
     getFriends: () => state.friends.slice(),
     applyFriendsFromCloud,
-    isReady: () => state.ready
+    isReady: () => state.ready,
+    countOnline,
+    refreshOnlineCount: updateChannelMeta
   };
 })(window);

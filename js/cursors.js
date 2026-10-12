@@ -49,6 +49,8 @@
       if (typeof currentMoodEmoji !== 'undefined' && currentMoodEmoji) emoji = currentMoodEmoji;
       else emoji = localStorage.getItem('pt1_live_mood') || emoji;
     } catch (e) {}
+    // each emoji has its own colour class; the hue follows its mood family
+    try { if (typeof resolveMood === 'function') { const m = resolveMood(emoji); if (m && MOOD_HUE[m.fam] != null) cls = m.fam; } } catch (e) {}
     return { cls: cls, emoji: emoji, hue: MOOD_HUE[cls] != null ? MOOD_HUE[cls] : 190 };
   }
 

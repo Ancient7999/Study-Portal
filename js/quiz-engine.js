@@ -107,7 +107,10 @@ function pt1Toast(msg,ms){ if(typeof showToast==='function') showToast(msg, ms||
   var root=document.documentElement;
   if(root.dataset.pointerInputWired==='1') return;
   root.dataset.pointerInputWired='1';
-  if(!root.getAttribute('data-pointer-input')) root.setAttribute('data-pointer-input','fine');
+  if(!root.getAttribute('data-pointer-input')){
+    var noFine=false; try{ noFine=!!(window.matchMedia && !matchMedia('(any-pointer: fine)').matches && matchMedia('(any-pointer: coarse)').matches); }catch(e){}
+    root.setAttribute('data-pointer-input',noFine?'touch':'fine');
+  }
   var lastTouchAt=0, TOUCH_HOLD_MS=1200;
   function setPointerInputKind(kind){
     var next=kind==='touch'?'touch':'fine';
@@ -171,7 +174,7 @@ function pt1CursorOn(){ var root=document.documentElement; return (typeof custom
 /* PT1 2258 — correct-answer reward is a canvas firework burst */
 function pt1Confetti(){ spawnFireworkBurst(W*.5,H*.28,26); }
 
-/* —— bank + hub (PT1 2405, 2582–2949) —— */
+/* —— bank + sets (PT1 2405, 2582–2949) —— */
 let BANK=null, BANK_PATH='', BANK_KEY='';
 let ALLQ=[], CARDS=[], ID_REPORT={duplicates:[],missing:0};
 let questions=[], answers=[], current=0, locked=false, quizActive=false, startTime=0, elapsedTimer=null, drawState=null, runLabel='', unansweredMarkersVisible=false;
@@ -242,7 +245,7 @@ function remainingOf(pool){
   return pool.filter(q=>!solved.has(q.__id));
 }
 
-/* ADAPT (decision 2): hub cards from bank data.
+/* ADAPT (decision 2): set cards from bank data.
    - several categories (cat) → one card per category, in first-seen order;
    - ONE category with more than 100 questions → balanced parts of ~40
      (a stepped question counts as one question);
@@ -454,9 +457,9 @@ function placeSettingsGear(){
     var gr=gear.getBoundingClientRect();
     if(def.side==='left'){
       // ADAPT: left-side buttons go above the title. Besides the title lines,
-      // the hub's "← Study Portal" button above the title is checked too.
+      // the sets's "← Study Portal" button above the title is checked too.
       var targets=lines.slice();
-      view.querySelectorAll('.hub-back button').forEach(function(btn){ var r=btn.getBoundingClientRect(); if(r.width&&r.height) targets.push(r); });
+      view.querySelectorAll('.sets-back button').forEach(function(btn){ var r=btn.getBoundingClientRect(); if(r.width&&r.height) targets.push(r); });
       var hitTop=Infinity;
       targets.forEach(function(r){ if(rectsHit(gr,r)) hitTop=Math.min(hitTop,r.top); });
       if(hitTop===Infinity) return;
@@ -560,7 +563,7 @@ function resetPoolProgress(pool,label,card){
   }
   StudyStore.save(bankId(), st);
   updateCounters();
-  renderHub();
+  renderSets();
 }
 document.getElementById('resetModalCancel').addEventListener('click', closeCardResetConfirm);
 document.getElementById('resetModalConfirm').addEventListener('click',()=>{
@@ -704,7 +707,7 @@ function restoreRun(run){
   return {elapsed:Math.max(0, run.el|0)};
 }
 
-/* —— hub (PT1 2832–2949 + portal extras) —— */
+/* —— sets (PT1 2832–2949 + portal extras) —— */
 function cardCounts(pool){
   const linking=pool.filter(isMatching).length;
   const stepped=pool.filter(isStepped).length;
@@ -722,19 +725,19 @@ function noteBadgeHTML(b, extraCls){
   const tone=(b.tone==='grey'||b.tone==='gray')?'grey':(b.tone==='green'?'green':'amber');
   return '<span class="card-badge note-badge '+tone+(b.cls?' '+b.cls:'')+(extraCls?' '+extraCls:'')+(b.tip?'':' no-tip')+'"'+(b.tip?' title="'+escapeHtml(b.tip)+'" data-tip="'+escapeHtml(b.tip)+'" aria-label="'+escapeHtml(b.text+': '+b.tip)+'"':'')+'>'+escapeHtml(b.text)+'</span>';
 }
-/* where a material badge shows: 'card' (portal card), 'forms' (every hub card), 'hub' (next to ⚙ Quiz settings).
-   examDiffers → card + hub (not on each form); badges[] → card + forms unless they list `where`. */
+/* where a material badge shows: 'card' (portal card), 'forms' (every set card), 'sets' (next to ⚙ Quiz settings).
+   examDiffers → card + sets (not on each form); badges[] → card + forms unless they list `where`. */
 function materialBadges(m, where){
   if(!m) return [];
   const out=[];
-  if(m.examDiffers===true) out.push(Object.assign({where:['card','hub']},EXAM_DIFFERS_BADGE));
+  if(m.examDiffers===true) out.push(Object.assign({where:['card','sets']},EXAM_DIFFERS_BADGE));
   if(Array.isArray(m.badges)) m.badges.forEach(b=>b&&b.text&&out.push(Object.assign({where:['card','forms']},b)));
   return where?out.filter(b=>b.where.includes(where)):out;
 }
-function renderHubBadges(){
-  const el=document.getElementById('hubBadges'); if(!el) return;
-  const list=materialBadges(window.__activeMaterial,'hub');
-  el.innerHTML=list.map(b=>noteBadgeHTML(b,'hub-badge')).join('');
+function renderSetsBadges(){
+  const el=document.getElementById('setsBadges'); if(!el) return;
+  const list=materialBadges(window.__activeMaterial,'sets');
+  el.innerHTML=list.map(b=>noteBadgeHTML(b,'sets-badge')).join('');
   el.hidden=!list.length;
 }
 window.StudyBadges={html:noteBadgeHTML, forMaterial:materialBadges, EXAM_DIFFERS:EXAM_DIFFERS_BADGE};
@@ -789,17 +792,17 @@ function appendPoolCard(grid, label, pool, card){
     wrap.appendChild(btn);
     const sb=document.createElement('button'); sb.type='button'; sb.className='card-study-chip'; sb.dataset.lecture=card.id.slice(4);
     sb.textContent='📖 Study'; sb.title='Picture study · '+label;
-    sb.addEventListener('click',e=>{ e.stopPropagation(); StudyNotes.open(mat, { from:'hubView', openQuiz:()=>showView('hubView'), focus:card.id.slice(4) }); });
+    sb.addEventListener('click',e=>{ e.stopPropagation(); StudyNotes.open(mat, { from:'setsView', openQuiz:()=>showView('setsView'), focus:card.id.slice(4) }); });
     wrap.appendChild(sb);
     grid.appendChild(wrap);
     return;
   }
   grid.appendChild(btn);
 }
-function renderHub(){
-  const host=document.getElementById('hubSections');
+function renderSets(){
+  const host=document.getElementById('setsSections');
   host.innerHTML='';
-  renderHubBadges();
+  renderSetsBadges();
   if(!BANK){
     host.innerHTML='<div class="empty-note">Bank not loaded yet.</div>';
     return;
@@ -814,11 +817,11 @@ function renderHub(){
   });
   host.appendChild(grid);
   // Formula practice card (material opts in with "formulas" in the catalog; js/formula-practice.js)
-  if(window.FormulaPractice) FormulaPractice.appendHubSection(host);
+  if(window.FormulaPractice) FormulaPractice.appendSetsSection(host);
   if(runCard) cardCtx(runCard); // keep the open run's bank active
 }
-/* PORTAL name kept: other modules call refreshHubCards() */
-function refreshHubCards(){ if(BANK){ updateCounters(); renderHub(); placeSettingsGear(); } }
+/* PORTAL name kept: other modules call refreshSetsCards() */
+function refreshSetsCards(){ if(BANK){ updateCounters(); renderSets(); placeSettingsGear(); } }
 
 function ingestBank(data, path){
   if(!data || !data.bank){ pt1Toast('JSON needs a bank object'); return; }
@@ -842,12 +845,12 @@ function ingestBank(data, path){
   window.FORM_BANK=data.bank; window.FORMS=data.forms||Object.keys(data.bank||{}); window.__bankMeta=data;
   const subj=data.subject || (window.__activeMaterial && __activeMaterial.subjectName) || '';
   const title=data.title || (window.__activeMaterial && __activeMaterial.title) || 'Practice';
-  setTitleText('hubTitle', (subj?subj+' · ':'')+title);
-  const kick=document.getElementById('hubKicker');
-  if(kick) kick.textContent='Practice hub · '+CARDS.length+' set'+(CARDS.length===1?'':'s');
-  document.getElementById('hubSub').textContent='practice simulation (not official)';
+  setTitleText('setsTitle', (subj?subj+' · ':'')+title);
+  const kick=document.getElementById('setsKicker');
+  if(kick) kick.textContent='Practice · '+CARDS.length+' set'+(CARDS.length===1?'':'s');
+  document.getElementById('setsSub').textContent='practice simulation (not official)';
   document.getElementById('bankMeta').textContent=(allQuestions().length)+' questions · '+loadSolved().size+' solved';
-  renderHub();
+  renderSets();
   placeSettingsGear();
 }
 /* LECTURE SET loader: material.lectures = [{id, title, bank|null, status, draft, migrateFrom?}] */
@@ -897,13 +900,13 @@ function ingestLectureSet(material, entries, datas){
   const subj=(material && material.subjectName) || (BANK && BANK.subject) || '';
   window.FORM_BANK=BANK?BANK.bank:{}; window.FORMS=BANK?(BANK.forms||Object.keys(BANK.bank||{})):[];
   window.__bankMeta={title:material.title, subject:subj, lectureSet:true};
-  setTitleText('hubTitle', (subj?subj+' · ':'')+(material.title||'Practice'));
+  setTitleText('setsTitle', (subj?subj+' · ':'')+(material.title||'Practice'));
   const soon=cards.filter(c=>c.soon).length;
-  const kick=document.getElementById('hubKicker');
-  const ready=cards.length-soon; if(kick) kick.textContent='Lecture hub · '+ready+' lecture set'+(ready===1?'':'s')+(soon?(' · '+soon+' coming soon'):'');
-  document.getElementById('hubSub').textContent='practice simulation (not official)';
+  const kick=document.getElementById('setsKicker');
+  const ready=cards.length-soon; if(kick) kick.textContent='Lectures · '+ready+' lecture set'+(ready===1?'':'s')+(soon?(' · '+soon+' coming soon'):'');
+  document.getElementById('setsSub').textContent='practice simulation (not official)';
   updateCounters();
-  renderHub();
+  renderSets();
   placeSettingsGear();
 }
 async function loadLectureSet(material){
@@ -945,7 +948,7 @@ if(window.StudyMastery) StudyMastery._idForPosition=function(bk, form, i){
     el.addEventListener('change',()=> lsSet(key, el.checked?'1':'0'));
   });
   // ADAPT: PT1 keeps these in its (hidden) theme modal; the portal shows them
-  // behind a small "Quiz settings" pill on the hub, using PT1's own CSS.
+  // behind a small "Quiz settings" pill on the sets, using PT1's own CSS.
   const wrap=document.getElementById('quizSettingsWrap');
   const btn=document.getElementById('quizSettingsBtn');
   if(wrap && btn){
@@ -959,7 +962,7 @@ document.getElementById('resetSolvedBtn').addEventListener('click',()=>{
   saveSolved(new Set());
   pt1Toast('Solved list cleared · everything can appear again');
   updateCounters();
-  renderHub();
+  renderSets();
 });
 
 /* —— quiz engine (PT1 3000–3949) —— */
@@ -976,6 +979,7 @@ function enterRunChrome(label){
   setTitleText('quizTitle', label);
   document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+questions.length+' remaining this run';
   document.getElementById('statusText').textContent=label;
+  { const esc=document.getElementById('quizEscLabel'); if(esc) esc.textContent=LECTURE_SET?'back to lectures':'back to sets'; }
   document.getElementById('qTotal').textContent=questions.length;
   document.getElementById('quizScreen').style.display='block';
   document.getElementById('finalScreen').style.display='none';
@@ -2776,7 +2780,7 @@ function cardMoodOf(cardId){
 function restoreMoodUI(){
   const saved=cardMoodOf(runCard&&runCard.id);
   document.querySelectorAll('#moodContainer .mood-btn').forEach(btn=>btn.classList.toggle('selected',!!(saved&&btn.dataset.mood===saved)));
-  document.getElementById('moodLabel').textContent=saved?('stamped '+saved+' · saved on hub'):'tap one · stamps this set on the hub';
+  document.getElementById('moodLabel').textContent=saved?('stamped '+saved+' · saved on its card'):'tap one · stamps this set on its card';
 }
 document.getElementById('moodContainer').addEventListener('click',e=>{
   const btn=e.target.closest('.mood-btn'); if(!btn||!runCard||!window.StudyStore) return;
@@ -2786,7 +2790,7 @@ document.getElementById('moodContainer').addEventListener('click',e=>{
   st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {mood, at:Date.now()});
   StudyStore.save(bankId(), st);
   document.querySelectorAll('#moodContainer .mood-btn').forEach(b=>b.classList.toggle('selected',b===btn));
-  document.getElementById('moodLabel').textContent='stamped '+mood+' · saved on hub';
+  document.getElementById('moodLabel').textContent='stamped '+mood+' · saved on its card';
 });
 
 /* —— leaving a run (PORTAL: save, stop clock, end Mastery session) —— */
@@ -2799,17 +2803,17 @@ function leaveRun(){
   setLinkDrawing(false);
   if(window.StudyMastery) StudyMastery.endSession();
 }
-function goHub(){
+function goSets(){
   leaveRun();
-  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'hub', quiz:null, localRoom:'hub', force:true });
-  renderHub();
+  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'sets', quiz:null, localRoom:'sets', force:true });
+  renderSets();
   updateCounters();
-  showView('hubView');
+  showView('setsView');
 }
 function goPortal(){
   leaveRun();
   if(window.StudyChat && StudyChat.setLocalRoom) StudyChat.setLocalRoom('lobby');
-  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'hub', quiz:null, force:true });
+  if(window.StudyChat && StudyChat.setActivity) StudyChat.setActivity({ activity:'sets', quiz:null, force:true });
   showView('portalView');
   document.title='Study Portal';
 }
@@ -2834,9 +2838,9 @@ document.getElementById('resetModalCancel').addEventListener('click',()=>{ resta
 
 document.getElementById('nextBtn').addEventListener('click', goNext);
 document.getElementById('backBtn').addEventListener('click', goBack);
-document.getElementById('hubBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); goHub(); });
-document.getElementById('againHubBtn').addEventListener('click', ()=>{ clearWireLayer(); goHub(); });
-document.getElementById('reviewMenuBtn').addEventListener('click', goHub);
+document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); goSets(); });
+document.getElementById('againSetsBtn').addEventListener('click', ()=>{ clearWireLayer(); goSets(); });
+document.getElementById('reviewMenuBtn').addEventListener('click', goSets);
 document.getElementById('reviewBtn').addEventListener('click', showReview);
 document.getElementById('restartBtn').addEventListener('click', restartCard);
 document.getElementById('reviewBackBtn').addEventListener('click', ()=>{
@@ -2860,7 +2864,7 @@ window.addEventListener('keydown', e=>{
   if(document.getElementById('cardResetModal').classList.contains('show')) return; // the dialog closes itself
   if(!document.getElementById('quizView').classList.contains('active')) return;
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
-  goHub();
+  goSets();
 }, true);
 document.addEventListener('keydown', e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
@@ -2943,6 +2947,6 @@ if(document.fonts&&document.fonts.ready){
 })();
 placeSettingsGear();
 
-window.StudyQuiz={ loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goHub, goPortal, renderHub, refreshHubCards,
+window.StudyQuiz={ loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };

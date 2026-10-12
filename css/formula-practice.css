@@ -1,5 +1,5 @@
 /* Formula practice (ported from the Med Physics PT1 site, quiz/index.html 662–737).
-   Scoped to #formulaView and the hub's formula card; colours come from the portal theme. */
+   Scoped to #formulaView and the sets's formula card; colours come from the portal theme. */
 .pt1q .card-desc-formula{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin:2px 0 0;line-height:1.45;opacity:.92}
 .pt1q .card.formula-card .form-letter{font-size:1.05rem}
 #formulaView .formula-hint-box{display:none;margin:10px 0 0;padding:12px 14px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb),.35);background:rgba(var(--accent-0-rgb),.08);font-family:var(--mono);font-size:.98rem;line-height:1.5;color:var(--accent-1)}

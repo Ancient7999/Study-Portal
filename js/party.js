@@ -385,7 +385,7 @@
     } else if (ban) {
       ban.hidden = true;
     }
-    // Soft-disable portal/hub interactive surfaces
+    // Soft-disable portal/sets interactive surfaces
     document.querySelectorAll('.portal-tab, .portal-card, #formGrid .card, #subjectTabs button').forEach((el) => {
       if (locked) {
         el.setAttribute('data-party-locked', '1');
@@ -405,7 +405,7 @@
       (e) => {
         if (!isNavLocked()) return;
         const t = e.target.closest(
-          '.portal-tab, .portal-card, #formGrid .card, #portalBackBtn, .hub-back button, #subjectTabs button, [data-form]'
+          '.portal-tab, .portal-card, #formGrid .card, #portalBackBtn, .sets-back button, #subjectTabs button, [data-form]'
         );
         if (!t) return;
         // Allow profile chip / leave / chat / lobby UI

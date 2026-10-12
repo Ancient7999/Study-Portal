@@ -230,7 +230,7 @@
 
   function tryBankMastery(bankKey) {
     // pt1-quiz-upgrade: Mastery is stored per question id; the bank counts as
-    // mastered when every question of every hub card has been cleared once.
+    // mastered when every question of every set card has been cleared once.
     if (!window.StudyMastery || typeof StudyMastery.isBankFullyCleared !== 'function') return;
     if (StudyMastery.isBankFullyCleared(bankKey)) unlockAchievement('mastery_bank');
   }

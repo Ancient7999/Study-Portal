@@ -197,12 +197,12 @@
     }
     // Old pt1_form_* values that arrived from the cloud are converted once more.
     if (global.StudyMigrate && typeof StudyMigrate.migrateLegacy === 'function') {
-      StudyMigrate.migrateLegacy().catch(function () {}).then(refreshHubSafe);
+      StudyMigrate.migrateLegacy().catch(function () {}).then(refreshSetsSafe);
     }
-    refreshHubSafe();
+    refreshSetsSafe();
   }
-  function refreshHubSafe() {
-    var fn = global.refreshHubCards || global.renderFormCards;
+  function refreshSetsSafe() {
+    var fn = global.refreshSetsCards || global.renderFormCards;
     if (typeof fn === 'function') {
       try {
         fn();
@@ -461,7 +461,7 @@
     if (Array.isArray(bundle.friends)) {
       setFriendsLocal(bundle.friends);
     }
-    if (opts.refreshHub) refreshHubSafe();
+    if (opts.refreshSets) refreshSetsSafe();
   }
 
   async function fetchCloud(uid) {
@@ -535,7 +535,7 @@
       const local = guestSnapshot || collectLocalBundle();
       const cloud = await fetchCloud(uid);
       const merged = mergeProgress(local, cloud || {});
-      applyBundleLocally(merged, { refreshHub: true });
+      applyBundleLocally(merged, { refreshSets: true });
       await writeCloud(uid, merged);
       lastUid = uid;
       return merged;

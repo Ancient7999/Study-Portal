@@ -97,6 +97,151 @@ html.mood-crying {
   --border:rgba(129,140,248,.35); --mood-glow:rgba(99,102,241,.2); --gold:#a5b4fc;
   --anim-speed:.48; --pulse-ms:3200ms; --transition-ms:500ms; --particle-speed:.38;
 }
+/* One colour per mood (each emoji has its own palette; speed follows its family) */
+html.mood-starstruck {
+  --bg:#0c040a; --bg2:#140610; --bg-glow:rgba(236,72,153,.08); --grid-tint:transparent;
+  --accent:#ec4899; --accent-2:#f472b6; --cyan:#ec4899; --cyan-bright:#fbcfe8; --teal:#db2777;
+  --border:rgba(236,72,153,.4); --mood-glow:rgba(236,72,153,.28); --gold:#f9a8d4;
+  --anim-speed:.65; --pulse-ms:1800ms; --transition-ms:320ms; --particle-speed:.8;
+}
+html.mood-cool {
+  --bg:#020609; --bg2:#040c14; --bg-glow:rgba(14,165,233,.07); --grid-tint:transparent;
+  --accent:#0ea5e9; --accent-2:#38bdf8; --cyan:#0ea5e9; --cyan-bright:#bae6fd; --teal:#0284c7;
+  --border:rgba(14,165,233,.4); --mood-glow:rgba(14,165,233,.25); --gold:#7dd3fc;
+  --anim-speed:.9; --pulse-ms:1700ms; --transition-ms:260ms; --particle-speed:.95;
+}
+html.mood-smile {
+  --bg:#0c0804; --bg2:#140f06; --bg-glow:rgba(251,146,60,.07); --grid-tint:transparent;
+  --accent:#fdba74; --accent-2:#fb923c; --cyan:#fdba74; --cyan-bright:#fed7aa; --teal:#f97316;
+  --border:rgba(251,146,60,.4); --mood-glow:rgba(251,146,60,.25); --gold:#fbd5a5;
+  --anim-speed:.8; --pulse-ms:1900ms; --transition-ms:340ms; --particle-speed:.75;
+}
+html.mood-thinking {
+  --bg:#04040c; --bg2:#080818; --bg-glow:rgba(99,102,241,.06); --grid-tint:transparent;
+  --accent:#6366f1; --accent-2:#818cf8; --cyan:#6366f1; --cyan-bright:#c7d2fe; --teal:#4f46e5;
+  --border:rgba(99,102,241,.4); --mood-glow:rgba(99,102,241,.25); --gold:#a5b4fc;
+  --anim-speed:.85; --pulse-ms:2100ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-zen {
+  --bg:#06040c; --bg2:#0c0818; --bg-glow:rgba(168,85,247,.06); --grid-tint:transparent;
+  --accent:#a855f7; --accent-2:#c084fc; --cyan:#a855f7; --cyan-bright:#e9d5ff; --teal:#9333ea;
+  --border:rgba(168,85,247,.4); --mood-glow:rgba(168,85,247,.25); --gold:#d8b4fe;
+  --anim-speed:.7; --pulse-ms:2600ms; --transition-ms:420ms; --particle-speed:.55;
+}
+html.mood-firedup {
+  --bg:#0c0202; --bg2:#180404; --bg-glow:rgba(239,68,68,.08); --grid-tint:transparent;
+  --accent:#ef4444; --accent-2:#f87171; --cyan:#ef4444; --cyan-bright:#fecaca; --teal:#dc2626;
+  --border:rgba(239,68,68,.45); --mood-glow:rgba(239,68,68,.3); --gold:#fca5a5;
+  --anim-speed:1.65; --pulse-ms:800ms; --transition-ms:150ms; --particle-speed:1.8;
+}
+html.mood-strong {
+  --bg:#020c06; --bg2:#04180c; --bg-glow:rgba(16,185,129,.07); --grid-tint:transparent;
+  --accent:#10b981; --accent-2:#34d399; --cyan:#10b981; --cyan-bright:#a7f3d0; --teal:#059669;
+  --border:rgba(16,185,129,.4); --mood-glow:rgba(16,185,129,.28); --gold:#6ee7b7;
+  --anim-speed:1.1; --pulse-ms:1400ms; --transition-ms:220ms; --particle-speed:1.2;
+}
+html.mood-sleep {
+  --bg:#010205; --bg2:#02040a; --bg-glow:rgba(30,58,138,.04); --grid-tint:transparent;
+  --accent:#1e3a8a; --accent-2:#1e40af; --cyan:#1e40af; --cyan-bright:#93c5fd; --teal:#172554;
+  --border:rgba(30,64,175,.35); --mood-glow:rgba(30,58,138,.18); --gold:#60a5fa;
+  --anim-speed:.4; --pulse-ms:3600ms; --transition-ms:550ms; --particle-speed:.3;
+}
+html.mood-party {
+  --bg:#0c0509; --bg2:#14090f; --bg-glow:rgba(244,114,182,.07); --grid-tint:transparent;
+  --accent:#f472b6; --accent-2:#f9a8d4; --cyan:#f472b6; --cyan-bright:#f9a8d4; --teal:#f472b6;
+  --border:rgba(244,114,182,.4); --mood-glow:rgba(244,114,182,.26); --gold:#f9a8d4;
+  --anim-speed:.72; --pulse-ms:2200ms; --transition-ms:380ms; --particle-speed:.65;
+}
+html.mood-grin {
+  --bg:#0c0a01; --bg2:#151101; --bg-glow:rgba(250,204,21,.07); --grid-tint:transparent;
+  --accent:#facc15; --accent-2:#fde047; --cyan:#facc15; --cyan-bright:#fde047; --teal:#facc15;
+  --border:rgba(250,204,21,.4); --mood-glow:rgba(250,204,21,.26); --gold:#fde047;
+  --anim-speed:.72; --pulse-ms:2200ms; --transition-ms:380ms; --particle-speed:.65;
+}
+html.mood-nerd {
+  --bg:#02090c; --bg2:#041015; --bg-glow:rgba(56,189,248,.07); --grid-tint:transparent;
+  --accent:#38bdf8; --accent-2:#7dd3fc; --cyan:#38bdf8; --cyan-bright:#7dd3fc; --teal:#38bdf8;
+  --border:rgba(56,189,248,.4); --mood-glow:rgba(56,189,248,.26); --gold:#7dd3fc;
+  --anim-speed:1; --pulse-ms:1600ms; --transition-ms:280ms; --particle-speed:1;
+}
+html.mood-study {
+  --bg:#080b02; --bg2:#0d1304; --bg-glow:rgba(163,230,53,.07); --grid-tint:transparent;
+  --accent:#a3e635; --accent-2:#d9f99d; --cyan:#a3e635; --cyan-bright:#d9f99d; --teal:#a3e635;
+  --border:rgba(163,230,53,.4); --mood-glow:rgba(163,230,53,.26); --gold:#d9f99d;
+  --anim-speed:1; --pulse-ms:1600ms; --transition-ms:280ms; --particle-speed:1;
+}
+html.mood-focus {
+  --bg:#0c0304; --bg2:#140507; --bg-glow:rgba(244,63,94,.07); --grid-tint:transparent;
+  --accent:#f43f5e; --accent-2:#fda4af; --cyan:#f43f5e; --cyan-bright:#fda4af; --teal:#f43f5e;
+  --border:rgba(244,63,94,.4); --mood-glow:rgba(244,63,94,.26); --gold:#fda4af;
+  --anim-speed:1; --pulse-ms:1600ms; --transition-ms:280ms; --particle-speed:1;
+}
+html.mood-nature {
+  --bg:#030b06; --bg2:#06120a; --bg-glow:rgba(74,222,128,.07); --grid-tint:transparent;
+  --accent:#4ade80; --accent-2:#bbf7d0; --cyan:#4ade80; --cyan-bright:#bbf7d0; --teal:#4ade80;
+  --border:rgba(74,222,128,.4); --mood-glow:rgba(74,222,128,.26); --gold:#bbf7d0;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-sparkle {
+  --bg:#0b060c; --bg2:#130a15; --bg-glow:rgba(232,121,249,.07); --grid-tint:transparent;
+  --accent:#e879f9; --accent-2:#f5d0fe; --cyan:#e879f9; --cyan-bright:#f5d0fe; --teal:#e879f9;
+  --border:rgba(232,121,249,.4); --mood-glow:rgba(232,121,249,.26); --gold:#f5d0fe;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-coffee {
+  --bg:#0a0805; --bg2:#120d09; --bg-glow:rgba(214,164,108,.07); --grid-tint:transparent;
+  --accent:#d6a46c; --accent-2:#ead2b4; --cyan:#d6a46c; --cyan-bright:#ead2b4; --teal:#d6a46c;
+  --border:rgba(214,164,108,.4); --mood-glow:rgba(214,164,108,.26); --gold:#ead2b4;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-moon {
+  --bg:#09090c; --bg2:#100f15; --bg-glow:rgba(196,181,253,.07); --grid-tint:transparent;
+  --accent:#c4b5fd; --accent-2:#ddd6fe; --cyan:#c4b5fd; --cyan-bright:#ddd6fe; --teal:#c4b5fd;
+  --border:rgba(196,181,253,.4); --mood-glow:rgba(196,181,253,.26); --gold:#ddd6fe;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-electric {
+  --bg:#0c0a01; --bg2:#151101; --bg-glow:rgba(250,204,21,.07); --grid-tint:transparent;
+  --accent:#fde047; --accent-2:#fef08a; --cyan:#fde047; --cyan-bright:#fef08a; --teal:#facc15;
+  --border:rgba(250,204,21,.4); --mood-glow:rgba(250,204,21,.26); --gold:#fef08a;
+  --anim-speed:1.55; --pulse-ms:900ms; --transition-ms:160ms; --particle-speed:1.7;
+}
+html.mood-cozy {
+  --bg:#0b0805; --bg2:#130d09; --bg-glow:rgba(224,163,112,.07); --grid-tint:transparent;
+  --accent:#e0a370; --accent-2:#f3d1b0; --cyan:#e0a370; --cyan-bright:#f3d1b0; --teal:#e0a370;
+  --border:rgba(224,163,112,.4); --mood-glow:rgba(224,163,112,.26); --gold:#f3d1b0;
+  --anim-speed:1.05; --pulse-ms:1800ms; --transition-ms:300ms; --particle-speed:.9;
+}
+html.mood-daydream {
+  --bg:#08090c; --bg2:#0e0f15; --bg-glow:rgba(165,180,252,.07); --grid-tint:transparent;
+  --accent:#a5b4fc; --accent-2:#e0e7ff; --cyan:#a5b4fc; --cyan-bright:#e0e7ff; --teal:#a5b4fc;
+  --border:rgba(165,180,252,.4); --mood-glow:rgba(165,180,252,.26); --gold:#e0e7ff;
+  --anim-speed:1.05; --pulse-ms:1800ms; --transition-ms:300ms; --particle-speed:.9;
+}
+html.mood-bubbles {
+  --bg:#050b0c; --bg2:#081315; --bg-glow:rgba(103,232,249,.07); --grid-tint:transparent;
+  --accent:#67e8f9; --accent-2:#cffafe; --cyan:#67e8f9; --cyan-bright:#cffafe; --teal:#67e8f9;
+  --border:rgba(103,232,249,.4); --mood-glow:rgba(103,232,249,.26); --gold:#cffafe;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-cloud {
+  --bg:#0a0a0b; --bg2:#111213; --bg-glow:rgba(203,213,225,.07); --grid-tint:transparent;
+  --accent:#cbd5e1; --accent-2:#e2e8f0; --cyan:#cbd5e1; --cyan-bright:#e2e8f0; --teal:#cbd5e1;
+  --border:rgba(203,213,225,.4); --mood-glow:rgba(203,213,225,.26); --gold:#e2e8f0;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-headphones {
+  --bg:#06040c; --bg2:#0b0714; --bg-glow:rgba(139,92,246,.07); --grid-tint:transparent;
+  --accent:#8b5cf6; --accent-2:#c4b5fd; --cyan:#8b5cf6; --cyan-bright:#c4b5fd; --teal:#8b5cf6;
+  --border:rgba(139,92,246,.4); --mood-glow:rgba(139,92,246,.26); --gold:#c4b5fd;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
+html.mood-reset {
+  --bg:#010a0b; --bg2:#021114; --bg-glow:rgba(34,211,238,.07); --grid-tint:transparent;
+  --accent:#22d3ee; --accent-2:#a5f3fc; --cyan:#22d3ee; --cyan-bright:#a5f3fc; --teal:#22d3ee;
+  --border:rgba(34,211,238,.4); --mood-glow:rgba(34,211,238,.26); --gold:#a5f3fc;
+  --anim-speed:.75; --pulse-ms:2400ms; --transition-ms:400ms; --particle-speed:.6;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body,button,.opt,.nav-btn,.fs-btn,.card,.mood-live,.mood-pick,.mood-tray,.timer-dock-main,.mood-reset-item,.mood-cursor-btn,.mood-tray-tools,.timer-dock,.chat-dock,.chat-toggle,.chat-minimize,.chat-send,.chat-channel-btn,.chat-channel-opt,.chat-channel-label,.chat-vis-btn,.chat-tool-btn,.chat-ac-item,.chat-icon-btn,.chat-friends-btn,.chat-friends-main,.chat-friends-x,.chat-friends-add,.chat-ac-add,.party-mini-chip,.party-timer-chip,.party-sync-timers-btn,.lobby-panel,.lobby-row,.lobby-seat-occ,.lobby-bench-chip,.kb-mode-btn,.pane-opt-btn,.mastery-dnsa-btn{cursor:none!important}
 #cursor{
@@ -326,7 +471,7 @@ html[data-skin="rib-haze"]{
   --skin-pattern-size:auto;
 }
 /* gloomy moods stay darker regardless of skin */
-html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-skin]{
+html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-skin], html.mood-sleep[data-skin]{
   --skin-pattern-opacity:calc(var(--skin-pattern-opacity, .3) * .65);
 }
 #fxCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
@@ -334,10 +479,10 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .view{display:none}
 .view.active{display:block}
 
-.hub-wrap{max-width:1600px;margin:0 auto}
-.hub-wrap h1{font-size:2.45rem;font-weight:900;background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 35%,var(--teal) 65%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hub-wrap .hub-kicker{color:var(--text-dim);font-family:var(--mono);font-size:.95rem;margin:6px 0 0;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
-.hub-wrap .sub{color:var(--text-dim);font-family:var(--mono);font-size:1rem;margin:10px 0 28px}
+.sets-wrap{max-width:1600px;margin:0 auto}
+.sets-wrap h1{font-size:2.45rem;font-weight:900;background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 35%,var(--teal) 65%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sets-wrap .sets-kicker{color:var(--text-dim);font-family:var(--mono);font-size:.95rem;margin:6px 0 0;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
+.sets-wrap .sub{color:var(--text-dim);font-family:var(--mono);font-size:1rem;margin:10px 0 28px}
 .timer-dock{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:.65rem;background:rgba(8,12,20,.55);border:1px solid var(--border);border-radius:1.35rem;padding:.7rem .85rem;backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px var(--mood-glow);width:min(94vw,420px);max-width:min(94vw,420px);min-width:min(94vw,280px);min-height:5.6rem;height:5.6rem;box-sizing:border-box}
 .timer-dock .timer-copy{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:.12rem;overflow:hidden}
 .timer-dock .timer-display{font-size:1.55rem;font-weight:600;letter-spacing:1.5px;font-variant-numeric:tabular-nums;font-family:var(--mono);min-width:76px;color:var(--text);user-select:none;line-height:1.1}
@@ -461,7 +606,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 @media (max-width:640px){
   .timer-dock{bottom:10px;right:10px;left:10px;justify-content:center}
   .app{padding-bottom:100px}
-  .hub-wrap h1{font-size:1.85rem}
+  .sets-wrap h1{font-size:1.85rem}
 }
 
 /* —— Portal home (SPA) —— */
@@ -677,9 +822,9 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .timer-dock.is-pomo-off .mood-tray-sep{display:none!important}
 .timer-dock.is-pomo-off{min-width:auto;width:auto;max-width:none;height:auto;min-height:0;padding:.55rem .7rem}
 
-.hub-back{margin:0 0 14px}
-.hub-back button{font-family:var(--mono);font-size:.85rem;color:var(--cyan-bright);background:transparent;border:1px solid var(--border);border-radius:999px;padding:8px 14px;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
-.hub-back button:hover{background:var(--mood-glow);border-color:var(--cyan);transform:translateY(-1px);box-shadow:0 0 18px var(--mood-glow)}
+.sets-back{margin:0 0 14px}
+.sets-back button{font-family:var(--mono);font-size:.85rem;color:var(--cyan-bright);background:transparent;border:1px solid var(--border);border-radius:999px;padding:8px 14px;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+.sets-back button:hover{background:var(--mood-glow);border-color:var(--cyan);transform:translateY(-1px);box-shadow:0 0 18px var(--mood-glow)}
 @media (max-width:720px){
   .portal-wrap h1{font-size:1.85rem}
 }
@@ -1158,9 +1303,9 @@ body.split-quiz-active #chatDock{z-index:60}
 .achievement-popup-desc{font-size:.8em;opacity:.92;color:#4a3500}
 
 </style>
-<link rel="stylesheet" href="css/quiz-pt1.css?v=3">
-<link rel="stylesheet" href="css/formula-practice.css?v=1">
-<link rel="stylesheet" href="css/study-pt1.css?v=2">
+<link rel="stylesheet" href="css/quiz-pt1.css?v=4">
+<link rel="stylesheet" href="css/formula-practice.css?v=2">
+<link rel="stylesheet" href="css/study-pt1.css?v=3">
 </head>
 <body>
 <canvas id="fxCanvas"></canvas>
@@ -1240,7 +1385,7 @@ body.split-quiz-active #chatDock{z-index:60}
 <div class="app view active" id="portalView">
   <div class="portal-wrap">
     <h1>Study Portal</h1>
-    <p class="portal-kicker">Practice hub · subjects &amp; materials</p>
+    <p class="portal-kicker">Practice · subjects &amp; materials</p>
     <div class="portal-sub">Pick a subject · unlocked materials open in this page</div>
     <nav class="portal-tabs" id="subjectTabs" aria-label="Subjects"></nav>
     <p class="portal-section-label" id="materialsLabel">Materials</p>
@@ -1254,14 +1399,14 @@ body.split-quiz-active #chatDock{z-index:60}
   </div>
 </div>
 
-<!-- ========== HUB VIEW (PT1 hub markup, portal back button) ========== -->
-<div class="app view pt1q" id="hubView">
-  <div class="hub-view hub-wrap">
-    <div class="hub-back"><button type="button" id="portalBackBtn">← Study Portal</button></div>
-    <h1 id="hubTitle">Practice</h1>
-    <p class="hub-kicker" id="hubKicker">Practice hub</p>
-    <div class="sub" id="hubSub"></div>
-    <div class="hub-tools">
+<!-- ========== SETS VIEW (PT1 sets markup, portal back button) ========== -->
+<div class="app view pt1q" id="setsView">
+  <div class="sets-view sets-wrap">
+    <div class="sets-back"><button type="button" id="portalBackBtn">← Study Portal</button></div>
+    <h1 id="setsTitle">Practice</h1>
+    <p class="sets-kicker" id="setsKicker">Practice sets</p>
+    <div class="sub" id="setsSub"></div>
+    <div class="sets-tools">
     <div class="quiz-settings-wrap" id="quizSettingsWrap">
       <button type="button" class="quiz-settings-btn" id="quizSettingsBtn" aria-expanded="false" aria-controls="quizSettingsPanel">⚙ Quiz settings</button>
       <div class="quiz-settings-panel" id="quizSettingsPanel">
@@ -1274,11 +1419,11 @@ body.split-quiz-active #chatDock{z-index:60}
       </div>
     </div>
     <button type="button" class="quiz-settings-btn" id="studyNotesBtn" hidden>📖 Study notes</button>
-    <span class="hub-badges" id="hubBadges" hidden></span>
+    <span class="sets-badges" id="setsBadges" hidden></span>
     </div>
     <button class="fs-btn" type="button" id="resetSolvedBtn" hidden>Reset solved</button>
     <p class="foot bank-meta" id="bankMeta">Loading bank…</p>
-    <div id="hubSections"></div>
+    <div id="setsSections"></div>
   </div>
 </div>
 
@@ -1309,7 +1454,7 @@ body.split-quiz-active #chatDock{z-index:60}
       <div class="sub">Formula practice</div>
     </div>
     <div class="header-right">
-      <button class="fs-btn" type="button" id="formulaHubBtn">← Return to interface</button>
+      <button class="fs-btn" type="button" id="formulaSetsBtn">← Return to interface</button>
     </div>
   </div>
   <div class="panel" id="formulaPanel">
@@ -1339,7 +1484,7 @@ body.split-quiz-active #chatDock{z-index:60}
         <button class="nav-btn primary" id="formulaRollBtn" type="button">New question</button>
       </div>
       <div class="feedback idle" id="formulaFeedback"></div>
-      <div class="kbd-hint"><span class="kbd">A–D</span> answer · <span class="kbd">Esc</span> hub</div>
+      <div class="kbd-hint"><span class="kbd">A–D</span> answer · <span class="kbd">Esc</span> <span id="formulaEscLabel">back to sets</span></div>
     </div>
   </div>
 </div>
@@ -1352,7 +1497,7 @@ body.split-quiz-active #chatDock{z-index:60}
       <div class="sub" id="quizSub">practice run</div>
     </div>
     <div class="header-right">
-      <button class="fs-btn" type="button" id="hubBtn">← Return to interface</button>
+      <button class="fs-btn" type="button" id="setsBtn">← Return to interface</button>
       <button class="fs-btn" type="button" id="fsBtn">Fullscreen · F</button>
     </div>
   </div>
@@ -1379,7 +1524,7 @@ body.split-quiz-active #chatDock{z-index:60}
           <button class="nav-btn primary" id="nextBtn" type="button" disabled>Next →</button>
         </div>
         <div class="feedback idle" id="feedback"></div>
-        <div class="kbd-hint"><span class="kbd">← →</span> move · <span class="kbd">Enter</span> next · <span class="kbd">F</span> fullscreen · <span class="kbd">Esc</span> hub</div>
+        <div class="kbd-hint"><span class="kbd">← →</span> move · <span class="kbd">Enter</span> next · <span class="kbd">F</span> fullscreen · <span class="kbd">Esc</span> <span id="quizEscLabel">back to sets</span></div>
       </div>
       <div class="final" id="finalScreen" style="display:none">
         <h2 id="finalHeading">Run complete</h2>
@@ -1399,12 +1544,12 @@ body.split-quiz-active #chatDock{z-index:60}
             <button class="mood-btn" type="button" data-mood="😭">😭</button>
             <button class="mood-btn" type="button" data-mood="🥱">🥱</button>
           </div>
-          <div class="mood-label" id="moodLabel">tap one · stamps this set on the hub</div>
+          <div class="mood-label" id="moodLabel">tap one · stamps this set on its card</div>
         </div>
         <div class="final-actions">
           <button class="btn-ghost" type="button" id="reviewBtn">Stay &amp; review answers</button>
           <button class="btn-ghost" type="button" id="restartBtn">Restart</button>
-          <button class="btn-gold" type="button" id="againHubBtn">← Return to interface</button>
+          <button class="btn-gold" type="button" id="againSetsBtn">← Return to interface</button>
         </div>
       </div>
       <div class="review" id="reviewScreen" style="display:none">
@@ -1715,19 +1860,19 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 <script src="js/firebase-config.js?v=4"></script>
 <script src="js/quiz-accent-bridge.js?v=1"></script>
 <script src="js/study-store.js?v=1"></script>
-<script src="js/progress-sync.js?v=3"></script>
+<script src="js/progress-sync.js?v=4"></script>
 <script src="js/prefs.js?v=1"></script>
 <script src="js/profiles.js?v=6"></script>
-<script src="js/achievements.js?v=3"></script>
-<script src="js/mastery.js?v=3"></script>
-<script src="js/party.js?v=3"></script>
+<script src="js/achievements.js?v=4"></script>
+<script src="js/mastery.js?v=4"></script>
+<script src="js/party.js?v=4"></script>
 <script src="js/party-timers.js?v=1"></script>
-<script src="js/cursors.js?v=3"></script>
+<script src="js/cursors.js?v=4"></script>
 <script src="js/net-status.js?v=1"></script>
 <script src="js/bank-picker.js?v=1"></script>
-<script src="js/lobby.js?v=4"></script>
-<script src="js/split-quiz.js?v=6"></script>
-<script src="js/chat.js?v=6"></script>
+<script src="js/lobby.js?v=5"></script>
+<script src="js/split-quiz.js?v=7"></script>
+<script src="js/chat.js?v=7"></script>
 <script>
 /* Bank loading + quiz state now live in js/quiz-engine.js (PT1 engine port). */
 var __activeMaterial = null; // read by the engine and party mode (window property on purpose)
@@ -1844,48 +1989,48 @@ document.addEventListener('mouseup',()=>{ if(cursor) cursor.classList.remove('ac
 
 /* —— Live mood tray (not click-to-cycle) —— */
 const MOODS = [
-  {emoji:'😊', cls:'mood-happy', label:'Happy'},
-  {emoji:'🤩', cls:'mood-happy', label:'Starstruck'},
-  {emoji:'😎', cls:'mood-happy', label:'Cool'},
-  {emoji:'🙂', cls:'mood-happy', label:'Smile'},
-  {emoji:'🥳', cls:'mood-happy', label:'Party'},
-  {emoji:'😄', cls:'mood-happy', label:'Grin'},
-  {emoji:'😐', cls:'mood-neutral', label:'Neutral'},
-  {emoji:'🤔', cls:'mood-neutral', label:'Thinking'},
-  {emoji:'🤓', cls:'mood-neutral', label:'Nerd'},
-  {emoji:'🧐', cls:'mood-neutral', label:'Study'},
-  {emoji:'🎯', cls:'mood-neutral', label:'Focus'},
-  {emoji:'😌', cls:'mood-calm', label:'Calm'},
-  {emoji:'🧘', cls:'mood-calm', label:'Zen'},
-  {emoji:'🌿', cls:'mood-calm', label:'Nature'},
-  {emoji:'✨', cls:'mood-calm', label:'Sparkle'},
-  {emoji:'☕', cls:'mood-calm', label:'Coffee'},
-  {emoji:'🌙', cls:'mood-calm', label:'Moon'},
-  {emoji:'😤', cls:'mood-fierce', label:'Frustrated'},
-  {emoji:'🔥', cls:'mood-fierce', label:'Fired up'},
-  {emoji:'💪', cls:'mood-fierce', label:'Strong'},
-  {emoji:'⚡', cls:'mood-fierce', label:'Electric'},
-  {emoji:'😠', cls:'mood-mad', label:'Mad'},
-  {emoji:'😢', cls:'mood-sad', label:'Sad'},
-  {emoji:'😭', cls:'mood-crying', label:'Crying'},
-  {emoji:'🥱', cls:'mood-sleepy', label:'Sleepy'},
-  {emoji:'😴', cls:'mood-sleepy', label:'Sleep'},
-  {emoji:'🧸', cls:'mood-sleepy', label:'Cozy'},
-  {emoji:'💭', cls:'mood-sleepy', label:'Daydream'},
-  {emoji:'🫧', cls:'mood-calm', label:'Bubbles'},
-  {emoji:'☁️', cls:'mood-calm', label:'Cloud'},
-  {emoji:'🎧', cls:'mood-calm', label:'Headphones'},
-  {emoji:'🚿', cls:'mood-calm', label:'Reset'}
+  {emoji:'😊', cls:'mood-happy', fam:'mood-happy', label:'Happy'},
+  {emoji:'🤩', cls:'mood-starstruck', fam:'mood-happy', label:'Starstruck'},
+  {emoji:'😎', cls:'mood-cool', fam:'mood-happy', label:'Cool'},
+  {emoji:'🙂', cls:'mood-smile', fam:'mood-happy', label:'Smile'},
+  {emoji:'🥳', cls:'mood-party', fam:'mood-happy', label:'Party'},
+  {emoji:'😄', cls:'mood-grin', fam:'mood-happy', label:'Grin'},
+  {emoji:'😐', cls:'mood-neutral', fam:'mood-neutral', label:'Neutral'},
+  {emoji:'🤔', cls:'mood-thinking', fam:'mood-neutral', label:'Thinking'},
+  {emoji:'🤓', cls:'mood-nerd', fam:'mood-neutral', label:'Nerd'},
+  {emoji:'🧐', cls:'mood-study', fam:'mood-neutral', label:'Study'},
+  {emoji:'🎯', cls:'mood-focus', fam:'mood-neutral', label:'Focus'},
+  {emoji:'😌', cls:'mood-calm', fam:'mood-calm', label:'Calm'},
+  {emoji:'🧘', cls:'mood-zen', fam:'mood-calm', label:'Zen'},
+  {emoji:'🌿', cls:'mood-nature', fam:'mood-calm', label:'Nature'},
+  {emoji:'✨', cls:'mood-sparkle', fam:'mood-calm', label:'Sparkle'},
+  {emoji:'☕', cls:'mood-coffee', fam:'mood-calm', label:'Coffee'},
+  {emoji:'🌙', cls:'mood-moon', fam:'mood-calm', label:'Moon'},
+  {emoji:'😤', cls:'mood-fierce', fam:'mood-fierce', label:'Frustrated'},
+  {emoji:'🔥', cls:'mood-firedup', fam:'mood-fierce', label:'Fired up'},
+  {emoji:'💪', cls:'mood-strong', fam:'mood-fierce', label:'Strong'},
+  {emoji:'⚡', cls:'mood-electric', fam:'mood-fierce', label:'Electric'},
+  {emoji:'😠', cls:'mood-mad', fam:'mood-mad', label:'Mad'},
+  {emoji:'😢', cls:'mood-sad', fam:'mood-sad', label:'Sad'},
+  {emoji:'😭', cls:'mood-crying', fam:'mood-crying', label:'Crying'},
+  {emoji:'🥱', cls:'mood-sleepy', fam:'mood-sleepy', label:'Sleepy'},
+  {emoji:'😴', cls:'mood-sleep', fam:'mood-sleepy', label:'Sleep'},
+  {emoji:'🧸', cls:'mood-cozy', fam:'mood-sleepy', label:'Cozy'},
+  {emoji:'💭', cls:'mood-daydream', fam:'mood-sleepy', label:'Daydream'},
+  {emoji:'🫧', cls:'mood-bubbles', fam:'mood-calm', label:'Bubbles'},
+  {emoji:'☁️', cls:'mood-cloud', fam:'mood-calm', label:'Cloud'},
+  {emoji:'🎧', cls:'mood-headphones', fam:'mood-calm', label:'Headphones'},
+  {emoji:'🚿', cls:'mood-reset', fam:'mood-calm', label:'Reset'}
 ];
 const FOCUS_MOOD_POOL = ['😊','🤩','😎','🙂','🥳','😄','😐','🤔','🤓','🧐','🎯','😌','😤','🔥','💪','⚡','😠','😢','😭','🥱','😴'];
 const BREAK_MOOD_POOL = ['😌','😴','🧘','🌿','🥱','☕','🌙','✨','🧸','💭','🫧','☁️','🎧','🚿'];
-const MOOD_CLASSES = ['mood-happy','mood-neutral','mood-calm','mood-fierce','mood-mad','mood-sad','mood-crying','mood-sleepy'];
+const MOOD_CLASSES = ['mood-happy', 'mood-neutral', 'mood-calm', 'mood-fierce', 'mood-mad', 'mood-sad', 'mood-crying', 'mood-sleepy', 'mood-bubbles', 'mood-cloud', 'mood-coffee', 'mood-cool', 'mood-cozy', 'mood-daydream', 'mood-electric', 'mood-firedup', 'mood-focus', 'mood-grin', 'mood-headphones', 'mood-moon', 'mood-nature', 'mood-nerd', 'mood-party', 'mood-reset', 'mood-sleep', 'mood-smile', 'mood-sparkle', 'mood-starstruck', 'mood-strong', 'mood-study', 'mood-thinking', 'mood-zen'];
 let currentMoodEmoji = '😊';
 let moodAutoMode = true; // auto-rotate each focus/break unless user just picked
 const moodWrap = document.getElementById('moodWrapLive');
 const liveMoodBtn = document.getElementById('liveMoodBtn');
 function resolveMood(emoji){
-  return MOODS.find(x=>x.emoji===emoji) || {emoji:emoji||'😊', cls:'mood-neutral', label:'Mood'};
+  return MOODS.find(x=>x.emoji===emoji) || {emoji:emoji||'😊', cls:'mood-neutral', fam:'mood-neutral', label:'Mood'};
 }
 function applyLiveMood(emoji, opts){
   opts = opts || {};
@@ -2109,7 +2254,6 @@ const MOOD_QUOTES = {
   ],
   '😐': [
     {text:"A man’s worth lies in what he pursues.", author:"Al-Mutanabbi"},
-    {text:"It is not that we have so little time, but that we lose so much.", author:"Seneca"},
     {text:"Silence is the garden of thought.", author:"Ali ibn Abi Talib"},
     {text:"Contentment is a treasure that never decreases.", author:"Popular Islamic saying"},
     {text:"Patience is bitter, but its fruit is sweet.", author:"Aristotle"}
@@ -2226,7 +2370,7 @@ window.__skinsReady = false;
 
 function currentMoodFamily(){
   const m = (typeof resolveMood==='function') ? resolveMood(currentMoodEmoji) : {cls:'mood-neutral'};
-  return m.cls || 'mood-neutral';
+  return m.fam || m.cls || 'mood-neutral';
 }
 function loadCycle(){
   try{
@@ -2703,6 +2847,34 @@ else stopGlobalTimer();
 window.__timerUiReady = true;
 refreshTimerQuote(false);
 if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true);
+/* Quote fit: the quote keeps its normal size when it fits the two-line box and only
+   shrinks (never grows) when it is too long. The box height stays fixed. Runs when
+   the quote changes and when the box is resized (window, phone width). */
+(function fitTimerQuote(){
+  const el=document.getElementById('globalTimerMode'); if(!el) return;
+  const MIN_PX=6;
+  let raf=0;
+  function fit(){
+    raf=0;
+    el.style.fontSize=''; el.style.display=''; el.style.webkitLineClamp=''; el.style.minHeight=''; el.style.maxHeight='';
+    const cs=getComputedStyle(el);
+    const base=parseFloat(cs.fontSize)||12;
+    const box=el.clientHeight; // 2.6em of the normal size
+    if(!box || el.scrollHeight<=box+1) return; // fits: keep normal size
+    el.style.display='block'; el.style.webkitLineClamp='unset';
+    el.style.minHeight=box+'px'; el.style.maxHeight=box+'px';
+    let lo=MIN_PX, hi=base, best=MIN_PX;
+    for(let i=0;i<8;i++){ const mid=(lo+hi)/2; el.style.fontSize=mid+'px'; if(el.scrollHeight<=box+1){ best=mid; lo=mid; } else hi=mid; }
+    el.style.fontSize=best.toFixed(2)+'px';
+  }
+  function queue(){ if(!raf) raf=requestAnimationFrame(fit); }
+  new MutationObserver(queue).observe(el,{childList:true,characterData:true,subtree:true});
+  if(typeof ResizeObserver==='function') new ResizeObserver(()=>{ queue(); }).observe(el.parentElement||el);
+  addEventListener('resize',queue);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(queue);
+  window.fitTimerQuote=fit;
+  queue();
+})();
 
 /* —— Quiz engine: see js/quiz-engine.js (loaded after this script). —— */
 
@@ -2759,11 +2931,11 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       else await loadBank(m.bank);
       gate.remove();
       if(typeof unlockAudio === 'function') unlockAudio();
-      if(typeof refreshHubCards === 'function') refreshHubCards();
+      if(typeof refreshSetsCards === 'function') refreshSetsCards();
       document.title = ((__bankMeta && __bankMeta.title) || m.title || 'Exam') + ' · Study Portal';
       const snb = document.getElementById('studyNotesBtn');
       if(snb){ snb.hidden = !m.study; snb.textContent = (m.study && m.study.images) ? '📖 Picture study' : '📖 Study notes'; }
-      showView('hubView');
+      showView('setsView');
     }catch(err){
       console.error(err);
       gate.innerHTML = '<div style="padding:1.2rem 1.5rem;border-radius:1rem;background:rgba(40,10,10,.95);border:1px solid #f66;color:#fee;font-family:var(--mono,monospace)">Failed to load bank.<br><button type="button" id="gateCloseBtn" style="margin-top:12px;padding:8px 14px;border-radius:999px;border:1px solid #8cf;background:transparent;color:#8cf;cursor:pointer">Back to portal</button></div>';
@@ -2772,10 +2944,10 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
   }
 
   // Data-driven material badges (catalog): examDiffers:true and badges:[{text, tip, tone}].
-  // Labels are Title Case; tips are sentences. Same component as the hub cards (js/quiz-engine.js).
+  // Labels are Title Case; tips are sentences. Same component as the set cards (js/quiz-engine.js).
   function matBadges(m){
     const out=[];
-    // examDiffers: badge on the portal card (tooltip only, no note line) and next to ⚙ Quiz settings in the hub
+    // examDiffers: badge on the portal card (tooltip only, no note line) and next to ⚙ Quiz settings in the sets
     if(m && m.examDiffers === true) out.push({text:'Real Exam Is Trickier', tip:"Good for practice. Some definitions overlap, so learn each term's function exactly as the slides word it.", tone:'amber', cls:'exam-differs-badge', note:false});
     if(m && Array.isArray(m.badges)) m.badges.forEach(b=>{ if(b && b.text && (!Array.isArray(b.where) || b.where.includes('card'))) out.push({text:String(b.text), tip:String(b.tip||''), tone:(b.tone==='grey'||b.tone==='gray')?'grey':(b.tone==='green'?'green':'amber'), cls:b.cls||'', note:b.note!==false}); });
     return out.map((b,i)=>Object.assign(b,{i}));
@@ -2942,16 +3114,16 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=5"></script>
+<script src="js/quiz-engine.js?v=6"></script>
 <script src="js/formula-gen-pt2.js?v=1"></script>
-<script src="js/formula-practice.js?v=1"></script>
+<script src="js/formula-practice.js?v=2"></script>
 <script src="js/study-images.js?v=2"></script>
 <script src="js/study-symbols.js?v=1"></script>
-<script src="js/study-app.js?v=2"></script>
+<script src="js/study-app.js?v=3"></script>
 <script>
-/* Hub "📖 Study notes" → PT1 study interface for the open material */
+/* Sets "📖 Study notes" → PT1 study interface for the open material */
 document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
-  if(window.StudyNotes && window.__activeMaterial) StudyNotes.open(__activeMaterial, { from:'hubView', openQuiz: ()=> showView('hubView') });
+  if(window.StudyNotes && window.__activeMaterial) StudyNotes.open(__activeMaterial, { from:'setsView', openQuiz: ()=> showView('setsView') });
 });
 </script>
 <script>

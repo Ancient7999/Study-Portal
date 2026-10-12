@@ -19,20 +19,20 @@
 
     <div id="loadStatus" class="status-msg">Fetching question bank…</div>
 
-    <!-- Form hub -->
-    <section class="view" id="hubView">
+    <!-- Form sets -->
+    <section class="view" id="setsView">
       <p class="section-label">Choose a form</p>
-      <div class="hub-actions">
+      <div class="sets-actions">
         <button type="button" class="btn btn-ghost" id="restartBtn" title="Reset current progress; best 100% scores are kept">Restart progress</button>
       </div>
-      <div class="hub-grid" id="hubGrid"></div>
-      <p class="foot" id="hubHint">Wrong answers lock in until you pick the correct one. Progress saves in localStorage.</p>
+      <div class="sets-grid" id="setsGrid"></div>
+      <p class="foot" id="setsHint">Wrong answers lock in until you pick the correct one. Progress saves in localStorage.</p>
     </section>
 
     <!-- Quiz -->
     <section class="view" id="quizView">
       <div class="quiz-bar">
-        <button type="button" class="btn btn-ghost" id="backHubBtn">← Forms</button>
+        <button type="button" class="btn btn-ghost" id="backSetsBtn">← Forms</button>
         <span class="progress-pill" id="progressPill">1 / 20</span>
       </div>
       <div class="panel" id="quizPanel">
@@ -52,7 +52,7 @@
       <div class="panel done-banner">
         <h2 id="doneTitle">Form complete</h2>
         <p id="doneMsg">Nice work — 100% locked in for this form.</p>
-        <button type="button" class="btn btn-amber" id="doneHubBtn">Back to forms</button>
+        <button type="button" class="btn btn-amber" id="doneSetsBtn">Back to forms</button>
       </div>
     </section>
   </div>

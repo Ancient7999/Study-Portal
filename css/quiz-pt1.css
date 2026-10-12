@@ -1,6 +1,6 @@
 /* Study Portal · PT1 quiz CSS port.
  * Copied from medphysics PT1 quiz/index.html (line ranges noted per block).
- * Adaptation: selectors are scoped under .pt1q (set on #hubView, #quizView,
+ * Adaptation: selectors are scoped under .pt1q (set on #setsView, #quizView,
  * #reviewScreen and #cardResetModal) so the PT1 rules cannot restyle portal
  * chrome. --accent-0..6 / --accent-N-rgb are provided per mood by
  * js/quiz-accent-bridge.js on those same containers. */
@@ -72,7 +72,7 @@ html[data-custom-cursor="off"] #cursor,html[data-pointer-input="touch"] #cursor,
 html[data-custom-cursor="off"] #cursor.core,html[data-pointer-input="touch"] #cursor.core{display:none!important}
 html[data-custom-cursor="off"] #cursorRandomBtn,html[data-pointer-input="touch"] #cursorRandomBtn,
 html[data-custom-cursor="off"] .mood-cursor-hint,html[data-pointer-input="touch"] .mood-cursor-hint{display:none!important}
-/* PT1 quiz/index.html 650–857 · hub cards, quiz shell, options, nav, results, modal (formula rules 662–737 omitted) */
+/* PT1 quiz/index.html 650–857 · set cards, quiz shell, options, nav, results, modal (formula rules 662–737 omitted) */
 
 .pt1q .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .pt1q .card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.10) 0%,rgba(10,14,22,.72) 42%,rgba(8,10,16,.88) 100%);border:1px solid rgba(var(--accent-0-rgb),.22);border-radius:14px;padding:20px 18px 18px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;box-shadow:0 10px 28px -18px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.04);text-align:left;width:100%;font:inherit;backdrop-filter:blur(14px) saturate(1.05);position:relative;overflow:hidden}
@@ -201,7 +201,7 @@ body.formula-mode .pt1q .formula-hint-box{font-size:.98rem}
 @media (max-width:640px){
 .pt1q .timer-dock{bottom:10px;right:10px;left:10px;justify-content:center}
 .pt1q .app{padding-bottom:100px}
-.pt1q .hub-wrap h1{font-size:1.85rem}
+.pt1q .sets-wrap h1{font-size:1.85rem}
 }
 
 /* PT1 quiz/index.html 1542–1789 · linking engine, navigator, skip shine, prefs, accent wiring */
@@ -416,7 +416,7 @@ html[data-custom-cursor="on"]:not([data-pointer-input="touch"]) .pt1q .q-nav-btn
 /* Wire colorizer accents across quiz chrome that previously ignored them */
 .pt1q .q-nav-btn.current,
 .pt1q .fs-btn:hover,
-.pt1q .hub-back button:hover,
+.pt1q .sets-back button:hover,
 .pt1q .quiz-settings-btn:hover{
   border-color:var(--accent-0)!important;
   color:var(--accent-0)!important;
@@ -514,8 +514,8 @@ html.bg-edit-hide-glows body{
 .pt1q .card-badge.note-badge.grey{border-color:#9ca3af;color:#374151;-webkit-text-fill-color:#374151;background:#f3f4f6}
 .pt1q .card-badge.note-badge.green{border-color:#22c55e;color:#166534;-webkit-text-fill-color:#166534;background:#dcfce7}
 .pt1q .card-badge.note-badge.no-tip{cursor:default}
-.pt1q .hub-badges{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
-.pt1q .hub-badges .note-badge{font-size:.78rem;padding:5px 11px}
+.pt1q .sets-badges{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
+.pt1q .sets-badges .note-badge{font-size:.78rem;padding:5px 11px}
 .pt1q .q-badges{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
 .pt1q .card-badge.soon{border-style:dashed;color:var(--text-dim);border-color:rgba(var(--accent-0-rgb),.3);background:transparent}
 .pt1q .card.card-soon{opacity:.6;cursor:not-allowed;filter:saturate(.7)}
@@ -643,3 +643,4 @@ html.bg-edit-hide-glows body{
 .pt1q .saq-echo{position:static;transform:none;display:block;flex-basis:100%;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;padding:4px 8px;min-height:0}
 .pt1q .saq-echo:empty{display:none}
 @media (max-width:480px){.step-img{max-height:220px}}
+html[data-pointer-input="touch"] .kbd-hint{display:none}

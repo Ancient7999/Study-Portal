@@ -364,7 +364,7 @@ a:hover { text-decoration: underline; }
 .view { display: none; }
 .view.active { display: block; }
 
-.hub-grid {
+.sets-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
@@ -407,7 +407,7 @@ a:hover { text-decoration: underline; }
 }
 .form-card.done .pct { color: var(--ok); }
 
-.hub-actions {
+.sets-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;

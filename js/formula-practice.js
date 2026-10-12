@@ -1,7 +1,7 @@
 /**
  * Formula practice screen (port of the Med Physics PT1 site's formula mode).
  * A material opts in with "formulas": { "gen": "Pt2FormulaGen", "key": "medphys/pt2", "title": "..." }
- * in data/catalog.json. The hub then shows a "Formulas" section with one card.
+ * in data/catalog.json. The sets then shows a "Formulas" section with one card.
  * Flow (same as PT1): generated multiple-choice item; a wrong answer greys that option and
  * shows the formula, then more working on each further wrong answer; "Show formula" reveals
  * it on request; after a correct answer a bar empties and the next item comes from the
@@ -36,8 +36,8 @@
   }
   function configFor(mat) { return mat && mat.formulas && window[mat.formulas.gen] ? mat.formulas : null; }
 
-  /* —— hub card (PT1 appendFormulaCard) —— */
-  function appendHubSection(host) {
+  /* —— set card (PT1 appendFormulaCard) —— */
+  function appendSetsSection(host) {
     const mat = window.__activeMaterial; const c = mat && mat.formulas;
     if (!c) return;
     cfg = c; gen = window[c.gen] || null;
@@ -149,14 +149,14 @@
   function active() { const v = $('formulaView'); return !!(v && v.classList.contains('active')); }
   function leave() {
     clearAdvance(); clearInterval(clock); q = null;
-    if (window.StudyQuiz && StudyQuiz.renderHub) StudyQuiz.renderHub();
-    if (typeof showView === 'function') showView('hubView');
+    if (window.StudyQuiz && StudyQuiz.renderSets) StudyQuiz.renderSets();
+    if (typeof showView === 'function') showView('setsView');
   }
 
   function wire() {
     $('formulaShowBtn').addEventListener('click', () => { if (q && !$('formulaShowBtn').disabled) reveal(Math.max(1, hintLevel || 1)); });
     $('formulaRollBtn').addEventListener('click', () => { if (q && $('formulaView').classList.contains('formula-waiting')) next(true); });
-    $('formulaHubBtn').addEventListener('click', leave);
+    $('formulaSetsBtn').addEventListener('click', leave);
     window.addEventListener('keydown', e => {
       if (!active()) return;
       const tag = (e.target && e.target.tagName || '').toLowerCase();
@@ -170,5 +170,5 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
 
-  window.FormulaPractice = { appendHubSection, start, next: () => next(true), get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
+  window.FormulaPractice = { appendSetsSection, start, next: () => next(true), get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
 })();
