@@ -672,3 +672,11 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
   exact repeats were found. Fixes made on import: PHY40055 step 1 asked about M_a = 0
   (a source at rest) as "subsonic", now asks about M_a < 1; PHY40053 step 2 had two right
   answers for 10 MHz (distractor replaced); PHY40007 options repeated "The".
+- Medical Physics PT2 also has a **Formulas** card (Draft) in a "Formulas" section under the sets. It is the
+  PT1 site's formula practice ported to the portal (`js/formula-practice.js`, `css/formula-practice.css`,
+  view `#formulaView`) and uses `js/formula-gen-pt2.js` (`window.Pt2FormulaGen`): 23 formulas from
+  Bernoulli to ray optics, each with 2–4 variants. A material opts in with `"formulas": {"gen", "key",
+  "title", "scope", "draft"}` in the catalog. A wrong answer greys that option and shows the formula with
+  its values; each further wrong answer adds working. After a correct answer a bar empties and the next
+  item comes from the least-answered formula; "New question" skips the wait with a random one. Counts are
+  saved as `fp_count:<key>` and `fp_mastery:<key>`. Keys A–D answer, Esc returns to the hub.

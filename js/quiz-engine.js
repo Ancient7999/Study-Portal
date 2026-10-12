@@ -813,6 +813,8 @@ function renderHub(){
     appendPoolCard(grid, card.label, card.pool, card);
   });
   host.appendChild(grid);
+  // Formula practice card (material opts in with "formulas" in the catalog; js/formula-practice.js)
+  if(window.FormulaPractice) FormulaPractice.appendHubSection(host);
   if(runCard) cardCtx(runCard); // keep the open run's bank active
 }
 /* PORTAL name kept: other modules call refreshHubCards() */

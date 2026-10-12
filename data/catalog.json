@@ -45,6 +45,13 @@
           "bank": "banks/medphys/pt2.json",
           "locked": false,
           "draft": true,
+          "formulas": {
+            "gen": "Pt2FormulaGen",
+            "key": "medphys/pt2",
+            "title": "Formulas · Periodic Test 2",
+            "scope": "Bernoulli to ray optics",
+            "draft": true
+          },
           "study": {
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",

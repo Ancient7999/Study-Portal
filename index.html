@@ -1159,6 +1159,7 @@ body.split-quiz-active #chatDock{z-index:60}
 
 </style>
 <link rel="stylesheet" href="css/quiz-pt1.css?v=3">
+<link rel="stylesheet" href="css/formula-practice.css?v=1">
 <link rel="stylesheet" href="css/study-pt1.css?v=2">
 </head>
 <body>
@@ -1298,6 +1299,49 @@ body.split-quiz-active #chatDock{z-index:60}
   <div class="study-summary" id="studySummary" hidden></div>
   <div class="chapter-list" id="chapterList"></div>
 </div>
+</div>
+
+<!-- ========== FORMULA PRACTICE VIEW (port of the PT1 site's formula mode) ========== -->
+<div class="app view pt1q" id="formulaView">
+  <div class="header">
+    <div class="header-left">
+      <h1 id="formulaTitle">Formulas</h1>
+      <div class="sub">Formula practice</div>
+    </div>
+    <div class="header-right">
+      <button class="fs-btn" type="button" id="formulaHubBtn">← Return to interface</button>
+    </div>
+  </div>
+  <div class="panel" id="formulaPanel">
+    <div class="status-bar">
+      <div class="status-lead">
+        <div class="status-dot"></div>
+        <span id="formulaStatus">Formulas</span>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="quiz-meta">
+        <div class="elapsed" id="formulaElapsed">00:00</div>
+        <div class="formula-family-strip" id="formulaFamilyStrip" aria-label="Formula list"></div>
+      </div>
+      <div class="question" id="formulaQText"></div>
+      <div class="options" id="formulaOptions"></div>
+      <div class="formula-hint-box" id="formulaHintBox" aria-live="polite">
+        <div class="fh-label">Formula</div>
+        <div id="formulaHintText"></div>
+      </div>
+      <div class="formula-advance-wrap" id="formulaAdvanceWrap" aria-hidden="true">
+        <div class="formula-advance-track" aria-hidden="true"><div class="formula-advance-fill" id="formulaAdvanceFill"></div></div>
+        <div class="formula-advance-label">Next formula</div>
+      </div>
+      <div class="nav formula-nav">
+        <button class="nav-btn" id="formulaShowBtn" type="button">Show formula</button>
+        <button class="nav-btn primary" id="formulaRollBtn" type="button">New question</button>
+      </div>
+      <div class="feedback idle" id="formulaFeedback"></div>
+      <div class="kbd-hint"><span class="kbd">A–D</span> answer · <span class="kbd">Esc</span> hub</div>
+    </div>
+  </div>
 </div>
 
 <!-- ========== QUIZ VIEW (PT1 markup + portal results extras) ========== -->
@@ -2898,7 +2942,9 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=4"></script>
+<script src="js/quiz-engine.js?v=5"></script>
+<script src="js/formula-gen-pt2.js?v=1"></script>
+<script src="js/formula-practice.js?v=1"></script>
 <script src="js/study-images.js?v=2"></script>
 <script src="js/study-symbols.js?v=1"></script>
 <script src="js/study-app.js?v=2"></script>
