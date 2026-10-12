@@ -1,0 +1,2808 @@
+{
+ "id": "pt2",
+ "subject": "Medical Physics",
+ "subjectId": "medphys",
+ "title": "Periodic Test 2",
+ "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (42), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 155,
+ "forms": [
+  "A"
+ ],
+ "cards": [
+  {
+   "id": "ch3",
+   "title": "Chapter 3: Bernoulli's Equation to Surface Tension",
+   "cats": [
+    "Chapter 3: Bernoulli's Equation",
+    "Chapter 3: Viscosity",
+    "Chapter 3: Poiseuille's Law",
+    "Chapter 3: Laplace's Law",
+    "Chapter 3: Reynolds Number",
+    "Chapter 3: Surface Tension",
+    "Chapter 3: Clinical Applications"
+   ]
+  },
+  {
+   "id": "ch4",
+   "title": "Chapter 4: Waves, Oscillations and Thermal Properties",
+   "cats": [
+    "Chapter 4: Waves and Oscillations",
+    "Chapter 4: Doppler Effect",
+    "Chapter 4: Shock Waves",
+    "Chapter 4: Heat and Thermal Properties",
+    "Chapter 4: Ultrasound Imaging"
+   ]
+  },
+  {
+   "id": "ch5",
+   "title": "Chapter 5: Ray Optics",
+   "cats": [
+    "Chapter 5: Reflection and Mirrors",
+    "Chapter 5: Refraction and Snell's Law",
+    "Chapter 5: Total Internal Reflection",
+    "Chapter 5: Optical Fibers and Medical Applications",
+    "Chapter 5: Thin Lenses",
+    "Chapter 5: Combination of Lenses",
+    "Chapter 5: Refraction and Lenses"
+   ]
+  }
+ ],
+ "bank": {
+  "A": [
+   {
+    "id": "PHY30001",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Which equation correctly states Bernoulli's principle for an ideal fluid along a streamline?",
+    "options": [
+     "P + ½ ρ v² + ρ g h = constant",
+     "P + ρ v² + ρ g h = constant",
+     "P + ½ ρ v + ρ g h = constant",
+     "P × ½ ρ v² + ρ g h = constant"
+    ],
+    "correct": 0,
+    "explain": "Bernoulli's equation for an ideal fluid (steady, incompressible, non-viscous, streamline flow) states that the sum of pressure energy, kinetic energy, and potential energy per unit volume remains constant: P + ½ ρ v² + ρ g h = constant. The term ½ ρ v² is the kinetic energy density. Options that omit the one-half factor, drop the square on velocity, or multiply instead of add do not conserve the total mechanical energy per unit volume."
+   },
+   {
+    "id": "PHY30002",
+    "type": "stepped",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Bernoulli's equation applies to an ideal fluid. Answer each condition.",
+    "explain": "An ideal fluid for Bernoulli's equation requires steady flow so the pattern does not change with time, an incompressible fluid so density stays constant, a non-viscous fluid so no energy is lost to internal friction, and streamline paths. Any other condition in each step violates the assumptions and allows energy dissipation or density change.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which time condition is required?",
+      "options": [
+       "Steady flow",
+       "Unsteady flow",
+       "Pulsatile flow",
+       "Transient flow"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which density condition is required?",
+      "options": [
+       "Incompressible",
+       "Compressible",
+       "Variable density",
+       "Expanding"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which friction condition is required?",
+      "options": [
+       "Non-viscous",
+       "Viscous",
+       "High friction",
+       "Shear thinning"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "4",
+      "prompt": "Which path condition is required?",
+      "options": [
+       "Streamline",
+       "Turbulent",
+       "Chaotic",
+       "Swirling"
+      ],
+      "correct": 0
+     }
+    ]
+   },
+   {
+    "id": "PHY30003",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "According to Bernoulli's principle, how do pressure and velocity change relative to each other in a horizontal tube?",
+    "options": [
+     "Pressure decreases as velocity increases",
+     "Pressure increases as velocity increases",
+     "Pressure stays constant as velocity increases",
+     "Pressure and velocity both decrease together"
+    ],
+    "correct": 0,
+    "explain": "In Bernoulli's equation at constant height the sum P + ½ ρ v² is constant, so an increase in velocity raises the kinetic term and must lower the pressure term. The opposite relation, no change, or both quantities falling would violate energy conservation per unit volume along the streamline."
+   },
+   {
+    "id": "PHY30004",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "In an atherosclerotic stenosis, which sequence of changes occurs in the narrowed arterial segment?",
+    "options": [
+     "A ↓, v ↑, P ↓",
+     "A ↓, v ↓, P ↑",
+     "A ↑, v ↑, P ↓",
+     "A ↓, v ↑, P ↑"
+    ],
+    "correct": 0,
+    "explain": "Continuity requires that a smaller area produce a higher velocity to keep volume flow rate constant. Bernoulli then requires that the higher velocity produce a lower pressure. Sequences that reverse the velocity or pressure change, or that increase area, contradict the combined continuity and Bernoulli relations observed in stenotic arteries."
+   },
+   {
+    "id": "PHY30005",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "A patient has carotid artery stenosis. Why does blood velocity increase at the stenotic region?",
+    "options": [
+     "Continuity equation",
+     "Bernoulli principle",
+     "Laplace law",
+     "Viscosity"
+    ],
+    "correct": 0,
+    "explain": "The continuity equation states that A₁ v₁ = A₂ v₂ for incompressible flow, so a reduced cross-sectional area forces velocity upward to maintain the same volume flow rate. Bernoulli's principle explains the subsequent pressure drop, not the velocity increase itself. Laplace's law concerns wall tension, and viscosity concerns resistance to shear, neither of which directly sets the local speed from the area change."
+   },
+   {
+    "id": "PHY30006",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Which device uses Bernoulli's principle to entrain room air and deliver a controlled oxygen concentration?",
+    "options": [
+     "Venturi mask",
+     "Nasal cannula",
+     "Non-rebreather mask",
+     "Simple face mask"
+    ],
+    "correct": 0,
+    "explain": "A Venturi mask forces oxygen through a narrow orifice so that the high speed lowers the pressure and draws in a fixed ratio of room air. Nasal cannulas, non-rebreather masks, and simple face masks deliver oxygen by different dilution or reservoir mechanisms and do not rely on the pressure drop from accelerated flow."
+   },
+   {
+    "id": "PHY30007",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Audible heart murmurs arise when blood flows at high velocity through a narrowed valve because of which process?",
+    "options": [
+     "Turbulent flow generated by the high-speed jet",
+     "Laminar flow maintained by the high-speed jet",
+     "Reduced viscosity produced by the high-speed jet",
+     "Increased wall tension produced by the high-speed jet"
+    ],
+    "correct": 0,
+    "explain": "High velocity through a narrowed valve raises the Reynolds number and produces turbulent eddies whose vibrations are heard as murmurs. Laminar flow is quiet, viscosity is a property of the fluid not generated by speed, and wall tension is governed by Laplace's law rather than the jet itself."
+   },
+   {
+    "id": "PHY30008",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Doppler ultrasound is a non-invasive technique used primarily to measure which quantities of blood flow?",
+    "options": [
+     "Velocity and direction",
+     "Viscosity and density",
+     "Wall tension and thickness",
+     "Temperature and pressure"
+    ],
+    "correct": 0,
+    "explain": "Doppler ultrasound detects the frequency shift of reflected sound waves to determine both the speed and the direction of moving blood. Viscosity, density, wall tension, thickness, temperature, and absolute pressure are not the primary outputs of the Doppler method."
+   },
+   {
+    "id": "PHY30009",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Water (density 1000 kg/m³) speeds up from 2 m/s to 4 m/s in a horizontal pipe. By how much does the pressure drop?",
+    "options": [
+     "6000 Pa",
+     "4000 Pa",
+     "8000 Pa",
+     "2000 Pa"
+    ],
+    "correct": 0,
+    "explain": "At constant height Bernoulli reduces to P₁ − P₂ = ½ ρ (v₂² − v₁²). Substituting gives ½ × 1000 × (16 − 4) = 6000 Pa. The values 4000 Pa, 8000 Pa, and 2000 Pa result from omitting the one-half factor, doubling the difference of squares, or using only one of the squared velocities."
+   },
+   {
+    "id": "PHY30010",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Fluid of density 1050 kg/m³ rises 1.5 m at constant speed. What is the approximate pressure drop due to the height change?",
+    "options": [
+     "15435 Pa",
+     "10290 Pa",
+     "20580 Pa",
+     "7718 Pa"
+    ],
+    "correct": 0,
+    "explain": "At constant speed the kinetic terms cancel and P₁ − P₂ = ρ g Δh = 1050 × 9.8 × 1.5 ≈ 15435 Pa. The other figures come from using water density, doubling the height, or halving the product."
+   },
+   {
+    "id": "PHY30011",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Viscosity is best defined as the resistance of a fluid to which type of deformation?",
+    "options": [
+     "Shear deformation caused by internal friction between adjacent layers",
+     "Compressive deformation caused by external pressure on the bulk",
+     "Tensile deformation caused by stretching of molecular bonds",
+     "Volumetric deformation caused by changes in temperature alone"
+    ],
+    "correct": 0,
+    "explain": "Viscosity quantifies the internal friction that resists relative sliding (shear) between neighboring fluid layers. Compressive, tensile, and pure volumetric changes are governed by bulk modulus or thermal expansion, not by the shear coefficient η."
+   },
+   {
+    "id": "PHY30012",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Which equation correctly relates the force F needed to slide one plate over another through a viscous fluid layer?",
+    "options": [
+     "F = η A v / y",
+     "F = η A y / v",
+     "F = η v / (A y)",
+     "F = η A / (v y)"
+    ],
+    "correct": 0,
+    "explain": "The viscous force is proportional to area A and velocity v and inversely proportional to the gap y, giving F = η A v / y where η is the coefficient of viscosity. Inverting the velocity-gap ratio or placing area in the denominator reverses the observed dependence."
+   },
+   {
+    "id": "PHY30013",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "The SI unit of the coefficient of viscosity is which of the following?",
+    "options": [
+     "Pascal-second (Pa·s)",
+     "Newton-meter (N·m)",
+     "Kilogram per cubic meter (kg/m³)",
+     "Joule per second (J/s)"
+    ],
+    "correct": 0,
+    "explain": "From F = η A v / y the dimensions of η are force per area times time, or pascal-second. Newton-meter is energy or torque, kilogram per cubic meter is density, and joule per second is power; none matches the coefficient of viscosity."
+   },
+   {
+    "id": "PHY30014",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Shear stress is related to the velocity gradient by which statement?",
+    "options": [
+     "Shear stress equals viscosity times the velocity gradient",
+     "Shear stress equals viscosity divided by the velocity gradient",
+     "Shear stress equals density times the velocity gradient",
+     "Shear stress equals pressure times the velocity gradient"
+    ],
+    "correct": 0,
+    "explain": "Rearrangement of the viscous-force equation yields F/A = η (v/y), so shear stress is the product of viscosity and the velocity gradient. Division, substitution of density, or substitution of pressure would describe different physical quantities."
+   },
+   {
+    "id": "PHY30015",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "An increase in blood viscosity produces which set of circulatory effects?",
+    "options": [
+     "Lower blood flow, greater vascular resistance, and higher cardiac workload",
+     "Higher blood flow, lower vascular resistance, and lower cardiac workload",
+     "Lower blood flow, lower vascular resistance, and higher cardiac workload",
+     "Higher blood flow, greater vascular resistance, and lower cardiac workload"
+    ],
+    "correct": 0,
+    "explain": "Higher viscosity raises the resistance to flow (from Poiseuille's law Q ∝ 1/η), so the same pressure gradient produces less volume flow and the heart must generate a larger pressure difference, increasing its workload. The opposite directions of change reverse the known dependence of flow on viscosity."
+   },
+   {
+    "id": "PHY30016",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Polycythemia raises blood viscosity primarily because of which change?",
+    "options": [
+     "Increased red-blood-cell concentration",
+     "Decreased plasma-protein concentration",
+     "Increased red-blood-cell deformability",
+     "Decreased plasma temperature"
+    ],
+    "correct": 0,
+    "explain": "The number of red cells is the dominant determinant of whole-blood viscosity; more cells increase particle interactions and raise η. Lower plasma proteins, higher deformability, or lower temperature would each tend to reduce rather than raise viscosity."
+   },
+   {
+    "id": "PHY30017",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Compared with normal blood, anemic blood shows which combination of viscosity and oxygen-carrying changes?",
+    "options": [
+     "Reduced viscosity and reduced oxygen-carrying capacity",
+     "Increased viscosity and reduced oxygen-carrying capacity",
+     "Reduced viscosity and increased oxygen-carrying capacity",
+     "Increased viscosity and increased oxygen-carrying capacity"
+    ],
+    "correct": 0,
+    "explain": "Fewer red cells lower both the viscosity (less particle interaction) and the oxygen-carrying capacity (less hemoglobin). The other pairings reverse one or both of these observed effects of anemia."
+   },
+   {
+    "id": "PHY30018",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "Which formula gives the volume flow rate Q of a viscous fluid through a cylindrical tube?",
+    "options": [
+     "Q = π r⁴ ΔP / (8 η L)",
+     "Q = π r⁴ ΔP / (4 η L)",
+     "Q = π r⁴ ΔP / (2 η L)",
+     "Q = π r⁴ η / (8 ΔP L)"
+    ],
+    "correct": 0,
+    "explain": "Poiseuille's law is Q = π r⁴ ΔP / (8 η L). The fourth-power radius dependence, the factor 8, and the placement of viscosity in the denominator are required. Changing the numerical factor to 4 or 2, or inverting the viscosity-pressure placement, each produces an incorrect flow rate."
+   },
+   {
+    "id": "PHY30019",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "If the radius of a vessel is doubled while all other quantities remain constant, the volume flow rate becomes how many times larger?",
+    "options": [
+     "16 times larger",
+     "8 times larger",
+     "4 times larger",
+     "2 times larger"
+    ],
+    "correct": 0,
+    "explain": "Because Q is proportional to r⁴, a factor-of-two increase in radius multiplies flow by 2⁴ = 16. The factors 8, 4, and 2 correspond to lower powers of radius and therefore understate the change."
+   },
+   {
+    "id": "PHY30020",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "If the radius of a vessel is halved while all other quantities remain constant, the volume flow rate becomes what fraction of its original value?",
+    "options": [
+     "1/16 of the original value",
+     "1/8 of the original value",
+     "1/4 of the original value",
+     "1/2 of the original value"
+    ],
+    "correct": 0,
+    "explain": "A factor-of-one-half change in radius multiplies flow by (1/2)⁴ = 1/16. The larger fractions correspond to lower powers of radius and would apply only if the dependence were weaker."
+   },
+   {
+    "id": "PHY30021",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "Which statement correctly summarizes the dependence of volume flow rate on pressure difference, viscosity, and length?",
+    "options": [
+     "Q increases with ΔP and decreases with both η and L",
+     "Q decreases with ΔP and increases with both η and L",
+     "Q increases with both ΔP and η and decreases with L",
+     "Q increases with both ΔP and L and decreases with η"
+    ],
+    "correct": 0,
+    "explain": "From Q = π r⁴ ΔP / (8 η L) the flow rate is directly proportional to the pressure difference and inversely proportional to viscosity and to tube length. Any reversal of these proportionalities contradicts the formula."
+   },
+   {
+    "id": "PHY30022",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "A 65-year-old patient has severe carotid stenosis. Which physical changes occur in the narrowed segment?",
+    "options": [
+     "Velocity increases and pressure decreases",
+     "Velocity decreases and pressure increases",
+     "Velocity decreases and flow increases",
+     "Pressure increases and resistance decreases"
+    ],
+    "correct": 0,
+    "explain": "Continuity raises velocity when area falls; Bernoulli then lowers local pressure. Resistance rises because of the r⁴ dependence in Poiseuille's law, so flow does not increase and pressure does not rise inside the stenosis itself."
+   },
+   {
+    "id": "PHY30023",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "For a cylindrical blood vessel, wall tension T is related to internal pressure P and radius r by which equation?",
+    "options": [
+     "T = P × r",
+     "T = P / r",
+     "T = P × r²",
+     "T = P + r"
+    ],
+    "correct": 0,
+    "explain": "Laplace's law for a cylinder states that wall tension equals the product of transmural pressure and radius: T = P r. Division, squaring the radius, or addition each fails to match the force balance on a curved wall."
+   },
+   {
+    "id": "PHY30024",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "Wall stress σ in a thin-walled vessel is given by which expression involving pressure, radius, and wall thickness t?",
+    "options": [
+     "σ = P r / t",
+     "σ = P t / r",
+     "σ = P r t",
+     "σ = P / (r t)"
+    ],
+    "correct": 0,
+    "explain": "Wall stress is the tension distributed through the wall thickness, so σ = P r / t. Placing thickness in the numerator, multiplying all three quantities, or inverting the entire product reverses the dependence on wall thickness."
+   },
+   {
+    "id": "PHY30025",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "Why must the aortic wall be especially thick and strong?",
+    "options": [
+     "The aorta has a large radius, producing high wall tension",
+     "The aorta has a small radius, producing high wall tension",
+     "The aorta has a large radius, producing low wall tension",
+     "The aorta has a small radius, producing low wall tension"
+    ],
+    "correct": 0,
+    "explain": "Because T = P r, the large radius of the aorta generates high wall tension that must be supported by a thick, strong wall. A small radius would lower tension, and a large radius does not lower tension."
+   },
+   {
+    "id": "PHY30026",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "Hypertension raises the risk of arterial-wall damage primarily because which quantity increases?",
+    "options": [
+     "Wall tension",
+     "Blood viscosity",
+     "Reynolds number",
+     "Surface tension"
+    ],
+    "correct": 0,
+    "explain": "Elevated pressure directly increases wall tension (T = P r) and therefore wall stress. Viscosity, Reynolds number, and surface tension are not the immediate mechanical consequences of the higher transmural pressure."
+   },
+   {
+    "id": "PHY30027",
+    "type": "mcq",
+    "cat": "Chapter 3: Reynolds Number",
+    "q": "Reynolds number is defined as the ratio of which two forces?",
+    "options": [
+     "Inertial force to viscous force",
+     "Viscous force to inertial force",
+     "Pressure force to gravitational force",
+     "Surface-tension force to viscous force"
+    ],
+    "correct": 0,
+    "explain": "Re = ρ v D / η compares the magnitude of inertial forces to viscous forces. The reciprocal ratio, a pressure-to-gravity comparison, or a surface-tension comparison each describes a different dimensionless group."
+   },
+   {
+    "id": "PHY30028",
+    "type": "mcq",
+    "cat": "Chapter 3: Reynolds Number",
+    "q": "Which formula correctly calculates the Reynolds number for flow in a tube of diameter D?",
+    "options": [
+     "Re = ρ v D / η",
+     "Re = η v D / ρ",
+     "Re = ρ v / (η D)",
+     "Re = ρ η D / v"
+    ],
+    "correct": 0,
+    "explain": "The standard definition is Re = ρ v D / η. Inverting density and viscosity, omitting diameter from the numerator, or rearranging the remaining symbols each fails to recover the correct ratio of inertial to viscous forces."
+   },
+   {
+    "id": "PHY30029",
+    "type": "mcq",
+    "cat": "Chapter 3: Reynolds Number",
+    "q": "Flow is expected to be laminar when the Reynolds number satisfies which condition?",
+    "options": [
+     "Re < 2000",
+     "Re > 2000",
+     "Re = 1",
+     "Re > 4000"
+    ],
+    "correct": 0,
+    "explain": "Values below approximately 2000 indicate that viscous forces dominate and the flow remains laminar. Values above 2000 favor turbulence, while the specific numbers 1 and 4000 are not the conventional transition thresholds used for tube flow."
+   },
+   {
+    "id": "PHY30030",
+    "type": "mcq",
+    "cat": "Chapter 3: Reynolds Number",
+    "q": "Reynolds number increases when which combination of changes occurs?",
+    "options": [
+     "Velocity, diameter, or density rises",
+     "Viscosity rises while velocity falls",
+     "Diameter falls while density falls",
+     "Viscosity rises while diameter rises"
+    ],
+    "correct": 0,
+    "explain": "Because Re = ρ v D / η, any increase in velocity, diameter, or density raises the number, while an increase in viscosity lowers it. The other listed combinations move at least one variable in the direction that reduces Re."
+   },
+   {
+    "id": "PHY30031",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Surface tension is defined as which quantity?",
+    "options": [
+     "The force acting per unit length along the liquid surface",
+     "The force acting per unit area on the liquid surface",
+     "The energy stored per unit volume in the liquid surface",
+     "The pressure difference per unit radius across the surface"
+    ],
+    "correct": 0,
+    "explain": "Surface tension T equals force divided by the length of the line on which the force acts (T = F/L), with units N/m. Force per area is pressure or stress, energy per volume is an energy density, and pressure difference per radius is related to the Laplace pressure jump rather than the definition of T itself."
+   },
+   {
+    "id": "PHY30032",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Which pair of changes both increase the surface tension of a liquid?",
+    "options": [
+     "Stronger intermolecular forces and lower temperature",
+     "Weaker intermolecular forces and higher temperature",
+     "Addition of surfactant and higher temperature",
+     "Stronger intermolecular forces and addition of surfactant"
+    ],
+    "correct": 0,
+    "explain": "Stronger cohesive forces and lower temperature both raise surface tension. Weaker forces, higher temperature, or the presence of surfactants each lower surface tension."
+   },
+   {
+    "id": "PHY30033",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Pulmonary surfactant prevents alveolar collapse primarily by which action?",
+    "options": [
+     "Lowering surface tension of the alveolar lining fluid",
+     "Raising surface tension of the alveolar lining fluid",
+     "Increasing the radius of every alveolus",
+     "Decreasing the transmural pressure across the alveolar wall"
+    ],
+    "correct": 0,
+    "explain": "Surfactant reduces the surface tension T that appears in the Laplace relation P = 2T/r, thereby lowering the pressure needed to keep small alveoli open. Raising T, changing radius independently, or directly lowering transmural pressure are not the mechanisms of surfactant action."
+   },
+   {
+    "id": "PHY30034",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Respiratory distress syndrome in premature infants is caused by which deficiency?",
+    "options": [
+     "Pulmonary surfactant",
+     "Alveolar macrophages",
+     "Type I pneumocytes",
+     "Pulmonary capillary blood"
+    ],
+    "correct": 0,
+    "explain": "Insufficient surfactant leaves surface tension high, so the pressure required to inflate alveoli (P = 2T/r) becomes excessive and the lungs are stiff. Macrophages, type I cells, and capillary blood are not the missing factor in classic neonatal RDS."
+   },
+   {
+    "id": "PHY30035",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "The pressure difference needed to keep a spherical alveolus open is given by which relation?",
+    "options": [
+     "P = 2 T / r",
+     "P = T / r",
+     "P = 2 T × r",
+     "P = T / (2 r)"
+    ],
+    "correct": 0,
+    "explain": "For a spherical interface the Laplace pressure jump is P = 2T/r. Omitting the factor 2, multiplying instead of dividing by radius, or placing an extra 2 in the denominator each fails to satisfy the force balance on a curved liquid film."
+   },
+   {
+    "id": "PHY30036",
+    "type": "matching",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Match each term in Bernoulli's equation to the energy it represents per unit volume.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "P"
+     },
+     {
+      "id": "2",
+      "text": "½ ρ v²"
+     },
+     {
+      "id": "3",
+      "text": "ρ g h"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Kinetic energy per unit volume"
+     },
+     {
+      "id": "B",
+      "text": "Pressure energy per unit volume"
+     },
+     {
+      "id": "C",
+      "text": "Gravitational potential energy per unit volume"
+     },
+     {
+      "id": "D",
+      "text": "Viscous dissipation per unit volume"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "A",
+     "3": "C"
+    },
+    "explain": "P is the pressure energy density, ½ ρ v² is the kinetic energy density, and ρ g h is the gravitational potential energy density. Viscous dissipation is absent from the ideal-fluid form of Bernoulli's equation and therefore matches none of the three terms."
+   },
+   {
+    "id": "PHY30037",
+    "type": "matching",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "Match each factor in Poiseuille's law to its effect on volume flow rate when the factor increases.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Vessel radius r"
+     },
+     {
+      "id": "2",
+      "text": "Pressure difference ΔP"
+     },
+     {
+      "id": "3",
+      "text": "Viscosity η"
+     },
+     {
+      "id": "4",
+      "text": "Tube length L"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Flow rate increases strongly (fourth-power dependence)"
+     },
+     {
+      "id": "B",
+      "text": "Flow rate increases in direct proportion"
+     },
+     {
+      "id": "C",
+      "text": "Flow rate decreases in inverse proportion"
+     },
+     {
+      "id": "D",
+      "text": "Flow rate decreases in inverse proportion"
+     },
+     {
+      "id": "E",
+      "text": "Flow rate remains unchanged"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Radius enters to the fourth power, so flow rises steeply; pressure difference enters to the first power, so flow rises in direct proportion; both viscosity and length appear in the denominator, so flow falls inversely with each. The unmatched line stating that flow remains unchanged fits none of the four factors."
+   },
+   {
+    "id": "PHY30038",
+    "type": "matching",
+    "cat": "Chapter 3: Clinical Applications",
+    "q": "Match each physical principle to the clinical example that illustrates it.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Bernoulli's principle"
+     },
+     {
+      "id": "2",
+      "text": "Viscosity"
+     },
+     {
+      "id": "3",
+      "text": "Poiseuille's law"
+     },
+     {
+      "id": "4",
+      "text": "Laplace's law"
+     },
+     {
+      "id": "5",
+      "text": "Reynolds number"
+     },
+     {
+      "id": "6",
+      "text": "Surface tension"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Venturi mask delivering controlled oxygen"
+     },
+     {
+      "id": "B",
+      "text": "Polycythemia raising vascular resistance"
+     },
+     {
+      "id": "C",
+      "text": "Small change in arterial radius producing large change in flow"
+     },
+     {
+      "id": "D",
+      "text": "Aneurysm risk from elevated wall tension"
+     },
+     {
+      "id": "E",
+      "text": "Heart murmur from turbulent flow"
+     },
+     {
+      "id": "F",
+      "text": "Neonatal respiratory distress from surfactant deficiency"
+     },
+     {
+      "id": "G",
+      "text": "Doppler measurement of absolute pressure"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "Bernoulli's principle underlies the Venturi mask, elevated viscosity underlies the resistance of polycythemia, the r⁴ dependence of Poiseuille's law underlies large flow changes from small radius changes, Laplace's law underlies aneurysm wall tension, Reynolds number distinguishes the turbulent flow of murmurs, and surface tension (lowered by surfactant) underlies alveolar stability and its failure in RDS. Doppler ultrasound measures velocity, not absolute pressure, so that line remains unmatched."
+   },
+   {
+    "id": "PHY30039",
+    "type": "stepped",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "group": "stenosis-sequence",
+    "groupOrder": 1,
+    "q": "A carotid artery narrows because of atherosclerosis. Follow the physical consequences step by step.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What happens to blood velocity in the narrowed segment?",
+      "options": [
+       "Velocity increases",
+       "Velocity decreases",
+       "Velocity stays the same",
+       "Velocity becomes zero"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Given the velocity change just identified, what happens to local pressure?",
+      "options": [
+       "Pressure decreases",
+       "Pressure increases",
+       "Pressure stays the same",
+       "Pressure equals atmospheric pressure"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What happens to vascular resistance through the narrowed segment?",
+      "options": [
+       "Resistance increases",
+       "Resistance decreases",
+       "Resistance stays the same",
+       "Resistance becomes negative"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Continuity requires that the reduced area raise velocity so that A v remains constant. Bernoulli's relation then requires that the higher velocity lower the local pressure. Poiseuille's law requires that the reduced radius raise resistance (Q ∝ r⁴), so less flow reaches the distal tissue. Options that reverse any of these three changes contradict the respective equations."
+   },
+   {
+    "id": "PHY30040",
+    "type": "stepped",
+    "cat": "Chapter 3: Surface Tension",
+    "group": "surfactant-effect",
+    "groupOrder": 1,
+    "q": "Consider an alveolus whose lining fluid contains pulmonary surfactant. Answer each step.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "How does the presence of surfactant change the surface tension of the lining fluid?",
+      "options": [
+       "Surface tension decreases",
+       "Surface tension increases",
+       "Surface tension remains unchanged",
+       "Surface tension becomes infinite"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Given that change in surface tension, what happens to the pressure required to keep the alveolus open?",
+      "options": [
+       "Required pressure decreases",
+       "Required pressure increases",
+       "Required pressure remains unchanged",
+       "Required pressure equals zero"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What is the clinical consequence for alveolar stability?",
+      "options": [
+       "Alveoli remain open and stable",
+       "Alveoli collapse more readily",
+       "Alveoli enlarge without limit",
+       "Alveoli fill with fluid"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Surfactant lowers surface tension T. Because the pressure needed to inflate a spherical alveolus is P = 2T/r, a lower T reduces the required pressure. The reduced collapsing tendency keeps the alveoli open. Options that raise tension, raise required pressure, or produce collapse reverse the known action of surfactant."
+   },
+   {
+    "id": "PHY30041",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "A tube of radius 1 mm carries fluid at a certain flow rate. If the radius is increased to 2 mm with no other change, the new flow rate is how many times the original rate?",
+    "options": [
+     "16 times the original rate",
+     "8 times the original rate",
+     "4 times the original rate",
+     "2 times the original rate"
+    ],
+    "correct": 0,
+    "explain": "Flow rate scales with the fourth power of radius, so doubling the radius multiplies flow by 16. The smaller multipliers correspond to lower powers and are incorrect."
+   },
+   {
+    "id": "PHY30042",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "Two vessels have the same internal pressure. Vessel A has twice the radius of vessel B. How does the wall tension of A compare with that of B?",
+    "options": [
+     "Wall tension of A is twice that of B",
+     "Wall tension of A is half that of B",
+     "Wall tension of A equals that of B",
+     "Wall tension of A is four times that of B"
+    ],
+    "correct": 0,
+    "explain": "From T = P r, tension is directly proportional to radius when pressure is fixed, so doubling the radius doubles the tension. Halving, equality, or a four-fold change would require a different functional dependence."
+   },
+   {
+    "id": "PHY40001",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Which of the following correctly lists the three fundamental types of waves?",
+    "options": [
+     "Mechanical, electromagnetic, and matter",
+     "Longitudinal, transverse, and surface",
+     "Sound, light, and water",
+     "Mechanical, thermal, and electrical"
+    ],
+    "correct": 0,
+    "explain": "Waves are classified into three fundamental types: mechanical waves, which require a material medium; electromagnetic waves, which can travel through a vacuum; and matter waves, which are associated with particles. Longitudinal and transverse are directional descriptions of mechanical waves, not fundamental types. Sound, light, and water are examples of waves rather than a classification scheme. Thermal and electrical are not wave categories."
+   },
+   {
+    "id": "PHY40002",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Sound waves are best described as:",
+    "options": [
+     "Transverse mechanical waves",
+     "Longitudinal mechanical waves",
+     "Longitudinal electromagnetic waves",
+     "Transverse matter waves"
+    ],
+    "correct": 1,
+    "explain": "Sound is a mechanical wave because it requires a material medium, and it is longitudinal because the particles of the medium vibrate in the same direction as the wave propagates. Transverse waves have particle motion perpendicular to propagation. Electromagnetic waves do not require a medium, and matter waves are associated with particles, not sound."
+   },
+   {
+    "id": "PHY40003",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Which statement about sound propagation is correct?",
+    "options": [
+     "Sound crosses a vacuum at a slightly reduced speed",
+     "Sound cannot cross a vacuum, since it needs a medium",
+     "Sound crosses a vacuum only at the lowest frequencies",
+     "Sound crosses any vacuum freely and needs no medium"
+    ],
+    "correct": 1,
+    "explain": "Sound is a mechanical wave, so it propagates by displacing the particles of a medium such as air, water, or steel. A vacuum contains no particles to displace, so sound cannot travel through it at any speed or any frequency. The speed of sound depends on the medium and is not a fixed value that applies everywhere."
+   },
+   {
+    "id": "PHY40004",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "In a sound wave traveling through air, the particles of the medium vibrate in which direction relative to the wave's propagation?",
+    "options": [
+     "Perpendicular to the direction of wave travel",
+     "At 45 degrees to the direction of wave travel",
+     "In the same direction as the wave travels",
+     "In a circle around the direction of travel"
+    ],
+    "correct": 2,
+    "explain": "A longitudinal wave is defined by particle displacement that is parallel to the direction of energy propagation. As the sound wave moves forward, it creates regions of compression and rarefaction by pushing and pulling air molecules along the same axis. Perpendicular vibration describes a transverse wave, such as a wave on a string or light."
+   },
+   {
+    "id": "PHY40005",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The pitch of a sound is determined by its:",
+    "options": [
+     "Amplitude",
+     "Speed",
+     "Wavelength",
+     "Frequency"
+    ],
+    "correct": 3,
+    "explain": "The frequency of a sound wave is the number of cycles that pass a point per second, and this is what the human ear perceives as pitch. A higher frequency corresponds to a higher pitch, such as a police siren, while a lower frequency corresponds to a lower pitch. Amplitude determines loudness, not pitch. Speed and wavelength are related to frequency through the wave equation but are not the perceptual quantity."
+   },
+   {
+    "id": "PHY40006",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The loudness of a sound is most directly related to its:",
+    "options": [
+     "Frequency",
+     "Amplitude",
+     "Wavelength",
+     "Time period"
+    ],
+    "correct": 1,
+    "explain": "Amplitude is the height of the wave above the rest position and represents the maximum displacement of particles from equilibrium. A larger amplitude carries more energy and is perceived as louder. Frequency determines pitch, wavelength is the spatial length of one cycle, and time period is the inverse of frequency."
+   },
+   {
+    "id": "PHY40007",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The time required to complete one full vibration or cycle is called the:",
+    "options": [
+     "Frequency",
+     "Wavelength",
+     "Time period",
+     "Amplitude"
+    ],
+    "correct": 2,
+    "explain": "The time period is defined as the time taken for one complete cycle of vibration. It is the reciprocal of frequency, as given by the relation Time period = 1 / frequency. Frequency is the number of cycles per second, wavelength is the spatial length of one cycle, and amplitude is the maximum displacement from the rest position."
+   },
+   {
+    "id": "PHY40008",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "A wave has a frequency of 50 Hz. What is its time period?",
+    "options": [
+     "50 s",
+     "0.02 s",
+     "0.5 s",
+     "2 s"
+    ],
+    "correct": 1,
+    "explain": "Time period is the inverse of frequency, so T = 1 / f = 1 / 50 Hz = 0.02 s. This means one complete cycle takes 0.02 seconds. The line 50 s confuses period with frequency, 0.5 s uses an incorrect division, and 2 s is the inverse of 0.5 Hz rather than 50 Hz."
+   },
+   {
+    "id": "PHY40009",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Which equation correctly relates wave velocity (v), frequency (f), and wavelength (λ)?",
+    "options": [
+     "v = f / λ",
+     "v = λ / f",
+     "v = f + λ",
+     "v = f × λ"
+    ],
+    "correct": 3,
+    "explain": "Wave velocity is the speed at which a disturbance moves through a medium. It equals the product of frequency, which is how many cycles pass per second, and wavelength, which is the distance of one cycle. This gives the fundamental wave equation v = f × λ. The other options represent incorrect rearrangements such as dividing frequency by wavelength or adding the two quantities."
+   },
+   {
+    "id": "PHY40010",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "A tuning fork vibrates with a frequency of 512 Hz. If the speed of sound in air is 343 m/s, what is the wavelength of the sound waves?",
+    "options": [
+     "0.67 m",
+     "1.49 m",
+     "175,616 m",
+     "0.33 m"
+    ],
+    "correct": 0,
+    "explain": "Using the wave equation v = f × λ, the wavelength is λ = v / f. Substituting the values gives λ = 343 m/s / 512 Hz ≈ 0.67 m. The line 1.49 m divides frequency by velocity instead of velocity by frequency, 175,616 m multiplies the two values, and 0.33 m uses a velocity that is roughly half the correct value."
+   },
+   {
+    "id": "PHY40011",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "A sound wave has a wavelength of 0.5 m and travels at a speed of 340 m/s. What is its frequency?",
+    "options": [
+     "170 Hz",
+     "680 Hz",
+     "340 Hz",
+     "0.0015 Hz"
+    ],
+    "correct": 1,
+    "explain": "Rearranging the wave equation v = f × λ gives f = v / λ. Substituting the values gives f = 340 m/s / 0.5 m = 680 Hz. The line 170 Hz divides by 2 instead of 0.5, 340 Hz ignores the wavelength, and 0.0015 Hz inverts the division."
+   },
+   {
+    "id": "PHY40012",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of a sound wave in a medium with bulk modulus B and density ρ is given by:",
+    "options": [
+     "v = B / ρ",
+     "v = √(ρ / B)",
+     "v = B × ρ",
+     "v = √(B / ρ)"
+    ],
+    "correct": 3,
+    "explain": "The speed of sound in a medium is determined by how stiff and how dense the medium is. The bulk modulus B measures stiffness, or resistance to compression, and density ρ measures inertia. The relationship is v = √(B / ρ). A high bulk modulus increases the speed, while a high density decreases it. The other options either omit the square root or invert the ratio."
+   },
+   {
+    "id": "PHY40013",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "In which of the following media does sound travel the fastest?",
+    "options": [
+     "Air at 20°C and 1 atm",
+     "Fresh water at 20°C",
+     "Steel at room temperature",
+     "A perfect vacuum with no particles"
+    ],
+    "correct": 2,
+    "explain": "The speed of sound is generally greatest in solids, less in liquids, and least in gases. This is because the particles in a solid are packed more closely together, allowing them to transmit the vibrational energy more quickly. Steel is a solid, so sound travels faster in it than in water or air. Sound cannot travel in a vacuum at all."
+   },
+   {
+    "id": "PHY40014",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of sound in air at 0°C is 331 m/s. What is its approximate speed at 20°C?",
+    "options": [
+     "331 m/s",
+     "343 m/s",
+     "1482 m/s",
+     "965 m/s"
+    ],
+    "correct": 1,
+    "explain": "The speed of sound in air increases with temperature. At 0°C it is 331 m/s, and at 20°C it rises to approximately 343 m/s. The line 331 m/s repeats the value at 0°C, 1482 m/s is the speed of sound in water at 20°C, and 965 m/s is the speed of sound in helium."
+   },
+   {
+    "id": "PHY40015",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of sound in water is 1402 m/s at 0°C and 1482 m/s at 20°C. This shows that:",
+    "options": [
+     "The speed of sound decreases with increasing temperature",
+     "The speed of sound increases with increasing temperature",
+     "The speed of sound is independent of temperature",
+     "Water cannot transmit sound at 0°C"
+    ],
+    "correct": 1,
+    "explain": "The two values show that as the temperature of water rises from 0°C to 20°C, the speed of sound increases from 1402 m/s to 1482 m/s. This temperature dependence is general: warmer media generally transmit sound faster because the particles have more thermal energy and can pass the disturbance along more quickly. Water clearly transmits sound at 0°C, so the fourth option is false."
+   },
+   {
+    "id": "PHY40016",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of sound in helium is 965 m/s and in hydrogen is 1284 m/s. These values are:",
+    "options": [
+     "Lower than the speed of sound in air at the same temperature",
+     "Higher than the speed of sound in air at the same temperature",
+     "Equal to the speed of sound in air at the same temperature",
+     "Lower than the speed of sound in water at the same temperature"
+    ],
+    "correct": 1,
+    "explain": "The speed of sound in air at 20°C is 343 m/s. Helium at 965 m/s and hydrogen at 1284 m/s are both much higher. This is because these gases have very low density, and since speed is proportional to the square root of bulk modulus divided by density, a lower density raises the speed. The values 965 m/s and 1284 m/s are also lower than the speed of sound in water, which is 1482 m/s, but the comparison asked here is against air."
+   },
+   {
+    "id": "PHY40017",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of sound in seawater at 20°C and 3.5% salinity is:",
+    "options": [
+     "1402 m/s",
+     "1482 m/s",
+     "1522 m/s",
+     "5941 m/s"
+    ],
+    "correct": 2,
+    "explain": "The speed of sound in seawater at 20°C and 3.5% salinity is 1522 m/s. This is slightly higher than the speed in fresh water at the same temperature, which is 1482 m/s, because dissolved salts increase the bulk modulus of the water. The value 1402 m/s is for fresh water at 0°C, and 5941 m/s is the speed of sound in steel."
+   },
+   {
+    "id": "PHY40018",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The speed of sound in steel is approximately:",
+    "options": [
+     "343 m/s",
+     "5941 m/s",
+     "6000 m/s",
+     "6420 m/s"
+    ],
+    "correct": 1,
+    "explain": "Steel is a solid with a high bulk modulus and moderate density, giving a speed of sound of approximately 5941 m/s. The value 343 m/s is for air at 20°C. The values 6000 m/s and 6420 m/s are the speeds of sound in granite and aluminum, two other solids. The high speed in steel reflects the strong intermolecular forces that allow rapid transmission of vibrational energy."
+   },
+   {
+    "id": "PHY40019",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "What is the audible frequency range for a typical human being?",
+    "options": [
+     "22 Hz to 18,000 Hz",
+     "20 Hz to 20,000 Hz",
+     "18 Hz to 22,000 Hz",
+     "20 Hz to 18,000 Hz"
+    ],
+    "correct": 1,
+    "explain": "The human ear is sensitive to sound waves with frequencies ranging from approximately 20 Hz to 20,000 Hz. One line narrows both bounds, using 22 Hz as the lower limit and 18,000 Hz as the upper limit. Another line widens both bounds, using 18 Hz and 22,000 Hz. A further line keeps the correct lower bound of 20 Hz but sets the upper bound too low at 18,000 Hz. Frequencies above 20,000 Hz are called ultrasonic, and those below 20 Hz are infrasonic."
+   },
+   {
+    "id": "PHY40020",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Sound waves with frequencies greater than 20,000 Hz are classified as:",
+    "options": [
+     "Infrasonic",
+     "Audible",
+     "Ultrasonic",
+     "Subsonic"
+    ],
+    "correct": 2,
+    "explain": "Ultrasound is defined as sound with a frequency above the upper limit of human hearing, which is 20,000 Hz. Infrasonic waves are below 20 Hz, and the audible range is between these two limits. Subsonic refers to speeds slower than the speed of sound, not to frequency."
+   },
+   {
+    "id": "PHY40021",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Sound waves with frequencies below 20 Hz are classified as:",
+    "options": [
+     "Ultrasonic",
+     "Audible",
+     "Infrasonic",
+     "Supersonic"
+    ],
+    "correct": 2,
+    "explain": "Infrasonic waves are those with frequencies below the lower limit of human hearing, which is 20 Hz. Ultrasonic waves are above 20,000 Hz, and the audible range lies between these two limits. Supersonic refers to speeds greater than the speed of sound, not to frequency."
+   },
+   {
+    "id": "PHY40022",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Which statement correctly compares ultrasound imaging with X-ray and CT imaging?",
+    "options": [
+     "Ultrasound and X-ray are non-ionizing, but CT is ionizing",
+     "Ultrasound is ionizing, but X-ray and CT are non-ionizing",
+     "Ultrasound and CT are ionizing, but X-ray is non-ionizing",
+     "Ultrasound is non-ionizing, unlike X-ray and CT"
+    ],
+    "correct": 3,
+    "explain": "Ultrasound imaging uses high-frequency sound waves, which are mechanical vibrations and therefore non-ionizing. X-ray and CT imaging use ionizing electromagnetic radiation, which can damage biological molecules. This distinction is clinically important because it makes ultrasound safer for repeated use, such as in obstetric imaging. One line wrongly classifies X-ray as non-ionizing, the second reverses the classification of ultrasound and X-ray, and the third wrongly classifies CT as ionizing while calling X-ray non-ionizing."
+   },
+   {
+    "id": "PHY40023",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "A physician needs to image deep abdominal structures and obstetric patients. Which ultrasound frequency range is most appropriate?",
+    "options": [
+     "2.5 MHz",
+     "7.5 MHz",
+     "10.0 MHz",
+     "15.0 MHz"
+    ],
+    "correct": 0,
+    "explain": "Lower ultrasound frequencies penetrate deeper into tissue but provide lower resolution. For deep abdomen and obstetric imaging, 2.5 MHz is recommended. Higher frequencies such as 7.5 MHz, 10.0 MHz, and 15.0 MHz provide better resolution but do not penetrate as deeply, so they are used for superficial structures such as breast, thyroid, and musculoskeletal imaging."
+   },
+   {
+    "id": "PHY40024",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Which ultrasound frequency is recommended for imaging superficial structures such as the thyroid and superficial veins?",
+    "options": [
+     "2.5 MHz",
+     "3.5 MHz",
+     "5.0 MHz",
+     "10.0 MHz"
+    ],
+    "correct": 3,
+    "explain": "For superficial structures such as the breast, thyroid, superficial veins, and superficial masses, a higher frequency of 10.0 MHz is recommended. Higher frequencies provide better spatial resolution but do not penetrate deeply. The lower frequencies 2.5 MHz, 3.5 MHz, and 5.0 MHz are used for deeper structures such as the abdomen, obstetrics, and vascular imaging."
+   },
+   {
+    "id": "PHY40025",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "A tuning fork labeled 136.1 Hz is used clinically for which purpose?",
+    "options": [
+     "To measure the speed of sound in body tissue",
+     "To test hearing and vibration sensitivity",
+     "To calibrate ultrasound imaging machines",
+     "To determine the density of body fluids"
+    ],
+    "correct": 1,
+    "explain": "A tuning fork of 136.1 Hz is used to assess a patient's hearing and vibration sensitivity, which can indicate nerve damage. The low frequency produces a vibration that can be felt as well as heard. It is not used to measure the speed of sound in tissue, calibrate ultrasound machines, or determine fluid density."
+   },
+   {
+    "id": "PHY40026",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "For a wave traveling at a constant speed, how are frequency and wavelength related?",
+    "options": [
+     "They are directly proportional",
+     "They are inversely proportional",
+     "They are equal",
+     "They are independent of each other"
+    ],
+    "correct": 1,
+    "explain": "The wave equation v = f × λ states that the product of frequency and wavelength is constant for a given wave speed. Therefore, if the speed is constant, frequency and wavelength are inversely proportional: as one increases, the other must decrease by the same factor. This is expressed as f ∝ 1 / λ."
+   },
+   {
+    "id": "PHY40027",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "The Doppler effect describes the change in the observed frequency of a wave when:",
+    "options": [
+     "The source and observer move relative to each other",
+     "The wave travels through a vacuum with no medium present",
+     "The amplitude of the wave increases over time alone",
+     "The wave reflects off a stationary surface nearby"
+    ],
+    "correct": 0,
+    "explain": "The Doppler effect is the change in frequency or wavelength of a wave for an observer moving relative to its source. If the source and observer approach each other, the observed frequency increases; if they move apart, the observed frequency decreases. The effect is not related to a vacuum, amplitude, or reflection from a stationary object."
+   },
+   {
+    "id": "PHY40028",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "An ambulance is approaching you at a constant speed with its siren on. What change in the sound do you perceive?",
+    "options": [
+     "The frequency increases, and the pitch rises",
+     "The frequency decreases, and the pitch drops",
+     "The frequency remains constant, but the loudness drops",
+     "The frequency first drops, then rises"
+    ],
+    "correct": 0,
+    "explain": "As the source moves toward the observer, the sound waves are compressed, leading to a higher observed frequency and a higher pitch. As the source moves away, the waves are stretched, leading to a lower observed frequency and a lower pitch. The loudness may decrease with distance, but the defining perceptual change is the shift in pitch."
+   },
+   {
+    "id": "PHY40029",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "If either the detector or the source is moving, the emitted frequency f and detected frequency f' are related by which equation?",
+    "options": [
+     "f' = f × ((v + v_D) / (v + v_S))",
+     "f' = f × ((v ± v_D) / (v ± v_S))",
+     "f' = f × ((v - v_D) / (v - v_S))",
+     "f' = f × (v / (v ± v_S))"
+    ],
+    "correct": 1,
+    "explain": "The general Doppler formula accounts for motion of both the detector and the source: f' = f × ((v ± v_D) / (v ± v_S)), where v is the speed of sound, v_D is the speed of the detector, and v_S is the speed of the source. The signs are chosen according to whether each is moving toward or away from the other. The other options either fix one of the speeds at zero or use incorrect sign combinations."
+   },
+   {
+    "id": "PHY40030",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "A source of sound moves with speed v_S toward a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
+    "options": [
+     "f' = f × (v / (v - v_S))",
+     "f' = f × (v / (v + v_S))",
+     "f' = f × ((v - v_S) / v)",
+     "f' = f × ((v + v_S) / v)"
+    ],
+    "correct": 0,
+    "explain": "When the source moves toward a stationary observer, the observed frequency is higher than the emitted frequency. The formula uses a minus sign in the denominator to represent the source catching up to the waves it emits, compressing them. The formula is f' = f × (v / (v - v_S)). A plus sign in the denominator would describe a receding source, and the other forms are incorrect arrangements."
+   },
+   {
+    "id": "PHY40031",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "A source of sound moves with speed v_S away from a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
+    "options": [
+     "f' = f × (v / (v - v_S))",
+     "f' = f × (v / (v + v_S))",
+     "f' = f × ((v - v_S) / v)",
+     "f' = f × ((v + v_S) / v)"
+    ],
+    "correct": 1,
+    "explain": "When the source moves away from a stationary observer, the observed frequency is lower than the emitted frequency. The formula uses a plus sign in the denominator to represent the waves being stretched out behind the receding source. The formula is f' = f × (v / (v + v_S)). A minus sign in the denominator would describe an approaching source, and the other forms are incorrect arrangements."
+   },
+   {
+    "id": "PHY40032",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "A stationary source emits sound at frequency f. An observer moves toward the source with speed v_D. If v is the speed of sound, which formula gives the observed frequency?",
+    "options": [
+     "f' = f × (v / (v - v_D))",
+     "f' = f × ((v + v_D) / v)",
+     "f' = f × ((v - v_D) / v)",
+     "f' = f × (v / (v + v_D))"
+    ],
+    "correct": 1,
+    "explain": "When the observer moves toward a stationary source, the observer encounters more wavefronts per second, so the observed frequency is higher. The formula places the detector speed in the numerator with a plus sign: f' = f × ((v + v_D) / v). If the observer moved away, the numerator would use a minus sign. The other options incorrectly place the detector speed in the denominator or use the wrong sign."
+   },
+   {
+    "id": "PHY40033",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "Shock waves are produced when a source of sound moves:",
+    "options": [
+     "At exactly the speed of sound in the medium",
+     "At a speed less than the speed of sound",
+     "At a speed greater than the speed of sound",
+     "At a speed equal to the speed of light"
+    ],
+    "correct": 2,
+    "explain": "Shock waves are generated when a source travels at a speed greater than the speed of sound in the medium, meaning v_S > v. This is supersonic speed. The wavefronts lag behind the source and pile up, forming a cone-shaped shock wave. The resulting sonic boom is heard when this wave reaches an observer. A source moving at exactly the speed of sound does not produce a shock wave, and no object with mass can travel at the speed of light."
+   },
+   {
+    "id": "PHY40034",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "The Mach number is defined as the ratio of:",
+    "options": [
+     "The speed of sound to the speed of the source",
+     "The speed of the source to the speed of sound",
+     "The frequency of the source to the speed of sound",
+     "The amplitude of the wave to the speed of sound"
+    ],
+    "correct": 1,
+    "explain": "The Mach number (M_a) is a dimensionless quantity that compares the speed of an object moving through a fluid to the local speed of sound. It is defined as M_a = v_S / v, where v_S is the speed of the source and v is the speed of sound. An aircraft flying at Mach 2 is traveling at twice the speed of sound."
+   },
+   {
+    "id": "PHY40035",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "An aircraft flying at Mach 2.3 is traveling at a speed that is:",
+    "options": [
+     "2.1 times the speed of sound in air",
+     "2.3 times the speed of sound in air",
+     "2.4 times the speed of sound in air",
+     "2.8 times the speed of sound in air"
+    ],
+    "correct": 1,
+    "explain": "The Mach number is the ratio of the object's speed to the speed of sound in the surrounding medium. For an aircraft flying in air, Mach 2.3 means the aircraft is traveling at 2.3 times the speed of sound in air. The other ratios are close enough to be plausible but do not match the stated Mach number."
+   },
+   {
+    "id": "PHY40036",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "A sonic boom is heard when:",
+    "options": [
+     "A source crosses the sound barrier at Mach one",
+     "A shock wave from a supersonic source arrives",
+     "A source travels at a low subsonic speed",
+     "A source emits sound continuously while at rest"
+    ],
+    "correct": 1,
+    "explain": "A sonic boom is the sound heard when a shock wave, produced by a supersonic source, reaches an observer. The shock wave is the cone-shaped pileup of wavefronts trailing the source. It is not produced by a source moving at exactly the speed of sound, at subsonic speeds, or while at rest."
+   },
+   {
+    "id": "PHY40037",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "The visible condensation cloud around a supersonic aircraft is caused by:",
+    "options": [
+     "A local pressure rise produced by the passing shock wave",
+     "A local pressure drop produced by the passing shock wave",
+     "A local temperature rise produced by friction with the air",
+     "A local temperature drop produced by the aircraft exhaust"
+    ],
+    "correct": 1,
+    "explain": "The shock wave causes a sudden decrease in air pressure and temperature. This local cooling causes water molecules in the air to condense, forming a visible fog or cloud. A pressure rise or a temperature rise would warm the air rather than cool it, so neither would produce condensation. A temperature drop from the exhaust is not the mechanism, because the exhaust itself is hot."
+   },
+   {
+    "id": "PHY40038",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "Which Mach number range corresponds to supersonic waves?",
+    "options": [
+     "M_a = 0",
+     "M_a < 1",
+     "M_a = 1",
+     "M_a > 1"
+    ],
+    "correct": 3,
+    "explain": "Supersonic conditions occur when the speed of the source exceeds the speed of sound, which corresponds to M_a > 1. M_a = 0 describes a stationary source, and M_a < 1 describes subsonic speeds. M_a = 1 is the sonic speed, at which the source travels exactly at the speed of sound."
+   },
+   {
+    "id": "PHY40039",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "The Zeroth Law of Thermodynamics establishes the concept of:",
+    "options": [
+     "Entropy",
+     "Enthalpy",
+     "Temperature",
+     "Internal energy"
+    ],
+    "correct": 2,
+    "explain": "The Zeroth Law states that if two bodies are each in thermal equilibrium with a third body, then they are in thermal equilibrium with each other. This law provides the basis for defining temperature and justifies the use of a thermometer. If body A and body B are both in equilibrium with a thermometer T, they have the same temperature and will not exchange heat when brought into contact."
+   },
+   {
+    "id": "PHY40040",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Two bodies are in thermal equilibrium when:",
+    "options": [
+     "They have the same mass and volume",
+     "They are at the same temperature",
+     "They have the same volume and shape",
+     "They are both in the solid state"
+    ],
+    "correct": 1,
+    "explain": "Thermal equilibrium means the two bodies are at the same temperature throughout, so no net heat flows from one to the other. Mass, volume, and state of matter are not conditions for thermal equilibrium. This definition is the foundation of temperature measurement."
+   },
+   {
+    "id": "PHY40041",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Which temperature represents absolute zero?",
+    "options": [
+     "0 °C",
+     "0 K",
+     "0 °F",
+     "-273.15 °F"
+    ],
+    "correct": 1,
+    "explain": "Absolute zero is the lowest possible temperature, where thermal motion of particles reaches its minimum. It is defined as 0 Kelvin (0 K). On the Celsius scale, this is -273.15 °C, and on the Fahrenheit scale, it is -459.67 °F. The other options are not absolute zero."
+   },
+   {
+    "id": "PHY40042",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "The triple point of water is the unique temperature and pressure at which:",
+    "options": [
+     "Water boils and freezes at the same time",
+     "Ice, water, and vapor coexist in equilibrium",
+     "Ice and vapor coexist while liquid is absent",
+     "Liquid and vapor coexist while ice is absent"
+    ],
+    "correct": 1,
+    "explain": "The triple point of a substance is a specific combination of pressure and temperature where its solid, liquid, and gas phases can coexist in thermal equilibrium. For water, this occurs at a temperature of 0.01°C and a pressure of 0.6 kPa. This is a key reference point for thermodynamic temperature scales."
+   },
+   {
+    "id": "PHY40043",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "On the phase diagram of water, the critical point occurs at approximately:",
+    "options": [
+     "0.01°C and 0.6 kPa",
+     "100°C and 101 kPa",
+     "374°C and 22,089 kPa",
+     "0°C and 0.6 kPa"
+    ],
+    "correct": 2,
+    "explain": "The critical point on the phase diagram of water is the end point of the liquid-vapor boundary, occurring at approximately 374°C and 22,089 kPa. Beyond this point, the liquid and gas phases become indistinguishable. The values 0.01°C and 0.6 kPa describe the triple point, 100°C and 101 kPa describe normal boiling, and 0°C and 0.6 kPa are not a specific labeled point on the diagram."
+   },
+   {
+    "id": "PHY40044",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "A patient has a body temperature of 39°C. What is this temperature in degrees Fahrenheit?",
+    "options": [
+     "102.2 °F",
+     "99.0 °F",
+     "107.6 °F",
+     "93.2 °F"
+    ],
+    "correct": 0,
+    "explain": "To convert from Celsius to Fahrenheit, the formula is T_F = (9/5) × T_C + 32. Substituting 39°C gives T_F = (9/5) × 39 + 32 = 70.2 + 32 = 102.2°F. The line 99.0°F uses 37°C, 107.6°F uses an incorrect multiplier, and 93.2°F uses an incorrect conversion."
+   },
+   {
+    "id": "PHY40045",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Convert a temperature of 15°C to the Kelvin scale.",
+    "options": [
+     "258 K",
+     "288 K",
+     "273 K",
+     "300 K"
+    ],
+    "correct": 1,
+    "explain": "The conversion from Celsius to Kelvin is T_K = T_C + 273. Substituting 15°C gives T_K = 15 + 273 = 288 K. The line 258 K subtracts 15 from 273 instead of adding, 273 K ignores the Celsius value, and 300 K uses an incorrect offset."
+   },
+   {
+    "id": "PHY40046",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Convert a temperature of 300 K to the Celsius scale.",
+    "options": [
+     "27°C",
+     "573°C",
+     "27 K",
+     "300°C"
+    ],
+    "correct": 0,
+    "explain": "The conversion from Kelvin to Celsius is T_C = T_K - 273. Substituting 300 K gives T_C = 300 - 273 = 27°C. The line 573°C adds 273 instead of subtracting, 27 K incorrectly labels the result as Kelvin, and 300°C ignores the offset entirely."
+   },
+   {
+    "id": "PHY40047",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "At what temperature do the Celsius and Fahrenheit scales have the same numerical value?",
+    "options": [
+     "0°",
+     "100°",
+     "-40°",
+     "-273°"
+    ],
+    "correct": 2,
+    "explain": "The Celsius and Fahrenheit scales coincide at -40°, where T_C = T_F = -40. This can be verified by setting T_C = T_F in the conversion formula T_F = (9/5) × T_C + 32 and solving for the temperature, which gives -40. The other options are reference points on one scale or the other but not points of coincidence."
+   },
+   {
+    "id": "PHY40048",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Normal body temperature is 37.0°C. What is this in degrees Fahrenheit?",
+    "options": [
+     "98.6 °F",
+     "100.4 °F",
+     "95.0 °F",
+     "104.0 °F"
+    ],
+    "correct": 0,
+    "explain": "Using the conversion T_F = (9/5) × T_C + 32, substituting 37.0°C gives T_F = (9/5) × 37.0 + 32 = 66.6 + 32 = 98.6°F. The line 100.4°F corresponds to 38°C, 95.0°F corresponds to 35°C, and 104.0°F corresponds to 40°C."
+   },
+   {
+    "id": "PHY40049",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "The temperature near 0 K is significant because:",
+    "options": [
+     "Water freezes at this temperature",
+     "Thermal motion reaches its minimum value",
+     "All gases become liquids at this point",
+     "The Celsius and Fahrenheit scales coincide"
+    ],
+    "correct": 1,
+    "explain": "Near absolute zero, which is 0 K or -273.15°C, the thermal motion of particles reaches its minimum possible value. This is the lowest temperature theoretically attainable. Water freezes at 273.15 K, not at 0 K. Not all gases become liquids at this temperature, and the Celsius and Fahrenheit scales coincide at -40°, not at absolute zero."
+   },
+   {
+    "id": "PHY40050",
+    "type": "matching",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Match each characteristic of a sound wave to its correct description.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Wavelength"
+     },
+     {
+      "id": "2",
+      "text": "Amplitude"
+     },
+     {
+      "id": "3",
+      "text": "Frequency"
+     },
+     {
+      "id": "4",
+      "text": "Time period"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "The number of cycles that occur per unit of time."
+     },
+     {
+      "id": "B",
+      "text": "The maximum displacement of a particle from its rest position."
+     },
+     {
+      "id": "C",
+      "text": "The time required to complete a single cycle of vibration."
+     },
+     {
+      "id": "D",
+      "text": "The distance between two successive points that are in the same phase."
+     },
+     {
+      "id": "E",
+      "text": "The speed at which the disturbance propagates."
+     }
+    ],
+    "correct_pairs": {
+     "1": "D",
+     "2": "B",
+     "3": "A",
+     "4": "C"
+    },
+    "explain": "Wavelength is the spatial length of one complete cycle, such as the distance between two adjacent crests. Amplitude is the height of the wave, representing the maximum displacement from equilibrium, which relates to loudness. Frequency is the number of complete cycles per second, measured in hertz, which relates to pitch. The time period is the time for one full cycle and is the inverse of frequency. The remaining option describes wave velocity."
+   },
+   {
+    "id": "PHY40051",
+    "type": "matching",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Match each temperature scale to its correct defining property or reference point.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Kelvin"
+     },
+     {
+      "id": "2",
+      "text": "Celsius"
+     },
+     {
+      "id": "3",
+      "text": "Fahrenheit"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Water boils at 100 degrees and freezes at 0 degrees."
+     },
+     {
+      "id": "B",
+      "text": "Water boils at 212 degrees and freezes at 32 degrees."
+     },
+     {
+      "id": "C",
+      "text": "Absolute zero is the starting point, and there are no negative values."
+     },
+     {
+      "id": "D",
+      "text": "The scale is defined by the triple point of water."
+     }
+    ],
+    "correct_pairs": {
+     "1": "C",
+     "2": "A",
+     "3": "B"
+    },
+    "explain": "The Kelvin scale is an absolute temperature scale where 0 K is absolute zero, the theoretical point of minimum thermal energy, and it has no negative values. The Celsius scale is defined by the freezing point of water at 0°C and its boiling point at 100°C at standard atmospheric pressure. The Fahrenheit scale uses different reference points, with water freezing at 32°F and boiling at 212°F. The triple point of water is a specific thermodynamic reference, not the general defining property of these scales in everyday use."
+   },
+   {
+    "id": "PHY40052",
+    "type": "matching",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Match each wave formula to the quantity it defines or the relationship it expresses.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "v = f × λ"
+     },
+     {
+      "id": "2",
+      "text": "T = 1 / f"
+     },
+     {
+      "id": "3",
+      "text": "v = √(B / ρ)"
+     },
+     {
+      "id": "4",
+      "text": "M_a = v_S / v"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "The speed of sound in a medium from its bulk modulus and density."
+     },
+     {
+      "id": "B",
+      "text": "The relationship between wave velocity, frequency, and wavelength."
+     },
+     {
+      "id": "C",
+      "text": "The ratio of the speed of a source to the speed of sound."
+     },
+     {
+      "id": "D",
+      "text": "The time required for one complete vibration from the frequency."
+     },
+     {
+      "id": "E",
+      "text": "The change in observed frequency from source and detector motion."
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "D",
+     "3": "A",
+     "4": "C"
+    },
+    "explain": "The equation v = f × λ relates wave velocity to frequency and wavelength. The equation T = 1 / f gives the time period from the frequency. The equation v = √(B / ρ) gives the speed of sound in a medium from its bulk modulus and density. The Mach number M_a = v_S / v is the ratio of the source speed to the speed of sound. The remaining option describes the Doppler effect, which is expressed by a different formula."
+   },
+   {
+    "id": "PHY40053",
+    "type": "stepped",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "group": "us-freq-class",
+    "groupOrder": 1,
+    "q": "Each ultrasound frequency is named. Choose its imaging class.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "2.5 MHz is used for which class of imaging?",
+      "options": [
+       "Deep abdomen and obstetric imaging",
+       "Breast and thyroid imaging",
+       "Superficial vein and mass imaging",
+       "Musculoskeletal imaging only"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "10.0 MHz is used for which class of imaging?",
+      "options": [
+       "Thyroid, superficial veins, and musculoskeletal imaging",
+       "Deep abdomen, obstetric, and gynecological imaging",
+       "General abdomen, pelvic, and vascular imaging",
+       "Deep pelvic and fetal imaging"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Lower frequencies penetrate deeper, so 2.5 MHz is the choice for deep abdomen and obstetric work. Higher frequencies give finer detail, so 10.0 MHz is the choice for thyroid, superficial veins, and musculoskeletal imaging. The remaining lines name the opposite depth class."
+   },
+   {
+    "id": "PHY40054",
+    "type": "stepped",
+    "cat": "Chapter 4: Doppler Effect",
+    "group": "doppler-signs",
+    "groupOrder": 1,
+    "q": "A sound source moves relative to a stationary observer. Choose the correct formula at each step.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "The source moves toward the stationary observer. Which formula gives the observed frequency?",
+      "options": [
+       "f' = f × (v / (v - v_S))",
+       "f' = f × (v / (v + v_S))",
+       "f' = f × ((v - v_S) / v)",
+       "f' = f × ((v + v_S) / v)"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "The source now moves away from the stationary observer. Which formula gives the observed frequency?",
+      "options": [
+       "f' = f × (v / (v + v_S))",
+       "f' = f × (v / (v - v_S))",
+       "f' = f × ((v + v_S) / v)",
+       "f' = f × ((v - v_S) / v)"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "When the source approaches a stationary observer the waves are compressed, so the denominator uses a minus sign: f' = f × (v / (v - v_S)). When the source recedes the waves are stretched, so the denominator uses a plus sign: f' = f × (v / (v + v_S)). Placing the source speed in the numerator or reversing the sign each fails to match the direction of motion."
+   },
+   {
+    "id": "PHY40055",
+    "type": "stepped",
+    "cat": "Chapter 4: Shock Waves",
+    "group": "mach-class",
+    "groupOrder": 1,
+    "q": "Each Mach-number range is named. Choose the wave class it belongs to.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "M_a < 1 belongs to which class?",
+      "options": [
+       "Subsonic",
+       "Transonic",
+       "Supersonic",
+       "Hypersonic"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "M_a ≈ 1 belongs to which class?",
+      "options": [
+       "Transonic",
+       "Hypersonic",
+       "Supersonic",
+       "Stationary"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "M_a > 1 belongs to which class?",
+      "options": [
+       "Supersonic",
+       "Hypersonic",
+       "Stationary",
+       "Incompressible"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "M_a < 1 means the source is slower than sound and is subsonic (M_a = 0 would be a source at rest). M_a ≈ 1 is the sonic boundary and is called transonic. M_a > 1 means the source is faster than sound and is supersonic. The remaining lines name the other speed classes."
+   },
+   {
+    "id": "PHY40056",
+    "type": "stepped",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "group": "scale-class",
+    "groupOrder": 1,
+    "q": "Each temperature scale is named. Choose its defining property.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "The Kelvin scale is defined by which property?",
+      "options": [
+       "Absolute zero as the starting point with no negative values",
+       "Water freezes at 0 degrees and boils at 100 degrees",
+       "Water freezes at 32 degrees and boils at 212 degrees",
+       "The triple point of water as the sole fixed point"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "The Celsius scale is defined by which property?",
+      "options": [
+       "Water freezes at 0 degrees and boils at 100 degrees",
+       "Water freezes at 32 degrees and boils at 212 degrees",
+       "The critical point of water as the upper limit",
+       "The triple point of water as the sole fixed point"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Kelvin begins at absolute zero and has no negative values. Celsius is fixed by the freezing and boiling points of water at 0 °C and 100 °C. The remaining lines name the fixed points of the other scales."
+   },
+   {
+    "id": "PHY50001",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "Which of the following correctly states the laws of reflection?",
+    "options": [
+     "The incident ray, the normal, and the reflected ray lie in one plane, and the angle of incidence equals the angle of reflection",
+     "The incident ray, the normal, and the reflected ray lie in separate planes, and the angle of incidence equals the angle of reflection",
+     "The incident ray, the normal, and the reflected ray lie in one plane, and the angle of incidence is twice the angle of reflection",
+     "The incident ray and the reflected ray lie on the same side of the normal, and the angle of incidence equals the angle of reflection"
+    ],
+    "correct": 0,
+    "explain": "Reflection follows three rules: the incident ray, the normal at the point of incidence, and the reflected ray all lie in one plane; the incident and reflected rays are on opposite sides of the normal; and the angle of incidence equals the angle of reflection. The line 'The incident ray, the normal, and the reflected ray lie in separate planes, and the angle of incidence equals the angle of reflection' breaks the coplanar rule. The line 'The incident ray, the normal, and the reflected ray lie in one plane, and the angle of incidence is twice the angle of reflection' states an incorrect angle relationship. The line 'The incident ray and the reflected ray lie on the same side of the normal, and the angle of incidence equals the angle of reflection' places both rays on the same side of the normal."
+   },
+   {
+    "id": "PHY50002",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A light ray strikes a plane mirror at an angle of incidence of 35 degrees. What is the angle of reflection?",
+    "options": [
+     "55 degrees",
+     "35 degrees",
+     "70 degrees",
+     "17.5 degrees"
+    ],
+    "correct": 1,
+    "explain": "The law of reflection states that the angle of incidence equals the angle of reflection, both measured from the normal. Therefore the angle of reflection is also 35 degrees. The line '55 degrees' is the complementary angle measured from the surface rather than from the normal. The line '70 degrees' doubles the angle, and '17.5 degrees' halves it."
+   },
+   {
+    "id": "PHY50003",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "An image that cannot be projected onto a screen because light does not actually pass through it is called:",
+    "options": [
+     "A real image",
+     "A virtual image",
+     "An inverted image",
+     "A magnified image"
+    ],
+    "correct": 1,
+    "explain": "A virtual image is formed by the apparent divergence of light rays. The rays do not actually converge at the image location, so the image cannot be captured on a screen. A real image is formed where light rays actually converge and can be projected. Inverted and magnified describe image orientation and size, not whether light physically passes through the image point."
+   },
+   {
+    "id": "PHY50004",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "An object is placed 20 cm in front of a plane mirror. Where is the image formed, and what are its properties?",
+    "options": [
+     "20 cm behind the mirror, virtual and the same size as the object",
+     "20 cm in front of the mirror, real and the same size as the object",
+     "40 cm behind the mirror, virtual and magnified compared with the object",
+     "10 cm behind the mirror, virtual and diminished compared with the object"
+    ],
+    "correct": 0,
+    "explain": "For a plane mirror, the image distance equals the object distance, so the image appears 20 cm behind the mirror. The image is virtual because light does not actually pass through it, and it is the same size as the object. The line '20 cm in front of the mirror, real and the same size as the object' incorrectly places the image in front and calls it real. The lines '40 cm behind the mirror, virtual and magnified compared with the object' and '10 cm behind the mirror, virtual and diminished compared with the object' give incorrect distances and sizes."
+   },
+   {
+    "id": "PHY50005",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A spherical mirror whose reflecting surface curves inward, toward the centre of the sphere, is called:",
+    "options": [
+     "A plane mirror",
+     "A convex mirror",
+     "A concave mirror",
+     "A cylindrical mirror"
+    ],
+    "correct": 2,
+    "explain": "A concave mirror has its reflecting surface on the inside of the spherical curve, facing the centre of curvature. A convex mirror reflects from the outside of the curve, away from the centre. A plane mirror is flat, and a cylindrical mirror has a different geometry not covered by the spherical mirror definitions."
+   },
+   {
+    "id": "PHY50006",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A spherical mirror whose reflecting surface curves outward, away from the centre of the sphere, is called:",
+    "options": [
+     "A concave mirror",
+     "A plane mirror",
+     "A parabolic mirror",
+     "A convex mirror"
+    ],
+    "correct": 3,
+    "explain": "A convex mirror has its reflecting surface on the outside of the spherical curve, facing away from the centre of curvature. A concave mirror reflects from the inside of the curve. A plane mirror is flat, and a parabolic mirror has a different non-spherical geometry."
+   },
+   {
+    "id": "PHY50007",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "For a concave mirror, a parallel beam of light incident on the mirror converges after reflection at a single point called the:",
+    "options": [
+     "Centre of curvature",
+     "Focal point",
+     "Principal axis",
+     "Vertex"
+    ],
+    "correct": 1,
+    "explain": "When a parallel beam of light strikes a concave mirror, the reflected rays converge at the focal point, denoted by F. The centre of curvature is the centre of the sphere from which the mirror is cut. The principal axis is the line through the centre of curvature and the vertex. The vertex is the central point on the mirror surface itself."
+   },
+   {
+    "id": "PHY50008",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "The distance between the central point of a spherical mirror and its focus is called the:",
+    "options": [
+     "Radius of curvature",
+     "Object distance",
+     "Image distance",
+     "Focal length"
+    ],
+    "correct": 3,
+    "explain": "The focal length, denoted by f, is the distance from the mirror's central point to the focal point. The radius of curvature is the distance from the mirror surface to the centre of curvature and equals twice the focal length. Object distance and image distance measure the positions of the object and image relative to the mirror."
+   },
+   {
+    "id": "PHY50009",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "The relationship between the focal length f and the radius of curvature r of a spherical mirror is:",
+    "options": [
+     "f = r / 2",
+     "f = 2r / 1",
+     "f = r / 4",
+     "f = 4r / 1"
+    ],
+    "correct": 0,
+    "explain": "Using the geometry of a spherical mirror, the focal point lies halfway between the mirror surface and the centre of curvature, so f = r / 2. The line 'f = 2r / 1' doubles the radius. The line 'f = r / 4' quarters it. The line 'f = 4r / 1' multiplies the radius by four."
+   },
+   {
+    "id": "PHY50010",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A concave mirror has a focal length of 25 cm. What is its radius of curvature?",
+    "options": [
+     "12.5 cm",
+     "25 cm",
+     "50 cm",
+     "100 cm"
+    ],
+    "correct": 2,
+    "explain": "Rearranging f = r / 2 gives r = 2f. Substituting f = 25 cm gives r = 2 × 25 = 50 cm. The line '12.5 cm' halves the focal length instead of doubling it, '25 cm' repeats the focal length, and '100 cm' quadruples it."
+   },
+   {
+    "id": "PHY50011",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A concave mirror has a radius of curvature of 40 cm. What is its focal length?",
+    "options": [
+     "80 cm",
+     "20 cm",
+     "40 cm",
+     "10 cm"
+    ],
+    "correct": 1,
+    "explain": "Using f = r / 2, substituting r = 40 cm gives f = 40 / 2 = 20 cm. The line '80 cm' doubles the radius instead of halving it, '40 cm' repeats the radius, and '10 cm' quarters it."
+   },
+   {
+    "id": "PHY50012",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "For a concave mirror, when an object is placed outside the focal point, the image formed is:",
+    "options": [
+     "Virtual, upright, and larger than the object at all times",
+     "Real, inverted, and variable in size with object distance",
+     "Virtual, inverted, and smaller than the object at all times",
+     "Real, upright, and smaller than the object at all times"
+    ],
+    "correct": 1,
+    "explain": "When the object is beyond the focal point of a concave mirror, the reflected rays actually converge, forming a real image. That image is inverted. Its size depends on where the object sits: beyond twice the focal length it is smaller, at twice the focal length it is the same size, and between twice the focal length and the focal point it is larger. The line 'Virtual, upright, and larger than the object at all times' describes the case when the object is inside the focal point. The lines 'Virtual, inverted, and smaller than the object at all times' and 'Real, upright, and smaller than the object at all times' mix properties that do not occur together for this mirror."
+   },
+   {
+    "id": "PHY50013",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "For a concave mirror, when an object is placed inside the focal point, the image formed is:",
+    "options": [
+     "Real, inverted, and diminished",
+     "Real, upright, and magnified",
+     "Virtual, upright, and magnified",
+     "Virtual, inverted, and diminished"
+    ],
+    "correct": 2,
+    "explain": "When the object lies between the focal point and the mirror surface, the reflected rays diverge and must be extended backward to meet. The resulting image is virtual, upright, and larger than the object. The line 'Real, inverted, and diminished' describes a real image from an object outside the focal point. The lines 'Real, upright, and magnified' and 'Virtual, inverted, and diminished' mix real with upright or virtual with inverted, combinations that do not occur for this mirror."
+   },
+   {
+    "id": "PHY50014",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "Which statement correctly describes the image formed by a convex mirror?",
+    "options": [
+     "It is always real, inverted, and larger than the object",
+     "It is always virtual, upright, and smaller than the object",
+     "It is always real, upright, and smaller than the object",
+     "It is always virtual, inverted, and larger than the object"
+    ],
+    "correct": 1,
+    "explain": "A convex mirror diverges incoming light rays, so the reflected rays never actually converge. The image is therefore always virtual and upright. Because the rays spread apart, the image is also smaller than the object. A convex mirror never forms a real image, which rules out the lines containing real. It also never forms an inverted image, which rules out the line containing inverted."
+   },
+   {
+    "id": "PHY50015",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "Convex mirrors are commonly used as rear-view mirrors in vehicles because:",
+    "options": [
+     "They form a magnified real image of traffic behind",
+     "They form an upright diminished image with wide view",
+     "They form an inverted real image that is easy to read",
+     "They form a virtual image larger than the object"
+    ],
+    "correct": 1,
+    "explain": "A convex mirror always forms a virtual, upright, diminished image. The diminished size means more of the scene fits into the mirror, giving a wider field of view, which is why the warning objects in mirror are closer than they appear is needed. A magnified real image would require a concave mirror with the object outside its focal point. An inverted image would be harder to use while driving, and a virtual image larger than the object is not what a convex mirror produces."
+   },
+   {
+    "id": "PHY50016",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "The index of refraction n of a medium is defined as:",
+    "options": [
+     "The ratio of the speed of light in the medium to the speed of light in vacuum",
+     "The ratio of the speed of light in vacuum to the speed of light in the medium",
+     "The product of the speed of light in vacuum and the speed of light in the medium",
+     "The difference between the speed of light in vacuum and the speed of light in the medium"
+    ],
+    "correct": 1,
+    "explain": "The index of refraction is defined as n = c / v, where c is the speed of light in vacuum and v is the speed of light in the medium. Because light slows down in a medium, v is less than c, so n is always greater than or equal to 1. The line 'The ratio of the speed of light in the medium to the speed of light in vacuum' inverts the ratio, 'The product of the speed of light in vacuum and the speed of light in the medium' multiplies the speeds, and 'The difference between the speed of light in vacuum and the speed of light in the medium' takes their difference."
+   },
+   {
+    "id": "PHY50017",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "The speed of light in vacuum is approximately 3 × 10⁸ m/s. If the speed of light in a certain glass is 2 × 10⁸ m/s, what is the index of refraction of the glass?",
+    "options": [
+     "0.67",
+     "1.5",
+     "2.0",
+     "3.0"
+    ],
+    "correct": 1,
+    "explain": "Using n = c / v, substituting c = 3 × 10⁸ m/s and v = 2 × 10⁸ m/s gives n = (3 × 10⁸) / (2 × 10⁸) = 1.5. The line '0.67' inverts the ratio, '2.0' uses the speed in the medium divided by 10⁸ without dividing by c, and '3.0' uses the vacuum speed divided by 10⁸ without dividing by v."
+   },
+   {
+    "id": "PHY50018",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "A higher refractive index for a medium means that light travels:",
+    "options": [
+     "Faster in that medium",
+     "Slower in that medium",
+     "At the same speed as in vacuum",
+     "At the speed of sound in that medium"
+    ],
+    "correct": 1,
+    "explain": "Because n = c / v, a larger n means a smaller v. The higher the refractive index of a medium, the slower light travels in it. Diamond, with n = 2.42, slows light to about 41 percent of its vacuum speed. The line 'Faster in that medium' reverses the relationship, 'At the same speed as in vacuum' ignores it, and 'At the speed of sound in that medium' confuses light with sound."
+   },
+   {
+    "id": "PHY50019",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "Snell's law relating the angles of incidence and refraction at a boundary between two media is:",
+    "options": [
+     "n₁ sin θ₁ = n₂ sin θ₂",
+     "n₁ cos θ₁ = n₂ cos θ₂",
+     "n₁ sin θ₂ = n₂ sin θ₁",
+     "n₁ tan θ₁ = n₂ tan θ₂"
+    ],
+    "correct": 0,
+    "explain": "Snell's law states that the product of the refractive index and the sine of the angle, measured from the normal, is the same on both sides of the boundary: n₁ sin θ₁ = n₂ sin θ₂. The line 'n₁ cos θ₁ = n₂ cos θ₂' uses cosine instead of sine. The line 'n₁ sin θ₂ = n₂ sin θ₁' swaps the subscripts so that n₁ is paired with θ₂ and n₂ with θ₁. The line 'n₁ tan θ₁ = n₂ tan θ₂' uses tangent."
+   },
+   {
+    "id": "PHY50020",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "A beam of light is incident from air (n₁ = 1) onto water (n₂ = 1.33) at an angle of incidence of 30 degrees. What is the angle of refraction in the water?",
+    "options": [
+     "22.1 degrees",
+     "30.0 degrees",
+     "45.0 degrees",
+     "60.0 degrees"
+    ],
+    "correct": 0,
+    "explain": "Using Snell's law, n₁ sin θ₁ = n₂ sin θ₂, substitute n₁ = 1, θ₁ = 30 degrees, and n₂ = 1.33. Then sin θ₂ = (1 × sin 30°) / 1.33 = 0.5 / 1.33 = 0.376. Taking the inverse sine gives θ₂ ≈ 22.1 degrees. The angle of refraction is smaller than the angle of incidence because light enters a denser medium and bends toward the normal. The line '30.0 degrees' repeats the incident angle, and the lines '45.0 degrees' and '60.0 degrees' are larger than the incident angle, which would require light to bend away from the normal."
+   },
+   {
+    "id": "PHY50021",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "A light ray in air is incident on an air-to-glass interface at an angle of 45 degrees and is refracted at an angle of 30 degrees to the normal. What is the index of refraction of the glass?",
+    "options": [
+     "1.00",
+     "1.41",
+     "1.73",
+     "2.00"
+    ],
+    "correct": 1,
+    "explain": "Using Snell's law with air as medium 1 and glass as medium 2, n₁ sin θ₁ = n₂ sin θ₂. Substituting n₁ = 1, θ₁ = 45 degrees, and θ₂ = 30 degrees gives 1 × sin 45° = n₂ × sin 30°, so n₂ = sin 45° / sin 30° = 0.707 / 0.5 = 1.41. The line '1.00' would mean no refraction occurred, '1.73' is the tangent of 60 degrees, and '2.00' is twice the correct value."
+   },
+   {
+    "id": "PHY50022",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "When light travels from a less dense medium into a more dense medium, it bends:",
+    "options": [
+     "Away from the normal",
+     "Toward the normal",
+     "Along the normal without deviation",
+     "Back into the original medium"
+    ],
+    "correct": 1,
+    "explain": "When light enters a medium with a higher refractive index, it slows down. This change in speed causes the ray to bend toward the normal, so the angle of refraction is smaller than the angle of incidence. Bending away from the normal occurs when light goes from a denser to a less dense medium. Travel along the normal without deviation occurs only when the angle of incidence is zero. Reflection back into the original medium occurs under total internal reflection, which requires the opposite direction of travel."
+   },
+   {
+    "id": "PHY50023",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "When light travels from a denser medium into a less dense medium, it bends:",
+    "options": [
+     "Toward the normal",
+     "Away from the normal",
+     "Along the normal without deviation",
+     "Back into the original medium"
+    ],
+    "correct": 1,
+    "explain": "When light enters a medium with a lower refractive index, it speeds up. This change in speed causes the ray to bend away from the normal, so the angle of refraction is larger than the angle of incidence. Bending toward the normal occurs in the opposite direction, from less dense to more dense. Travel along the normal occurs only at zero angle of incidence. Reflection back into the original medium requires total internal reflection, which occurs only when the angle of incidence exceeds the critical angle."
+   },
+   {
+    "id": "PHY50024",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "Total internal reflection can occur when light travels:",
+    "options": [
+     "From a less dense medium to a more dense medium",
+     "From a more dense medium to a less dense medium",
+     "From vacuum into any medium",
+     "Between two media of equal refractive index"
+    ],
+    "correct": 1,
+    "explain": "Total internal reflection requires two conditions: light must travel from a denser medium into a less dense medium, and the angle of incidence must exceed the critical angle. When light goes from less dense to more dense, it always refracts into the second medium. Light entering vacuum from any medium, or moving between media of equal refractive index, does not produce total internal reflection."
+   },
+   {
+    "id": "PHY50025",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "The critical angle θc is defined as the angle of incidence for which the angle of refraction is:",
+    "options": [
+     "0 degrees",
+     "45 degrees",
+     "90 degrees",
+     "180 degrees"
+    ],
+    "correct": 2,
+    "explain": "The critical angle is the angle of incidence in the denser medium for which the refracted ray emerges along the boundary between the two media, making an angle of refraction of 90 degrees. At angles greater than the critical angle, total internal reflection occurs and no refracted ray emerges. An angle of refraction of 0 degrees would mean no bending, 45 degrees is an arbitrary angle, and 180 degrees would mean the ray travels back along the boundary, which does not occur."
+   },
+   {
+    "id": "PHY50026",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "The critical angle θc for light traveling from a medium of refractive index n₁ into a medium of refractive index n₂ is given by:",
+    "options": [
+     "sin θc = n₁ / n₂",
+     "sin θc = n₂ / n₁",
+     "cos θc = n₂ / n₁",
+     "tan θc = n₂ / n₁"
+    ],
+    "correct": 1,
+    "explain": "At the critical angle, the angle of refraction is 90 degrees. Substituting θ₂ = 90 degrees into Snell's law, n₁ sin θc = n₂ sin 90°, gives n₁ sin θc = n₂. Rearranging gives sin θc = n₂ / n₁. The line 'sin θc = n₁ / n₂' inverts the ratio. The lines that use cosine or tangent do not follow from Snell's law at the critical angle."
+   },
+   {
+    "id": "PHY50027",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "What is the critical angle for light traveling from glass (n₁ = 1.5) into air (n₂ = 1.0)?",
+    "options": [
+     "30.0 degrees",
+     "41.8 degrees",
+     "48.6 degrees",
+     "60.0 degrees"
+    ],
+    "correct": 1,
+    "explain": "Using sin θc = n₂ / n₁, substituting n₂ = 1.0 and n₁ = 1.5 gives sin θc = 1.0 / 1.5 = 0.667. Taking the inverse sine gives θc ≈ 41.8 degrees. At angles greater than 41.8 degrees, total internal reflection occurs. The line '30 degrees' gives a sine of 0.5, '48.6 degrees' gives a sine of 0.75, and '60 degrees' gives a sine of 0.866."
+   },
+   {
+    "id": "PHY50028",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "The sparkle of a diamond is primarily due to:",
+    "options": [
+     "Its high density, which slows light inside the stone",
+     "Total internal reflection from a high refractive index",
+     "Its low refractive index, which lets light escape freely",
+     "Its strong absorption, which re-emits light in all directions"
+    ],
+    "correct": 1,
+    "explain": "Diamond has a very high refractive index of 2.42, which gives it a small critical angle of about 24.4 degrees. Light entering the diamond undergoes total internal reflection many times before exiting, creating the characteristic sparkle. Density is not the cause. A low refractive index would allow light to escape rather than trap it. Absorption would reduce brightness rather than enhance it."
+   },
+   {
+    "id": "PHY50029",
+    "type": "mcq",
+    "cat": "Chapter 5: Optical Fibers and Medical Applications",
+    "q": "An optical fiber consists of a central core surrounded by a cladding. Which statement correctly describes their refractive indices?",
+    "options": [
+     "The core has a lower refractive index than the cladding",
+     "The core has a higher refractive index than the cladding",
+     "The core and cladding have the same refractive index",
+     "The core has zero refractive index"
+    ],
+    "correct": 1,
+    "explain": "For total internal reflection to occur within the fiber, light must travel from a denser medium into a less dense medium. Therefore the core must have a higher refractive index than the cladding. This traps light in the core and allows it to propagate along the fiber with minimal loss. Equal refractive indices would allow light to escape, and a zero refractive index is physically impossible for a material medium."
+   },
+   {
+    "id": "PHY50030",
+    "type": "mcq",
+    "cat": "Chapter 5: Optical Fibers and Medical Applications",
+    "q": "In a medical endoscope, total internal reflection is used to:",
+    "options": [
+     "Generate X-rays for imaging internal body structures",
+     "Carry light in and images out of the body for viewing",
+     "Measure the temperature of internal organs being treated",
+     "Deliver drugs to specific internal tissues being treated"
+    ],
+    "correct": 1,
+    "explain": "An endoscope uses bundles of optical fibers. One bundle carries light from an external source into the body to illuminate the area being examined. Another bundle carries the reflected light, forming an image that is transmitted back to a monitor. Total internal reflection keeps the light confined within the fibers even when they bend. Endoscopes do not generate X-rays, measure temperature, or deliver drugs by this mechanism."
+   },
+   {
+    "id": "PHY50031",
+    "type": "mcq",
+    "cat": "Chapter 5: Optical Fibers and Medical Applications",
+    "q": "Which property of optical fibers makes them suitable for use in endoscopes?",
+    "options": [
+     "They are rigid and can follow only straight paths",
+     "They are flexible and can follow curved paths",
+     "They are opaque and can block unwanted light",
+     "They are self-luminous and can generate light"
+    ],
+    "correct": 1,
+    "explain": "Optical fibers are thin and flexible, so they can be inserted into the body and guided through curved passages such as the esophagus and stomach. Light is transmitted along the fiber by total internal reflection even when the fiber is bent. Rigid fibers would not be able to navigate body passages. Fibers do not block light; they guide it. They do not generate light on their own; they carry light from an external source."
+   },
+   {
+    "id": "PHY50032",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "A convex lens is:",
+    "options": [
+     "Thicker at the edges than at the centre, and it diverges light",
+     "Thicker at the centre than at the edges, and it converges light",
+     "Thicker at the edges than at the centre, and it converges light",
+     "Thicker at the centre than at the edges, and it diverges light"
+    ],
+    "correct": 1,
+    "explain": "A convex lens is thicker in the middle and thinner at the edges. Parallel rays of light passing through it are brought together, or converged, at the focal point. A concave lens is thinner in the middle and thicker at the edges, and it causes parallel rays to diverge. The options that mix thickness with the wrong behavior for that shape are incorrect."
+   },
+   {
+    "id": "PHY50033",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "A concave lens is:",
+    "options": [
+     "Thicker at the centre than at the edges, and it converges light",
+     "Thicker at the edges than at the centre, and it diverges light",
+     "Thicker at the centre than at the edges, and it diverges light",
+     "Thicker at the edges than at the centre, and it converges light"
+    ],
+    "correct": 1,
+    "explain": "A concave lens is thinner in the middle and thicker at the edges. Parallel rays of light passing through it are spread apart, or diverged, as if they originated from a virtual focal point. A convex lens is thicker in the middle and converges light. The options that mix thickness with the wrong behavior for that shape are incorrect."
+   },
+   {
+    "id": "PHY50034",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "The power P of a lens is defined as:",
+    "options": [
+     "P = 1 / f",
+     "P = 1 / f²",
+     "P = f / 2",
+     "P = 2 / f"
+    ],
+    "correct": 0,
+    "explain": "Lens power is the reciprocal of the focal length in metres: P = 1 / f. The unit is the dioptre, which is 1 m⁻¹. The line 'P = 1 / f²' squares the focal length in the denominator. The line 'P = f / 2' halves the focal length instead of taking its reciprocal. The line 'P = 2 / f' doubles the reciprocal."
+   },
+   {
+    "id": "PHY50035",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "The SI unit of lens power is the:",
+    "options": [
+     "Newton",
+     "Joule",
+     "Dioptre",
+     "Watt"
+    ],
+    "correct": 2,
+    "explain": "Lens power is measured in dioptres, D, where 1 D = 1 m⁻¹. The dioptre is the reciprocal of the focal length in metres. The newton is a unit of force, the joule is a unit of energy, and the watt is a unit of mechanical power."
+   },
+   {
+    "id": "PHY50036",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "The power of a convex lens is taken as ______, while the power of a concave lens is taken as ______.",
+    "options": [
+     "negative; positive",
+     "positive; negative",
+     "zero; positive",
+     "positive; zero"
+    ],
+    "correct": 1,
+    "explain": "A convex lens converges light and has a positive focal length, so its power is positive. A concave lens diverges light and has a negative focal length, so its power is negative. This sign convention is used in ophthalmology, where a prescription might read +2.0 D for a converging lens or -1.5 D for a diverging lens."
+   },
+   {
+    "id": "PHY50037",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "A lens has a focal length of 30 cm. What is its power?",
+    "options": [
+     "0.30 D",
+     "3.33 D",
+     "30 D",
+     "33.3 D"
+    ],
+    "correct": 1,
+    "explain": "The power is P = 1 / f, where f must be in meters. Converting 30 cm to 0.30 m gives P = 1 / 0.30 = 3.33 D. The line '0.30 D' uses the focal length in meters as the power itself, '30 D' uses centimeters without converting, and '33.3 D' multiplies by 100 instead of dividing."
+   },
+   {
+    "id": "PHY50038",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "A concave lens has a power of -5 D. What is its focal length?",
+    "options": [
+     "-0.20 m",
+     "-5.00 m",
+     "-0.05 m",
+     "-20.0 m"
+    ],
+    "correct": 0,
+    "explain": "Rearranging P = 1 / f gives f = 1 / P. Substituting P = -5 D gives f = 1 / (-5) = -0.20 m. The negative sign confirms the lens is diverging. The line '-5.00 m' repeats the power as the focal length, '-0.05 m' divides 0.25 by 5, and '-20.0 m' multiplies instead of dividing."
+   },
+   {
+    "id": "PHY50039",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "Which of the following is a correct ray-tracing rule for a thin convex lens?",
+    "options": [
+     "A ray parallel to the axis passes through the focal point after refraction",
+     "A ray through the focal point emerges parallel to the axis before refraction",
+     "A ray through the centre of the lens is deviated by 90 degrees",
+     "A ray parallel to the axis is reflected back along its original path"
+    ],
+    "correct": 0,
+    "explain": "For a thin convex lens, three key rays are used. A ray arriving parallel to the principal axis refracts through the focal point on the other side. A ray passing through the focal point before the lens emerges parallel to the axis. A ray passing through the centre of the lens continues undeflected. The line 'A ray through the focal point emerges parallel to the axis before refraction' reverses the order of events. The line 'A ray through the centre of the lens is deviated by 90 degrees' claims a 90-degree deviation at the centre, which does not occur. The line 'A ray parallel to the axis is reflected back along its original path' describes reflection, not refraction."
+   },
+   {
+    "id": "PHY50040",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "For a concave lens, the image formed is always:",
+    "options": [
+     "Real, inverted, and smaller than the object",
+     "Virtual, upright, and smaller than the object",
+     "Real, upright, and larger than the object",
+     "Virtual, inverted, and larger than the object"
+    ],
+    "correct": 1,
+    "explain": "A concave lens diverges incoming rays, so they never converge to form a real image. The image seen through a concave lens is always virtual, upright, and reduced in size compared with the object. A convex mirror shares these image properties. The options containing real or inverted describe images that a concave lens cannot form."
+   },
+   {
+    "id": "PHY50041",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "The thin lens equation relating object distance d_o, image distance d_i, and focal length f is:",
+    "options": [
+     "1 / d_o + 1 / d_i = 1 / f",
+     "1 / d_o - 1 / d_i = 1 / f",
+     "1 / d_o + 1 / d_i = f",
+     "1 / d_o × 1 / d_i = 1 / f"
+    ],
+    "correct": 0,
+    "explain": "The thin lens equation is 1 / d_o + 1 / d_i = 1 / f, the same form as the mirror equation. The line '1 / d_o - 1 / d_i = 1 / f' uses subtraction instead of addition. The line '1 / d_o + 1 / d_i = f' places the focal length outside the reciprocal. The line '1 / d_o × 1 / d_i = 1 / f' multiplies the reciprocals instead of adding them."
+   },
+   {
+    "id": "PHY50042",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "An object is placed 20 cm in front of a convex lens with a focal length of 10 cm. What is the image distance?",
+    "options": [
+     "6.7 cm",
+     "10 cm",
+     "20 cm",
+     "30 cm"
+    ],
+    "correct": 2,
+    "explain": "Using the thin lens equation 1 / d_o + 1 / d_i = 1 / f, substitute d_o = 20 cm and f = 10 cm. Then 1 / 20 + 1 / d_i = 1 / 10, so 1 / d_i = 1 / 10 - 1 / 20 = 2 / 20 - 1 / 20 = 1 / 20. Therefore d_i = 20 cm. The image forms at 20 cm on the opposite side of the lens, real and inverted. The line '6.7 cm' comes from adding the reciprocals instead of subtracting, '10 cm' repeats the focal length, and '30 cm' adds the object distance and focal length."
+   },
+   {
+    "id": "PHY50043",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "An object is placed 10 cm in front of a convex lens, and the image is formed 20 cm from the lens. What is the focal length of the lens?",
+    "options": [
+     "6.7 cm",
+     "10 cm",
+     "15 cm",
+     "30 cm"
+    ],
+    "correct": 0,
+    "explain": "Using the thin lens equation 1 / f = 1 / d_o + 1 / d_i, substitute d_o = 10 cm and d_i = 20 cm. Then 1 / f = 1 / 10 + 1 / 20 = 2 / 20 + 1 / 20 = 3 / 20, so f = 20 / 3 ≈ 6.7 cm. The line '10 cm' uses only the object distance, '15 cm' averages the two distances, and '30 cm' adds them."
+   },
+   {
+    "id": "PHY50044",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "The magnification m of a lens is given by:",
+    "options": [
+     "m = h_i / h_o = d_i / d_o",
+     "m = h_i / h_o = -d_i / d_o",
+     "m = h_o / h_i = -d_o / d_i",
+     "m = h_i / h_o = d_o / d_i"
+    ],
+    "correct": 1,
+    "explain": "Magnification is the ratio of image height to object height, and it also equals the negative ratio of image distance to object distance: m = h_i / h_o = -d_i / d_o. The negative sign indicates that a real image is inverted relative to the object. The line 'm = h_i / h_o = d_i / d_o' omits the negative sign. The line 'm = h_o / h_i = -d_o / d_i' inverts the height ratio and the distance ratio. The line 'm = h_i / h_o = d_o / d_i' uses the wrong distance ratio."
+   },
+   {
+    "id": "PHY50045",
+    "type": "mcq",
+    "cat": "Chapter 5: Combination of Lenses",
+    "q": "Two thin lenses are placed in contact with each other. The power P of their combination is given by:",
+    "options": [
+     "P = P₁ × P₂",
+     "P = P₁ - P₂",
+     "P = P₁ + P₂",
+     "P = (P₁ + P₂) / 2"
+    ],
+    "correct": 2,
+    "explain": "When two thin lenses are in contact, their powers add directly: P = P₁ + P₂. This follows from the reciprocal relationship between focal length and power, since 1 / f = 1 / f₁ + 1 / f₂ when the lenses are in contact. The line 'P = P₁ × P₂' multiplies the powers, 'P = P₁ - P₂' subtracts them, and 'P = (P₁ + P₂) / 2' averages them."
+   },
+   {
+    "id": "PHY50046",
+    "type": "mcq",
+    "cat": "Chapter 5: Combination of Lenses",
+    "q": "Two lenses with powers -1.75 D and +2.25 D are placed in contact. What is the power of the combination?",
+    "options": [
+     "+0.50 D",
+     "+4.00 D",
+     "-4.00 D",
+     "-0.50 D"
+    ],
+    "correct": 0,
+    "explain": "For lenses in contact, the powers add: P = P₁ + P₂ = (-1.75) + (+2.25) = +0.50 D. The positive result means the combination acts as a weak converging lens. The line '+4.00 D' adds the absolute values, '-4.00 D' negates that sum, and '-0.50 D' subtracts the larger from the smaller and keeps the wrong sign."
+   },
+   {
+    "id": "PHY50047",
+    "type": "matching",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "Match each optical element to the image it always forms.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Plane mirror"
+     },
+     {
+      "id": "2",
+      "text": "Convex mirror"
+     },
+     {
+      "id": "3",
+      "text": "Concave mirror with object inside F"
+     },
+     {
+      "id": "4",
+      "text": "Concave mirror with object outside F"
+     },
+     {
+      "id": "5",
+      "text": "Concave lens"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Virtual, upright, same size as the object"
+     },
+     {
+      "id": "B",
+      "text": "Virtual, upright, smaller than the object"
+     },
+     {
+      "id": "C",
+      "text": "Virtual, upright, larger than the object"
+     },
+     {
+      "id": "D",
+      "text": "Real, inverted, size depends on object distance"
+     },
+     {
+      "id": "E",
+      "text": "Real, upright, larger than the object"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "B"
+    },
+    "explain": "A plane mirror forms a virtual, upright image that is the same size as the object. A convex mirror and a concave lens both form virtual, upright, diminished images. A concave mirror with the object inside its focal point forms a virtual, upright, magnified image. A concave mirror with the object outside its focal point forms a real, inverted image whose size depends on the object distance. A real, upright, larger image is not produced by any of these elements."
+   },
+   {
+    "id": "PHY50048",
+    "type": "matching",
+    "cat": "Chapter 5: Refraction and Lenses",
+    "q": "Match each formula to the quantity it defines or the relationship it expresses.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "n = c / v"
+     },
+     {
+      "id": "2",
+      "text": "n₁ sin θ₁ = n₂ sin θ₂"
+     },
+     {
+      "id": "3",
+      "text": "sin θc = n₂ / n₁"
+     },
+     {
+      "id": "4",
+      "text": "P = 1 / f"
+     },
+     {
+      "id": "5",
+      "text": "1 / d_o + 1 / d_i = 1 / f"
+     },
+     {
+      "id": "6",
+      "text": "m = -d_i / d_o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "The index of refraction from the speed of light in vacuum and in the medium."
+     },
+     {
+      "id": "B",
+      "text": "The relationship between the angles of incidence and refraction at a boundary."
+     },
+     {
+      "id": "C",
+      "text": "The critical angle for total internal reflection."
+     },
+     {
+      "id": "D",
+      "text": "The power of a lens from its focal length."
+     },
+     {
+      "id": "E",
+      "text": "The thin lens equation relating object distance, image distance, and focal length."
+     },
+     {
+      "id": "F",
+      "text": "The magnification of a lens from image and object distances."
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "The index of refraction is defined as the ratio of the speed of light in vacuum to its speed in the medium. Snell's law relates the angles of incidence and refraction to the refractive indices of the two media. The critical angle formula gives the angle of incidence at which the angle of refraction becomes 90 degrees. Lens power is the reciprocal of the focal length in meters. The thin lens equation relates object distance, image distance, and focal length. Magnification is the negative ratio of image distance to object distance."
+   },
+   {
+    "id": "PHY50049",
+    "type": "matching",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "Match each lens shape to its category.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Double convex"
+     },
+     {
+      "id": "2",
+      "text": "Planoconvex"
+     },
+     {
+      "id": "3",
+      "text": "Convex meniscus"
+     },
+     {
+      "id": "4",
+      "text": "Double concave"
+     },
+     {
+      "id": "5",
+      "text": "Planoconcave"
+     },
+     {
+      "id": "6",
+      "text": "Concave meniscus"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Converging lens"
+     },
+     {
+      "id": "B",
+      "text": "Diverging lens"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "A",
+     "3": "A",
+     "4": "B",
+     "5": "B",
+     "6": "B"
+    },
+    "explain": "Lenses that are thicker at the centre than at the edges are converging and have positive power. Double convex, planoconvex, and convex meniscus all belong to this group. Lenses that are thinner at the centre than at the edges are diverging and have negative power. Double concave, planoconcave, and concave meniscus all belong to this group."
+   },
+   {
+    "id": "PHY50050",
+    "type": "mcq",
+    "cat": "Chapter 5: Combination of Lenses",
+    "q": "Two thin lenses of focal lengths f₁ and f₂ are separated by a distance r. The resultant focal length f of the combination is given by:",
+    "options": [
+     "1 / f = 1 / f₁ + 1 / f₂",
+     "1 / f = 1 / f₁ + 1 / f₂ - r / (f₁ × f₂)",
+     "1 / f = 1 / f₁ + 1 / f₂ + r / (f₁ × f₂)",
+     "1 / f = 1 / f₁ - 1 / f₂"
+    ],
+    "correct": 1,
+    "explain": "When two lenses are separated by a nonzero distance r, the combination formula gains a correction term: 1 / f = 1 / f₁ + 1 / f₂ - r / (f₁ × f₂). The equivalent power form is P = P₁ + P₂ - r P₁ P₂. When the lenses are in contact, r = 0, the correction term vanishes, and the simple sum remains. The line '1 / f = 1 / f₁ + 1 / f₂' omits the separation term, '1 / f = 1 / f₁ + 1 / f₂ + r / (f₁ × f₂)' adds it with the wrong sign, and '1 / f = 1 / f₁ - 1 / f₂' subtracts the powers instead of adding them."
+   },
+   {
+    "id": "PHY50051",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "Binoculars often use which optical phenomenon to fold the light path and shorten the instrument?",
+    "options": [
+     "Refraction of light through a thin lens",
+     "Total internal reflection inside a prism",
+     "Diffraction of light around an obstacle",
+     "Polarization of light by a filter"
+    ],
+    "correct": 1,
+    "explain": "Binoculars use prisms in which light undergoes total internal reflection. The prisms reflect the light through a folded path, which shortens the physical length of the instrument while maintaining a long effective optical path. A thin lens refracts light but does not fold the path. Diffraction and polarization are unrelated to the folding of the light path in binoculars."
+   },
+   {
+    "id": "PHY50052",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "A mirage on a hot road is caused by:",
+    "options": [
+     "Reflection from a thin water layer appearing on the hot road",
+     "Total internal reflection from an air gradient",
+     "Diffraction of light around the road's rough surface",
+     "Absorption of light by the dark asphalt below"
+    ],
+    "correct": 1,
+    "explain": "A mirage forms when air near the hot road is warmer and less dense than the air above it. Light traveling downward through this gradient bends gradually until it exceeds the critical angle and undergoes total internal reflection, returning upward to the observer. The observer sees an apparent reflection of the sky, which looks like water. There is no actual water layer, diffraction is not the cause, and absorption would darken the road rather than produce the mirage."
+   },
+   {
+    "id": "PHY50053",
+    "type": "stepped",
+    "cat": "Chapter 5: Thin Lenses",
+    "group": "convex-lens-image-pos",
+    "groupOrder": 1,
+    "q": "A convex lens forms images that depend on object position. At each step choose the correct description.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Object at 2F. What image is formed?",
+      "options": [
+       "Real, inverted, same size as the object, at 2F on the other side",
+       "Real, inverted, larger than the object, beyond 2F",
+       "Virtual, upright, larger than the object, on the same side",
+       "No image, because the refracted rays are parallel"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Object between 2F and F. What image is formed?",
+      "options": [
+       "Real, inverted, larger than the object, beyond 2F on the other side",
+       "Real, inverted, same size as the object, at 2F",
+       "Virtual, upright, smaller than the object, between object and lens",
+       "Real, upright, smaller than the object, between F and 2F"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Object between F and the lens. What image is formed?",
+      "options": [
+       "Virtual, upright, larger than the object, on the same side of the lens",
+       "Real, inverted, larger than the object, beyond 2F",
+       "Virtual, inverted, smaller than the object, on the other side",
+       "No image, because the refracted rays are parallel"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "When the object is at 2F the image is real, inverted and the same size, also at 2F on the opposite side. When the object is between 2F and F the image is real, inverted and larger, beyond 2F. When the object is between F and the lens the image is virtual, upright and larger, on the same side as the object. The remaining lines name the image properties that belong to other object positions."
+   },
+   {
+    "id": "PHY50054",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "When an object is placed exactly at the focal point of a convex lens, the image is:",
+    "options": [
+     "Real, inverted, and the same size as the object",
+     "Virtual, upright, and larger than the object",
+     "Not formed, because the refracted rays are parallel",
+     "Real, inverted, and larger than the object"
+    ],
+    "correct": 2,
+    "explain": "When the object is at the focal point of a convex lens, the rays that pass through the focal point before the lens leave parallel to the axis, and the parallel rays leave through the other focal point. The rays never meet, so no image is formed. The lines that describe a real inverted image or a virtual upright image belong to other object positions."
+   },
+   {
+    "id": "PHY50055",
+    "type": "mcq",
+    "cat": "Chapter 5: Optical Fibers and Medical Applications",
+    "q": "In an optical fiber the core and cladding must satisfy which relation so that total internal reflection can occur?",
+    "options": [
+     "The refractive index of the core is greater than the refractive index of the cladding",
+     "The refractive index of the core is less than the refractive index of the cladding",
+     "The refractive index of the core equals the refractive index of the cladding",
+     "The refractive index of the cladding is twice the refractive index of the core"
+    ],
+    "correct": 0,
+    "explain": "Total internal reflection inside the fiber requires light to travel from a denser medium into a less dense medium. Therefore the core (n₁) must have a higher refractive index than the cladding (n₂). The lines that reverse the inequality, set the indices equal, or invent a factor of two prevent the critical-angle condition from being met."
+   },
+   {
+    "id": "PHY50056",
+    "type": "mcq",
+    "cat": "Chapter 5: Thin Lenses",
+    "q": "For a single thin lens the image distance di is taken as positive when the image is:",
+    "options": [
+     "Real and on the opposite side of the lens from the object",
+     "Virtual and on the same side of the lens as the object",
+     "Real and on the same side of the lens as the object",
+     "Virtual and on the opposite side of the lens from the object"
+    ],
+    "correct": 0,
+    "explain": "The sign convention used with the thin-lens equation takes a real image (rays actually converge) as positive image distance, and that image lies on the opposite side of the lens from the object. A virtual image (rays only appear to diverge from a point on the object side) has a negative image distance. The remaining lines reverse the side or the real/virtual classification."
+   },
+   {
+    "id": "PHY50057",
+    "type": "mcq",
+    "cat": "Chapter 5: Combination of Lenses",
+    "q": "Two thin lenses of focal lengths 20 cm and 30 cm are placed 10 cm apart. Which expression gives the reciprocal of the resultant focal length?",
+    "options": [
+     "1/f = 1/20 + 1/30 - 10/(20 × 30)",
+     "1/f = 1/20 + 1/30 + 10/(20 × 30)",
+     "1/f = 1/20 + 1/30",
+     "1/f = 1/20 - 1/30"
+    ],
+    "correct": 0,
+    "explain": "When two lenses are separated by a distance r the combination formula is 1/f = 1/f₁ + 1/f₂ - r/(f₁ f₂). Substituting the given values yields 1/f = 1/20 + 1/30 - 10/(20 × 30). The line that adds the separation term has the wrong sign, the line that omits the separation term applies only when the lenses are in contact, and the line that subtracts the focal lengths does not follow the formula."
+   }
+  ]
+ }
+}

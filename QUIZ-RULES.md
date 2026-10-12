@@ -401,7 +401,7 @@ A material can have a picture study instead of Markdown notes:
 - Catalog: a material with `"hidden": true` stays in `data/catalog.json` but is not shown
   on the portal (the Only In Finals and Finals placeholders use this).
 - Catalog: a material with a `study` block (Markdown chapters) but no `bank` / `lectures`
-  is **study-only** (Med Physics Periodic Test 2 until its quiz bank arrives). Its card is
+  is **study-only** (none today; Med Physics Periodic Test 2 was one until its bank arrived). Its card is
   open, says "Quiz coming soon · study notes →", and both the card and its 📖 Study button
   open the notes; the notes hide "Open Quiz". Adding a `bank` later turns it into a normal
   quiz card with the Study button beside it.
@@ -665,3 +665,10 @@ Progress is saved under the file path (`medterm/pt2/lecture-11` etc.), so the mi
   bank categories were set to `MT_lec21-22` … `MT_lec27-28`. Fixes made on import: MT25050 (two
   identical "Azoospermia" options), MT27050 ("Uterine tubes" offered as a wrong spelling),
   MT21018 (cut-off linking choice), MT23013 (glycouria → glycosuria).
+- Medical Physics **Periodic Test 2** (`banks/medphys/pt2.json`, progress key `medphys/pt2`):
+  the question banks for Chapters 3, 4 and 5 (155 questions: 138 choice, 9 linking,
+  8 stepped), one card per chapter (42 / 56 / 57), Draft badge, Study notes unchanged in
+  `content/medphys/pt2/`. Ids PHY30001–PHY50057 are unique portal-wide (no renames); no
+  exact repeats were found. Fixes made on import: PHY40055 step 1 asked about M_a = 0
+  (a source at rest) as "subsonic", now asks about M_a < 1; PHY40053 step 2 had two right
+  answers for 10 MHz (distractor replaced); PHY40007 options repeated "The".

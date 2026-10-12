@@ -41,9 +41,10 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "Study notes · quiz coming soon",
-          "bank": null,
+          "subtitle": "3 sets by chapter · 155 questions · choice, linking & stepped · study notes",
+          "bank": "banks/medphys/pt2.json",
           "locked": false,
+          "draft": true,
           "study": {
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",
