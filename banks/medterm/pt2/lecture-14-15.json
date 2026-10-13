@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 14 and 15 - Blood and Lymphatic System",
- "formSize": 109,
+ "formSize": 108,
  "forms": [
   "A"
  ],
@@ -29,10 +29,10 @@
     "cat": "MT_lec14-15",
     "q": "Which set of duties belongs to the lymphatic system rather than to blood itself?",
     "options": [
-     "Filtering foreign particles from lymph, sustaining lymphocyte responses, balancing tissue fluid, and absorbing dietary fats.",
-     "Delivering oxygen and nutrients to cells, conveying hormones to their targets, and removing carbon dioxide and metabolic wastes.",
-     "Generating the pressure that drives flow, opening and closing its own valves, and perfusing the heart muscle through coronary vessels.",
-     "Producing red cells, white cells, and platelets, storing calcium salts, and giving attachment to skeletal muscle."
+     "Filtering foreign particles from lymph, sustaining lymphocyte responses, balancing tissue fluid, and absorbing dietary fats",
+     "Delivering oxygen and nutrients to cells, conveying hormones to their targets, and removing carbon dioxide and metabolic wastes",
+     "Generating the pressure that drives flow, opening and closing its own valves, and perfusing the heart muscle through coronary vessels",
+     "Producing red cells, white cells, and platelets, storing calcium salts, and giving attachment to skeletal muscle"
     ],
     "correct": 0,
     "explain": "The lymphatic system filters microorganisms and foreign particles out of lymph, supports lymphocyte activity during immune responses, maintains the internal fluid environment between capillaries and tissue cells, and carries fats away from the digestive system. Delivering oxygen and nutrients and removing carbon dioxide and wastes is the transport work of blood. Generating flow pressure and opening valves describes the heart and its vessels. Producing blood cells, storing minerals, and giving muscle attachment are skeletal and marrow roles."
@@ -43,13 +43,13 @@
     "cat": "MT_lec14-15",
     "q": "Plasma and serum are both liquid fractions of blood. Which statement about them is correct?",
     "options": [
-     "Serum contains the clotting factors, whereas plasma is the fluid that remains after the blood has clotted.",
-     "Both plasma and serum lack clotting factors and differ only in whether red cells are suspended in them.",
-     "Plasma is the post-clotting fluid, and serum is the fluid that still holds fibrinogen and the other factors.",
-     "Plasma holds the clotting factors such as fibrinogen, and serum is the fluid left after clotting, without those factors."
+     "Serum still holds fibrinogen and the other clotting factors; plasma is the fluid left once blood has clotted.",
+     "Plasma and serum both lack clotting factors and differ only in whether red cells remain suspended in them.",
+     "Plasma and serum both hold all the clotting factors and differ only in their content of dissolved proteins.",
+     "Plasma still holds fibrinogen and the other clotting factors; serum is the fluid left once blood has clotted."
     ],
     "correct": 3,
-    "explain": "Plasma is the clear yellowish fluid that still carries the clotting factors, including fibrinogen, and serum is what remains once clotting has consumed those factors. Serum contains the clotting factors, whereas plasma is the fluid that remains after the blood has clotted, reverses the pair. Both plasma and serum lack clotting factors and differ only in whether red cells are suspended in them, denies the factors in plasma and invents a cell-suspension split. Plasma is the post-clotting fluid, and serum is the fluid that still holds fibrinogen and the other factors, is the same reversal."
+    "explain": "Plasma still holds fibrinogen and the other clotting factors. Serum is the fluid left once blood has clotted, without those factors. The other options swap the two or claim they share the same factors."
    },
    {
     "id": "MT14005",
@@ -57,10 +57,10 @@
     "cat": "MT_lec14-15",
     "q": "Hemoglobin, the pigment within red cells, is best described as which kind of substance?",
     "options": [
-     "A respiratory pigment built from a protein bound to a calcium compound.",
-     "A storage pigment built from a protein bound to an iron-protein compound.",
-     "A respiratory pigment built from a protein bound to an iron compound.",
-     "A visual pigment built from a protein bound to a retinal-protein compound."
+     "A respiratory pigment built from a protein bound to a calcium compound",
+     "A storage pigment built from a protein bound to an iron-protein compound",
+     "A respiratory pigment built from a protein bound to an iron compound",
+     "A visual pigment built from a protein bound to a retinal-protein compound"
     ],
     "correct": 2,
     "explain": "Hemoglobin is a respiratory pigment built from a protein bound to an iron compound. A respiratory pigment built from a protein bound to a calcium compound names the wrong metal. A storage pigment built from a protein bound to an iron-protein compound names the wrong pigment class. A visual pigment built from a protein bound to a retinal-protein compound is not the red-cell pigment."
@@ -71,10 +71,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly separates granulocytes from agranulocytes?",
     "options": [
-     "Granulocytes have lobed nuclei and visible cytoplasmic granules, while agranulocytes have a single nucleus and no granules.",
-     "Granulocytes have a single nucleus and no granules, while agranulocytes have lobed nuclei and visible cytoplasmic granules.",
-     "Granulocytes reside in the bone marrow, while agranulocytes reside in the lining of the small intestine.",
-     "Granulocytes manufacture antibodies, while agranulocytes perform phagocytosis of invading germs."
+     "Granulocytes have lobed nuclei and visible cytoplasmic granules, while agranulocytes have a single nucleus and no granules",
+     "Granulocytes have a single nucleus and no granules, while agranulocytes have lobed nuclei and visible cytoplasmic granules",
+     "Granulocytes reside in the bone marrow, while agranulocytes reside in the lining of the small intestine",
+     "Granulocytes manufacture antibodies, while agranulocytes perform phagocytosis of invading germs"
     ],
     "correct": 0,
     "explain": "Granulocytes are the polymorphonuclear leukocytes whose nuclei show several lobes and whose cytoplasm holds protein granules, namely neutrophils, eosinophils, and basophils. Agranulocytes are the mononuclear leukocytes with one large nucleus, clear cytoplasm, and no granules, namely lymphocytes and monocytes. Granulocytes have a single nucleus and no granules, while agranulocytes have lobed nuclei and visible cytoplasmic granules, swaps the two definitions. Location in marrow versus gut does not define the split. Antibody production belongs to B lymphocytes, and phagocytosis is shared by neutrophils and monocytes, so that assignment misreads the classes."
@@ -155,10 +155,10 @@
     "cat": "MT_lec14-15",
     "q": "Which type of lymphocyte is bone-marrow derived and produces antibodies?",
     "options": [
-     "The T-cell, which matures under thymic influence.",
-     "The NK-cell, which contains cytotoxic substances.",
-     "The B-cell, which manufactures antibodies.",
-     "The monocyte, which engulfs bacteria and fungi."
+     "The T-cell, which matures under thymic influence",
+     "The NK-cell, which contains cytotoxic substances",
+     "The B-cell, which manufactures antibodies",
+     "The monocyte, which engulfs bacteria and fungi"
     ],
     "correct": 2,
     "explain": "The B-cell is bone-marrow derived, lives about five to six weeks, and makes antibodies against antigens. The T-cell, which matures under thymic influence, attacks cells directly. The NK-cell, which contains cytotoxic substances, kills through those substances. The monocyte, which engulfs bacteria and fungi, is a phagocytic agranulocyte rather than an antibody-producing lymphocyte."
@@ -169,10 +169,10 @@
     "cat": "MT_lec14-15",
     "q": "Which type of lymphocyte is a natural killer that destroys tumor or infected cells through cytotoxic substances?",
     "options": [
-     "The T-cell, which is thymus dependent.",
-     "The B-cell, which manufactures antibodies.",
-     "The NK-cell, which carries the cytotoxic substances.",
-     "The neutrophil, which stains neutral and phagocytoses pathogens."
+     "The T-cell, which is thymus dependent",
+     "The B-cell, which manufactures antibodies",
+     "The NK-cell, which carries the cytotoxic substances",
+     "The neutrophil, which stains neutral and phagocytoses pathogens"
     ],
     "correct": 2,
     "explain": "The NK-cell, or natural killer cell, lives up to about two weeks and contains cytotoxic substances that can kill tumor or infected cells. The T-cell, which is thymus dependent, attacks cells but is not the natural killer class. The B-cell, which manufactures antibodies, makes antibody. The neutrophil, which stains neutral and phagocytoses pathogens, is a granulocyte rather than a lymphocyte."
@@ -183,10 +183,10 @@
     "cat": "MT_lec14-15",
     "q": "Immunity, as a physiological mechanism, is best defined as the body's ability to do what?",
     "options": [
-     "Pump oxygen-rich blood to every tissue and return oxygen-poor blood to the lungs.",
-     "Recognize foreign materials and neutralize or remove them without harming itself.",
-     "Filter out old and damaged red cells and store the iron freed by their breakdown.",
-     "Absorb dietary fats from the digestive tract and carry them into the bloodstream."
+     "Pump oxygen-rich blood to every tissue and return oxygen-poor blood to the lungs",
+     "Recognize foreign materials and neutralize or remove them without harming itself",
+     "Filter out old and damaged red cells and store the iron freed by their breakdown",
+     "Absorb dietary fats from the digestive tract and carry them into the bloodstream"
     ],
     "correct": 1,
     "explain": "Immunity is the set of physiological mechanisms by which the body recognizes a material as foreign and then neutralizes, eliminates, or metabolizes it without injuring its own tissue. Pump oxygenated blood to every tissue while returning deoxygenated blood to the lungs is cardiac circulation. Filter out old and damaged red cells and store the iron recovered from their breakdown is a splenic function. Absorb dietary fats from the digestive tract and return them to the bloodstream is a lymphatic function."
@@ -211,13 +211,13 @@
     "cat": "MT_lec14-15",
     "q": "Which contrast between active and passive immunity is correct?",
     "options": [
-     "Active immunity is long-lasting and arises from the body making its own antibodies, while passive immunity is short-lasting and comes from antibodies received from elsewhere.",
-     "Active immunity is short-lived and supplied as foreign antibodies, while passive immunity is long-lived and built by the host's own antibody production.",
-     "Active immunity is long-lived yet supplied as foreign antibodies, while passive immunity is short-lived yet built by the host's own antibody production.",
-     "Active and passive immunity are equivalent short-lived states arising from the same placental transfer of maternal antibodies."
+     "Active immunity is long-lasting and made by the body itself; passive immunity is short-lasting and received from outside.",
+     "Active immunity is short-lived and received from outside; passive immunity is long-lived and made by the body itself.",
+     "Active immunity is long-lived but received from outside; passive immunity is short-lived but made by the body itself.",
+     "Active and passive immunity are both short-lived and both come from maternal antibodies passed across the placenta."
     ],
     "correct": 0,
-    "explain": "Active immunity is long-lasting because the host is stimulated to produce its own antibodies, whereas passive immunity is short-lasting because it depends on foreign antibodies that are conveyed in and then degrade. Active immunity is short-lived and supplied as foreign antibodies, while passive immunity is long-lived and built by the host's own antibody production, swaps duration and mechanism. Active immunity is long-lived yet supplied as foreign antibodies, while passive immunity is short-lived yet built by the host's own antibody production, misattaches the duration. Active and passive immunity are equivalent short-lived states arising from the same placental transfer of maternal antibodies, equates the two and confines both to one passive route."
+    "explain": "Active immunity is long-lasting because the body makes its own antibodies. Passive immunity is short-lasting because the antibodies are received from outside. The other options swap or mix these features."
    },
    {
     "id": "MT14019",
@@ -225,10 +225,10 @@
     "cat": "MT_lec14-15",
     "q": "Within active immunity, how do the natural and artificial forms differ?",
     "options": [
-     "Natural active immunity follows a vaccine, while artificial active follows an infection.",
-     "Natural active immunity is given as serum, while artificial active passes in breast milk.",
-     "Both forms are short-lived and depend on antibodies supplied from another person.",
-     "Natural active immunity follows an infection, while artificial active follows a vaccine."
+     "Natural active immunity follows a vaccine, while artificial active follows an infection",
+     "Natural active immunity is given as serum, while artificial active passes in breast milk",
+     "Both forms are short-lived and depend on antibodies supplied from another person",
+     "Natural active immunity follows an infection, while artificial active follows a vaccine"
     ],
     "correct": 3,
     "explain": "Active immunity means the host makes its own antibodies. The natural route is recovery from an actual infection, and the artificial route is vaccination. Natural active immunity follows a vaccine, while artificial active immunity follows a natural infection, swaps the two labels. Natural active immunity is given as antiserum, while artificial active immunity is passed through breast milk, lists transfers of preformed antibody, which are passive. Both natural and artificial active immunity are short-lived and rely on antibodies from another source, calls active immunity short-lived and dependent on an outside source."
@@ -253,10 +253,10 @@
     "cat": "MT_lec14-15",
     "q": "Which option lists pairs in which both members of every pair carry the same meaning?",
     "options": [
-     "Chrom/o with Splen/o; Hem/o with Thromb/o; Thym/o with Immun/o.",
-     "Chrom/o with Hem/o; Splen/o with Thromb/o; Lymph/o with Immun/o.",
-     "Chrom/o with Chromat/o; Hem/o with Hemat/o; Thym/o with Thym/i.",
-     "Chrom/o with Lymph/o; Hem/o with Splen/o; Thromb/o with Thym/o."
+     "Chrom/o with Splen/o; Hem/o with Thromb/o; Thym/o with Immun/o",
+     "Chrom/o with Hem/o; Splen/o with Thromb/o; Lymph/o with Immun/o",
+     "Chrom/o with Chromat/o; Hem/o with Hemat/o; Thym/o with Thym/i",
+     "Chrom/o with Lymph/o; Hem/o with Splen/o; Thromb/o with Thym/o"
     ],
     "correct": 2,
     "explain": "Chrom/o and Chromat/o both mean color, Hem/o and Hemat/o both mean blood, and Thym/o and Thym/i both mean thymus. Chrom/o with Splen/o, Hem/o with Thromb/o, and Thym/o with Immun/o pairs color with spleen, blood with clot, and thymus with safe. Chrom/o with Hem/o, Splen/o with Thromb/o, and Lymph/o with Immun/o pairs color with blood, spleen with clot, and clear fluid with safe. Chrom/o with Lymph/o, Hem/o with Splen/o, and Thromb/o with Thym/o pairs color with clear fluid, blood with spleen, and clot with thymus."
@@ -309,8 +309,8 @@
     "cat": "MT_lec14-15",
     "q": "In the term lymphoduct, the element lympho refers to what?",
     "options": [
-     "Thymus",
-     "Spleen",
+     "Thymus gland",
+     "Spleen tissue",
      "Clear fluid",
      "Color"
     ],
@@ -337,10 +337,10 @@
     "cat": "MT_lec14-15",
     "q": "What does the term hematocytopenia mean?",
     "options": [
-     "A deficiency of blood cells.",
-     "An excess of blood cells.",
-     "A deficiency of platelets.",
-     "An excess of clotting factors."
+     "A deficiency of blood cells",
+     "An excess of blood cells",
+     "A deficiency of platelets",
+     "An excess of clotting factors"
     ],
     "correct": 0,
     "explain": "Hematocytopenia is built from Hemat/o (blood), cyt/o (cell), and -penia (deficiency), so it denotes a deficiency of blood cells. An excess would use -osis or -cytosis, a platelet deficiency is thrombocytopenia, and clotting-factor excess is not the sense of this term."
@@ -351,10 +351,10 @@
     "cat": "MT_lec14-15",
     "q": "What does the term splenomegaly mean?",
     "options": [
-     "Inflammation of the spleen.",
-     "Enlargement of the spleen.",
-     "Removal of the spleen.",
-     "Pain in the spleen."
+     "Inflammation of the spleen",
+     "Enlargement of the spleen",
+     "Removal of the spleen",
+     "Pain in the spleen"
     ],
     "correct": 1,
     "explain": "Splenomegaly is built from Splen/o (spleen) and -megaly (enlargement), so it denotes an enlarged spleen. Inflammation would use -itis, removal would use -ectomy, and pain would use -dynia."
@@ -365,13 +365,13 @@
     "cat": "MT_lec14-15",
     "q": "What does the term thrombophlebitis mean?",
     "options": [
-     "Inflammation of an artery caused by a clot.",
-     "Inflammation of a vein caused by a clot.",
-     "Inflammation of the spleen caused by a clot.",
-     "Inflammation of the thymus caused by a clot."
+     "Inflammation of an artery caused by a clot",
+     "Inflammation of a vein caused by a clot",
+     "Hardening of a vein caused by a clot",
+     "Surgical removal of a clot from a vein"
     ],
     "correct": 1,
-    "explain": "Thrombophlebitis is built from Thromb/o (clot), phleb (vein), and -itis (inflammation), so it denotes inflammation of a vein caused by a clot. Artery inflammation would use arteri/o, spleen inflammation would use Splen/o, and thymus inflammation would use Thym/o."
+    "explain": "Thrombophlebitis is built from Thromb/o (clot), phleb (vein), and -itis (inflammation), so it denotes inflammation of a vein caused by a clot. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT14030",
@@ -379,13 +379,13 @@
     "cat": "MT_lec14-15",
     "q": "What does the term lymphoduct mean?",
     "options": [
-     "A duct that carries blood away from the heart.",
-     "A duct that carries lymph in the lymphatic system.",
-     "A duct that carries bile away from the liver.",
-     "A duct that carries urine away from the kidney."
+     "A node that filters lymph",
+     "A duct that carries lymph",
+     "A cell that forms in lymph",
+     "A swelling caused by lymph"
     ],
     "correct": 1,
-    "explain": "Lymphoduct is built from Lymph/o (lymph) and duct (a channel), so it denotes a duct that carries lymph through the lymphatic system. Blood vessels, bile ducts, and ureters are named by other combining forms and suffixes, such as vas/o, cholangi/o, and ureter/o."
+    "explain": "Lymphoduct joins lymph/o (lymph) with duct, so it is a duct that carries lymph. A node, a cell, or a swelling would use other word parts."
    },
    {
     "id": "MT14031",
@@ -393,10 +393,10 @@
     "cat": "MT_lec14-15",
     "q": "What does the term thymocyte mean?",
     "options": [
-     "A cell of the spleen.",
-     "A cell of the thymus.",
-     "A cell of the bone marrow.",
-     "A cell of the lymph node."
+     "A cell of the spleen",
+     "A cell of the thymus",
+     "A cell of the bone marrow",
+     "A cell of the lymph node"
     ],
     "correct": 1,
     "explain": "Thymocyte is built from Thym/o (thymus) and -cyte (cell), so it denotes a cell of the thymus. Spleen cells would use Splen/o, bone marrow cells would use Myel/o, and lymph node cells would use Lymph/o."
@@ -407,10 +407,10 @@
     "cat": "MT_lec14-15",
     "q": "What does the term athymism mean?",
     "options": [
-     "Enlargement of the thymus.",
-     "Absence of the thymus.",
-     "Inflammation of the thymus.",
-     "Surgical removal of the thymus."
+     "Enlargement of the thymus",
+     "Absence of the thymus",
+     "Inflammation of the thymus",
+     "Surgical removal of the thymus"
     ],
     "correct": 1,
     "explain": "Athymism is built from the prefix a- (without), Thym/o (thymus), and -ism (condition), so it denotes the absence of the thymus. Enlargement would use -megaly, inflammation would use -itis, and surgical removal would use -ectomy."
@@ -421,13 +421,13 @@
     "cat": "MT_lec14-15",
     "q": "What does the term immunopharmacology mean?",
     "options": [
-     "The study of drugs that act on the immune system.",
-     "The study of drugs that act on the heart.",
-     "The study of drugs that act on the kidneys.",
-     "The study of drugs that act on the lungs."
+     "The study of drugs that act on the immune system",
+     "The study of immune cells circulating in the blood",
+     "The study of the immune response to an infection",
+     "The treatment of immune disorders without any drugs"
     ],
     "correct": 0,
-    "explain": "Immunopharmacology is built from Immun/o (safe, immune), pharmac/o (drug), and -logy (study), so it denotes the study of drugs that act on the immune system. The other options would use cardi/o, nephr/o, and pulmon/o respectively, none of which appears in this term."
+    "explain": "Immunopharmacology joins immun/o (safe, immune), pharmac/o (drug), and -logy (study), so it is the study of drugs that act on the immune system. The other options keep the immune sense but drop the drug or study parts."
    },
    {
     "id": "MT14034",
@@ -435,10 +435,10 @@
     "cat": "MT_lec14-15",
     "q": "What does the term hemochromatosis mean?",
     "options": [
-     "A condition of excess blood cells.",
-     "A condition of excessive iron deposits.",
-     "A condition of deficient blood clotting.",
-     "A condition of excess clots in the veins."
+     "A condition of excess blood cells",
+     "A condition of excessive iron deposits",
+     "A condition of deficient blood clotting",
+     "A condition of excess clots in the veins"
     ],
     "correct": 1,
     "explain": "Hemochromatosis is built from Hem/o (blood), chromat/o (color), and -osis (condition), so it denotes a condition involving excessive iron deposits and the resulting skin color changes. Excess blood cells would use -cytosis, deficient clotting would use a different suffix, and excess clots in veins is thrombophlebitis."
@@ -449,10 +449,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structure is the lymphoid organ that produces T-lymphocytes to fight off foreign organisms?",
     "options": [
-     "The spleen.",
-     "The thymus.",
-     "The tonsils.",
-     "The appendix."
+     "The spleen",
+     "The thymus",
+     "The tonsils",
+     "The appendix"
     ],
     "correct": 1,
     "explain": "The thymus produces T-lymphocytes that fight off foreign organisms. The spleen filters old blood cells, the tonsils trap pathogens from food and air, and the appendix helps house good bacteria."
@@ -463,10 +463,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structure filters and removes old and damaged blood cells and fights infection and disease?",
     "options": [
-     "The thymus.",
-     "The spleen.",
-     "The bone marrow.",
-     "The Peyer's patches."
+     "The thymus",
+     "The spleen",
+     "The bone marrow",
+     "The Peyer's patches"
     ],
     "correct": 1,
     "explain": "The spleen filters and removes old and damaged blood cells and fights infection and disease. The thymus produces T-lymphocytes, the bone marrow produces blood cells, and the Peyer's patches monitor and destroy bacteria in the small intestine."
@@ -477,10 +477,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structures trap pathogens from food and air and act as the first line of defense against foreign invaders?",
     "options": [
-     "The tonsils and adenoid.",
-     "The thymus and spleen.",
-     "The bone marrow and appendix.",
-     "The Peyer's patches and lymph nodes."
+     "The tonsils and adenoid",
+     "The thymus and spleen",
+     "The bone marrow and appendix",
+     "The Peyer's patches and lymph nodes"
     ],
     "correct": 0,
     "explain": "The tonsils and adenoid trap pathogens from food and air and act as the first line of defense against foreign invaders. The thymus produces T-lymphocytes, the spleen filters blood cells, the bone marrow produces blood cells, the appendix houses good bacteria, and the Peyer's patches monitor bacteria in the small intestine."
@@ -491,10 +491,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structure produces red blood cells, white blood cells, and platelets?",
     "options": [
-     "The thymus.",
-     "The spleen.",
-     "The bone marrow.",
-     "The tonsils."
+     "The thymus gland",
+     "The spleen",
+     "The bone marrow",
+     "The tonsils"
     ],
     "correct": 2,
     "explain": "The bone marrow produces red blood cells, white blood cells, and platelets. The thymus produces T-lymphocytes, the spleen filters old blood cells, and the tonsils trap pathogens."
@@ -505,10 +505,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structures are found in the lining of the small intestine and monitor and destroy bacteria?",
     "options": [
-     "The Peyer's patches.",
-     "The palatine tonsils.",
-     "The adenoid tissue.",
-     "The appendix wall."
+     "The Peyer's patches",
+     "The palatine tonsils",
+     "The adenoid tissue",
+     "The appendix wall"
     ],
     "correct": 0,
     "explain": "The Peyer's patches are found in the lining of the small intestine and monitor and destroy bacteria. The tonsils and adenoids trap pathogens from food and air, and the appendix plays a role in housing good bacteria."
@@ -519,10 +519,10 @@
     "cat": "MT_lec14-15",
     "q": "Which structure plays a role in housing good bacteria?",
     "options": [
-     "The thymus.",
-     "The spleen.",
-     "The appendix.",
-     "The tonsils."
+     "The thymus",
+     "The spleen",
+     "The appendix",
+     "The tonsils"
     ],
     "correct": 2,
     "explain": "The appendix plays a role in housing good bacteria. The thymus produces T-lymphocytes, the spleen filters old blood cells, and the tonsils trap pathogens from food and air."
@@ -533,10 +533,10 @@
     "cat": "MT_lec14-15",
     "q": "Which fluid is the colorless, watery liquid collected from the body tissues and moved back into the bloodstream by the lymphatic system?",
     "options": [
-     "Plasma.",
-     "Serum.",
-     "Lymph.",
-     "Interstitial fluid."
+     "Plasma",
+     "Serum",
+     "Lymph",
+     "Interstitial fluid"
     ],
     "correct": 2,
     "explain": "Lymph is the colorless, watery fluid collected from the body tissues and moved back into the circulatory system by the lymphatic network. Plasma and serum are blood fractions, and interstitial fluid is the tissue fluid before it enters the lymphatic capillaries."
@@ -561,10 +561,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the function of valves in the lymphatic vessels?",
     "options": [
-     "They prevent lymph from flowing backward and help keep it moving toward the bloodstream.",
-     "They filter microorganisms and foreign particles out of the lymph as it passes.",
-     "They produce lymphocytes that fight off foreign organisms in the lymph.",
-     "They store old and damaged blood cells until they can be removed."
+     "They prevent lymph from flowing backward and keep it moving toward the bloodstream.",
+     "They filter microorganisms and foreign particles out of the lymph as it passes through.",
+     "They produce lymphocytes that fight off foreign organisms carried in the lymph.",
+     "They store old and damaged blood cells until the spleen can remove them."
     ],
     "correct": 0,
     "explain": "Valves in the lymphatic vessels prevent backflow and help keep lymph moving toward the bloodstream. Filtration of microorganisms is a function of the lymph nodes, lymphocyte production occurs in the thymus and bone marrow, and blood cell storage is a splenic function."
@@ -575,10 +575,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the flow of lymph through a lymph node?",
     "options": [
-     "Lymph enters through the efferent vessel and leaves through the afferent vessel.",
-     "Lymph enters through the afferent vessel and leaves through the efferent vessel.",
-     "Lymph enters through the artery and leaves through the vein.",
-     "Lymph enters through the thoracic duct and leaves through the right lymphatic duct."
+     "Lymph enters through the efferent vessel and leaves through the afferent vessel",
+     "Lymph enters through the afferent vessel and leaves through the efferent vessel",
+     "Lymph enters through the artery and leaves through the vein",
+     "Lymph enters through the thoracic duct and leaves through the right lymphatic duct"
     ],
     "correct": 1,
     "explain": "Lymph enters a lymph node through the afferent lymphatic vessel and leaves through the efferent lymphatic vessel. Lymph enters through the efferent vessel and leaves through the afferent vessel, reverses the two. Lymph enters through the artery and leaves through the vein, confuses lymph vessels with blood vessels. Lymph enters through the thoracic duct and leaves through the right lymphatic duct, names the two main lymphatic trunks rather than the vessels of a single node."
@@ -1684,7 +1684,7 @@
     "id": "MT14121",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which formed element shares the clot sense of thromb/o?",
+    "q": "Which formed element is named for its role in clotting?",
     "options": [
      "Erythrocyte",
      "Lymphocyte",
@@ -2132,9 +2132,9 @@
       "prompt": "Which meaning belongs to Immunopharmacology?",
       "options": [
        "The study of drugs that act on the immune system",
-       "The study of drugs that act on the heart",
-       "The study of drugs that act on the kidneys",
-       "The study of drugs that act on the lungs"
+       "The study of immune cells circulating in the blood",
+       "The study of the immune response to an infection",
+       "The treatment of immune disorders without any drugs"
       ],
       "correct": 0
      },
@@ -2151,20 +2151,6 @@
      }
     ],
     "explain": "This term is immunopharmacology. Immunofarmacology, Immunopharmocology, and Immunopharmacollogy miss the spelling. It means the study of drugs that act on the immune system. The study of drugs that act on the heart, the kidneys, or the lungs would use other organ forms. The elements are immun/o, pharmac/o, and a study ending. A disease ending names a disorder, a heart-only study needs a heart form, and imm/o is a wrong split of immun/o."
-   },
-   {
-    "id": "MT14089",
-    "type": "mcq",
-    "cat": "MT_lec14-15",
-    "q": "Which elements build the term lymphoduct?",
-    "explain": "Lymphoduct means a duct that carries lymph. The elements are lymph/o and a duct. A vessel ending would use angi/o, lymphat/o is not the form used in this term, and a gland ending would use aden/o.",
-    "options": [
-     "Lymph/o and a duct ending",
-     "Lymph/o and a vessel ending",
-     "Lymphat/o and a duct ending",
-     "Lymph/o and a gland ending"
-    ],
-    "correct": 0
    },
    {
     "id": "MT14090",

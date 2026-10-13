@@ -15,10 +15,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a condition with severe symptoms over a short period, such as a cold?",
     "options": [
-     "Chronic, which denotes slow development of symptoms over a long period.",
-     "Acute, which denotes severe symptoms over a short period.",
-     "Progressive, which denotes increasing severity of signs and symptoms.",
-     "Recurrent, which denotes occurrence or repetition of an episode."
+     "Chronic, which denotes slow development of symptoms over a long period",
+     "Acute, which denotes severe symptoms over a short period",
+     "Progressive, which denotes increasing severity of signs and symptoms",
+     "Recurrent, which denotes occurrence or repetition of an episode"
     ],
     "correct": 1,
     "explain": "Acute denotes severe symptoms over a short period, as in a cold. Chronic denotes slow development of symptoms over a long period, as in asthma, and is the opposite course. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which matches the short severe course."
@@ -43,10 +43,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a tumor that is mild or non-cancerous?",
     "options": [
-     "Malignant, which denotes a harmful or cancerous growth.",
-     "Benign, which denotes a mild or non-cancerous growth.",
-     "Systemic, which denotes involvement of the whole body.",
-     "Progressive, which denotes an increasing severity of signs."
+     "Malignant, which denotes a harmful or cancerous growth",
+     "Benign, which denotes a mild or non-cancerous growth",
+     "Systemic, which denotes involvement of the whole body",
+     "Progressive, which denotes an increasing severity of signs"
     ],
     "correct": 1,
     "explain": "Benign denotes a mild or non-cancerous growth, as in a venous lymphangioma on the shoulder. Malignant is its opposite, a harmful or cancerous growth such as lung or breast cancer. Systemic relates to the whole body, and progressive denotes increasing severity, neither of which names the mild quality of a tumor."
@@ -85,10 +85,10 @@
     "cat": "MT_lec10",
     "q": "In the term etiology, which element supplies the sense of cause?",
     "options": [
-     "etio-, the root that means cause",
-     "-logy, the suffix that means study",
-     "-y, the ending that makes a noun",
-     "-gen, the root that means origin"
+     "etio-, the root that means cause.",
+     "-logy, the suffix that means study.",
+     "-y, the ending that makes a noun.",
+     "-gen, the root that means origin."
     ],
     "correct": 0,
     "explain": "Etiology decomposes into the root etio- (cause), the suffix -logy (study), and the nominal ending -y. The sense of cause sits in etio-. The suffix -logy supplies study, and -y only makes the noun. The element -gen means origin or production, but it is not part of this word and does not carry the cause sense here."
@@ -99,10 +99,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a condition limited to a definite area, such as a headache?",
     "options": [
-     "Systemic, which relates to the whole body.",
-     "Localized, which is confined to a definite area.",
-     "Progressive, which marks an advancing severity.",
-     "Recurrent, which marks a return of the condition."
+     "Systemic, which relates to the whole body",
+     "Localized, which is confined to a definite area",
+     "Progressive, which marks an advancing severity",
+     "Recurrent, which marks a return of the condition"
     ],
     "correct": 1,
     "explain": "Localized denotes confinement to a definite area or part, as in a headache. Systemic relates to the whole body, as in a fever, and is the opposite scope. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which describes confinement to one area."
@@ -211,10 +211,10 @@
     "cat": "MT_lec10",
     "q": "Alzheimer's disease is used to illustrate both prognosis and a progressive course. Which statement correctly assigns the two concepts to the two phases?",
     "options": [
-     "Prognosis is the worsening after onset, while progressive foresees the likely outcome beforehand.",
-     "Prognosis foresees the likely outcome before symptoms show, while progressive marks worsening after confirmation.",
-     "Both prognosis and progressive refer only to the silent twenty-year brain change that precedes any symptom, treating prediction and course as one.",
-     "Prognosis identifies the disease from tests, while progressive traces the underlying cause of the illness."
+     "Prognosis is the worsening after onset, while progressive foresees the likely outcome beforehand",
+     "Prognosis foresees the likely outcome before symptoms show, while progressive marks worsening after confirmation",
+     "Both prognosis and progressive refer only to the silent twenty-year brain change that precedes any symptom, treating prediction and course as one",
+     "Prognosis identifies the disease from tests, while progressive traces the underlying cause of the illness"
     ],
     "correct": 1,
     "explain": "Prognosis means to fore know, the prediction of the likely outcome, which is why the long silent brain change before any symptom can be foreseen as risk. Progressive means advancing severity, the nerve degeneration that worsens once the condition is confirmed, as in Alzheimer's. The line that calls prognosis the worsening after onset, and progressive the beforehand forecast, swaps the two senses. The line that confines both terms to the silent twenty-year brain change collapses prediction and course into one phase. The line that has prognosis identify the disease from tests, and progressive trace the cause, substitutes diagnosis and etiology."
@@ -477,10 +477,10 @@
     "cat": "MT_lec10",
     "q": "Which structure is the upper jaw?",
     "options": [
-     "The mandible.",
-     "The maxilla.",
-     "The gingiva.",
-     "The apex."
+     "The mandible",
+     "The maxilla",
+     "The gingiva",
+     "The apex"
     ],
     "correct": 1,
     "explain": "The maxilla is the upper jaw. The mandible is the lower jaw, the gingiva is the gums, and the apex is the terminal tip of the tooth root."
@@ -491,10 +491,10 @@
     "cat": "MT_lec10",
     "q": "Which structure is the lower jaw?",
     "options": [
-     "The maxilla.",
-     "The mandible.",
-     "The gingiva.",
-     "The enamel."
+     "The maxilla",
+     "The mandible",
+     "The gingiva",
+     "The enamel"
     ],
     "correct": 1,
     "explain": "The mandible is the lower jaw. The maxilla is the upper jaw, the gingiva is the gums, and the enamel is the hard outer part of the tooth."
@@ -575,10 +575,10 @@
     "cat": "MT_lec10",
     "q": "Which statement correctly describes plaque?",
     "options": [
-     "A sticky deposit of food and bacteria on the teeth.",
-     "A tooth decay caused by caries.",
-     "The hard outer part of the tooth.",
-     "The tissue containing the blood and nerve supply."
+     "A sticky deposit of food and bacteria on the teeth",
+     "A tooth decay caused by caries",
+     "The hard outer part of the tooth",
+     "The tissue containing the blood and nerve supply"
     ],
     "correct": 0,
     "explain": "Plaque is the sticky deposit of food and bacteria on the teeth. A tooth decay caused by caries is a cavity, the hard outer part of the tooth is the enamel, and the tissue containing the blood and nerve supply is the pulp."
@@ -589,10 +589,10 @@
     "cat": "MT_lec10",
     "q": "Which statement correctly describes a cavity?",
     "options": [
-     "A sticky deposit of food and bacteria on the teeth.",
-     "A tooth decay caused by caries.",
-     "A narrow tubular passage inside the tooth.",
-     "The part fixed in the jaws."
+     "A sticky deposit of food and bacteria on the teeth",
+     "A tooth decay caused by caries",
+     "A narrow tubular passage inside the tooth",
+     "The part fixed in the jaws"
     ],
     "correct": 1,
     "explain": "A cavity is the tooth decay caused by caries. A sticky deposit of food and bacteria is plaque, a narrow tubular passage inside the tooth is the canal, and the part fixed in the jaws is the root."
@@ -659,10 +659,10 @@
     "cat": "MT_lec10",
     "q": "What does the term gingiva denote?",
     "options": [
-     "The gums.",
-     "The hard outer part of the tooth.",
-     "The narrow tubular passage inside the tooth.",
-     "The terminal tip of the tooth root."
+     "The gums",
+     "The hard outer part of the tooth",
+     "The narrow tubular passage inside the tooth",
+     "The terminal tip of the tooth root"
     ],
     "correct": 0,
     "explain": "Gingiva denotes the gums. The hard outer part is the enamel, the narrow tubular passage is the canal, and the terminal tip is the apex."
@@ -673,10 +673,10 @@
     "cat": "MT_lec10",
     "q": "Which structure is the narrow tubular passage inside the tooth?",
     "options": [
-     "The root.",
-     "The canal.",
-     "The apex.",
-     "The gingiva."
+     "The root",
+     "The canal",
+     "The apex",
+     "The gingiva"
     ],
     "correct": 1,
     "explain": "The canal is the narrow tubular passage inside the tooth. The root is the part fixed in the jaws, the apex is the terminal tip of the root, and the gingiva is the gums."
@@ -687,10 +687,10 @@
     "cat": "MT_lec10",
     "q": "Which structure is the part of the tooth fixed in the jaws?",
     "options": [
-     "The canal.",
-     "The apex.",
-     "The root.",
-     "The pulp."
+     "The canal",
+     "The apex",
+     "The root",
+     "The pulp"
     ],
     "correct": 2,
     "explain": "The root is the part of the tooth fixed in the jaws. The canal is the narrow tubular passage, the apex is the terminal tip of the root, and the pulp is the inner tissue containing the blood and nerve supply."
@@ -701,10 +701,10 @@
     "cat": "MT_lec10",
     "q": "Which structure is the terminal tip of the tooth root?",
     "options": [
-     "The canal.",
-     "The apex.",
-     "The root.",
-     "The gingiva."
+     "The canal",
+     "The apex",
+     "The root",
+     "The gingiva"
     ],
     "correct": 1,
     "explain": "The apex is the terminal tip of the tooth root. The canal is the narrow tubular passage inside the tooth, the root is the part fixed in the jaws, and the gingiva is the gums."
@@ -729,10 +729,10 @@
     "cat": "MT_lec10",
     "q": "Which term denotes an artificial substitute for natural teeth, supplied as a partial or full appliance?",
     "options": [
-     "A denture.",
-     "An endodontist.",
-     "An orthodontist.",
-     "A prosthodontist."
+     "A denture",
+     "An endodontist",
+     "An orthodontist",
+     "A prosthodontist"
     ],
     "correct": 0,
     "explain": "A denture is the artificial substitute for natural teeth, supplied as a partial or full appliance, so it is an object. The endodontist, orthodontist, and prosthodontist are practitioners rather than appliances."
@@ -743,10 +743,10 @@
     "cat": "MT_lec10",
     "q": "Which specialist treats pulp-related dental problems?",
     "options": [
-     "The endodontist.",
-     "The orthodontist.",
-     "The pedodontist.",
-     "The prosthodontist."
+     "The endodontist",
+     "The orthodontist",
+     "The pedodontist",
+     "The prosthodontist"
     ],
     "correct": 0,
     "explain": "The endodontist treats pulp-related problems, with endo- pointing within to the pulp. The orthodontist straightens teeth, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."
@@ -757,10 +757,10 @@
     "cat": "MT_lec10",
     "q": "Which specialist straightens the teeth?",
     "options": [
-     "The endodontist.",
-     "The orthodontist.",
-     "The pedodontist.",
-     "The prosthodontist."
+     "The endodontist",
+     "The orthodontist",
+     "The pedodontist",
+     "The prosthodontist"
     ],
     "correct": 1,
     "explain": "The orthodontist straightens the teeth, with ortho- meaning straight. The endodontist treats pulp problems, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."
@@ -771,10 +771,10 @@
     "cat": "MT_lec10",
     "q": "Which specialist treats children's teeth?",
     "options": [
-     "The endodontist.",
-     "The orthodontist.",
-     "The pedodontist.",
-     "The prosthodontist."
+     "The endodontist",
+     "The orthodontist",
+     "The pedodontist",
+     "The prosthodontist"
     ],
     "correct": 2,
     "explain": "The pedodontist treats children's teeth, with pedo- meaning child. The endodontist treats pulp problems, the orthodontist straightens teeth, and the prosthodontist replaces missing teeth."
@@ -1437,9 +1437,9 @@
       "prompt": "Tongue",
       "options": [
        "Protruding tongue",
-       "Small tongue",
+       "Small, short tongue",
        "Absent tongue",
-       "Short tongue"
+       "Tied-down tongue"
       ],
       "correct": 0
      },
@@ -1701,9 +1701,9 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Three times a day",
-       "Twice a day",
-       "After meals",
-       "Week"
+       "Four times a day",
+       "After every meal",
+       "Once every week"
       ],
       "correct": 0
      },

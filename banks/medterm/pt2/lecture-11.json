@@ -43,10 +43,10 @@
     "cat": "MT_lec11",
     "q": "Which pairing of anterior, posterior, superior, or inferior with its point of reference is correct?",
     "options": [
-     "Anterior refers to the back or dorsal side of the body, and posterior refers to the front or ventral side.",
-     "Superior means away from the head, and inferior means toward the head.",
-     "Anterior refers to the front or ventral side of the body, and posterior refers to the back or dorsal side.",
-     "Superior means toward the side, and inferior means toward the midline."
+     "Anterior refers to the back or dorsal side of the body, and posterior refers to the front or ventral side",
+     "Superior means away from the head, and inferior means toward the head",
+     "Anterior refers to the front or ventral side of the body, and posterior refers to the back or dorsal side",
+     "Superior means toward the side, and inferior means toward the midline"
     ],
     "correct": 2,
     "explain": "Anterior refers to the front or ventral side, and posterior refers to the back or dorsal side, so that pairing is correct. The line that assigns anterior to the back or dorsal side and posterior to the front or ventral side reverses the two. Superior means toward the head and inferior means away from the head, so the line that sends superior away from the head and inferior toward the head reverses the vertical pair. The line that sends superior toward the side and inferior toward the midline confuses the vertical pair with lateral and medial."
@@ -85,10 +85,10 @@
     "cat": "MT_lec11",
     "q": "Fibrocartilage and articular cartilage are both gristle tissues but serve different roles. Which assignment of role to tissue is correct?",
     "options": [
-     "Fibrocartilage lubricates the bone surfaces for articulation, while articular cartilage attaches bone to bone with restricted mobility at the joints.",
-     "Fibrocartilage attaches bone to other bones and limits joint mobility, while articular cartilage lubricates the surfaces for articulation.",
-     "Both fibrocartilage and articular cartilage generate the red and white blood cells found within the medullary cavity.",
-     "Both fibrocartilage and articular cartilage store the minerals that give the skeleton its overall shape and support."
+     "Fibrocartilage lubricates the bone surfaces for articulation, while articular cartilage attaches bone to bone with restricted mobility at the joints",
+     "Fibrocartilage attaches bone to other bones and limits joint mobility, while articular cartilage lubricates the surfaces for articulation",
+     "Both fibrocartilage and articular cartilage generate the red and white blood cells found within the medullary cavity",
+     "Both fibrocartilage and articular cartilage store the minerals that give the skeleton its overall shape and support"
     ],
     "correct": 1,
     "explain": "Articular cartilage is the gristle-like lubricating layer on bone surfaces where they articulate, and fibrocartilage binds bone to bone while allowing only restricted movement at the joint, so the assignment of limited mobility to fibrocartilage and lubrication to articular cartilage is correct. The line that gives lubrication to fibrocartilage and bone-to-bone attachment to articular cartilage swaps the two. Blood-cell formation is the work of red marrow, not of either cartilage, so the line that assigns both tissues to generation of red and white cells is wrong. Mineral storage and the shaping of the skeleton are properties of bone, not of the two cartilages, so the line about storing minerals misstates their role."
@@ -113,10 +113,10 @@
     "cat": "MT_lec11",
     "q": "Which plane divides the body vertically into front (anterior) and back (posterior) portions?",
     "options": [
-     "The coronal or frontal plane.",
-     "The sagittal or median plane.",
-     "The transverse or horizontal plane.",
-     "The oblique plane."
+     "The coronal or frontal plane",
+     "The sagittal or median plane",
+     "The transverse or horizontal plane",
+     "The oblique plane"
     ],
     "correct": 0,
     "explain": "The coronal or frontal plane is the vertical plane that divides the body into front (anterior) and back (posterior) portions. The sagittal plane divides the body into right and left portions, the transverse plane divides it into upper and lower portions, and the oblique plane divides it at an angle."
@@ -127,10 +127,10 @@
     "cat": "MT_lec11",
     "q": "Which plane divides the body vertically into right and left portions?",
     "options": [
-     "The coronal or frontal plane.",
-     "The sagittal or median plane.",
-     "The transverse or horizontal plane.",
-     "The oblique plane."
+     "The coronal or frontal plane",
+     "The sagittal or median plane",
+     "The transverse or horizontal plane",
+     "The oblique plane"
     ],
     "correct": 1,
     "explain": "The sagittal or median plane is the vertical plane that divides the body into right and left portions. The coronal plane divides the body into front and back portions, the transverse plane divides it into upper and lower portions, and the oblique plane divides it at an angle."
@@ -141,10 +141,10 @@
     "cat": "MT_lec11",
     "q": "Which plane divides the body horizontally into upper and lower portions?",
     "options": [
-     "The coronal or frontal plane.",
-     "The sagittal or median plane.",
-     "The transverse or horizontal plane.",
-     "The oblique plane."
+     "The coronal or frontal plane",
+     "The sagittal or median plane",
+     "The transverse or horizontal plane",
+     "The oblique or angled cut plane"
     ],
     "correct": 2,
     "explain": "The transverse or horizontal plane is the plane that divides the body into upper and lower portions. The coronal plane divides the body into front and back portions, the sagittal plane divides it into right and left portions, and the oblique plane divides it at an angle."
@@ -155,10 +155,10 @@
     "cat": "MT_lec11",
     "q": "Which cell type is the specialized connective tissue cell that forms the skeleton?",
     "options": [
-     "The osteocyte.",
-     "The chondrocyte.",
-     "The myocyte.",
-     "The fibroblast."
+     "The osteocyte",
+     "The chondrocyte",
+     "The myocyte",
+     "The fibroblast"
     ],
     "correct": 0,
     "explain": "The osteocyte is the specialized connective tissue cell that forms the skeleton. The chondrocyte is a cartilage cell, the myocyte is a muscle cell, and the fibroblast is a connective tissue cell of fibers rather than of bone."
@@ -337,10 +337,10 @@
     "cat": "MT_lec11",
     "q": "What does the term craniotomy mean?",
     "options": [
-     "Surgical removal of a portion of the skull.",
-     "Incision into the skull.",
-     "Inflammation of the skull.",
-     "A record of the skull."
+     "Surgical removal of a portion of the skull",
+     "Incision into the skull",
+     "Inflammation of the skull",
+     "A record of the skull"
     ],
     "correct": 1,
     "explain": "Craniotomy is built from Crani/o (skull) and -tomy (incision), so it denotes incision into the skull. Surgical removal would use -ectomy, inflammation would use -itis, and a record would use -gram."
@@ -351,10 +351,10 @@
     "cat": "MT_lec11",
     "q": "What does the term dactylitis mean?",
     "options": [
-     "Pain in a digit.",
-     "Inflammation of a digit.",
-     "Surgical repair of a digit.",
-     "A record of a digit."
+     "Pain in a digit",
+     "Inflammation of a digit",
+     "Surgical repair of a digit",
+     "A record of a digit"
     ],
     "correct": 1,
     "explain": "Dactylitis is built from Dactyl/o (digit) and -itis (inflammation), so it denotes inflammation of a digit. Pain would use -dynia, surgical repair would use -plasty, and a record would use -gram."
@@ -365,10 +365,10 @@
     "cat": "MT_lec11",
     "q": "What does the term chondromalacia mean?",
     "options": [
-     "Inflammation of cartilage.",
-     "Softening of cartilage.",
-     "Surgical removal of cartilage.",
-     "A tumor of cartilage."
+     "Inflammation of cartilage",
+     "Softening of cartilage",
+     "Surgical removal of cartilage",
+     "A tumor of cartilage"
     ],
     "correct": 1,
     "explain": "Chondromalacia is built from Chondr/o (cartilage) and -malacia (softening), so it denotes softening of cartilage. Inflammation would use -itis, surgical removal would use -ectomy, and a tumor would use -oma."
@@ -379,10 +379,10 @@
     "cat": "MT_lec11",
     "q": "What does the term arthrodynia mean?",
     "options": [
-     "Pain in a joint.",
-     "Inflammation of a joint.",
-     "Surgical repair of a joint.",
-     "A record of a joint."
+     "Pain in a joint",
+     "Inflammation of a joint",
+     "Surgical repair of a joint",
+     "A record of a joint"
     ],
     "correct": 0,
     "explain": "Arthrodynia is built from Arthr/o (joint) and -dynia (pain), so it denotes pain in a joint. Inflammation would use -itis, surgical repair would use -plasty, and a record would use -gram."
@@ -393,10 +393,10 @@
     "cat": "MT_lec11",
     "q": "What does the term osteoarthrotomy mean?",
     "options": [
-     "Incision into a bone and a joint.",
-     "Inflammation of a bone and a joint.",
-     "A record of a bone and a joint.",
-     "Softening of a bone and a joint."
+     "Incision into a bone and a joint",
+     "Inflammation of a bone and a joint",
+     "A record of a bone and a joint",
+     "Softening of a bone and a joint"
     ],
     "correct": 0,
     "explain": "Osteoarthrotomy is built from Oste/o (bone), Arthr/o (joint), and -tomy (incision), so it denotes incision into a bone and a joint. Inflammation would use -itis, a record would use -gram, and softening would use -malacia."
@@ -407,10 +407,10 @@
     "cat": "MT_lec11",
     "q": "What does the term spondylosis mean?",
     "options": [
-     "Inflammation of a vertebral bone.",
-     "A stiff, immobile condition of vertebrae.",
-     "Surgical removal of a vertebral bone.",
-     "A tumor arising in a vertebral bone."
+     "Inflammation of a vertebral bone",
+     "A stiff, immobile condition of vertebrae",
+     "Surgical removal of a vertebral bone",
+     "A benign tumor arising in a vertebral bone"
     ],
     "correct": 1,
     "explain": "Spondylosis is built from Spondyl/o (vertebra) and -osis (condition), so it denotes a condition of stiff and immobile vertebrae. Inflammation would use -itis, surgical removal would use -ectomy, and a tumor would use -oma."
@@ -421,10 +421,10 @@
     "cat": "MT_lec11",
     "q": "What does the term tenotomy mean?",
     "options": [
-     "Surgical removal of a tendon.",
-     "Incision into a tendon.",
-     "Inflammation of a tendon.",
-     "A record of a tendon."
+     "Surgical removal of a tendon",
+     "Incision into a tendon",
+     "Inflammation of a tendon",
+     "A record of a tendon"
     ],
     "correct": 1,
     "explain": "Tenotomy is built from Ten/o (tendon) and -tomy (incision), so it denotes incision into a tendon. Surgical removal would use -ectomy, inflammation would use -itis, and a record would use -gram."
@@ -435,10 +435,10 @@
     "cat": "MT_lec11",
     "q": "What does the term tendinitis mean?",
     "options": [
-     "Pain in a tendon.",
-     "Inflammation of a tendon.",
-     "Surgical repair of a tendon.",
-     "A tumor of a tendon."
+     "Pain in a tendon",
+     "Inflammation of a tendon",
+     "Surgical repair of a tendon",
+     "A tumor of a tendon"
     ],
     "correct": 1,
     "explain": "Tendinitis is built from Tendin/o (tendon) and -itis (inflammation), so it denotes inflammation of a tendon, as in wrist tendinitis. Pain would use -dynia, surgical repair would use -plasty, and a tumor would use -oma."
@@ -449,10 +449,10 @@
     "cat": "MT_lec11",
     "q": "What does the term dystonia mean?",
     "options": [
-     "Abnormal tone or tension.",
-     "Pain in a muscle.",
-     "Inflammation of a muscle.",
-     "A tumor of a muscle."
+     "Abnormal tone or tension",
+     "Pain in a muscle",
+     "Inflammation of a muscle",
+     "A tumor of a muscle"
     ],
     "correct": 0,
     "explain": "Dystonia is built from the prefix dys- (abnormal) and Ton/o (tone or tension) with -ia (condition), so it denotes abnormal tone or tension, usually of muscle. Pain would use -dynia, inflammation would use -itis, and a tumor would use -oma."
@@ -463,10 +463,10 @@
     "cat": "MT_lec11",
     "q": "What does the term pelvimetry mean?",
     "options": [
-     "A record of the pelvis.",
-     "Measurement of the pelvis.",
-     "Inflammation of the pelvis.",
-     "Surgical repair of the pelvis."
+     "A record of the pelvis",
+     "Measurement of the pelvis",
+     "Inflammation of the pelvis",
+     "Surgical repair of the pelvis"
     ],
     "correct": 1,
     "explain": "Pelvimetry is built from Pelv/i (pelvis) and -metry (measurement), so it denotes measurement of the pelvis. A record would use -gram, inflammation would use -itis, and surgical repair would use -plasty."
@@ -477,10 +477,10 @@
     "cat": "MT_lec11",
     "q": "What does the term pelvofemoral mean?",
     "options": [
-     "Pertaining to the pelvis and the femur.",
-     "Pertaining to the pelvis and the sternum.",
-     "Pertaining to the pelvis and the skull.",
-     "Pertaining to the pelvis and the rib."
+     "Pertaining to the pelvis and the femur",
+     "Pertaining to the pelvis and the sternum",
+     "Pertaining to the pelvis and the skull",
+     "Pertaining to the pelvis and the rib"
     ],
     "correct": 0,
     "explain": "Pelvofemoral is built from Pelv/o (pelvis) and Femor/o (femur) with -al (pertaining to), so it means pertaining to the pelvis and the femur. The sternum, skull, and rib are named by Stern/o, Crani/o, and Cost/o, none of which appears here."
@@ -491,10 +491,10 @@
     "cat": "MT_lec11",
     "q": "What does the term radioulnar mean?",
     "options": [
-     "Pertaining to the radius and the ulna.",
-     "Pertaining to the ribs and the sternum.",
-     "Pertaining to the femur and the tibia.",
-     "Pertaining to the carpal and the tarsal bones."
+     "Pertaining to the radius and the ulna",
+     "Pertaining to the ribs and the sternum",
+     "Pertaining to the femur and the tibia",
+     "Pertaining to the carpal and the tarsal bones"
     ],
     "correct": 0,
     "explain": "Radioulnar is built from Radi/o (radius) and Uln/o (ulna) with -ar (pertaining to), so it means pertaining to the radius and the ulna. The ribs and sternum are Cost/o and Stern/o, the femur and tibia are Femor/o and Tibi/o, and the carpal and tarsal bones are Carp/o and Tars/o."
@@ -505,10 +505,10 @@
     "cat": "MT_lec11",
     "q": "What does the term sternocostal mean?",
     "options": [
-     "Pertaining to the sternum and the ribs.",
-     "Pertaining to the sternum and the skull.",
-     "Pertaining to the sternum and the pelvis.",
-     "Pertaining to the sternum and the vertebra."
+     "Pertaining to the sternum and the ribs",
+     "Pertaining to the sternum and the skull",
+     "Pertaining to the sternum and the pelvis",
+     "Pertaining to the sternum and the vertebra"
     ],
     "correct": 0,
     "explain": "Sternocostal is built from Stern/o (sternum) and Cost/o (rib) with -al (pertaining to), so it means pertaining to the sternum and the ribs. The skull, pelvis, and vertebra are named by Crani/o, Pelv/o, and Spondyl/o, none of which appears here."
@@ -519,10 +519,10 @@
     "cat": "MT_lec11",
     "q": "What does the term myoma mean?",
     "options": [
-     "A tumor of muscle tissue.",
-     "Inflammation of muscle tissue.",
-     "Pain in muscle tissue.",
-     "Softening of muscle tissue."
+     "A tumor of muscle tissue",
+     "Inflammation of muscle tissue",
+     "Pain in muscle tissue",
+     "Softening of muscle tissue"
     ],
     "correct": 0,
     "explain": "Myoma is built from My/o (muscle) and -oma (tumor), so it denotes a tumor of muscle tissue. Inflammation would use -itis (myositis), pain would use -dynia, and softening would use -malacia."
@@ -533,10 +533,10 @@
     "cat": "MT_lec11",
     "q": "What does the term myositis mean?",
     "options": [
-     "A tumor of muscle tissue.",
-     "Inflammation of muscle tissue.",
-     "Pain in muscle tissue.",
-     "Softening of muscle tissue."
+     "A tumor of muscle tissue",
+     "Inflammation of muscle tissue",
+     "Pain in muscle tissue",
+     "Softening of muscle tissue"
     ],
     "correct": 1,
     "explain": "Myositis is built from Myos/o (muscle) and -itis (inflammation), so it denotes inflammation of muscle tissue. A tumor would use -oma (myoma), pain would use -dynia, and softening would use -malacia."
@@ -547,10 +547,10 @@
     "cat": "MT_lec11",
     "q": "What does the term fibrocartilage mean?",
     "options": [
-     "Cartilage made of fibrous tissue that attaches bones to other bones.",
-     "Cartilage that lubricates the joint surfaces for articulation.",
-     "Bone tissue that stores minerals within the skeleton.",
-     "Muscle tissue that contracts to produce body heat."
+     "Cartilage made of fibrous tissue that attaches bones to other bones",
+     "Cartilage that lubricates the joint surfaces for articulation",
+     "Bone tissue that stores minerals within the skeleton",
+     "Muscle tissue that contracts to produce body heat"
     ],
     "correct": 0,
     "explain": "Fibrocartilage is built from Fibr/o (fiber) and Chondr/o (cartilage), so it denotes fibrous cartilage, the tissue that attaches bones to other bones and provides restricted mobility to the joints. Lubricating joint surfaces is the role of articular cartilage, mineral storage is a bone function, and heat production is a muscle function."
@@ -561,10 +561,10 @@
     "cat": "MT_lec11",
     "q": "What does the term brachioplasty mean?",
     "options": [
-     "Surgical repair of the arm.",
-     "Inflammation of the arm.",
-     "Pain in the arm.",
-     "A record of the arm."
+     "Surgical repair of the arm",
+     "Inflammation of the arm",
+     "Pain in the arm",
+     "A record of the arm"
     ],
     "correct": 0,
     "explain": "Brachioplasty is built from Brachi/o (arm) and -plasty (surgical repair), so it denotes surgical repair of the arm. Inflammation would use -itis, pain would use -dynia, and a record would use -gram."
@@ -575,10 +575,10 @@
     "cat": "MT_lec11",
     "q": "What does the term femoral mean?",
     "options": [
-     "Pertaining to the femur.",
-     "Pertaining to the rib.",
-     "Pertaining to the skull.",
-     "Pertaining to the vertebra."
+     "Pertaining to the femur",
+     "Pertaining to the rib",
+     "Pertaining to the skull",
+     "Pertaining to the vertebra"
     ],
     "correct": 0,
     "explain": "Femoral is built from Femor/o (femur) and -al (pertaining to), so it means pertaining to the femur. The rib, skull, and vertebra are named by Cost/o, Crani/o, and Spondyl/o."
@@ -589,10 +589,10 @@
     "cat": "MT_lec11",
     "q": "What does the term lumbar mean?",
     "options": [
-     "Pertaining to the loin or lower back.",
-     "Pertaining to the chest or thorax.",
-     "Pertaining to the neck region.",
-     "Pertaining to the arm region."
+     "Pertaining to the loin or lower back",
+     "Pertaining to the chest or thorax",
+     "Pertaining to the neck region",
+     "Pertaining to the arm region"
     ],
     "correct": 0,
     "explain": "Lumbar is built from Lumb/o (loin or lower back) with -ar (pertaining to), so it means pertaining to the lower back. The chest is Thorac/o, the neck is Cervic/o, and the arm is Brachi/o."
@@ -603,10 +603,10 @@
     "cat": "MT_lec11",
     "q": "What does the term fascial mean?",
     "options": [
-     "Pertaining to fascia, a connective band.",
-     "Pertaining to tendon, a muscle cord.",
-     "Pertaining to a joint, an articulation.",
-     "Pertaining to muscle, contractile tissue."
+     "Pertaining to fascia, a connective band",
+     "Pertaining to tendon, a muscle cord",
+     "Pertaining to a joint, an articulation",
+     "Pertaining to muscle, contractile tissue"
     ],
     "correct": 0,
     "explain": "Fascial is built from Fasci/o (fascia or band) with -al (pertaining to), so it means pertaining to a fascia. Tendon is Ten/o, joint is Arthr/o, and muscle is My/o."
@@ -617,10 +617,10 @@
     "cat": "MT_lec11",
     "q": "What does the term articulus mean?",
     "options": [
-     "A joint.",
-     "A cartilage.",
-     "A tendon.",
-     "A muscle."
+     "A joint",
+     "A cartilage",
+     "A tendon",
+     "A muscle"
     ],
     "correct": 0,
     "explain": "Articulus comes from Articul/o, which means joint, so it denotes a joint. Cartilage is Chondr/o, tendon is Ten/o, and muscle is My/o."
@@ -631,13 +631,13 @@
     "cat": "MT_lec11",
     "q": "What does the term osteocyte mean?",
     "options": [
-     "A cell of bone tissue.",
-     "A cell of cartilage tissue.",
-     "A cell of muscle tissue.",
-     "A cell of tendon tissue."
+     "A cell of bone tissue",
+     "A tumor of bone tissue",
+     "A disease of bone tissue",
+     "A softening of bone tissue"
     ],
     "correct": 0,
-    "explain": "Osteocyte is built from Oste/o (bone) and -cyte (cell), so it denotes a cell of bone tissue. Cartilage cells are chondrocytes, muscle cells are myocytes, and tendon cells are tenocytes."
+    "explain": "Osteocyte is built from Oste/o (bone) and -cyte (cell), so it denotes a cell of bone tissue. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT11054",
@@ -645,10 +645,10 @@
     "cat": "MT_lec11",
     "q": "What does the term medullary cavity mean?",
     "options": [
-     "The central space within a bone that contains marrow.",
-     "The gristle-like covering on the joint surfaces of a bone.",
-     "The tight solid tissue forming the exterior of a bone.",
-     "The mesh-like tissue filling the interior of a bone."
+     "The central space within a bone that contains marrow",
+     "The gristle-like covering on the joint surfaces of a bone",
+     "The tight solid tissue forming the exterior of a bone",
+     "The mesh-like tissue filling the interior of a bone"
     ],
     "correct": 0,
     "explain": "The medullary cavity is the central space within a bone that contains marrow. The gristle-like covering on joint surfaces is articular cartilage, the tight solid exterior tissue is compact bone, and the mesh-like interior tissue is spongy or cancellous bone."
@@ -1212,10 +1212,10 @@
     "cat": "MT_lec11",
     "q": "What does the term myalgia mean?",
     "options": [
-     "Pain in a muscle.",
-     "Pain in a bone.",
-     "Inflammation of a muscle.",
-     "Softening of a muscle."
+     "Pain in a muscle",
+     "Pain in a bone",
+     "Inflammation of a muscle",
+     "Softening of a muscle"
     ],
     "correct": 0,
     "explain": "Myalgia is built from My/o (muscle) and -algia (pain), so it denotes pain in a muscle. Pain in a bone would use Oste/o, as in ostealgia. Inflammation of a muscle is myositis, built with -itis. Softening of a muscle would use -malacia, not -algia."
@@ -1226,10 +1226,10 @@
     "cat": "MT_lec11",
     "q": "Which pairing names the breastbone and the combining form used to build terms for it?",
     "options": [
-     "Sternum, built with the combining form stern/o.",
-     "Chest wall, built with the combining form thorac/o.",
-     "Forearm bone, built with the combining form uln/o.",
-     "Upper arm, built with the combining form brachi/o."
+     "Sternum, built with the combining form stern/o",
+     "Chest wall, built with the combining form thorac/o",
+     "Forearm bone, built with the combining form uln/o",
+     "Upper arm, built with the combining form brachi/o"
     ],
     "correct": 0,
     "explain": "The breastbone is the sternum, and terms for it are built with stern/o, as in sternocostal and sternalgia. Thorac/o names the chest, not the breastbone itself. Uln/o names the ulna, a forearm bone. Brachi/o names the arm, not the breastbone."
@@ -1240,10 +1240,10 @@
     "cat": "MT_lec11",
     "q": "Which term marks the end of a limb farthest from its point of origin?",
     "options": [
-     "Distal, away from the origin of the structure.",
-     "Proximal, near the origin of the structure.",
-     "Medial, close to the midline of the body.",
-     "Lateral, toward the side and away from midline."
+     "Distal, away from the origin of the structure",
+     "Proximal, near the origin of the structure",
+     "Medial, close to the midline of the body",
+     "Lateral, toward the side and away from midline"
     ],
     "correct": 0,
     "explain": "Distal marks a point away from the origin or beginning of a structure, so it is the end farthest from that origin. Proximal is the opposite: near the origin, not farthest from it. Medial means close to the midline and does not measure distance from an origin. Lateral means toward the side, away from the midline, and likewise does not mark the far end of a limb."
@@ -1254,10 +1254,10 @@
     "cat": "MT_lec11",
     "q": "What is the imaginary line that runs through the center of the body called?",
     "options": [
-     "The axis, the central line itself.",
-     "Medial, a position close to that line.",
-     "Lateral, a position toward the side.",
-     "Distal, a point away from an origin."
+     "The axis, the central line itself",
+     "Medial, a position close to that line",
+     "Lateral, a position toward the side",
+     "Distal, a point away from an origin"
     ],
     "correct": 0,
     "explain": "The axis is the imaginary line that runs through the center of the body. Medial names a position close to that line, not the line itself. Lateral names a position toward the side, away from the line. Distal names a point away from the origin of a structure and is not the central line."
@@ -1268,10 +1268,10 @@
     "cat": "MT_lec11",
     "q": "Which term names movement away from the midline of the body?",
     "options": [
-     "Abduction, movement away from the midline.",
-     "Adduction, movement toward the midline.",
-     "Flexion, bending that decreases a joint angle.",
-     "Extension, straightening that increases a joint angle."
+     "Abduction, movement away from the midline",
+     "Adduction, movement toward the midline",
+     "Flexion, bending that decreases a joint angle",
+     "Extension, straightening that increases a joint angle"
     ],
     "correct": 0,
     "explain": "Abduction is movement away from the midline of the body. Adduction is the opposite movement, toward the midline. Flexion is bending that decreases the angle at a joint, and extension is straightening that increases that angle. Neither flexion nor extension is defined by direction relative to the midline."
@@ -1282,10 +1282,10 @@
     "cat": "MT_lec11",
     "q": "What does the term sternalgia mean?",
     "options": [
-     "Pain in the sternum.",
-     "Pain in a tendon.",
-     "Inflammation of the sternum.",
-     "Excision of the sternum."
+     "Pain in the sternum",
+     "Pain in a tendon",
+     "Inflammation of the sternum",
+     "Excision of the sternum"
     ],
     "correct": 0,
     "explain": "Sternalgia is built from Stern/o (sternum) and -algia (pain), so it denotes pain in the sternum, the breastbone. Pain in a tendon would use Ten/o or Tendin/o, as in tenalgia. Inflammation of the sternum would use -itis. Excision of the sternum would use -ectomy."
@@ -1333,10 +1333,10 @@
       "id": "4",
       "prompt": "Which region does the Humerus occupy?",
       "options": [
-       "The upper arm.",
-       "The forearm.",
-       "The thigh.",
-       "The shin."
+       "The upper arm",
+       "The forearm",
+       "The thigh",
+       "The shin"
       ],
       "correct": 0
      },
@@ -1398,10 +1398,10 @@
       "id": "4",
       "prompt": "Which region does the Femur occupy?",
       "options": [
-       "The thigh.",
-       "The upper arm.",
-       "The shin.",
-       "The knee cap."
+       "The thigh",
+       "The upper arm",
+       "The shin",
+       "The knee cap"
       ],
       "correct": 0
      },
@@ -1476,10 +1476,10 @@
       "id": "4",
       "prompt": "Which region does the Tibia occupy?",
       "options": [
-       "The medial shin bone.",
-       "The thigh bone.",
-       "The lateral leg bone.",
-       "The upper arm bone."
+       "The medial shin bone",
+       "The thigh bone",
+       "The lateral leg bone",
+       "The upper arm bone"
       ],
       "correct": 0
      },
@@ -1544,10 +1544,10 @@
       "id": "4",
       "prompt": "Which region does the Fibula occupy?",
       "options": [
-       "The lateral leg bone.",
-       "The medial shin bone.",
-       "The thigh bone.",
-       "The forearm bone."
+       "The lateral leg bone",
+       "The medial shin bone",
+       "The thigh bone",
+       "The forearm bone"
       ],
       "correct": 0
      },
@@ -1609,10 +1609,10 @@
       "id": "4",
       "prompt": "Which region does the Radius occupy?",
       "options": [
-       "The thumb-side forearm bone.",
-       "The medial forearm bone.",
-       "The upper arm bone.",
-       "The wrist bone group."
+       "The thumb-side forearm bone",
+       "The little-finger forearm bone",
+       "The upper arm bone",
+       "The wrist bone group"
       ],
       "correct": 0
      },
@@ -1685,10 +1685,10 @@
       "id": "4",
       "prompt": "Which region does the Ulna occupy?",
       "options": [
-       "The medial forearm bone.",
-       "The thumb-side forearm bone.",
-       "The upper arm bone.",
-       "The wrist bone group."
+       "The medial forearm bone",
+       "The thumb-side forearm bone",
+       "The upper arm bone",
+       "The wrist bone group"
       ],
       "correct": 0
      },
@@ -1761,10 +1761,10 @@
       "id": "4",
       "prompt": "Which region does the Carpals occupy?",
       "options": [
-       "The wrist.",
-       "The ankle.",
-       "The palm.",
-       "The digits."
+       "The wrist",
+       "The ankle",
+       "The palm",
+       "The digits"
       ],
       "correct": 0
      },
@@ -1829,10 +1829,10 @@
       "id": "4",
       "prompt": "Which region does the Tarsals occupy?",
       "options": [
-       "The ankle.",
-       "The wrist.",
-       "The palm.",
-       "The shin."
+       "The ankle",
+       "The wrist",
+       "The palm",
+       "The shin"
       ],
       "correct": 0
      },
@@ -1897,10 +1897,10 @@
       "id": "4",
       "prompt": "Which region does the Patella occupy?",
       "options": [
-       "The kneecap, in the quadriceps tendon.",
-       "The thigh bone, above the knee.",
-       "The shin bone, below the knee.",
-       "The ankle bones, below the shin."
+       "The kneecap, in the quadriceps tendon",
+       "The thigh bone, above the knee joint",
+       "The shin bone, below the knee joint",
+       "The ankle bones, below the shin"
       ],
       "correct": 0
      },
@@ -1975,10 +1975,10 @@
       "id": "4",
       "prompt": "Which region does the Sternum occupy?",
       "options": [
-       "The breastbone of the chest.",
-       "The bone at the tongue base.",
-       "The shoulder blade.",
-       "The bone of the lower back."
+       "The breastbone of the chest",
+       "The bone at the tongue base",
+       "The shoulder blade",
+       "The bone of the lower back"
       ],
       "correct": 0
      },
@@ -2053,10 +2053,10 @@
       "id": "4",
       "prompt": "Which region does the Scapula occupy?",
       "options": [
-       "The shoulder blade.",
-       "The breastbone.",
-       "The hip bone.",
-       "The cranial bone."
+       "The shoulder blade",
+       "The breastbone",
+       "The hip bone",
+       "The cranial bone"
       ],
       "correct": 0
      },
@@ -2120,10 +2120,10 @@
       "id": "4",
       "prompt": "Which region does the Ribs occupy?",
       "options": [
-       "The thoracic cage.",
-       "The vertebral column.",
-       "The shoulder girdle.",
-       "The pelvic girdle."
+       "The thoracic cage",
+       "The vertebral column",
+       "The shoulder girdle",
+       "The pelvic girdle"
       ],
       "correct": 0
      },
@@ -2198,10 +2198,10 @@
       "id": "4",
       "prompt": "Which region does the Pelvis occupy?",
       "options": [
-       "The hip of the pelvic girdle.",
-       "The shoulder girdle bones.",
-       "The chest wall cage bones.",
-       "The cranial vault bones."
+       "The hip of the pelvic girdle",
+       "The shoulder girdle bones",
+       "The chest wall cage bones",
+       "The cranial vault bones"
       ],
       "correct": 0
      },
@@ -2274,10 +2274,10 @@
       "id": "4",
       "prompt": "Which region does the Skull occupy?",
       "options": [
-       "The head, as the cranium.",
-       "The face, not the vault.",
-       "The chest wall cage.",
-       "The bone under the tongue."
+       "The head, as the cranium",
+       "The face, not the vault",
+       "The chest wall cage",
+       "The bone under the tongue"
       ],
       "correct": 0
      },
@@ -2332,7 +2332,7 @@
       "options": [
        "Long bone",
        "Short bone",
-       "Flat bone",
+       "Sesamoid bone",
        "Irregular bone"
       ],
       "correct": 3
@@ -2350,10 +2350,10 @@
       "id": "4",
       "prompt": "Which region does this bone occupy?",
       "options": [
-       "The vertebral column.",
-       "The thoracic cage.",
-       "The cranial vault.",
-       "The pelvic girdle."
+       "The vertebral column",
+       "The thoracic cage",
+       "The cranial vault",
+       "The pelvic girdle"
       ],
       "correct": 0
      },
@@ -2410,7 +2410,7 @@
       "options": [
        "Long bone",
        "Short bone",
-       "Flat bone",
+       "Sesamoid bone",
        "Irregular bone"
       ],
       "correct": 3
@@ -2428,10 +2428,10 @@
       "id": "4",
       "prompt": "Which region does the Sacrum occupy?",
       "options": [
-       "The lower vertebral column.",
-       "The chest wall cage.",
-       "The knee sesamoid.",
-       "The wrist bone group."
+       "The lower vertebral column",
+       "The chest wall rib cage",
+       "The knee sesamoid bone",
+       "The wrist bone group"
       ],
       "correct": 0
      },
@@ -2475,7 +2475,7 @@
       "options": [
        "Long bone",
        "Short bone",
-       "Flat bone",
+       "Sesamoid bone",
        "Irregular bone"
       ],
       "correct": 3
@@ -2493,10 +2493,10 @@
       "id": "4",
       "prompt": "Which region does the Facial bones occupy?",
       "options": [
-       "The face.",
-       "The cranium alone.",
-       "The vertebral column.",
-       "The thoracic cage."
+       "The face",
+       "The cranium alone",
+       "The vertebral column",
+       "The thoracic cage"
       ],
       "correct": 0
      },
@@ -2560,10 +2560,10 @@
       "id": "4",
       "prompt": "Which region does the Hyoid occupy?",
       "options": [
-       "The base of the tongue.",
-       "The breastbone area.",
-       "The knee sesamoid.",
-       "The shoulder blade."
+       "The base of the tongue",
+       "The breastbone area",
+       "The knee sesamoid",
+       "The shoulder blade"
       ],
       "correct": 0
      },
@@ -2627,10 +2627,10 @@
       "id": "4",
       "prompt": "Which region does the Metacarpals occupy?",
       "options": [
-       "The palm of the hand.",
-       "The wrist bone group.",
-       "The ankle bone group.",
-       "The sole of the foot."
+       "The palm of the hand",
+       "The wrist bone group",
+       "The ankle bone group",
+       "The sole of the foot"
       ],
       "correct": 0
      },
@@ -2638,10 +2638,10 @@
       "id": "5",
       "prompt": "Which limb list includes the Metacarpals?",
       "options": [
-       "The upper limb.",
-       "The lower limb.",
-       "The axial skull.",
-       "The thoracic cage."
+       "The upper limb",
+       "The lower limb",
+       "The axial skull",
+       "The thoracic cage"
       ],
       "correct": 0
      },
@@ -2705,10 +2705,10 @@
       "id": "4",
       "prompt": "Which region does the Metatarsals occupy?",
       "options": [
-       "The sole of the foot.",
-       "The palm of the hand.",
-       "The ankle bone group.",
-       "The medial shin bone."
+       "The sole of the foot",
+       "The palm of the hand",
+       "The ankle bone group",
+       "The medial shin bone"
       ],
       "correct": 0
      },
@@ -2716,10 +2716,10 @@
       "id": "5",
       "prompt": "Which limb list includes the Metatarsals?",
       "options": [
-       "The lower limb.",
-       "The upper limb.",
-       "The axial skull.",
-       "The thoracic cage."
+       "The lower limb",
+       "The upper limb",
+       "The axial skull",
+       "The thoracic cage"
       ],
       "correct": 0
      },
@@ -2783,10 +2783,10 @@
       "id": "4",
       "prompt": "Which region does the Phalanges occupy?",
       "options": [
-       "The digits of hand and foot.",
-       "The wrist bone group.",
-       "The ankle bone group.",
-       "The vertebral column."
+       "The digits of hand and foot",
+       "The wrist bone group",
+       "The ankle bone group",
+       "The upper vertebral column"
       ],
       "correct": 0
      },
@@ -2824,10 +2824,10 @@
     "cat": "MT_lec11",
     "q": "Which function belongs to the skeleton and is not a function of muscle contraction?",
     "options": [
-     "Supporting the body and giving it shape.",
-     "Generating locomotion of the limbs.",
-     "Producing body heat through contraction.",
-     "Contracting to move a limb."
+     "Supporting the body and giving it shape",
+     "Generating locomotion of the limbs",
+     "Producing body heat through contraction",
+     "Contracting to move a limb"
     ],
     "correct": 0,
     "explain": "Support and shape are skeletal functions, along with mineral storage, hemopoiesis, and a surface for muscle attachment. Generating locomotion, producing body heat through contraction, and contracting to move a limb are muscle functions. Protecting internal organs is shared by both systems, so it cannot separate them."
@@ -2866,10 +2866,10 @@
     "cat": "MT_lec11",
     "q": "Which function is shared by the skeleton and the muscles?",
     "options": [
-     "Protecting internal organs.",
-     "Performing hemopoiesis in red marrow.",
-     "Storing minerals in bone tissue.",
-     "Producing body heat through contraction."
+     "Protecting internal organs",
+     "Performing hemopoiesis in red marrow",
+     "Storing minerals in bone tissue",
+     "Producing body heat through contraction"
     ],
     "correct": 0,
     "explain": "Protecting internal organs is listed for both the skeleton and the muscles, so it is the shared function. Hemopoiesis in red marrow is skeletal. Storing minerals in bone tissue is skeletal. Producing body heat through contraction is muscular."
@@ -2880,10 +2880,10 @@
     "cat": "MT_lec11",
     "q": "Ten/o, tend/o, and tendin/o mean tendon. Which sense is paired with that structure?",
     "options": [
-     "To stretch.",
-     "To soften.",
-     "To break.",
-     "To record."
+     "To stretch",
+     "To soften",
+     "To break",
+     "To record"
     ],
     "correct": 0,
     "explain": "Tendon is paired with the sense to stretch. To soften is the sense of -malacia, to break is not the tendon gloss, and to record is the sense of -gram. Tenotomy is an incision into a tendon, and tendinitis is inflammation of a tendon."
@@ -2894,10 +2894,10 @@
     "cat": "MT_lec11",
     "q": "What does the term thoracicoabdominal mean?",
     "options": [
-     "Pertaining to the chest and the abdomen.",
-     "Pertaining to the chest and the lower back.",
-     "Pertaining to the neck and the arm.",
-     "Pertaining to the pelvis and the femur."
+     "Pertaining to the chest and the abdomen",
+     "Pertaining to the chest and the lower back",
+     "Pertaining to the neck and the arm",
+     "Pertaining to the pelvis and the femur"
     ],
     "correct": 0,
     "explain": "Thoracicoabdominal is built from Thoracic/o (chest) and the abdomen, so it means pertaining to the chest and the abdomen. Chest and lower back is thoracolumbar. Neck and arm is cervicobrachial. Pelvis and femur is pelvofemoral."
@@ -2908,10 +2908,10 @@
     "cat": "MT_lec11",
     "q": "In cervical myelopathy, the element myel refers to what?",
     "options": [
-     "The spinal cord.",
-     "The muscle.",
-     "The flesh.",
-     "The tendon."
+     "The spinal cord",
+     "The muscle fibers",
+     "The flesh",
+     "The tendon"
     ],
     "correct": 0,
     "explain": "Myel/o means bone marrow or the spinal cord, so in cervical myelopathy the myel element names the spinal cord. Muscle is My/o or Muscul/o. Flesh is Sarc/o. Tendon is Ten/o or Tendin/o. Myeloma uses the same form for a bone-marrow tumor."

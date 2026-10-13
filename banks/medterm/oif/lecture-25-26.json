@@ -15,10 +15,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the two primary functions of the male reproductive organs?",
         "options": [
-          "Producing urine and eliminating it from the body, and secreting enzymes to digest food in the small intestine.",
-          "Producing sperm and storing them until the body reabsorbs them, and secreting hormones for secondary sexual characteristics.",
-          "Producing sperm and introducing them to fertilize the ovum, and secreting hormones for secondary sexual characteristics.",
-          "Filtering blood and removing waste products, and secreting enzymes to digest food in the small intestine."
+          "Producing urine and eliminating it from the body, and secreting enzymes to digest food in the small intestine",
+          "Producing sperm and storing them until the body reabsorbs them, and secreting hormones for secondary sexual characteristics",
+          "Producing sperm and introducing them to fertilize the ovum, and secreting hormones for secondary sexual characteristics",
+          "Filtering blood and removing waste products, and secreting enzymes to digest food in the small intestine"
         ],
         "correct": 2,
         "explain": "The male reproductive organs produce sperm and introduce them into the female reproductive tract to fertilize the ovum, and they secrete hormones necessary for the development of secondary sexual characteristics. \"Producing urine and eliminating it from the body, and secreting enzymes to digest food in the small intestine\" and \"Filtering blood and removing waste products, and secreting enzymes to digest food in the small intestine\" assign urine production, blood filtration, and food digestion to these organs, functions of other systems. \"Producing sperm and storing them until the body reabsorbs them, and secreting hormones for secondary sexual characteristics\" wrongly states that sperm are reabsorbed by the body rather than ejaculated."
@@ -29,10 +29,10 @@
         "cat": "MT_lec25-26",
         "q": "Which set consists entirely of secondary sexual characteristics that develop under the influence of male reproductive hormones?",
         "options": [
-          "Facial and body hair, growth of the larynx with a deeper voice, and development of muscle mass.",
-          "Production of sperm cells, storage of sperm in the epididymis, and secretion of prostatic fluid.",
-          "Formation of the scrotum, descent of the testes, and closure of the bladder's urethra during ejaculation.",
-          "Secretion of alkaline fluid by the seminal vesicles, secretion of milk by the mammary glands, and growth of the placenta."
+          "Facial and body hair, growth of the larynx with a deeper voice, and development of muscle mass",
+          "Production of sperm cells, storage of sperm in the epididymis, and secretion of prostatic fluid",
+          "Formation of the scrotum, descent of the testes, and closure of the bladder's urethra during ejaculation",
+          "Secretion of alkaline fluid by the seminal vesicles, secretion of milk by the mammary glands, and growth of the placenta"
         ],
         "correct": 0,
         "explain": "Secondary sexual characteristics driven by male reproductive hormones include facial and body hair, growth of the larynx with a deeper voice, and development of muscle mass. \"Production of sperm cells, storage of sperm in the epididymis, and secretion of prostatic fluid\" lists reproductive functions rather than secondary characteristics. \"Formation of the scrotum, descent of the testes, and closure of the bladder's urethra during ejaculation\" mixes anatomical structures with a prostate function. \"Secretion of alkaline fluid by the seminal vesicles, secretion of milk by the mammary glands, and growth of the placenta\" lists glandular secretions and structures that are not secondary sexual characteristics."
@@ -43,10 +43,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the scrotum?",
         "options": [
-          "A skin-covered pouch divided into two sacs, each containing a testis and an epididymis.",
-          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid.",
-          "A pair of hollow muscular ducts that provide a passageway for sperm to reach the ovum.",
-          "A coiled duct on top of the testis that allows sperm maturation and storage."
+          "A skin-covered pouch divided into two sacs, each containing a testis and an epididymis",
+          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid",
+          "A pair of hollow muscular ducts that provide a passageway for sperm to reach the ovum",
+          "A coiled duct on top of the testis that allows sperm maturation and storage"
         ],
         "correct": 0,
         "explain": "The scrotum is a skin-covered pouch divided into two sacs, each containing a testis and an epididymis. \"A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid\" describes the prostate gland. \"A pair of hollow muscular ducts that provide a passageway for sperm to reach the ovum\" describes the uterine tubes of the female system. \"A coiled duct on top of the testis that allows sperm maturation and storage\" describes the epididymis."
@@ -57,10 +57,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the testis?",
         "options": [
-          "A skin-covered pouch that holds the testes and epididymides outside the body.",
-          "A coiled duct on top of the testis that stores sperm before emission.",
-          "A gland that secretes an alkaline substance into the semen to support sperm.",
-          "The male gonad that makes sperm cells and hormones for secondary characteristics."
+          "A skin-covered pouch that holds the testes and epididymides outside the body",
+          "A coiled duct on top of the testis that stores sperm before emission",
+          "A gland that secretes an alkaline substance into the semen to support sperm",
+          "The male gonad that makes sperm cells and hormones for secondary characteristics"
         ],
         "correct": 3,
         "explain": "The testis is the male gonad, the organ that produces sperm cells and hormones. \"A skin-covered pouch that holds the testes and epididymides outside the body\" describes the scrotum. \"A coiled duct on top of the testis that stores sperm before emission\" describes the epididymis. \"A gland that secretes an alkaline substance into the semen to support sperm\" describes the seminal vesicle."
@@ -71,10 +71,10 @@
         "cat": "MT_lec25-26",
         "q": "What is the male gamete or reproductive cell called?",
         "options": [
-          "The ovum, the female gamete or egg cell produced in the ovary.",
-          "The spermatozoon, the male gamete or reproductive cell produced in the testis.",
-          "The zygote, the fertilized egg formed by the union of male and female gametes.",
-          "The follicle, the ovarian structure that houses and nurtures the developing egg."
+          "The ovum, the female gamete or egg cell produced in the ovary",
+          "The spermatozoon, the male gamete or reproductive cell produced in the testis",
+          "The zygote, the fertilized egg formed by the union of male and female gametes",
+          "The follicle, the ovarian structure that houses and nurtures the developing egg"
         ],
         "correct": 1,
         "explain": "The male gamete or reproductive cell is the spermatozoon, whose plural is spermatozoa. \"The ovum, the female gamete or egg cell produced in the ovary\" is the female gamete. \"The zygote, the fertilized egg formed by the union of male and female gametes\" is the fertilized egg. \"The follicle, the ovarian structure that houses and nurtures the developing egg\" is the ovarian structure that houses the developing egg."
@@ -85,10 +85,10 @@
         "cat": "MT_lec25-26",
         "q": "What is the role of the epididymis?",
         "options": [
-          "To carry sperm from the testis through the vas deferens to the ejaculatory duct.",
-          "To secrete prostatic fluid into the semen from the trilobular gland around the urethra.",
-          "To allow sperm maturation and storage before emission in the coiled duct on the testis.",
-          "To produce sperm cells and hormones as the male gonad inside the scrotum."
+          "To carry sperm from the testis through the vas deferens to the ejaculatory duct",
+          "To secrete prostatic fluid into the semen from the trilobular gland around the urethra",
+          "To allow sperm maturation and storage before emission in the coiled duct on the testis",
+          "To produce sperm cells and hormones as the male gonad inside the scrotum"
         ],
         "correct": 2,
         "explain": "The epididymis is a coiled duct on top of the testis that allows sperm to mature and be stored before emission. \"To carry sperm from the testis through the vas deferens to the ejaculatory duct\" is the role of the vas deferens. \"To secrete prostatic fluid into the semen from the trilobular gland around the urethra\" is the role of the prostate gland. \"To produce sperm cells and hormones as the male gonad inside the scrotum\" is the role of the testis."
@@ -99,10 +99,10 @@
         "cat": "MT_lec25-26",
         "q": "Which duct carries sperm from the epididymis to the ejaculatory duct?",
         "options": [
-          "The vas deferens, the duct carrying sperm from the epididymis.",
-          "The urethra, the duct conducting urine and semen to the exterior.",
-          "The ejaculatory duct, formed by the vas deferens and seminal vesicle.",
-          "The uterine tube, the passageway in the female reproductive system."
+          "The vas deferens, the duct carrying sperm from the epididymis",
+          "The urethra, the duct conducting urine and semen to the exterior",
+          "The ejaculatory duct, formed by the vas deferens and seminal vesicle",
+          "The uterine tube, the passageway in the female reproductive system"
         ],
         "correct": 0,
         "explain": "The vas deferens is the duct that carries sperm from the epididymis to the ejaculatory duct. \"The urethra, the duct conducting urine and semen to the exterior\" is the duct that conducts urine and semen. \"The ejaculatory duct, formed by the vas deferens and seminal vesicle\" is formed by the union of the vas deferens and the seminal vesicle. \"The uterine tube, the passageway in the female reproductive system\" belongs to the female reproductive system."
@@ -113,10 +113,10 @@
         "cat": "MT_lec25-26",
         "q": "What is the function of the seminal vesicle?",
         "options": [
-          "To produce sperm cells and hormones as the primary male gonad.",
-          "To encircle the urethra and secrete prostatic fluid into the semen.",
-          "To add fluids into the penile urethra during ejaculation from glands beneath the prostate.",
-          "To secrete an alkaline substance into the semen to enable sperm to live longer inside the vagina."
+          "To produce sperm cells and hormones as the primary male gonad",
+          "To encircle the urethra and secrete prostatic fluid into the semen",
+          "To add fluids into the penile urethra during ejaculation from glands beneath the prostate",
+          "To secrete an alkaline substance into the semen to enable sperm to live longer inside the vagina"
         ],
         "correct": 3,
         "explain": "The seminal vesicle secretes an alkaline substance into the semen to enable the sperm to live longer inside the vagina. \"To produce sperm cells and hormones as the primary male gonad\" is the role of the testis. \"To encircle the urethra and secrete prostatic fluid into the semen\" is the role of the prostate gland. \"To add fluids into the penile urethra during ejaculation from glands beneath the prostate\" is the role of the bulbourethral glands."
@@ -127,10 +127,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the prostate gland?",
         "options": [
-          "Two pea-shaped glands located beneath the prostate that add fluids into the penile urethra during ejaculation.",
-          "A trilobular gland that encircles the urethra just below the bladder, secretes prostatic fluid, and closes the bladder's urethra during ejaculation.",
-          "Two sac-like structures positioned behind the bladder that secrete an alkaline substance into the semen.",
-          "A coiled duct sitting on top of the testis that allows sperm maturation and storage before emission."
+          "Two pea-shaped glands beneath the prostate that add fluid to the penile urethra during ejaculation",
+          "A three-lobed gland around the urethra below the bladder that secretes prostatic fluid",
+          "Two sac-like structures behind the bladder that secrete an alkaline substance into the semen",
+          "A coiled duct on top of the testis where sperm mature and are stored before emission"
         ],
         "correct": 1,
         "explain": "The prostate gland is a trilobular gland that encircles the urethra just below the bladder. It secretes prostatic fluid into the semen and also closes the bladder's urethra during ejaculation. \"Two pea-shaped glands beneath the prostate that add fluids into the penile urethra during ejaculation\" describes the bulbourethral glands. \"Two sac-like structures behind the bladder that secrete an alkaline substance into the semen\" describes the seminal vesicles. \"A coiled duct on top of the testis that allows sperm maturation and storage before emission\" describes the epididymis."
@@ -141,10 +141,10 @@
         "cat": "MT_lec25-26",
         "q": "The ejaculatory duct is formed by the union of which two structures?",
         "options": [
-          "The vas deferens and the epididymis.",
-          "The seminal vesicle and the prostate gland.",
-          "The vas deferens and the seminal vesicle.",
-          "The epididymis and the testis."
+          "The vas deferens and the epididymis",
+          "The seminal vesicle and the prostate gland",
+          "The vas deferens and the seminal vesicle",
+          "The epididymis and the testis"
         ],
         "correct": 2,
         "explain": "The ejaculatory duct is formed by the union of the vas deferens and the seminal vesicle, and it propels seminal fluid into the urethra. The epididymis is the site of sperm maturation, the prostate gland encircles the urethra and secretes prostatic fluid, and the testis produces sperm and hormones. None of those other pairings forms the ejaculatory duct."
@@ -155,10 +155,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the bulbourethral glands?",
         "options": [
-          "Two pea-shaped glands located beneath the prostate gland that add fluids into the penile urethra during ejaculation.",
-          "Two sac-like structures behind the bladder that secrete an alkaline substance into the semen to support sperm.",
-          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid.",
-          "A coiled duct on top of the testis that allows sperm maturation and storage before emission."
+          "Two pea-shaped glands located beneath the prostate gland that add fluids into the penile urethra during ejaculation",
+          "Two sac-like structures behind the bladder that secrete an alkaline substance into the semen to support sperm",
+          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid",
+          "A coiled duct on top of the testis that allows sperm maturation and storage before emission"
         ],
         "correct": 0,
         "explain": "The bulbourethral glands, also called Cowper's glands, are two pea-shaped glands located beneath the prostate gland that add fluids into the penile urethra during ejaculation. \"Two sac-like structures behind the bladder that secrete an alkaline substance into the semen to support sperm\" describes the seminal vesicles. \"A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid\" describes the prostate gland. \"A coiled duct on top of the testis that allows sperm maturation and storage before emission\" describes the epididymis."
@@ -169,10 +169,10 @@
         "cat": "MT_lec25-26",
         "q": "Semen comprises spermatozoa and secretions from which glands?",
         "options": [
-          "The epididymis, the vas deferens, the prostate, and the bulbourethral glands.",
-          "The testes, the epididymis, the vas deferens, and the seminal vesicles.",
-          "The prostate, the bulbourethral glands, and the urethra.",
-          "The testes, the seminal vesicles, the prostate, and the bulbourethral glands."
+          "The epididymis, the vas deferens, the prostate, and the bulbourethral glands",
+          "The testes, the epididymis, the vas deferens, and the seminal vesicles",
+          "The prostate, the bulbourethral glands, and the urethra",
+          "The testes, the seminal vesicles, the prostate, and the bulbourethral glands"
         ],
         "correct": 3,
         "explain": "Semen comprises spermatozoa and the secretions from the testes, seminal vesicles, prostate, and bulbourethral glands. The epididymis and vas deferens are ducts that transport sperm but do not contribute secretions to semen. The urethra is the conduit through which semen leaves the body, not a gland that contributes to its composition."
@@ -183,10 +183,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly describes the penis?",
         "options": [
-          "A skin-covered pouch divided into two sacs, each containing a testis and an epididymis outside the body.",
-          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid into the semen.",
-          "An erectile sex organ that reaches its full size during puberty and conducts both semen and urine to leave the body.",
-          "A coiled duct on top of the testis that allows sperm maturation and storage before emission into the duct."
+          "A skin-covered pouch divided into two sacs, each containing a testis and an epididymis outside the body",
+          "A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid into the semen",
+          "An erectile sex organ that reaches its full size during puberty and conducts both semen and urine to leave the body",
+          "A coiled duct on top of the testis that allows sperm maturation and storage before emission into the duct"
         ],
         "correct": 2,
         "explain": "The penis is the erectile sex organ that reaches its full size during puberty and conducts both semen and urine to leave the body. \"A skin-covered pouch divided into two sacs, each containing a testis and an epididymis\" describes the scrotum. \"A trilobular gland that encircles the urethra just below the bladder and secretes prostatic fluid\" describes the prostate gland. \"A coiled duct on top of the testis that allows sperm maturation and storage before emission\" describes the epididymis."
@@ -197,10 +197,10 @@
         "cat": "MT_lec25-26",
         "q": "Which sequence correctly follows the path of sperm from its formation to its exit from the body?",
         "options": [
-          "Testis, vas deferens, epididymis, ejaculatory duct, urethra.",
-          "Testis, epididymis, vas deferens, ejaculatory duct, urethra.",
-          "Epididymis, testis, vas deferens, urethra, ejaculatory duct.",
-          "Testis, epididymis, ejaculatory duct, vas deferens, urethra."
+          "Testis, vas deferens, epididymis, ejaculatory duct, urethra",
+          "Testis, epididymis, vas deferens, ejaculatory duct, urethra",
+          "Epididymis, testis, vas deferens, urethra, ejaculatory duct",
+          "Testis, epididymis, ejaculatory duct, vas deferens, urethra"
         ],
         "correct": 1,
         "explain": "Sperm are formed in the testis, mature and are stored in the epididymis, travel through the vas deferens to the ejaculatory duct, and leave the body through the urethra. \"Testis, vas deferens, epididymis, ejaculatory duct, urethra\" places the vas deferens before the epididymis. \"Epididymis, testis, vas deferens, urethra, ejaculatory duct\" begins in the epididymis and misorders the exit. \"Testis, epididymis, ejaculatory duct, vas deferens, urethra\" places the ejaculatory duct before the vas deferens."
@@ -211,10 +211,10 @@
         "cat": "MT_lec25-26",
         "q": "Which abbreviation denotes the sex assigned at birth that is used to classify the male reproductive system?",
         "options": [
-          "AMAB, assigned male at birth.",
-          "AFAB, assigned female at birth.",
-          "FRS, female reproductive system.",
-          "CTG, cardiotocography."
+          "AMAB, assigned male at birth",
+          "AFAB, assigned female at birth",
+          "FRS, female reproductive system",
+          "CTG, cardiotocography"
         ],
         "correct": 0,
         "explain": "AMAB stands for assigned male at birth and is used to classify the male reproductive system. \"AFAB, assigned female at birth\" applies to the female system. \"FRS, female reproductive system\" abbreviates the female system. \"CTG, cardiotocography\" abbreviates a fetal monitoring technique."
@@ -225,10 +225,10 @@
         "cat": "MT_lec25-26",
         "q": "Which set consists entirely of combining forms that mean testis?",
         "options": [
-          "Test/o, Prostat/o, Orchi/o, Balan/o.",
-          "Epididym/o, Testicul/o, Vas/o, Orchid/o.",
-          "Test/o, Testicul/o, Orchi/o, Orchid/o.",
-          "Test/o, Vas/o, Perine/o, Orchid/o."
+          "Test/o, Prostat/o, Orchi/o, Balan/o",
+          "Epididym/o, Testicul/o, Vas/o, Orchid/o",
+          "Test/o, Testicul/o, Orchi/o, Orchid/o",
+          "Test/o, Vas/o, Perine/o, Orchid/o"
         ],
         "correct": 2,
         "explain": "Test/o, Testicul/o, Orchi/o, and Orchid/o are the four combining forms that mean testis. \"Test/o, Prostat/o, Orchi/o, Balan/o\" includes Prostat/o (prostate gland) and Balan/o (glans penis). \"Epididym/o, Testicul/o, Vas/o, Orchid/o\" includes Epididym/o (epididymis) and Vas/o (vessel). \"Test/o, Vas/o, Perine/o, Orchid/o\" includes Vas/o (vessel) and Perine/o (region between the scrotum and anus)."
@@ -239,10 +239,10 @@
         "cat": "MT_lec25-26",
         "q": "Which set consists entirely of combining forms that mean sperm?",
         "options": [
-          "Sperm/o, Spermat/o, Sperm/i.",
-          "Test/o, Testicul/o, Orchi/o.",
-          "Prostat/o, Vas/o, Balan/o.",
-          "Epididym/o, Perine/o, Vas/o."
+          "Sperm/o, Spermat/o, Sperm/i",
+          "Test/o, Testicul/o, Orchi/o",
+          "Prostat/o, Vas/o, Balan/o",
+          "Epididym/o, Perine/o, Vas/o"
         ],
         "correct": 0,
         "explain": "Sperm/o, Spermat/o, and Sperm/i are the combining forms that mean sperm. \"Test/o, Testicul/o, Orchi/o\" consists of forms for the testis. \"Prostat/o, Vas/o, Balan/o\" consists of forms for the prostate, vessel, and glans penis. \"Epididym/o, Perine/o, Vas/o\" consists of forms for the epididymis, the perineal region, and a vessel."
@@ -253,10 +253,10 @@
         "cat": "MT_lec25-26",
         "q": "What does the combining form Prostat/o mean?",
         "options": [
-          "Testis, the male gonad that produces sperm cells and hormones for secondary characteristics.",
-          "Prostate gland, the trilobular gland encircling the urethra just below the bladder.",
-          "Sperm, the male reproductive cell or gamete produced inside the testis.",
-          "Bladder, the hollow organ that stores urine before it is released from the body."
+          "Testis, the male gonad that produces sperm cells and hormones for secondary characteristics",
+          "Prostate gland, the trilobular gland encircling the urethra just below the bladder",
+          "Sperm, the male reproductive cell or gamete produced inside the testis",
+          "Bladder, the hollow organ that stores urine before it is released from the body"
         ],
         "correct": 1,
         "explain": "Prostat/o means prostate gland. \"Testis, the male gonad that produces sperm and hormones\" is denoted by Test/o, Testicul/o, Orchi/o, or Orchid/o. \"Sperm, the male reproductive cell or gamete produced in the testis\" is denoted by Sperm/o, Spermat/o, or Sperm/i. \"Bladder, the organ that stores urine before it leaves the body\" is denoted by Cyst/o or Vesic/o."
@@ -267,10 +267,10 @@
         "cat": "MT_lec25-26",
         "q": "What does the combining form Vas/o mean?",
         "options": [
-          "Vessel.",
-          "Glans penis.",
-          "Perineal region.",
-          "Epididymis."
+          "Vessel",
+          "Glans penis",
+          "Perineal region",
+          "Epididymis"
         ],
         "correct": 0,
         "explain": "Vas/o means vessel, as in vas deferens. Glans penis is Balan/o, the perineal region is Perine/o, and the epididymis is Epididym/o."
@@ -281,10 +281,10 @@
         "cat": "MT_lec25-26",
         "q": "What does the combining form Perine/o mean?",
         "options": [
-          "The glans penis, the head of the penis denoted by Balan/o.",
-          "The prostate gland, the trilobular gland encircling the urethra.",
-          "The region between the scrotum and the anus, the perineal area.",
-          "The coiled duct on top of the testis that allows sperm maturation."
+          "The glans penis, the head of the penis denoted by Balan/o",
+          "The prostate gland, the trilobular gland encircling the urethra",
+          "The region between the scrotum and the anus, the perineal area",
+          "The coiled duct on top of the testis that allows sperm maturation"
         ],
         "correct": 2,
         "explain": "Perine/o denotes the region between the scrotum and the anus, the perineal area. \"The glans penis, the head of the penis denoted by Balan/o\" is Balan/o. \"The prostate gland, the trilobular gland encircling the urethra\" is Prostat/o. \"The coiled duct on top of the testis that allows sperm maturation\" is Epididym/o."
@@ -295,10 +295,10 @@
         "cat": "MT_lec25-26",
         "q": "What does the combining form Balan/o mean?",
         "options": [
-          "Vessel, as in the vas deferens duct.",
-          "Glans penis, the head of the penis.",
-          "Epididymis, the coiled duct on the testis.",
-          "Testis, the male gonad producing sperm and hormones."
+          "Vessel, as in the vas deferens duct",
+          "Glans penis, the head of the penis",
+          "Epididymis, the coiled duct on the testis",
+          "Testis, the male gonad producing sperm and hormones"
         ],
         "correct": 1,
         "explain": "Balan/o means glans penis, the head of the penis. \"Vessel, as in the vas deferens duct\" is Vas/o. \"Epididymis, the coiled duct on the testis\" is Epididym/o. \"Testis, the male gonad producing sperm and hormones\" is Test/o, Testicul/o, Orchi/o, or Orchid/o."
@@ -309,10 +309,10 @@
         "cat": "MT_lec25-26",
         "q": "All of the following combining forms name an organ or a cell EXCEPT:",
         "options": [
-          "Epididym/o.",
-          "Balan/o.",
-          "Perine/o.",
-          "Prostat/o."
+          "Epididym/o",
+          "Balan/o",
+          "Perine/o",
+          "Prostat/o"
         ],
         "correct": 2,
         "explain": "Perine/o denotes a region rather than an organ or a cell, so it is the exception. Epididym/o denotes the epididymis, Balan/o denotes the glans penis, and Prostat/o denotes the prostate gland, each of which names a structure."
@@ -323,10 +323,10 @@
         "cat": "MT_lec25-26",
         "q": "The suffix -cide, as in spermicide, means which of the following?",
         "options": [
-          "Killing.",
-          "Repair.",
-          "Formation.",
-          "Excision."
+          "Killing",
+          "Repair",
+          "Formation",
+          "Excision"
         ],
         "correct": 0,
         "explain": "The suffix -cide means killing, so spermicide is an agent that kills sperm. Repair is -plasty, formation is -genesis or -plasia, and excision is -ectomy."
@@ -337,10 +337,10 @@
         "cat": "MT_lec25-26",
         "q": "In prostate, the element pro- carries which of the following senses?",
         "options": [
-          "After.",
-          "Against.",
-          "Around.",
-          "Before."
+          "After",
+          "Against",
+          "Around",
+          "Before"
         ],
         "correct": 3,
         "explain": "In prostate, pro- means before, describing the gland's position before the bladder and urethra. After is post-, against is anti-, and around is peri-."
@@ -351,10 +351,10 @@
         "cat": "MT_lec25-26",
         "q": "In prostate, the element -stat carries which of the following senses?",
         "options": [
-          "To stand, non-moving, reflecting the gland's fixed position.",
-          "To cut, as in surgical incision or excision of tissue.",
-          "To view, as in visual examination with an instrument.",
-          "To bind, as in surgical fusion or fixation of structures."
+          "To stand, non-moving, reflecting the gland's fixed position",
+          "To cut, as in surgical incision or excision of tissue",
+          "To view, as in visual examination with an instrument",
+          "To bind, as in surgical fusion or fixation of structures"
         ],
         "correct": 0,
         "explain": "In prostate, -stat means to stand or non-moving, reflecting the gland's fixed position around the urethra. \"To cut, as in surgical incision or excision of tissue\" is -tomy or -ectomy. \"To view, as in visual examination with an instrument\" is -scopy. \"To bind, as in surgical fusion or fixation of structures\" is -desis."
@@ -365,10 +365,10 @@
         "cat": "MT_lec25-26",
         "q": "In epididymis, the element didymos carries which of the following senses?",
         "options": [
-          "Epididymis.",
-          "Testes.",
-          "Sperm.",
-          "Vessel."
+          "Epididymis",
+          "Testes",
+          "Sperm",
+          "Vessel"
         ],
         "correct": 1,
         "explain": "In epididymis, didymos means testes, so the term describes the structure on top of the testis. Epididymis is not the meaning of didymos; sperm is denoted by Spermat/o and vessel by Vas/o."
@@ -379,10 +379,10 @@
         "cat": "MT_lec25-26",
         "q": "In vas deferens, the element deferens carries which of the following senses?",
         "options": [
-          "Carrying away, conducting, progressing.",
-          "Holding back, retaining, storing.",
-          "Opening, releasing, expelling.",
-          "Producing, creating, generating."
+          "Carrying away, conducting, progressing",
+          "Holding back, retaining, storing up",
+          "Opening, releasing, expelling outward",
+          "Producing, creating, generating anew"
         ],
         "correct": 0,
         "explain": "In vas deferens, deferens means carrying away, conducting, or progressing, and vas means vessel. The term therefore describes the vessel that conducts sperm away from the epididymis."
@@ -407,10 +407,10 @@
         "cat": "MT_lec25-26",
         "q": "In azoospermia, which pairing of element to meaning is correct?",
         "options": [
-          "a = animal, zoo = without, sperm = sperm, ia = condition.",
-          "a = without, zoo = animal, sperm = sperm, ia = condition.",
-          "a = without, zoo = sperm, sperm = animal, ia = condition.",
-          "a = sperm, zoo = animal, sperm = without, ia = condition."
+          "a = animal, zoo = without, sperm = sperm, ia = condition",
+          "a = without, zoo = animal, sperm = sperm, ia = condition",
+          "a = without, zoo = sperm, sperm = animal, ia = condition",
+          "a = sperm, zoo = animal, sperm = without, ia = condition"
         ],
         "correct": 1,
         "explain": "In azoospermia the element a means without, zoo means animal, sperm means sperm, and ia means condition. The term describes the absence of sperm in the semen. \"a = animal, zoo = without, sperm = sperm, ia = condition\" assigns animal to a. \"a = without, zoo = sperm, sperm = animal, ia = condition\" assigns sperm to zoo. \"a = sperm, zoo = animal, sperm = without, ia = condition\" assigns sperm to a. None of these permutations matches the spelling of the term."
@@ -421,10 +421,10 @@
         "cat": "MT_lec25-26",
         "q": "Which statement correctly defines azoospermia?",
         "options": [
-          "The normal presence of sperm in the semen.",
-          "The absence of sperm in the semen.",
-          "The presence of glucose in the urine.",
-          "The absence of urine from the bladder."
+          "The normal presence of sperm in the semen",
+          "The absence of sperm in the semen",
+          "The presence of glucose in the urine",
+          "The absence of urine from the bladder"
         ],
         "correct": 1,
         "explain": "Azoospermia is the absence of sperm in the semen. Normal sperm in the semen is normospermia, glucose in the urine is glycosuria or glycouria, and absence of urine is anuria."
@@ -435,10 +435,10 @@
         "cat": "MT_lec25-26",
         "q": "Which term denotes the normal presence of sperm in the semen?",
         "options": [
-          "Normospermia.",
-          "Azoospermia.",
-          "Aspermia.",
-          "Oligospermia."
+          "Normospermia",
+          "Azoospermia",
+          "Aspermia",
+          "Oligospermia"
         ],
         "correct": 0,
         "explain": "Normospermia denotes the normal presence of sperm in the semen. Azoospermia denotes the absence of sperm, aspermia denotes the absence of semen, and oligospermia denotes a low sperm count."
@@ -449,10 +449,10 @@
         "cat": "MT_lec25-26",
         "q": "What does monorchism mean?",
         "options": [
-          "The presence of a single undescended testis.",
-          "The presence of two testes in the scrotum.",
-          "Inflammation of a single testis.",
-          "Surgical removal of a single testis."
+          "The presence of a single undescended testis",
+          "The presence of two testes in the scrotum",
+          "Inflammation of a single testis",
+          "Surgical removal of a single undescended testis"
         ],
         "correct": 0,
         "explain": "Monorchism denotes the condition of having a single undescended testis. Having two testes in the scrotum is the normal state, inflammation of a testis is orchitis, and surgical removal of a testis is orchiectomy."
@@ -463,10 +463,10 @@
         "cat": "MT_lec25-26",
         "q": "What does orchidopexy mean?",
         "options": [
-          "Surgical removal of a testis from the scrotum.",
-          "Surgical fixation of an undescended testis into the scrotum.",
-          "Inflammation of the testis causing swelling and pain.",
-          "Pain felt in the testis without inflammation present."
+          "Surgical removal of a testis from inside the scrotum",
+          "Surgical fixation of an undescended testis into the scrotum",
+          "Inflammation of the testis causing swelling and pain",
+          "Pain felt in the testis without any inflammation present"
         ],
         "correct": 1,
         "explain": "Orchidopexy is the surgical fixation of an undescended testis into the scrotum. Surgical removal is orchiectomy, inflammation is orchitis, and pain is orchialgia or orchiodynia."
@@ -477,10 +477,10 @@
         "cat": "MT_lec25-26",
         "q": "What does prostatectomy mean?",
         "options": [
-          "Incision into the prostate gland.",
-          "Surgical removal of the prostate gland.",
-          "Suturing of the prostate gland.",
-          "Pain in the prostate gland."
+          "Surgical incision into the prostate gland",
+          "Surgical removal of the prostate gland",
+          "Surgical suturing of the prostate gland",
+          "Pain felt in the prostate gland"
         ],
         "correct": 1,
         "explain": "Prostatectomy is the surgical removal of the prostate gland, built from Prostat/o (prostate) and -ectomy (excision). Incision would use -tomy, suturing would use -rrhaphy, and pain would use -dynia."
@@ -491,10 +491,10 @@
         "cat": "MT_lec25-26",
         "q": "What does prostatolithotomy mean?",
         "options": [
-          "Incision into the prostate gland to remove a stone from it.",
-          "Removal of the entire prostate gland in one procedure.",
-          "Surgical repair of the prostate gland after injury or defect.",
-          "Inflammation of the prostate gland with swelling and pain."
+          "Incision into the prostate gland to remove a stone from it",
+          "Removal of the entire prostate gland in one procedure",
+          "Surgical repair of the prostate gland after injury or defect",
+          "Inflammation of the prostate gland with swelling and pain"
         ],
         "correct": 0,
         "explain": "Prostatolithotomy is the incision into the prostate gland to remove a stone, built from Prostat/o (prostate), lith/o (stone), and -tomy (incision). Removal of the whole gland is prostatectomy, surgical repair is prostatoplasty, and inflammation is prostatitis."
@@ -505,10 +505,10 @@
         "cat": "MT_lec25-26",
         "q": "What does spermatogenesis mean?",
         "options": [
-          "Destruction of sperm.",
-          "The killing of sperm.",
-          "The formation of sperm.",
-          "The absence of sperm."
+          "Destruction of sperm",
+          "The killing of sperm",
+          "The formation of sperm",
+          "The complete absence of sperm"
         ],
         "correct": 2,
         "explain": "Spermatogenesis is the formation of sperm, built from Spermat/o (sperm) and -genesis (formation). Destruction or killing of sperm would use -cide, and absence of sperm is azoospermia."
@@ -519,10 +519,10 @@
         "cat": "MT_lec25-26",
         "q": "What does vasovasostomy mean?",
         "options": [
-          "Incision into the vas deferens to open the duct.",
-          "Surgical reconnection of the vas deferens after it was cut.",
-          "Removal of the vas deferens from the reproductive tract.",
-          "Recording of the vas deferens using imaging techniques."
+          "Incision into the vas deferens to open the duct",
+          "Surgical reconnection of the vas deferens after it was cut",
+          "Removal of the vas deferens from the reproductive tract",
+          "Recording of the vas deferens using imaging techniques"
         ],
         "correct": 1,
         "explain": "Vasovasostomy is the surgical reconnection of the vas deferens, built from Vas/o (vessel or duct) repeated and -stomy (surgical opening). Incision would use -tomy, removal would use -ectomy, and recording would use -graphy."
@@ -533,10 +533,10 @@
         "cat": "MT_lec25-26",
         "q": "What does perineoscrotal mean?",
         "options": [
-          "Pertaining to the prostate and the testis.",
-          "Pertaining to the penis and the scrotum.",
-          "Pertaining to the perineal region and the scrotum.",
-          "Pertaining to the scrotum and the testis."
+          "Pertaining to the prostate region and the testis",
+          "Pertaining to the penis and the scrotal sac",
+          "Pertaining to the perineal region and the scrotum",
+          "Pertaining to the scrotum and the testis itself"
         ],
         "correct": 2,
         "explain": "Perineoscrotal pertains to the perineal region and the scrotum, built from Perine/o (perineal region) and scrot (scrotum) with -al (pertaining to). \"Pertaining to the prostate and the testis\" pairs structures not named by these forms. \"Pertaining to the penis and the scrotum\" pairs structures not named by these forms. \"Pertaining to the scrotum and the testis\" pairs structures not named by these forms."
@@ -547,10 +547,10 @@
         "cat": "MT_lec25-26",
         "q": "What does balanoplasty mean?",
         "options": [
-          "Surgical repair of the glans penis.",
-          "Surgical removal of the glans penis.",
-          "Inflammation of the glans penis.",
-          "Pain in the glans penis."
+          "Surgical repair of the glans penis",
+          "Surgical removal of the glans penis",
+          "Inflammation of the glans penis",
+          "Pain in the glans penis"
         ],
         "correct": 0,
         "explain": "Balanoplasty is the surgical repair of the glans penis, built from Balan/o (glans penis) and -plasty (surgical repair). Removal would use -ectomy, inflammation would use -itis, and pain would use -dynia."
@@ -561,10 +561,10 @@
         "cat": "MT_lec25-26",
         "q": "What does spermicide mean?",
         "options": [
-          "Formation of sperm.",
-          "Absence of sperm.",
-          "An agent that kills sperm.",
-          "Pain in the sperm."
+          "Formation of new sperm",
+          "An absence of sperm",
+          "An agent that kills sperm",
+          "Pain related to sperm"
         ],
         "correct": 2,
         "explain": "Spermicide is an agent that kills sperm, built from Sperm/i (sperm) and -cide (killing). Formation of sperm is spermatogenesis, absence of sperm is azoospermia, and pain would not be phrased this way."
@@ -575,10 +575,10 @@
         "cat": "MT_lec25-26",
         "q": "What does epididymovesiculography mean?",
         "options": [
-          "Inflammation of the epididymis and seminal vesicle.",
-          "Process of recording the epididymis and seminal vesicle.",
-          "Removal of the epididymis and seminal vesicle.",
-          "Pain in the epididymis and seminal vesicle."
+          "Inflammation of the epididymis and seminal vesicle",
+          "Process of recording the epididymis and seminal vesicle",
+          "Removal of the epididymis and seminal vesicle",
+          "Pain arising in the epididymis and the seminal vesicle"
         ],
         "correct": 1,
         "explain": "Epididymovesiculography is the process of recording the epididymis and seminal vesicle, built from Epididym/o (epididymis), vesicul/o (seminal vesicle), and -graphy (process of recording). Inflammation would use -itis, removal would use -ectomy, and pain would use -dynia."
@@ -589,10 +589,10 @@
         "cat": "MT_lec25-26",
         "q": "What does vasoepididymography mean?",
         "options": [
-          "Surgical reconnection of the vas deferens and epididymis.",
-          "Inflammation of the vas deferens and epididymis.",
-          "Process of recording the vas deferens and epididymis.",
-          "Removal of the vas deferens and epididymis."
+          "Surgical reconnection of the vas deferens and epididymis",
+          "Inflammation of the vas deferens and epididymis",
+          "Process of recording the vas deferens and epididymis",
+          "Removal of the vas deferens and epididymis"
         ],
         "correct": 2,
         "explain": "Vasoepididymography is the process of recording the vas deferens and epididymis, built from Vas/o (vessel or duct), epididym/o (epididymis), and -graphy (process of recording). Surgical reconnection would use -stomy, inflammation would use -itis, and removal would use -ectomy."

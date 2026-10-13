@@ -29,10 +29,10 @@
         "cat": "MT_lec27-28",
         "q": "Which statement correctly describes the ovaries?",
         "options": [
-          "A pair of hollow muscular ducts located between the ovaries and uterus that provide a passageway for sperm.",
-          "Two glands on each side of the pelvic cavity that produce female sex hormones and ova.",
-          "A pear-shaped organ that plays a critical role in menstruation, fertility, and pregnancy.",
-          "The external genitalia of the female, with skin folds that protect the openings of the urethra and vagina."
+          "A pair of hollow muscular ducts located between the ovaries and uterus that provide a passageway for sperm",
+          "Two glands on each side of the pelvic cavity that produce female sex hormones and ova",
+          "A pear-shaped organ that plays a critical role in menstruation, fertility, and pregnancy",
+          "The external genitalia of the female, with skin folds that protect the openings of the urethra and vagina"
         ],
         "correct": 1,
         "explain": "The ovaries are two glands on each side of the pelvic cavity that produce female sex hormones and ova. The statement A pair of hollow muscular ducts located between the ovaries and uterus that provide a passageway for sperm describes the uterine tubes. The statement A pear-shaped organ that plays a critical role in menstruation, fertility, and pregnancy describes the uterus. The statement The external genitalia of the female, with skin folds that protect the openings of the urethra and vagina describes the vulva."
@@ -43,9 +43,9 @@
         "cat": "MT_lec27-28",
         "q": "Which structure is a pair of hollow muscular ducts located between the ovaries and uterus, providing a passageway for sperm to the fertilized egg?",
         "options": [
-          "Uterus",
-          "Cervix",
-          "Vagina",
+          "Uterine cavity",
+          "Cervical canal",
+          "Vaginal canal",
           "Uterine tubes"
         ],
         "correct": 3,
@@ -85,10 +85,10 @@
         "cat": "MT_lec27-28",
         "q": "Which statement correctly describes the vagina?",
         "options": [
-          "The external genitalia of the female, with skin folds that protect the openings of the urethra and vagina.",
-          "A tubular passageway from the cervix to the outside of the body that receives sperm, serves as the birth canal, and expels menstrual products.",
-          "A pear-shaped organ that plays a critical role in menstruation, fertility, and pregnancy.",
-          "A pair of hollow muscular ducts located between the ovaries and uterus."
+          "The external female genitalia, whose skin folds protect the openings of the urethra and vagina",
+          "A tube from the cervix to the outside that receives sperm and serves as the birth canal",
+          "A pear-shaped organ with a critical role in menstruation, fertility, and pregnancy",
+          "A pair of hollow muscular ducts between the ovaries and uterus that carry the egg"
         ],
         "correct": 1,
         "explain": "The vagina is the tubular passageway from the cervix to the outside of the body. It receives sperm, serves as the birth canal, and expels menstrual products. The statement The external genitalia of the female, with skin folds that protect the openings of the urethra and vagina describes the vulva. The statement A pear-shaped organ that plays a critical role in menstruation, fertility, and pregnancy describes the uterus. The statement A pair of hollow muscular ducts located between the ovaries and uterus describes the uterine tubes."
@@ -113,10 +113,10 @@
         "cat": "MT_lec27-28",
         "q": "Which statement correctly describes the mammary glands?",
         "options": [
-          "Two glands in the female breasts that are capable of producing milk and are regulated by the endocrine system.",
-          "Two glands on each side of the pelvic cavity that produce female sex hormones and ova.",
-          "A temporary vascular organ that connects the baby to the uterus during pregnancy.",
-          "A pair of hollow muscular ducts located between the ovaries and uterus."
+          "Two glands in the female breasts that produce milk under endocrine control",
+          "Two glands on each side of the pelvic cavity that produce sex hormones and ova",
+          "A temporary vascular organ that connects the baby to the uterus in pregnancy",
+          "A pair of hollow muscular ducts between the ovaries and uterus that carry the egg"
         ],
         "correct": 0,
         "explain": "The mammary glands are two glands in the female breasts that are capable of producing milk and are regulated by the endocrine system. The statement Two glands on each side of the pelvic cavity that produce female sex hormones and ova describes the ovaries. The statement A temporary vascular organ that connects the baby to the uterus during pregnancy describes the placenta. The statement A pair of hollow muscular ducts located between the ovaries and uterus describes the uterine tubes."
@@ -141,10 +141,10 @@
         "cat": "MT_lec27-28",
         "q": "Which statement correctly describes the placenta?",
         "options": [
-          "A permanent organ that produces sperm and female sex hormones throughout life, filters the blood continuously, and removes waste products from the body through the urinary tract.",
-          "A pair of glands in the female breasts that produce milk and are regulated by the endocrine system throughout the reproductive years and support infant nutrition after birth.",
-          "A temporary vascular organ that connects the baby to the uterus via the umbilical cord, provides oxygen and nutrients, removes carbon dioxide and wastes, produces hormones, passes immunity, and protects the baby.",
-          "A tubular passageway from the cervix to the outside of the body that expels menstrual products, receives sperm during intercourse, and serves as the birth canal during delivery."
+          "A permanent organ that produces sperm and female sex hormones, filters the blood, and removes waste through the urinary tract.",
+          "A pair of glands in the female breasts that produce milk under endocrine control and support infant nutrition after birth.",
+          "A temporary vascular organ joined to the baby by the umbilical cord that supplies oxygen and nutrients and removes wastes.",
+          "A tubular passageway from the cervix to the outside that expels menstrual products and serves as the birth canal."
         ],
         "correct": 2,
         "explain": "The placenta is a temporary vascular organ that connects the baby to the uterus via the umbilical cord. It provides oxygen and nutrients, removes carbon dioxide and wastes, produces hormones to help the baby grow, passes immunity, and protects the baby. The statement A permanent organ that produces sperm and female sex hormones throughout life, filters the blood continuously, and removes waste products from the body through the urinary tract calls it permanent and assigns wrong production and filtration. The statement A pair of glands in the female breasts that produce milk and are regulated by the endocrine system throughout the reproductive years and support infant nutrition after birth describes the mammary glands. The statement A tubular passageway from the cervix to the outside of the body that expels menstrual products, receives sperm during intercourse, and serves as the birth canal during delivery describes the vagina."
@@ -197,10 +197,10 @@
         "cat": "MT_lec27-28",
         "q": "The embryo is the developing organism from zygote day 1 to the 8th week. What is a zygote?",
         "options": [
-          "A mature egg released from the ovary.",
-          "A fertilized egg formed by the union of sperm and ovum.",
-          "A developing organism from the 9th week to birth.",
-          "A temporary vascular organ that connects the baby to the uterus."
+          "A mature egg released from the ovary",
+          "A fertilized egg formed by the union of sperm and ovum",
+          "A developing organism from the 9th week to birth",
+          "A temporary vascular organ that connects the baby to the uterus"
         ],
         "correct": 1,
         "explain": "A zygote is the fertilized egg formed by the union of sperm and ovum, and it is the starting point of the embryo. A mature egg released from the ovary is an ovum, the developing organism from the 9th week to birth is a fetus, and the temporary vascular organ is the placenta."
@@ -226,9 +226,9 @@
         "q": "What happens to the uterus during pregnancy?",
         "options": [
           "It expands to accommodate the growing fetus.",
-          "It shrinks to a smaller size.",
-          "It remains unchanged in size.",
-          "It moves to the pelvic cavity."
+          "It shrinks to a smaller size than before.",
+          "It remains unchanged in size until birth.",
+          "It moves down into the pelvic cavity."
         ],
         "correct": 0,
         "explain": "During pregnancy the uterus expands to accommodate the growing fetus. The line It shrinks to a smaller size reverses the change. The line It remains unchanged in size denies the expansion. The line It moves to the pelvic cavity invents a relocation."
@@ -309,10 +309,10 @@
         "cat": "MT_lec27-28",
         "q": "What does the combining form Salping/o mean?",
         "options": [
-          "Uterus",
-          "Ovary",
+          "Uterus (womb)",
+          "Ovary (gonad)",
           "Fallopian tube",
-          "Vagina"
+          "Vagina (canal)"
         ],
         "correct": 2,
         "explain": "Salping/o means fallopian tube or salpinx. Uterus is denoted by Hyster/o, Metr/o, or Uter/o. Ovary is denoted by Ovari/o or Oophor/o. Vagina is denoted by Vagin/o or Colp/o."
@@ -338,9 +338,9 @@
         "q": "What does the combining form Cervic/o mean?",
         "options": [
           "Neck or cervix",
-          "Vulva",
-          "Ovary",
-          "Uterus"
+          "Vulva or pudenda",
+          "Ovary or gonad",
+          "Uterus or womb"
         ],
         "correct": 0,
         "explain": "Cervic/o means neck or cervix. Vulva is Vulv/o, ovary is Ovari/o or Oophor/o, and uterus is Hyster/o, Metr/o, or Uter/o."
@@ -366,9 +366,9 @@
         "q": "What does the combining form Men/o mean?",
         "options": [
           "Menstruation",
-          "Milk",
+          "Milk production",
           "Vagina",
-          "Uterus"
+          "Uterus lining"
         ],
         "correct": 0,
         "explain": "Men/o means menstruation. Milk is Lact/o, vagina is Vagin/o or Colp/o, and uterus is Hyster/o, Metr/o, or Uter/o."
@@ -449,10 +449,10 @@
         "cat": "MT_lec27-28",
         "q": "What does cervicography mean?",
         "options": [
-          "Process of recording the neck of the uterus.",
-          "Process of recording the sheath-like canal.",
-          "Process of examining the neck of the uterus.",
-          "Process of repairing the neck of the uterus."
+          "Process of recording the neck of the uterus",
+          "Process of recording the sheath-like canal",
+          "Process of examining the neck of the uterus",
+          "Process of repairing the neck of the uterus"
         ],
         "correct": 0,
         "explain": "Cervicography is the process of recording the cervix, the neck of the uterus. Process of recording the sheath-like canal would name the vagina. Process of examining the neck of the uterus would use a -scopy form. Process of repairing the neck of the uterus would use a -plasty form."
@@ -463,10 +463,10 @@
         "cat": "MT_lec27-28",
         "q": "What does vaginodynia mean?",
         "options": [
-          "Process of recording the vagina.",
-          "Pain in the vagina.",
-          "Hernia of the uterus.",
-          "Discharge of milk."
+          "Process of recording the vagina",
+          "Pain in the vagina",
+          "Hernia of the uterus",
+          "Discharge of milk"
         ],
         "correct": 1,
         "explain": "Vaginodynia is pain in the vagina. Process of recording the vagina would be vaginography. Hernia of the uterus is uterocele. Discharge of milk is lactorrhea."
@@ -477,10 +477,10 @@
         "cat": "MT_lec27-28",
         "q": "What does uterocele mean?",
         "options": [
-          "Hernia of the uterus.",
-          "Pain in the uterus.",
-          "Surgical removal of the uterus.",
-          "Discharge from the uterus."
+          "Hernia of the uterus",
+          "Pain in the uterus",
+          "Surgical removal of the uterus",
+          "Discharge from the uterus"
         ],
         "correct": 0,
         "explain": "Uterocele is a hernia of the uterus. Pain in the uterus would be metrodynia or uterodynia. Surgical removal of the uterus is hysterectomy. Discharge from the uterus would use a different suffix."
@@ -491,10 +491,10 @@
         "cat": "MT_lec27-28",
         "q": "What does lactorrhea mean?",
         "options": [
-          "Formation of milk.",
-          "Discharge of milk.",
-          "Pain in the breast.",
-          "Surgical repair of the breast."
+          "Formation of milk",
+          "Discharge of milk",
+          "Pain in the breast",
+          "Surgical repair of the breast"
         ],
         "correct": 1,
         "explain": "Lactorrhea is a discharge of milk. Formation of milk would be lactogenesis. Pain in the breast is mastodynia. Surgical repair of the breast is mastoplasty."
@@ -505,10 +505,10 @@
         "cat": "MT_lec27-28",
         "q": "What does mastadenoma mean?",
         "options": [
-          "A malignant tumor of the breast.",
-          "A benign tumor of the breast.",
-          "Pain in the breast.",
-          "Discharge from the breast."
+          "A malignant tumor of the breast",
+          "A benign tumor of the breast",
+          "Pain in the breast",
+          "Discharge from the breast"
         ],
         "correct": 1,
         "explain": "Mastadenoma is a benign tumor of the breast, built from Mast/o (breast), aden (gland), and -oma (tumor). A malignant tumor would be mastocarcinoma. Pain in the breast is mastodynia. Discharge from the breast is mastorrhea."
@@ -519,10 +519,10 @@
         "cat": "MT_lec27-28",
         "q": "What does menopause mean?",
         "options": [
-          "The first menstrual period.",
-          "The cessation of menstruation.",
-          "Pain during menstruation.",
-          "Excessive menstrual flow."
+          "The first menstrual period",
+          "The cessation of menstruation",
+          "Pain during menstruation",
+          "Excessive menstrual flow"
         ],
         "correct": 1,
         "explain": "Menopause is the cessation of menstruation, marking the end of the menstrual cycle. The first menstrual period is menarche. Pain during menstruation is dysmenorrhea. Excessive menstrual flow is menorrhagia."
@@ -533,10 +533,10 @@
         "cat": "MT_lec27-28",
         "q": "What does mammogram mean?",
         "options": [
-          "A record of the breast.",
-          "A tumor of the breast.",
-          "Pain in the breast.",
-          "Discharge from the breast."
+          "A record of the breast",
+          "A tumor of the breast",
+          "Pain in the breast",
+          "Discharge from the breast"
         ],
         "correct": 0,
         "explain": "Mammogram is a record of the breast, built from Mamm/o (breast) and -gram (record). A tumor of the breast is mastadenoma. Pain in the breast is mastodynia. Discharge from the breast is mastorrhea."
@@ -547,10 +547,10 @@
         "cat": "MT_lec27-28",
         "q": "What does hysterocolposcope mean?",
         "options": [
-          "An instrument for examining the uterus and vagina.",
-          "An instrument for examining the ovary and tube.",
-          "Surgical removal of the uterus and vagina.",
-          "A record of the uterus and vagina."
+          "An instrument for examining the uterus and vagina",
+          "An instrument for examining the ovary and tube",
+          "Surgical removal of the uterus and vagina",
+          "A record of the uterus and vagina"
         ],
         "correct": 0,
         "explain": "Hysterocolposcope is an instrument for examining the uterus and vagina, built from Hyster/o (uterus), colp/o (vagina), and -scope (instrument for examining). An instrument for examining the ovary and tube would use different combining forms. Surgical removal would use -ectomy. A record would use -gram."
@@ -561,10 +561,10 @@
         "cat": "MT_lec27-28",
         "q": "What does gynecopathy mean?",
         "options": [
-          "Disease of women.",
-          "Pain in women.",
-          "Surgical repair of women.",
-          "A specialist in women."
+          "Disease of women",
+          "Pain in women",
+          "Surgical repair of women",
+          "A specialist in women"
         ],
         "correct": 0,
         "explain": "Gynecopathy is a disease of women, built from Gynec/o (woman) and -pathy (disease). Pain would use -dynia. Surgical repair would use -plasty. A specialist would use -logist."
@@ -575,10 +575,10 @@
         "cat": "MT_lec27-28",
         "q": "What does vulvovaginoplasty mean?",
         "options": [
-          "Surgical repair of the vulva and vagina.",
-          "Surgical incision into the vulva and vagina.",
-          "Surgical fixation of the vulva and vagina.",
-          "Surgical puncture of the vulva and vagina."
+          "Surgical repair of the vulva and vagina",
+          "Surgical incision into the vulva and vagina",
+          "Surgical fixation of the vulva and vagina",
+          "Surgical puncture of the vulva and vagina"
         ],
         "correct": 0,
         "explain": "Vulvovaginoplasty is surgical repair of the vulva and vagina, built from Vulv/o (vulva), vagin/o (vagina), and -plasty (surgical repair). Surgical incision would use -tomy. Surgical fixation would use -pexy. Surgical puncture would use -centesis."
@@ -589,13 +589,13 @@
         "cat": "MT_lec27-28",
         "q": "What does metrolymphangitis mean?",
         "options": [
-          "Inflammation of the uterus and surrounding vessels and lymphatics.",
-          "Inflammation of the ovary and surrounding vessels and lymphatics.",
-          "Inflammation of the vagina and surrounding vessels and lymphatics.",
-          "Inflammation of the bladder and surrounding vessels and lymphatics."
+          "Inflammation of the uterus and surrounding vessels and lymphatics",
+          "Inflammation of the ovary and surrounding vessels and lymphatics",
+          "Swelling of the uterus with blocked vessels and lymphatics",
+          "Tumor of the uterus spreading to vessels and lymphatics"
         ],
         "correct": 0,
-        "explain": "Metrolymphangitis is inflammation of the uterus and surrounding vessels and lymphatics, built from Metr/o (uterus), lymph, ang (vessel), and -itis (inflammation). The lines that name the ovary, the vagina, or the bladder assign the inflammation to the wrong structure."
+        "explain": "Metrolymphangitis is inflammation of the uterus and surrounding vessels and lymphatics, built from Metr/o (uterus), lymph, ang (vessel), and -itis (inflammation). The other options keep part of the term but change another word part, so they do not match."
       },
       {
         "id": "MT27043",
@@ -603,10 +603,10 @@
         "cat": "MT_lec27-28",
         "q": "What does colpohyperplasia mean?",
         "options": [
-          "Abnormal enlargement of the vagina.",
-          "Inflammation of the vagina.",
-          "Pain in the vagina.",
-          "Surgical repair of the vagina."
+          "Abnormal enlargement of the vagina",
+          "Inflammation of the vaginal wall",
+          "Pain felt in the vagina",
+          "Surgical repair of the vagina"
         ],
         "correct": 0,
         "explain": "Colpohyperplasia is abnormal enlargement of the vagina, built from Colp/o (vagina), hyper- (excessive), and -plasia (formation or growth). Inflammation would use -itis. Pain would use -dynia. Surgical repair would use -plasty."
@@ -617,10 +617,10 @@
         "cat": "MT_lec27-28",
         "q": "In the female reproductive system, what is the vestibule?",
         "options": [
-          "The space between the labia minora that contains the openings of the urethra and vagina.",
-          "The external genitalia as a whole that includes the labia and the clitoris.",
-          "The canal from the cervix to the outside that receives sperm and serves as the birth canal.",
-          "The pear-shaped organ of pregnancy that expands to hold the growing fetus."
+          "The space between the labia minora that contains the openings of the urethra and vagina",
+          "The external genitalia as a whole that includes the labia and the clitoris",
+          "The canal from the cervix to the outside that receives sperm and serves as the birth canal",
+          "The pear-shaped organ of pregnancy that expands to hold the growing fetus"
         ],
         "correct": 0,
         "explain": "The vestibule is the space between the labia minora that contains the openings of the urethra and vagina. The external genitalia as a whole that includes the labia and the clitoris is the vulva. The canal from the cervix to the outside that receives sperm and serves as the birth canal is the vagina. The pear-shaped organ of pregnancy that expands to hold the growing fetus is the uterus."
@@ -1197,10 +1197,10 @@
             "id": "3",
             "prompt": "What does it receive and serve as?",
             "options": [
-              "receives sperm and serves as the birth canal",
-              "carries the egg and stores hormones",
-              "produces ova and expands in pregnancy",
-              "protects openings and produces estrogen"
+              "receives sperm and serves as the birth canal.",
+              "carries the egg and stores the hormones.",
+              "produces ova and expands during pregnancy.",
+              "protects openings and produces estrogen."
             ],
             "correct": 0
           },

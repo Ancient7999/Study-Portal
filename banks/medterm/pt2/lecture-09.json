@@ -505,10 +505,10 @@
     "cat": "MT_lec9",
     "q": "What does the term cytotoxic mean?",
     "options": [
-     "Damaging or poisonous to cells.",
-     "Pertaining to the skin surface.",
-     "Pertaining to the small intestine.",
-     "Pertaining to the liver tissue."
+     "Damaging or poisonous to cells",
+     "Pertaining to the skin surface",
+     "Pertaining to the small intestine",
+     "Pertaining to the liver tissue"
     ],
     "correct": 0,
     "explain": "Cytotoxic is built from Cyt/o (cell) and tox (poison) with -ic (pertaining to), so it means damaging or poisonous to cells. Pertaining to the skin would use Derm/o or Cutane/o, pertaining to the small intestine would use Enter/o, and pertaining to the liver would use Hepat/o."
@@ -519,13 +519,13 @@
     "cat": "MT_lec9",
     "q": "What does the term dermatologist mean?",
     "options": [
-     "A specialist in disorders of the skin.",
-     "A specialist in disorders of women.",
-     "A specialist who studies the nature of disease.",
-     "A specialist who performs imaging using sound waves."
+     "A specialist in disorders of the skin",
+     "A technician who records skin images",
+     "A surgeon who repairs the skin after burns",
+     "A specialist in disorders of the hair only"
     ],
     "correct": 0,
-    "explain": "Dermatologist is built from Dermat/o (skin) and -ologist (specialist), so it denotes a specialist in disorders of the skin. A specialist in disorders of women is gynecologist, a specialist who studies the nature of disease is pathobiologist, and a specialist who performs imaging using sound waves is sonographer."
+    "explain": "Dermatologist is built from Dermat/o (skin) and -ologist (specialist), so it denotes a specialist in disorders of the skin. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT10938",
@@ -533,10 +533,10 @@
     "cat": "MT_lec9",
     "q": "What does the term enterocele mean?",
     "options": [
-     "A hernia of the small intestine.",
-     "Downward displacement of the stomach.",
-     "Process of examining the esophagus.",
-     "Surgical removal of the liver."
+     "A hernia of the small intestine",
+     "Downward displacement of the stomach",
+     "Process of examining the esophagus",
+     "Surgical removal of the liver"
     ],
     "correct": 0,
     "explain": "Enterocele is built from Enter/o (small intestine) and -cele (hernia), so it denotes a hernia of the small intestine. Downward displacement of the stomach is gastroptosis, examining the esophagus is esophagoscopy, and removal of the liver is hepatectomy."
@@ -547,10 +547,10 @@
     "cat": "MT_lec9",
     "q": "What does the term esophagoscopy mean?",
     "options": [
-     "Process of examining the esophagus with an instrument.",
-     "A hernia of the small intestine through a weakness.",
-     "Downward displacement or drooping of the stomach.",
-     "Surgical removal of part or all of the liver."
+     "Process of examining the esophagus with an instrument",
+     "A hernia of the small intestine through a weakness",
+     "Downward displacement or drooping of the stomach",
+     "Surgical removal of part or all of the liver"
     ],
     "correct": 0,
     "explain": "Esophagoscopy is built from Esophag/o (esophagus) and -scopy (process of examining), so it denotes examining the esophagus with an instrument. A hernia of the small intestine is enterocele, drooping of the stomach is gastroptosis, and removal of the liver is hepatectomy."
@@ -561,13 +561,13 @@
     "cat": "MT_lec9",
     "q": "What does the term gastroptosis mean?",
     "options": [
-     "Downward displacement or drooping of the stomach.",
-     "A hernia of the small intestine through a weakness.",
-     "Process of examining the esophagus with an instrument.",
-     "Surgical removal of part or all of the liver."
+     "Downward displacement or drooping of the stomach",
+     "Inflammation of the lining of the stomach",
+     "A hernia of the stomach through the diaphragm",
+     "Surgical removal of part of the stomach"
     ],
     "correct": 0,
-    "explain": "Gastroptosis is built from Gastr/o (stomach) and -ptosis (downward displacement or drooping), so it denotes a drooping of the stomach. A hernia of the small intestine is enterocele, examining the esophagus is esophagoscopy, and removal of the liver is hepatectomy."
+    "explain": "Gastroptosis is built from Gastr/o (stomach) and -ptosis (downward displacement or drooping), so it denotes a drooping of the stomach. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT10941",
@@ -575,13 +575,13 @@
     "cat": "MT_lec9",
     "q": "What does the term hepatectomy mean?",
     "options": [
-     "Surgical removal of the liver.",
-     "A hernia of the small intestine.",
-     "Process of examining the esophagus.",
-     "Downward displacement of the stomach."
+     "Surgical removal of the liver",
+     "Incision into the liver",
+     "Enlargement of the liver",
+     "Surgical repair of the liver"
     ],
     "correct": 0,
-    "explain": "Hepatectomy is built from Hepat/o (liver) and -ectomy (surgical removal), so it denotes surgical removal of the liver. The vowel-initial -ectomy drops the combining vowel o, so the form is R+S rather than CF+S. A hernia of the small intestine is enterocele, examining the esophagus is esophagoscopy, and drooping of the stomach is gastroptosis."
+    "explain": "Hepatectomy is built from Hepat/o (liver) and -ectomy (surgical removal), so it denotes surgical removal of the liver. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT10942",
@@ -589,10 +589,10 @@
     "cat": "MT_lec9",
     "q": "What does the term carcinoma mean?",
     "options": [
-     "A malignant, cancerous tumor.",
-     "A benign tumor of glandular tissue.",
-     "The study of tumors.",
-     "Death of tissue or cells."
+     "A malignant, cancerous tumor",
+     "A benign tumor of glandular tissue",
+     "The study of tumors",
+     "Death of tissue or cells"
     ],
     "correct": 0,
     "explain": "Carcinoma is built from Carcin/o (cancer) and -oma (tumor), so it denotes a malignant, cancerous tumor. The vowel-initial -oma drops the combining vowel o, so the form is R+S. A benign glandular tumor is fibroadenoma, the study of tumors is oncology, and tissue death is necrosis."
@@ -603,10 +603,10 @@
     "cat": "MT_lec9",
     "q": "What does the term endocrinology mean?",
     "options": [
-     "The study of glands and the substances they secrete within.",
-     "Loss of sensation produced by blocking ordinary sensory input.",
-     "A written record of origin or of family relationships.",
-     "A clinical specialist in disorders that affect women."
+     "The study of glands and the substances they secrete within",
+     "Loss of sensation produced by blocking ordinary sensory input",
+     "A written record of origin or of family relationships",
+     "A clinical specialist in disorders that affect women"
     ],
     "correct": 0,
     "explain": "Endocrinology is built from endo- (within), Crin/o (to secrete), and -logy (study), so it denotes the study of glands and the substances they secrete within the body. Loss of sensation is anesthesia, a record of origin is genogram, and a specialist in disorders of women is gynecologist."
@@ -617,10 +617,10 @@
     "cat": "MT_lec9",
     "q": "What does the term anesthesia mean?",
     "options": [
-     "Loss of sensation.",
-     "The study of glands and their secretions.",
-     "Exaggerated fear of water.",
-     "Hardening of the skin."
+     "Loss of sensation",
+     "The study of glands and their secretions",
+     "Exaggerated fear of water",
+     "Hardening of the skin"
     ],
     "correct": 0,
     "explain": "Anesthesia is built from an- (without), Esthesi/o (sensation), and -ia (condition), so it denotes loss of sensation. The vowel-initial -ia leaves the root bare, so the form is P+R+S. The study of glands is endocrinology, fear of water is hydrophobia, and hardening of the skin is scleroderma."
@@ -631,10 +631,10 @@
     "cat": "MT_lec9",
     "q": "What does the term fibroadenoma mean?",
     "options": [
-     "A benign tumor composed of fibrous and glandular tissue.",
-     "A malignant tumor built on the combining form for cancer.",
-     "Death of tissue named by the combining form for death.",
-     "Hardening of skin named by the combining form for hard."
+     "A benign tumor composed of fibrous and glandular tissue",
+     "A malignant tumor built on the combining form for cancer",
+     "Death of tissue named by the combining form for death",
+     "Hardening of skin named by the combining form for hard"
     ],
     "correct": 0,
     "explain": "Fibroadenoma is built from Fibr/o (fiber), aden (gland), and -oma (tumor), so it denotes a benign tumor composed of fibrous and glandular tissue. A malignant cancerous tumor is carcinoma, tissue death is necrosis, and hardening of the skin is scleroderma."
@@ -645,10 +645,10 @@
     "cat": "MT_lec9",
     "q": "What does the term genogram mean?",
     "options": [
-     "A record of origin or of family relationships.",
-     "The study of tumors and other abnormal masses.",
-     "The process of measuring form or body shape.",
-     "A condition of death in tissue or in cells."
+     "A record of origin or of family relationships",
+     "The study of tumors and other abnormal masses",
+     "The process of measuring form or body shape",
+     "A condition of death in tissue or in cells"
     ],
     "correct": 0,
     "explain": "Genogram is built from Gen/o (origin or production) and -gram (record), so it denotes a record of origin or of family relationships. The study of tumors is oncology, measuring form is morphometry, and tissue death is necrosis."
@@ -659,10 +659,10 @@
     "cat": "MT_lec9",
     "q": "What does the term gynecologist mean?",
     "options": [
-     "A specialist in disorders of women.",
-     "A specialist in disorders of the skin.",
-     "A specialist who studies the nature of disease.",
-     "A specialist who performs imaging using sound waves."
+     "A specialist in disorders of women",
+     "A specialist in disorders of the skin",
+     "A specialist who studies the nature of disease",
+     "A specialist who performs imaging using sound waves"
     ],
     "correct": 0,
     "explain": "Gynecologist is built from Gynec/o (woman) and -ologist (specialist), so it denotes a specialist in disorders of women. A skin specialist is dermatologist, a specialist in the nature of disease is pathobiologist, and a sound-imaging specialist is sonographer."
@@ -673,10 +673,10 @@
     "cat": "MT_lec9",
     "q": "What does the term lithotripsy mean?",
     "options": [
-     "Crushing of a stone or of stones.",
-     "A benign tumor of fiber and gland tissue.",
-     "Abnormal narrowing of a passage or vessel.",
-     "Hardening of the skin over a body region."
+     "Crushing of a stone or of stones",
+     "A benign tumor of fiber and gland tissue",
+     "Abnormal narrowing of a passage or vessel",
+     "Hardening of the skin over a body region"
     ],
     "correct": 0,
     "explain": "Lithotripsy is built from Lith/o (stone) and -tripsy (crushing), so it denotes crushing of stones. A benign glandular tumor is fibroadenoma, abnormal narrowing is stenosis, and hardening of the skin is scleroderma."
@@ -687,10 +687,10 @@
     "cat": "MT_lec9",
     "q": "What does the term necrosis mean?",
     "options": [
-     "Death of tissue or of cells.",
-     "The study of tumors or masses.",
-     "Hardening of the skin surface.",
-     "Abnormal narrowing of a passage."
+     "Death of tissue or of cells",
+     "The study of tumors or masses",
+     "Hardening of the skin surface",
+     "Abnormal narrowing of a passage"
     ],
     "correct": 0,
     "explain": "Necrosis is built from Necr/o (death) and -osis (condition), so it denotes death of tissue or cells. The study of tumors is oncology, hardening of the skin is scleroderma, and abnormal narrowing is stenosis."
@@ -701,10 +701,10 @@
     "cat": "MT_lec9",
     "q": "What does the term oncology mean?",
     "options": [
-     "The study of tumors.",
-     "Death of tissue or cells.",
-     "A benign glandular tumor.",
-     "A malignant pigment tumor."
+     "The study of tumors",
+     "Death of tissue or cells",
+     "A benign glandular tumor",
+     "A malignant pigment tumor"
     ],
     "correct": 0,
     "explain": "Oncology is built from Onc/o (tumor or mass) and -logy (study), so it denotes the study of tumors. Tissue death is necrosis, a benign glandular tumor is fibroadenoma, and a malignant pigment tumor is melanoma."
@@ -715,10 +715,10 @@
     "cat": "MT_lec9",
     "q": "What does the term orthopedist mean?",
     "options": [
-     "A specialist in the correction of musculoskeletal deformities.",
-     "A specialist who studies the life and nature of disease.",
-     "A specialist in disorders that specifically affect women.",
-     "A specialist in disorders that specifically affect the skin."
+     "A specialist in the correction of musculoskeletal deformities",
+     "A specialist who studies the life and nature of disease",
+     "A specialist in disorders that specifically affect women",
+     "A specialist in disorders that specifically affect the skin"
     ],
     "correct": 0,
     "explain": "Orthopedist is built from Orth/o (straight or correct), ped (child or foot), and -ist (specialist), so it denotes a specialist in the correction of deformities of the musculoskeletal structure. A specialist in the nature of disease is pathobiologist, a specialist in women is gynecologist, and a skin specialist is dermatologist."
@@ -729,10 +729,10 @@
     "cat": "MT_lec9",
     "q": "What does the term morphometry mean?",
     "options": [
-     "Process of measuring form.",
-     "The study of tumors.",
-     "A record of origin or of family relationships.",
-     "Death of tissue or cells."
+     "Process of measuring form",
+     "The study of tumors",
+     "A record of origin or of family relationships",
+     "Death of tissue or cells"
     ],
     "correct": 0,
     "explain": "Morphometry is built from Morph/o (form) and -metry (measurement), so it denotes the process of measuring form. The study of tumors is oncology, a record of origin is genogram, and tissue death is necrosis."
@@ -743,10 +743,10 @@
     "cat": "MT_lec9",
     "q": "What does the term pathobiologist mean?",
     "options": [
-     "A specialist who studies the nature of disease.",
-     "A specialist in disorders of women.",
-     "A specialist in disorders of the skin.",
-     "A specialist in the correction of musculoskeletal deformities."
+     "A specialist who studies the nature of disease",
+     "A specialist in disorders of women",
+     "A specialist in disorders of the skin",
+     "A specialist in the correction of musculoskeletal deformities"
     ],
     "correct": 0,
     "explain": "Pathobiologist is built from Path/o (disease), bi/o (life), and -logist (specialist), so it denotes a specialist who studies the nature of disease, with two roots giving CF+CF+S. A specialist in women is gynecologist, a skin specialist is dermatologist, and a musculoskeletal specialist is orthopedist."
@@ -757,10 +757,10 @@
     "cat": "MT_lec9",
     "q": "What does the term phagophobia mean?",
     "options": [
-     "Exaggerated fear of eating or swallowing.",
-     "Exaggerated fear of or sensitivity to water.",
-     "A disorder featuring errors of speech.",
-     "A skin condition caused by poison."
+     "Exaggerated fear of eating or swallowing",
+     "Exaggerated fear of or sensitivity to water",
+     "A disorder featuring errors of speech",
+     "A skin condition caused by poison"
     ],
     "correct": 0,
     "explain": "Phagophobia is built from Phag/o (eat or swallow), phob (fear), and -ia (condition), so it denotes an exaggerated fear of eating or swallowing. Fear of water is hydrophobia, errors of speech is paraphasia, and a poison skin condition is toxicoderma."
@@ -771,10 +771,10 @@
     "cat": "MT_lec9",
     "q": "What does the term paraphasia mean?",
     "options": [
-     "A disorder featuring errors of speech.",
-     "Exaggerated fear of eating or swallowing.",
-     "A skin condition caused by poison.",
-     "Hardening of the skin."
+     "A disorder featuring errors of speech",
+     "Exaggerated fear of eating or swallowing",
+     "A skin condition caused by poison",
+     "Hardening of the skin"
     ],
     "correct": 0,
     "explain": "Paraphasia is built from para- (abnormal), Phas/o (speech), and -ia (condition), so it denotes a disorder featuring errors of speech. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and hardening of the skin is scleroderma."
@@ -785,10 +785,10 @@
     "cat": "MT_lec9",
     "q": "What does the term toxicoderma mean?",
     "options": [
-     "A skin condition caused by poison.",
-     "Hardening of the skin.",
-     "Exaggerated fear of water.",
-     "A disorder featuring errors of speech."
+     "A skin condition caused by poison",
+     "Hardening of the skin",
+     "Exaggerated fear of water",
+     "A disorder featuring errors of speech"
     ],
     "correct": 0,
     "explain": "Toxicoderma is built from Toxic/o (poison) and derma (skin), so it denotes a skin condition caused by poison, with derma as a root giving CF+R. Hardening of the skin is scleroderma, fear of water is hydrophobia, and speech errors is paraphasia."
@@ -799,10 +799,10 @@
     "cat": "MT_lec9",
     "q": "What does the term hydrophobia mean?",
     "options": [
-     "Exaggerated fear of or sensitivity to water.",
-     "Exaggerated fear of eating or of swallowing.",
-     "A skin condition caused by exposure to poison.",
-     "Loss of sensation affecting a body region."
+     "Exaggerated fear of or sensitivity to water",
+     "Exaggerated fear of eating or of swallowing",
+     "A skin condition caused by exposure to poison",
+     "Loss of sensation affecting a body region"
     ],
     "correct": 0,
     "explain": "Hydrophobia is built from Hydr/o (water), phob (fear), and -ia (condition), so it denotes an exaggerated fear of or sensitivity to water. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and loss of sensation is anesthesia."
@@ -813,10 +813,10 @@
     "cat": "MT_lec9",
     "q": "What does the term stenosis mean?",
     "options": [
-     "Abnormal narrowing of a passage or vessel.",
-     "A hardening of the skin.",
-     "Death of tissue or cells.",
-     "A record of origin or of family relationships."
+     "Abnormal narrowing of a passage or vessel",
+     "A hardening of the skin",
+     "Death of tissue or cells",
+     "A record of origin or of family relationships"
     ],
     "correct": 0,
     "explain": "Stenosis is built from Sten/o (narrow) and -osis (condition), so it denotes an abnormal narrowing of a passage or vessel. The root sten ends in a consonant and the vowel-initial -osis drops the combining vowel, giving R+S. Hardening of the skin is scleroderma, tissue death is necrosis, and a record of origin is genogram."
@@ -827,10 +827,10 @@
     "cat": "MT_lec9",
     "q": "What does the term scleroderma mean?",
     "options": [
-     "Hardening of the skin.",
-     "Abnormal narrowing of a passage.",
-     "A skin condition caused by poison.",
-     "Exaggerated fear of water."
+     "Hardening of the skin",
+     "Abnormal narrowing of a passage",
+     "A skin condition caused by poison",
+     "Exaggerated fear of water"
     ],
     "correct": 0,
     "explain": "Scleroderma is built from Scler/o (hard) and derma (skin), so it denotes hardening of the skin, with derma as a root giving CF+R. Abnormal narrowing is stenosis, a poison skin condition is toxicoderma, and fear of water is hydrophobia."
@@ -841,13 +841,13 @@
     "cat": "MT_lec9",
     "q": "What does the term sonographer mean?",
     "options": [
-     "A specialist who performs imaging using sound waves.",
-     "A specialist in disorders of women.",
-     "A specialist who studies the nature of disease.",
-     "A specialist in disorders of the skin."
+     "A specialist who performs imaging using sound waves",
+     "A specialist who treats hearing loss from loud sound",
+     "A device that records sound waves from the heart",
+     "A specialist who studies the physics of sound"
     ],
     "correct": 0,
-    "explain": "Sonographer is built from Son/o (sound) and -grapher (one who records or images), so it denotes a specialist who performs imaging using sound waves. A specialist in women is gynecologist, a specialist in the nature of disease is pathobiologist, and a skin specialist is dermatologist."
+    "explain": "Sonographer is built from Son/o (sound) and -grapher (one who records or images), so it denotes a specialist who performs imaging using sound waves. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT10961",
@@ -883,10 +883,10 @@
     "cat": "MT_lec9",
     "q": "Dermal and cutaneous are built as R+S while dermatologist is built as CF+S, although all three use a combining form for skin. Which statement explains the difference?",
     "options": [
-     "The suffix -logist begins with a vowel, so dermatologist drops o, while -al and -ous begin with consonants and should keep the combining vowel.",
-     "Both -al and -ous begin with consonants, so dermal and cutaneous should keep o, and -logist drops it by a same-vowel rule.",
-     "The suffixes -al and -ous begin with vowels, so o is dropped (R+S); the suffix -logist begins with a consonant, so o is kept (CF+S).",
-     "All three terms keep the combining vowel o, but dermal and cutaneous lose it because derm and cutane end in a vowel."
+     "The suffix -logist begins with a vowel, so dermatologist drops o, while -al and -ous begin with consonants and should keep the combining vowel",
+     "Both -al and -ous begin with consonants, so dermal and cutaneous should keep o, and -logist drops it by a same-vowel rule",
+     "The suffixes -al and -ous begin with vowels, so o is dropped (R+S); the suffix -logist begins with a consonant, so o is kept (CF+S)",
+     "All three terms keep the combining vowel o, but dermal and cutaneous lose it because derm and cutane end in a vowel"
     ],
     "correct": 2,
     "explain": "The roots derm and cutane end in consonants and the suffixes -al and -ous open with vowels, so no combining vowel is used and the forms are R+S (derm + al, cutane + ous). Dermatologist is analyzed as dermat/o + logist: the suffix -logist opens with the consonant l, so the combining vowel o is kept and the form is CF+S. Treating -logist as vowel-initial would drop o and contradict that build. Treating -al and -ous as consonant-initial would keep o in dermal and cutaneous, which the builds do not. Tying the drop to a vowel at the end of derm or cutane is wrong, because both roots end in a consonant."
@@ -897,10 +897,10 @@
     "cat": "MT_lec9",
     "q": "Anesthesia is built as P+R+S while endocrinology is built as P+CF+S, although both place a prefix before a combining form. Which statement explains the difference at the root-suffix join?",
     "options": [
-     "The suffix -ia begins with a vowel, so aesthesi stands bare (R); -logy begins with a consonant, so crin keeps combining vowel o (CF).",
-     "The suffix -logy begins with a vowel, so crin stands bare; the suffix -ia begins with a consonant, so aesthesi keeps combining vowel o.",
-     "Both suffixes begin with consonants, but -ia drops the combining vowel under a same-vowel rule that these two joins do not meet.",
-     "The difference comes from the prefixes: an- ends in a consonant so no vowel is added, while endo- ends in a vowel so o is inserted."
+     "The suffix -ia begins with a vowel, so aesthesi stands bare (R); -logy begins with a consonant, so crin keeps combining vowel o (CF)",
+     "The suffix -logy begins with a vowel, so crin stands bare; the suffix -ia begins with a consonant, so aesthesi keeps combining vowel o",
+     "Both suffixes begin with consonants, but -ia drops the combining vowel under a same-vowel rule that these two joins do not meet",
+     "The difference comes from the prefixes: an- ends in a consonant so no vowel is added, while endo- ends in a vowel so o is inserted"
     ],
     "correct": 0,
     "explain": "After the prefix, the build is decided by the root-suffix join. In anesthesia the root aesthesi meets the vowel-initial suffix -ia, so no combining vowel is used and the root is bare, giving P+R+S. In endocrinology the root crin meets the consonant-initial suffix -logy, so the combining vowel o is kept, giving P+CF+S. The prefix endo- ends in a vowel, but the root crin begins with a consonant, so the prefix-vowel rule is not triggered and endo- keeps its o. Reversing the suffix initials swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Attributing the difference to the prefixes misses the join that actually decides R versus CF."
@@ -939,10 +939,10 @@
     "cat": "MT_lec9",
     "q": "Cutaneous is built as R+S while sonographer is built as CF+S. Which statement explains the difference at the root-suffix join?",
     "options": [
-     "The suffix -ous begins with a vowel, so cutane stands bare (R); -grapher begins with a consonant, so son keeps its combining vowel o (CF).",
-     "The element -grapher begins with a vowel, so son stands bare; the suffix -ous begins with a consonant, so cutane keeps its combining vowel o.",
-     "Both elements begin with consonants, but -ous drops the combining vowel under a same-vowel rule that this join does not meet.",
-     "Both terms keep the combining vowel o, but cutaneous loses it because the root cutane is analyzed as ending in a vowel."
+     "The suffix -ous begins with a vowel, so cutane stands bare (R); -grapher begins with a consonant, so son keeps its combining vowel o (CF)",
+     "The element -grapher begins with a vowel, so son stands bare; the suffix -ous begins with a consonant, so cutane keeps its combining vowel o",
+     "Both elements begin with consonants, but -ous drops the combining vowel under a same-vowel rule that this join does not meet",
+     "Both terms keep the combining vowel o, but cutaneous loses it because the root cutane is analyzed as ending in a vowel"
     ],
     "correct": 0,
     "explain": "The root cutane ends in a consonant and the suffix -ous opens with the vowel o, so no combining vowel is used and the form is R+S (cutane + ous). The root son ends in a consonant and the element -grapher opens with the consonant g, so the combining vowel o is kept, giving CF+S (son/o + grapher). Reversing the initial letters swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Tying the drop to a vowel at the end of cutane is wrong, because cutane ends in a consonant."

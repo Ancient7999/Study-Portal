@@ -15,10 +15,10 @@
         "cat": "MT_lec21-22",
         "q": "Which process breaks down food by chewing, swallowing, and mixing in digestive juices to convert some of the food into absorbable molecules?",
         "options": [
-          "Digestion or ingestion of the food material.",
-          "Absorption or assimilation into the blood stream.",
-          "Excretion or defecation of the waste products.",
-          "Propulsion of the bolus along the muscular tube."
+          "Digestion or ingestion of the food material",
+          "Absorption or assimilation into the blood stream",
+          "Excretion or defecation of the waste products",
+          "Propulsion of the bolus along the muscular tube"
         ],
         "correct": 0,
         "explain": "Digestion or ingestion is the process of breaking down food by chewing, swallowing, and mixing in digestive juices to convert some of the food into absorbable molecules. \"Absorption or assimilation into the blood stream\" is the passage of digestive food molecules through the walls of the intestine. \"Excretion or defecation of the waste products\" is the elimination of non-absorbable nutrients and waste. \"Propulsion of the bolus along the muscular tube\" describes movement through the esophagus, not the full breakdown process."
@@ -29,10 +29,10 @@
         "cat": "MT_lec21-22",
         "q": "Which process is the passage of digestive food molecules through the walls of the intestine into the blood stream to be carried to cells of the body?",
         "options": [
-          "Absorption or assimilation of the nutrient molecules.",
-          "Digestion or ingestion of the original food mass.",
-          "Excretion or elimination of non-absorbable material.",
-          "Mastication or chewing of the solid food pieces."
+          "Absorption or assimilation of the nutrient molecules",
+          "Digestion or ingestion of the original food mass",
+          "Excretion or elimination of non-absorbable material",
+          "Mastication or chewing of the solid food pieces"
         ],
         "correct": 0,
         "explain": "Absorption or assimilation is the passage of digestive food molecules through the walls of the intestine into the blood stream to be carried to cells of the body. \"Digestion or ingestion of the original food mass\" is the breaking down by chewing, swallowing, and mixing. \"Excretion or elimination of non-absorbable material\" removes waste products. \"Mastication or chewing of the solid food pieces\" is only the mechanical part of digestion in the mouth."
@@ -43,10 +43,10 @@
         "cat": "MT_lec21-22",
         "q": "In the intestine, which pair of nutrients is taken away by the blood, while the third is taken by the lymph?",
         "options": [
-          "Carbohydrates and proteins by blood, fats by lymph.",
-          "Carbohydrates and fats by blood, proteins by lymph.",
-          "Proteins and fats by blood, carbohydrates by lymph.",
-          "All three nutrients taken equally by the blood alone."
+          "Carbohydrates and proteins by blood, fats by lymph",
+          "Carbohydrates and fats by blood, proteins by lymph",
+          "Proteins and fats by blood, carbohydrates by lymph",
+          "All three nutrients taken equally by the blood alone"
         ],
         "correct": 0,
         "explain": "In the intestine, blood takes away the carbohydrates and proteins, and lymph takes away the fats. \"Carbohydrates and fats by blood, proteins by lymph\" assigns the wrong carrier to proteins and fats. \"Proteins and fats by blood, carbohydrates by lymph\" reverses the carriers. \"All three nutrients taken equally by the blood alone\" ignores the separate lymph pathway for fats."
@@ -57,10 +57,10 @@
         "cat": "MT_lec21-22",
         "q": "Which process is the elimination of non-absorbable nutrients and waste products from the body?",
         "options": [
-          "Excretion, defecation, or elimination of the waste.",
-          "Digestion or ingestion of the incoming food material.",
-          "Absorption or assimilation into the circulating blood.",
-          "Secretion of digestive juices into the alimentary canal."
+          "Excretion, defecation, or elimination of the waste",
+          "Digestion or ingestion of the incoming food material",
+          "Absorption or assimilation into the circulating blood",
+          "Secretion of digestive juices into the alimentary canal"
         ],
         "correct": 0,
         "explain": "Excretion, defecation, or elimination is the elimination of non-absorbable nutrients and waste products from the body. \"Digestion or ingestion of the incoming food material\" breaks food into absorbable molecules. \"Absorption or assimilation into the circulating blood\" moves molecules through the intestinal walls. \"Secretion of digestive juices into the alimentary canal\" adds enzymes and acid, not the removal of waste."
@@ -71,10 +71,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term alimentary mean?",
         "options": [
-          "Relating to food or nutrition or nourishment.",
-          "Relating to the blood vessels of the abdominal wall.",
-          "Relating to the nerve supply of the digestive organs.",
-          "Relating to the lymphatic drainage of the intestine."
+          "Relating to food or nutrition or nourishment",
+          "Relating to the blood vessels of the abdominal wall",
+          "Relating to the nerve supply of the digestive organs",
+          "Relating to the lymphatic drainage of the intestine"
         ],
         "correct": 0,
         "explain": "Alimentary means relating to food or nutrition or nourishment. \"Relating to the blood vessels of the abdominal wall\" describes a vascular term. \"Relating to the nerve supply of the digestive organs\" describes innervation. \"Relating to the lymphatic drainage of the intestine\" describes lymph pathways, not the alimentary sense."
@@ -85,10 +85,10 @@
         "cat": "MT_lec21-22",
         "q": "Which structure first receives food for digestion?",
         "options": [
-          "The oral cavity or the mouth.",
-          "The pharynx or the throat passage.",
-          "The esophagus or the muscular tube.",
-          "The stomach or the sac-like organ."
+          "The oral cavity or the mouth",
+          "The pharynx or the throat passage",
+          "The esophagus or the muscular tube",
+          "The stomach or the sac-like organ"
         ],
         "correct": 0,
         "explain": "The oral cavity or the mouth is the cavity that receives food for digestion. \"The pharynx or the throat passage\" is the passageway for food traveling to the esophagus and for air to the larynx. \"The esophagus or the muscular tube\" moves the bolus from the pharynx to the stomach. \"The stomach or the sac-like organ\" chemically mixes and prepares the food received from the esophagus."
@@ -99,10 +99,10 @@
         "cat": "MT_lec21-22",
         "q": "Which structure forms the roof of the mouth and is divided into hard and soft portions?",
         "options": [
-          "The palate.",
-          "The uvula.",
-          "The tongue.",
-          "The frenulum."
+          "The palate",
+          "The uvula",
+          "The tongue",
+          "The frenulum"
         ],
         "correct": 0,
         "explain": "The palate is the structure that forms the roof of the mouth and is divided into the hard and soft palate. \"The uvula\" is the small projection hanging from the back middle edge of the soft palate. \"The tongue\" is the muscular structure of the floor of the mouth. \"The frenulum\" is the band-like membrane that secures the tongue."
@@ -113,10 +113,10 @@
         "cat": "MT_lec21-22",
         "q": "Which small projection hangs from the back middle edge of the soft palate?",
         "options": [
-          "The uvula.",
-          "The palate.",
-          "The frenulum.",
-          "The gums."
+          "The uvula",
+          "The palate",
+          "The frenulum",
+          "The gums"
         ],
         "correct": 0,
         "explain": "The uvula is the small projection hanging from the back middle edge of the soft palate. \"The palate\" is the full roof of the mouth. \"The frenulum\" is the band-like membrane securing the tongue. \"The gums\" are the tissue covering the processes of the jaws."
@@ -127,10 +127,10 @@
         "cat": "MT_lec21-22",
         "q": "Which muscular structure of the floor of the mouth is covered by mucous membrane and secured by a band-like membrane known as the frenulum?",
         "options": [
-          "The tongue.",
-          "The palate.",
-          "The uvula.",
-          "The teeth."
+          "The tongue",
+          "The palate",
+          "The uvula",
+          "The teeth"
         ],
         "correct": 0,
         "explain": "The tongue is the muscular structure of the floor of the mouth covered by mucous membrane and secured by a band-like membrane known as the frenulum. \"The palate\" forms the roof of the mouth. \"The uvula\" hangs from the soft palate. \"The teeth\" are hard bony projections in the jaws for masticating food."
@@ -141,10 +141,10 @@
         "cat": "MT_lec21-22",
         "q": "Which tissue covers the processes of the jaws?",
         "options": [
-          "The gums.",
-          "The tongue.",
-          "The palate.",
-          "The frenulum."
+          "The gums",
+          "The tongue",
+          "The palate",
+          "The frenulum"
         ],
         "correct": 0,
         "explain": "The gums are the tissue covering the processes of the jaws. \"The tongue\" is the muscular structure of the floor of the mouth. \"The palate\" forms the roof of the mouth. \"The frenulum\" is the band-like membrane that secures the tongue."
@@ -155,10 +155,10 @@
         "cat": "MT_lec21-22",
         "q": "Which hard bony projections in the jaws are used for masticating or chewing food?",
         "options": [
-          "The teeth.",
-          "The gums.",
-          "The tongue.",
-          "The uvula."
+          "The teeth",
+          "The gums",
+          "The tongue",
+          "The uvula"
         ],
         "correct": 0,
         "explain": "The teeth are the hard bony projections in the jaws for masticating or chewing food. \"The gums\" are the tissue covering the processes of the jaws. \"The tongue\" is the muscular structure of the floor of the mouth. \"The uvula\" is the small projection hanging from the soft palate."
@@ -169,10 +169,10 @@
         "cat": "MT_lec21-22",
         "q": "Which structure is the throat and serves as a passageway for food traveling to the esophagus and for air traveling to the larynx?",
         "options": [
-          "The pharynx.",
-          "The esophagus.",
-          "The stomach.",
-          "The oral cavity."
+          "The pharynx",
+          "The esophagus",
+          "The stomach",
+          "The oral cavity"
         ],
         "correct": 0,
         "explain": "The pharynx is the throat and the passageway for food traveling to the esophagus and for air traveling to the larynx. \"The esophagus\" is the muscular tube that moves the bolus from the pharynx to the stomach. \"The stomach\" is the sac-like organ that chemically mixes the food. \"The oral cavity\" is the cavity that receives food for digestion."
@@ -183,10 +183,10 @@
         "cat": "MT_lec21-22",
         "q": "Which muscular tube moves food as a bolus from the pharynx to the stomach?",
         "options": [
-          "The esophagus or oesophagus.",
-          "The pharynx or the throat.",
-          "The stomach or the sac.",
-          "The duodenum or the first part."
+          "The esophagus or oesophagus",
+          "The pharynx or the throat",
+          "The stomach or the sac",
+          "The duodenum or the first part"
         ],
         "correct": 0,
         "explain": "The esophagus or oesophagus is the muscular tube that moves food as a bolus from the pharynx to the stomach. \"The pharynx or the throat\" is the passageway before the esophagus. \"The stomach or the sac\" receives and mixes the food. \"The duodenum or the first part\" is the first segment of the small intestine after the stomach."
@@ -197,10 +197,10 @@
         "cat": "MT_lec21-22",
         "q": "Which sac-like organ chemically mixes and prepares food received from the esophagus, using concentrated HCL and pepsin for protein digestion, turning it into chyme?",
         "options": [
-          "The stomach.",
-          "The esophagus.",
-          "The pharynx.",
-          "The small intestine."
+          "The stomach",
+          "The esophagus",
+          "The pharynx",
+          "The small intestine"
         ],
         "correct": 0,
         "explain": "The stomach is the sac-like organ that chemically mixes and prepares food received from the esophagus, using concentrated HCL and pepsin for protein digestion, turning it into chyme. \"The esophagus\" moves the bolus but does not chemically digest with HCL and pepsin. \"The pharynx\" is the throat passageway. \"The small intestine\" digests food received from the stomach but is not the sac that first forms chyme."
@@ -211,10 +211,10 @@
         "cat": "MT_lec21-22",
         "q": "Which opening or sphincter is the band or muscle ring from the esophagus to the stomach?",
         "options": [
-          "The cardiac or esophagus sphincter.",
-          "The pyloric sphincter into the duodenum.",
-          "The ileocecal valve into the large intestine.",
-          "The anal sphincter at the end of the rectum."
+          "The cardiac or esophagus sphincter",
+          "The pyloric sphincter into the duodenum",
+          "The ileocecal valve into the large intestine",
+          "The anal sphincter at the end of the rectum"
         ],
         "correct": 0,
         "explain": "The cardiac or esophagus sphincter is the opening or band or muscle ring from the esophagus to the stomach. \"The pyloric sphincter into the duodenum\" is the opening from the stomach into the duodenum. \"The ileocecal valve into the large intestine\" controls entry from the small intestine. \"The anal sphincter at the end of the rectum\" controls the anus."
@@ -225,10 +225,10 @@
         "cat": "MT_lec21-22",
         "q": "Which opening is from the stomach into the duodenum?",
         "options": [
-          "The pyloric sphincter.",
-          "The cardiac or esophagus sphincter.",
-          "The ileocecal valve.",
-          "The anal sphincter."
+          "The pyloric sphincter",
+          "The cardiac or esophagus sphincter",
+          "The ileocecal valve",
+          "The anal sphincter"
         ],
         "correct": 0,
         "explain": "The pyloric sphincter is the opening from the stomach into the duodenum. \"The cardiac or esophagus sphincter\" is the opening from the esophagus to the stomach. \"The ileocecal valve\" is between the ileum and the cecum. \"The anal sphincter\" is at the anus."
@@ -239,10 +239,10 @@
         "cat": "MT_lec21-22",
         "q": "Which smaller tubular structure digests food received from the stomach and has three parts lined with villi that absorb most of the nutrients?",
         "options": [
-          "The small intestine.",
-          "The large intestine.",
-          "The stomach.",
-          "The esophagus."
+          "The small intestine",
+          "The large intestine",
+          "The stomach",
+          "The esophagus"
         ],
         "correct": 0,
         "explain": "The small intestine is the smaller tubular structure that digests food received from the stomach and has three parts lined with finger-like villi that absorb most of the nutrients. \"The large intestine\" receives the liquid waste, reabsorbs water, and forms feces. \"The stomach\" is the sac that forms chyme. \"The esophagus\" is the tube that delivers the bolus to the stomach."
@@ -297,10 +297,10 @@
         "cat": "MT_lec21-22",
         "q": "Which larger tubular structure receives the liquid waste products of digestion, reabsorbs water and minerals, and forms and stores feces for defecation?",
         "options": [
-          "The large intestine.",
-          "The small intestine.",
-          "The stomach.",
-          "The pharynx."
+          "The large intestine",
+          "The small intestine",
+          "The stomach",
+          "The pharynx"
         ],
         "correct": 0,
         "explain": "The large intestine is the larger tubular structure that receives the liquid waste products of digestion, reabsorbs water and minerals, and forms and stores feces for defecation. \"The small intestine\" digests and absorbs most nutrients via villi. \"The stomach\" forms chyme with HCL and pepsin. \"The pharynx\" is the throat passageway."
@@ -311,10 +311,10 @@
         "cat": "MT_lec21-22",
         "q": "Which is the first part of the large intestine, also called the blind gut or pouch?",
         "options": [
-          "The cecum.",
-          "The colon.",
-          "The rectum.",
-          "The appendix."
+          "The cecum",
+          "The colon",
+          "The rectum",
+          "The appendix"
         ],
         "correct": 0,
         "explain": "The cecum is the first part of the large intestine and is called the blind gut or pouch. \"The colon\" is the portion extending from the cecum to the rectum. \"The rectum\" is the distal end portion of the large intestine. \"The appendix\" is the worm-like projection hanging off the cecum."
@@ -325,10 +325,10 @@
         "cat": "MT_lec21-22",
         "q": "Which worm-like projection of lymphatic tissue hangs off the cecum, has no digestive functions, and may help resist infection?",
         "options": [
-          "The vermiform appendix.",
-          "The cecum pouch.",
-          "The sigmoid colon.",
-          "The ileocecal valve."
+          "The vermiform appendix",
+          "The cecum pouch",
+          "The sigmoid colon",
+          "The ileocecal valve"
         ],
         "correct": 0,
         "explain": "The vermiform appendix is the worm-like projection of lymphatic tissue hanging off the cecum with no digestive functions and may help resist infection. \"The cecum pouch\" is the first part of the large intestine itself. \"The sigmoid colon\" is a shaped portion of the colon. \"The ileocecal valve\" controls the junction between the ileum and the cecum."
@@ -339,10 +339,10 @@
         "cat": "MT_lec21-22",
         "q": "Which portion of the large intestine extends from the cecum to the rectum and is identified by direction or shape?",
         "options": [
-          "The colon.",
-          "The cecum.",
-          "The rectum.",
-          "The appendix."
+          "The colon",
+          "The cecum",
+          "The rectum",
+          "The appendix"
         ],
         "correct": 0,
         "explain": "The colon is the portion of the large intestine extending from the cecum to the rectum and is identified by direction or shape. \"The cecum\" is the first blind pouch. \"The rectum\" is the distal end portion. \"The appendix\" is the worm-like projection off the cecum."
@@ -353,10 +353,10 @@
         "cat": "MT_lec21-22",
         "q": "Which is the distal or end portion of the large intestine?",
         "options": [
-          "The rectum.",
-          "The cecum.",
-          "The colon.",
-          "The anus."
+          "The rectum",
+          "The cecum",
+          "The colon",
+          "The anus"
         ],
         "correct": 0,
         "explain": "The rectum is the distal or end portion of the large intestine. \"The cecum\" is the first part. \"The colon\" extends from the cecum to the rectum. \"The anus\" is the opening of the rectum to the outside of the body."
@@ -367,10 +367,10 @@
         "cat": "MT_lec21-22",
         "q": "Which is the opening of the rectum to the outside of the body?",
         "options": [
-          "The anus.",
-          "The rectum.",
-          "The cecum.",
-          "The pyloric sphincter."
+          "The anus",
+          "The rectum",
+          "The cecum",
+          "The pyloric sphincter"
         ],
         "correct": 0,
         "explain": "The anus is the opening of the rectum to the outside of the body. \"The rectum\" is the distal portion of the large intestine itself. \"The cecum\" is the first part of the large intestine. \"The pyloric sphincter\" is the opening from the stomach into the duodenum."
@@ -381,10 +381,10 @@
         "cat": "MT_lec21-22",
         "q": "Which waste is formed by the absorption of water in the large intestine and is usually solid?",
         "options": [
-          "Feces.",
-          "Chyme.",
-          "Bolus.",
-          "Bile juice."
+          "Feces",
+          "Chyme",
+          "Bolus",
+          "Bile juice"
         ],
         "correct": 0,
         "explain": "Feces are the waste formed by the absorption of water in the large intestine and are usually solid. \"Chyme\" is the mixture prepared in the stomach. \"Bolus\" is the mass of food moved by the esophagus. \"Bile juice\" is the secretion produced by the liver."
@@ -395,10 +395,10 @@
         "cat": "MT_lec21-22",
         "q": "Which process is the evacuation of feces from the rectum to the anus?",
         "options": [
-          "Defecation.",
-          "Digestion.",
-          "Absorption.",
-          "Mastication."
+          "Defecation",
+          "Digestion",
+          "Absorption",
+          "Mastication"
         ],
         "correct": 0,
         "explain": "Defecation is the evacuation of feces from the rectum to the anus. \"Digestion\" is the breaking down of food. \"Absorption\" is the passage of molecules into the blood or lymph. \"Mastication\" is chewing by the teeth."
@@ -409,10 +409,10 @@
         "cat": "MT_lec21-22",
         "q": "Which membrane surrounds the entire abdominal cavity and consists of two layers, the parietal lining the abdominal wall and the visceral covering each organ?",
         "options": [
-          "The peritoneum.",
-          "The mesentery.",
-          "The omentum.",
-          "The pleura."
+          "The peritoneum",
+          "The mesentery",
+          "The omentum",
+          "The pleura"
         ],
         "correct": 0,
         "explain": "The peritoneum is the membrane surrounding the entire abdominal cavity and consisting of two layers: the parietal lining the abdominal wall and the visceral covering each organ in the abdomen. \"The mesentery\" is a fold of peritoneum that supports the intestine. \"The omentum\" is a fold of peritoneum hanging from the stomach. \"The pleura\" is the membrane around the lungs."
@@ -423,10 +423,10 @@
         "cat": "MT_lec21-22",
         "q": "Which spaces between the parietal and visceral peritoneum contain peritoneal fluid, a clear liquid?",
         "options": [
-          "The peritoneal cavity.",
-          "The pleural cavity.",
-          "The pericardial cavity.",
-          "The cranial cavity."
+          "The peritoneal cavity",
+          "The pleural cavity",
+          "The pericardial cavity",
+          "The cranial cavity"
         ],
         "correct": 0,
         "explain": "The peritoneal cavity is the spaces between the parietal and visceral peritoneum and it contains peritoneal fluid, a clear liquid. \"The pleural cavity\" is around the lungs. \"The pericardial cavity\" is around the heart. \"The cranial cavity\" is inside the skull."
@@ -437,10 +437,10 @@
         "cat": "MT_lec21-22",
         "q": "Which organ in the upper right quadrant produces bile juice that is secreted into the duodenum during digestion?",
         "options": [
-          "The liver.",
-          "The gall bladder.",
-          "The pancreas.",
-          "The stomach."
+          "The liver",
+          "The gall bladder",
+          "The pancreas",
+          "The stomach"
         ],
         "correct": 0,
         "explain": "The liver is the organ in the upper right quadrant that produces bile juice which is secreted into the duodenum during digestion. \"The gall bladder\" stores and concentrates the bile produced in the liver. \"The pancreas\" secretes pancreatic juice into the duodenum. \"The stomach\" mixes food with HCL and pepsin."
@@ -451,10 +451,10 @@
         "cat": "MT_lec21-22",
         "q": "Which receptacle stores and concentrates the bile produced in the liver?",
         "options": [
-          "The gall bladder.",
-          "The liver.",
-          "The pancreas.",
-          "The duodenum."
+          "The gall bladder",
+          "The liver lobes",
+          "The pancreas",
+          "The duodenum"
         ],
         "correct": 0,
         "explain": "The gall bladder is the receptacle that stores and concentrates the bile produced in the liver. \"The liver\" produces the bile juice. \"The pancreas\" secretes pancreatic juice. \"The duodenum\" receives the bile and pancreatic juice."
@@ -465,10 +465,10 @@
         "cat": "MT_lec21-22",
         "q": "Which ducts convey bile juice and include the hepatic duct from the liver, the cystic duct from the gall bladder, and the common bile duct formed by their union and secreted into the duodenum?",
         "options": [
-          "The biliary ducts.",
-          "The pancreatic ducts.",
-          "The salivary ducts.",
-          "The lymphatic ducts."
+          "The biliary ducts",
+          "The pancreatic ducts",
+          "The salivary ducts",
+          "The lymphatic ducts"
         ],
         "correct": 0,
         "explain": "The biliary ducts convey bile juice and include the hepatic duct from the liver, the cystic duct from the gall bladder, and the common bile duct formed by their union and secreted into the duodenum. \"The pancreatic ducts\" carry pancreatic juice. \"The salivary ducts\" carry saliva from the salivary glands. \"The lymphatic ducts\" carry lymph."
@@ -479,10 +479,10 @@
         "cat": "MT_lec21-22",
         "q": "Which gland secretes pancreatic juice into the duodenum where it mixes with bile to digest food?",
         "options": [
-          "The pancreas.",
-          "The liver.",
-          "The gall bladder.",
-          "The salivary glands."
+          "The pancreas",
+          "The liver",
+          "The gall bladder",
+          "The salivary glands"
         ],
         "correct": 0,
         "explain": "The pancreas is the gland that secretes pancreatic juice into the duodenum where it mixes with bile to digest food. \"The liver\" produces bile juice. \"The gall bladder\" stores and concentrates bile. \"The salivary glands\" produce saliva that begins digestion in the mouth."
@@ -759,13 +759,13 @@
         "cat": "MT_lec21-22",
         "q": "What does the term stomatorrhagia mean?",
         "options": [
-          "Excessive bleeding from the mouth.",
-          "Surgical repair of the lips.",
-          "Pain in the tongue.",
-          "Removal of the gum tissue."
+          "Excessive bleeding from the mouth",
+          "Inflammation of the mouth lining",
+          "Pain felt inside the mouth",
+          "Surgical repair of the mouth"
         ],
         "correct": 0,
-        "explain": "Stomatorrhagia is built from Stomat/o, mouth, and -rrhagia, excessive flow or bleeding, so it means excessive bleeding from the mouth. \"Surgical repair of the lips\" is cheiloplasty. \"Pain in the tongue\" is glossodynia. \"Removal of the gum tissue\" is gingivectomy."
+        "explain": "Stomatorrhagia is built from Stomat/o, mouth, and -rrhagia, excessive flow or bleeding, so it means excessive bleeding from the mouth. The other options keep part of the term but change another word part, so they do not match."
       },
       {
         "id": "MT21038",
@@ -773,10 +773,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term dysphagia mean?",
         "options": [
-          "Difficulty in eating or swallowing.",
-          "Fear of vomiting.",
-          "Inflammation of the salivary duct.",
-          "Surgical connection of the pharynx and esophagus."
+          "Difficulty in eating or swallowing",
+          "Fear of vomiting",
+          "Inflammation of the salivary duct",
+          "Surgical connection of the pharynx and esophagus"
         ],
         "correct": 0,
         "explain": "Dysphagia is built from dys-, difficult, Phag/o, eat or swallow, and -ia, condition, so it means difficulty in eating or swallowing. \"Fear of vomiting\" is emetophobia. \"Inflammation of the salivary duct\" is sialoductitis. \"Surgical connection of the pharynx and esophagus\" is pharyngoesophagoplasty."
@@ -787,10 +787,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term cholelithiasis mean?",
         "options": [
-          "Presence of stones in the bile or gall bladder.",
-          "Presence of stones in the adrenal gland or cortex.",
-          "Breakdown or dissolution of stones in the bile ducts.",
-          "Presence of fat deposits inside the gall bladder wall."
+          "Presence of stones in the bile or gall bladder",
+          "Presence of stones in the adrenal gland or cortex",
+          "Breakdown or dissolution of stones in the bile ducts",
+          "Presence of fat deposits inside the gall bladder wall"
         ],
         "correct": 0,
         "explain": "Cholelithiasis is built from Chol/e, bile, Lith/o, stone, and -iasis, condition, so it means presence of stones in the bile or gall bladder. \"Presence of stones in the adrenal gland or cortex\" keeps the stone sense but assigns chol/e to the adrenal cortex instead of bile. \"Breakdown or dissolution of stones in the bile ducts\" keeps the stone and bile senses but replaces the presence sense of -iasis with a dissolution sense. \"Presence of fat deposits inside the gall bladder wall\" keeps a presence sense but substitutes steat/o fat for lith/o stone."
@@ -801,10 +801,10 @@
         "cat": "MT_lec21-22",
         "q": "In the term oromandibular, which word form is correct?",
         "options": [
-          "CF+R+S, combining form plus root plus suffix.",
-          "CF+S, combining form plus suffix only.",
-          "R+S, root plus suffix only.",
-          "P+R+S, prefix plus root plus suffix."
+          "CF+R+S, combining form plus root plus suffix",
+          "CF+S, combining form plus suffix, no root",
+          "R+S, root plus suffix, no combining form",
+          "P+R+S, prefix plus root plus suffix"
         ],
         "correct": 0,
         "explain": "Oromandibular is built as Or/o plus mandibular, so the word form is CF+R+S. \"CF+S, combining form plus suffix only\" describes stomatorrhagia. \"R+S, root plus suffix only\" describes gingivectomy or labia. \"P+R+S, prefix plus root plus suffix\" describes dysphagia."
@@ -899,9 +899,9 @@
             "prompt": "Which meaning belongs to the name of the Ileum?",
             "options": [
               "To roll up or twist",
-              "Twelve",
-              "Empty",
-              "Blind gut"
+              "Twelve finger widths",
+              "Empty after death",
+              "Blind or dead-end gut"
             ],
             "correct": 0
           }
@@ -914,13 +914,13 @@
         "cat": "MT_lec21-22",
         "q": "What does the term cholecystitis mean?",
         "options": [
-          "Inflammation of the gall bladder.",
-          "Presence of stones in the bile.",
-          "Inflammation of the liver.",
-          "Inflammation of the pancreas."
+          "Inflammation of the gall bladder",
+          "Presence of stones in the gall bladder",
+          "Surgical removal of the gall bladder",
+          "Pain arising in the gall bladder"
         ],
         "correct": 0,
-        "explain": "Cholecystitis is built from Chol/e, bile, Cyst/o, gall bladder or sac, and -itis, inflammation, so it means inflammation of the gall bladder. \"Presence of stones in the bile\" is cholelithiasis. \"Inflammation of the liver\" is hepatitis. \"Inflammation of the pancreas\" is pancreatitis."
+        "explain": "Cholecystitis is built from Chol/e, bile, Cyst/o, gall bladder or sac, and -itis, inflammation, so it means inflammation of the gall bladder. The other options keep part of the term but change another word part, so they do not match."
       },
       {
         "id": "MT21045",
@@ -928,10 +928,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term steatohepatitis mean?",
         "options": [
-          "Inflammation of the liver associated with fat.",
-          "Inflammation of the gall bladder.",
-          "Tumor of the bile ducts.",
-          "Surgical connection involving the liver and intestine."
+          "Inflammation of the liver associated with fat",
+          "Inflammation of the gall bladder",
+          "Tumor of the bile ducts",
+          "Surgical connection involving the liver and intestine"
         ],
         "correct": 0,
         "explain": "Steatohepatitis is built from Steat/o, fat, Hepat/o, liver, and -itis, inflammation, so it means inflammation of the liver associated with fat. \"Inflammation of the gall bladder\" is cholecystitis. \"Tumor of the bile ducts\" is cholangiocarcinoma. \"Surgical connection involving the liver and intestine\" is hepatocholangioenterostomy."
@@ -1013,10 +1013,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term cheiloplasty mean?",
         "options": [
-          "Surgical repair of the lips.",
-          "Excessive bleeding from the mouth.",
-          "Pain in the tongue.",
-          "Removal of gum tissue."
+          "Surgical repair of the lips",
+          "Excessive bleeding from the mouth",
+          "Pain in the tongue",
+          "Removal of gum tissue"
         ],
         "correct": 0,
         "explain": "Cheiloplasty is built from Cheil/o, lips, and -plasty, surgical repair, so it means surgical repair of the lips. \"Excessive bleeding from the mouth\" is stomatorrhagia. \"Pain in the tongue\" is glossodynia. \"Removal of gum tissue\" is gingivectomy."
@@ -1027,13 +1027,13 @@
         "cat": "MT_lec21-22",
         "q": "What does the term glossodynia mean?",
         "options": [
-          "Pain in the tongue.",
-          "Surgical repair of the lips.",
-          "Inflammation of the salivary duct.",
-          "Fear of vomiting."
+          "Pain in the tongue",
+          "Inflammation of the tongue",
+          "Surgical repair of the tongue",
+          "Paralysis of the tongue"
         ],
         "correct": 0,
-        "explain": "Glossodynia is built from Gloss/o, tongue, and -dynia, pain, so it means pain in the tongue. \"Surgical repair of the lips\" is cheiloplasty. \"Inflammation of the salivary duct\" is sialoductitis. \"Fear of vomiting\" is emetophobia."
+        "explain": "Glossodynia is built from Gloss/o, tongue, and -dynia, pain, so it means pain in the tongue. The other options keep part of the term but change another word part, so they do not match."
       },
       {
         "id": "MT21049",
@@ -1041,10 +1041,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term emetophobia mean?",
         "options": [
-          "Exaggerated fear of vomiting.",
-          "Difficulty swallowing.",
-          "Inflammation of the gall bladder.",
-          "Presence of gallstones."
+          "Exaggerated fear of vomiting",
+          "Difficulty swallowing",
+          "Inflammation of the gall bladder",
+          "Presence of gallstones"
         ],
         "correct": 0,
         "explain": "Emetophobia is built from Emet/o, vomiting, and Phob/o or -phobia, exaggerated fear, so it means exaggerated fear of vomiting. \"Difficulty swallowing\" is dysphagia. \"Inflammation of the gall bladder\" is cholecystitis. \"Presence of gallstones\" is cholelithiasis."
@@ -1055,10 +1055,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term pylorostenosis mean?",
         "options": [
-          "Narrowing of the pylorus.",
-          "Surgical repair of a hernia.",
-          "Inflammation of the pancreas.",
-          "Surgical opening of the liver."
+          "Narrowing of the pylorus",
+          "Surgical repair of a hernia",
+          "Inflammation of the pancreas",
+          "Surgical opening of the liver"
         ],
         "correct": 0,
         "explain": "Pylorostenosis is built from Pylor/o, pylorus, and -stenosis, narrowing, so it means narrowing of the pylorus. \"Surgical repair of a hernia\" is hernioplasty. \"Inflammation of the pancreas\" is pancreatitis. \"Surgical opening of the liver\" is hepaticotomy."
@@ -1069,10 +1069,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term hernioplasty mean?",
         "options": [
-          "Surgical repair of a hernia.",
-          "Narrowing of the pylorus.",
-          "Inflammation of the liver with fat.",
-          "Hernia of the spinal cord and meninges."
+          "Surgical repair of a hernia",
+          "Narrowing of the pylorus",
+          "Inflammation of the liver with fat",
+          "Hernia of the spinal cord and meninges"
         ],
         "correct": 0,
         "explain": "Hernioplasty is built from Herni/o, hernia, and -plasty, surgical repair, so it means surgical repair of a hernia. \"Narrowing of the pylorus\" is pylorostenosis. \"Inflammation of the liver with fat\" is steatohepatitis. \"Hernia of the spinal cord and meninges\" is myelomeningocele, from another system."
@@ -1083,13 +1083,13 @@
         "cat": "MT_lec21-22",
         "q": "What does the term biliuria mean?",
         "options": [
-          "Bile in the urine.",
-          "Inflammation of the bile ducts.",
-          "Tumor of the bile duct.",
-          "Stone in the bile."
+          "Bile in the urine",
+          "Bile in the blood",
+          "Blood in the urine",
+          "Stones in the bile"
         ],
         "correct": 0,
-        "explain": "Biliuria is built from Bil/i, bile, and -uria, urine condition, so it means bile in the urine. \"Inflammation of the bile ducts\" would use cholangitis. \"Tumor of the bile duct\" is cholangiocarcinoma. \"Stone in the bile\" is cholelithiasis."
+        "explain": "Biliuria is built from Bil/i, bile, and -uria, urine condition, so it means bile in the urine. The other options keep part of the term but change another word part, so they do not match."
       },
       {
         "id": "MT21053",
@@ -1097,10 +1097,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term pancreatitis mean?",
         "options": [
-          "Inflammation of the pancreas.",
-          "Inflammation of the gall bladder.",
-          "Inflammation of the liver.",
-          "Surgical connection of the pancreas and duodenum."
+          "Inflammation of the pancreas",
+          "Inflammation of the gall bladder",
+          "Inflammation of the liver",
+          "Surgical connection of the pancreas and duodenum"
         ],
         "correct": 0,
         "explain": "Pancreatitis is built from Pancreat/o, pancreas, and -itis, inflammation, so it means inflammation of the pancreas. \"Inflammation of the gall bladder\" is cholecystitis. \"Inflammation of the liver\" is hepatitis. \"Surgical connection of the pancreas and duodenum\" is pancreaticoduodenostomy."
@@ -1111,10 +1111,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term appendicolith mean?",
         "options": [
-          "A stone in the appendix.",
-          "Inflammation of the appendix.",
-          "Hernia of the appendix.",
-          "Removal of the appendix."
+          "A stone in the appendix",
+          "Inflammation of the appendix",
+          "Hernia of the appendix",
+          "Removal of the appendix"
         ],
         "correct": 0,
         "explain": "Appendicolith is built from Appendic/o, appendix, and Lith/o, stone, so it means a stone in the appendix. \"Inflammation of the appendix\" is appendicitis. \"Hernia of the appendix\" is not a standard term from the forms. \"Removal of the appendix\" is appendectomy."
@@ -1125,10 +1125,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term colonorrhagia mean?",
         "options": [
-          "Excessive bleeding from the colon.",
-          "Inflammation of the colon.",
-          "Narrowing of the colon.",
-          "Surgical repair of the colon."
+          "Excessive bleeding from the colon",
+          "Inflammation of the colon lining",
+          "Narrowing of the colon passage",
+          "Surgical repair of the colon"
         ],
         "correct": 0,
         "explain": "Colonorrhagia is built from Col/o or Colon/o, colon, and -rrhagia, excessive bleeding, so it means excessive bleeding from the colon. \"Inflammation of the colon\" is colitis. \"Narrowing of the colon\" is colonostenosis. \"Surgical repair of the colon\" is colonoplasty."
@@ -1139,10 +1139,10 @@
         "cat": "MT_lec21-22",
         "q": "What does the term rectitis mean?",
         "options": [
-          "Inflammation of the rectum.",
-          "Inflammation of the anus.",
-          "Surgical repair of the rectum.",
-          "Opening of the rectum to the outside."
+          "Inflammation of the rectum",
+          "Inflammation of the anus",
+          "Surgical repair of the rectum",
+          "Opening of the rectum to the outside"
         ],
         "correct": 0,
         "explain": "Rectitis is built from Rect/o, rectum, and -itis, inflammation, so it means inflammation of the rectum. \"Inflammation of the anus\" is anitis. \"Surgical repair of the rectum\" is rectoplasty. \"Opening of the rectum to the outside\" describes the anus itself."
@@ -1243,8 +1243,8 @@
             "options": [
               "Hepat/o or Hepatic/o",
               "Chol/e or Bil/i",
-              "Pancreat/o",
-              "Cyst/o"
+              "Pancreat/o or Pancre/o",
+              "Cyst/o or Vesic/o"
             ],
             "correct": 0
           }
