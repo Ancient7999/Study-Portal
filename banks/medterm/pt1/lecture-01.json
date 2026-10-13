@@ -617,9 +617,9 @@
     "q": "Which term correctly identifies the composition of hyperlipoproteinemia?",
     "options": [
      "Prefix plus combining form plus root plus suffix (P+CF+R+S)",
-     "Prefix plus root plus suffix (P+R+S)",
-     "Root plus root plus suffix (R+R+S)",
-     "Prefix plus suffix (P+S)"
+     "Prefix plus root plus suffix only (P+R+S)",
+     "Root plus root plus suffix only (R+R+S)",
+     "Prefix plus combining form plus suffix (P+CF+S)"
     ],
     "correct": 0,
     "explain": "Hyperlipoproteinemia is built from hyper- (excessive), lip/o (a combining form), protein (a bare root), and -emia (blood condition), so it is P+CF+R+S. The P+R+S pattern would wrongly treat lip/o as a bare root and ignore its combining vowel."
@@ -1355,9 +1355,9 @@
     "q": "Which statement correctly explains why the vowel o is the most common combining vowel?",
     "options": [
      "It is the conventional linking vowel of Greek origin that eases pronunciation across the widest range of roots and suffixes.",
-     "It is the only vowel that can appear between two roots in any medical term.",
-     "It is used only when the suffix begins with a vowel.",
-     "It is used only when the prefix ends with a vowel."
+     "It is the only vowel that can appear between two roots in any medical term, whatever their origin.",
+     "It is used only when the suffix begins with a vowel, so it is the most frequent choice by default.",
+     "It is used only when the prefix ends with a vowel, which happens in most compound medical terms."
     ],
     "correct": 0,
     "explain": "The vowel o is the conventional linking vowel inherited from Greek, and it eases pronunciation across the widest range of roots and suffixes, which is why it appears so often in combining forms. The second option denies the vowel i its role, the third reverses when a combining vowel is used, and the fourth confuses the combining vowel with the handling of a vowel-final prefix."

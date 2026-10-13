@@ -1188,9 +1188,9 @@
     "q": "Which statement correctly describes the difference between -stomy and -tomy?",
     "options": [
      "-stomy creates a lasting opening, while -tomy is an incision, as in gastroenterostomy versus laparotomy.",
-     "-stomy is an incision, while -tomy creates a lasting opening.",
-     "Both suffixes mean the same thing, an incision into an organ.",
-     "Both suffixes mean the same thing, the creation of an opening."
+     "-stomy is an incision, while -tomy creates a lasting opening, as in laparostomy versus gastrotomy.",
+     "Both suffixes mean the same thing, an incision into an organ, as in colostomy and colotomy.",
+     "Both suffixes mean the same thing, the creation of an opening, as in tracheostomy and tracheotomy."
     ],
     "correct": 0,
     "explain": "-stomy creates a lasting opening, as in gastroenterostomy, while -tomy is an incision, as in laparotomy. The second option reverses the two, and the third and fourth collapse the pair into a single meaning, ignoring the surgical distinction the suffixes carry."
@@ -1202,9 +1202,9 @@
     "q": "Which statement correctly distinguishes -ectomy from -stomy?",
     "options": [
      "-ectomy removes tissue, while -stomy creates an opening, as in vasectomy versus gastroenterostomy.",
-     "-ectomy creates an opening, while -stomy removes tissue.",
-     "Both suffixes mean removal of tissue.",
-     "Both suffixes mean creation of an opening."
+     "-ectomy creates an opening, while -stomy removes tissue, as in colectomy versus colostomy.",
+     "Both suffixes mean removal of tissue, as in gastrectomy and gastrostomy.",
+     "Both suffixes mean creation of an opening, as in ileectomy and ileostomy."
     ],
     "correct": 0,
     "explain": "-ectomy removes tissue (vasectomy, the removal of a vas deferens), while -stomy creates an opening (gastroenterostomy, an opening between the stomach and intestine). The second option reverses the two, and the third and fourth collapse the pair into a single meaning."
@@ -1216,9 +1216,9 @@
     "q": "Which statement correctly distinguishes -megaly from -ectasis?",
     "options": [
      "-megaly enlarges an organ, while -ectasis dilates a lumen, as in hepatomegaly versus an expansion of a cavity.",
-     "-megaly dilates a lumen, while -ectasis enlarges an organ.",
-     "Both suffixes mean enlargement of an organ.",
-     "Both suffixes mean dilation of a cavity."
+     "-megaly dilates a lumen, while -ectasis enlarges an organ, as in cardiomegaly versus a larger liver.",
+     "Both suffixes mean enlargement of an organ, as in splenomegaly and splenectasis.",
+     "Both suffixes mean dilation of a cavity, as in bronchiectasis and bronchomegaly."
     ],
     "correct": 0,
     "explain": "-megaly enlarges the whole organ (hepatomegaly, an enlarged liver), while -ectasis dilates a lumen or cavity (the expansion or dilation of a hollow structure). The second option reverses the two, and the third and fourth collapse the pair into a single meaning, ignoring the distinction between organ size and cavity caliber."

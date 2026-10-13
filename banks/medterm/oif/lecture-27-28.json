@@ -914,7 +914,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which pair of combining forms both denote this structure?",
+            "prompt": "Which pair of combining forms both denote the Ovary?",
             "options": [
               "Ovari/o and Oophor/o",
               "Vagin/o and Colp/o",
@@ -947,7 +947,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this structure?",
+            "prompt": "Which combining form denotes the Uterine tube?",
             "options": [
               "Salping/o",
               "Hyster/o",
@@ -980,7 +980,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which set of combining forms all denote this structure?",
+            "prompt": "Which set of combining forms all denote the Uterus?",
             "options": [
               "Hyster/o, Metr/o, Uter/o",
               "Cervic/o, Vagin/o, Colp/o",
@@ -1013,7 +1013,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this structure?",
+            "prompt": "Which combining form denotes the Cervix?",
             "options": [
               "Cervic/o",
               "Vagin/o",
@@ -1046,7 +1046,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which pair of combining forms both denote this structure?",
+            "prompt": "Which pair of combining forms both denote the Vagina?",
             "options": [
               "Vagin/o and Colp/o",
               "Cervic/o and Vulv/o",
@@ -1079,7 +1079,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this structure?",
+            "prompt": "Which combining form denotes the Vulva?",
             "options": [
               "Vulv/o",
               "Vagin/o",
@@ -1187,9 +1187,9 @@
             "prompt": "Where does it lead?",
             "options": [
               "to the outside of the body",
-              "to the uterus",
-              "to the ovary",
-              "to the urethra"
+              "to the uterus and its cavity",
+              "to the ovary and its follicles",
+              "to the urethra and the bladder"
             ],
             "correct": 0
           },
@@ -1224,7 +1224,7 @@
         "cat": "MT_lec27-28",
         "group": "structure-property-drill",
         "groupOrder": 2,
-        "q": "These glands produce milk. Answer each step, then continue.",
+        "q": "These glands lie in the chest wall and develop during puberty. Answer each step, then continue.",
         "steps": [
           {
             "id": "1",

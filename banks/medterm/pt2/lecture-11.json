@@ -1322,7 +1322,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Humerus belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1331,7 +1331,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Humerus occupy?",
       "options": [
        "The upper arm.",
        "The forearm.",
@@ -1387,7 +1387,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Femur belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1396,7 +1396,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Femur occupy?",
       "options": [
        "The thigh.",
        "The upper arm.",
@@ -1407,7 +1407,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Femur?",
       "options": [
        "Femor/o",
        "Fibr/o",
@@ -1465,7 +1465,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Tibia belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1474,7 +1474,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Tibia occupy?",
       "options": [
        "The medial shin bone.",
        "The thigh bone.",
@@ -1533,7 +1533,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Fibula belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1542,7 +1542,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Fibula occupy?",
       "options": [
        "The lateral leg bone.",
        "The medial shin bone.",
@@ -1598,7 +1598,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Radius belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1607,7 +1607,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Radius occupy?",
       "options": [
        "The thumb-side forearm bone.",
        "The medial forearm bone.",
@@ -1618,7 +1618,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Radius?",
       "options": [
        "Radi/o",
        "Uln/o",
@@ -1674,7 +1674,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Ulna belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1683,7 +1683,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Ulna occupy?",
       "options": [
        "The medial forearm bone.",
        "The thumb-side forearm bone.",
@@ -1694,7 +1694,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Ulna?",
       "options": [
        "Uln/o",
        "Radi/o",
@@ -1750,7 +1750,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Carpals belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1759,7 +1759,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Carpals occupy?",
       "options": [
        "The wrist.",
        "The ankle.",
@@ -1818,7 +1818,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Tarsals belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1827,7 +1827,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Tarsals occupy?",
       "options": [
        "The ankle.",
        "The wrist.",
@@ -1886,7 +1886,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Patella belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1895,7 +1895,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Patella occupy?",
       "options": [
        "The kneecap, in the quadriceps tendon.",
        "The thigh bone, above the knee.",
@@ -1906,7 +1906,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Patella?",
       "options": [
        "Patell/o",
        "Femor/o",
@@ -1964,7 +1964,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Sternum belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -1973,7 +1973,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Sternum occupy?",
       "options": [
        "The breastbone of the chest.",
        "The bone at the tongue base.",
@@ -1984,7 +1984,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Sternum?",
       "options": [
        "Stern/o",
        "Cost/o",
@@ -2042,7 +2042,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Scapula belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2051,7 +2051,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Scapula occupy?",
       "options": [
        "The shoulder blade.",
        "The breastbone.",
@@ -2109,7 +2109,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Ribs belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2118,7 +2118,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Ribs occupy?",
       "options": [
        "The thoracic cage.",
        "The vertebral column.",
@@ -2129,7 +2129,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Ribs?",
       "options": [
        "Cost/o",
        "Stern/o",
@@ -2187,7 +2187,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Pelvis belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2196,7 +2196,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Pelvis occupy?",
       "options": [
        "The hip of the pelvic girdle.",
        "The shoulder girdle bones.",
@@ -2207,7 +2207,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Pelvis?",
       "options": [
        "Pelv/o",
        "Femor/o",
@@ -2263,7 +2263,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Skull belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2272,7 +2272,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Skull occupy?",
       "options": [
        "The head, as the cranium.",
        "The face, not the vault.",
@@ -2283,7 +2283,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Skull?",
       "options": [
        "Crani/o",
        "Cervic/o",
@@ -2339,7 +2339,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Vertebra belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2359,7 +2359,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which combining form builds terms for this bone?",
+      "prompt": "Which combining form builds terms for the Vertebra?",
       "options": [
        "Spondyl/o",
        "Stern/o",
@@ -2417,7 +2417,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Sacrum belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2426,7 +2426,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Sacrum occupy?",
       "options": [
        "The lower vertebral column.",
        "The chest wall cage.",
@@ -2482,7 +2482,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Facial bones belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2491,7 +2491,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Facial bones occupy?",
       "options": [
        "The face.",
        "The cranium alone.",
@@ -2549,7 +2549,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Hyoid belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2558,7 +2558,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Hyoid occupy?",
       "options": [
        "The base of the tongue.",
        "The breastbone area.",
@@ -2616,7 +2616,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Metacarpals belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2625,7 +2625,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Metacarpals occupy?",
       "options": [
        "The palm of the hand.",
        "The wrist bone group.",
@@ -2636,7 +2636,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which limb list includes this bone?",
+      "prompt": "Which limb list includes the Metacarpals?",
       "options": [
        "The upper limb.",
        "The lower limb.",
@@ -2694,7 +2694,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Metatarsals belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2703,7 +2703,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Metatarsals occupy?",
       "options": [
        "The sole of the foot.",
        "The palm of the hand.",
@@ -2714,7 +2714,7 @@
      },
      {
       "id": "5",
-      "prompt": "Which limb list includes this bone?",
+      "prompt": "Which limb list includes the Metatarsals?",
       "options": [
        "The lower limb.",
        "The upper limb.",
@@ -2772,7 +2772,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which skeleton does this bone belong to?",
+      "prompt": "Which skeleton does the Phalanges belong to?",
       "options": [
        "Axial skeleton",
        "Appendicular skeleton"
@@ -2781,7 +2781,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which region does this bone occupy?",
+      "prompt": "Which region does the Phalanges occupy?",
       "options": [
        "The digits of hand and foot.",
        "The wrist bone group.",

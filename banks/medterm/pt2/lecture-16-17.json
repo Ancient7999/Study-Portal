@@ -1475,7 +1475,7 @@
         "cat": "MT_lec16-17",
         "group": "airway-drill",
         "groupOrder": 1,
-        "q": "This lid covers the voice box during swallowing so food does not enter the windpipe. Answer each step, then the next structure follows.",
+        "q": "This leaf-shaped flap of cartilage sits at the root of the tongue. Answer each step, then the next structure follows.",
         "steps": [
           {
             "id": "1",
@@ -1519,7 +1519,7 @@
         "cat": "MT_lec16-17",
         "group": "airway-drill",
         "groupOrder": 2,
-        "q": "This opening sits inside the voice box and lies between the vocal cords. Answer each step, then the next structure follows.",
+        "q": "This narrow slit lets air pass and changes shape as we speak. Answer each step, then the next structure follows.",
         "steps": [
           {
             "id": "1",
@@ -1534,7 +1534,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which organ contains this opening?",
+            "prompt": "Which organ contains the Glottis?",
             "options": [
               "The larynx",
               "The trachea",
@@ -1545,7 +1545,7 @@
           },
           {
             "id": "3",
-            "prompt": "What borders this opening?",
+            "prompt": "What borders the Glottis?",
             "options": [
               "The vocal cords",
               "The palatine tonsils",
@@ -1578,7 +1578,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which tube ends at this point?",
+            "prompt": "Which tube ends at the Carina?",
             "options": [
               "The trachea",
               "The larynx",
@@ -1589,7 +1589,7 @@
           },
           {
             "id": "3",
-            "prompt": "What begins at this point?",
+            "prompt": "What begins at the Carina?",
             "options": [
               "Right and left bronchi",
               "Right and left alveoli",
@@ -1666,7 +1666,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which other name belongs to this organ?",
+            "prompt": "Which other name belongs to the Larynx?",
             "options": [
               "Voice box",
               "Windpipe",
@@ -1677,7 +1677,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which combining form names this organ?",
+            "prompt": "Which combining form names the Larynx?",
             "options": [
               "Laryng/o",
               "Larynx/o",
@@ -1710,7 +1710,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which other name belongs to this tube?",
+            "prompt": "Which other name belongs to the Trachea?",
             "options": [
               "Windpipe",
               "Voice box",
@@ -1721,7 +1721,7 @@
           },
           {
             "id": "3",
-            "prompt": "Where does this tube end?",
+            "prompt": "Where does the Trachea end?",
             "options": [
               "At the carina",
               "At the glottis",
@@ -1765,7 +1765,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which combining form names this partition?",
+            "prompt": "Which combining form names the Diaphragm?",
             "options": [
               "Phren/o",
               "Phreni/o",
@@ -1809,7 +1809,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which combining form names this projection?",
+            "prompt": "Which combining form names the Uvula?",
             "options": [
               "Uvul/o",
               "Uvul/a",

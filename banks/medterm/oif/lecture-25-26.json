@@ -886,7 +886,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this structure?",
+            "prompt": "Which combining form denotes the Epididymis?",
             "options": [
               "Epididym/o",
               "Orchid/o",
@@ -919,7 +919,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this gland?",
+            "prompt": "Which combining form denotes the Prostate?",
             "options": [
               "Prostat/o",
               "Epididym/o",
@@ -952,7 +952,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form denotes this cell?",
+            "prompt": "Which combining form denotes the Spermatozoon?",
             "options": [
               "Spermat/o",
               "Test/o",
@@ -985,7 +985,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which element in this term means without?",
+            "prompt": "Which element in Azoospermia means without?",
             "options": [
               "a",
               "zoo",

@@ -738,9 +738,9 @@
     "q": "What does the term oligodontia mean?",
     "options": [
      "A congenital deficiency in the number of teeth.",
-     "An excess number of teeth.",
-     "Inflammation of the teeth.",
-     "A tumor of the teeth."
+     "A congenital excess in the number of teeth.",
+     "Inflammation of the teeth and the gums.",
+     "A benign tumor arising from the teeth."
     ],
     "correct": 0,
     "explain": "Oligodontia is built from oligo- (few or deficient), odont (tooth), and -ia (condition of), so it denotes a congenital deficiency in the number of teeth. An excess number would use hyper- or super- with odont (hyperdontia, supernumerary teeth), inflammation would use -itis, and a tumor would use -oma."
@@ -962,9 +962,9 @@
     "q": "What does the term dyspnea mean?",
     "options": [
      "Difficult or labored breathing.",
-     "Normal breathing.",
-     "Fast breathing.",
-     "Slow breathing."
+     "Normal, quiet, effortless breathing.",
+     "Fast or rapid shallow breathing.",
+     "Slow or abnormally shallow breathing."
     ],
     "correct": 0,
     "explain": "Dyspnea is built from dys- (difficult) and -pnea (breathing), so it denotes difficult or labored breathing. Normal would use eu-, fast would use tachy-, and slow would use brady-."
@@ -1060,9 +1060,9 @@
     "q": "What does the term reinfection mean?",
     "options": [
      "An infection that occurs again after a previous one.",
-     "A first infection.",
-     "An infection that never resolves.",
-     "An infection confined to one site."
+     "A first infection with a new organism.",
+     "An infection that never fully resolves.",
+     "An infection confined to one body site."
     ],
     "correct": 0,
     "explain": "Reinfection is built from re- (again or back) and infection, so it denotes a return of infection after an earlier episode. A first infection would not carry re-, an unresolving infection is chronic rather than recurrent, and a single-site infection is localized."
@@ -1088,9 +1088,9 @@
     "q": "What does the term neoplasia mean?",
     "options": [
      "Abnormal and excessive new growth of cells.",
-     "Normal new growth of cells.",
-     "Faulty development of cells.",
-     "Absence of cell development."
+     "Normal and orderly new growth of cells.",
+     "Faulty or abnormal development of cells.",
+     "Absence or failure of cell development."
     ],
     "correct": 0,
     "explain": "Neoplasia is built from neo- (new), plasia (formation or growth), so it denotes abnormal and excessive new cell growth, the process behind cancer. Normal new growth would not carry the abnormal overtone of the clinical term, faulty development is dysplasia (dys- with plasia), and absence of development is aplasia (a- with plasia)."

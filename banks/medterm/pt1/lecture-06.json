@@ -356,12 +356,12 @@
     "q": "Which suffix means to burst forth, usually of blood?",
     "options": [
      "-rrhage and -rrhagia",
-     "-rrhexis",
-     "-ptosis",
-     "-cele"
+     "-rrhexis and -rrhea",
+     "-ptosis and -plegia",
+     "-cele and -ectasis"
     ],
     "correct": 0,
-    "explain": "-rrhage and -rrhagia both mean to burst forth, usually blood, as in hemorrhage, an escape of blood by bursting forth. -rrhexis means rupture, -ptosis means falling, and -cele means pouching or hernia."
+    "explain": "-rrhage and -rrhagia both mean to burst forth, usually blood, as in hemorrhage, an escape of blood by bursting forth. -rrhexis means rupture, -ptosis means falling, -cele means pouching or hernia, -rrhea means flow, -plegia means paralysis, and -ectasis means dilation."
    },
    {
     "id": "MT06021",
@@ -664,9 +664,9 @@
     "q": "What does the term agenesis mean?",
     "options": [
      "Non-development or absence of an organ or part.",
-     "Enlargement of an organ.",
-     "Breaking down of an organ.",
-     "A hernia of an organ."
+     "Enlargement of an organ or one of its parts.",
+     "Breaking down or softening of an organ.",
+     "A hernia or protrusion of an organ."
     ],
     "correct": 0,
     "explain": "Agenesis is built from a- (without) and -genesis (origin or production), so it denotes non-development or absence of an organ or part. Enlargement would use -megaly, breaking down would use -lysis, and hernia would use -cele."
@@ -720,9 +720,9 @@
     "q": "What does the term vasospasm mean?",
     "options": [
      "An involuntary contraction that narrows a blood vessel.",
-     "A rupture of a blood vessel.",
-     "A dilation of a blood vessel.",
-     "A hernia of a blood vessel."
+     "A sudden rupture or tear of a blood vessel.",
+     "A widening or dilation of a blood vessel.",
+     "A hernia or protrusion of a blood vessel."
     ],
     "correct": 0,
     "explain": "Vasospasm is built from vas- (vessel) and -spasm (involuntary contraction), so it denotes an involuntary contraction that narrows a blood vessel. Rupture would use -rrhexis, dilation would use -ectasis, and hernia would use -cele."
@@ -734,9 +734,9 @@
     "q": "What does the term lipoid mean?",
     "options": [
      "Resembling fat; having a fatty character.",
-     "A tumor of fat.",
-     "Inflammation of fat.",
-     "Softening of fat."
+     "A tumor of fat; a benign fatty mass.",
+     "Inflammation of fat beneath the skin.",
+     "Softening of fat; a fatty breakdown."
     ],
     "correct": 0,
     "explain": "Lipoid is built from lip- (fat) and -oid (resembling), so it denotes resembling fat. A tumor would use -oma, inflammation would use -itis, and softening would use -malacia."
@@ -790,9 +790,9 @@
     "q": "What does the term myoma mean?",
     "options": [
      "A benign tumor of muscle tissue; in the uterus, a fibroid.",
-     "A malignant tumor of bone.",
-     "An inflammation of muscle tissue.",
-     "A rupture of muscle tissue."
+     "A malignant tumor of bone; in the knee, a sarcoma.",
+     "An inflammation of muscle tissue after strain.",
+     "A rupture of muscle tissue during contraction."
     ],
     "correct": 0,
     "explain": "Myoma is built from my- (muscle) and -oma (tumor), so it denotes a benign tumor of muscle tissue, and myoma uteri is a muscle tumor of the uterus (a fibroid). A malignant bone tumor would use oste- and carcinoma, inflammation would use -itis, and rupture would use -rrhexis."

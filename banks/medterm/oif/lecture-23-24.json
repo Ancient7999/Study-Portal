@@ -116,7 +116,7 @@
         "q": "Urea is filtered from the blood by the kidneys and excreted in urine. In which organ is urea formed?",
         "options": [
           "In the glomerulus, as a by-product of capillary filtration.",
-          "In the liver, as a waste product later cleared by the kidneys.",
+          "In the liver, as a waste product of protein breakdown.",
           "In the urinary bladder, as urine is stored and concentrated.",
           "In the renal tubule, as filtrate is modified during reabsorption."
         ],
@@ -1085,7 +1085,7 @@
         "cat": "MT_lec23-24",
         "group": "kidney-region-drill",
         "groupOrder": 1,
-        "q": "This lighter outer zone of the kidney holds the filtering units and resembles the bark of the organ. Answer each step, then the next region follows.",
+        "q": "This lighter outer zone of the kidney holds the filtering units. Answer each step, then the next region follows.",
         "steps": [
           {
             "id": "1",
@@ -1100,7 +1100,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which literal meaning does this word carry?",
+            "prompt": "Which literal meaning does Cortex carry?",
             "options": [
               "Bark",
               "Stone",
@@ -1133,7 +1133,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which structures inside this zone collect and send urine inward?",
+            "prompt": "Which structures inside the Medulla collect and send urine inward?",
             "options": [
               "Renal pyramids",
               "Renal cortex layers",
@@ -1166,7 +1166,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which structures pass through this notch?",
+            "prompt": "Which structures pass through the Hilum?",
             "options": [
               "Renal artery, renal vein, and ureter",
               "Renal artery, renal vein, and urethra",
@@ -1199,7 +1199,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which structure surrounds this cluster?",
+            "prompt": "Which structure surrounds the Glomerulus?",
             "options": [
               "Bowman capsule",
               "Renal tubule",

@@ -83,7 +83,7 @@
         "id": "MT21006",
         "type": "mcq",
         "cat": "MT_lec21-22",
-        "q": "Which structure is the cavity that receives food for digestion?",
+        "q": "Which structure first receives food for digestion?",
         "options": [
           "The oral cavity or the mouth.",
           "The pharynx or the throat passage.",
@@ -830,7 +830,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which meaning belongs to the name of this part?",
+            "prompt": "Which meaning belongs to the name of the Duodenum?",
             "options": [
               "Twelve",
               "Empty",
@@ -863,7 +863,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which meaning belongs to the name of this part?",
+            "prompt": "Which meaning belongs to the name of the Jejunum?",
             "options": [
               "Empty",
               "Twelve",
@@ -896,7 +896,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which meaning belongs to the name of this part?",
+            "prompt": "Which meaning belongs to the name of the Ileum?",
             "options": [
               "To roll up or twist",
               "Twelve",
@@ -1239,7 +1239,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form names this organ?",
+            "prompt": "Which combining form names the Liver?",
             "options": [
               "Hepat/o or Hepatic/o",
               "Chol/e or Bil/i",
@@ -1272,7 +1272,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form can name this receptacle?",
+            "prompt": "Which combining form can name the Gall bladder?",
             "options": [
               "Cyst/o",
               "Hepat/o",
@@ -1305,7 +1305,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which combining form names this gland?",
+            "prompt": "Which combining form names the Pancreas?",
             "options": [
               "Pancreat/o",
               "Hepat/o",

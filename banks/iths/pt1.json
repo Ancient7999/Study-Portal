@@ -427,10 +427,10 @@
     "q": "What is required to open Banner?",
     "explain": "Banner requires its own account, separate from other computer accounts. A generic email password, a survey, and a Zoom license do not establish that identity.",
     "options": [
-     "A generic college email password.",
+     "A generic college email password shared with other accounts.",
      "A Banner account established separately from other accounts.",
-     "A completed teacher evaluation survey.",
-     "An active Zoom meeting license."
+     "A completed teacher evaluation survey for the current term.",
+     "An active Zoom meeting license linked to the student email."
     ],
     "correct": 1
    },
@@ -531,10 +531,10 @@
     "q": "How can a user join a Zoom meeting?",
     "explain": "Zoom meetings can be joined by entering a meeting ID, clicking an invitation link, or using a web browser. Plugins, cloud sync, and Banner registration do not provide meeting access.",
     "options": [
-     "By installing Adobe Flash Player.",
+     "By installing Adobe Flash Player and opening the meeting file.",
      "By entering a meeting ID or clicking an invitation link.",
-     "By syncing Dropbox folders.",
-     "By registering through Banner."
+     "By syncing Dropbox folders that hold the meeting details.",
+     "By registering through Banner with the course reference number."
     ],
     "correct": 1
    },
@@ -817,9 +817,9 @@
     "q": "Auto-hide Ribbon is mainly useful when you want to:",
     "explain": "Auto-hide Ribbon displays the document full screen and hides the Ribbon, maximizing viewing space. Table insertion, margin changes, and printing are separate commands.",
     "options": [
-     "Insert a table.",
-     "Change margins.",
-     "Print a document.",
+     "Insert a table into the document.",
+     "Change the page margins quickly.",
+     "Print a document with fewer clicks.",
      "Maximize document viewing space."
     ],
     "correct": 3

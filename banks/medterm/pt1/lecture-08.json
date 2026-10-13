@@ -111,10 +111,10 @@
     "cat": "MT_lec8",
     "q": "A combining vowel is retained in a combining form under which condition?",
     "options": [
-     "When it links a root to a vowel-initial suffix.",
+     "When it links a root to a vowel-initial suffix such as -itis.",
      "When it links a root to a consonant-initial suffix or to a second root.",
-     "When it links a prefix to a vowel-initial root.",
-     "When the root itself ends in a vowel."
+     "When it links a prefix to a vowel-initial root such as -enter-.",
+     "When the root itself ends in a vowel, before any kind of suffix."
     ],
     "correct": 1,
     "explain": "The combining vowel o is kept to ease pronunciation when the next element begins with a consonant, whether that element is a suffix, as in hematology, or a second root, as in cardioangiography. Before a vowel-initial suffix the combining vowel is dropped, as in vasectomy, a prefix never carries a combining vowel, and a root ending in a vowel does not require one."
@@ -574,9 +574,9 @@
     "q": "What does the term aerobic mean?",
     "options": [
      "Pertaining to air or oxygen; requiring oxygen to live.",
-     "The condition of swallowing air.",
-     "Pertaining to or containing water.",
-     "Resembling fat."
+     "The condition of swallowing air; air in the stomach.",
+     "Pertaining to or containing water; watery.",
+     "Resembling fat; having a fatty character."
     ],
     "correct": 0,
     "explain": "Aerobic is built from Aer/o (air or gas) and -bic (pertaining to), so it denotes pertaining to air or oxygen, or requiring oxygen to live. The condition of swallowing air is aerophagia, pertaining to water is hydrous, and resembling fat is lipoid."
@@ -938,9 +938,9 @@
     "q": "What does the term cardioangiography mean?",
     "options": [
      "Process of recording the heart and its blood vessels.",
-     "Enlargement of the heart.",
-     "Inflammation of bone and joint.",
-     "Process of examining the abdomen."
+     "Enlargement of the heart and its chambers.",
+     "Inflammation of bone and joint together.",
+     "Process of examining the abdomen visually."
     ],
     "correct": 0,
     "explain": "Cardioangiography is built from Cardi/o (heart), Angi/o (vessel), and -graphy (recording), so it denotes the process of recording the heart and its blood vessels. Two roots are joined by the combining vowel o, giving CF+CF+S. Enlargement of the heart is cardiomegaly, inflammation of bone and joint is osteoarthritis, and examining the abdomen is laparoscopy."
@@ -1008,9 +1008,9 @@
     "q": "What does the term renointestinal mean?",
     "options": [
      "Pertaining to the kidney and the intestine.",
-     "Pain in the kidney.",
-     "The study of tissue.",
-     "Inflammation of the colon."
+     "Pain in the kidney and the lower back.",
+     "The study of tissue and its structure.",
+     "Inflammation of the colon and its lining."
     ],
     "correct": 0,
     "explain": "Renointestinal is built from Ren/o (kidney), intestin (intestine), and -al (pertaining to), so it denotes pertaining to the kidney and the intestine. The o links the first root to the second root, giving CF+R+S. Pain in the kidney is nephralgia, the study of tissue is histology, and colon inflammation is colitis."

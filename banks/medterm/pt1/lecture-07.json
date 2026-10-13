@@ -156,9 +156,9 @@
     "cat": "MT_lec7",
     "q": "Which surgical suffix is correctly matched to the action it names?",
     "options": [
-     "-pexy : binding",
-     "-desis : suture",
-     "-rrhaphy : surgical repair",
+     "-pexy : binding or tying together",
+     "-desis : suture or stitching closed",
+     "-rrhaphy : surgical repair or reshaping",
      "-plasty : surgical repair or reconstruction"
     ],
     "correct": 3,

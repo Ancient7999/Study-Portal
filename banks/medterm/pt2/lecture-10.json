@@ -1514,14 +1514,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Emergency care unit",
-       "Intensive care unit",
-       "Coronary or cardiac care unit",
-       "Operating room"
+       "Endocrine care unit",
+       "External cardiac unit",
+       "Elective cardiac unit"
       ],
       "correct": 0
      }
     ],
-    "explain": "ECU stands for the emergency care unit. Intensive care is ICU, coronary or cardiac care is CCU, and the operating room is OR."
+    "explain": "ECU stands for the emergency care unit. Endocrine care unit, external cardiac unit, and elective cardiac unit share the letters but are not the expansion."
    },
    {
     "id": "MT10076",
@@ -1536,14 +1536,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Intensive care unit",
-       "Emergency care unit",
-       "Coronary or cardiac care unit",
-       "Operating room"
+       "Internal cardiac unit",
+       "Immediate cardiac unit",
+       "Intravenous care unit"
       ],
       "correct": 0
      }
     ],
-    "explain": "ICU stands for the intensive care unit. Emergency care is ECU, coronary or cardiac care is CCU, and the operating room is OR."
+    "explain": "ICU stands for the intensive care unit. Internal cardiac unit, immediate cardiac unit, and intravenous care unit share the letters but are not the expansion."
    },
    {
     "id": "MT10077",
@@ -1558,14 +1558,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Operating room",
-       "Emergency care unit",
-       "Intensive care unit",
-       "Coronary or cardiac care unit"
+       "Oncology room",
+       "Orthopedic room",
+       "Outpatient recovery"
       ],
       "correct": 0
      }
     ],
-    "explain": "OR stands for the operating room. Emergency care is ECU, intensive care is ICU, and coronary or cardiac care is CCU."
+    "explain": "OR stands for the operating room. Oncology room, orthopedic room, and outpatient recovery share the letters but are not the expansion."
    },
    {
     "id": "MT10078",
@@ -1580,14 +1580,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "In patient",
-       "Out patient",
-       "Discharge or discontinue",
-       "Blood pressure"
+       "Isolated patient",
+       "Intake procedure",
+       "Internal pressure"
       ],
       "correct": 0
      }
     ],
-    "explain": "IP stands for in patient, a patient admitted to the hospital. Out patient is OP, discharge or discontinue is DC or D/C, and blood pressure is BP."
+    "explain": "IP stands for in patient, a patient admitted to the hospital. Isolated patient, intake procedure, and internal pressure share the letters but are not the expansion."
    },
    {
     "id": "MT10079",
@@ -1602,14 +1602,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Out patient",
-       "In patient",
-       "Discharge or discontinue",
-       "Blood pressure"
+       "Operating procedure",
+       "Observed patient",
+       "Oral pressure"
       ],
       "correct": 0
      }
     ],
-    "explain": "OP stands for out patient, one seen without admission. In patient is IP, discharge or discontinue is DC or D/C, and blood pressure is BP."
+    "explain": "OP stands for out patient, one seen without admission. Operating procedure, observed patient, and oral pressure share the letters but are not the expansion."
    },
    {
     "id": "MT10080",
@@ -1624,14 +1624,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Discharge or discontinue",
-       "In patient",
-       "Out patient",
-       "Blood pressure"
+       "Daily care or dosage",
+       "Dose change or delay",
+       "Drug control or dispensing"
       ],
       "correct": 0
      }
     ],
-    "explain": "DC or D/C stands for discharge or discontinue. In patient is IP, out patient is OP, and blood pressure is BP."
+    "explain": "DC or D/C stands for discharge or discontinue. Daily care or dosage, dose change or delay, and drug control or dispensing share the letters but are not the expansion."
    },
    {
     "id": "MT10081",
@@ -1646,14 +1646,14 @@
       "prompt": "Which meaning belongs to this abbreviation?",
       "options": [
        "Blood pressure",
-       "In patient",
-       "Out patient",
-       "Discharge or discontinue"
+       "Blood plasma",
+       "Body pulse",
+       "Basal pressure"
       ],
       "correct": 0
      }
     ],
-    "explain": "BP stands for blood pressure. In patient is IP, out patient is OP, and discharge or discontinue is DC or D/C."
+    "explain": "BP stands for blood pressure. Blood plasma, body pulse, and basal pressure share the letters but are not the expansion."
    },
    {
     "id": "MT10082",
@@ -1907,7 +1907,7 @@
      },
      {
       "id": "2",
-      "prompt": "What lies inside this layer?",
+      "prompt": "What lies inside the Enamel?",
       "options": [
        "Dentin",
        "Pulp",
@@ -1940,7 +1940,7 @@
      },
      {
       "id": "2",
-      "prompt": "What lies outside this layer?",
+      "prompt": "What lies outside the Dentin?",
       "options": [
        "Enamel",
        "Pulp",
@@ -1951,7 +1951,7 @@
      },
      {
       "id": "3",
-      "prompt": "What lies inside this layer?",
+      "prompt": "What lies inside the Dentin?",
       "options": [
        "Pulp",
        "Enamel",
@@ -1984,7 +1984,7 @@
      },
      {
       "id": "2",
-      "prompt": "What lies outside this tissue?",
+      "prompt": "What lies outside the Pulp?",
       "options": [
        "Dentin",
        "Enamel",
@@ -2050,7 +2050,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which tissue runs in this passage?",
+      "prompt": "Which tissue runs in the Canal?",
       "options": [
        "Pulp",
        "Enamel",
@@ -2083,7 +2083,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which tip ends this part?",
+      "prompt": "Which tip ends the Root?",
       "options": [
        "Apex",
        "Canal",
@@ -2116,7 +2116,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which part does this tip end?",
+      "prompt": "Which part does the Apex end?",
       "options": [
        "Root",
        "Canal",
@@ -2347,7 +2347,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which specialist supplies this replacement?",
+      "prompt": "Which specialist supplies the Denture?",
       "options": [
        "Prosthodontist",
        "Endodontist",

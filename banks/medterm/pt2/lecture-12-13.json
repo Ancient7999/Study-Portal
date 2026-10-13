@@ -99,13 +99,13 @@
     "cat": "MT_lec12-13",
     "q": "Which statement correctly describes valves in veins?",
     "options": [
-     "They lie at intervals in the lining of arteries, especially in the arms, and force blood away from the heart.",
-     "They lie continuously around the heart chambers, especially in the atria, and stop blood entering the ventricles.",
+     "They lie continuously along the lining of veins, especially in the arms, and push blood away from the heart.",
+     "They lie at intervals in the lining of veins, especially in the neck, and stop blood from reaching the heart.",
      "They lie at intervals in the lining of veins, especially in the legs, and help move blood returning to the heart.",
-     "They lie between the ventricles and great arteries, especially in the lungs, and regulate one-way flow from the heart."
+     "They lie only where veins join the heart chambers, especially the atria, and regulate one-way flow out of the heart."
     ],
     "correct": 2,
-    "explain": "Venous valves occur at intervals in the lining of veins, particularly in the legs, and assist the return of blood to the heart. Placing them in arteries, around chambers, or between ventricles and arteries assigns them the wrong vessels or structures."
+    "explain": "Venous valves occur at intervals in the lining of veins, particularly in the legs, and assist the return of blood to the heart. A continuous layer in the arms, valves that stop blood reaching the heart, or valves only at the heart chambers give the wrong place or the wrong job."
    },
    {
     "id": "MT12008",
@@ -1244,7 +1244,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which valve borders this chamber?",
+      "prompt": "Which valve borders the Right atrium?",
       "options": [
        "Tricuspid valve",
        "Mitral valve",
@@ -1255,7 +1255,7 @@
      },
      {
       "id": "3",
-      "prompt": "Where does the other atrium lie relative to this chamber?",
+      "prompt": "Where does the other atrium lie relative to the Right atrium?",
       "options": [
        "To its left",
        "To its right",
@@ -1310,7 +1310,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which valve borders this chamber?",
+      "prompt": "Which valve borders the Left atrium?",
       "options": [
        "Mitral valve",
        "Tricuspid valve",
@@ -1321,7 +1321,7 @@
      },
      {
       "id": "3",
-      "prompt": "Where does the other atrium lie relative to this chamber?",
+      "prompt": "Where does the other atrium lie relative to the Left atrium?",
       "options": [
        "To its right",
        "To its left",
@@ -1409,7 +1409,7 @@
      },
      {
       "id": "5",
-      "prompt": "Where does the other ventricle lie relative to this chamber?",
+      "prompt": "Where does the other ventricle lie relative to the Right ventricle?",
       "options": [
        "To its left",
        "To its right",
@@ -1475,7 +1475,7 @@
      },
      {
       "id": "5",
-      "prompt": "Where does the other ventricle lie relative to this chamber?",
+      "prompt": "Where does the other ventricle lie relative to the Left ventricle?",
       "options": [
        "To its right",
        "To its left",
@@ -1508,7 +1508,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which role is this valve?",
+      "prompt": "Which role is the Tricuspid valve?",
       "options": [
        "Inlet valve",
        "Outlet valve"
@@ -1517,7 +1517,7 @@
      },
      {
       "id": "3",
-      "prompt": "Where does the atrium lie relative to this valve?",
+      "prompt": "Where does the atrium lie relative to the Tricuspid valve?",
       "options": [
        "Superior to it",
        "Inferior to it",
@@ -1528,7 +1528,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the ventricle lie relative to this valve?",
+      "prompt": "Where does the ventricle lie relative to the Tricuspid valve?",
       "options": [
        "Inferior to it",
        "Superior to it",
@@ -1546,7 +1546,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 2,
-    "q": "This valve stands between the right ventricle and the pulmonary artery. Answer each step, then the next valve follows.",
+    "q": "This half-moon valve on the right side of the heart opens toward the lungs. Answer each step, then the next valve follows.",
     "steps": [
      {
       "id": "1",
@@ -1561,7 +1561,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which role is this valve?",
+      "prompt": "Which role is the Pulmonary semilunar valve?",
       "options": [
        "Outlet valve",
        "Inlet valve"
@@ -1570,7 +1570,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which chamber lies inferior to this valve?",
+      "prompt": "Which chamber lies inferior to the Pulmonary semilunar valve?",
       "options": [
        "Right ventricle",
        "Left ventricle",
@@ -1581,7 +1581,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which vessel leaves through this valve?",
+      "prompt": "Which vessel leaves through the Pulmonary semilunar valve?",
       "options": [
        "Pulmonary artery",
        "Aorta",
@@ -1614,7 +1614,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which other name belongs to this valve?",
+      "prompt": "Which other name belongs to the Mitral valve?",
       "options": [
        "Bicuspid valve",
        "Tricuspid valve",
@@ -1625,7 +1625,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which role is this valve?",
+      "prompt": "Which role is the Mitral valve?",
       "options": [
        "Inlet valve",
        "Outlet valve"
@@ -1634,7 +1634,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the ventricle lie relative to this valve?",
+      "prompt": "Where does the ventricle lie relative to the Mitral valve?",
       "options": [
        "Inferior to it",
        "Superior to it",
@@ -1652,7 +1652,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 4,
-    "q": "This valve stands between the left ventricle and the aorta. Answer each step, then the vessel run follows.",
+    "q": "This half-moon valve on the left side of the heart opens toward the body. Answer each step, then the vessel run follows.",
     "steps": [
      {
       "id": "1",
@@ -1667,7 +1667,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which role is this valve?",
+      "prompt": "Which role is the Aortic valve?",
       "options": [
        "Outlet valve",
        "Inlet valve"
@@ -1676,7 +1676,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which chamber lies inferior to this valve?",
+      "prompt": "Which chamber lies inferior to the Aortic valve?",
       "options": [
        "Left ventricle",
        "Right ventricle",
@@ -1687,7 +1687,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which vessel leaves through this valve?",
+      "prompt": "Which vessel leaves through the Aortic valve?",
       "options": [
        "Aorta",
        "Pulmonary artery",
@@ -1705,7 +1705,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 1,
-    "q": "This vessel leaves the right ventricle carrying deoxygenated blood to the lungs. Answer each step, then the next vessel follows.",
+    "q": "This vessel links the heart to the lungs and has thick, muscular walls. Answer each step, then the next vessel follows.",
     "steps": [
      {
       "id": "1",
@@ -1720,7 +1720,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which direction does this vessel run?",
+      "prompt": "Which direction does the Pulmonary artery run?",
       "options": [
        "Away from the heart",
        "Toward the heart"
@@ -1729,7 +1729,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which blood does this vessel carry?",
+      "prompt": "Which blood does the Pulmonary artery carry?",
       "options": [
        "Deoxygenated blood",
        "Oxygenated blood"
@@ -1738,7 +1738,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which chamber does this vessel leave?",
+      "prompt": "Which chamber does the Pulmonary artery leave?",
       "options": [
        "Right ventricle",
        "Left atrium",
@@ -1756,7 +1756,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 2,
-    "q": "This vessel returns oxygenated blood from the lungs to an upper chamber. Answer each step, then the next vessel follows.",
+    "q": "This vessel is one of four that join the lungs and the heart. Answer each step, then the next vessel follows.",
     "steps": [
      {
       "id": "1",
@@ -1771,7 +1771,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which direction does this vessel run?",
+      "prompt": "Which direction does the Pulmonary vein run?",
       "options": [
        "Toward the heart",
        "Away from the heart"
@@ -1780,7 +1780,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which blood does this vessel carry?",
+      "prompt": "Which blood does the Pulmonary vein carry?",
       "options": [
        "Oxygenated blood",
        "Deoxygenated blood"
@@ -1789,7 +1789,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which chamber does this vessel enter?",
+      "prompt": "Which chamber does the Pulmonary vein enter?",
       "options": [
        "Left atrium",
        "Right ventricle",
@@ -1807,7 +1807,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 3,
-    "q": "This vessel leaves a lower chamber and carries oxygenated blood to the body. Answer each step, then the next vessel follows.",
+    "q": "This is the largest vessel in the body. Answer each step, then the next vessel follows.",
     "steps": [
      {
       "id": "1",
@@ -1822,7 +1822,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which direction does this vessel run?",
+      "prompt": "Which direction does the Aorta run?",
       "options": [
        "Away from the heart",
        "Toward the heart"
@@ -1831,7 +1831,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which blood does this vessel carry?",
+      "prompt": "Which blood does the Aorta carry?",
       "options": [
        "Oxygenated blood",
        "Deoxygenated blood"
@@ -1840,7 +1840,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which chamber does this vessel leave?",
+      "prompt": "Which chamber does the Aorta leave?",
       "options": [
        "Left ventricle",
        "Right ventricle",
@@ -1858,7 +1858,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 4,
-    "q": "These vessels return deoxygenated blood from the body to an upper chamber. Answer each step, then the next vessel follows.",
+    "q": "These two large vessels, one superior and one inferior, are named for their hollow shape. Answer each step, then the next vessel follows.",
     "steps": [
      {
       "id": "1",
@@ -1873,7 +1873,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which direction does this vessel run?",
+      "prompt": "Which direction does the Vena cava run?",
       "options": [
        "Toward the heart",
        "Away from the heart"
@@ -1882,7 +1882,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which blood does this vessel carry?",
+      "prompt": "Which blood does the Vena cava carry?",
       "options": [
        "Deoxygenated blood",
        "Oxygenated blood"
@@ -1891,7 +1891,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which chamber does this vessel enter?",
+      "prompt": "Which chamber does the Vena cava enter?",
       "options": [
        "Right atrium",
        "Left atrium",

@@ -531,9 +531,9 @@
     "q": "Which statement correctly distinguishes the standard -us family from the special -us family in the plural?",
     "options": [
      "The standard family replaces -us with -i, as in thrombus to thrombi, while the special family adds -es, as in sinus to sinuses.",
-     "Both families replace -us with -i, so sinus becomes sini and virus becomes viri.",
-     "Both families add -es, so thrombus becomes thrombuses and sinus becomes sinuses.",
-     "The standard family adds -es, while the special family replaces -us with -i."
+     "Both families replace -us with -i, so sinus becomes sini and virus becomes viri, like thrombus to thrombi.",
+     "Both families add -es, so thrombus becomes thrombuses and sinus becomes sinuses, with no exceptions.",
+     "The standard family adds -es, as in thrombus to thrombuses, while the special family replaces -us with -i, as in sinus to sini."
     ],
     "correct": 0,
     "explain": "The standard -us family replaces the ending with -i, as in thrombus to thrombi, while the special -us family keeps the -us and adds -es, as in sinus to sinuses and virus to viruses. The second option wrongly gives the -i ending to the special family, the third wrongly gives the -es ending to the standard family, and the fourth reverses the two."
@@ -1142,9 +1142,9 @@
     "q": "Which statement correctly distinguishes the standard -us plural pattern from the special -us plural pattern?",
     "options": [
      "The standard pattern replaces -us with -i, as thrombus to thrombi; the special pattern keeps -us and adds -es, as sinus to sinuses and virus to viruses.",
-     "The standard pattern keeps -us and adds -es; the special pattern replaces -us with -i.",
-     "Both patterns replace -us with -i, and the only difference is the length of the root.",
-     "Both patterns keep -us and add -es, and the only difference is the number of syllables."
+     "The standard pattern keeps -us and adds -es, as thrombus to thrombuses; the special pattern replaces -us with -i, as sinus to sini.",
+     "Both patterns replace -us with -i, as thrombus to thrombi and sinus to sini, and only the root length differs.",
+     "Both patterns keep -us and add -es, as thrombus to thrombuses and sinus to sinuses, and only the syllables differ."
     ],
     "correct": 0,
     "explain": "The standard -us family replaces the ending with -i, as in thrombus to thrombi, while the special -us family keeps -us and adds -es, as in sinus to sinuses and virus to viruses. The second option reverses the two, and the third and fourth collapse them into a single pattern, ignoring the two different outcomes of the two families."

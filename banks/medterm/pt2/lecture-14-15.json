@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 14 and 15 - Blood and Lymphatic System",
- "formSize": 99,
+ "formSize": 109,
  "forms": [
   "A"
  ],
@@ -436,7 +436,7 @@
     "q": "What does the term hemochromatosis mean?",
     "options": [
      "A condition of excess blood cells.",
-     "A condition involving excessive iron deposits and skin color changes.",
+     "A condition of excessive iron deposits.",
      "A condition of deficient blood clotting.",
      "A condition of excess clots in the veins."
     ],
@@ -906,6 +906,137 @@
     "explain": "Hematocytopenia is a deficiency of blood cells. Splenomegaly is enlargement of the spleen. Thrombophlebitis is inflammation of a vein caused by a clot. Lymphoduct is a duct that carries lymph. Thymocyte is a cell of the thymus. Athymism is absence of the thymus. Each term is built from the combining forms and suffixes of this unit, and the meaning follows directly from those elements."
    },
    {
+    "id": "MT14105",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each blood cell to its lifespan.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Erythrocyte (RBC)"
+     },
+     {
+      "id": "2",
+      "text": "Neutrophil"
+     },
+     {
+      "id": "3",
+      "text": "Monocyte"
+     },
+     {
+      "id": "4",
+      "text": "Basophil"
+     },
+     {
+      "id": "5",
+      "text": "Eosinophil"
+     },
+     {
+      "id": "6",
+      "text": "Thrombocyte (platelet)"
+     },
+     {
+      "id": "7",
+      "text": "T cell"
+     },
+     {
+      "id": "8",
+      "text": "B cell"
+     },
+     {
+      "id": "9",
+      "text": "NK cell"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "About 110 to 120 days"
+     },
+     {
+      "id": "B",
+      "text": "Up to about 24 hours"
+     },
+     {
+      "id": "C",
+      "text": "Usually under 2 days"
+     },
+     {
+      "id": "D",
+      "text": "About 2 to 5 days"
+     },
+     {
+      "id": "E",
+      "text": "About 7 to 10 days"
+     },
+     {
+      "id": "F",
+      "text": "About 30 to 160 days"
+     },
+     {
+      "id": "G",
+      "text": "About 5 to 6 weeks"
+     },
+     {
+      "id": "H",
+      "text": "Up to about 2 weeks"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "B",
+     "4": "C",
+     "5": "D",
+     "6": "E",
+     "7": "F",
+     "8": "G",
+     "9": "H"
+    },
+    "explain": "The erythrocyte lives about 110 to 120 days. The neutrophil and the monocyte both live up to about 24 hours, so they share one answer. The basophil usually lives under 2 days, and the eosinophil about 2 to 5 days. The thrombocyte lives about 7 to 10 days. The T cell lives about 30 to 160 days, the B cell about 5 to 6 weeks, and the NK cell up to about 2 weeks."
+   },
+   {
+    "id": "MT14106",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each immunity route to how long it lasts.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Natural active immunity"
+     },
+     {
+      "id": "2",
+      "text": "Artificial active immunity"
+     },
+     {
+      "id": "3",
+      "text": "Natural passive immunity"
+     },
+     {
+      "id": "4",
+      "text": "Artificial passive immunity"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Long-lasting"
+     },
+     {
+      "id": "B",
+      "text": "Short-lasting"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "A",
+     "3": "B",
+     "4": "B"
+    },
+    "explain": "Natural active and artificial active immunity are long-lasting, because the host makes its own antibodies. Natural passive and artificial passive immunity are short-lasting, because the antibodies come from another source."
+   },
+   {
     "id": "MT14051",
     "type": "mcq",
     "cat": "MT_lec14-15",
@@ -1019,1071 +1150,787 @@
    },
    {
     "id": "MT14061",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 1,
-    "q": "This formed element carries oxygen and carbon dioxide between the lungs and the tissues. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Erythrocyte",
-       "Erythrocite",
-       "Erythocyte",
-       "Erythroycyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "About 110 to 120 days",
-       "Up to about 24 hours",
-       "About 2 to 5 days",
-       "About 7 to 10 days"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which pigment does this cell carry?",
-      "options": [
-       "A protein-iron respiratory pigment",
-       "A Y-shaped antibody protein",
-       "A clotting factor held in plasma",
-       "An anticoagulant from a granulocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which other name belongs to this cell?",
-      "options": [
-       "Red blood cell",
-       "White blood cell",
-       "Platelet",
-       "Lymphocyte"
-      ],
-      "correct": 0
-     }
+    "q": "A formed element that carries oxygen and carbon dioxide and lives about 110 to 120 days is which type?",
+    "options": [
+     "Leukocyte",
+     "Thrombocyte",
+     "Erythrocyte",
+     "Lymphocyte"
     ],
-    "explain": "This cell is the erythrocyte, also called a red blood cell. Erythrocite, Erythocyte, and Erythroycyte miss the spelling. It lives about 110 to 120 days. Up to about 24 hours fits the neutrophil and the monocyte, about 2 to 5 days fits the eosinophil, and about 7 to 10 days fits the platelet. The pigment is hemoglobin, a protein-iron respiratory pigment. A Y-shaped antibody protein is made by the B cell, a clotting factor held in plasma is not the red-cell pigment, and an anticoagulant from a granulocyte is brought by the basophil."
+    "correct": 2,
+    "explain": "This is the erythrocyte, the red cell that carries the respiratory gases for about 110 to 120 days. The leukocyte, thrombocyte, and lymphocyte do other work."
    },
    {
     "id": "MT14062",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 2,
-    "q": "This white cell fights infection by phagocytosis, and its granules stain neither acid nor basic. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Neutrophil",
-       "Neutrophill",
-       "Neutrofil",
-       "Neutraphil"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which class does this cell belong to?",
-      "options": [
-       "Granulocyte",
-       "Agranulocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "Up to about 24 hours",
-       "About 2 to 5 days",
-       "Usually under 2 days",
-       "About 110 to 120 days"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which reading of neutr and phil is correct?",
-      "options": [
-       "Neither, and attraction for",
-       "Many lobes, and a kernel",
-       "A color sense, and a clot",
-       "Without, and the thymus"
-      ],
-      "correct": 0
-     }
+    "q": "This white cell is the most common one in the blood and fights infection by phagocytosis. Which is the correct spelling of this cell?",
+    "options": [
+     "Neutrophill",
+     "Neutrophil",
+     "Neutrofil",
+     "Neutraphil"
     ],
-    "explain": "This cell is the neutrophil, a granulocyte. Neutrophill, Neutrofil, and Neutraphil miss the spelling. Agranulocyte is the class with no granules. It lives up to about 24 hours. About 2 to 5 days fits the eosinophil, usually under 2 days fits the basophil, and about 110 to 120 days fits the red cell. Neutr means neither and phil means attraction for. Many lobes, and a kernel, glosses polymorphonuclear. A color sense, and a clot, glosses chrom/o and thromb/o. Without, and the thymus, glosses athymism."
+    "correct": 1,
+    "explain": "The correct spelling is Neutrophil. Neutrophill, Neutrofil, and Neutraphil are misspellings."
    },
    {
     "id": "MT14063",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 3,
-    "q": "This white cell increases during parasitic infection and allergic reactions. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Eosinophil",
-       "Eosinophill",
-       "Eosinofil",
-       "Eosinaphil"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which stain do its granules take?",
-      "options": [
-       "Bright yellow-red to orange",
-       "Dark blue to blue-black",
-       "Neutral, neither acid nor base",
-       "No granules available to stain"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "About 2 to 5 days",
-       "Up to about 24 hours",
-       "Usually under 2 days",
-       "About 30 to 160 days"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which class does this cell belong to?",
-      "options": [
-       "Granulocyte",
-       "Agranulocyte"
-      ],
-      "correct": 0
-     }
+    "q": "This white cell increases during parasitic infection and allergic reactions. Which is the correct spelling of this cell?",
+    "options": [
+     "Eosinophill",
+     "Eosinofil",
+     "Eosinophil",
+     "Eosinaphil"
     ],
-    "explain": "This cell is the eosinophil, a granulocyte. Eosinophill, Eosinofil, and Eosinaphil miss the spelling. Its granules stain bright yellow-red, orange, or rosy. Dark blue to blue-black is the basophil, neutral, neither acid nor base, is the neutrophil, and no granules available to stain is the agranulocyte pattern. It lives about 2 to 5 days. Up to about 24 hours fits the neutrophil and the monocyte, usually under 2 days fits the basophil, and about 30 to 160 days fits the T cell."
+    "correct": 2,
+    "explain": "The correct spelling is Eosinophil. Eosinophill, Eosinofil, and Eosinaphil are misspellings."
    },
    {
     "id": "MT14064",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 4,
-    "q": "This white cell takes part in immune surveillance and brings anticoagulants to inflamed tissue. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Basophil",
-       "Basophill",
-       "Basofil",
-       "Basaphil"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which stain do its granules take?",
-      "options": [
-       "Dark blue to blue-black",
-       "Bright yellow-red to orange",
-       "Neutral, neither acid nor base",
-       "No granules available to stain"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "Usually under 2 days",
-       "About 2 to 5 days",
-       "Up to about 24 hours",
-       "About 5 to 6 weeks"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which class does this cell belong to?",
-      "options": [
-       "Granulocyte",
-       "Agranulocyte"
-      ],
-      "correct": 0
-     }
+    "q": "This white cell takes part in immune surveillance and brings anticoagulants to inflamed tissue. Which is the correct spelling of this cell?",
+    "options": [
+     "Basophill",
+     "Basofil",
+     "Basaphil",
+     "Basophil"
     ],
-    "explain": "This cell is the basophil, a granulocyte. Basophill, Basofil, and Basaphil miss the spelling. Its granules stain dark blue. Bright yellow-red to orange is the eosinophil, neutral, neither acid nor base, is the neutrophil, and no granules available to stain is the agranulocyte pattern. It is usually short lived, under 2 days. About 2 to 5 days fits the eosinophil, up to about 24 hours fits the neutrophil, and about 5 to 6 weeks fits the B cell."
+    "correct": 3,
+    "explain": "The correct spelling is Basophil. Basophill, Basofil, and Basaphil are misspellings."
    },
    {
     "id": "MT14065",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 5,
-    "q": "This white cell is active in immunity and gives rise to three named lineages. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Lymphocyte",
-       "Lymphocite",
-       "Lymphosyte",
-       "Lymfocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which class does this cell belong to?",
-      "options": [
-       "Agranulocyte",
-       "Granulocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which three lineages belong to this cell?",
-      "options": [
-       "T-cell, B-cell, and NK-cell",
-       "Neutrophil, eosinophil, and basophil",
-       "Monocyte, erythrocyte, and thrombocyte",
-       "Basophil, monocyte, and erythrocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which nucleus pattern belongs to this cell?",
-      "options": [
-       "One large nucleus and no granules",
-       "Several nuclear lobes and protein granules",
-       "No nucleus, as a cell fragment",
-       "A pigment mass and no nucleus"
-      ],
-      "correct": 0
-     }
+    "q": "A white cell with one large nucleus and no granules that gives rise to three lineages is which type?",
+    "options": [
+     "Monocyte",
+     "Neutrophil",
+     "Basophil",
+     "Lymphocyte"
     ],
-    "explain": "This cell is the lymphocyte, an agranulocyte. Lymphocite, Lymphosyte, and Lymfocyte miss the spelling. Granulocyte is the lobed, granular class. Its lineages are the T-cell, the B-cell, and the NK-cell. Neutrophil, eosinophil, and basophil are the granulocytes. Monocyte, erythrocyte, and thrombocyte, and basophil, monocyte, and erythrocyte, mix other formed elements. It has one large nucleus and no granules. Several nuclear lobes and protein granules describe a granulocyte. No nucleus, as a cell fragment, describes the platelet. A pigment mass and no nucleus describes the mature red cell."
+    "correct": 3,
+    "explain": "This is the lymphocyte, the agranulocyte that gives rise to T-cells, B-cells, and NK-cells. The monocyte has no lineages, and the neutrophil and basophil carry granules."
    },
    {
     "id": "MT14066",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 6,
-    "q": "This white cell has one large nucleus, clear cytoplasm, and no granules, and it destroys germs by phagocytosis. Answer each step, then the next cell follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this cell?",
-      "options": [
-       "Monocyte",
-       "Monocite",
-       "Monosyte",
-       "Monacyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which class does this cell belong to?",
-      "options": [
-       "Agranulocyte",
-       "Granulocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "Up to about 24 hours",
-       "About 2 to 5 days",
-       "About 5 to 6 weeks",
-       "About 110 to 120 days"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "4",
-      "prompt": "Which germs does this cell destroy?",
-      "options": [
-       "Viruses, bacteria, fungi, and protozoa",
-       "Dietary fats, hormones, and plasma proteins",
-       "Clotting factors, fibrin, and serum",
-       "Bronze pigment, iron deposits, and bile"
-      ],
-      "correct": 0
-     }
+    "q": "The largest white cell, with no granules, that destroys germs by phagocytosis and lives up to about a day, is which type?",
+    "options": [
+     "Monocyte",
+     "Lymphocyte",
+     "Neutrophil",
+     "Eosinophil"
     ],
-    "explain": "This cell is the monocyte, an agranulocyte. Monocite, Monosyte, and Monacyte miss the spelling. Granulocyte is the lobed, granular class. It lives up to about 24 hours. About 2 to 5 days fits the eosinophil, about 5 to 6 weeks fits the B cell, and about 110 to 120 days fits the red cell. It destroys viruses, bacteria, fungi, and protozoa, and it clears infected cells. Dietary fats, hormones, and plasma proteins are transport loads. Clotting factors, fibrin, and serum are blood fractions. Bronze pigment, iron deposits, and bile are not the germ set it phagocytoses."
+    "correct": 0,
+    "explain": "This is the monocyte. The lymphocyte gives rise to lineages, and the neutrophil and eosinophil carry granules."
    },
    {
     "id": "MT14067",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "cell-drill",
-    "groupOrder": 7,
-    "q": "This formed element is essential for coagulation. Answer each step, then the lineage run follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this element?",
-      "options": [
-       "Thrombocyte",
-       "Thrombocyt",
-       "Thrombacyte",
-       "Thrombocite"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which parent cell sheds this element?",
-      "options": [
-       "Megakaryocyte",
-       "Proerythroblast",
-       "Lymphoblastic cell",
-       "Promonoblastic cell"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this element?",
-      "options": [
-       "About 7 to 10 days",
-       "About 110 to 120 days",
-       "Up to about 24 hours",
-       "About 30 to 160 days"
-      ],
-      "correct": 0
-     }
+    "q": "A cell fragment shed by the megakaryocyte that is essential for coagulation and lives about 7 to 10 days is which type?",
+    "options": [
+     "Erythrocyte",
+     "Thrombocyte",
+     "Leukocyte",
+     "Monocyte"
     ],
-    "explain": "This element is the thrombocyte. Thrombocyt, Thrombacyte, and Thrombocite miss the spelling. It is shed from the megakaryocyte. Proerythroblast, lymphoblastic cell, and promonoblastic cell are other marrow parents. It lives about 7 to 10 days. About 110 to 120 days fits the red cell, up to about 24 hours fits the neutrophil and the monocyte, and about 30 to 160 days fits the T cell."
+    "correct": 1,
+    "explain": "This is the thrombocyte, or platelet. The erythrocyte, leukocyte, and monocyte are whole cells with other jobs."
    },
    {
-    "id": "MT14068",
-    "type": "stepped",
+    "id": "MT14108",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "lineage-drill",
-    "groupOrder": 1,
-    "q": "This lymphocyte lineage attacks foreign cells, cancer cells, and virus-infected cells. Answer each step, then the next lineage follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which lineage is this?",
-      "options": [
-       "T-cell",
-       "B-cell",
-       "NK-cell",
-       "Monocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Where does this lineage mature?",
-      "options": [
-       "Under thymic influence",
-       "In the bone marrow as the antibody line",
-       "As a natural killer with cytotoxic stores",
-       "In the spleen as a blood filter"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this lineage?",
-      "options": [
-       "About 30 to 160 days",
-       "About 5 to 6 weeks",
-       "Up to about 2 weeks",
-       "Up to about 24 hours"
-      ],
-      "correct": 0
-     }
+    "q": "Which reading of the parts neutr and phil in neutrophil is correct?",
+    "options": [
+     "Neither, and attraction for",
+     "Many lobes, and a kernel",
+     "A color sense, and a clot",
+     "Without, and the thymus"
     ],
-    "explain": "This lineage is the T-cell. The B-cell makes antibodies, the NK-cell kills by cytotoxic substances, and the monocyte is not a lymphocyte. It matures under thymic influence. In the bone marrow as the antibody line is the B-cell. As a natural killer with cytotoxic stores is the NK-cell. In the spleen as a blood filter is the spleen, not this lineage. It lives about 30 to 160 days. About 5 to 6 weeks fits the B-cell, up to about 2 weeks fits the NK-cell, and up to about 24 hours fits the monocyte."
+    "correct": 0,
+    "explain": "Neutr means neither, and phil means attraction for, because the granules take neither an acid nor a basic stain."
    },
    {
-    "id": "MT14069",
-    "type": "stepped",
+    "id": "MT14109",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "lineage-drill",
-    "groupOrder": 2,
-    "q": "This lymphocyte lineage manufactures antibodies against antigens. Answer each step, then the next lineage follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which lineage is this?",
-      "options": [
-       "B-cell",
-       "T-cell",
-       "NK-cell",
-       "Neutrophil"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Where does this lineage arise?",
-      "options": [
-       "In the bone marrow",
-       "Under thymic influence",
-       "In inflamed tissue as a basophil",
-       "In the spleen as a blood filter"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this lineage?",
-      "options": [
-       "About 5 to 6 weeks",
-       "About 30 to 160 days",
-       "Up to about 2 weeks",
-       "About 2 to 5 days"
-      ],
-      "correct": 0
-     }
+    "q": "Which three lineages arise from the lymphocyte?",
+    "options": [
+     "Neutrophil, eosinophil, and basophil",
+     "T-cell, B-cell, and NK-cell",
+     "Monocyte, erythrocyte, and thrombocyte",
+     "Basophil, monocyte, and erythrocyte"
     ],
-    "explain": "This lineage is the B-cell. The T-cell attacks cells directly, the NK-cell uses cytotoxic substances, and the neutrophil is a granulocyte. It arises in the bone marrow. Under thymic influence names the T-cell. In inflamed tissue as a basophil names another white cell. In the spleen as a blood filter names the spleen. It lives about 5 to 6 weeks. About 30 to 160 days fits the T-cell, up to about 2 weeks fits the NK-cell, and about 2 to 5 days fits the eosinophil."
+    "correct": 1,
+    "explain": "The lymphocyte gives rise to the T-cell, the B-cell, and the NK-cell. The other sets mix granulocytes, red cells, and platelets."
    },
    {
-    "id": "MT14070",
-    "type": "stepped",
+    "id": "MT14110",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "lineage-drill",
-    "groupOrder": 3,
-    "q": "This lymphocyte lineage destroys tumor or infected cells by cytotoxic substances. Answer each step, then the organ run follows.",
-    "steps": [
+    "q": "Which nucleus pattern belongs to the lymphocyte?",
+    "options": [
+     "Several nuclear lobes and protein granules",
+     "No nucleus, as a cell fragment",
+     "One large nucleus and no granules",
+     "A pigment mass and no nucleus"
+    ],
+    "correct": 2,
+    "explain": "The lymphocyte has one large nucleus and no granules. Lobed nuclei with granules fit the granulocytes, and the platelet and red cell have no nucleus."
+   },
+   {
+    "id": "MT14111",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which germs does the monocyte destroy by phagocytosis?",
+    "options": [
+     "Dietary fats, hormones, and plasma proteins",
+     "Clotting factors, fibrin, and serum",
+     "Bronze pigment, iron deposits, and bile",
+     "Viruses, bacteria, fungi, and protozoa"
+    ],
+    "correct": 3,
+    "explain": "The monocyte destroys viruses, bacteria, fungi, and protozoa. Fats, hormones, clotting factors, and pigments are not germs."
+   },
+   {
+    "id": "MT14113",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each white cell to its class.",
+    "leftItems": [
      {
       "id": "1",
-      "prompt": "Which lineage is this?",
-      "options": [
-       "NK-cell",
-       "T-cell",
-       "B-cell",
-       "Eosinophil"
-      ],
-      "correct": 0
+      "text": "Neutrophil"
      },
      {
       "id": "2",
-      "prompt": "Which lifespan belongs to this lineage?",
-      "options": [
-       "Up to about 2 weeks",
-       "About 30 to 160 days",
-       "About 5 to 6 weeks",
-       "Usually under 2 days"
-      ],
-      "correct": 0
+      "text": "Eosinophil"
      },
      {
       "id": "3",
-      "prompt": "Which payload does this lineage carry?",
-      "options": [
-       "Cytotoxic substances",
-       "Y-shaped antibodies",
-       "Neutral-staining granules",
-       "Anticoagulant substances"
-      ],
-      "correct": 0
+      "text": "Basophil"
+     },
+     {
+      "id": "4",
+      "text": "Lymphocyte"
+     },
+     {
+      "id": "5",
+      "text": "Monocyte"
      }
     ],
-    "explain": "This lineage is the NK-cell, the natural killer. The T-cell is thymus dependent, the B-cell makes antibodies, and the eosinophil is a granulocyte. It lives up to about 2 weeks. About 30 to 160 days fits the T-cell, about 5 to 6 weeks fits the B-cell, and usually under 2 days fits the basophil. Its payload is cytotoxic substances. Y-shaped antibodies belong to the B-cell, neutral-staining granules to the neutrophil, and anticoagulant substances to the basophil."
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Granulocyte"
+     },
+     {
+      "id": "B",
+      "text": "Agranulocyte"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "A",
+     "3": "A",
+     "4": "B",
+     "5": "B"
+    },
+    "explain": "The neutrophil, eosinophil, and basophil carry granules, so they are granulocytes. The lymphocyte and monocyte lack granules, so they are agranulocytes."
+   },
+   {
+    "id": "MT14114",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each white cell to how its granules stain.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Neutrophil"
+     },
+     {
+      "id": "2",
+      "text": "Eosinophil"
+     },
+     {
+      "id": "3",
+      "text": "Basophil"
+     },
+     {
+      "id": "4",
+      "text": "Lymphocyte"
+     },
+     {
+      "id": "5",
+      "text": "Monocyte"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Neutral, neither acid nor base"
+     },
+     {
+      "id": "B",
+      "text": "Bright yellow-red to orange"
+     },
+     {
+      "id": "C",
+      "text": "Dark blue to blue-black"
+     },
+     {
+      "id": "D",
+      "text": "No granules to stain"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "D"
+    },
+    "explain": "Neutrophil granules stain neutral, eosinophil granules bright yellow-red to orange, and basophil granules dark blue to blue-black. The lymphocyte and monocyte have no granules."
+   },
+   {
+    "id": "MT14115",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Where does the T-cell mature?",
+    "options": [
+     "Under thymic influence",
+     "In the bone marrow as the antibody line",
+     "As a natural killer with cytotoxic stores",
+     "In the spleen as a blood filter"
+    ],
+    "correct": 0,
+    "explain": "The T-cell matures under thymic influence. The bone marrow line makes antibodies, the natural killer carries cytotoxic stores, and the spleen filters blood."
+   },
+   {
+    "id": "MT14116",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Where does the B-cell arise?",
+    "options": [
+     "Under thymic influence",
+     "In the bone marrow",
+     "In inflamed tissue as a basophil",
+     "In the spleen as a blood filter"
+    ],
+    "correct": 1,
+    "explain": "The B-cell arises in the bone marrow. Thymic influence shapes the T-cell, and the other options describe a basophil and the spleen."
+   },
+   {
+    "id": "MT14117",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which payload does the NK-cell carry?",
+    "options": [
+     "Y-shaped antibodies",
+     "Neutral-staining granules",
+     "Cytotoxic substances",
+     "Anticoagulant substances"
+    ],
+    "correct": 2,
+    "explain": "The NK-cell carries cytotoxic substances. Antibodies come from B-cells, neutral granules from neutrophils, and anticoagulants from basophils."
    },
    {
     "id": "MT14071",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 1,
-    "q": "This lymphoid organ produces the lymphocytes that attack foreign organisms. Answer each step, then the next organ follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this organ?",
-      "options": [
-       "Thymus",
-       "Thymous",
-       "Thimys",
-       "Thymuss"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which lymphocytes does this organ produce?",
-      "options": [
-       "T-lymphocytes",
-       "B-lymphocytes",
-       "NK-cells only",
-       "Monocytes"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which combining form names this organ?",
-      "options": [
-       "Thym/o",
-       "Splen/o",
-       "Lymph/o",
-       "Hem/o"
-      ],
-      "correct": 0
-     }
+    "q": "This lymphoid organ produces the lymphocytes that attack foreign organisms. Which is the correct spelling of this organ?",
+    "options": [
+     "Thymous",
+     "Thimys",
+     "Thymuss",
+     "Thymus"
     ],
-    "explain": "This organ is the thymus. Thymous, Thimys, and Thymuss miss the spelling. It produces T-lymphocytes. B-lymphocytes arise in bone marrow, NK-cells only names the natural-killer lineage, and monocytes are agranulocytes. Thym/o, with Thym/i, means thymus. Splen/o means spleen, Lymph/o means clear fluid, and Hem/o means blood."
+    "correct": 3,
+    "explain": "The correct spelling is Thymus. Thymous, Thimys, and Thymuss are misspellings."
    },
    {
     "id": "MT14072",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 2,
-    "q": "This organ filters out old and damaged blood cells and fights infection. Answer each step, then the next organ follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this organ?",
-      "options": [
-       "Spleen",
-       "Splean",
-       "Splene",
-       "Splein"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which combining form names this organ?",
-      "options": [
-       "Splen/o",
-       "Spleen/o",
-       "Splein/o",
-       "Splinu/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which built term names its enlargement?",
-      "options": [
-       "Splenomegaly",
-       "Thymocyte",
-       "Thrombophlebitis",
-       "Hemochromatosis"
-      ],
-      "correct": 0
-     }
+    "q": "This organ filters out old and damaged blood cells and fights infection. Which is the correct spelling of this organ?",
+    "options": [
+     "Spleen",
+     "Splean",
+     "Splene",
+     "Splein"
     ],
-    "explain": "This organ is the spleen. Splean, Splene, and Splein miss the spelling. Splen/o is the combining form. Spleen/o, Splein/o, and Splinu/o miss that form. Enlargement is splenomegaly. Thymocyte is a thymic cell, thrombophlebitis is vein inflammation with a clot, and hemochromatosis is iron overload with color change."
+    "correct": 0,
+    "explain": "The correct spelling is Spleen. Splean, Splene, and Splein are misspellings."
    },
    {
     "id": "MT14073",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 3,
-    "q": "These structures trap pathogens from food and air as a first line of defense. Answer each step, then the next organ follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of the paired structure?",
-      "options": [
-       "Adenoid",
-       "Adeniod",
-       "Adinoid",
-       "Adenoide"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which pair names these structures?",
-      "options": [
-       "Tonsils and adenoid",
-       "Thymus and spleen",
-       "Appendix and bone marrow",
-       "Peyer's patches and lymph capillaries"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which route do they guard?",
-      "options": [
-       "Pathogens entering with food and air",
-       "Sound waves entering with speech and air",
-       "Inhaled oxygen entering with breath and air",
-       "Dust motes entering with speech and air"
-      ],
-      "correct": 0
-     }
+    "q": "This structure pairs with the tonsils to trap pathogens from food and air. Which is the correct spelling of this structure?",
+    "options": [
+     "Adeniod",
+     "Adenoid",
+     "Adinoid",
+     "Adenoide"
     ],
-    "explain": "These structures are the tonsils and adenoid. Adeniod, Adinoid, and Adenoide miss the spelling. Thymus and spleen, appendix and bone marrow, and Peyer's patches and lymph capillaries name other structures. They guard pathogens entering with food and air. Sound waves entering with speech and air, inhaled oxygen entering with breath and air, and dust motes entering with speech and air are not that guard."
+    "correct": 1,
+    "explain": "The correct spelling is Adenoid. Adeniod, Adinoid, and Adenoide are misspellings."
    },
    {
     "id": "MT14074",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 4,
-    "q": "This tissue produces red cells, white cells, and platelets. Answer each step, then the next organ follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this tissue?",
-      "options": [
-       "Bone marrow",
-       "Bone marroww",
-       "Bone merrow",
-       "Bone marow"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which set does this tissue produce?",
-      "options": [
-       "Red cells, white cells, and platelets",
-       "T-lymphocytes and no other cells",
-       "Dietary fats and absorbed lymph",
-       "Clotting factors and cell-free serum"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which parent of platelets resides here?",
-      "options": [
-       "Megakaryocyte",
-       "T-lymphocyte",
-       "Antibody protein",
-       "Adenoid tissue"
-      ],
-      "correct": 0
-     }
+    "q": "This soft tissue fills the cavities inside bones and is where blood cells form. Which is the correct spelling of this tissue?",
+    "options": [
+     "Bone marroww",
+     "Bone merrow",
+     "Bone marrow",
+     "Bone marow"
     ],
-    "explain": "This tissue is the bone marrow. Bone marroww, Bone merrow, and Bone marow miss the spelling. It produces red cells, white cells, and platelets. T-lymphocytes and no other cells names the thymic product. Dietary fats and absorbed lymph are transport loads. Clotting factors and cell-free serum are blood fractions. The platelet parent in the marrow is the megakaryocyte. A T-lymphocyte, an antibody protein, and adenoid tissue are not that parent."
+    "correct": 2,
+    "explain": "The correct spelling is Bone marrow. Bone marroww, Bone merrow, and Bone marow are misspellings."
    },
    {
     "id": "MT14075",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 5,
-    "q": "These structures sit in the lining of the small intestine and monitor bacteria. Answer each step, then the next organ follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of these structures?",
-      "options": [
-       "Peyer's patches",
-       "Payer's patches",
-       "Peir's patches",
-       "Peyar's patches"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which work do they do there?",
-      "options": [
-       "Monitor and destroy bacteria",
-       "House beneficial bacteria",
-       "Trap pathogens from food and air",
-       "Filter aged red cells from blood"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which neighboring structure houses beneficial bacteria?",
-      "options": [
-       "The appendix",
-       "The thymus",
-       "The spleen",
-       "The tonsil"
-      ],
-      "correct": 0
-     }
+    "q": "These structures sit in the lining of the small intestine and monitor bacteria. Which is the correct spelling of these structures?",
+    "options": [
+     "Payer's patches",
+     "Peir's patches",
+     "Peyar's patches",
+     "Peyer's patches"
     ],
-    "explain": "These structures are the Peyer's patches. Payer's patches, Peir's patches, and Peyar's patches miss the spelling. They monitor and destroy bacteria in the small-intestine lining. House beneficial bacteria is the appendix. Trap pathogens from food and air is the tonsils and adenoid. Filter aged red cells from blood is the spleen. The neighboring structure that houses beneficial bacteria is the appendix. The thymus, the spleen, and the tonsil have other roles."
+    "correct": 3,
+    "explain": "The correct spelling is Peyer's patches. Payer's patches, Peir's patches, and Peyar's patches are misspellings."
    },
    {
     "id": "MT14076",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "organ-drill",
-    "groupOrder": 6,
-    "q": "This structure helps house beneficial bacteria. Answer each step, then the form run follows.",
-    "steps": [
+    "q": "This structure helps house beneficial bacteria. Which is the correct spelling of this structure?",
+    "options": [
+     "Appendix",
+     "Apendix",
+     "Appendex",
+     "Appendixs"
+    ],
+    "correct": 0,
+    "explain": "The correct spelling is Appendix. Apendix, Appendex, and Appendixs are misspellings."
+   },
+   {
+    "id": "MT14119",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which parent of platelets resides in the bone marrow?",
+    "options": [
+     "T-lymphocyte",
+     "Antibody protein",
+     "Megakaryocyte",
+     "Adenoid tissue"
+    ],
+    "correct": 2,
+    "explain": "The megakaryocyte resides in the bone marrow and sheds platelets. T-lymphocytes, antibodies, and adenoid tissue are not platelet parents."
+   },
+   {
+    "id": "MT14120",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each combining form to its other accepted spelling.",
+    "leftItems": [
      {
       "id": "1",
-      "prompt": "Which is the correct spelling of this structure?",
-      "options": [
-       "Appendix",
-       "Apendix",
-       "Appendex",
-       "Appendixs"
-      ],
-      "correct": 0
+      "text": "Chrom/o"
      },
      {
       "id": "2",
-      "prompt": "Which work does this structure do?",
-      "options": [
-       "Houses beneficial bacteria",
-       "Produces T-lymphocytes",
-       "Filters aged red cells",
-       "Traps food-and-air pathogens"
-      ],
-      "correct": 0
+      "text": "Hem/o"
      },
      {
       "id": "3",
-      "prompt": "Which intestinal structures monitor bacteria nearby?",
-      "options": [
-       "The Peyer's patches",
-       "The tonsil tissue",
-       "The adenoid tissue",
-       "The thymic gland"
-      ],
-      "correct": 0
+      "text": "Thym/o"
      }
     ],
-    "explain": "This structure is the appendix. Apendix, Appendex, and Appendixs miss the spelling. It houses beneficial bacteria. Produces T-lymphocytes is the thymus. Filters aged red cells is the spleen. Traps food-and-air pathogens is the tonsils and adenoid. The intestinal structures that monitor bacteria are the Peyer's patches. The tonsil tissue, the adenoid tissue, and the thymic gland lie elsewhere and do other work."
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Chromat/o"
+     },
+     {
+      "id": "B",
+      "text": "Hemat/o"
+     },
+     {
+      "id": "C",
+      "text": "Thym/i"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C"
+    },
+    "explain": "Chrom/o is also written chromat/o, hem/o is also written hemat/o, and thym/o is also written thym/i."
    },
    {
     "id": "MT14077",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 1,
-    "q": "This combining form contributes the sense of color in the iron-overload term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Chrom/o",
-       "Hem/o",
-       "Splen/o",
-       "Thromb/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which other spelling is accepted for this form?",
-      "options": [
-       "Chromat/o",
-       "Chromato/o",
-       "Chroma/e",
-       "Chromi/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Hemochromatosis",
-       "Hematocytopenia",
-       "Splenomegaly",
-       "Thrombophlebitis"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Chrom/o?",
+    "options": [
+     "Hematocytopenia",
+     "Chromocytopenia",
+     "Chromatophlebitis",
+     "Hemochromatosis"
     ],
-    "explain": "This form is Chrom/o, and the other accepted spelling is Chromat/o. Hem/o means blood, Splen/o means spleen, and Thromb/o means clot. Chromato/o, Chroma/e, and Chromi/o miss the variant. The example term is hemochromatosis. Hematocytopenia uses hemat/o and cyt/o, splenomegaly uses splen/o, and thrombophlebitis uses thromb/o."
+    "correct": 3,
+    "explain": "The real term is Hemochromatosis. Hematocytopenia uses hemat/o and cyt/o, not chrom/o. Chromocytopenia and Chromatophlebitis are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14078",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 2,
-    "q": "This combining form contributes the sense of blood in the deficiency-of-cells term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Hem/o",
-       "Chrom/o",
-       "Lymph/o",
-       "Immun/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which other spelling is accepted for this form?",
-      "options": [
-       "Hemat/o",
-       "Hemato/o",
-       "Hema/e",
-       "Hemi/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Hematocytopenia",
-       "Splenomegaly",
-       "Lymphoduct",
-       "Athymism"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Hem/o?",
+    "options": [
+     "Hematocytopenia",
+     "Hemoductosis",
+     "Hematosplenitis",
+     "Hemothymism"
     ],
-    "explain": "This form is Hem/o, and the other accepted spelling is Hemat/o. Chrom/o means color, Lymph/o means clear fluid, and Immun/o means safe. Hemato/o, Hema/e, and Hemi/o miss the variant. The example term is hematocytopenia. Splenomegaly uses splen/o, lymphoduct uses lymph/o, and athymism uses thym."
+    "correct": 0,
+    "explain": "The real term is Hematocytopenia. Hemoductosis, Hematosplenitis, and Hemothymism are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14079",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 3,
-    "q": "This combining form contributes the sense of spleen in the enlargement term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Splen/o",
-       "Thym/o",
-       "Thromb/o",
-       "Hem/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Splenomegaly",
-       "Thymocyte",
-       "Thrombophlebitis",
-       "Hemochromatosis"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which organ does this form name?",
-      "options": [
-       "Spleen",
-       "Thymus",
-       "Tonsil",
-       "Appendix"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Splen/o?",
+    "options": [
+     "Splenoductosis",
+     "Splenomegaly",
+     "Splenothymism",
+     "Splenochromatosis"
     ],
-    "explain": "This form is Splen/o. Thym/o means thymus, Thromb/o means clot, and Hem/o means blood. The example term is splenomegaly. Thymocyte uses thym/o, thrombophlebitis uses thromb/o, and hemochromatosis uses hem/o and chrom. The organ is the spleen. Thymus, tonsil, and appendix are other lymphatic structures."
+    "correct": 1,
+    "explain": "The real term is Splenomegaly. Splenoductosis, Splenothymism, and Splenochromatosis are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14080",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 4,
-    "q": "This combining form contributes the sense of clot in the vein-inflammation term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Thromb/o",
-       "Chrom/o",
-       "Splen/o",
-       "Lymph/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Thrombophlebitis",
-       "Hemochromatosis",
-       "Splenomegaly",
-       "Lymphoduct"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which formed element shares this sense?",
-      "options": [
-       "Thrombocyte",
-       "Erythrocyte",
-       "Lymphocyte",
-       "Monocyte"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Thromb/o?",
+    "options": [
+     "Thrombochromia",
+     "Thrombosplenism",
+     "Thrombophlebitis",
+     "Thromboductosis"
     ],
-    "explain": "This form is Thromb/o. Chrom/o means color, Splen/o means spleen, and Lymph/o means clear fluid. The example term is thrombophlebitis. Hemochromatosis uses color, splenomegaly uses spleen, and lymphoduct uses clear fluid. The formed element that shares the clot sense is the thrombocyte. Erythrocyte, lymphocyte, and monocyte are other cells."
+    "correct": 2,
+    "explain": "The real term is Thrombophlebitis. Thrombochromia, Thrombosplenism, and Thromboductosis are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14081",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 5,
-    "q": "This combining form contributes the sense of safe in the drug-study term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Immun/o",
-       "Hem/o",
-       "Lymph/o",
-       "Thym/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which sense does this form carry?",
-      "options": [
-       "The safe state",
-       "The blood mass",
-       "The clear fluid",
-       "The thymus gland"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Immunopharmacology",
-       "Hematocytopenia",
-       "Lymphoduct",
-       "Thymocyte"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Immun/o?",
+    "options": [
+     "Immunochromatosis",
+     "Immunoductosis",
+     "Immunosplenism",
+     "Immunopharmacology"
     ],
-    "explain": "This form is Immun/o, and it means safe. The blood mass is Hem/o, the clear fluid is Lymph/o, and the thymus gland is Thym/o. The example term is immunopharmacology. Hematocytopenia uses hemat/o, lymphoduct uses lymph/o, and thymocyte uses thym/o."
+    "correct": 3,
+    "explain": "The real term is Immunopharmacology. Immunochromatosis, Immunoductosis, and Immunosplenism are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14082",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 6,
-    "q": "This combining form contributes the sense of clear fluid in the duct term. Answer each step, then the next form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Lymph/o",
-       "Hem/o",
-       "Immun/o",
-       "Chrom/o"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which sense does this form carry?",
-      "options": [
-       "The clear fluid",
-       "The blood mass",
-       "The safe state",
-       "The color sense"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which example term uses this form?",
-      "options": [
-       "Lymphoduct",
-       "Hematocytopenia",
-       "Immunopharmacology",
-       "Hemochromatosis"
-      ],
-      "correct": 0
-     }
+    "q": "Which real term uses Lymph/o?",
+    "options": [
+     "Lymphoduct",
+     "Lymphochromia",
+     "Lymphothymism",
+     "Lymphosplenosis"
     ],
-    "explain": "This form is Lymph/o, and it means clear fluid. The blood mass is Hem/o, the safe state is Immun/o, and the color sense is Chrom/o. The example term is lymphoduct. Hematocytopenia uses hemat/o, immunopharmacology uses immun/o, and hemochromatosis uses hem/o and chrom."
+    "correct": 0,
+    "explain": "The real term is Lymphoduct. Lymphochromia, Lymphothymism, and Lymphosplenosis are made-up look-alikes, not real terms."
    },
    {
     "id": "MT14083",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "form-drill",
-    "groupOrder": 7,
-    "q": "This combining form contributes the sense of thymus in the cell term and the absence term. Answer each step, then the term run follows.",
-    "steps": [
+    "q": "Which real term uses the prefix for absence with Thym/o?",
+    "options": [
+     "Athymocytosis",
+     "Athymism",
+     "Athymoduct",
+     "Athymochromia"
+    ],
+    "correct": 1,
+    "explain": "The real term is Athymism. Athymocytosis, Athymoduct, and Athymochromia are made-up look-alikes, not real terms."
+   },
+   {
+    "id": "MT14121",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which formed element shares the clot sense of thromb/o?",
+    "options": [
+     "Erythrocyte",
+     "Lymphocyte",
+     "Thrombocyte",
+     "Monocyte"
+    ],
+    "correct": 2,
+    "explain": "The thrombocyte shares the clot sense of thromb/o. The erythrocyte, lymphocyte, and monocyte use other forms."
+   },
+   {
+    "id": "MT14092",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each immunity route to the event that produces it.",
+    "leftItems": [
      {
       "id": "1",
-      "prompt": "Which form is this?",
-      "options": [
-       "Thym/o",
-       "Splen/o",
-       "Lymph/o",
-       "Thromb/o"
-      ],
-      "correct": 0
+      "text": "Natural active immunity"
      },
      {
       "id": "2",
-      "prompt": "Which other spelling is accepted for this form?",
-      "options": [
-       "Thym/i",
-       "Thymo/e",
-       "Thyma/o",
-       "Thymi/a"
-      ],
-      "correct": 0
+      "text": "Artificial active immunity"
      },
      {
       "id": "3",
-      "prompt": "Which example term uses the prefix for absence with this root?",
-      "options": [
-       "Athymism",
-       "Thymocyte",
-       "Splenomegaly",
-       "Lymphoduct"
-      ],
-      "correct": 0
+      "text": "Natural passive immunity"
+     },
+     {
+      "id": "4",
+      "text": "Artificial passive immunity"
      }
     ],
-    "explain": "This form is Thym/o, and the other accepted spelling is Thym/i. Splen/o means spleen, Lymph/o means clear fluid, and Thromb/o means clot. Thymo/e, Thyma/o, and Thymi/a miss the variant. Athymism uses the prefix a- for without with this root. Thymocyte names a thymic cell without the absence prefix. Splenomegaly and lymphoduct use other forms."
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Recovery after an infection"
+     },
+     {
+      "id": "B",
+      "text": "Administration of a vaccine"
+     },
+     {
+      "id": "C",
+      "text": "Transfer by placenta and breast milk"
+     },
+     {
+      "id": "D",
+      "text": "Injection of antibody-containing serum"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Natural active immunity follows recovery after an infection, and artificial active immunity follows a vaccine. Natural passive immunity comes by placenta and breast milk, and artificial passive immunity by injected antibody-containing serum."
+   },
+   {
+    "id": "MT14096",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which set of findings belongs to hemochromatosis?",
+    "options": [
+     "Iron deposits, yellow skin, and spleen enlargement",
+     "Excess red cells, bronze skin, and vein clots",
+     "Fat deposits, bronze skin, and liver cirrhosis",
+     "Iron deposits, bronze skin, and liver cirrhosis"
+    ],
+    "correct": 3,
+    "explain": "Hemochromatosis deposits excess iron in the tissues, giving bronze skin pigmentation and cirrhosis of the liver. Each other set swaps in one wrong finding."
+   },
+   {
+    "id": "MT14097",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "What does RBC stand for?",
+    "options": [
+     "Red blood cell",
+     "Reticular basal cell",
+     "Renal blood corpuscle",
+     "Red bone cell"
+    ],
+    "correct": 0,
+    "explain": "RBC stands for red blood cell. Each wrong option shares the letters but is not the expansion."
+   },
+   {
+    "id": "MT14098",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "What does WBC stand for?",
+    "options": [
+     "White bone cell",
+     "White blood cell",
+     "Whole blood corpuscle",
+     "Wandering basal cell"
+    ],
+    "correct": 1,
+    "explain": "WBC stands for white blood cell. Each wrong option shares the letters but is not the expansion."
+   },
+   {
+    "id": "MT14099",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "What does NK stand for?",
+    "options": [
+     "Natural kinase",
+     "Neutral kernel",
+     "Natural killer",
+     "Nodal kidney"
+    ],
+    "correct": 2,
+    "explain": "NK stands for natural killer. Each wrong option shares the letters but is not the expansion."
+   },
+   {
+    "id": "MT14100",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "What does SCT stand for?",
+    "options": [
+     "Standard clotting time",
+     "Serum cell transfer",
+     "Splenic cell type",
+     "Specialized connective tissue"
+    ],
+    "correct": 3,
+    "explain": "SCT stands for specialized connective tissue. Each wrong option shares the letters but is not the expansion."
+   },
+   {
+    "id": "MT14122",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which two classes divide the white blood cells?",
+    "options": [
+     "Granulocytes and agranulocytes",
+     "Plasma and serum",
+     "Active and passive immunity",
+     "Tonsil and adenoid"
+    ],
+    "correct": 0,
+    "explain": "White blood cells divide into granulocytes and agranulocytes. Plasma and serum are fluids, active and passive are immunity routes, and tonsil and adenoid are organs."
+   },
+   {
+    "id": "MT14128",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which lifespan belongs to the red blood cell?",
+    "options": [
+     "About 60 to 80 days",
+     "About 70 to 90 days",
+     "About 110 to 120 days",
+     "About 2 to 5 days"
+    ],
+    "correct": 2,
+    "explain": "The red blood cell lives about 110 to 120 days. About 60 to 80 days and about 70 to 90 days fall short of it, and about 2 to 5 days fits the eosinophil."
+   },
+   {
+    "id": "MT14129",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which other name belongs to the red blood cell?",
+    "options": [
+     "Leukocyte",
+     "Thrombocyte",
+     "Lymphocyte",
+     "Erythrocyte"
+    ],
+    "correct": 3,
+    "explain": "The red blood cell is also called the erythrocyte. Leukocyte, thrombocyte, and lymphocyte name other cells."
+   },
+   {
+    "id": "MT14130",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which other name belongs to the white blood cell?",
+    "options": [
+     "Leukocyte",
+     "Erythrocyte",
+     "Thrombocyte",
+     "Megakaryocyte"
+    ],
+    "correct": 0,
+    "explain": "The white blood cell is also called the leukocyte. Erythrocyte, thrombocyte, and megakaryocyte name other elements."
+   },
+   {
+    "id": "MT14101",
+    "type": "matching",
+    "cat": "MT_lec14-15",
+    "q": "Match each fluid to its description.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Plasma"
+     },
+     {
+      "id": "2",
+      "text": "Serum"
+     },
+     {
+      "id": "3",
+      "text": "Interstitial fluid"
+     },
+     {
+      "id": "4",
+      "text": "Lymph"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Clear yellowish blood fraction that still holds clotting factors"
+     },
+     {
+      "id": "B",
+      "text": "Liquid left after clotting, without clotting factors"
+     },
+     {
+      "id": "C",
+      "text": "Fluid that bathes tissue cells outside the vessels"
+     },
+     {
+      "id": "D",
+      "text": "Colorless watery liquid inside the lymphatic vessels"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Plasma still holds the clotting factors, and serum is what remains after clotting. Interstitial fluid bathes the tissue cells and is called lymph once it enters a lymphatic capillary."
+   },
+   {
+    "id": "MT14124",
+    "type": "mcq",
+    "cat": "MT_lec14-15",
+    "q": "Which loads does plasma carry besides clotting factors?",
+    "options": [
+     "Dietary fat from the intestine only",
+     "Cytotoxic substances from NK cells",
+     "Water, proteins, and suspended cells",
+     "Iron deposits in the skin"
+    ],
+    "correct": 2,
+    "explain": "Plasma carries water, proteins, and suspended cells. The other options name fat only, NK-cell contents, or skin deposits."
    },
    {
     "id": "MT14084",
@@ -2091,7 +1938,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 1,
-    "q": "This term joins the forms for blood and color and names an iron-overload condition. Answer each step, then the next term follows.",
+    "q": "This term names an inherited disorder seen in blood and lymph work-ups. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2106,7 +1953,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which tissue changes belong to this condition?",
+      "prompt": "Which tissue changes belong to Hemochromatosis?",
       "options": [
        "Bronze skin pigmentation and liver cirrhosis",
        "Vein redness and clot after catheter injury",
@@ -2117,17 +1964,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Hemochromatosis?",
       "options": [
        "Hem/o, chrom, and a condition ending",
-       "Thromb/o, phleb, and an inflammation ending",
-       "Splen/o and an enlargement ending",
-       "A-, thym, and a condition ending"
+       "Hem/o, chrom, and an inflammation ending",
+       "Hemat/o, chrom, and a condition ending",
+       "Hem/o, chromat/o, and a tumor ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is hemochromatosis. Hemochromotosis, Hemachromatosis, and Hemochromatasis miss the spelling. Iron overload deposits produce bronze skin pigmentation and can cirrhose the liver. Vein redness and clot after catheter injury fits thrombophlebitis, enlargement of the spleen after congestion is splenomegaly, and absence of the thymus from early life is athymism. The elements are hem/o, chrom, and a condition ending. Thromb/o, phleb, and an inflammation ending build thrombophlebitis. Splen/o and an enlargement ending build splenomegaly. A-, thym, and a condition ending build athymism."
+    "explain": "This term is hemochromatosis. Hemochromotosis, Hemachromatosis, and Hemochromatasis miss the spelling. Iron overload deposits produce bronze skin pigmentation and can cirrhose the liver. Vein redness and clot after catheter injury fits thrombophlebitis, enlargement of the spleen after congestion is splenomegaly, and absence of the thymus from early life is athymism. The elements are hem/o, chrom, and a condition ending. An inflammation ending would make it an inflammation, hemat/o is not the blood form used in this term, and a tumor ending would name a growth."
    },
    {
     "id": "MT14085",
@@ -2135,7 +1982,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 2,
-    "q": "This term joins the forms for blood and cell with a deficiency ending. Answer each step, then the next term follows.",
+    "q": "This term appears when blood test results are reported. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2150,7 +1997,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Hematocytopenia?",
       "options": [
        "A deficiency of blood cells",
        "An excess of blood cells",
@@ -2161,17 +2008,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Hematocytopenia?",
       "options": [
        "Hemat/o, cyt/o, and a deficiency ending",
-       "Hem/o, chrom, and a condition ending",
-       "Splen/o and an enlargement ending",
-       "Immun/o, pharmac/o, and a study ending"
+       "Hemat/o, cyt/o, and an excess ending",
+       "Hem/o, cyt/o, and a deficiency ending",
+       "Hemat/o, cyst/o, and a deficiency ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is hematocytopenia. Hematocytopenya, Hemotocytopenia, and Hematocitopenia miss the spelling. It means a deficiency of blood cells. An excess of blood cells reverses the ending. A deficiency of platelets only would use thromb/o. An excess of clotting factors is not this term. The elements are hemat/o, cyt/o, and a deficiency ending. Hem/o, chrom, and a condition ending build hemochromatosis. Splen/o and an enlargement ending build splenomegaly. Immun/o, pharmac/o, and a study ending build immunopharmacology."
+    "explain": "This term is hematocytopenia. Hematocytopenya, Hemotocytopenia, and Hematocitopenia miss the spelling. It means a deficiency of blood cells. An excess of blood cells reverses the ending. A deficiency of platelets only would use thromb/o. An excess of clotting factors is not this term. The elements are hemat/o, cyt/o, and a deficiency ending. An excess ending reverses the meaning, hem/o is not the blood form used in this term, and cyst/o means bladder or sac, not cell."
    },
    {
     "id": "MT14086",
@@ -2179,7 +2026,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 3,
-    "q": "This term joins the form for spleen with an enlargement ending. Answer each step, then the next term follows.",
+    "q": "This term is used when an abdominal organ is examined. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2194,7 +2041,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Splenomegaly?",
       "options": [
        "Enlargement of the spleen",
        "Inflammation of the spleen",
@@ -2205,17 +2052,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Splenomegaly?",
       "options": [
        "Splen/o and an enlargement ending",
-       "Thromb/o, phleb, and an inflammation ending",
-       "Thym/o and a cell ending",
-       "Lymph/o and a duct ending"
+       "Splen/o and an inflammation ending",
+       "Splen/o and a removal ending",
+       "Splen/o, megal/o, and a condition ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is splenomegaly. Splenomegally, Spleenomegaly, and Splenomegaaly miss the spelling. It means enlargement of the spleen. Inflammation of the spleen, removal of the spleen, and absence of the spleen use other endings. The elements are splen/o and an enlargement ending. Thromb/o, phleb, and an inflammation ending build thrombophlebitis. Thym/o and a cell ending build thymocyte. Lymph/o and a duct ending build lymphoduct."
+    "explain": "This term is splenomegaly. Splenomegally, Spleenomegaly, and Splenomegaaly miss the spelling. It means enlargement of the spleen. Inflammation of the spleen, removal of the spleen, and absence of the spleen use other endings. The elements are splen/o and an enlargement ending. An inflammation ending or a removal ending names a different change, and splen/o with megal/o and a condition ending is a wrong split."
    },
    {
     "id": "MT14087",
@@ -2223,7 +2070,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 4,
-    "q": "This term joins the forms for clot and vein with an inflammation ending. Answer each step, then the next term follows.",
+    "q": "This term is used for a problem found in a limb after vein trauma. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2238,7 +2085,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Thrombophlebitis?",
       "options": [
        "Inflammation of a vein associated with a clot",
        "Inflammation of an artery associated with a clot",
@@ -2249,17 +2096,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Thrombophlebitis?",
       "options": [
        "Thromb/o, phleb, and an inflammation ending",
-       "Hem/o, chrom, and a condition ending",
-       "Splen/o and an enlargement ending",
-       "Lymph/o and a duct ending"
+       "Thromb/o, phleb, and an enlargement ending",
+       "Thromb/o, arteri, and an inflammation ending",
+       "Thrombocyt/o, phleb, and an inflammation ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is thrombophlebitis. Thromboflebitis, Thrombophlebittis, and Thrombophlebitus miss the spelling. It means inflammation of a vein associated with a clot, including clot and redness after vein trauma. Inflammation of an artery associated with a clot would use arteri/o. Inflammation of the spleen associated with a clot would use splen/o. Enlargement of a vein associated with a clot uses an enlargement ending, not -itis. The elements are thromb/o, phleb, and an inflammation ending. Hem/o, chrom, and a condition ending build hemochromatosis. Splen/o and an enlargement ending build splenomegaly. Lymph/o and a duct ending build lymphoduct."
+    "explain": "This term is thrombophlebitis. Thromboflebitis, Thrombophlebittis, and Thrombophlebitus miss the spelling. It means inflammation of a vein associated with a clot, including clot and redness after vein trauma. Inflammation of an artery associated with a clot would use arteri/o. Inflammation of the spleen associated with a clot would use splen/o. Enlargement of a vein associated with a clot uses an enlargement ending, not -itis. The elements are thromb/o, phleb, and an inflammation ending. An enlargement ending names swelling, arteri names an artery, and thrombocyt/o names the platelet rather than the clot."
    },
    {
     "id": "MT14088",
@@ -2267,7 +2114,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 5,
-    "q": "This term joins the forms for safe and drug with a study ending. Answer each step, then the next term follows.",
+    "q": "This term names a field of study within the immune topics. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2282,7 +2129,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Immunopharmacology?",
       "options": [
        "The study of drugs that act on the immune system",
        "The study of drugs that act on the heart",
@@ -2293,61 +2140,31 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Immunopharmacology?",
       "options": [
        "Immun/o, pharmac/o, and a study ending",
-       "Hem/o, cyt/o, and a deficiency ending",
-       "Thym/o and a cell ending",
-       "Lymph/o and a duct ending"
+       "Immun/o, pharmac/o, and a disease ending",
+       "Immun/o, pharm, and a study ending only for the heart",
+       "Imm/o, pharmac/o, and a study ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is immunopharmacology. Immunofarmacology, Immunopharmocology, and Immunopharmacollogy miss the spelling. It means the study of drugs that act on the immune system. The study of drugs that act on the heart, the kidneys, or the lungs would use other organ forms. The elements are immun/o, pharmac/o, and a study ending. Hem/o, cyt/o, and a deficiency ending build hematocytopenia. Thym/o and a cell ending build thymocyte. Lymph/o and a duct ending build lymphoduct."
+    "explain": "This term is immunopharmacology. Immunofarmacology, Immunopharmocology, and Immunopharmacollogy miss the spelling. It means the study of drugs that act on the immune system. The study of drugs that act on the heart, the kidneys, or the lungs would use other organ forms. The elements are immun/o, pharmac/o, and a study ending. A disease ending names a disorder, a heart-only study needs a heart form, and imm/o is a wrong split of immun/o."
    },
    {
     "id": "MT14089",
-    "type": "stepped",
+    "type": "mcq",
     "cat": "MT_lec14-15",
-    "group": "term-drill",
-    "groupOrder": 6,
-    "q": "This term joins the form for clear fluid with a duct. Answer each step, then the next term follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which is the correct spelling of this term?",
-      "options": [
-       "Lymphoduct",
-       "Lymphaduct",
-       "Lymfoduct",
-       "Lymphoduckt"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which meaning belongs to this term?",
-      "options": [
-       "A duct that carries lymph",
-       "A duct that carries blood",
-       "A duct that carries bile",
-       "A duct that carries urine"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which elements build this term?",
-      "options": [
-       "Lymph/o and a duct ending",
-       "Hem/o and a duct ending",
-       "Thym/o and a cell ending",
-       "Splen/o and an enlargement ending"
-      ],
-      "correct": 0
-     }
+    "q": "Which elements build the term lymphoduct?",
+    "explain": "Lymphoduct means a duct that carries lymph. The elements are lymph/o and a duct. A vessel ending would use angi/o, lymphat/o is not the form used in this term, and a gland ending would use aden/o.",
+    "options": [
+     "Lymph/o and a duct ending",
+     "Lymph/o and a vessel ending",
+     "Lymphat/o and a duct ending",
+     "Lymph/o and a gland ending"
     ],
-    "explain": "This term is lymphoduct. Lymphaduct, Lymfoduct, and Lymphoduckt miss the spelling. It means a duct that carries lymph. A duct that carries blood, bile, or urine uses other elements. The elements are lymph/o and a duct. Hem/o and a duct ending would name a blood channel. Thym/o and a cell ending build thymocyte. Splen/o and an enlargement ending build splenomegaly."
+    "correct": 0
    },
    {
     "id": "MT14090",
@@ -2355,7 +2172,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 7,
-    "q": "This term joins the form for thymus with a cell ending. Answer each step, then the next term follows.",
+    "q": "This term names a cell found in an immune organ. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2370,7 +2187,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Thymocyte?",
       "options": [
        "A cell of the thymus",
        "A cell of the spleen",
@@ -2381,17 +2198,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Thymocyte?",
       "options": [
        "Thym/o and a cell ending",
-       "Splen/o and a cell ending",
-       "Lymph/o and a cell ending",
-       "Hem/o and a cell ending"
+       "Thym/o and a tumor ending",
+       "Thyr/o and a cell ending",
+       "Thym/o and an enlargement ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is thymocyte. Thymosyte, Thimocyte, and Thymocyt miss the spelling. It means a cell of the thymus. A cell of the spleen would use splen/o, a cell of the marrow would use a marrow element, and a cell of the lymph node would use lymph/o. The elements are thym/o and a cell ending. Splen/o and a cell ending, lymph/o and a cell ending, and hem/o and a cell ending name other cells."
+    "explain": "This term is thymocyte. Thymosyte, Thimocyte, and Thymocyt miss the spelling. It means a cell of the thymus. A cell of the spleen would use splen/o, a cell of the marrow would use a marrow element, and a cell of the lymph node would use lymph/o. The elements are thym/o and a cell ending. A tumor ending names a growth, thyr/o names the thyroid, and an enlargement ending names swelling."
    },
    {
     "id": "MT14091",
@@ -2399,7 +2216,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 8,
-    "q": "This term joins the prefix for without with the root for thymus. Answer each step, then the immunity run follows.",
+    "q": "This term names an immune problem present from early life. Answer each step, then the immunity run follows.",
     "steps": [
      {
       "id": "1",
@@ -2414,7 +2231,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which meaning belongs to this term?",
+      "prompt": "Which meaning belongs to Athymism?",
       "options": [
        "Absence of the thymus",
        "Enlargement of the thymus",
@@ -2425,581 +2242,17 @@
      },
      {
       "id": "3",
-      "prompt": "Which elements build this term?",
+      "prompt": "Which elements build Athymism?",
       "options": [
        "A-, thym, and a condition ending",
-       "Thym/o and a cell ending",
-       "Splen/o and an enlargement ending",
-       "Immun/o and a study ending"
+       "A-, thym, and an inflammation ending",
+       "Ana-, thym, and a condition ending",
+       "A-, thyr, and a condition ending"
       ],
       "correct": 0
      }
     ],
-    "explain": "This term is athymism. Athymisim, Athymysm, and Athymasm miss the spelling. It means absence of the thymus. Enlargement of the thymus would use -megaly, inflammation of the thymus would use -itis, and a cell of the thymus is thymocyte. The elements are a- for without, thym, and a condition ending. Thym/o and a cell ending build thymocyte. Splen/o and an enlargement ending build splenomegaly. Immun/o and a study ending is only part of immunopharmacology."
-   },
-   {
-    "id": "MT14092",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "immunity-drill",
-    "groupOrder": 1,
-    "q": "This immunity is long-lasting because the host makes its own antibodies after an infection. Answer each step, then the next route follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which route is this?",
-      "options": [
-       "Natural active immunity",
-       "Artificial active immunity",
-       "Natural passive immunity",
-       "Artificial passive immunity"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which event produces it?",
-      "options": [
-       "Recovery after an infection",
-       "Administration of a vaccine",
-       "Transfer by placenta and breast milk",
-       "Injection of antibody-containing serum"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which duration belongs to it?",
-      "options": [
-       "Long-lasting",
-       "Short-lasting"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This route is natural active immunity. Artificial active immunity follows a vaccine, natural passive immunity is maternal transfer, and artificial passive immunity is injected serum. The event is recovery after an infection. Administration of a vaccine is the artificial active route. Transfer by placenta and breast milk, and injection of antibody-containing serum, are passive. The duration is long-lasting. Short-lasting is passive immunity."
-   },
-   {
-    "id": "MT14093",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "immunity-drill",
-    "groupOrder": 2,
-    "q": "This immunity is long-lasting because the host makes its own antibodies after a vaccine. Answer each step, then the next route follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which route is this?",
-      "options": [
-       "Artificial active immunity",
-       "Natural active immunity",
-       "Natural passive immunity",
-       "Artificial passive immunity"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which event produces it?",
-      "options": [
-       "Administration of a vaccine",
-       "Recovery after an infection",
-       "Transfer by placenta and breast milk",
-       "Injection of antibody-containing serum"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which duration belongs to it?",
-      "options": [
-       "Long-lasting",
-       "Short-lasting"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This route is artificial active immunity. Natural active immunity follows an infection, and the two passive routes supply foreign antibody. The event is administration of a vaccine. Recovery after an infection is the natural active route. Transfer by placenta and breast milk, and injection of antibody-containing serum, are passive. The duration is long-lasting. Short-lasting is passive immunity."
-   },
-   {
-    "id": "MT14094",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "immunity-drill",
-    "groupOrder": 3,
-    "q": "This immunity is short-lasting and reaches the child from the mother. Answer each step, then the next route follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which route is this?",
-      "options": [
-       "Natural passive immunity",
-       "Artificial passive immunity",
-       "Natural active immunity",
-       "Artificial active immunity"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which event produces it?",
-      "options": [
-       "Transfer by placenta and breast milk",
-       "Injection of antibody-containing serum",
-       "Recovery after an infection",
-       "Administration of a vaccine"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which duration belongs to it?",
-      "options": [
-       "Short-lasting",
-       "Long-lasting"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This route is natural passive immunity. Artificial passive immunity is injected serum, and the active routes have the host make antibody. The event is transfer by placenta and breast milk. Injection of antibody-containing serum is the artificial passive route. Recovery after an infection and administration of a vaccine are active. The duration is short-lasting. Long-lasting is active immunity."
-   },
-   {
-    "id": "MT14095",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "immunity-drill",
-    "groupOrder": 4,
-    "q": "This immunity is short-lasting and comes from an injected serum that already contains antibodies. Answer each step, then the finding cluster follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which route is this?",
-      "options": [
-       "Artificial passive immunity",
-       "Natural passive immunity",
-       "Artificial active immunity",
-       "Natural active immunity"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which event produces it?",
-      "options": [
-       "Injection of antibody-containing serum",
-       "Transfer by placenta and breast milk",
-       "Administration of a vaccine",
-       "Recovery after an infection"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which duration belongs to it?",
-      "options": [
-       "Short-lasting",
-       "Long-lasting"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This route is artificial passive immunity. Natural passive immunity is the maternal route, and the active routes have the host make antibody. The event is injection of antibody-containing serum. Transfer by placenta and breast milk is natural passive immunity. Administration of a vaccine and recovery after an infection are active. The duration is short-lasting. Long-lasting is active immunity."
-   },
-   {
-    "id": "MT14096",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "hemochromatosis-cluster",
-    "groupOrder": 1,
-    "q": "Which finding belongs to this iron-overload condition? At each step, choose, then continue.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "What is deposited in the tissues?",
-      "options": [
-       "Iron overload deposits",
-       "Excess circulating red cells",
-       "A clot lodged in a vein",
-       "Dietary fat from the intestine"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which skin change belongs with those deposits?",
-      "options": [
-       "Bronze pigmentation of the skin",
-       "Yellow-red granule staining",
-       "Dark blue granule staining",
-       "Clear yellowish plasma"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which liver change belongs with those deposits?",
-      "options": [
-       "Cirrhosis of the liver",
-       "Enlargement of the spleen",
-       "Absence of the thymus",
-       "Inflammation of a vein"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "The deposit is iron overload in the tissues. Excess circulating red cells is not this condition, a clot lodged in a vein fits thrombophlebitis, and dietary fat from the intestine is a lymphatic transport load. The skin change is bronze pigmentation of the skin. Yellow-red granule staining is the eosinophil, dark blue granule staining is the basophil, and clear yellowish plasma is the blood fraction. The liver change is cirrhosis of the liver. Enlargement of the spleen is splenomegaly, absence of the thymus is athymism, and inflammation of a vein is thrombophlebitis."
-   },
-   {
-    "id": "MT14097",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "abbrev-drill",
-    "groupOrder": 1,
-    "q": "This short form is RBC. Answer each step, then the next short form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "What does RBC stand for?",
-      "options": [
-       "Red blood cell",
-       "White blood cell",
-       "Natural killer cell",
-       "Specialized connective tissue"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which other name belongs to that cell?",
-      "options": [
-       "Erythrocyte",
-       "Leukocyte",
-       "Thrombocyte",
-       "Lymphocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to that cell?",
-      "options": [
-       "About 110 to 120 days",
-       "Up to about 24 hours",
-       "About 2 to 5 days",
-       "About 7 to 10 days"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "RBC stands for red blood cell. White blood cell, natural killer cell, and specialized connective tissue are other short-form expansions. The other name is erythrocyte. Leukocyte, thrombocyte, and lymphocyte name other cells. The lifespan is about 110 to 120 days. Up to about 24 hours fits the neutrophil and the monocyte, about 2 to 5 days fits the eosinophil, and about 7 to 10 days fits the platelet."
-   },
-   {
-    "id": "MT14098",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "abbrev-drill",
-    "groupOrder": 2,
-    "q": "This short form is WBC. Answer each step, then the next short form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "What does WBC stand for?",
-      "options": [
-       "White blood cell",
-       "Red blood cell",
-       "Natural killer cell",
-       "Specialized connective tissue"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which other name belongs to that cell?",
-      "options": [
-       "Leukocyte",
-       "Erythrocyte",
-       "Thrombocyte",
-       "Megakaryocyte"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which two classes divide that cell?",
-      "options": [
-       "Granulocytes and agranulocytes",
-       "Plasma and serum",
-       "Active and passive immunity",
-       "Tonsil and adenoid"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "WBC stands for white blood cell. Red blood cell, natural killer cell, and specialized connective tissue are other short-form expansions. The other name is leukocyte. Erythrocyte, thrombocyte, and megakaryocyte name other elements. The two classes are granulocytes and agranulocytes. Plasma and serum are blood fractions, active and passive immunity are immune routes, and tonsil and adenoid are organs."
-   },
-   {
-    "id": "MT14099",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "abbrev-drill",
-    "groupOrder": 3,
-    "q": "This short form is NK. Answer each step, then the next short form follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "What does NK stand for?",
-      "options": [
-       "Natural killer",
-       "Natural kinase",
-       "Neutral kernel",
-       "Nodal kidney"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which payload does this cell carry?",
-      "options": [
-       "Cytotoxic substances",
-       "Y-shaped antibodies",
-       "Neutral-staining granules",
-       "Anticoagulant substances"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which lifespan belongs to this cell?",
-      "options": [
-       "Up to about 2 weeks",
-       "About 30 to 160 days",
-       "About 5 to 6 weeks",
-       "Up to about 24 hours"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "NK stands for natural killer. Natural kinase, neutral kernel, and nodal kidney are not the expansion. The payload is cytotoxic substances. Y-shaped antibodies belong to the B cell, neutral-staining granules to the neutrophil, and anticoagulant substances to the basophil. The lifespan is up to about 2 weeks. About 30 to 160 days fits the T cell, about 5 to 6 weeks fits the B cell, and up to about 24 hours fits the neutrophil and the monocyte."
-   },
-   {
-    "id": "MT14100",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "abbrev-drill",
-    "groupOrder": 4,
-    "q": "This short form is SCT. Answer each step, then the fluid run follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "What does SCT stand for?",
-      "options": [
-       "Specialized connective tissue",
-       "Standard clotting time",
-       "Serum cell transfer",
-       "Splenic cell type"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which tissue does SCT name here?",
-      "options": [
-       "Blood",
-       "Lymph",
-       "Serum",
-       "Interstitial fluid"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which parts make up that tissue?",
-      "options": [
-       "Plasma plus erythrocytes, leukocytes, and thrombocytes",
-       "Serum plus megakaryocytes, fibroblasts, and osteocytes",
-       "Lymph plus tonsil, spleen, and thymus",
-       "Plasma plus lymphocytes, monocytes, and platelets only"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "SCT stands for specialized connective tissue. Standard clotting time, serum cell transfer, and splenic cell type are not the expansion. The tissue named here is blood. Lymph, serum, and interstitial fluid are other fluids. The parts are plasma plus erythrocytes, leukocytes, and thrombocytes. Serum plus megakaryocytes, fibroblasts, and osteocytes mixes the post-clot fluid with non-circulating cells. Lymph plus tonsil, spleen, and thymus mixes lymphatic structures. Plasma plus lymphocytes, monocytes, and platelets only omits the red cells and the granulocyte class."
-   },
-   {
-    "id": "MT14101",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "fluid-drill",
-    "groupOrder": 1,
-    "q": "This blood fraction is clear and yellowish and still holds the clotting factors. Answer each step, then the next fluid follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which fluid is this?",
-      "options": [
-       "Plasma",
-       "Serum",
-       "Lymph",
-       "Interstitial fluid"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "What remains once those clotting factors are consumed?",
-      "options": [
-       "Serum",
-       "Lymph",
-       "Interstitial fluid",
-       "Whole blood"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which loads does this fraction also carry?",
-      "options": [
-       "Water, proteins, and suspended cells",
-       "Dietary fat from the intestine only",
-       "Cytotoxic substances from NK cells",
-       "Iron deposits in the skin"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This fraction is plasma. Serum is the post-clot fluid, lymph is the lymphatic fluid, and interstitial fluid is the tissue bath. Once the clotting factors are consumed, what remains is serum. Lymph, interstitial fluid, and whole blood are not that post-clot fraction. Plasma also carries water, proteins, and suspended cells. Dietary fat from the intestine only is a lymphatic load, cytotoxic substances from NK cells are a cell payload, and iron deposits in the skin belong to the iron-overload condition."
-   },
-   {
-    "id": "MT14102",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "fluid-drill",
-    "groupOrder": 2,
-    "q": "This blood fraction is the liquid left after clotting, without the clotting factors. Answer each step, then the next fluid follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which fluid is this?",
-      "options": [
-       "Serum",
-       "Plasma",
-       "Lymph",
-       "Interstitial fluid"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which fraction still holds the clotting factors?",
-      "options": [
-       "Plasma",
-       "Lymph",
-       "Interstitial fluid",
-       "Whole blood"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which cells are no longer suspended as a clot mass in this fraction?",
-      "options": [
-       "The formed elements caught in the clot",
-       "The lymphocytes of the thymus only",
-       "The bacteria in Peyer's patches",
-       "The fats from the digestive tract"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This fraction is serum. Plasma still holds the clotting factors, lymph is the lymphatic fluid, and interstitial fluid is the tissue bath. The fraction that still holds the clotting factors is plasma. Lymph, interstitial fluid, and whole blood are not that factor-rich fraction. The formed elements caught in the clot are no longer suspended as a clot mass. The lymphocytes of the thymus only, the bacteria in Peyer's patches, and the fats from the digestive tract are not the clot mass."
-   },
-   {
-    "id": "MT14103",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "fluid-drill",
-    "groupOrder": 3,
-    "q": "This fluid bathes the tissue cells before it enters a lymphatic capillary. Answer each step, then the next fluid follows.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which fluid is this?",
-      "options": [
-       "Interstitial fluid",
-       "Lymphatic vessel fluid",
-       "Plasma clotting fraction",
-       "Serum after clotting"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "What is this fluid called after it enters a lymphatic capillary?",
-      "options": [
-       "Lymph",
-       "Plasma",
-       "Serum",
-       "Whole blood"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which vessels collect it from the tissues?",
-      "options": [
-       "Lymphatic capillaries",
-       "Blood arteries",
-       "Thoracic veins",
-       "Bone marrow sinusoids"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This fluid is interstitial fluid. Lymphatic vessel fluid is the name after entry, and plasma clotting fraction and serum after clotting are blood fractions. After it enters a lymphatic capillary it is called lymph. Plasma, serum, and whole blood are not that renamed fluid. The vessels that collect it are lymphatic capillaries. Blood arteries, thoracic veins, and bone marrow sinusoids are not that collecting vessel."
-   },
-   {
-    "id": "MT14104",
-    "type": "stepped",
-    "cat": "MT_lec14-15",
-    "group": "fluid-drill",
-    "groupOrder": 4,
-    "q": "This fluid is the colorless watery liquid inside the lymphatic vessels. Answer each step, then the run ends.",
-    "steps": [
-     {
-      "id": "1",
-      "prompt": "Which fluid is this?",
-      "options": [
-       "Lymph",
-       "Interstitial fluid",
-       "Plasma",
-       "Serum"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "2",
-      "prompt": "Which fluid was it before entry into a lymphatic capillary?",
-      "options": [
-       "Interstitial fluid",
-       "Plasma clotting fraction",
-       "Serum after clotting",
-       "Whole circulating blood"
-      ],
-      "correct": 0
-     },
-     {
-      "id": "3",
-      "prompt": "Which system returns it to the bloodstream?",
-      "options": [
-       "The lymphatic network of vessels and nodes",
-       "The arterial tree from the left ventricle",
-       "The coronary vessels of the heart wall",
-       "The marrow that forms the blood cells"
-      ],
-      "correct": 0
-     }
-    ],
-    "explain": "This fluid is lymph. Interstitial fluid is the tissue bath before entry, and plasma and serum are blood fractions. Before entry it was interstitial fluid. Plasma clotting fraction, serum after clotting, and whole circulating blood are not that earlier name. The lymphatic network of vessels and nodes returns it to the bloodstream. The arterial tree from the left ventricle, the coronary vessels of the heart wall, and the marrow that forms the blood cells do not return lymph."
+    "explain": "This term is athymism. Athymisim, Athymysm, and Athymasm miss the spelling. It means absence of the thymus. Enlargement of the thymus would use -megaly, inflammation of the thymus would use -itis, and a cell of the thymus is thymocyte. The elements are a- for without, thym, and a condition ending. An inflammation ending names inflammation, ana- means up or again, and thyr names the thyroid."
    }
   ]
  }

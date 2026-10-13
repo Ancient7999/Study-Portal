@@ -762,7 +762,7 @@
           "The cerebellum below the lobes.",
           "The thalamus, a relay chamber.",
           "The hypothalamus under the relay.",
-          "The brainstem, above the spinal cord."
+          "The brainstem, below the cerebrum."
         ],
         "correct": 3,
         "explain": "The brainstem serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature. \"The cerebellum below the lobes\" coordinates skeletal muscles. \"The thalamus, a relay chamber\" relays sensory information to the cortex. \"The hypothalamus under the relay\" controls the autonomic nervous system."
@@ -928,7 +928,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which work does this lobe govern?",
+            "prompt": "Which work does the Frontal lobe govern?",
             "options": [
               "Voluntary muscle movement and personality",
               "Pain, temperature, and touch on the body",
@@ -961,7 +961,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which work does this lobe govern?",
+            "prompt": "Which work does the Parietal lobe govern?",
             "options": [
               "Pain, temperature, and touch on the body",
               "Voluntary muscle movement and personality",
@@ -994,7 +994,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which work does this lobe govern?",
+            "prompt": "Which work does the Temporal lobe govern?",
             "options": [
               "Hearing, taste, and the sense of smell",
               "Voluntary muscle movement and personality",
@@ -1027,7 +1027,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which work does this lobe govern?",
+            "prompt": "Which work does the Occipital lobe govern?",
             "options": [
               "Vision sensed at the posterior cerebral pole",
               "Voluntary muscle movement and personality",
@@ -1104,7 +1104,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which set does this level belong to?",
+            "prompt": "Which set does the Mesencephalon belong to?",
             "options": [
               "The three levels of the brainstem",
               "The four lobes of the cerebral hemispheres",
@@ -1137,7 +1137,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which set does this level belong to?",
+            "prompt": "Which set does the Pons belong to?",
             "options": [
               "The three levels of the brainstem",
               "The four lobes of the cerebral hemispheres",
@@ -1170,7 +1170,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which set does this level belong to?",
+            "prompt": "Which set does the Medulla oblongata belong to?",
             "options": [
               "The three levels of the brainstem",
               "The four lobes of the cerebral hemispheres",
@@ -1335,7 +1335,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which brain region contains this chamber?",
+            "prompt": "Which brain region contains the Thalamus?",
             "options": [
               "Diencephalon",
               "Mesencephalon",
@@ -1346,7 +1346,7 @@
           },
           {
             "id": "3",
-            "prompt": "Where does the autonomic control center lie relative to this chamber?",
+            "prompt": "Where does the autonomic control center lie relative to the Thalamus?",
             "options": [
               "Below it",
               "Above it",
@@ -1379,7 +1379,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which structure lies directly above this center?",
+            "prompt": "Which structure lies directly above the Hypothalamus?",
             "options": [
               "Thalamus",
               "Cerebellum",
@@ -1390,7 +1390,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which work does this center govern?",
+            "prompt": "Which work does the Hypothalamus govern?",
             "options": [
               "Autonomic control of organs and glands",
               "Relay of sensory signals up to the cortex",
@@ -1415,15 +1415,15 @@
             "prompt": "What does CNS stand for?",
             "options": [
               "Central nervous system",
-              "Peripheral nervous system",
-              "Autonomic nervous system",
-              "Sympathetic nervous system"
+              "Cranial neural sheath",
+              "Cerebral nerve synapse",
+              "Cortical nerve signal"
             ],
             "correct": 0
           },
           {
             "id": "2",
-            "prompt": "Which structures make up this division?",
+            "prompt": "Which structures make up the Central nervous system?",
             "options": [
               "Brain and spinal cord",
               "Cranial nerves and spinal nerves",
@@ -1433,7 +1433,7 @@
             "correct": 0
           }
         ],
-        "explain": "CNS stands for central nervous system. Peripheral nervous system is PNS, autonomic nervous system is ANS, and sympathetic nervous system is SNS. The CNS is the brain and spinal cord. Cranial nerves and spinal nerves make up the PNS. The sympathetic and parasympathetic divisions belong to the ANS. Smooth muscles, cardiac muscles, and glands are the targets of the ANS, not parts of the CNS."
+        "explain": "CNS stands for central nervous system. Cranial neural sheath, cerebral nerve synapse, and cortical nerve signal share the letters but are not the expansion. The CNS is the brain and spinal cord. Cranial nerves and spinal nerves make up the PNS. The sympathetic and parasympathetic divisions belong to the ANS. Smooth muscles, cardiac muscles, and glands are the targets of the ANS, not parts of the CNS."
       },
       {
         "id": "MT18070",
@@ -1449,14 +1449,14 @@
             "options": [
               "Peripheral nervous system",
               "Parasympathetic nervous system",
-              "Central nervous system",
-              "Autonomic nervous system"
+              "Primary neural sheath",
+              "Posterior nerve segment"
             ],
             "correct": 0
           },
           {
             "id": "2",
-            "prompt": "Which description fits this division?",
+            "prompt": "Which description fits the Peripheral nervous system?",
             "options": [
               "Nerves that branch from the CNS, including cranial nerves and spinal nerves",
               "The brain and the spinal cord, the portion within the cranium and vertebrae",
@@ -1466,7 +1466,7 @@
             "correct": 0
           }
         ],
-        "explain": "PNS stands for peripheral nervous system. Parasympathetic nervous system is PSNS, central nervous system is CNS, and autonomic nervous system is ANS. The PNS is the nerves that branch from the CNS, including nerves of the brain (cranial nerves) and spinal cord (spinal nerves). The brain and the spinal cord are the CNS. Restoring the body to a restful state after stress is the PSNS. The control center for the ANS below the thalamus is the hypothalamus."
+        "explain": "PNS stands for peripheral nervous system. Parasympathetic nervous system is PSNS. Primary neural sheath and posterior nerve segment share the letters but are not the expansion. The PNS is the nerves that branch from the CNS, including nerves of the brain (cranial nerves) and spinal cord (spinal nerves). The brain and the spinal cord are the CNS. Restoring the body to a restful state after stress is the PSNS. The control center for the ANS below the thalamus is the hypothalamus."
       },
       {
         "id": "MT18071",
@@ -1489,7 +1489,7 @@
           },
           {
             "id": "2",
-            "prompt": "Which impulses does this division carry, and to where?",
+            "prompt": "Which impulses does the Autonomic nervous system carry, and to where?",
             "options": [
               "Involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands",
               "Voluntary impulses controlling external actions of the skin and muscles",
@@ -1500,7 +1500,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which structure is the control center for this division?",
+            "prompt": "Which structure is the control center for the Autonomic nervous system?",
             "options": [
               "Hypothalamus",
               "Thalamus",
@@ -1533,7 +1533,7 @@
           },
           {
             "id": "2",
-            "prompt": "What is this division concerned with?",
+            "prompt": "What is the Sympathetic nervous system concerned with?",
             "options": [
               "Preparing the body in stressful or emergency situations",
               "Restoring the body to a restful state after a stressful experience",
@@ -1544,7 +1544,7 @@
           },
           {
             "id": "3",
-            "prompt": "Which larger division is this one a part of?",
+            "prompt": "Which larger division is the Sympathetic nervous system a part of?",
             "options": [
               "The ANS",
               "The CNS",
@@ -1577,7 +1577,7 @@
           },
           {
             "id": "2",
-            "prompt": "When is this division most active?",
+            "prompt": "When is the Parasympathetic nervous system most active?",
             "options": [
               "In ordinary conditions",
               "In stressful or emergency situations",
@@ -1588,7 +1588,7 @@
           },
           {
             "id": "3",
-            "prompt": "How does this division relate to the SNS?",
+            "prompt": "How does the Parasympathetic nervous system relate to the SNS?",
             "options": [
               "It counter-balances the effects of the SNS by restoring the body to a restful state after a stressful experience",
               "It intensifies the effects of the SNS by preparing the body further for an emergency",
@@ -1972,12 +1972,12 @@
         "q": "What does the term vertebroplasty (CF+S) mean?",
         "options": [
           "Surgical repair of a vertebra, such as filling a fractured site with cement",
-          "Inflammation of a vertebra",
-          "Radiation surgery for proper sleep",
+          "Inflammation of a vertebra, often after an infection",
+          "Radiation surgery for proper sleep and snoring",
           "Disease of the white matter of the spinal cord"
         ],
         "correct": 0,
-        "explain": "Vertebroplasty is built from Vertebr/o, vertebra, and -plasty, surgical repair; a fractured site is filled with cement. \"Inflammation of a vertebra\" would use -itis. \"Radiation surgery for proper sleep\" is somnoplasty. \"Disease of the white matter of the spinal cord\" is leukomyelopathy."
+        "explain": "Vertebroplasty is built from Vertebr/o, vertebra, and -plasty, surgical repair; a fractured site is filled with cement. \"Inflammation of a vertebra, often after an infection\" would use -itis. \"Radiation surgery for proper sleep and snoring\" is somnoplasty. \"Disease of the white matter of the spinal cord\" is leukomyelopathy."
       },
       {
         "id": "MT18099",
