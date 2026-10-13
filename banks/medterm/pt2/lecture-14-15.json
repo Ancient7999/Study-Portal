@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 14 and 15 - Blood and Lymphatic System",
- "formSize": 108,
+ "formSize": 105,
  "forms": [
   "A"
  ],
@@ -13,7 +13,7 @@
     "id": "MT14001",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Blood is classed as a specialized connective tissue. Which description of its composition is correct?",
+    "q": "Which description of blood's composition is correct?",
     "options": [
      "The liquid portion is serum, and the formed cellular portion consists of erythrocytes, leukocytes, and thrombocytes.",
      "The liquid portion is lymph, and the formed cellular portion consists of megakaryocytes, fibroblasts, and osteocytes.",
@@ -83,7 +83,7 @@
     "id": "MT14007",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "A white cell whose granules stain neutral and that fights infection by phagocytosis, living about a day, is which type?",
+    "q": "A granulocyte that fights infection by phagocytosis and is the most common white cell is which type?",
     "options": [
      "Eosinophil",
      "Basophil",
@@ -141,41 +141,41 @@
     "cat": "MT_lec14-15",
     "q": "Which type of lymphocyte matures under thymic influence and attacks foreign cells, cancer cells, and virus-infected cells?",
     "options": [
-     "The B-cell, which is bone-marrow derived and manufactures antibodies.",
-     "The T-cell, which is thymus dependent and carries out that attack.",
-     "The NK-cell, which carries cytotoxic substances against tumor cells.",
-     "The monocyte, which performs phagocytosis against germs in tissues."
+     "The T-cell",
+     "The B-cell",
+     "The NK-cell",
+     "The monocyte"
     ],
-    "correct": 1,
-    "explain": "The T-cell is thymus dependent and carries out that attack on foreign cells, cancer cells, and virus-infected cells. The B-cell, which is bone-marrow derived and manufactures antibodies, makes antibody rather than attacking those cells. The NK-cell, which carries cytotoxic substances against tumor cells, kills through those substances and is not thymus dependent. The monocyte, which performs phagocytosis against germs in tissues, is a phagocyte, not that lymphocyte lineage."
+    "correct": 0,
+    "explain": "The T-cell matures under thymic influence and attacks foreign cells, cancer cells, and virus-infected cells. The B-cell makes antibodies, the NK-cell kills through cytotoxic substances, and the monocyte is a phagocyte, not a lymphocyte."
    },
    {
     "id": "MT14014",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which type of lymphocyte is bone-marrow derived and produces antibodies?",
+    "q": "Which type of lymphocyte arises in the bone marrow?",
     "options": [
-     "The T-cell, which matures under thymic influence",
-     "The NK-cell, which contains cytotoxic substances",
-     "The B-cell, which manufactures antibodies",
-     "The monocyte, which engulfs bacteria and fungi"
+     "The T-cell",
+     "The B-cell",
+     "The NK-cell",
+     "The monocyte"
     ],
-    "correct": 2,
-    "explain": "The B-cell is bone-marrow derived, lives about five to six weeks, and makes antibodies against antigens. The T-cell, which matures under thymic influence, attacks cells directly. The NK-cell, which contains cytotoxic substances, kills through those substances. The monocyte, which engulfs bacteria and fungi, is a phagocytic agranulocyte rather than an antibody-producing lymphocyte."
+    "correct": 1,
+    "explain": "The B-cell arises in the bone marrow and makes antibodies against antigens. The T-cell matures under thymic influence, the NK-cell kills through cytotoxic substances, and the monocyte is a phagocyte, not a lymphocyte."
    },
    {
     "id": "MT14015",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which type of lymphocyte is a natural killer that destroys tumor or infected cells through cytotoxic substances?",
+    "q": "Which type of lymphocyte destroys tumor or infected cells through cytotoxic substances?",
     "options": [
-     "The T-cell, which is thymus dependent",
-     "The B-cell, which manufactures antibodies",
-     "The NK-cell, which carries the cytotoxic substances",
-     "The neutrophil, which stains neutral and phagocytoses pathogens"
+     "The T-cell",
+     "The B-cell",
+     "The NK-cell",
+     "The monocyte"
     ],
     "correct": 2,
-    "explain": "The NK-cell, or natural killer cell, lives up to about two weeks and contains cytotoxic substances that can kill tumor or infected cells. The T-cell, which is thymus dependent, attacks cells but is not the natural killer class. The B-cell, which manufactures antibodies, makes antibody. The neutrophil, which stains neutral and phagocytoses pathogens, is a granulocyte rather than a lymphocyte."
+    "explain": "The NK-cell, or natural killer cell, carries cytotoxic substances that kill tumor or infected cells. The T-cell attacks cells after maturing in the thymus, the B-cell makes antibodies, and the monocyte is a phagocyte, not a lymphocyte."
    },
    {
     "id": "MT14016",
@@ -290,20 +290,6 @@
     "explain": "The term joins thrombo meaning clot, phleb meaning vein, and the suffix -itis meaning inflammation, so thrombo contributes the sense of clot. Vein is the phleb element of the same word. Color and blood belong to chrom/o and hem/o, neither of which is present."
    },
    {
-    "id": "MT14024",
-    "type": "mcq",
-    "cat": "MT_lec14-15",
-    "q": "In the term splenomegaly, the element spleno refers to what?",
-    "options": [
-     "Clot",
-     "Spleen",
-     "Thymus",
-     "Clear fluid"
-    ],
-    "correct": 1,
-    "explain": "The term combines spleno meaning spleen with the suffix -megaly meaning enlargement, so spleno names the spleen. Clot, thymus, and clear fluid are the senses of thromb/o, thym/o, and lymph/o."
-   },
-   {
     "id": "MT14025",
     "type": "mcq",
     "cat": "MT_lec14-15",
@@ -316,20 +302,6 @@
     ],
     "correct": 2,
     "explain": "Lympho is the combining form for the clear fluid lymph, so in lymphoduct it names that fluid and the term means a duct carrying lymph. Thymus, spleen, and color are the senses of thym/o, splen/o, and chrom/o."
-   },
-   {
-    "id": "MT14026",
-    "type": "mcq",
-    "cat": "MT_lec14-15",
-    "q": "In the term thymocyte, the element thymo refers to what?",
-    "options": [
-     "Thymus",
-     "Spleen",
-     "Blood",
-     "Clot"
-    ],
-    "correct": 0,
-    "explain": "Thymo, with its variant thymi, is the combining form for the thymus, so in thymocyte it names that gland and the word means a cell of thymic origin. The same root shows in athymism, where the prefix a- denotes absence and thym still means thymus. Spleen, blood, and clot are the senses of splen/o, hem/o, and thromb/o."
    },
    {
     "id": "MT14027",
@@ -372,20 +344,6 @@
     ],
     "correct": 1,
     "explain": "Thrombophlebitis is built from Thromb/o (clot), phleb (vein), and -itis (inflammation), so it denotes inflammation of a vein caused by a clot. The other options keep part of the term but change another word part, so they do not match."
-   },
-   {
-    "id": "MT14030",
-    "type": "mcq",
-    "cat": "MT_lec14-15",
-    "q": "What does the term lymphoduct mean?",
-    "options": [
-     "A node that filters lymph",
-     "A duct that carries lymph",
-     "A cell that forms in lymph",
-     "A swelling caused by lymph"
-    ],
-    "correct": 1,
-    "explain": "Lymphoduct joins lymph/o (lymph) with duct, so it is a duct that carries lymph. A node, a cell, or a swelling would use other word parts."
    },
    {
     "id": "MT14031",
@@ -531,7 +489,7 @@
     "id": "MT14041",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which fluid is the colorless, watery liquid collected from the body tissues and moved back into the bloodstream by the lymphatic system?",
+    "q": "Which fluid is the colorless, watery liquid collected from the body tissues and moved back into the bloodstream?",
     "options": [
      "Plasma",
      "Serum",
@@ -547,13 +505,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the relationship between interstitial fluid and lymph?",
     "options": [
-     "Interstitial fluid is inside blood vessels, and lymph is the fluid inside lymphatic vessels.",
-     "Interstitial fluid lies between tissue cells, and lymph is that fluid inside lymphatic capillaries.",
-     "Interstitial fluid is inside the cells, and lymph is the fluid held inside the bone marrow.",
-     "Interstitial fluid fills the thoracic duct, and lymph is the fluid inside blood capillaries."
+     "Interstitial fluid lies between tissue cells, and lymph is that fluid once inside blood capillaries.",
+     "Interstitial fluid lies between tissue cells, and lymph is that fluid once inside lymphatic capillaries.",
+     "Interstitial fluid lies between tissue cells, and lymph is that fluid once it leaves nodes for veins.",
+     "Interstitial fluid lies between tissue cells, and lymph is a separate fluid made in the lymph nodes."
     ],
     "correct": 1,
-    "explain": "Interstitial fluid is the fluid that bathes the tissue cells, and once it enters the lymphatic capillaries it is called lymph. Interstitial fluid is the fluid inside blood vessels, and lymph is the fluid inside lymphatic vessels, reverses the two. Interstitial fluid is the fluid inside the cells, and lymph is the fluid inside the bone marrow, places them inside cells and marrow. Interstitial fluid is the fluid in the thoracic duct, and lymph is the fluid in the blood capillaries, reverses the ducts and capillaries."
+    "explain": "Interstitial fluid lies between tissue cells; once it enters the lymphatic capillaries it is called lymph. Fluid that enters blood capillaries joins the plasma, lymph is already lymph before it leaves the nodes, and the nodes filter lymph rather than make it."
    },
    {
     "id": "MT14043",
@@ -561,13 +519,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the function of valves in the lymphatic vessels?",
     "options": [
-     "They prevent lymph from flowing backward and keep it moving toward the bloodstream.",
-     "They filter microorganisms and foreign particles out of the lymph as it passes through.",
-     "They produce lymphocytes that fight off foreign organisms carried in the lymph.",
-     "They store old and damaged blood cells until the spleen can remove them."
+     "They stop lymph from flowing backward toward the tissues.",
+     "They contract on their own and push lymph forward like a small pump.",
+     "They let lymph flow both ways so that pressure stays balanced.",
+     "They close to stop lymph from ever entering the bloodstream."
     ],
     "correct": 0,
-    "explain": "Valves in the lymphatic vessels prevent backflow and help keep lymph moving toward the bloodstream. Filtration of microorganisms is a function of the lymph nodes, lymphocyte production occurs in the thymus and bone marrow, and blood cell storage is a splenic function."
+    "explain": "Valves in lymphatic vessels stop lymph from flowing backward, so it keeps moving toward the bloodstream. They do not pump, do not allow two-way flow, and do not block entry into the blood."
    },
    {
     "id": "MT14044",
@@ -577,11 +535,11 @@
     "options": [
      "Lymph enters through the efferent vessel and leaves through the afferent vessel",
      "Lymph enters through the afferent vessel and leaves through the efferent vessel",
-     "Lymph enters through the artery and leaves through the vein",
+     "Lymph enters and leaves through the same afferent vessel of the node",
      "Lymph enters through the thoracic duct and leaves through the right lymphatic duct"
     ],
     "correct": 1,
-    "explain": "Lymph enters a lymph node through the afferent lymphatic vessel and leaves through the efferent lymphatic vessel. Lymph enters through the efferent vessel and leaves through the afferent vessel, reverses the two. Lymph enters through the artery and leaves through the vein, confuses lymph vessels with blood vessels. Lymph enters through the thoracic duct and leaves through the right lymphatic duct, names the two main lymphatic trunks rather than the vessels of a single node."
+    "explain": "Lymph enters a lymph node through the afferent lymphatic vessel and leaves through the efferent lymphatic vessel. The other options reverse the two, use one vessel for both, or name the large ducts instead."
    },
    {
     "id": "MT14045",
@@ -589,13 +547,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes how lymph is returned to the bloodstream?",
     "options": [
-     "Lymph enters lymphatic capillaries, passes through lymph nodes, and returns through lymphatic ducts.",
-     "Lymph is collected by the arteries, filtered through the spleen, and returned through the veins.",
-     "Lymph is made in the bone marrow, filtered through the thymus, and returned through the heart.",
-     "Lymph is made in the tonsils, filtered through the appendix, and returned through the lungs."
+     "Lymph enters lymphatic capillaries, passes through lymph nodes, and returns to the veins through lymphatic ducts.",
+     "Lymph enters lymph nodes, passes into lymphatic capillaries, and returns to the veins through lymphatic ducts.",
+     "Lymph enters lymphatic capillaries, passes through lymph nodes, and empties straight into the right atrium.",
+     "Lymph enters lymphatic capillaries, passes through lymph nodes, and drains into the hepatic portal vein."
     ],
     "correct": 0,
-    "explain": "Lymph is collected by the lymphatic capillaries, filtered through the lymph nodes, and returned to the bloodstream through the lymphatic trunks and ducts. Lymph is collected by the arteries, filtered through the spleen, and returned to the bloodstream through the veins, assigns the path to blood vessels and the spleen. Lymph is produced in the bone marrow, filtered through the thymus, and returned to the bloodstream through the heart, assigns it to marrow, thymus, and heart. Lymph is produced in the tonsils, filtered through the appendix, and returned to the bloodstream through the lungs, assigns it to tonsils, appendix, and lungs."
+    "explain": "Lymph is collected by lymphatic capillaries, filtered as it passes through lymph nodes, and returned to the venous blood through the lymphatic ducts. The other options reverse the order or send lymph to the wrong endpoint."
    },
    {
     "id": "MT14046",
@@ -631,7 +589,7 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Granulocyte with neutral-staining granules that phagocytoses pathogens and lives about a day"
+      "text": "Granulocyte with neutral-staining granules that phagocytoses pathogens"
      },
      {
       "id": "B",
@@ -639,7 +597,7 @@
      },
      {
       "id": "C",
-      "text": "Respiratory carrier of oxygen and carbon dioxide with a lifespan of about 110 to 120 days"
+      "text": "Respiratory carrier of oxygen and carbon dioxide that contains hemoglobin"
      },
      {
       "id": "D",
@@ -857,10 +815,6 @@
       "text": "Thrombophlebitis"
      },
      {
-      "id": "4",
-      "text": "Lymphoduct"
-     },
-     {
       "id": "5",
       "text": "Thymocyte"
      },
@@ -889,21 +843,16 @@
      {
       "id": "E",
       "text": "Absence of the thymus."
-     },
-     {
-      "id": "F",
-      "text": "A duct that carries lymph."
      }
     ],
     "correct_pairs": {
      "1": "B",
      "2": "D",
      "3": "A",
-     "4": "F",
      "5": "C",
      "6": "E"
     },
-    "explain": "Hematocytopenia is a deficiency of blood cells. Splenomegaly is enlargement of the spleen. Thrombophlebitis is inflammation of a vein caused by a clot. Lymphoduct is a duct that carries lymph. Thymocyte is a cell of the thymus. Athymism is absence of the thymus. Each term is built from the combining forms and suffixes of this unit, and the meaning follows directly from those elements."
+    "explain": "Hematocytopenia is a deficiency of blood cells. Splenomegaly is enlargement of the spleen. Thrombophlebitis is inflammation of a vein caused by a clot. Thymocyte is a cell of the thymus. Athymism is absence of the thymus. Each term is built from the combining forms and suffixes of this unit, and the meaning follows directly from those elements."
    },
    {
     "id": "MT14105",
@@ -1043,12 +992,12 @@
     "q": "Which statement correctly describes the role of the lymph nodes in the lymphatic system?",
     "options": [
      "They filter microorganisms and foreign particles from lymph passing through.",
-     "They produce red blood cells, white blood cells, and platelets for the blood.",
-     "They manufacture antibodies and release them straight into the bloodstream.",
-     "They store old and damaged red blood cells until the body can remove them."
+     "They collect interstitial fluid from between the tissue cells to form lymph.",
+     "They drain lymph from the right side of the head and chest into the blood.",
+     "They stop lymph from flowing backward along the length of the vessels."
     ],
     "correct": 0,
-    "explain": "The lymph nodes filter microorganisms and foreign particles from the lymph as it passes through, which is a key part of the lymphatic system's protective role. Blood cell production is a bone marrow function, antibody manufacture is a B-cell function, and storage of old red cells is a splenic function."
+    "explain": "Lymph nodes filter microorganisms and foreign particles from lymph. Collecting interstitial fluid is the job of lymphatic capillaries, draining the right upper body is the right lymphatic duct, and preventing backflow is the job of valves."
    },
    {
     "id": "MT14052",
@@ -1056,13 +1005,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of lymphatic capillaries?",
     "options": [
-     "They carry blood away from the heart under high arterial pressure.",
+     "They filter foreign particles from lymph inside the lymph nodes.",
      "They collect interstitial fluid and begin its return to the blood.",
-     "They produce the T-lymphocytes that fight foreign organisms.",
-     "They store old and damaged blood cells until they are removed."
+     "They drain lymph from the left upper body into the left subclavian.",
+     "They return lymph straight into the right atrium of the heart."
     ],
     "correct": 1,
-    "explain": "Lymphatic capillaries collect interstitial fluid from the tissues and begin its return to the bloodstream as lymph. Carrying blood away from the heart is an arterial function, T-lymphocyte production is a thymic function, and storage of old blood cells is a splenic function."
+    "explain": "Lymphatic capillaries collect interstitial fluid, which becomes lymph, and begin its return to the blood. Filtering happens in the nodes, the thoracic duct drains the left upper body, and lymph does not go straight to the heart."
    },
    {
     "id": "MT14053",
@@ -1072,11 +1021,11 @@
     "options": [
      "It drains lymph from the lower body and the left upper body into the blood.",
      "It drains lymph from the right side of the head, neck, and chest into the blood.",
-     "It filters microorganisms and foreign particles from lymph as it passes.",
-     "It produces red blood cells, white blood cells, and platelets for the body."
+     "It drains lymph from the lower body only into the right atrium.",
+     "It drains lymph from the left arm only into the lymph nodes."
     ],
     "correct": 0,
-    "explain": "The thoracic duct collects lymph from the lower body and the left side of the head and chest and returns it to the bloodstream. The right lymphatic duct collects from the right side of the head and chest, filtration is a lymph node function, and blood cell production is a bone marrow function."
+    "explain": "The thoracic duct drains lymph from the lower body and the left upper body into the blood. The right side of the head, neck, and chest drains through the right lymphatic duct."
    },
    {
     "id": "MT14054",
@@ -1084,13 +1033,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the right lymphatic duct in the lymphatic system?",
     "options": [
-     "It collects lymph from the lower body and the left side of the head and chest and returns it to the bloodstream.",
-     "It collects lymph from the right side of the head and chest and returns it to the bloodstream.",
-     "It filters microorganisms and foreign particles from the lymph as it passes through.",
-     "It produces T-lymphocytes that fight foreign organisms."
+     "It collects lymph from the lower body and left upper body and returns it to the blood.",
+     "It collects lymph from the right side of the head and chest and returns it to the blood.",
+     "It collects lymph from the right arm only and returns it to the lymph nodes.",
+     "It collects lymph from both legs and returns it straight to the right atrium."
     ],
     "correct": 1,
-    "explain": "The right lymphatic duct collects lymph from the right side of the head and chest and returns it to the bloodstream. The thoracic duct handles the lower body and the left side, filtration is a lymph node function, and T-lymphocyte production is a thymic function."
+    "explain": "The right lymphatic duct collects lymph from the right side of the head and chest and returns it to the blood. The lower body and left upper body drain through the thoracic duct."
    },
    {
     "id": "MT14056",
@@ -1098,13 +1047,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the thymus in the lymphatic system?",
     "options": [
-     "It filters and removes old and damaged blood cells.",
+     "It produces B-lymphocytes that manufacture antibodies.",
      "It produces T-lymphocytes that fight off foreign organisms.",
-     "It traps pathogens from food and air.",
-     "It produces red blood cells, white blood cells, and platelets."
+     "It produces red blood cells that carry oxygen.",
+     "It produces platelets that are essential for clotting."
     ],
     "correct": 1,
-    "explain": "The thymus produces T-lymphocytes that fight off foreign organisms. Blood cell filtration is a splenic function, pathogen trapping is a tonsil and adenoid function, and blood cell production is a bone marrow function."
+    "explain": "The thymus produces T-lymphocytes that fight off foreign organisms. B-lymphocytes, red cells, and platelets come from the bone marrow."
    },
    {
     "id": "MT14058",
@@ -1112,13 +1061,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the bone marrow in the lymphatic system?",
     "options": [
-     "It filters and removes old and damaged blood cells.",
-     "It produces T-lymphocytes that fight off foreign organisms.",
-     "It traps pathogens from food and air.",
+     "It produces red blood cells and platelets, but no white cells.",
+     "It produces white blood cells and antibodies, but no red cells.",
+     "It produces lymph, lymphocytes, and antibodies, but no platelets.",
      "It produces red blood cells, white blood cells, and platelets."
     ],
     "correct": 3,
-    "explain": "The bone marrow produces red blood cells, white blood cells, and platelets. Blood cell filtration is a splenic function, T-lymphocyte production is a thymic function, and pathogen trapping is a tonsil and adenoid function."
+    "explain": "The bone marrow produces red blood cells, white blood cells, and platelets. Each other option leaves out at least one of these or adds lymph and antibodies, which the marrow does not produce."
    },
    {
     "id": "MT14059",
@@ -1126,13 +1075,13 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the Peyer's patches in the lymphatic system?",
     "options": [
-     "They filter and remove old and damaged blood cells from the circulation.",
-     "They produce the T-lymphocytes that fight off invading foreign organisms.",
-     "They sit in the small intestine lining and monitor and destroy bacteria.",
-     "They produce red blood cells, white blood cells, and platelets in bone."
+     "They monitor and destroy bacteria in the stomach and colon lining.",
+     "They monitor and destroy bacteria in the throat tonsils.",
+     "They monitor and destroy bacteria in the small intestine lining.",
+     "They monitor and destroy old blood cells in the spleen."
     ],
     "correct": 2,
-    "explain": "The Peyer's patches are found in the lining of the small intestine and monitor and destroy bacteria. Blood cell filtration is a splenic function, T-lymphocyte production is a thymic function, and blood cell production is a bone marrow function."
+    "explain": "Peyer's patches sit in the lining of the small intestine, where they monitor and destroy bacteria. The tonsils guard the throat and the spleen removes old blood cells."
    },
    {
     "id": "MT14060",
@@ -1140,19 +1089,19 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the appendix in the lymphatic system?",
     "options": [
-     "It filters and removes old and damaged blood cells.",
-     "It produces T-lymphocytes that fight off foreign organisms.",
-     "It plays a role in housing good bacteria.",
-     "It produces red blood cells, white blood cells, and platelets."
+     "It houses old blood cells until they are removed.",
+     "It houses T-lymphocytes until they mature.",
+     "It houses good bacteria that support the gut.",
+     "It houses lymph until it returns to the veins."
     ],
     "correct": 2,
-    "explain": "The appendix plays a role in housing good bacteria. Blood cell filtration is a splenic function, T-lymphocyte production is a thymic function, and blood cell production is a bone marrow function."
+    "explain": "The appendix plays a role in housing good bacteria. Old blood cells are removed by the spleen, T-lymphocytes mature in the thymus, and lymph returns to the veins through the lymphatic ducts."
    },
    {
     "id": "MT14061",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "A formed element that carries oxygen and carbon dioxide and lives about 110 to 120 days is which type?",
+    "q": "A formed element that contains hemoglobin and carries oxygen and carbon dioxide is which type?",
     "options": [
      "Leukocyte",
      "Thrombocyte",
@@ -1160,7 +1109,7 @@
      "Lymphocyte"
     ],
     "correct": 2,
-    "explain": "This is the erythrocyte, the red cell that carries the respiratory gases for about 110 to 120 days. The leukocyte, thrombocyte, and lymphocyte do other work."
+    "explain": "This is the erythrocyte, the red cell that contains hemoglobin and carries the respiratory gases. The leukocyte, thrombocyte, and lymphocyte do other work."
    },
    {
     "id": "MT14062",
@@ -1222,7 +1171,7 @@
     "id": "MT14066",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "The largest white cell, with no granules, that destroys germs by phagocytosis and lives up to about a day, is which type?",
+    "q": "The largest white cell, with no granules, that destroys germs by phagocytosis, is which type?",
     "options": [
      "Monocyte",
      "Lymphocyte",
@@ -1236,7 +1185,7 @@
     "id": "MT14067",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "A cell fragment shed by the megakaryocyte that is essential for coagulation and lives about 7 to 10 days is which type?",
+    "q": "A cell fragment shed by the megakaryocyte that is essential for coagulation is which type?",
     "options": [
      "Erythrocyte",
      "Thrombocyte",
@@ -1294,13 +1243,13 @@
     "cat": "MT_lec14-15",
     "q": "Which germs does the monocyte destroy by phagocytosis?",
     "options": [
-     "Dietary fats, hormones, and plasma proteins",
-     "Clotting factors, fibrin, and serum",
-     "Bronze pigment, iron deposits, and bile",
+     "Parasitic worms and allergens only",
+     "Bacteria only, not viruses or fungi",
+     "Viruses only, not bacteria or fungi",
      "Viruses, bacteria, fungi, and protozoa"
     ],
     "correct": 3,
-    "explain": "The monocyte destroys viruses, bacteria, fungi, and protozoa. Fats, hormones, clotting factors, and pigments are not germs."
+    "explain": "The monocyte destroys viruses, bacteria, fungi, and protozoa. Each other option names only part of that list."
    },
    {
     "id": "MT14113",
@@ -1408,13 +1357,13 @@
     "cat": "MT_lec14-15",
     "q": "Where does the T-cell mature?",
     "options": [
-     "Under thymic influence",
-     "In the bone marrow as the antibody line",
-     "As a natural killer with cytotoxic stores",
-     "In the spleen as a blood filter"
+     "In the thymus",
+     "In the bone marrow",
+     "In the spleen",
+     "In the lymph nodes"
     ],
     "correct": 0,
-    "explain": "The T-cell matures under thymic influence. The bone marrow line makes antibodies, the natural killer carries cytotoxic stores, and the spleen filters blood."
+    "explain": "The T-cell matures in the thymus, under thymic influence. The B-cell arises in the bone marrow; the spleen and lymph nodes filter but are not where T-cells mature."
    },
    {
     "id": "MT14116",
@@ -1422,13 +1371,13 @@
     "cat": "MT_lec14-15",
     "q": "Where does the B-cell arise?",
     "options": [
-     "Under thymic influence",
+     "In the thymus",
      "In the bone marrow",
-     "In inflamed tissue as a basophil",
-     "In the spleen as a blood filter"
+     "In the spleen",
+     "In the lymph nodes"
     ],
     "correct": 1,
-    "explain": "The B-cell arises in the bone marrow. Thymic influence shapes the T-cell, and the other options describe a basophil and the spleen."
+    "explain": "The B-cell arises in the bone marrow. The T-cell matures in the thymus, and the spleen and lymph nodes are filtering organs."
    },
    {
     "id": "MT14117",
@@ -1534,13 +1483,13 @@
     "cat": "MT_lec14-15",
     "q": "Which parent of platelets resides in the bone marrow?",
     "options": [
-     "T-lymphocyte",
-     "Antibody protein",
+     "Lymphoblast",
+     "Monoblast",
      "Megakaryocyte",
-     "Adenoid tissue"
+     "Erythroblast"
     ],
     "correct": 2,
-    "explain": "The megakaryocyte resides in the bone marrow and sheds platelets. T-lymphocytes, antibodies, and adenoid tissue are not platelet parents."
+    "explain": "The megakaryocyte resides in the bone marrow and sheds platelets. Lymphoblasts, monoblasts, and erythroblasts give rise to other cells."
    },
    {
     "id": "MT14120",
@@ -1820,12 +1769,12 @@
     "q": "Which two classes divide the white blood cells?",
     "options": [
      "Granulocytes and agranulocytes",
-     "Plasma and serum",
-     "Active and passive immunity",
-     "Tonsil and adenoid"
+     "Erythrocytes and thrombocytes",
+     "B-cells and T-cells",
+     "Monocytes and lymphocytes"
     ],
     "correct": 0,
-    "explain": "White blood cells divide into granulocytes and agranulocytes. Plasma and serum are fluids, active and passive are immunity routes, and tonsil and adenoid are organs."
+    "explain": "White blood cells divide into granulocytes and agranulocytes. Erythrocytes and thrombocytes are not white cells, and B-cells, T-cells, monocytes, and lymphocytes all belong to the agranulocytes."
    },
    {
     "id": "MT14128",
@@ -1924,13 +1873,13 @@
     "cat": "MT_lec14-15",
     "q": "Which loads does plasma carry besides clotting factors?",
     "options": [
-     "Dietary fat from the intestine only",
-     "Cytotoxic substances from NK cells",
+     "Lymph, bile, and suspended blood cells",
+     "Water and cells, but no proteins",
      "Water, proteins, and suspended cells",
-     "Iron deposits in the skin"
+     "Proteins only, with no water"
     ],
     "correct": 2,
-    "explain": "Plasma carries water, proteins, and suspended cells. The other options name fat only, NK-cell contents, or skin deposits."
+    "explain": "Plasma carries water, proteins, and suspended cells. Lymph and bile are not plasma loads, and plasma carries both water and proteins."
    },
    {
     "id": "MT14084",
@@ -1956,9 +1905,9 @@
       "prompt": "Which tissue changes belong to Hemochromatosis?",
       "options": [
        "Bronze skin pigmentation and liver cirrhosis",
-       "Vein redness and clot after catheter injury",
-       "Enlargement of the spleen after congestion",
-       "Absence of the thymus from early life"
+       "Bronze skin pigmentation and spleen fibrosis",
+       "Yellow skin pigmentation and liver cirrhosis",
+       "Pale skin pigmentation and marrow failure"
       ],
       "correct": 0
      },
@@ -2070,7 +2019,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 4,
-    "q": "This term is used for a problem found in a limb after vein trauma. Answer each step, then the next term follows.",
+    "q": "This term names a problem found in a limb after a long period of immobility. Answer each step, then the next term follows.",
     "steps": [
      {
       "id": "1",
@@ -2144,7 +2093,7 @@
       "options": [
        "Immun/o, pharmac/o, and a study ending",
        "Immun/o, pharmac/o, and a disease ending",
-       "Immun/o, pharm, and a study ending only for the heart",
+       "Immun/o, pharmac, and a drug ending",
        "Imm/o, pharmac/o, and a study ending"
       ],
       "correct": 0
