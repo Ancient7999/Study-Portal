@@ -183,10 +183,10 @@
     "cat": "MT_lec14-15",
     "q": "Immunity, as a physiological mechanism, is best defined as the body's ability to do what?",
     "options": [
-     "Pump oxygenated blood to every tissue while returning deoxygenated blood to the lungs.",
-     "Recognize materials as foreign and neutralize, eliminate, or metabolize them without harming its own tissue.",
-     "Filter out old and damaged red cells and store the iron recovered from their breakdown.",
-     "Absorb dietary fats from the digestive tract and return them to the bloodstream."
+     "Pump oxygen-rich blood to every tissue and return oxygen-poor blood to the lungs.",
+     "Recognize foreign materials and neutralize or remove them without harming itself.",
+     "Filter out old and damaged red cells and store the iron freed by their breakdown.",
+     "Absorb dietary fats from the digestive tract and carry them into the bloodstream."
     ],
     "correct": 1,
     "explain": "Immunity is the set of physiological mechanisms by which the body recognizes a material as foreign and then neutralizes, eliminates, or metabolizes it without injuring its own tissue. Pump oxygenated blood to every tissue while returning deoxygenated blood to the lungs is cardiac circulation. Filter out old and damaged red cells and store the iron recovered from their breakdown is a splenic function. Absorb dietary fats from the digestive tract and return them to the bloodstream is a lymphatic function."
@@ -225,10 +225,10 @@
     "cat": "MT_lec14-15",
     "q": "Within active immunity, how do the natural and artificial forms differ?",
     "options": [
-     "Natural active immunity follows a vaccine, while artificial active immunity follows a natural infection.",
-     "Natural active immunity is given as antiserum, while artificial active immunity is passed through breast milk.",
-     "Both natural and artificial active immunity are short-lived and rely on antibodies from another source.",
-     "Natural active immunity develops after an infection, while artificial active immunity develops after administration of a vaccine."
+     "Natural active immunity follows a vaccine, while artificial active follows an infection.",
+     "Natural active immunity is given as serum, while artificial active passes in breast milk.",
+     "Both forms are short-lived and depend on antibodies supplied from another person.",
+     "Natural active immunity follows an infection, while artificial active follows a vaccine."
     ],
     "correct": 3,
     "explain": "Active immunity means the host makes its own antibodies. The natural route is recovery from an actual infection, and the artificial route is vaccination. Natural active immunity follows a vaccine, while artificial active immunity follows a natural infection, swaps the two labels. Natural active immunity is given as antiserum, while artificial active immunity is passed through breast milk, lists transfers of preformed antibody, which are passive. Both natural and artificial active immunity are short-lived and rely on antibodies from another source, calls active immunity short-lived and dependent on an outside source."
@@ -239,10 +239,10 @@
     "cat": "MT_lec14-15",
     "q": "Within passive immunity, how do the natural and artificial forms differ?",
     "options": [
-     "Natural passive immunity follows a vaccine given to the host, while artificial passive immunity follows the host's recovery from a clinical infection.",
-     "Natural passive immunity passes from mother to fetus through the placenta and to the infant through breast milk, while artificial passive immunity is given as an injection of antibody-containing serum.",
-     "Natural passive immunity is built by the host after an exposure, while artificial passive immunity is built by the host after a vaccine dose.",
-     "Both natural and artificial passive immunity are long-lasting states created by the host's own memory cells after first contact."
+     "Natural passive immunity follows a vaccine, while artificial passive follows recovery from infection.",
+     "Natural passive immunity passes by placenta and breast milk, while artificial passive is injected serum.",
+     "Natural passive immunity is built by the host after exposure, and artificial passive after a vaccine.",
+     "Both forms are long-lasting states built by the host’s own memory cells after first contact."
     ],
     "correct": 1,
     "explain": "Passive immunity supplies preformed antibody. The natural route is maternal transfer across the placenta and through breast milk, and the artificial route is an injection of serum that already contains antibodies. Natural passive immunity follows a vaccine given to the host, while artificial passive immunity follows the host's recovery from a clinical infection, describes active immunity. Natural passive immunity is built by the host after an exposure, while artificial passive immunity is built by the host after a vaccine dose, also describes active immunity. Both natural and artificial passive immunity are long-lasting states created by the host's own memory cells after first contact, gives passive immunity the duration and memory of active immunity."
@@ -380,9 +380,9 @@
     "q": "What does the term lymphoduct mean?",
     "options": [
      "A duct that carries blood away from the heart.",
-     "A duct that carries lymph through the lymphatic system.",
-     "A duct that carries bile from the liver.",
-     "A duct that carries urine from the kidney."
+     "A duct that carries lymph in the lymphatic system.",
+     "A duct that carries bile away from the liver.",
+     "A duct that carries urine away from the kidney."
     ],
     "correct": 1,
     "explain": "Lymphoduct is built from Lymph/o (lymph) and duct (a channel), so it denotes a duct that carries lymph through the lymphatic system. Blood vessels, bile ducts, and ureters are named by other combining forms and suffixes, such as vas/o, cholangi/o, and ureter/o."
@@ -506,9 +506,9 @@
     "q": "Which structures are found in the lining of the small intestine and monitor and destroy bacteria?",
     "options": [
      "The Peyer's patches.",
-     "The tonsils.",
-     "The adenoids.",
-     "The appendix."
+     "The palatine tonsils.",
+     "The adenoid tissue.",
+     "The appendix wall."
     ],
     "correct": 0,
     "explain": "The Peyer's patches are found in the lining of the small intestine and monitor and destroy bacteria. The tonsils and adenoids trap pathogens from food and air, and the appendix plays a role in housing good bacteria."
@@ -547,10 +547,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the relationship between interstitial fluid and lymph?",
     "options": [
-     "Interstitial fluid is the fluid inside blood vessels, and lymph is the fluid inside lymphatic vessels.",
-     "Interstitial fluid is the fluid between tissue cells, and lymph is the fluid once it has entered the lymphatic capillaries.",
-     "Interstitial fluid is the fluid inside the cells, and lymph is the fluid inside the bone marrow.",
-     "Interstitial fluid is the fluid in the thoracic duct, and lymph is the fluid in the blood capillaries."
+     "Interstitial fluid is inside blood vessels, and lymph is the fluid inside lymphatic vessels.",
+     "Interstitial fluid lies between tissue cells, and lymph is that fluid inside lymphatic capillaries.",
+     "Interstitial fluid is inside the cells, and lymph is the fluid held inside the bone marrow.",
+     "Interstitial fluid fills the thoracic duct, and lymph is the fluid inside blood capillaries."
     ],
     "correct": 1,
     "explain": "Interstitial fluid is the fluid that bathes the tissue cells, and once it enters the lymphatic capillaries it is called lymph. Interstitial fluid is the fluid inside blood vessels, and lymph is the fluid inside lymphatic vessels, reverses the two. Interstitial fluid is the fluid inside the cells, and lymph is the fluid inside the bone marrow, places them inside cells and marrow. Interstitial fluid is the fluid in the thoracic duct, and lymph is the fluid in the blood capillaries, reverses the ducts and capillaries."
@@ -589,10 +589,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes how lymph is returned to the bloodstream?",
     "options": [
-     "Lymph is collected by lymphatic capillaries, filtered through lymph nodes, and returned to the bloodstream through the lymphatic trunks and ducts.",
-     "Lymph is collected by the arteries, filtered through the spleen, and returned to the bloodstream through the veins.",
-     "Lymph is produced in the bone marrow, filtered through the thymus, and returned to the bloodstream through the heart.",
-     "Lymph is produced in the tonsils, filtered through the appendix, and returned to the bloodstream through the lungs."
+     "Lymph enters lymphatic capillaries, passes through lymph nodes, and returns through lymphatic ducts.",
+     "Lymph is collected by the arteries, filtered through the spleen, and returned through the veins.",
+     "Lymph is made in the bone marrow, filtered through the thymus, and returned through the heart.",
+     "Lymph is made in the tonsils, filtered through the appendix, and returned through the lungs."
     ],
     "correct": 0,
     "explain": "Lymph is collected by the lymphatic capillaries, filtered through the lymph nodes, and returned to the bloodstream through the lymphatic trunks and ducts. Lymph is collected by the arteries, filtered through the spleen, and returned to the bloodstream through the veins, assigns the path to blood vessels and the spleen. Lymph is produced in the bone marrow, filtered through the thymus, and returned to the bloodstream through the heart, assigns it to marrow, thymus, and heart. Lymph is produced in the tonsils, filtered through the appendix, and returned to the bloodstream through the lungs, assigns it to tonsils, appendix, and lungs."
@@ -1042,10 +1042,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the lymph nodes in the lymphatic system?",
     "options": [
-     "They filter microorganisms and foreign particles from the lymph as it passes through.",
-     "They produce red blood cells, white blood cells, and platelets.",
-     "They manufacture antibodies and release them into the bloodstream.",
-     "They store old and damaged red blood cells until they can be removed."
+     "They filter microorganisms and foreign particles from lymph passing through.",
+     "They produce red blood cells, white blood cells, and platelets for the blood.",
+     "They manufacture antibodies and release them straight into the bloodstream.",
+     "They store old and damaged red blood cells until the body can remove them."
     ],
     "correct": 0,
     "explain": "The lymph nodes filter microorganisms and foreign particles from the lymph as it passes through, which is a key part of the lymphatic system's protective role. Blood cell production is a bone marrow function, antibody manufacture is a B-cell function, and storage of old red cells is a splenic function."
@@ -1056,10 +1056,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of lymphatic capillaries?",
     "options": [
-     "They carry blood away from the heart under pressure.",
-     "They collect interstitial fluid from the tissues and begin its return to the bloodstream.",
-     "They produce T-lymphocytes that fight foreign organisms.",
-     "They store old and damaged blood cells until they can be removed."
+     "They carry blood away from the heart under high arterial pressure.",
+     "They collect interstitial fluid and begin its return to the blood.",
+     "They produce the T-lymphocytes that fight foreign organisms.",
+     "They store old and damaged blood cells until they are removed."
     ],
     "correct": 1,
     "explain": "Lymphatic capillaries collect interstitial fluid from the tissues and begin its return to the bloodstream as lymph. Carrying blood away from the heart is an arterial function, T-lymphocyte production is a thymic function, and storage of old blood cells is a splenic function."
@@ -1070,10 +1070,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the thoracic duct in the lymphatic system?",
     "options": [
-     "It collects lymph from the lower body and the left side of the head and chest and returns it to the bloodstream.",
-     "It collects lymph from the right side of the head and chest and returns it to the bloodstream.",
-     "It filters microorganisms and foreign particles from the lymph as it passes through.",
-     "It produces red blood cells, white blood cells, and platelets."
+     "It drains lymph from the lower body and the left upper body into the blood.",
+     "It drains lymph from the right side of the head, neck, and chest into the blood.",
+     "It filters microorganisms and foreign particles from lymph as it passes.",
+     "It produces red blood cells, white blood cells, and platelets for the body."
     ],
     "correct": 0,
     "explain": "The thoracic duct collects lymph from the lower body and the left side of the head and chest and returns it to the bloodstream. The right lymphatic duct collects from the right side of the head and chest, filtration is a lymph node function, and blood cell production is a bone marrow function."
@@ -1126,10 +1126,10 @@
     "cat": "MT_lec14-15",
     "q": "Which statement correctly describes the role of the Peyer's patches in the lymphatic system?",
     "options": [
-     "They filter and remove old and damaged blood cells.",
-     "They produce T-lymphocytes that fight off foreign organisms.",
-     "They are found in the lining of the small intestine and monitor and destroy bacteria.",
-     "They produce red blood cells, white blood cells, and platelets."
+     "They filter and remove old and damaged blood cells from the circulation.",
+     "They produce the T-lymphocytes that fight off invading foreign organisms.",
+     "They sit in the small intestine lining and monitor and destroy bacteria.",
+     "They produce red blood cells, white blood cells, and platelets in bone."
     ],
     "correct": 2,
     "explain": "The Peyer's patches are found in the lining of the small intestine and monitor and destroy bacteria. Blood cell filtration is a splenic function, T-lymphocyte production is a thymic function, and blood cell production is a bone marrow function."
@@ -1805,9 +1805,9 @@
     "cat": "MT_lec14-15",
     "q": "What does SCT stand for?",
     "options": [
-     "Standard clotting time",
-     "Serum cell transfer",
-     "Splenic cell type",
+     "Standard clotting time test",
+     "Serum cell transfer process",
+     "Splenic cell type marker",
      "Specialized connective tissue"
     ],
     "correct": 3,
