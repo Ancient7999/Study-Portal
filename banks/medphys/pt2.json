@@ -1342,15 +1342,15 @@
     "id": "PHY40035",
     "type": "mcq",
     "cat": "Chapter 4: Shock Waves",
-    "q": "An aircraft flying at Mach 2.3 is traveling at a speed that is:",
+    "q": "An aircraft flies at Mach 2.3 through air in which sound travels at 340 m/s. What is the speed of the aircraft?",
     "options": [
-     "2.1 times the speed of sound in air",
-     "2.3 times the speed of sound in air",
-     "2.4 times the speed of sound in air",
-     "2.8 times the speed of sound in air"
+     "148 m/s",
+     "342 m/s",
+     "680 m/s",
+     "782 m/s"
     ],
-    "correct": 1,
-    "explain": "The Mach number is the ratio of the object's speed to the speed of sound in the surrounding medium. For an aircraft flying in air, Mach 2.3 means the aircraft is traveling at 2.3 times the speed of sound in air. The other ratios are close enough to be plausible but do not match the stated Mach number."
+    "correct": 3,
+    "explain": "The Mach number is the source speed divided by the speed of sound, so the source speed is M × v = 2.3 × 340 m/s = 782 m/s. 148 m/s divides instead of multiplying, 342 m/s adds 2.3 to 340, and 680 m/s is Mach 2."
    },
    {
     "id": "PHY40036",
@@ -1859,15 +1859,15 @@
     "id": "PHY50002",
     "type": "mcq",
     "cat": "Chapter 5: Reflection and Mirrors",
-    "q": "A light ray strikes a plane mirror at an angle of incidence of 35 degrees. What is the angle of reflection?",
+    "q": "A light ray strikes a plane mirror at 35 degrees to the mirror surface. What is the angle of reflection, measured from the normal?",
     "options": [
-     "55 degrees",
      "35 degrees",
+     "55 degrees",
      "70 degrees",
-     "17.5 degrees"
+     "145 degrees"
     ],
     "correct": 1,
-    "explain": "The law of reflection states that the angle of incidence equals the angle of reflection, both measured from the normal. Therefore the angle of reflection is also 35 degrees. The line '55 degrees' is the complementary angle measured from the surface rather than from the normal. The line '70 degrees' doubles the angle, and '17.5 degrees' halves it."
+    "explain": "Angles of incidence and reflection are measured from the normal. A ray at 35 degrees to the surface is at 90 − 35 = 55 degrees to the normal, so the angle of incidence is 55 degrees and, by the law of reflection, so is the angle of reflection. 35 degrees is the angle from the surface, 70 degrees doubles it, and 145 degrees is 180 − 35."
    },
    {
     "id": "PHY50003",
@@ -2738,9 +2738,9 @@
       "prompt": "Object between F and the lens. What image is formed?",
       "options": [
        "Virtual, upright, larger than the object, on the same side of the lens",
-       "Real, inverted, larger than the object, beyond 2F",
-       "Virtual, inverted, smaller than the object, on the other side",
-       "No image, because the refracted rays are parallel"
+       "Real, inverted, larger than the object, on the far side of the lens",
+       "Virtual, inverted, smaller than the object, on the far side of the lens",
+       "No image, because the rays leave the lens parallel to each other"
       ],
       "correct": 0
      }
