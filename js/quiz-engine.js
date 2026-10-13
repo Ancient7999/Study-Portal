@@ -1248,7 +1248,7 @@ function renderSaq(q, ans){
   const wrap=document.createElement('div'); wrap.className='saq-wrap';
   const input=document.createElement('input');
   input.type='text'; input.className='saq-input'+(done?' correct':''); input.id='saqInput';
-  input.autocomplete='off'; input.spellcheck=false; input.setAttribute('autocapitalize','off');
+  input.autocomplete='off'; input.spellcheck=false; input.setAttribute('autocapitalize','sentences'); input.setAttribute('autocorrect','off');
   input.placeholder='Type your answer'; input.setAttribute('aria-label','Your answer');
   input.value=done?ans.text:'';
   input.disabled=done;
@@ -1338,7 +1338,7 @@ function labelFigureHTML(q, a, review){
     } else if(done){
       h+='<div class="label-slot locked" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(slots[l.id])+'</span></div>';
     } else if(labelTyping){
-      h+='<div class="label-slot typing" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><input class="label-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" aria-label="Label '+escapeHtml(l.id)+'"><div class="label-echo" aria-live="polite"></div></div>';
+      h+='<div class="label-slot typing" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><input class="label-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label '+escapeHtml(l.id)+'"><div class="label-echo" aria-live="polite"></div></div>';
     } else {
       h+='<div class="label-slot open" data-id="'+escapeHtml(l.id)+'" style="'+style+'" role="button" tabindex="0" aria-label="Empty label"></div>';
     }

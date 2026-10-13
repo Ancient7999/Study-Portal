@@ -164,7 +164,7 @@
         const t = slots[l.id];
         if (t != null && matches(l, t)) h += '<div class="label-slot locked" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
         else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
-        else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
+        else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
     h += '</div></div><button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button></div>';
@@ -173,7 +173,7 @@
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
       else if (t != null && matches(l, t)) h += '<div class="simg-name done"><span class="simg-name-label">' + q + '</span><span class="simg-name-locked">✓ ' + esc(t) + '</span></div>';
       else if (mode === 'bank') h += '<div class="simg-name"><span class="simg-name-label">' + q + '</span><div class="label-slot open simg-name-slot" data-id="name" tabindex="0" role="button" aria-label="Drop the name here">drop the name here</div></div>';
-      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Type the name"><button type="button" class="nav-btn primary simg-name-check">Check</button><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
+      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><button type="button" class="nav-btn primary simg-name-check">Check</button><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
     }
     if (mode === 'bank') {
       const open = labels.filter(l => !(slots[l.id] != null && matches(l, slots[l.id])));
