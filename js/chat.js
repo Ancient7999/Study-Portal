@@ -7,7 +7,10 @@
   const LS_FRIENDS = 'study_portal_friends_v1';
   const LS_RATE_GENERAL = 'study_portal_chat_rate_general_v1';
   const PRESENCE_MIN_MS = 4000;
-  const PRESENCE_HEARTBEAT_MS = 55000;
+  const PRESENCE_HEARTBEAT_MS = 30000;
+  const PRESENCE_FRESH_MS = 2 * 60 * 1000;   // counted as online if seen within this window
+  const PRESENCE_PURGE_MS = 10 * 60 * 1000;  // older entries are removed by any client
+  const PRESENCE_RECOUNT_MS = 30000;
   const FRIENDS_MAX = 40;
 
   const CHANNELS = [
@@ -54,6 +57,8 @@
     lastPresenceAt: 0,
     lastPresenceSig: '',
     presenceTimer: null,
+    serverOffset: 0,
+    purged: {},
     rateLimits: loadRateLimits()
   };
 
@@ -243,6 +248,7 @@
       updatedAt: Date.now(),
       activity: activity
     };
+    const TS = (window.firebase && firebase.database && firebase.database.ServerValue && firebase.database.ServerValue.TIMESTAMP) || Date.now();
     if (activity === 'quiz' && state.quiz && (state.quiz.bank || state.quiz.form)) {
       payload.quiz = {};
       if (state.quiz.bank) payload.quiz.bank = String(state.quiz.bank).slice(0, 32);
@@ -262,8 +268,57 @@
     state.lastPresenceSig = sig;
     state.lastPresenceAt = now;
     const ref = db.ref('presence/' + me);
-    await ref.set(payload);
+    await ref.set(Object.assign({}, payload, { lastSeen: TS }));
     await ref.onDisconnect().remove();
+  }
+
+  /* Heartbeat: refresh only lastSeen (server time) so a tab that is killed
+     without its onDisconnect firing ages out of the count. */
+  async function touchPresence() {
+    const me = uid();
+    if (!me || !state.lastPresenceSig) return;
+    try {
+      const { db } = ensureFirebase();
+      const TS = (firebase.database.ServerValue && firebase.database.ServerValue.TIMESTAMP) || Date.now();
+      await db.ref('presence/' + me).update({ lastSeen: TS, updatedAt: Date.now() });
+    } catch (e) {}
+  }
+
+  function serverNow() {
+    return Date.now() + (state.serverOffset || 0);
+  }
+
+  /* Entries with a lastSeen within maxAge of now. Legacy entries without a
+     numeric lastSeen are treated as stale. */
+  function freshPresence(online, now, maxAge) {
+    const out = {};
+    const age = maxAge == null ? PRESENCE_FRESH_MS : maxAge;
+    Object.keys(online || {}).forEach((id) => {
+      const p = online[id];
+      const ls = p && typeof p.lastSeen === 'number' ? p.lastSeen : null;
+      if (ls != null && now - ls <= age) out[id] = p;
+    });
+    return out;
+  }
+
+  function stalePresenceIds(online, now, maxAge) {
+    const age = maxAge == null ? PRESENCE_PURGE_MS : maxAge;
+    return Object.keys(online || {}).filter((id) => {
+      const p = online[id];
+      const ls = p && typeof p.lastSeen === 'number' ? p.lastSeen : null;
+      return ls == null || now - ls > age;
+    });
+  }
+
+  function purgeStalePresence() {
+    const me = uid();
+    if (!me) return;
+    const { db } = ensureFirebase();
+    stalePresenceIds(state.online, serverNow()).forEach((id) => {
+      if (id === me || state.purged[id]) return;
+      state.purged[id] = true;
+      db.ref('presence/' + id).remove().catch(() => {});
+    });
   }
 
   function listenPresence() {
@@ -272,6 +327,7 @@
     const ref = db.ref('presence');
     const handler = (snap) => {
       state.online = snap.val() || {};
+      purgeStalePresence();
       updateChannelMeta();
       renderFriendsPanel();
     };
@@ -281,7 +337,8 @@
 
   function getOnlineList() {
     const me = uid();
-    return Object.keys(state.online)
+    const fresh = freshPresence(state.online, serverNow());
+    return Object.keys(fresh)
       .filter((id) => id !== me)
       .map((id) => ({
         uid: id,
@@ -550,8 +607,9 @@
     const offlineFriends = [];
     friends.forEach((f) => {
       if (me && f.uid === me) return;
-      if (state.online[f.uid]) {
-        const p = state.online[f.uid];
+      const fresh = freshPresence(state.online, serverNow());
+      if (fresh[f.uid]) {
+        const p = fresh[f.uid];
         onlineFriends.push({
           uid: f.uid,
           displayName: p.displayName || f.displayName || 'Scholar',
@@ -743,7 +801,7 @@
   function onlineCount() {
     let me = null;
     try { me = uid(); } catch (e) {}
-    return countOnline(state.online, me);
+    return countOnline(freshPresence(state.online, serverNow()), me);
   }
 
   function updateChannelMeta() {
@@ -794,7 +852,15 @@
       
       try { if (localStorage.getItem(LS_DOCK) === '1') setOpen(true); } catch (e) {}
       
-      setInterval(() => { if (uid()) publishPresence(true); }, 60000);
+      try {
+        ensureFirebase().db.ref('.info/serverTimeOffset').on('value', (snap) => { state.serverOffset = Number(snap.val()) || 0; });
+      } catch (e) {}
+      setInterval(() => { if (uid()) touchPresence(); }, PRESENCE_HEARTBEAT_MS);
+      setInterval(() => { if (uid()) publishPresence(true); }, 5 * 60000);
+      setInterval(() => { purgeStalePresence(); updateChannelMeta(); renderFriendsPanel(); }, PRESENCE_RECOUNT_MS);
+      const onWake = () => { if (document.visibilityState !== 'hidden') touchPresence(); };
+      document.addEventListener('visibilitychange', onWake);
+      window.addEventListener('focus', onWake);
       state.ready = true;
     } catch (e) {
       console.warn('chat start', e);
@@ -907,6 +973,8 @@
     applyFriendsFromCloud,
     isReady: () => state.ready,
     countOnline,
+    freshPresence,
+    stalePresenceIds,
     refreshOnlineCount: updateChannelMeta
   };
 })(window);
