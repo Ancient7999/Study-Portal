@@ -310,12 +310,12 @@
         "q": "Which set consists entirely of combining forms that mean chest?",
         "options": [
           "Thorac/o, Pector/o, and Steth/o",
-          "Trache/o, Phren/o, and Palat/o",
-          "Nas/o, Or/o, and Uvul/o",
-          "Alveol/o, Bronchiol/o, and Pleur/o"
+          "Phren/o, Thorac/o, and Steth/o",
+          "Pector/o, Pleur/o, and Thorac/o",
+          "Steth/o, Pector/o, and Trache/o"
         ],
         "correct": 0,
-        "explain": "Thorac/o, Pector/o, and Steth/o are the three combining forms given the meaning chest. Trache/o, Phren/o, and Palat/o name the windpipe, diaphragm, and palate. Nas/o, Or/o, and Uvul/o name the nose, mouth, and uvula. Alveol/o, Bronchiol/o, and Pleur/o name the air sac, bronchiole, and pleura."
+        "explain": "Thorac/o, Pector/o, and Steth/o are the three combining forms that mean chest. Each other set holds two chest forms and one intruder: Phren/o means diaphragm, Pleur/o means pleura, and Trache/o means windpipe."
       },
       {
         "id": "MT16019",
