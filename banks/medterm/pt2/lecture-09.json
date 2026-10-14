@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 9 - Combining Form Part 2",
- "formSize": 82,
+ "formSize": 85,
  "forms": [
   "A"
  ],
@@ -377,7 +377,7 @@
     "id": "MT10927",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "All of the following pairs are synonym combining forms, that is, two spellings of the same meaning, EXCEPT:",
+    "q": "Which pair is NOT two spellings of one meaning?",
     "options": [
      "Derm/o and Dermat/o",
      "Cyt/o and Gen/o",
@@ -385,13 +385,13 @@
      "Dermat/o and Cutane/o"
     ],
     "correct": 1,
-    "explain": "Cyt/o means cell and Gen/o means origin or production, so this pair is not a synonym set and is the exception. The other three pairs are alternate spellings of one meaning: Derm/o, Dermat/o, and Cutane/o all mean skin, and Tox/o and Toxic/o both mean poison."
+    "explain": "Cyt/o (cell) and Gen/o (origin or production) differ in meaning. Derm/o, Dermat/o, and Cutane/o all mean skin; Tox/o and Toxic/o both mean poison."
    },
    {
     "id": "MT10928",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "Which combining form denotes a physiological function rather than a structure or a substance?",
+    "q": "Which combining form names a function, not a structure or substance?",
     "options": [
      "Cyt/o",
      "Hepat/o",
@@ -399,13 +399,13 @@
      "Lith/o"
     ],
     "correct": 2,
-    "explain": "Crin/o means to secrete, an action or function. Cyt/o (cell) and Hepat/o (liver) name structures, and Lith/o (stone) names a substance or formed mass, so the only function word among the choices is Crin/o."
+    "explain": "Crin/o means to secrete, a function. Cyt/o (cell) and Hepat/o (liver) are structures; Lith/o (stone) is a substance."
    },
    {
     "id": "MT10929",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "All of the following combining forms are classed with the general or abstract group rather than with organs and structures EXCEPT:",
+    "q": "Which combining form belongs to the organ group, not the general group?",
     "options": [
      "Lith/o",
      "Necr/o",
@@ -413,7 +413,7 @@
      "Onc/o"
     ],
     "correct": 2,
-    "explain": "Hepat/o means liver and names an organ, so it is the exception. Lith/o (stone), Necr/o (death), and Onc/o (tumor or mass) belong to the general or abstract group, denoting a thing or a process rather than an organ."
+    "explain": "Hepat/o (liver) is an organ. Lith/o (stone), Necr/o (death), and Onc/o (tumor or mass) are in the general group."
    },
    {
     "id": "MT10930",
@@ -475,7 +475,7 @@
     "id": "MT10934",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "The combining form Ped/o carries two senses, child and foot. In the term bipedal (P+R+S), which sense applies?",
+    "q": "In bipedal (P+R+S), which sense of Ped/o applies?",
     "options": [
      "Foot",
      "Child",
@@ -483,7 +483,7 @@
      "Stomach"
     ],
     "correct": 0,
-    "explain": "In bipedal the prefix bi- means two, so the structure counted is feet, and ped takes the foot sense, giving having two feet. The child sense of Ped/o is the other reading and is the natural mispick here, while cell is Cyt/o and stomach is Gastr/o; the dual gloss of Ped/o means the sense must be chosen from the rest of the word, and two of something points to feet."
+    "explain": "Ped/o means child or foot. In bipedal, bi- (two) counts feet, so the foot sense applies. Cell is Cyt/o; stomach is Gastr/o."
    },
    {
     "id": "MT10935",
@@ -505,10 +505,10 @@
     "cat": "MT_lec9",
     "q": "What does the term cytotoxic mean?",
     "options": [
-     "Damaging or poisonous to cells",
-     "Pertaining to the skin surface",
-     "Pertaining to the small intestine",
-     "Pertaining to the liver tissue"
+     "Poisonous to cells",
+     "Pertaining to the skin",
+     "Pertaining to the intestine",
+     "Pertaining to the liver"
     ],
     "correct": 0,
     "explain": "Cytotoxic is built from Cyt/o (cell) and tox (poison) with -ic (pertaining to), so it means damaging or poisonous to cells. Pertaining to the skin would use Derm/o or Cutane/o, pertaining to the small intestine would use Enter/o, and pertaining to the liver would use Hepat/o."
@@ -519,10 +519,10 @@
     "cat": "MT_lec9",
     "q": "What does the term dermatologist mean?",
     "options": [
-     "A specialist in disorders of the skin",
-     "A technician who records skin images",
-     "A surgeon who repairs the skin after burns",
-     "A specialist in disorders of the hair only"
+     "Specialist in skin disorders",
+     "Technician who images skin",
+     "Surgeon who repairs burned skin",
+     "Specialist in hair disorders"
     ],
     "correct": 0,
     "explain": "Dermatologist is built from Dermat/o (skin) and -ologist (specialist), so it denotes a specialist in disorders of the skin. The other options keep part of the term but change another word part, so they do not match."
@@ -533,7 +533,7 @@
     "cat": "MT_lec9",
     "q": "What does the term enterocele mean?",
     "options": [
-     "A hernia of the small intestine",
+     "Hernia of the small intestine",
      "Downward displacement of the stomach",
      "Process of examining the esophagus",
      "Surgical removal of the liver"
@@ -547,10 +547,10 @@
     "cat": "MT_lec9",
     "q": "What does the term esophagoscopy mean?",
     "options": [
-     "Process of examining the esophagus with an instrument",
-     "Surgical removal of part or all of the esophagus",
-     "Downward displacement or drooping of the esophagus",
-     "A hernia of the esophagus through a weakness"
+     "Examining the esophagus with an instrument",
+     "Removing part or all of the esophagus",
+     "Downward drooping of the esophagus",
+     "Hernia of the esophagus through a weakness"
     ],
     "correct": 0,
     "explain": "Esophagoscopy is Esophag/o (esophagus) plus -scopy (process of examining with an instrument). Removal would be -ectomy, drooping would be -ptosis, and a hernia would be -cele."
@@ -561,10 +561,10 @@
     "cat": "MT_lec9",
     "q": "What does the term gastroptosis mean?",
     "options": [
-     "Downward displacement or drooping of the stomach",
-     "Inflammation of the lining of the stomach",
-     "A hernia of the stomach through the diaphragm",
-     "Surgical removal of part of the stomach"
+     "Downward displacement of the stomach",
+     "Inflammation of the stomach lining",
+     "Hernia of the stomach through diaphragm",
+     "Surgical removal of stomach part"
     ],
     "correct": 0,
     "explain": "Gastroptosis is built from Gastr/o (stomach) and -ptosis (downward displacement or drooping), so it denotes a drooping of the stomach. The other options keep part of the term but change another word part, so they do not match."
@@ -603,13 +603,13 @@
     "cat": "MT_lec9",
     "q": "What does the term endocrinology mean?",
     "options": [
-     "The study of glands and the substances they secrete within",
-     "Loss of sensation produced by blocking ordinary sensory input",
-     "A written record of origin or of family relationships",
-     "A clinical specialist in disorders that affect women"
+     "Study of glands secreting within the body",
+     "Study of tumors and other masses",
+     "Study of glands secreting outside the body",
+     "Study of the nature of disease"
     ],
     "correct": 0,
-    "explain": "Endocrinology is built from endo- (within), Crin/o (to secrete), and -logy (study), so it denotes the study of glands and the substances they secrete within the body. Loss of sensation is anesthesia, a record of origin is genogram, and a specialist in disorders of women is gynecologist."
+    "explain": "Endocrinology is endo- (within) + Crin/o (to secrete) + -logy (study): the study of glands secreting within the body. Secreting outside would be exo-; tumors are oncology; disease is pathology."
    },
    {
     "id": "MT10944",
@@ -618,12 +618,12 @@
     "q": "What does the term anesthesia mean?",
     "options": [
      "Loss of sensation",
-     "The study of glands and their secretions",
-     "Exaggerated fear of water",
-     "Hardening of the skin"
+     "Fear of water",
+     "Hardening of skin",
+     "Study of glands"
     ],
     "correct": 0,
-    "explain": "Anesthesia is built from an- (without), Esthesi/o (sensation), and -ia (condition), so it denotes loss of sensation. The vowel-initial -ia leaves the root bare, so the form is P+R+S. The study of glands is endocrinology, fear of water is hydrophobia, and hardening of the skin is scleroderma."
+    "explain": "Anesthesia is an- (without) + esthesi (sensation) + -ia (condition): loss of sensation. Fear of water is hydrophobia, hardening of skin is scleroderma, and the study of glands is endocrinology."
    },
    {
     "id": "MT10945",
@@ -645,13 +645,13 @@
     "cat": "MT_lec9",
     "q": "What does the term genogram mean?",
     "options": [
-     "A record of origin or of family relationships",
-     "The study of tumors and other abnormal masses",
-     "The process of measuring form or body shape",
-     "A condition of death in tissue or in cells"
+     "Record of family origin",
+     "Study of tumors or masses",
+     "Process of measuring body form",
+     "Death of tissue or cells"
     ],
     "correct": 0,
-    "explain": "Genogram is built from Gen/o (origin or production) and -gram (record), so it denotes a record of origin or of family relationships. The study of tumors is oncology, measuring form is morphometry, and tissue death is necrosis."
+    "explain": "Genogram is Gen/o (origin) + gram (record): a record of origin or family relationships. Tumors are oncology, measuring form is morphometry, death of tissue is necrosis."
    },
    {
     "id": "MT10947",
@@ -659,10 +659,10 @@
     "cat": "MT_lec9",
     "q": "What does the term gynecologist mean?",
     "options": [
-     "A specialist in disorders of women",
-     "A specialist in disorders of the skin",
-     "A specialist who studies the nature of disease",
-     "A specialist who performs imaging using sound waves"
+     "Specialist in disorders of women",
+     "Specialist in disorders of skin",
+     "Specialist in the nature of disease",
+     "Specialist who performs sound imaging"
     ],
     "correct": 0,
     "explain": "Gynecologist is built from Gynec/o (woman) and -ologist (specialist), so it denotes a specialist in disorders of women. A skin specialist is dermatologist, a specialist in the nature of disease is pathobiologist, and a sound-imaging specialist is sonographer."
@@ -673,10 +673,10 @@
     "cat": "MT_lec9",
     "q": "What does the term lithotripsy mean?",
     "options": [
-     "Crushing of a stone or of stones",
-     "A benign tumor of fiber and gland tissue",
-     "Abnormal narrowing of a passage or vessel",
-     "Hardening of the skin over a body region"
+     "Crushing of stones",
+     "Tumor of fiber and gland",
+     "Narrowing of a passage",
+     "Hardening of the skin"
     ],
     "correct": 0,
     "explain": "Lithotripsy is built from Lith/o (stone) and -tripsy (crushing), so it denotes crushing of stones. A benign glandular tumor is fibroadenoma, abnormal narrowing is stenosis, and hardening of the skin is scleroderma."
@@ -715,13 +715,13 @@
     "cat": "MT_lec9",
     "q": "What does the term orthopedist mean?",
     "options": [
-     "A specialist in the correction of musculoskeletal deformities",
-     "A specialist who studies the life and nature of disease",
-     "A specialist in disorders that specifically affect women",
-     "A specialist in disorders that specifically affect the skin"
+     "Specialist in correcting deformities",
+     "Specialist in the nature of disease",
+     "Specialist in disorders of women",
+     "Specialist in disorders of the skin"
     ],
     "correct": 0,
-    "explain": "Orthopedist is built from Orth/o (straight or correct), ped (child or foot), and -ist (specialist), so it denotes a specialist in the correction of deformities of the musculoskeletal structure. A specialist in the nature of disease is pathobiologist, a specialist in women is gynecologist, and a skin specialist is dermatologist."
+    "explain": "Orthopedist is orth/o (straight or correct) + ped (foot) + -ist (specialist): a specialist in correcting musculoskeletal deformities. Disease is pathobiologist, women is gynecologist, skin is dermatologist."
    },
    {
     "id": "MT10952",
@@ -730,8 +730,8 @@
     "q": "What does the term morphometry mean?",
     "options": [
      "Process of measuring form",
-     "The study of tumors",
-     "A record of origin or of family relationships",
+     "Study of tumors",
+     "Record of family origin",
      "Death of tissue or cells"
     ],
     "correct": 0,
@@ -743,10 +743,10 @@
     "cat": "MT_lec9",
     "q": "What does the term pathobiologist mean?",
     "options": [
-     "A specialist who studies the nature of disease",
-     "A specialist in disorders of women",
-     "A specialist in disorders of the skin",
-     "A specialist in the correction of musculoskeletal deformities"
+     "Specialist in the nature of disease",
+     "Specialist in disorders of women",
+     "Specialist in disorders of the skin",
+     "Specialist in correcting musculoskeletal deformities"
     ],
     "correct": 0,
     "explain": "Pathobiologist is built from Path/o (disease), bi/o (life), and -logist (specialist), so it denotes a specialist who studies the nature of disease, with two roots giving CF+CF+S. A specialist in women is gynecologist, a skin specialist is dermatologist, and a musculoskeletal specialist is orthopedist."
@@ -785,10 +785,10 @@
     "cat": "MT_lec9",
     "q": "What does the term toxicoderma mean?",
     "options": [
-     "A skin condition caused by poison",
+     "Skin condition from poison",
      "Hardening of the skin",
      "Exaggerated fear of water",
-     "A disorder featuring errors of speech"
+     "Disorder of speech errors"
     ],
     "correct": 0,
     "explain": "Toxicoderma is built from Toxic/o (poison) and derma (skin), so it denotes a skin condition caused by poison, with derma as a root giving CF+R. Hardening of the skin is scleroderma, fear of water is hydrophobia, and speech errors is paraphasia."
@@ -813,13 +813,13 @@
     "cat": "MT_lec9",
     "q": "What does the term stenosis mean?",
     "options": [
-     "Abnormal narrowing of a passage or vessel",
-     "A hardening of the skin",
+     "Narrowing of a passage",
+     "Hardening of the skin",
      "Death of tissue or cells",
-     "A record of origin or of family relationships"
+     "Record of family origin"
     ],
     "correct": 0,
-    "explain": "Stenosis is built from Sten/o (narrow) and -osis (condition), so it denotes an abnormal narrowing of a passage or vessel. The root sten ends in a consonant and the vowel-initial -osis drops the combining vowel, giving R+S. Hardening of the skin is scleroderma, tissue death is necrosis, and a record of origin is genogram."
+    "explain": "Stenosis is sten (narrow) + -osis (condition): abnormal narrowing of a passage or vessel. Hardening of skin is scleroderma, tissue death is necrosis, a family record is genogram."
    },
    {
     "id": "MT10959",
@@ -828,8 +828,8 @@
     "q": "What does the term scleroderma mean?",
     "options": [
      "Hardening of the skin",
-     "Abnormal narrowing of a passage",
-     "A skin condition caused by poison",
+     "Narrowing of a passage",
+     "Skin condition from poison",
      "Exaggerated fear of water"
     ],
     "correct": 0,
@@ -841,117 +841,366 @@
     "cat": "MT_lec9",
     "q": "What does the term sonographer mean?",
     "options": [
-     "A specialist who performs imaging using sound waves",
-     "A specialist who treats hearing loss from loud sound",
-     "A device that records sound waves from the heart",
-     "A specialist who studies the physics of sound"
+     "Specialist in imaging with sound waves",
+     "Specialist treating hearing loss from noise",
+     "Device recording heart sound waves",
+     "Specialist in the physics of sound"
     ],
     "correct": 0,
     "explain": "Sonographer is built from Son/o (sound) and -grapher (one who records or images), so it denotes a specialist who performs imaging using sound waves. The other options keep part of the term but change another word part, so they do not match."
    },
    {
     "id": "MT10961",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Hepatectomy is built as R+S while gastroptosis is built as CF+S, although both join an organ combining form to a surgical suffix. Which statement explains the difference?",
-    "options": [
-     "The suffix -ptosis begins with a vowel, so o is dropped; the suffix -ectomy begins with a consonant, so the combining vowel o is kept.",
-     "Both suffixes begin with consonants, but -ectomy drops the combining vowel under a same-vowel rule at the join.",
-     "Both terms keep the combining vowel o, but hepatectomy hides it because the root hepat itself ends in a vowel.",
-     "The suffix -ectomy begins with a vowel, so o is dropped; the suffix -ptosis begins with a consonant, so the combining vowel o is kept."
+    "q": "Compare the builds of hepatectomy and gastroptosis.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which letter type begins the suffix -ectomy?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "-ectomy begins with a vowel. Which build is hepatectomy?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which letter type begins the suffix -ptosis?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "4",
+      "prompt": "-ptosis begins with a consonant. Which build is gastroptosis?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 1
+     }
     ],
-    "correct": 3,
-    "explain": "A consonant-final root plus a vowel-initial suffix takes no combining vowel, whereas a consonant-final root plus a consonant-initial suffix keeps the combining vowel o. The root hepat ends in a consonant and -ectomy opens with the vowel e, so no o appears and the form is R+S (hepat + ectomy). The root gastr ends in a consonant and -ptosis opens with the consonant p, so o is inserted and the form is CF+S (gastr/o + ptosis). Reversing which suffix is vowel-initial swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Tying the drop to a vowel at the end of hepat is wrong, because hepat ends in a consonant."
+    "explain": "Hepat and gastr both end in a consonant. -ectomy begins with a vowel, so o is dropped: hepat + ectomy (R+S). -ptosis begins with a consonant, so o is kept: gastr/o + ptosis (CF+S). No same-vowel rule applies."
    },
    {
     "id": "MT10962",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Carcinoma is built as R+S while oncology is built as CF+S, although both are built on a combining form for an abnormal growth. Which statement explains the difference?",
-    "options": [
-     "The suffix -logy begins with a vowel, so o is dropped; the suffix -oma begins with a consonant, so the combining vowel o is kept.",
-     "The suffix -oma begins with a vowel, so o is dropped; the suffix -logy begins with a consonant, so the combining vowel o is kept.",
-     "Both suffixes begin with consonants, but -oma drops the combining vowel under a same-vowel rule at the join.",
-     "Both terms keep the combining vowel o, but carcinoma hides it because the root carcin itself ends in a vowel."
+    "q": "Compare the builds of carcinoma and oncology.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which letter type begins the suffix -oma?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "-oma begins with a vowel. Which build is carcinoma?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which letter type begins the suffix -logy?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "4",
+      "prompt": "-logy begins with a consonant. Which build is oncology?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 1
+     }
     ],
-    "correct": 1,
-    "explain": "The root carcin ends in a consonant and the suffix -oma opens with the vowel o, so no combining vowel is used and the form is R+S (carcin + oma). The root onc ends in a consonant and the suffix -logy opens with the consonant l, so the combining vowel o is kept and the form is CF+S (onc/o + logy). Reversing which suffix is vowel-initial swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Tying the drop to a vowel at the end of carcin is wrong, because carcin ends in a consonant."
+    "explain": "Carcin and onc end in a consonant. -oma begins with a vowel, so o is dropped: carcin + oma (R+S). -logy begins with a consonant, so o is kept: onc/o + logy (CF+S)."
    },
    {
     "id": "MT10963",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Dermal and cutaneous are built as R+S while dermatologist is built as CF+S, although all three use a combining form for skin. Which statement explains the difference?",
-    "options": [
-     "The suffix -logist begins with a vowel, so dermatologist drops o, while -al and -ous begin with consonants and should keep the combining vowel",
-     "Both -al and -ous begin with consonants, so dermal and cutaneous should keep o, and -logist drops it by a same-vowel rule",
-     "The suffixes -al and -ous begin with vowels, so o is dropped (R+S); the suffix -logist begins with a consonant, so o is kept (CF+S)",
-     "All three terms keep the combining vowel o, but dermal and cutaneous lose it because derm and cutane end in a vowel"
+    "q": "Compare the builds of dermal and dermatologist.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which letter type begins the suffix -al?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "-al begins with a vowel. Which build is dermal?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which letter type begins the suffix -logist?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "4",
+      "prompt": "-logist begins with a consonant. Which build is dermatologist?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 1
+     }
     ],
-    "correct": 2,
-    "explain": "The roots derm and cutane end in consonants and the suffixes -al and -ous open with vowels, so no combining vowel is used and the forms are R+S (derm + al, cutane + ous). Dermatologist is analyzed as dermat/o + logist: the suffix -logist opens with the consonant l, so the combining vowel o is kept and the form is CF+S. Treating -logist as vowel-initial would drop o and contradict that build. Treating -al and -ous as consonant-initial would keep o in dermal and cutaneous, which the builds do not. Tying the drop to a vowel at the end of derm or cutane is wrong, because both roots end in a consonant."
+    "explain": "Derm ends in a consonant. -al begins with a vowel, so o is dropped: derm + al (R+S), like cutane + ous. -logist begins with a consonant, so o is kept: dermat/o + logist (CF+S)."
    },
    {
     "id": "MT10964",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Anesthesia is built as P+R+S while endocrinology is built as P+CF+S, although both place a prefix before a combining form. Which statement explains the difference at the root-suffix join?",
-    "options": [
-     "The suffix -ia begins with a vowel, so aesthesi stands bare (R); -logy begins with a consonant, so crin keeps combining vowel o (CF)",
-     "The suffix -logy begins with a vowel, so crin stands bare; the suffix -ia begins with a consonant, so aesthesi keeps combining vowel o",
-     "Both suffixes begin with consonants, but -ia drops the combining vowel under a same-vowel rule that these two joins do not meet",
-     "The difference comes from the prefixes: an- ends in a consonant so no vowel is added, while endo- ends in a vowel so o is inserted"
+    "q": "Compare the builds of anesthesia and endocrinology.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which letter type begins the suffix -ia?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "-ia begins with a vowel. Which build is anesthesia?",
+      "options": [
+       "P+R+S",
+       "P+CF+S",
+       "CF+R+S",
+       "P+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which letter type begins the suffix -logy?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "4",
+      "prompt": "-logy begins with a consonant. Which build is endocrinology?",
+      "options": [
+       "P+R+S",
+       "P+CF+S",
+       "CF+R+S",
+       "P+S"
+      ],
+      "correct": 1
+     },
+     {
+      "prompt": "Which join decides R or CF in these words?",
+      "options": [
+       "Root and suffix",
+       "Prefix and root"
+      ],
+      "correct": 0,
+      "id": "5"
+     }
     ],
-    "correct": 0,
-    "explain": "After the prefix, the build is decided by the root-suffix join. In anesthesia the root aesthesi meets the vowel-initial suffix -ia, so no combining vowel is used and the root is bare, giving P+R+S. In endocrinology the root crin meets the consonant-initial suffix -logy, so the combining vowel o is kept, giving P+CF+S. The prefix endo- ends in a vowel, but the root crin begins with a consonant, so the prefix-vowel rule is not triggered and endo- keeps its o. Reversing the suffix initials swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Attributing the difference to the prefixes misses the join that actually decides R versus CF."
+    "explain": "Both start with a prefix, but the root-suffix join decides R or CF. -ia begins with a vowel, so esthesi stands bare: an + esthesi + ia (P+R+S). -logy begins with a consonant, so crin keeps o: endo + crin/o + logy (P+CF+S). Endo- keeps its o because crin begins with a consonant."
    },
    {
     "id": "MT10965",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Fibroadenoma is built as CF+R+S. The combining vowel o after fibr is retained even though the next element aden begins with the vowel a. Which principle accounts for this?",
-    "options": [
-     "The o is dropped in correct spelling, so the build should be recorded as R+R+S rather than as CF+R+S.",
-     "The o links two roots, and a combining vowel bridges roots even when the next root opens with a vowel; the drop applies at a suffix.",
-     "The o is kept because the closing suffix -oma begins with a vowel, and that vowel forces a combining vowel earlier in the word.",
-     "The o is kept because a prefix fib- ends in a consonant, and a consonant-final prefix inserts a combining vowel after itself."
+    "q": "Fibroadenoma is made of fibr, aden, and oma.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which word part is aden?",
+      "options": [
+       "Root",
+       "Suffix",
+       "Prefix",
+       "Combining vowel"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Aden is a root. Is the o after fibr kept or dropped?",
+      "options": [
+       "Kept",
+       "Dropped"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "The o is kept. Which build is fibroadenoma?",
+      "options": [
+       "CF+R+S",
+       "R+R+S",
+       "P+R+S",
+       "CF+S"
+      ],
+      "correct": 0
+     }
     ],
-    "correct": 1,
-    "explain": "Fibroadenoma stacks two roots, fibr (fiber) and aden (gland), before the suffix -oma. Where two roots are joined, a combining vowel o is inserted to bridge them, and this holds even when the following root opens with a vowel. The drop-before-a-vowel behavior belongs to a root meeting a vowel-initial suffix, not to a root meeting another root. Hence fibr/o is a combining form, aden is the bare root, and -oma is the suffix, giving CF+R+S. Deleting the bridge would mis-analyze the word. The retention is not caused by the suffix -oma. There is no prefix fib- in the term."
+    "explain": "Fibr (fiber) and aden (gland) are two roots, then -oma. A combining vowel bridges two roots even before a vowel; the vowel drop applies only before a suffix. So fibr/o + aden + oma is CF+R+S. There is no prefix fib-."
    },
    {
     "id": "MT10966",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Toxicoderma is built as CF+R while cytotoxic is built as CF+R+S. What explains that one term has no suffix?",
-    "options": [
-     "Cytotoxic has no suffix, because the ending -ic is a combining vowel and not a word part with its own meaning.",
-     "Toxicoderma has no suffix, because derma is a root meaning skin: a combining form plus a root, then it stops.",
-     "Both terms have a suffix, but the suffix in toxicoderma is silent and is not written in the finished word.",
-     "Toxicoderma loses a suffix under the same-vowel rule, which deletes a whole ending when two vowels meet."
+    "q": "Compare the builds of toxicoderma and cytotoxic.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "In toxicoderma, which word part is derma?",
+      "options": [
+       "Root",
+       "Suffix",
+       "Prefix",
+       "Combining vowel"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Derma is a root. Which build is toxicoderma?",
+      "options": [
+       "CF+R",
+       "CF+R+S",
+       "R+S",
+       "CF+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "In cytotoxic, which word part is ic?",
+      "options": [
+       "Suffix",
+       "Root",
+       "Prefix",
+       "Combining vowel"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "4",
+      "prompt": "Ic is a suffix. Which build is cytotoxic?",
+      "options": [
+       "CF+R+S",
+       "CF+R",
+       "R+S",
+       "CF+S"
+      ],
+      "correct": 0
+     }
     ],
-    "correct": 1,
-    "explain": "In toxicoderma the element derma is a root (skin), not a suffix, so the word is the combining form tox/o plus the root derma with no closing suffix, giving CF+R. In cytotoxic the element -ic is a true suffix (pertaining to) attached after the root tox, giving CF+R+S. Calling -ic a combining vowel mislabels a suffix. There is no silent suffix in toxicoderma. The same-vowel rule drops a combining vowel at a join and does not delete a whole suffix."
+    "explain": "In toxicoderma, derma is a root (skin), so the word ends without a suffix: tox/o + derma (CF+R). In cytotoxic, -ic is a suffix (pertaining to): cyt/o + tox + ic (CF+R+S). No suffix is silent or deleted."
    },
    {
     "id": "MT10967",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec9",
-    "q": "Cutaneous is built as R+S while sonographer is built as CF+S. Which statement explains the difference at the root-suffix join?",
-    "options": [
-     "The suffix -ous begins with a vowel, so cutane stands bare (R); -grapher begins with a consonant, so son keeps its combining vowel o (CF)",
-     "The element -grapher begins with a vowel, so son stands bare; the suffix -ous begins with a consonant, so cutane keeps its combining vowel o",
-     "Both elements begin with consonants, but -ous drops the combining vowel under a same-vowel rule that this join does not meet",
-     "Both terms keep the combining vowel o, but cutaneous loses it because the root cutane is analyzed as ending in a vowel"
+    "q": "Compare the builds of cutaneous and sonographer.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which letter type begins the suffix -ous?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "-ous begins with a vowel. Which build is cutaneous?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which letter type begins the suffix -grapher?",
+      "options": [
+       "Vowel",
+       "Consonant"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "4",
+      "prompt": "-grapher begins with a consonant. Which build is sonographer?",
+      "options": [
+       "R+S",
+       "CF+S",
+       "CF+R",
+       "P+R+S"
+      ],
+      "correct": 1
+     }
     ],
-    "correct": 0,
-    "explain": "The root cutane ends in a consonant and the suffix -ous opens with the vowel o, so no combining vowel is used and the form is R+S (cutane + ous). The root son ends in a consonant and the element -grapher opens with the consonant g, so the combining vowel o is kept, giving CF+S (son/o + grapher). Reversing the initial letters swaps the two builds. A same-vowel drop needs identical vowels meeting at the join, which neither term has. Tying the drop to a vowel at the end of cutane is wrong, because cutane ends in a consonant."
+    "explain": "Cutane and son end in a consonant. -ous begins with a vowel, so o is dropped: cutane + ous (R+S). -grapher begins with a consonant, so o is kept: son/o + grapher (CF+S)."
    },
    {
     "id": "MT10968",
     "type": "matching",
     "cat": "MT_lec9",
-    "q": "Match each organ or structure combining form to the meaning it conveys.",
+    "q": "Match each organ or structure combining form to its meaning.",
     "leftItems": [
      {
       "id": "1",
@@ -964,10 +1213,6 @@
      {
       "id": "3",
       "text": "Enter/o"
-     },
-     {
-      "id": "4",
-      "text": "Esophag/o"
      },
      {
       "id": "5",
@@ -998,27 +1243,22 @@
      {
       "id": "E",
       "text": "Skin"
-     },
-     {
-      "id": "F",
-      "text": "Esophagus"
      }
     ],
     "correct_pairs": {
      "1": "B",
      "2": "E",
      "3": "D",
-     "4": "F",
      "5": "A",
      "6": "C"
     },
-    "explain": "Cyt/o means cell, as in cytotoxic. Derm/o means skin, as in dermal. Enter/o means small intestine, as in enterocele. Esophag/o means esophagus, as in esophagoscopy. Gastr/o means stomach, as in gastroptosis. Hepat/o means liver, as in hepatectomy. These six forms name organs or structures, and each pairs with exactly one meaning."
+    "explain": "Cyt/o is cell, Derm/o is skin, Enter/o is small intestine, Gastr/o is stomach, and Hepat/o is liver."
    },
    {
     "id": "MT10969",
     "type": "matching",
     "cat": "MT_lec9",
-    "q": "Match each remaining combining form from the general group to the meaning it conveys.",
+    "q": "Match each general-group combining form to its meaning.",
     "leftItems": [
      {
       "id": "1",
@@ -1033,10 +1273,6 @@
       "text": "Esthesi/o"
      },
      {
-      "id": "4",
-      "text": "Fibr/o"
-     },
-     {
       "id": "5",
       "text": "Gen/o"
      },
@@ -1046,10 +1282,6 @@
      }
     ],
     "rightItems": [
-     {
-      "id": "A",
-      "text": "Fiber"
-     },
      {
       "id": "B",
       "text": "Woman"
@@ -1075,11 +1307,10 @@
      "1": "C",
      "2": "F",
      "3": "D",
-     "4": "A",
      "5": "E",
      "6": "B"
     },
-    "explain": "Carcin/o means cancer, as in carcinoma. Crin/o means to secrete, as in endocrinology. Esthesi/o means sensation, as in anesthesia. Fibr/o means fiber, as in fibroadenoma. Gen/o means origin or production, as in genogram. Gynec/o means woman, as in gynecologist. These six forms belong to the general or abstract group, and each pairs with exactly one meaning."
+    "explain": "Carcin/o is cancer, Crin/o is to secrete, Esthesi/o is sensation, Gen/o is origin or production, and Gynec/o is woman."
    },
    {
     "id": "MT10970",
@@ -1292,27 +1523,27 @@
     "cat": "MT_lec9",
     "q": "Which word-part pattern builds the term lithotripsy?",
     "options": [
-     "Combining form plus a suffix",
-     "A root joined to a root",
-     "A root joined to a suffix",
-     "A prefix joined to a suffix"
+     "CF+S",
+     "R+R",
+     "R+S",
+     "P+S"
     ],
     "correct": 0,
-    "explain": "Lithotripsy joins Lith/o (stone) to -tripsy (crushing). The suffix begins with a consonant, so the combining vowel o is kept and the pattern is a combining form plus a suffix (CF+S). A root joined to a root would need another root and no suffix. A root joined to a suffix would drop the combining vowel, which this consonant-initial suffix does not do. A prefix joined to a suffix would need a prefix and no stone root."
+    "explain": "Lithotripsy is Lith/o (stone) + -tripsy (crushing). The suffix begins with a consonant, so o is kept: CF+S. R+S would drop o; R+R and P+S need parts it lacks."
    },
    {
     "id": "MT10974",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "In endocrinology, the prefix endo- and the combining form crin/o mean which pair?",
+    "q": "In endocrinology, what do endo- and crin/o mean?",
     "options": [
-     "Outside the body, and a tumor",
-     "Within the body, and to secrete",
-     "In the middle, and to secrete",
-     "Above a structure, and a layer"
+     "Within, and to secrete",
+     "Outside, and a tumor",
+     "Middle, and to secrete",
+     "Above, and a layer"
     ],
-    "correct": 1,
-    "explain": "Endo- means within and Crin/o means to secrete, so endocrinology is the study of secretion within the body. Outside the body with a tumor swaps the prefix for its opposite and swaps secrete for a mass sense carried by Onc/o. In the middle keeps a location sense but not the within sense of endo-. Above a structure and a layer names neither the prefix nor the combining form in this term."
+    "correct": 0,
+    "explain": "Endo- means within and Crin/o means to secrete. Outside is the opposite of endo-, tumor is Onc/o, and middle and above are other prefixes."
    },
    {
     "id": "MT10975",
@@ -1332,29 +1563,29 @@
     "id": "MT10976",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "Toxemia names a blood condition that involves which of the following?",
+    "q": "Toxemia is a blood condition involving what?",
     "options": [
-     "Formation of new blood cells",
-     "Reduction of the circulating volume",
-     "Secretion of a blood-borne hormone",
-     "Poison present in the blood"
+     "Poison in blood",
+     "New blood cell formation",
+     "Reduced circulating volume",
+     "Blood-borne hormone secretion"
     ],
-    "correct": 3,
-    "explain": "Toxemia joins tox (poison), the root of Tox/o and Toxic/o, to -emia (a blood condition), so it denotes poison in the blood. Formation of blood would use a production suffix such as -poiesis, not tox. Reduction of volume is not the sense of tox. Secretion is the sense of Crin/o, which this term does not contain."
+    "correct": 0,
+    "explain": "Toxemia is tox (poison) + -emia (blood condition): poison in the blood. Cell formation would use -poiesis; secretion is Crin/o."
    },
    {
     "id": "MT10977",
     "type": "mcq",
     "cat": "MT_lec9",
-    "q": "Orthopedic joins orth/o and ped/o. Which pair of meanings do those forms contribute in that term?",
+    "q": "In orthopedic, what do orth/o and ped/o mean?",
     "options": [
-     "Straight or correct, and foot",
-     "A joint sense, and a baby",
-     "A muscle sense, and foot",
-     "Straight alone, and muscle"
+     "Correct, and foot",
+     "Joint, and child",
+     "Muscle, and foot",
+     "Straight, and muscle"
     ],
     "correct": 0,
-    "explain": "Orth/o means straight, normal, or correct, and ped/o means child or foot. In orthopedic those forms are read as correct and foot, the pairing used for correction of the musculoskeletal structure, the same pairing as in orthopedist. A joint sense and a baby assigns neither form its taught sense. A muscle sense and foot keeps the foot sense of ped/o but replaces orth/o with a muscle sense it does not have. Straight alone and muscle keeps a true sense of orth/o but replaces the foot sense of ped/o with muscle."
+    "explain": "Orth/o means straight, normal, or correct; ped/o means child or foot. Orthopedic reads them as correct and foot, as in orthopedist. Neither form means joint or muscle."
    },
    {
     "id": "MT10978",
@@ -1425,6 +1656,42 @@
     ],
     "correct": 0,
     "explain": "Cutane/o means skin, so in cutaneous it is the skin element. The suffix -ous begins with a vowel, so the combining vowel is dropped and the written word is cutane + ous, still from Cutane/o. Hard is Scler/o, cell is Cyt/o, and poison is Tox/o or Toxic/o."
+   },
+   {
+    "id": "MT10983",
+    "type": "mcq",
+    "cat": "MT_lec9",
+    "q": "Before a vowel-initial suffix, a combining vowel is…",
+    "options": [
+     "Kept",
+     "Dropped"
+    ],
+    "correct": 1,
+    "explain": "Before a vowel-initial suffix the combining vowel is dropped, as in hepatectomy (hepat + ectomy)."
+   },
+   {
+    "id": "MT10984",
+    "type": "mcq",
+    "cat": "MT_lec9",
+    "q": "Before a consonant-initial suffix, a combining vowel is…",
+    "options": [
+     "Kept",
+     "Dropped"
+    ],
+    "correct": 0,
+    "explain": "Before a consonant-initial suffix the combining vowel is kept, as in gastroptosis (gastr/o + ptosis)."
+   },
+   {
+    "id": "MT10985",
+    "type": "mcq",
+    "cat": "MT_lec9",
+    "q": "Between two roots, when the second begins with a vowel, a combining vowel is…",
+    "options": [
+     "Kept",
+     "Dropped"
+    ],
+    "correct": 0,
+    "explain": "Between two roots the combining vowel is kept even before a vowel, as in fibroadenoma (fibr/o + aden + oma)."
    }
   ]
  }
