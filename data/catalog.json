@@ -278,7 +278,7 @@
           "subtitle": "8 lecture sets · 532 questions · choice & linking",
           "locked": false,
           "badges": [
-            { "text": "Reliable", "tip": "Matches the real exam well.", "tone": "green", "note": false, "where": ["card"] }
+            { "text": "Reliable", "tip": "A reliable contender for the exam's difficulty.", "tone": "green", "note": false, "where": ["card"] }
           ],
           "lectures": [
             {
