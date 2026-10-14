@@ -1,2152 +1,2180 @@
 {
-  "id": "lecture-18-19-20---nervous-system",
-  "subject": "Medical Terminology",
-  "subjectId": "medical_terminology",
-  "title": "Lecture 18, 19 and 20 - Nervous System",
-  "formSize": 109,
-  "forms": [
-    "A"
-  ],
-  "bank": {
-    "A": [
-      {
-        "id": "MT18001",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement captures what the nervous system as a whole accomplishes?",
-        "options": [
-          "It coordinates voluntary and involuntary actions in the body by sending and receiving information.",
-          "It pumps blood under pressure to every tissue and returns the spent volume back to the heart and lungs.",
-          "It filters foreign particles from a clear fluid and houses the cells that mount the immune response.",
-          "It moves air into and out of the lungs so that oxygen can pass into the blood and carbon dioxide out."
-        ],
-        "correct": 0,
-        "explain": "The nervous system coordinates voluntary and involuntary activity by sending and receiving information. \"It pumps blood under pressure to every tissue and returns the spent volume back to the heart and lungs\" names the cardiovascular system. \"It filters foreign particles from a clear fluid and houses the cells that mount the immune response\" names the lymphatic system. \"It moves air into and out of the lungs so that oxygen can pass into the blood and carbon dioxide out\" names the respiratory system."
-      },
-      {
-        "id": "MT18002",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which pairing of a major division of the nervous system with its components is correct?",
-        "options": [
-          "The central nervous system consists of the cranial nerves and the spinal nerves",
-          "The peripheral nervous system consists of the brain and the spinal cord",
-          "The central nervous system consists of the brain and the spinal cord",
-          "The peripheral nervous system consists of the sympathetic and the parasympathetic divisions"
-        ],
-        "correct": 2,
-        "explain": "The central nervous system is the brain plus the spinal cord. \"The central nervous system consists of the cranial nerves and the spinal nerves\" assigns the peripheral nerves to the central division. \"The peripheral nervous system consists of the brain and the spinal cord\" reverses the two divisions. \"The peripheral nervous system consists of the sympathetic and the parasympathetic divisions\" names only the two autonomic branches, not the peripheral system as a whole."
-      },
-      {
-        "id": "MT18003",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The peripheral division splits into a somatic limb and an autonomic limb. Which contrast between them is correct?",
-        "options": [
-          "The somatic limb controls internal actions of organs and glands, while the autonomic limb controls external actions of skin and muscles",
-          "The somatic limb controls external actions of skin and muscles, while the autonomic limb controls internal actions of organs and glands",
-          "The somatic limb carries only involuntary impulses to the organs, while the autonomic limb carries only voluntary impulses to skin and muscles",
-          "The somatic limb arises from the brain alone and never the cord, while the autonomic limb arises from the spinal cord alone and never the brain"
-        ],
-        "correct": 1,
-        "explain": "The somatic limb governs external actions of the skin and muscles, and the autonomic limb governs internal actions of the organs and glands. \"The somatic limb controls internal actions of organs and glands, while the autonomic limb controls external actions of skin and muscles\" swaps the two limbs. \"The somatic limb carries only involuntary impulses to the organs, while the autonomic limb carries only voluntary impulses to skin and muscles\" turns the split into a voluntary-only versus involuntary-only rule, which is not how the limbs are divided. \"The somatic limb arises from the brain alone and never the cord, while the autonomic limb arises from the spinal cord alone and never the brain\" invents an origin split. Within the autonomic limb, the sympathetic division uses spinal nerves only (thoracic and lumbar), while the parasympathetic division uses cranial nerves and sacral spinal nerves; the somatic limb uses both cranial and spinal nerves."
-      },
-      {
-        "id": "MT18004",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Within the autonomic division, how do the sympathetic and parasympathetic limbs differ?",
-        "options": [
-          "The sympathetic limb prepares the body in stressful or emergency situations, while the parasympathetic limb is most active in ordinary conditions and restores the body to a restful state after a stressful experience.",
-          "The sympathetic limb is most active in ordinary conditions and restores the body to a restful state after a stressful experience, while the parasympathetic limb prepares the body in stressful or emergency situations.",
-          "The sympathetic limb controls skeletal muscle at the skin surface, while the parasympathetic limb controls the glands of the gut and the smooth muscle there.",
-          "The sympathetic limb is carried by the cranial nerves alone, while the parasympathetic limb is carried by the spinal nerves alone and never by cranial nerves."
-        ],
-        "correct": 0,
-        "explain": "The sympathetic limb readies the body for stress or emergency, and the parasympathetic limb is most active in ordinary conditions and restores the body to a restful state after a stressful experience. \"The sympathetic limb is most active in ordinary conditions and restores the body to a restful state after a stressful experience, while the parasympathetic limb prepares the body in stressful or emergency situations\" swaps the two roles. \"The sympathetic limb controls skeletal muscle at the skin surface, while the parasympathetic limb controls the glands of the gut and the smooth muscle there\" assigns surface skeletal muscle to the sympathetic limb, but that control belongs to the somatic limb. \"The sympathetic limb is carried by the cranial nerves alone, while the parasympathetic limb is carried by the spinal nerves alone and never by cranial nerves\" is wrong on anatomy. The sympathetic limb uses spinal nerves only (thoracic and lumbar), while the parasympathetic limb uses cranial nerves and sacral spinal nerves."
-      },
-      {
-        "id": "MT18005",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The cerebrum, named by the combining form cerebr/o, is the largest brain portion. What joins its right and left halves?",
-        "options": [
-          "A bridge of nerve fibers called the corpus callosum",
-          "A fluid-filled cavity called the ventricle of the brain",
-          "A three-layered membrane sheath called the meningeal covering",
-          "A stalk of tissue called the brainstem under the cerebrum"
-        ],
-        "correct": 0,
-        "explain": "The two cerebral hemispheres are connected by a bridge of nerve fibers known as the corpus callosum. \"A fluid-filled cavity called the ventricle of the brain\" names an internal cerebrospinal-fluid space, not the bridge between hemispheres. \"A three-layered membrane sheath called the meningeal covering\" names the membranes around the brain and cord. \"A stalk of tissue called the brainstem under the cerebrum\" names the relay region below the cerebrum, not the link between the hemispheres."
-      },
-      {
-        "id": "MT18006",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which description fits the cerebral cortex?",
-        "options": [
-          "It is the inner relay chamber that passes sensory signals up to the cerebral lobes.",
-          "It is the outer layer of the cerebrum responsible for higher mental functions.",
-          "It is the coordinating mass sitting beneath the occipital lobes of the cerebrum.",
-          "It is the clear plasma-like fluid that bathes the brain and the spinal cord below."
-        ],
-        "correct": 1,
-        "explain": "The cerebral cortex is the outer layer of the cerebrum and carries the higher mental functions. Cortex means bark. \"It is the inner relay chamber that passes sensory signals up to the lobes\" describes the thalamus. \"It is the coordinating mass sitting beneath the occipital lobes of the cerebrum\" describes the cerebellum. \"It is the clear plasma-like fluid that bathes the brain and the spinal cord\" describes the cerebrospinal fluid."
-      },
-      {
-        "id": "MT18007",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The brainstem relays between the cerebrum, cerebellum, and spinal cord and governs breathing, heart rate, and body temperature. Which structure is NOT one of its three levels?",
-        "options": [
-          "The mesencephalon",
-          "The pons",
-          "The medulla oblongata",
-          "The thalamus"
-        ],
-        "correct": 3,
-        "explain": "The three brainstem levels are the mesencephalon or mid-brain, the pons, and the medulla oblongata. The thalamus is a separate deep structure above the brainstem, so it is not one of the three levels."
-      },
-      {
-        "id": "MT18008",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly relates the ventricles and the cerebrospinal fluid?",
-        "options": [
-          "The ventricles are solid nerve tracts, and the cerebrospinal fluid is the fat that insulates those tracts along their course through the cord.",
-          "The ventricles are inter-connected cavities filled with cerebrospinal fluid, a plasma-like clear fluid circulating around the brain and cord.",
-          "The ventricles are the three meningeal layers, and the cerebrospinal fluid is the blood that runs within those covering membranes of the skull.",
-          "The ventricles are the coordinating centers below the occipital lobes, and the cerebrospinal fluid is the hormone they release into the circulating blood."
-        ],
-        "correct": 1,
-        "explain": "The ventricles are inter-connected cavities within the cerebral hemispheres and brainstem that hold cerebrospinal fluid, a plasma-like clear fluid circulating in and around the brain and spinal cord. \"The ventricles are solid nerve tracts, and the cerebrospinal fluid is the fat that insulates those tracts along their course\" treats cavities as solid tracts and the fluid as insulating fat. \"The ventricles are the three meningeal layers, and the cerebrospinal fluid is the blood that runs within those covering membranes\" confuses the ventricles with the meninges and the fluid with blood. \"The ventricles are the coordinating centers below the occipital lobes, and the cerebrospinal fluid is the hormone they release into blood\" names the cerebellum and invents a hormone."
-      },
-      {
-        "id": "MT18009",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "q": "The peripheral nervous system has nerves arising from the brain and from the spinal cord. Answer each step.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "How many pairs of cranial nerves arise from the brain?",
-            "options": [
-              "11 pairs",
-              "12 pairs",
-              "30 pairs",
-              "31 pairs"
-            ],
-            "correct": 1
-          },
-          {
-            "id": "2",
-            "prompt": "How many pairs of spinal nerves arise from the spinal cord?",
-            "options": [
-              "11 pairs",
-              "12 pairs",
-              "30 pairs",
-              "31 pairs"
-            ],
-            "correct": 3
-          }
-        ],
-        "explain": "There are 12 pairs of cranial nerves arising from the brain and 31 pairs of spinal nerves arising from the spinal cord. 11 and 30 are close but wrong counts, and 31 cranial or 12 spinal swaps the two numbers."
-      },
-      {
-        "id": "MT18010",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Sensory nerves are also called afferent and motor nerves efferent. Which etymological reading of these two words is correct?",
-        "options": [
-          "Afferent means carrying out from the brain, and efferent means carrying toward the brain.",
-          "Afferent means carrying toward the brain, and efferent means carrying out from the brain.",
-          "Both words mean carrying toward the brain and differ only in the muscle they finally reach.",
-          "Both words mean carrying out from the brain and differ only in the gland they finally reach."
-        ],
-        "correct": 1,
-        "explain": "In afferent, ad- means toward and ferre means carry, so afferent nerves carry sensory information toward the brain. In efferent, e- means out and ferre means carry, so efferent nerves carry motor impulses out from the brain to muscles and glands. \"Afferent means carrying out from the brain, and efferent means carrying toward the brain\" reverses the two prefixes. \"Both words mean carrying toward the brain and differ only in the muscle they reach\" treats the pair as synonyms and invents a muscle distinction. \"Both words mean carrying out from the brain and differ only in the gland they reach\" does the same with a gland distinction the prefixes do not encode."
-      },
-      {
-        "id": "MT18011",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which set consists entirely of combining forms that mean mind?",
-        "options": [
-          "Phren/o, Psych/o, and Thym/o",
-          "Gli/o, Narc/o, and Ton/o forms",
-          "Crani/o, Encephal/o, and Cerebr/o",
-          "Spin/o, Spondyl/o, and Mening/o"
-        ],
-        "correct": 0,
-        "explain": "Phren/o, Psych/o, and Thym/o are the three combining forms that mean mind. \"Gli/o, Narc/o, and Ton/o forms\" gives glue, stupor, and tone. \"Crani/o, Encephal/o, and Cerebr/o\" gives skull, brain, and cerebrum. \"Spin/o, Spondyl/o, and Mening/o\" gives spine, vertebra, and meninges."
-      },
-      {
-        "id": "MT18012",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which two combining forms both mean sleep?",
-        "options": [
-          "Narc/o and Gli/o",
-          "Somn/o and Hypn/o",
-          "Phas/o and Lex/o",
-          "Ton/o and Tax/o"
-        ],
-        "correct": 1,
-        "explain": "Somn/o, with its variant Somn/i, and Hypn/o are the combining forms for sleep, as in somniphobia and hypnosis. \"Narc/o and Gli/o\" means stupor or sleep (Narc/o) and glue (Gli/o), so the two forms do not share one meaning. \"Phas/o and Lex/o\" means speech and word. \"Ton/o and Tax/o\" means tone and order."
-      },
-      {
-        "id": "MT18013",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term schizophrenia, which pairing of element to meaning is correct?",
-        "options": [
-          "Schiz means split, and phren means mind.",
-          "Schiz means mind, and phren means split.",
-          "Schiz means body, and phren means speech.",
-          "Schiz means split, and phren means nerve."
-        ],
-        "correct": 0,
-        "explain": "In schizophrenia, schiz means split and phren means mind, so the term denotes a splitting of the mind. \"Schiz means mind, and phren means split\" swaps the two elements. \"Schiz means body, and phren means speech\" assigns senses that belong to Somat/o and Phas/o. \"Schiz means split, and phren means nerve\" keeps split but assigns nerve, which is Neur/o, to phren."
-      },
-      {
-        "id": "MT18014",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term somatopsychosis, which pairing of element to meaning is correct?",
-        "options": [
-          "Somat means mind, and psych means body.",
-          "Somat means body, and psych means mind.",
-          "Somat means split, and psych means sleep.",
-          "Somat means nerve, and psych means sensation."
-        ],
-        "correct": 1,
-        "explain": "In somatopsychosis, somat means body and psych means mind. \"Somat means mind, and psych means body\" reverses the two elements. \"Somat means split, and psych means sleep\" assigns senses that belong to Schiz/o and Somn/o. \"Somat means nerve, and psych means sensation\" assigns senses that belong to Neur/o and Esthesi/o."
-      },
-      {
-        "id": "MT18015",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term euthymia, the element thym refers to what?",
-        "options": [
-          "The mind or state of feeling",
-          "The sleep or the torpor state",
-          "The tone or the tension state",
-          "The split or the cleft in mind"
-        ],
-        "correct": 0,
-        "explain": "In euthymia, thym means mind, and eu- means good, so the term denotes a good or balanced state of mind. \"The sleep or the torpor state\" is Somn/o, Hypn/o, or Narc/o. \"The tone or the tension state\" is Ton/o. \"The split or the cleft in mind\" is Schiz/o."
-      },
-      {
-        "id": "MT18016",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term ataxia, the element tax refers to what?",
-        "options": [
-          "Order or coordination",
-          "Stupor or a sleep state",
-          "Weakness or a failure",
-          "Seizure or a sudden fit"
-        ],
-        "correct": 0,
-        "explain": "In ataxia, tax means order or coordination, and a- means without, so the term denotes loss of muscular coordination. \"Stupor or a sleep state\" is Narc/o or Somn/o. \"Weakness or a failure\" is the sense of -asthenia or -paresis. \"Seizure or a sudden fit\" is -lepsy."
-      },
-      {
-        "id": "MT18017",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term paraphasia, the element phas refers to what?",
-        "options": [
-          "Word or a written phrase",
-          "Speech or utterance",
-          "Sensation or a feeling",
-          "Nerve or a conducting fiber"
-        ],
-        "correct": 1,
-        "explain": "In paraphasia, phas means speech, and para- means abnormal, so the term denotes a disorder of speech. \"Word or a written phrase\" is Lex/o. \"Sensation or a feeling\" is Esthesi/o. \"Nerve or a conducting fiber\" is Neur/o."
-      },
-      {
-        "id": "MT18018",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term belonephobia, which pairing of element to meaning is correct?",
-        "options": [
-          "Belon means fear, and phob means a sharp pin or a needle.",
-          "Belon means a sharp pin, and phob means exaggerated fear.",
-          "Belon means nerve, and phob means mind or a state of feeling.",
-          "Belon means sleep, and phob means stupor or a deep torpor."
-        ],
-        "correct": 1,
-        "explain": "In belonephobia, belon means a sharp pin or needle and phob means exaggerated fear, so the term denotes fear of sharp pins or needles. \"Belon means fear, and phob means a sharp pin\" reverses the two elements. \"Belon means nerve, and phob means mind or feeling\" assigns Neur/o and Phren/o. \"Belon means sleep, and phob means stupor or torpor\" assigns Somn/o and Narc/o."
-      },
-      {
-        "id": "MT18019",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The combining form Myel/o carries two senses, spinal cord and bone marrow. In the term myeloma, which sense applies?",
-        "options": [
-          "Spinal cord",
-          "Bone marrow",
-          "Meninges",
-          "Nerve"
-        ],
-        "correct": 1,
-        "explain": "In myeloma the suffix -oma means tumor, so myel takes the bone-marrow sense and the term is a tumor of the marrow. Spinal cord is the other sense of Myel/o, the one used in leukomyelopathy, not in myeloma. Meninges is Mening/o. Nerve is Neur/o."
-      },
-      {
-        "id": "MT18020",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The suffixes -asthenia, -lepsy, -mania, -paresis, and -plegia are easy to transpose. Which pairing of suffix to meaning is correct?",
-        "options": [
-          "-paresis means full paralysis, and -plegia means slight weakness of a limb.",
-          "-lepsy means weakness of muscle, and -asthenia means a seizure or a sudden fit.",
-          "-mania means abnormal impulse or attraction, and -plegia means paralysis.",
-          "-asthenia means attraction to a thing, and -mania means seizure or a sudden fit."
-        ],
-        "correct": 2,
-        "explain": "-mania means an abnormal impulse or attraction toward something, as in necromaniac, and -plegia means paralysis, as in hemiplegia. \"-paresis means paralysis, and -plegia means slight weakness of a limb\" swaps -paresis, slight paralysis or weakness, with -plegia, full paralysis. \"-lepsy means weakness, and -asthenia means seizure or a sudden fit\" swaps the seizure suffix with the weakness suffix. \"-asthenia means attraction, and -mania means seizure or a sudden fit\" assigns attraction to the weakness suffix and seizure to the impulse suffix."
-      },
-      {
-        "id": "MT18021",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Hemiparesis and hemiplegia both use the prefix hemi- for half the body. How do they differ?",
-        "options": [
-          "Hemiparesis is partial weakness on one half, while hemiplegia is severe paralysis on one half.",
-          "Hemiparesis is severe paralysis on one half, while hemiplegia is partial weakness on one half.",
-          "Hemiparesis affects the limbs only on one half, while hemiplegia affects the face only on one half.",
-          "Hemiparesis is a seizure of one half of the body, while hemiplegia is an impulse toward one half."
-        ],
-        "correct": 0,
-        "explain": "Hemiparesis denotes partial weakness on one half of the body, such as the limbs and facial muscles, while hemiplegia denotes severe weakness or paralysis on one half, right or left. \"Hemiparesis is severe paralysis on one half, while hemiplegia is partial weakness on one half\" reverses the two degrees. \"Hemiparesis affects the limbs only on one half, while hemiplegia affects the face only on one half\" invents a limbs-versus-face split. Both terms can involve limbs and face. \"Hemiparesis is a seizure of one half of the body, while hemiplegia is an impulse toward one half\" uses -lepsy and -mania, which are not the suffixes in these words."
-      },
-      {
-        "id": "MT18022",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Epilepsy is built from a prefix and a suffix. Which word form describes it correctly?",
-        "options": [
-          "R+S, because epi is a bare root joined directly to the suffix -lepsy.",
-          "CF+S, because epi keeps a combining vowel before the suffix -lepsy.",
-          "P+S, because epi- is a prefix joined directly to the suffix -lepsy.",
-          "P+R+S, because epi- is a prefix, there is a hidden root, and -lepsy is a suffix."
-        ],
-        "correct": 2,
-        "explain": "Epi- is a prefix meaning upon or above and -lepsy is a suffix meaning seizure, with no root between them, so the word form is P+S. \"R+S, because epi is a bare root joined to the suffix -lepsy\" misreads the prefix as a root. \"CF+S, because epi keeps a combining vowel before the suffix -lepsy\" inserts a combining vowel the spelling does not contain. \"P+R+S, because epi- is a prefix, there is a hidden root, and -lepsy is a suffix\" invents a root that is not present."
-      },
-      {
-        "id": "MT18023",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes the cerebellum by location and function?",
-        "options": [
-          "It lies below the occipital lobes of the cerebrum and controls coordination of skeletal muscles.",
-          "It lies above the frontal lobes of the cerebrum and controls voluntary movement and personality.",
-          "It lies within the brainstem and controls breathing, heart rate, and body temperature as one set.",
-          "It lies below the thalamus and serves as the control center of the autonomic system in ordinary rest."
-        ],
-        "correct": 0,
-        "explain": "The cerebellum, whose name carries the diminutive sense of little brain, sits below the occipital lobes of the cerebrum and governs control and coordination of skeletal muscles. \"It lies above the frontal lobes of the cerebrum and controls voluntary movement and personality\" assigns frontal-lobe work to the cerebellum. \"It lies within the brainstem and controls breathing, heart rate, and body temperature together\" assigns brainstem work to the cerebellum. \"It lies below the thalamus and serves as the control center of the autonomic system itself\" names the hypothalamus."
-      },
-      {
-        "id": "MT18025",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes the spinal cord?",
-        "options": [
-          "It is a column of nervous tissue running from the brainstem through the vertebrae for conduction to and from the brain and body.",
-          "It is a bridge of nerve fibers joining the right and left cerebral hemispheres inside the cranial cavity of the skull itself now.",
-          "It is a series of inter-connected cavities within the hemispheres that hold the cerebrospinal fluid around the brain and the cord.",
-          "It is a three-layered membrane sheath that covers the brain and lines the inside of the skull and the vertebral canal below it entirely."
-        ],
-        "correct": 0,
-        "explain": "The spinal cord is a column of nervous tissue extending from the brainstem down through the vertebrae, responsible for nerve conduction to and from the brain and the body. \"It is a bridge of nerve fibers joining the right and left cerebral hemispheres inside the cranial cavity\" names the corpus callosum. \"It is a series of inter-connected cavities within the hemispheres that hold the cerebrospinal fluid\" names the ventricles. \"It is a three-layered membrane sheath that covers the brain and lines the inside of the skull and canal\" names the meninges."
-      },
-      {
-        "id": "MT18026",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each lobe of the cerebrum to the function it governs.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Frontal lobe"
-          },
-          {
-            "id": "2",
-            "text": "Parietal lobe"
-          },
-          {
-            "id": "3",
-            "text": "Temporal lobe"
-          },
-          {
-            "id": "4",
-            "text": "Occipital lobe"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Posterior region devoted to the sense of vision"
-          },
-          {
-            "id": "B",
-            "text": "Anterior region governing voluntary muscle movement and personality"
-          },
-          {
-            "id": "C",
-            "text": "Region below the front handling hearing, taste, and smell"
-          },
-          {
-            "id": "D",
-            "text": "Region behind the front handling pain, temperature, and touch"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "D",
-          "3": "C",
-          "4": "A"
-        },
-        "explain": "The frontal lobe is the anterior section for voluntary muscle movement and personality. The parietal lobe lies behind the frontal lobe and handles pain, temperature, and touch. The temporal lobe sits below the frontal lobe and governs hearing, taste, and smell. The occipital lobe lies behind the parietal and temporal lobes and governs vision. Each lobe is fixed to its function by position."
-      },
-      {
-        "id": "MT18027",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each meningeal layer to the position it occupies around the brain and spinal cord.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Pia mater"
-          },
-          {
-            "id": "2",
-            "text": "Arachnoid"
-          },
-          {
-            "id": "3",
-            "text": "Dura mater"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "The middle layer of the three coverings"
-          },
-          {
-            "id": "B",
-            "text": "The innermost layer clinging to the nervous tissue"
-          },
-          {
-            "id": "C",
-            "text": "The outermost tough layer of the coverings"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "A",
-          "3": "C"
-        },
-        "explain": "The meninges are three membrane layers covering the brain and spinal cord. The pia mater is the innermost layer clinging to the nervous tissue. The arachnoid is the middle layer of the three coverings. The dura mater is the outermost tough layer. From deep to superficial the order is pia, arachnoid, dura."
-      },
-      {
-        "id": "MT18028",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each combining form to the structure or idea it denotes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Encephal/o"
-          },
-          {
-            "id": "2",
-            "text": "Crani/o"
-          },
-          {
-            "id": "3",
-            "text": "Gli/o"
-          },
-          {
-            "id": "4",
-            "text": "Esthesi/o"
-          },
-          {
-            "id": "5",
-            "text": "Mening/o"
-          },
-          {
-            "id": "6",
-            "text": "Lex/o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Sensation or feeling"
-          },
-          {
-            "id": "B",
-            "text": "The brain taken as a whole"
-          },
-          {
-            "id": "C",
-            "text": "A word or a phrase"
-          },
-          {
-            "id": "D",
-            "text": "A glue-like tissue"
-          },
-          {
-            "id": "E",
-            "text": "The bony case, or skull"
-          },
-          {
-            "id": "F",
-            "text": "The membranes sheathing the cord"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "E",
-          "3": "D",
-          "4": "A",
-          "5": "F",
-          "6": "C"
-        },
-        "explain": "Encephal/o means the brain taken as a whole. Crani/o means the bony case, or skull. Gli/o means a glue-like tissue. Esthesi/o means sensation or feeling. Mening/o means the membranes sheathing the cord. Lex/o means a word or a phrase. Each form pairs with one of those senses."
-      },
-      {
-        "id": "MT18029",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each combining form to the structure or idea it denotes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Narc/o"
-          },
-          {
-            "id": "2",
-            "text": "Spin/o"
-          },
-          {
-            "id": "3",
-            "text": "Thalam/o"
-          },
-          {
-            "id": "4",
-            "text": "Ton/o"
-          },
-          {
-            "id": "5",
-            "text": "Ventricul/o"
-          },
-          {
-            "id": "6",
-            "text": "Spondyl/o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "A single bone of the vertebral column"
-          },
-          {
-            "id": "B",
-            "text": "A state of stupor or sleep"
-          },
-          {
-            "id": "C",
-            "text": "A belly-like pouch or cavity"
-          },
-          {
-            "id": "D",
-            "text": "Muscle tone or tension"
-          },
-          {
-            "id": "E",
-            "text": "A deep relay chamber, the room of the brain"
-          },
-          {
-            "id": "F",
-            "text": "The spine, likened to a thorn"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "F",
-          "3": "E",
-          "4": "D",
-          "5": "C",
-          "6": "A"
-        },
-        "explain": "Narc/o means a state of stupor or sleep. Spin/o means the spine, likened to a thorn. Thalam/o means a deep relay chamber, the room of the brain. Ton/o means muscle tone or tension. Ventricul/o means a belly-like pouch or cavity. Spondyl/o means a single bone of the vertebral column. Each form pairs with one of those senses."
-      },
-      {
-        "id": "MT18030",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes the peripheral nervous system?",
-        "options": [
-          "It consists of the brain and the spinal cord inside the skull and canal.",
-          "It consists of the cranial nerves and the spinal nerves.",
-          "It consists of the sympathetic and parasympathetic divisions alone.",
-          "It consists of the thalamus and the hypothalamus in the deep brain."
-        ],
-        "correct": 1,
-        "explain": "The peripheral nervous system is made up of the cranial nerves and the spinal nerves that branch from the central nervous system. \"It consists of the brain and the spinal cord inside the skull and canal\" names the central nervous system. \"It consists of the sympathetic and parasympathetic divisions alone\" names only the two autonomic branches. \"It consists of the thalamus and the hypothalamus in the deep brain\" names deep brain structures, not the peripheral nerves."
-      },
-      {
-        "id": "MT18031",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which set correctly lists the three levels of the brainstem?",
-        "options": [
-          "The thalamus, hypothalamus, and cerebellum together",
-          "The mesencephalon, pons, and medulla oblongata",
-          "The frontal, parietal, and temporal lobes of the cerebrum",
-          "The pia mater, arachnoid, and dura mater coverings"
-        ],
-        "correct": 1,
-        "explain": "The brainstem has three levels: the mesencephalon, also called the mid-brain, the pons, and the medulla oblongata. \"The thalamus, hypothalamus, and cerebellum\" mixes deep structures above the brainstem with the separate coordinating mass. \"The frontal, parietal, and temporal lobes of the cerebrum\" names cerebral lobes. \"The pia mater, arachnoid, and dura mater coverings\" names the three meningeal layers."
-      },
-      {
-        "id": "MT18032",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes sensory nerves?",
-        "options": [
-          "They conduct motor impulses from the brain out to the muscles and the glands of the body.",
-          "They conduct impulses from body parts and carry incoming information to the brain.",
-          "They conduct involuntary impulses from the brain to smooth muscles and to the glands.",
-          "They conduct impulses between the two cerebral hemispheres across the midline join."
-        ],
-        "correct": 1,
-        "explain": "Sensory nerves conduct impulses from body parts and carry sensory information to the brain. They are also called afferent nerves. \"They conduct motor impulses from the brain out to muscles and glands\" describes motor, or efferent, nerves. \"They conduct involuntary impulses from the brain to smooth muscles and glands\" describes autonomic nerves. \"They conduct impulses between the two cerebral hemispheres across the midline\" describes a commissure such as the corpus callosum."
-      },
-      {
-        "id": "MT18033",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes motor nerves?",
-        "options": [
-          "They conduct sensory information from body parts up to the brain.",
-          "They conduct outgoing impulses from the brain to muscles and glands.",
-          "They conduct involuntary impulses from the brain to smooth muscles and glands.",
-          "They conduct impulses between the brainstem and the cerebellum below it."
-        ],
-        "correct": 1,
-        "explain": "Motor nerves conduct motor impulses from the brain to muscles and glands. They are also called efferent nerves. \"They conduct sensory information from body parts up to the brain\" describes sensory nerves. \"They conduct involuntary impulses from the brain to smooth muscles and glands\" describes autonomic nerves. \"They conduct impulses between the brainstem and the cerebellum below it\" describes a relay pathway, not a motor nerve."
-      },
-      {
-        "id": "MT18034",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes the autonomic nervous system?",
-        "options": [
-          "It carries voluntary impulses from the brain to skeletal muscles and to the skin of the body surface.",
-          "It carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands.",
-          "It carries sensory information from the body parts inward to the brain and onward to the spinal cord.",
-          "It carries motor impulses from the brain out to skeletal muscles of the limbs and of the trunk wall itself."
-        ],
-        "correct": 1,
-        "explain": "The autonomic nervous system carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands. \"It carries voluntary impulses from the brain to skeletal muscles and to skin\" describes the somatic nervous system. \"It carries sensory information from the body parts inward to the brain and cord\" describes sensory nerves. \"It carries motor impulses from the brain out to skeletal muscles of the limbs\" again describes somatic motor outflow, not the autonomic limb."
-      },
-      {
-        "id": "MT18035",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which statement correctly describes the somatic nervous system?",
-        "options": [
-          "It controls internal actions of organs and glands.",
-          "It controls external actions of skin and muscles.",
-          "It controls the sympathetic and parasympathetic responses to stress.",
-          "It controls the relay of sensory information to the cortex."
-        ],
-        "correct": 1,
-        "explain": "The somatic nervous system controls external actions of skin and muscles. \"It controls internal actions of organs and glands\" describes the autonomic nervous system. \"It controls the sympathetic and parasympathetic responses to stress\" names the two autonomic branches, not the somatic limb. \"It controls the relay of sensory information to the cortex\" describes the thalamus."
-      },
-      {
-        "id": "MT18036",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which lobe of the cerebrum is the anterior section?",
-        "options": [
-          "The frontal lobe of movement",
-          "The parietal lobe of sensation",
-          "The temporal lobe of hearing",
-          "The occipital lobe of vision"
-        ],
-        "correct": 0,
-        "explain": "The frontal lobe is the anterior section, and it governs voluntary muscle movement and personality. \"The parietal lobe of sensation\" handles pain, temperature, and touch, behind the frontal lobe. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
-      },
-      {
-        "id": "MT18037",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which lobe of the cerebrum lies posterior to the frontal lobe?",
-        "options": [
-          "The frontal lobe of movement",
-          "The parietal lobe of sensation",
-          "The temporal lobe of hearing",
-          "The occipital lobe of vision"
-        ],
-        "correct": 1,
-        "explain": "The parietal lobe lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
-      },
-      {
-        "id": "MT18038",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which lobe of the cerebrum lies below the frontal lobe?",
-        "options": [
-          "The frontal lobe of movement",
-          "The parietal lobe of sensation",
-          "The temporal lobe of hearing",
-          "The occipital lobe of vision"
-        ],
-        "correct": 2,
-        "explain": "The temporal lobe lies below the frontal lobe and governs hearing, taste, and smell. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The parietal lobe of sensation\" lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
-      },
-      {
-        "id": "MT18039",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which lobe of the cerebrum lies posterior to the parietal and temporal lobes?",
-        "options": [
-          "The frontal lobe of movement",
-          "The parietal lobe of sensation",
-          "The temporal lobe of hearing",
-          "The occipital lobe of vision"
-        ],
-        "correct": 3,
-        "explain": "The occipital lobe lies posterior to the parietal and temporal lobes and governs vision. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The parietal lobe of sensation\" lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell."
-      },
-      {
-        "id": "MT18040",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which structure is responsible for relaying sensory information to the cortex?",
-        "options": [
-          "The hypothalamus",
-          "The thalamus",
-          "The cerebellum",
-          "The brainstem"
-        ],
-        "correct": 1,
-        "explain": "The thalamus, which lies in the diencephalon, relays sensory information to the cortex. \"The hypothalamus\" is the control center for the autonomic nervous system. \"The cerebellum\" coordinates skeletal muscles. \"The brainstem\" relays between the cerebrum, cerebellum, and spinal cord and governs breathing, heart rate, and body temperature."
-      },
-      {
-        "id": "MT18041",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which structure lies below the thalamus?",
-        "options": [
-          "The cerebellum of muscle coordination",
-          "The thalamus of sensory relay",
-          "The hypothalamus of autonomic control",
-          "The brainstem of breathing and heart rate"
-        ],
-        "correct": 2,
-        "explain": "The hypothalamus lies below the thalamus and is the control center for the autonomic nervous system. \"The cerebellum of muscle coordination\" sits below the occipital lobes and coordinates skeletal muscle. \"The thalamus of sensory relay\" is the chamber that passes sensory signals to the cortex, not the center below it. \"The brainstem of breathing and heart rate\" is the relay below the cerebrum for breathing, heart rate, and body temperature."
-      },
-      {
-        "id": "MT18042",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which region serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature?",
-        "options": [
-          "The cerebellum",
-          "The thalamus",
-          "The hypothalamus",
-          "The brainstem"
-        ],
-        "correct": 3,
-        "explain": "The brainstem serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature. The cerebellum coordinates skeletal muscles. The thalamus relays sensory information to the cortex. The hypothalamus controls the autonomic nervous system."
-      },
-      {
-        "id": "MT18043",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The combining form Cerebell/o carries the diminutive sense of little brain. Which structure does it name?",
-        "options": [
-          "The cerebrum, the large portion",
-          "The cerebellum, below the lobes",
-          "The brainstem and its levels",
-          "The meninges, the coverings"
-        ],
-        "correct": 1,
-        "explain": "Cerebell/o names the cerebellum, whose name carries the diminutive sense of little brain, the coordinating mass below the occipital lobes. \"The cerebrum, the large portion\" is named by Cerebr/o. \"The brainstem and its levels\" is not named by this diminutive form. \"The meninges, the coverings\" are named by Mening/o."
-      },
-      {
-        "id": "MT18044",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the combining form Cerebr/o mean?",
-        "options": [
-          "The cerebellum, or the little brain below the lobes",
-          "The cerebrum, the largest part of the brain",
-          "The entire brain, taken as one whole organ here",
-          "The skull, the bony case around the head itself"
-        ],
-        "correct": 1,
-        "explain": "Cerebr/o names the cerebrum, the largest portion of the brain, divided into right and left hemispheres. \"The cerebellum, or little brain\" is Cerebell/o. \"The entire brain, taken as one organ\" is Encephal/o. \"The skull, the bony case of the head\" is Crani/o."
-      },
-      {
-        "id": "MT18045",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the combining form Cerebell/o mean?",
-        "options": [
-          "The cerebrum, the largest part of the brain",
-          "The cerebellum, or little brain",
-          "The entire brain, taken as one organ",
-          "The meninges, the covering membranes"
-        ],
-        "correct": 1,
-        "explain": "Cerebell/o names the cerebellum, the smaller coordinating mass below the occipital lobes. \"The cerebrum, the largest part of the brain\" is Cerebr/o. \"The entire brain, taken as one organ\" is Encephal/o. \"The meninges, the covering membranes\" are Mening/o."
-      },
-      {
-        "id": "MT18046",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the combining form Neur/o mean?",
-        "options": [
-          "A nerve",
-          "The mind",
-          "A sleep",
-          "A sense"
-        ],
-        "correct": 0,
-        "explain": "Neur/o means a nerve, as in neurocrine. \"The mind\" is Phren/o, Psych/o, or Thym/o. \"A sleep\" is Somn/o or Hypn/o. \"A sense\" is Esthesi/o."
-      },
-      {
-        "id": "MT18047",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term cerebritis mean?",
-        "options": [
-          "Inflammation of the cerebellum",
-          "Inflammation of the cerebrum",
-          "Inflammation of the meninges",
-          "Inflammation of a conducting nerve"
-        ],
-        "correct": 1,
-        "explain": "Cerebritis is built from Cerebr/o, cerebrum, and -itis, inflammation, so it means inflammation of the cerebrum. \"Inflammation of the cerebellum\" would use Cerebell/o. \"Inflammation of the meninges\" would use Mening/o. \"Inflammation of a conducting nerve\" would use Neur/o."
-      },
-      {
-        "id": "MT18048",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term glioma mean?",
-        "options": [
-          "A tumor of the meningeal membranes that sheath the brain and the cord",
-          "A tumor of the conducting nerve tissue that carries impulses in the body",
-          "A tumor of the glue-like supporting cells of the nervous system",
-          "A tumor of the spinal cord running through the vertebral canal itself"
-        ],
-        "correct": 2,
-        "explain": "Glioma is built from Gli/o, glue, and -oma, tumor, so it names a tumor of the glue-like supporting cells of the nervous system. \"A tumor of the meningeal membranes that sheath the brain and the cord\" would use Mening/o. \"A tumor of the conducting nerve tissue that carries impulses in the body\" would use Neur/o. \"A tumor of the spinal cord running through the vertebral canal itself\" would use Myel/o in its cord sense."
-      },
-      {
-        "id": "MT18049",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term dyslexia mean?",
-        "options": [
-          "Loss of muscular coordination in gait",
-          "Difficulty with words or reading",
-          "Inflammation of the brain as a whole",
-          "Exaggerated fear of sharp pins or needles"
-        ],
-        "correct": 1,
-        "explain": "Dyslexia is built from dys-, bad or difficult, and Lex/o, word or phrase, with -ia, condition, so it denotes difficulty with words or reading. \"Loss of muscular coordination in gait\" is ataxia. \"Inflammation of the brain as a whole\" is encephalitis. \"Exaggerated fear of sharp pins or needles\" is belonephobia."
-      },
-      {
-        "id": "MT18050",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term myelomeningocele mean?",
-        "options": [
-          "A tumor of the bone marrow inside a bone",
-          "A hernia of the spinal cord and meninges",
-          "Inflammation of the spinal cord along its length",
-          "A tumor of the nerve tissue in a peripheral nerve"
-        ],
-        "correct": 1,
-        "explain": "Myelomeningocele is built from Myel/o, spinal cord, Mening/o, meninges, and -cele, hernia, so it denotes a hernia of the spinal cord and its meningeal covering. \"A tumor of the bone marrow inside a bone\" is myeloma, the marrow sense of Myel/o with -oma. \"Inflammation of the spinal cord along its length\" would use -itis. \"A tumor of the nerve tissue in a peripheral nerve\" is a neuroma."
-      },
-      {
-        "id": "MT18051",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term neurocrine mean?",
-        "options": [
-          "Pertaining to the nerve and its covering",
-          "Pertaining to the nerve and its secretion",
-          "Pertaining to a gland without nerves",
-          "Pertaining to the nerve and its fibers"
-        ],
-        "correct": 1,
-        "explain": "Neurocrine is built from Neur/o, nerve, and crin, to secrete, with the suffix -e, so it means pertaining to the nerve and its secretion. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18052",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term belonephobia mean?",
-        "options": [
-          "Exaggerated fear of water or of drinking it",
-          "Exaggerated fear of sharp pins or needles",
-          "Exaggerated fear of eating or of swallowing",
-          "Exaggerated fear of speaking before a group"
-        ],
-        "correct": 1,
-        "explain": "Belonephobia is built from belon, a sharp pin or needle, and Phob/o, exaggerated fear, so it denotes fear of sharp pins or needles. \"Exaggerated fear of water or of drinking\" is hydrophobia. \"Exaggerated fear of eating or swallowing\" is phagophobia. \"Exaggerated fear of speaking in public\" is glossophobia or lalophobia."
-      },
-      {
-        "id": "MT18053",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "lobe-drill",
-        "groupOrder": 1,
-        "q": "This cerebral lobe sits at the anterior pole. Answer each step, then the next lobe follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this lobe?",
-            "options": [
-              "Frontal lobe",
-              "Frontel lobe",
-              "Frontall lobe",
-              "Fruntal lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which work does the Frontal lobe govern?",
-            "options": [
-              "Voluntary muscle movement and personality",
-              "Pain, temperature, and touch on the body",
-              "Hearing, taste, and the sense of smell",
-              "Vision and the processing of what is seen"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This anterior lobe is the frontal lobe. Frontel, Frontall, and Fruntal miss the spelling of frontal. It governs voluntary muscle movement and personality. Pain, temperature, and touch belong to the parietal lobe. Hearing, taste, and smell belong to the temporal lobe. Vision belongs to the occipital lobe."
-      },
-      {
-        "id": "MT18054",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "lobe-drill",
-        "groupOrder": 2,
-        "q": "This cerebral lobe lies behind the frontal lobe, under the crown of the skull. Answer each step, then the next lobe follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this lobe?",
-            "options": [
-              "Parietal lobe",
-              "Parietel lobe",
-              "Pariatal lobe",
-              "Parietall lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which work does the Parietal lobe govern?",
-            "options": [
-              "Pain, temperature, and touch on the body",
-              "Voluntary muscle movement and personality",
-              "Hearing, taste, and the sense of smell",
-              "Vision and the processing of what is seen"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This lobe behind the frontal lobe is the parietal lobe. Parietel, Pariatal, and Parietall miss the spelling of parietal. It handles pain, temperature, and touch. Voluntary muscle movement and personality belong to the frontal lobe. Hearing, taste, and smell belong to the temporal lobe. Vision belongs to the occipital lobe."
-      },
-      {
-        "id": "MT18055",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "lobe-drill",
-        "groupOrder": 3,
-        "q": "This cerebral lobe lies at the side of the head, beneath the temples. Answer each step, then the next lobe follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this lobe?",
-            "options": [
-              "Temporal lobe",
-              "Temporol lobe",
-              "Temporral lobe",
-              "Temporil lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which work does the Temporal lobe govern?",
-            "options": [
-              "Hearing, taste, and the sense of smell",
-              "Voluntary muscle movement and personality",
-              "Pain, temperature, and touch on the body",
-              "Vision and the processing of what is seen"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This lobe below the frontal lobe is the temporal lobe. Temporol, Temporral, and Temporil miss the spelling of temporal. It governs hearing, taste, and smell. Voluntary muscle movement and personality belong to the frontal lobe. Pain, temperature, and touch belong to the parietal lobe. Vision belongs to the occipital lobe."
-      },
-      {
-        "id": "MT18056",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "lobe-drill",
-        "groupOrder": 4,
-        "q": "This cerebral lobe lies at the posterior pole. Answer each step, then the meningeal cluster follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this lobe?",
-            "options": [
-              "Occipital lobe",
-              "Occipitel lobe",
-              "Occipattal lobe",
-              "Occipittal lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which work does the Occipital lobe govern?",
-            "options": [
-              "Vision and the processing of what is seen",
-              "Voluntary muscle movement and personality",
-              "Pain, temperature, and touch on the body",
-              "Hearing, taste, and the sense of smell itself"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This posterior lobe is the occipital lobe. Occipitel, Occipattal, and Occipittal miss the spelling of occipital. It governs vision. Voluntary muscle movement and personality belong to the frontal lobe. Pain, temperature, and touch belong to the parietal lobe. Hearing, taste, and smell belong to the temporal lobe."
-      },
-      {
-        "id": "MT18057",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "meninges-cluster",
-        "groupOrder": 1,
-        "q": "Which meningeal layer belongs at each depth around the brain and spinal cord? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Innermost layer, clinging to the nervous tissue",
-            "options": [
-              "Pia mater",
-              "Arachnoid",
-              "Dura mater",
-              "Cerebral cortex"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Middle layer of the three coverings",
-            "options": [
-              "Arachnoid",
-              "Pia mater",
-              "Dura mater",
-              "Cerebral cortex"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Outermost tough layer of the coverings",
-            "options": [
-              "Dura mater",
-              "Pia mater",
-              "Arachnoid",
-              "Cerebral cortex"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The pia mater is the innermost layer clinging to the nervous tissue. The arachnoid is the middle layer. The dura mater is the outermost tough layer. Cerebral cortex is the outer gray layer of the cerebrum, not a meningeal covering. Pia mater is not the middle or outer layer. Arachnoid is not the inner or outer layer. Dura mater is not the inner or middle layer."
-      },
-      {
-        "id": "MT18058",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "brainstem-drill",
-        "groupOrder": 1,
-        "q": "This structure lies just below the thalamus and hypothalamus. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this level?",
-            "options": [
-              "Mesencephalon",
-              "Mesancephalon",
-              "Mesencepholon",
-              "Mesencaphalon"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which set does the Mesencephalon belong to?",
-            "options": [
-              "The three levels of the brainstem",
-              "The four lobes of the cerebral hemispheres",
-              "The three layers of the meningeal coverings",
-              "The cavities that hold the clear fluid"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This mid-brain level is the mesencephalon. Mesancephalon, Mesencepholon, and Mesencaphalon miss that spelling. It is one of the three brainstem levels, with the pons and the medulla oblongata. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
-      },
-      {
-        "id": "MT18059",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "brainstem-drill",
-        "groupOrder": 2,
-        "q": "This structure takes its name from the Latin word for bridge. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this level?",
-            "options": [
-              "Pons",
-              "Ponns",
-              "Ponsus",
-              "Ponse"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which set does the Pons belong to?",
-            "options": [
-              "The three levels of the brainstem",
-              "The four lobes of the cerebral hemispheres",
-              "The three layers of the meningeal coverings",
-              "The cavities that hold the clear fluid"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This level between the mid-brain and the medulla oblongata is the pons. Ponns, Ponsus, and Ponse miss that spelling. It is one of the three brainstem levels. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
-      },
-      {
-        "id": "MT18060",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "brainstem-drill",
-        "groupOrder": 3,
-        "q": "This structure is continuous with the spinal cord below it. Answer each step, then the suffix match follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this level?",
-            "options": [
-              "Medulla oblongata",
-              "Medula oblongata",
-              "Medulla oblingata",
-              "Medulla oblongatta"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which set does the Medulla oblongata belong to?",
-            "options": [
-              "The three levels of the brainstem",
-              "The four lobes of the cerebral hemispheres",
-              "The three layers of the meningeal coverings",
-              "The cavities that hold the clear fluid"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This lowest brainstem level is the medulla oblongata. Medula oblongata drops a letter from medulla. Medulla oblingata and Medulla oblongatta miss the spelling of oblongata. It is one of the three brainstem levels, with the mesencephalon and the pons. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
-      },
-      {
-        "id": "MT18061",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each suffix to the sense it carries. One line stays unmatched.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "-asthenia"
-          },
-          {
-            "id": "2",
-            "text": "-lepsy"
-          },
-          {
-            "id": "3",
-            "text": "-mania"
-          },
-          {
-            "id": "4",
-            "text": "-paresis"
-          },
-          {
-            "id": "5",
-            "text": "-plegia"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Weakness, without full loss of movement"
-          },
-          {
-            "id": "B",
-            "text": "A seizure or a sudden fit"
-          },
-          {
-            "id": "C",
-            "text": "An abnormal impulse or attraction"
-          },
-          {
-            "id": "D",
-            "text": "Slight paralysis, or partial weakness"
-          },
-          {
-            "id": "E",
-            "text": "Paralysis, a severe loss of movement"
-          },
-          {
-            "id": "F",
-            "text": "A hernia or a protruding sac"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E"
-        },
-        "explain": "-asthenia means weakness, without full loss of movement. -lepsy means a seizure or a sudden fit, as in epilepsy. -mania means an abnormal impulse or attraction, as in necromaniac. -paresis means slight paralysis, or partial weakness, as in hemiparesis. -plegia means paralysis, a severe loss of movement, as in hemiplegia. \"A hernia or a protruding sac\" is the sense of -cele, as in myelomeningocele, and matches none of these five suffixes."
-      },
-      {
-        "id": "MT18062",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term encephalitis mean?",
-        "options": [
-          "Softening of the brain taken as a whole",
-          "Inflammation of the brain taken as a whole",
-          "Inflammation of the meninges around the brain",
-          "Hernia of the brain through the skull"
-        ],
-        "correct": 1,
-        "explain": "Encephalitis is built from Encephal/o, the brain taken as a whole, and -itis, inflammation, so it means inflammation of the brain. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18063",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term neuroma mean?",
-        "options": [
-          "Pain in the nerve tissue",
-          "A tumor of the nerve tissue",
-          "Inflammation of the nerve tissue",
-          "Softening of the nerve tissue"
-        ],
-        "correct": 1,
-        "explain": "Neuroma is built from Neur/o, nerve, and -oma, tumor, so it means a tumor of the nerve tissue. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18064",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term somniphobia mean?",
-        "options": [
-          "Exaggerated fear of sharp pins",
-          "Exaggerated fear of sleeping",
-          "Exaggerated fear of swallowing",
-          "Exaggerated fear of speaking"
-        ],
-        "correct": 1,
-        "explain": "Somniphobia is built from Somn/i, sleep, and Phob/o, exaggerated fear, so it means exaggerated fear of sleeping. \"Exaggerated fear of sharp pins\" is belonephobia. \"Exaggerated fear of swallowing\" is phagophobia. \"Exaggerated fear of speaking\" is glossophobia or lalophobia."
-      },
-      {
-        "id": "MT18065",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term hypnosis mean?",
-        "options": [
-          "A state related to sleep",
-          "A disorder of too much sleep",
-          "Fear of falling asleep",
-          "A drug that prevents sleep"
-        ],
-        "correct": 0,
-        "explain": "Hypnosis is built from Hypn/o, sleep, so it names a state related to sleep. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18066",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term leukomyelopathy, which sense of myel applies?",
-        "options": [
-          "Bone marrow, as in a tumor of the marrow cavity",
-          "Spinal cord, as in a disease of the cord",
-          "Meninges, as in a defect of the sheath itself",
-          "Nerve, as in a lesion of a conducting fiber"
-        ],
-        "correct": 1,
-        "explain": "In leukomyelopathy, myel takes the spinal-cord sense, a disease of the cord, which is the reading that does not apply in myeloma. \"Bone marrow, as in a tumor of the marrow\" is the sense used in myeloma, where -oma marks a tumor. \"Meninges, as in a defect of the sheath\" is Mening/o. \"Nerve, as in a lesion of a fiber\" is Neur/o."
-      },
-      {
-        "id": "MT18067",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "deep-drill",
-        "groupOrder": 1,
-        "q": "This deep chamber relays sensory information up to the cortex. Answer each step, then the next deep structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this chamber?",
-            "options": [
-              "Thalamus",
-              "Thalamas",
-              "Thalmus",
-              "Thallamus"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which brain region contains the Thalamus?",
-            "options": [
-              "Diencephalon",
-              "Mesencephalon",
-              "Cerebellum",
-              "Cerebral cortex"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Where does the autonomic control center lie relative to the Thalamus?",
-            "options": [
-              "Below it",
-              "Above it",
-              "Inside its cortex",
-              "Lateral in the skull"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This relay chamber is the thalamus. Thalamas, Thalmus, and Thallamus miss that spelling. The thalamus lies in the diencephalon, the region that contains both the thalamus and the hypothalamus. The mesencephalon is the mid-brain level of the brainstem, the cerebellum coordinates skeletal muscle below the occipital lobes, and the cerebral cortex is the outer gray layer of the cerebrum. The hypothalamus, the autonomic control center, lies below the thalamus. Above it is not where that center lies. Inside its cortex and lateral in the skull are not the position taught for the hypothalamus."
-      },
-      {
-        "id": "MT18068",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "deep-drill",
-        "groupOrder": 2,
-        "q": "This small structure links the nervous system to the pituitary gland. Answer each step, then the run ends.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this center?",
-            "options": [
-              "Hypothalamus",
-              "Hypothalamas",
-              "Hypothalmus",
-              "Hypothallamus"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which structure lies directly above the Hypothalamus?",
-            "options": [
-              "Thalamus",
-              "Cerebellum",
-              "Medulla oblongata",
-              "Pia mater"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which work does the Hypothalamus govern?",
-            "options": [
-              "Autonomic control of organs and glands",
-              "Relay of sensory signals up to the cortex",
-              "Coordination of the skeletal muscles below",
-              "Conduction through the vertebral canal"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This autonomic control center is the hypothalamus. Hypothalamas, Hypothalmus, and Hypothallamus miss that spelling. The thalamus lies directly above it. The cerebellum coordinates skeletal muscle below the occipital lobes. The medulla oblongata is the lowest brainstem level. The pia mater is the inner meningeal layer. Relay of sensory signals to the cortex is the thalamus. Coordination of the skeletal muscles is the cerebellum. Conduction through the vertebral canal is the spinal cord."
-      },
-      {
-        "id": "MT18069",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "ns-abbrev-drill",
-        "groupOrder": 1,
-        "q": "This short form is CNS. Answer each step, then the next short form follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What does CNS stand for?",
-            "options": [
-              "Central nervous system",
-              "Cranial neural sheath",
-              "Cerebral nerve synapse",
-              "Cortical nerve signal"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which structures make up the Central nervous system?",
-            "options": [
-              "Brain and spinal cord",
-              "Cranial nerves and spinal nerves",
-              "Sympathetic and parasympathetic divisions",
-              "Smooth muscles, cardiac muscles, and glands"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "CNS stands for central nervous system. Cranial neural sheath, cerebral nerve synapse, and cortical nerve signal share the letters but are not the expansion. The CNS is the brain and spinal cord. Cranial nerves and spinal nerves make up the PNS. The sympathetic and parasympathetic divisions belong to the ANS. Smooth muscles, cardiac muscles, and glands are the targets of the ANS, not parts of the CNS."
-      },
-      {
-        "id": "MT18070",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "ns-abbrev-drill",
-        "groupOrder": 2,
-        "q": "This short form is PNS. Answer each step, then the next short form follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What does PNS stand for?",
-            "options": [
-              "Peripheral nervous system",
-              "Parasympathetic nervous system",
-              "Primary neural sheath",
-              "Posterior nerve segment"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which description fits the Peripheral nervous system?",
-            "options": [
-              "Nerves that branch from the CNS, including cranial nerves and spinal nerves",
-              "The brain and the spinal cord, the portion within the cranium and vertebrae",
-              "The division that restores the body to a restful state after stress",
-              "The control center for the ANS located below the thalamus"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "PNS stands for peripheral nervous system. Parasympathetic nervous system is PSNS. Primary neural sheath and posterior nerve segment share the letters but are not the expansion. The PNS is the nerves that branch from the CNS, including nerves of the brain (cranial nerves) and spinal cord (spinal nerves). The brain and the spinal cord are the CNS. Restoring the body to a restful state after stress is the PSNS. The control center for the ANS below the thalamus is the hypothalamus."
-      },
-      {
-        "id": "MT18071",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "ns-abbrev-drill",
-        "groupOrder": 3,
-        "q": "This short form is ANS. Answer each step, then the next short form follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What does ANS stand for?",
-            "options": [
-              "Autonomic nervous system",
-              "Automatic nervous system",
-              "Afferent nervous system",
-              "Accessory nervous system"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which impulses does the Autonomic nervous system carry, and to where?",
-            "options": [
-              "Involuntary impulses from the brain to smooth muscle, heart muscle, and glands",
-              "Voluntary impulses controlling external actions of the skin and skeletal muscles",
-              "Sensory impulses from body parts carried up to the brain for processing",
-              "Impulses relayed between the cerebrum, cerebellum, and spinal cord"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which structure is the control center for the Autonomic nervous system?",
-            "options": [
-              "Hypothalamus",
-              "Thalamus",
-              "Cerebellum",
-              "Medulla oblongata"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "ANS stands for autonomic nervous system. Automatic is a misreading of autonomic, afferent is the other name for sensory nerves, and accessory is not a division of the nervous system. The ANS carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands. Voluntary control of external actions of the skin and muscles is the somatic division. Carrying sensory impulses from body parts to the brain is the job of sensory (afferent) nerves. Relaying between the cerebrum, cerebellum, and spinal cord is the brainstem. The hypothalamus is the control center for the ANS. The thalamus relays sensory information to the cortex, the cerebellum coordinates skeletal muscles, and the medulla oblongata is a level of the brainstem."
-      },
-      {
-        "id": "MT18072",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "ns-abbrev-drill",
-        "groupOrder": 4,
-        "q": "This short form is SNS. Answer each step, then the next short form follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What does SNS stand for?",
-            "options": [
-              "Sympathetic nervous system",
-              "Somatic nervous system",
-              "Sensory nervous system",
-              "Skeletal nervous system"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "What is the Sympathetic nervous system concerned with?",
-            "options": [
-              "Preparing the body in stressful or emergency situations",
-              "Restoring the body to a restful state after a stressful experience",
-              "Controlling external actions of the skin and muscles",
-              "Relaying sensory information to the cortex"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which larger division is the Sympathetic nervous system a part of?",
-            "options": [
-              "The ANS",
-              "The CNS",
-              "The somatic division",
-              "The PSNS"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "SNS stands for sympathetic nervous system. The somatic division has no standard short form here, sensory nerves are the afferent nerves, and spinal nerves are the 31 pairs from the cord, so none of them is SNS. The SNS is the division of the ANS concerned with preparing the body in stressful or emergency situations, the fight-or-flight picture on the ANS slide. Restoring the body to a restful state after a stressful experience is the PSNS. Controlling external actions of the skin and muscles is the somatic division. Relaying sensory information to the cortex is the thalamus. The SNS is a division of the ANS. The CNS is the brain and spinal cord, the somatic division is the other limb of the peripheral system, and the PSNS is the partner division that counter-balances the SNS."
-      },
-      {
-        "id": "MT18073",
-        "type": "stepped",
-        "cat": "MT_lec18-20",
-        "group": "ns-abbrev-drill",
-        "groupOrder": 5,
-        "q": "This short form is PSNS. Answer each step, then the run ends.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What does PSNS stand for?",
-            "options": [
-              "Parasympathetic nervous system",
-              "Peripheral sympathetic nervous system",
-              "Peripheral somatic nervous system",
-              "Paraspinal nervous system"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "When is the Parasympathetic nervous system most active?",
-            "options": [
-              "In ordinary conditions",
-              "In stressful or emergency situations",
-              "Only during voluntary muscle movement",
-              "Only while relaying sensation to the cortex"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "How does the Parasympathetic nervous system relate to the SNS?",
-            "options": [
-              "It counter-balances the SNS, restoring the body to a restful state after stress.",
-              "It intensifies the SNS, preparing the body further for an emergency response.",
-              "It is the control center of the SNS, located just below the thalamus.",
-              "It carries sensory information from the SNS back up to the brain."
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "PSNS stands for parasympathetic nervous system. Peripheral sympathetic, peripheral somatic, and paraspinal are not divisions of the nervous system; peripheral nervous system alone is PNS. The PSNS is most active in ordinary conditions. Stressful or emergency situations are the domain of the SNS. Voluntary muscle movement is frontal-lobe and somatic work, and relaying sensation to the cortex is the thalamus. The PSNS counter-balances the effects of the sympathetic system by restoring the body to a restful state after a stressful experience. Preparing the body for an emergency is what the SNS itself does. The control center below the thalamus is the hypothalamus, which governs the whole ANS. Carrying sensory information to the brain is the job of sensory (afferent) nerves."
-      },
-      {
-        "id": "MT18074",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The brain ventricles are filled with CSF. What does CSF stand for?",
-        "options": [
-          "Cerebellar spinal fluid",
-          "Cranial serous fluid",
-          "Cerebrospinal fluid",
-          "Cerebral synovial fluid"
-        ],
-        "correct": 2,
-        "explain": "CSF stands for cerebrospinal fluid, the plasma-like clear fluid circulating in and around the brain and spinal cord and filling the ventricles. \"Cerebellar spinal fluid\" wrongly uses the cerebellum, the little brain below the occipital lobes. \"Cranial serous fluid\" wrongly uses crani/o, the skull. \"Cerebral synovial fluid\" names joint fluid, which is not part of the nervous system."
-      },
-      {
-        "id": "MT18075",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The learning outcomes ask you to \"Analyze the CF of NS and its terms.\" What do CF and NS stand for?",
-        "options": [
-          "CF is cerebrospinal fluid, and NS is nervous system.",
-          "CF is combining form, and NS is nervous system.",
-          "CF is combining form, and NS is nerve sheath.",
-          "CF is cranial foramen, and NS is neural signal."
-        ],
-        "correct": 1,
-        "explain": "CF stands for combining form, as in the CF tables, and NS stands for nervous system. \"CF is cerebrospinal fluid, and NS is nervous system\" confuses CF with CSF. \"CF is combining form, and NS is nerve sheath\" gets CF right but invents a meaning for NS. \"CF is cranial foramen, and NS is neural signal\" invents both expansions."
-      },
-      {
-        "id": "MT18076",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "\"Fight or flight\" describes one division of the ANS. Which division and role is it?",
-        "options": [
-          "The SNS, preparing the body in stressful or emergency situations",
-          "The PSNS, restoring the body to a restful state after a stressful experience",
-          "The somatic division, controlling external actions of the skin and muscles",
-          "The hypothalamus, the control center for the ANS located below the thalamus"
-        ],
-        "correct": 0,
-        "explain": "Fight or flight is the sympathetic response: the SNS is the division of the ANS concerned with preparing the body in stressful or emergency situations. \"The PSNS, restoring the body to a restful state after a stressful experience\" is the calming division, most active in ordinary conditions, the opposite of fight or flight. \"The somatic division, controlling external actions of the skin and muscles\" is not a division of the ANS. \"The hypothalamus, the control center for the ANS located below the thalamus\" is a brain structure, not the ANS division shown by the picture."
-      },
-      {
-        "id": "MT18077",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "After a stressful experience, which division of the ANS counter-balances the sympathetic effects by restoring the body to a restful state?",
-        "options": [
-          "SNS (sympathetic nervous system)",
-          "PSNS (parasympathetic nervous system)",
-          "CNS (central nervous system)",
-          "Somatic nervous system (voluntary)"
-        ],
-        "correct": 1,
-        "explain": "The PSNS is the division of the ANS that is most active in ordinary conditions; it counter-balances the effects of the sympathetic system by restoring the body to a restful state after a stressful experience. \"SNS (sympathetic nervous system)\" prepares the body in stressful or emergency situations, so it is the system being counter-balanced. \"CNS (central nervous system)\" is the brain and spinal cord, not a division of the ANS. \"Somatic nervous system\" controls external actions of the skin and muscles and is not part of the ANS."
-      },
-      {
-        "id": "MT18078",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The overview chart tags the two autonomic branches with one-word labels in brackets. Which pairing is correct?",
-        "options": [
-          "Sympathetic (Calming) and Parasympathetic (Arousing)",
-          "Sympathetic (Sensory) and Parasympathetic (Motor)",
-          "Sympathetic (Arousing) and Parasympathetic (Calming)",
-          "Sympathetic (Voluntary) and Parasympathetic (Involuntary)"
-        ],
-        "correct": 2,
-        "explain": "The chart labels the sympathetic branch Arousing and the parasympathetic branch Calming, matching the SNS preparing the body for stress and the PSNS restoring a restful state. \"Sympathetic (Calming) and Parasympathetic (Arousing)\" swaps the labels. \"Sympathetic (Sensory) and Parasympathetic (Motor)\" uses the sensory and motor nerve types of the PNS slide. \"Sympathetic (Voluntary) and Parasympathetic (Involuntary)\" is wrong because both branches belong to the ANS, which carries involuntary impulses."
-      },
-      {
-        "id": "MT18079",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Which description of the brain is correct?",
-        "options": [
-          "The column of nervous tissue from the brainstem through the vertebrae",
-          "The nerves that branch from the CNS, including the cranial nerves",
-          "The 3 membrane layers that cover the brain and the spinal cord",
-          "The portion of the CNS contained within the cranium"
-        ],
-        "correct": 3,
-        "explain": "The brain is the portion of the CNS contained within the cranium. \"The column of nervous tissue from the brainstem through the vertebrae\" is the spinal cord. \"The nerves that branch from the CNS, including the cranial nerves\" is the PNS. \"The 3 membrane layers that cover the brain and the spinal cord\" are the meninges."
-      },
-      {
-        "id": "MT18080",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The cerebrum is divided into Rt. and Lt. halves. What are these halves called?",
-        "options": [
-          "Cerebral hemispheres",
-          "Cerebral lobes",
-          "Cerebral ventricles",
-          "Cerebral cortex"
-        ],
-        "correct": 0,
-        "explain": "The cerebrum, the largest portion of the brain, is divided into right (Rt.) and left (Lt.) halves called the cerebral hemispheres, connected by the corpus callosum. \"Cerebral lobes\" are the 4 subdivisions (frontal, parietal, temporal, occipital), not the two halves. \"Cerebral ventricles\" are inter-connected cavities filled with CSF. \"Cerebral cortex\" is the outer layer of the cerebrum responsible for higher mental functions."
-      },
-      {
-        "id": "MT18081",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term cerebral cortex, what does the word cortex mean?",
-        "options": [
-          "Room",
-          "Bark",
-          "Thorn",
-          "Glue"
-        ],
-        "correct": 1,
-        "explain": "Cortex means bark, fitting the cerebral cortex as the outer layer of the cerebrum. \"Room\" is the sense given for Thalam/o, the thalamus. \"Thorn\" is the sense given for Spin/o, the spine. \"Glue\" is the meaning of Gli/o."
-      },
-      {
-        "id": "MT18082",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The combining form Narc/o, as in narcotic (CF+S), carries which meaning?",
-        "options": [
-          "Split or cleft",
-          "Speech",
-          "Sensation",
-          "Stupor / Sleep"
-        ],
-        "correct": 3,
-        "explain": "Narc/o means stupor or sleep, as in narcotic. \"Split\" is Schiz/o. \"Speech\" is Phas/o. \"Sensation\" is Esthesi/o."
-      },
-      {
-        "id": "MT18083",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Phob/o, as in belonephobia (R+R+S), has two meanings. Which pair is correct?",
-        "options": [
-          "Exaggerated fear / Sensitivity",
-          "Abnormal impulse / Attraction toward",
-          "Stupor / Sleep",
-          "Order / Coordination"
-        ],
-        "correct": 0,
-        "explain": "Phob/o means exaggerated fear or sensitivity, as in belonephobia, fear of sharp needles or pins. \"Abnormal impulse / Attraction toward\" is the suffix -mania. \"Stupor / Sleep\" is Narc/o. \"Order / Coordination\" is Tax/o."
-      },
-      {
-        "id": "MT18084",
-        "type": "saq",
-        "cat": "MT_lec18-20",
-        "q": "Besides Spondyl/o, what is the combining form meaning vertebra?",
-        "answer": "Vertebr/o",
-        "explain": "Vertebr/o means vertebra, as in vertebroplasty (CF+S). Spondyl/o is the other combining form for vertebra, as in spondylocostal (CF+R+S). Spin/o means spine (thorn), and Myel/o means spinal cord or bone marrow."
-      },
-      {
-        "id": "MT18085",
-        "type": "saq",
-        "cat": "MT_lec18-20",
-        "q": "Besides Lex/o, what is the combining form meaning word / phrase, as in lexicologist?",
-        "answer": "Lexic/o",
-        "explain": "Lexic/o means word or phrase, as in lexicologist (CF+S). Lex/o is the other form, as in dyslexia (P+R+S). Phas/o means speech, and Esthesi/o means sensation."
-      },
-      {
-        "id": "MT18086",
-        "type": "saq",
-        "cat": "MT_lec18-20",
-        "q": "Besides Mening/o, what is the other combining form meaning meninges / membrane?",
-        "answer": "Meningi/o",
-        "explain": "Meningi/o and Mening/o both mean meninges or membrane, as in myelomeningocele. Myel/o means spinal cord or bone marrow, and Encephal/o means the entire brain."
-      },
-      {
-        "id": "MT18087",
-        "type": "saq",
-        "cat": "MT_lec18-20",
-        "q": "Besides Somn/o and Hypn/o, which combining form meaning sleep appears in somniphobia?",
-        "answer": "Somn/i",
-        "explain": "Somn/i means sleep, as in somniphobia (CF+R+S). Somn/o appears in somnoplasty (CF+S), and Hypn/o appears in hypnosis (R+S). Narc/o means stupor or sleep, as in narcotic."
-      },
-      {
-        "id": "MT18088",
-        "type": "matching",
-        "cat": "MT_lec18-20",
-        "q": "Match each example term to its word structure.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Dyslexia"
-          },
-          {
-            "id": "2",
-            "text": "Leukomyelopathy"
-          },
-          {
-            "id": "3",
-            "text": "Belonephobia"
-          },
-          {
-            "id": "4",
-            "text": "Esthesiography"
-          },
-          {
-            "id": "5",
-            "text": "Glioma"
-          },
-          {
-            "id": "6",
-            "text": "Craniofacial"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "R+R+S"
-          },
-          {
-            "id": "B",
-            "text": "CF+S"
-          },
-          {
-            "id": "C",
-            "text": "P+R+S"
-          },
-          {
-            "id": "D",
-            "text": "CF+R+S"
-          },
-          {
-            "id": "E",
-            "text": "CF+CF+R+S"
-          },
-          {
-            "id": "F",
-            "text": "R+S"
-          }
-        ],
-        "correct_pairs": {
-          "1": "C",
-          "2": "E",
-          "3": "A",
-          "4": "B",
-          "5": "F",
-          "6": "D"
-        },
-        "explain": "Dyslexia is P+R+S: the prefix dys-, the root lex, and a suffix. Leukomyelopathy is CF+CF+R+S: leuk/o and myel/o as combining forms, then the root and suffix. Belonephobia is R+R+S: the roots belon and phob plus a suffix. Esthesiography is CF+S: esthesi/o plus the suffix. Glioma is R+S: gli plus -oma. Craniofacial is CF+R+S: crani/o, the root faci, and the suffix. Each term pairs with its own word structure."
-      },
-      {
-        "id": "MT18089",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term cerebellomedullary (CF+R+S) refer to?",
-        "options": [
-          "Pertaining to the cerebrum and the bone marrow",
-          "Pertaining to the cerebellum and the spinal meninges",
-          "Pertaining to the cerebellum and the medulla oblongata",
-          "Pertaining to the spinal cord and the cerebellum"
-        ],
-        "correct": 2,
-        "explain": "Cerebellomedullary joins Cerebell/o, cerebellum (little brain), with medulla, here meaning the medulla oblongata. \"Pertaining to the cerebrum and the bone marrow\" uses Cerebr/o and the marrow sense of Myel/o, neither of which is in the term. \"Pertaining to the cerebellum and the meninges\" would use Mening/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar."
-      },
-      {
-        "id": "MT18090",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term craniofacial (CF+R+S) refer to?",
-        "options": [
-          "Pertaining to the skull and the face",
-          "Pertaining to the entire brain and the face",
-          "Pertaining to the cerebrum and the face",
-          "Pertaining to the vertebra and the ribs"
-        ],
-        "correct": 0,
-        "explain": "Craniofacial is built from Crani/o, skull, and faci, face, with the suffix -al, so it means pertaining to the skull and the face. \"Pertaining to the entire brain and the face\" would use Encephal/o. \"Pertaining to the cerebrum and the face\" would use Cerebr/o. \"Pertaining to the vertebra and the ribs\" is spondylocostal."
-      },
-      {
-        "id": "MT18091",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term encephalalgia mean?",
-        "options": [
-          "Inflammation of the entire brain",
-          "Pain in the brain (head pain)",
-          "Weakness of the nerves",
-          "Tumor of the glue-like cells"
-        ],
-        "correct": 1,
-        "explain": "Encephalalgia is built from Encephal/o, entire brain, and -algia, pain, so it means pain in the brain or head. \"Inflammation of the entire brain\" is encephalitis, which uses -itis. \"Weakness of the nerves\" is neurasthenia. \"Tumor of the glue-like cells\" is glioma."
-      },
-      {
-        "id": "MT18092",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term esthesiography (CF+S) refer to?",
-        "options": [
-          "Recording of the activity of the entire brain",
-          "Recording or description of sensation",
-          "Study of words and phrases",
-          "Surgical repair of a vertebra"
-        ],
-        "correct": 1,
-        "explain": "Esthesiography is built from Esthesi/o, sensation, and -graphy, recording or description, so it means recording or description of sensation. \"Recording of the activity of the entire brain\" would use Encephal/o. \"Study of words and phrases\" would use Lex/o or Lexic/o. \"Surgical repair of a vertebra\" is vertebroplasty."
-      },
-      {
-        "id": "MT18093",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term lexicologist (CF+S) mean?",
-        "options": [
-          "A specialist in the study of words",
-          "A specialist in the study of nerves",
-          "A specialist in the study of the mind",
-          "A specialist in the study of sleep"
-        ],
-        "correct": 0,
-        "explain": "Lexicologist is built from Lexic/o, word or phrase, and -logist, one who specializes in the study of, so it names a specialist in the study of words. \"A specialist in the study of nerves\" would use Neur/o. \"A specialist in the study of the mind\" would use Psych/o. \"A specialist in the study of sleep\" would use Somn/o or Hypn/o."
-      },
-      {
-        "id": "MT18094",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "Narcotic (CF+S) is built on Narc/o. Which description fits it?",
-        "options": [
-          "Pertaining to the nerve and its secretion",
-          "Pertaining to the thalamus",
-          "Pertaining to stupor or sleep",
-          "Pertaining to a split of the mind"
-        ],
-        "correct": 2,
-        "explain": "Narcotic is built from Narc/o, stupor or sleep, with the suffix -tic, so it means pertaining to (producing) stupor or sleep. \"Pertaining to the nerve and its secretion\" is neurocrine. \"Pertaining to the thalamus\" is thalamic. \"Pertaining to a split of the mind\" points to schizophrenia, built on Schiz/o."
-      },
-      {
-        "id": "MT18095",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term spinocerebellar (CF+R+S) refer to?",
-        "options": [
-          "Pertaining to the spine and the cerebellum",
-          "Pertaining to the spine and the cerebrum",
-          "Pertaining to the cerebellum and the medulla oblongata",
-          "Pertaining to the vertebra and the ribs"
-        ],
-        "correct": 0,
-        "explain": "Spinocerebellar is built from Spin/o, spine (thorn), and cerebell, cerebellum, with -ar, so it means pertaining to the spine (spinal cord) and the cerebellum. \"Pertaining to the spine and the cerebrum\" would use Cerebr/o, the largest part, not the cerebellum. \"Pertaining to the cerebellum and the medulla oblongata\" is cerebellomedullary. \"Pertaining to the vertebra and the ribs\" is spondylocostal."
-      },
-      {
-        "id": "MT18096",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term somnoplasty (CF+S) mean?",
-        "options": [
-          "Exaggerated fear of sleeping",
-          "A state related to sleep",
-          "Surgical repair of a fractured vertebra",
-          "Radiation surgery for proper sleep"
-        ],
-        "correct": 3,
-        "explain": "Somnoplasty, from Somn/o, sleep, and -plasty, surgical repair, is radiation surgery for proper sleep. \"Exaggerated fear of sleeping\" is somniphobia. \"A state related to sleep\" is hypnosis. \"Surgical repair of a fractured vertebra\" is vertebroplasty."
-      },
-      {
-        "id": "MT18097",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term spondylocostal (CF+R+S) refer to?",
-        "options": [
-          "Pertaining to the vertebra and the skull",
-          "Pertaining to the vertebra and the ribs",
-          "Pertaining to the spine and the cerebellum",
-          "Pertaining to the spinal cord and the meninges"
-        ],
-        "correct": 1,
-        "explain": "Spondylocostal is built from Spondyl/o, vertebra, and cost, rib, with -al, so it means pertaining to the vertebra and the ribs. \"Pertaining to the vertebra and the skull\" would use Crani/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar. \"Pertaining to the spinal cord and the meninges\" would use Myel/o and Mening/o."
-      },
-      {
-        "id": "MT18098",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term vertebroplasty (CF+S) mean?",
-        "options": [
-          "Surgical repair of a vertebra, such as filling a fracture with cement",
-          "Inflammation of a vertebra, often after a spreading bone infection",
-          "Radiation surgery for proper sleep and for snoring",
-          "Disease of the white matter of the spinal cord"
-        ],
-        "correct": 0,
-        "explain": "Vertebroplasty is built from Vertebr/o, vertebra, and -plasty, surgical repair; a fractured site is filled with cement. \"Inflammation of a vertebra, often after an infection\" would use -itis. \"Radiation surgery for proper sleep and snoring\" is somnoplasty. \"Disease of the white matter of the spinal cord\" is leukomyelopathy."
-      },
-      {
-        "id": "MT18099",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term thalamic (R+S) mean?",
-        "options": [
-          "Pertaining to the thalamus, the lowest brainstem level",
-          "Pertaining to the thalamus, the coordinator of balance",
-          "Pertaining to the thalamus, the deep relay chamber",
-          "Pertaining to the thalamus, the outer brain covering"
-        ],
-        "correct": 2,
-        "explain": "Thalamic is Thalam/o (thalamus) plus -ic (pertaining to). The thalamus is the deep relay chamber. The lowest brainstem level is the medulla oblongata, balance is coordinated by the cerebellum, and the outer coverings are the meninges."
-      },
-      {
-        "id": "MT18100",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term neurotony (CF+R+S) refer to?",
-        "options": [
-          "Nerve weakness, an exhausted and tired nervous system",
-          "Nerve tension, also described as nerve stretching",
-          "A tumor arising in the nerve tissue",
-          "A nerve together with its secretion"
-        ],
-        "correct": 1,
-        "explain": "Neurotony is built from Neur/o, nerve, and Ton/o, tone or tension; it is also described as nerve stretching. \"Nerve weakness, an exhausted nervous system\" is neurasthenia. \"A tumor of the nerve tissue\" is neuroma. \"A nerve and its secretion\" is neurocrine."
-      },
-      {
-        "id": "MT18101",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In the term ventriculus (R+S), the element ventricul refers to what?",
-        "options": [
-          "Ventricle (room / chamber)",
-          "Ventricle (thorn / spine)",
-          "Ventricle (vessel / duct)",
-          "Ventricle (belly / pouch)"
-        ],
-        "correct": 3,
-        "explain": "Ventricul/o means ventricle, glossed as belly or pouch, as in ventriculus. Room is the gloss of Thalam/o, thorn is the gloss of Spin/o, and vessel is the gloss of Angi/o or Vas/o."
-      },
-      {
-        "id": "MT18102",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term neurasthenia (R+S) mean?",
-        "options": [
-          "Nerve weakness with physical and mental fatigue",
-          "Nerve pain with burning along the fibers",
-          "Nerve tension with stretching of the fibers",
-          "Nerve tumor with pressure on nearby tissue"
-        ],
-        "correct": 0,
-        "explain": "Neurasthenia is built from neur, nerve, and -asthenia, weakness: an exhausted nervous system with physical and mental fatigue, weakness, aches and pains. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18103",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term necromaniac (CF+S) describe?",
-        "options": [
-          "An exaggerated fear of dead bodies",
-          "A seizure brought on by the sight of death",
-          "A morbid attraction to dead bodies",
-          "Partial weakness on half side of the body"
-        ],
-        "correct": 2,
-        "explain": "Necromaniac is built from necr/o, death or dead body, and -mania, abnormal impulse or attraction toward: a morbid attraction to dead bodies. \"An exaggerated fear of dead bodies\" would need Phob/o, not -mania. \"A seizure brought on by the sight of death\" would need -lepsy. \"Partial weakness on half side of the body\" is hemiparesis."
-      },
-      {
-        "id": "MT18104",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "How is paramania (P+S) described?",
-        "options": [
-          "An exaggerated and lasting fear of complaining",
-          "An emotional disturbance that takes pleasure in complaining",
-          "Abnormal speech, saying one wrong word in place of another",
-          "Slight paralysis on one half of the body"
-        ],
-        "correct": 1,
-        "explain": "Paramania joins para-, abnormal, with -mania, abnormal impulse or attraction toward: an emotional disturbance that derives pleasure from complaining. \"An exaggerated fear of complaining\" would need Phob/o. \"Abnormal speech, saying one word instead of another\" is paraphasia, built on Phas/o. \"Slight paralysis on one half of the body\" uses the sense of -paresis, which is not in this term."
-      },
-      {
-        "id": "MT18105",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "What does the term ataxia (P+R+S) mean?",
-        "options": [
-          "Loss of muscular co-ordination",
-          "Abnormal speech",
-          "Severe weakness on one half of the body",
-          "Weakness of the nerves"
-        ],
-        "correct": 0,
-        "explain": "Ataxia joins a-, without, with Tax/o, order or coordination, so it means loss of muscular co-ordination. \"Abnormal speech\" is paraphasia. \"Severe weakness on one half of the body\" is hemiplegia. \"Weakness of the nerves\" is neurasthenia."
-      },
-      {
-        "id": "MT18106",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "A person says 'Pencil' instead of saying 'Pen'. Which term fits?",
-        "options": [
-          "Dyslexia",
-          "Ataxia",
-          "Paramania",
-          "Paraphasia"
-        ],
-        "correct": 3,
-        "explain": "Paraphasia (P+R+S) joins para-, abnormal, with Phas/o, speech, so it names abnormal speech such as saying 'Pencil' instead of 'Pen'. \"Dyslexia\" is difficulty with words or reading, built on Lex/o. \"Ataxia\" is loss of muscular co-ordination, built on Tax/o. \"Paramania\" is an emotional disturbance that derives pleasure from complaining, built on -mania."
-      },
-      {
-        "id": "MT18107",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The leukomyelopathy image is captioned 'Disease of white matter of the spinal cord.' Which element of the term supplies the sense of white?",
-        "options": [
-          "Myel/o",
-          "Leuk/o",
-          "-pathy",
-          "Mening/o"
-        ],
-        "correct": 1,
-        "explain": "Leuk/o means white, so leukomyelopathy is disease (-pathy) of the white matter of the spinal cord (Myel/o). \"Myel/o\" supplies the spinal cord sense, not white. \"-pathy\" supplies the disease sense. \"Mening/o\" means meninges and is not in the term."
-      },
-      {
-        "id": "MT18108",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "A patient has bacterial meningoencephalitis. What does meningoencephalitis mean?",
-        "options": [
-          "Inflammation of the meninges and the entire brain",
-          "Inflammation of the meninges and the spinal cord",
-          "Hernia of the meninges and the brain",
-          "Inflammation of the brain without the meninges"
-        ],
-        "correct": 0,
-        "explain": "Meningoencephalitis is built from Mening/o, meninges, Encephal/o, entire brain, and -itis, inflammation. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT18109",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "In psychomotor (as in psychomotor skills), the element psych refers to what?",
-        "options": [
-          "Body",
-          "Nerve",
-          "Mind",
-          "Speech"
-        ],
-        "correct": 2,
-        "explain": "Psych/o means mind, as do Phren/o and Thym/o. \"Body\" is Somat/o. \"Nerve\" is Neur/o. \"Speech\" is Phas/o."
-      },
-      {
-        "id": "MT18110",
-        "type": "mcq",
-        "cat": "MT_lec18-20",
-        "q": "The hemiparesis (P+S) gloss names which body parts as examples of the partial weakness on half side of the body?",
-        "options": [
-          "Limbs and facial muscles",
-          "Heart and smooth muscles",
-          "Spinal cord and meninges",
-          "Cerebrum and cerebellum"
-        ],
-        "correct": 0,
-        "explain": "Hemiparesis is partial weakness on half side of the body, e.g. limbs and facial muscles, while hemiplegia is severe weakness on one half of the body, either Rt. or Lt. side. \"Heart and smooth muscles\" are targets of the ANS, not the examples given. \"Spinal cord and meninges\" are CNS structures and coverings. \"Cerebrum and cerebellum\" are brain parts, not the affected muscles named."
-      }
-    ]
-  }
+ "id": "lecture-18-19-20---nervous-system",
+ "subject": "Medical Terminology",
+ "subjectId": "medical_terminology",
+ "title": "Lecture 18, 19 and 20 - Nervous System",
+ "formSize": 109,
+ "forms": [
+  "A"
+ ],
+ "bank": {
+  "A": [
+   {
+    "id": "MT18001",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the nervous system as a whole do?",
+    "options": [
+     "Coordinates actions by sending, receiving information",
+     "Pumps pressurized blood throughout tissues and back",
+     "Filters a fluid and houses the immune cells",
+     "Moves air so that gases cross into blood"
+    ],
+    "correct": 0,
+    "explain": "The nervous system coordinates voluntary and involuntary actions by sending and receiving information. Pumping blood is the circulatory system, filtering with immune cells is the lymphatic system, and moving air is the respiratory system."
+   },
+   {
+    "id": "MT18002",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which division is paired with its correct components?",
+    "options": [
+     "CNS: cranial and spinal nerves",
+     "PNS: brain and spinal cord",
+     "CNS: brain and spinal cord",
+     "PNS: sympathetic and parasympathetic only"
+    ],
+    "correct": 2,
+    "explain": "The CNS is the brain and spinal cord. The PNS is the cranial and spinal nerves; sympathetic and parasympathetic are subdivisions of its autonomic part."
+   },
+   {
+    "id": "MT18003",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "How do the somatic and autonomic parts of the PNS differ?",
+    "options": [
+     "Somatic: organs and glands; autonomic: skin and muscles",
+     "Somatic: skin and muscles; autonomic: organs and glands",
+     "Somatic: involuntary only; autonomic: voluntary impulses only",
+     "Somatic: from brain only; autonomic: from cord only"
+    ],
+    "correct": 1,
+    "explain": "The somatic part controls external actions of skin and skeletal muscles; the autonomic part controls internal actions of organs and glands. Both draw on brain and cord, and the autonomic part is the involuntary one."
+   },
+   {
+    "id": "MT18004",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "q": "Compare the two limbs of the autonomic division.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which limb prepares the body for stress or emergency?",
+      "options": [
+       "Sympathetic",
+       "Parasympathetic",
+       "Somatic",
+       "Central"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "The sympathetic limb handles stress. Which limb works in ordinary conditions?",
+      "options": [
+       "Parasympathetic",
+       "Sympathetic",
+       "Somatic division",
+       "Central division"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What does the parasympathetic limb do after stress?",
+      "options": [
+       "Restores rest",
+       "Prepares for emergency",
+       "Moves skeletal muscles",
+       "Relays all sensations"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The sympathetic limb prepares the body in stress or emergency. The parasympathetic limb is most active in ordinary conditions and restores a restful state after stress. Skeletal muscle belongs to the somatic division; neither limb is limited to cranial or spinal nerves."
+   },
+   {
+    "id": "MT18005",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What joins the right and left halves of the cerebrum?",
+    "options": [
+     "Corpus callosum",
+     "Lateral ventricle",
+     "Meningeal layer",
+     "Brainstem stalk"
+    ],
+    "correct": 0,
+    "explain": "The cerebrum (cerebr/o), the largest part of the brain, has halves joined by the corpus callosum, a bridge of nerve fibers. Ventricles are fluid cavities, the meninges are coverings, and the brainstem lies below."
+   },
+   {
+    "id": "MT18006",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which description fits the cerebral cortex?",
+    "options": [
+     "Inner relay passing signals to the lobes",
+     "Outer layer of the cerebrum for thinking",
+     "Coordinating mass beneath the occipital lobes",
+     "Clear fluid bathing brain and cord"
+    ],
+    "correct": 1,
+    "explain": "The cerebral cortex is the outer layer of the cerebrum, responsible for higher mental functions. The relay is the thalamus, the mass below the occipital lobes is the cerebellum, and the fluid is CSF."
+   },
+   {
+    "id": "MT18007",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which structure is NOT one of the three brainstem levels?",
+    "options": [
+     "The mesencephalon",
+     "The pons",
+     "The medulla oblongata",
+     "The thalamus"
+    ],
+    "correct": 3,
+    "explain": "The brainstem, the relay controlling breathing, heart rate, and temperature, has three levels: mesencephalon, pons, and medulla oblongata. The thalamus is in the diencephalon."
+   },
+   {
+    "id": "MT18008",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "How are the ventricles and cerebrospinal fluid related?",
+    "options": [
+     "Nerve tracts insulated by fatty fluid",
+     "Cavities filled with clear circulating fluid",
+     "Membranes containing flowing blood inside",
+     "Centers releasing a hormone into blood"
+    ],
+    "correct": 1,
+    "explain": "The ventricles are inter-connected cavities filled with cerebrospinal fluid, a clear plasma-like fluid circulating around the brain and cord. They are not tracts, membranes, or hormone centers."
+   },
+   {
+    "id": "MT18009",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "q": "Count the nerve pairs of the peripheral nervous system.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "How many pairs of cranial nerves arise from the brain?",
+      "options": [
+       "11 pairs",
+       "12 pairs",
+       "30 pairs",
+       "31 pairs"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "2",
+      "prompt": "How many pairs of spinal nerves arise from the spinal cord?",
+      "options": [
+       "11 pairs",
+       "12 pairs",
+       "30 pairs",
+       "31 pairs"
+      ],
+      "correct": 3
+     }
+    ],
+    "explain": "There are 12 pairs of cranial nerves arising from the brain and 31 pairs of spinal nerves arising from the spinal cord. 11 and 30 are close but wrong counts, and 31 cranial or 12 spinal swaps the two numbers."
+   },
+   {
+    "id": "MT18010",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Sensory nerves are afferent; motor nerves are efferent. What do these words mean?",
+    "options": [
+     "Afferent: away from brain; efferent: toward it",
+     "Afferent: toward brain; efferent: away from it",
+     "Both: toward the brain, different targets",
+     "Both: away from the brain, different targets"
+    ],
+    "correct": 1,
+    "explain": "Afferent (sensory) means carrying toward the brain; efferent (motor) means carrying away from it. The two words have opposite directions."
+   },
+   {
+    "id": "MT18011",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which set consists entirely of combining forms that mean mind?",
+    "options": [
+     "Phren/o, Psych/o, and Thym/o",
+     "Gli/o, Narc/o, and Ton/o forms",
+     "Crani/o, Encephal/o, and Cerebr/o",
+     "Spin/o, Spondyl/o, and Mening/o"
+    ],
+    "correct": 0,
+    "explain": "Phren/o, Psych/o, and Thym/o are the three combining forms that mean mind. \"Gli/o, Narc/o, and Ton/o forms\" gives glue, stupor, and tone. \"Crani/o, Encephal/o, and Cerebr/o\" gives skull, brain, and cerebrum. \"Spin/o, Spondyl/o, and Mening/o\" gives spine, vertebra, and meninges."
+   },
+   {
+    "id": "MT18012",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which two combining forms both mean sleep?",
+    "options": [
+     "Narc/o and Gli/o",
+     "Somn/o and Hypn/o",
+     "Phas/o and Lex/o",
+     "Ton/o and Tax/o"
+    ],
+    "correct": 1,
+    "explain": "Somn/o, with its variant Somn/i, and Hypn/o are the combining forms for sleep, as in somniphobia and hypnosis. \"Narc/o and Gli/o\" means stupor or sleep (Narc/o) and glue (Gli/o), so the two forms do not share one meaning. \"Phas/o and Lex/o\" means speech and word. \"Ton/o and Tax/o\" means tone and order."
+   },
+   {
+    "id": "MT18013",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term schizophrenia, which pairing of element to meaning is correct?",
+    "options": [
+     "Schiz means split, and phren means mind.",
+     "Schiz means mind, and phren means split.",
+     "Schiz means body, and phren means speech.",
+     "Schiz means split, and phren means nerve."
+    ],
+    "correct": 0,
+    "explain": "In schizophrenia, schiz means split and phren means mind, so the term denotes a splitting of the mind. \"Schiz means mind, and phren means split\" swaps the two elements. \"Schiz means body, and phren means speech\" assigns senses that belong to Somat/o and Phas/o. \"Schiz means split, and phren means nerve\" keeps split but assigns nerve, which is Neur/o, to phren."
+   },
+   {
+    "id": "MT18014",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term somatopsychosis, which pairing of element to meaning is correct?",
+    "options": [
+     "Somat means mind, and psych means body.",
+     "Somat means body, and psych means mind.",
+     "Somat means split, and psych means sleep.",
+     "Somat means nerve, and psych means sensation."
+    ],
+    "correct": 1,
+    "explain": "In somatopsychosis, somat means body and psych means mind. \"Somat means mind, and psych means body\" reverses the two elements. \"Somat means split, and psych means sleep\" assigns senses that belong to Schiz/o and Somn/o. \"Somat means nerve, and psych means sensation\" assigns senses that belong to Neur/o and Esthesi/o."
+   },
+   {
+    "id": "MT18015",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term euthymia, the element thym refers to what?",
+    "options": [
+     "The mind or state of feeling",
+     "The sleep or the torpor state",
+     "The tone or the tension state",
+     "The split or the cleft in mind"
+    ],
+    "correct": 0,
+    "explain": "In euthymia, thym means mind, and eu- means good, so the term denotes a good or balanced state of mind. \"The sleep or the torpor state\" is Somn/o, Hypn/o, or Narc/o. \"The tone or the tension state\" is Ton/o. \"The split or the cleft in mind\" is Schiz/o."
+   },
+   {
+    "id": "MT18016",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term ataxia, the element tax refers to what?",
+    "options": [
+     "Order or coordination",
+     "Stupor or a sleep state",
+     "Weakness or a failure",
+     "Seizure or a sudden fit"
+    ],
+    "correct": 0,
+    "explain": "In ataxia, tax means order or coordination, and a- means without, so the term denotes loss of muscular coordination. \"Stupor or a sleep state\" is Narc/o or Somn/o. \"Weakness or a failure\" is the sense of -asthenia or -paresis. \"Seizure or a sudden fit\" is -lepsy."
+   },
+   {
+    "id": "MT18017",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term paraphasia, the element phas refers to what?",
+    "options": [
+     "Word or a written phrase",
+     "Speech or utterance",
+     "Sensation or a feeling",
+     "Nerve or a conducting fiber"
+    ],
+    "correct": 1,
+    "explain": "In paraphasia, phas means speech, and para- means abnormal, so the term denotes a disorder of speech. \"Word or a written phrase\" is Lex/o. \"Sensation or a feeling\" is Esthesi/o. \"Nerve or a conducting fiber\" is Neur/o."
+   },
+   {
+    "id": "MT18018",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In belonephobia, what do belon and phob mean?",
+    "options": [
+     "Fear; needle",
+     "Needle; fear",
+     "Nerve; mind",
+     "Sleep; stupor"
+    ],
+    "correct": 1,
+    "explain": "Belon means a sharp pin or needle and phob means exaggerated fear, so belonephobia is fear of needles. Nerve is neur/o, mind is psych/o, and sleep or stupor is narc/o."
+   },
+   {
+    "id": "MT18019",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In myeloma, which sense of Myel/o applies?",
+    "options": [
+     "Spinal cord",
+     "Bone marrow",
+     "Meninges",
+     "Nerve"
+    ],
+    "correct": 1,
+    "explain": "Myel/o means spinal cord or bone marrow; myeloma is a tumor of bone marrow cells. Meninges is mening/o and nerve is neur/o."
+   },
+   {
+    "id": "MT18020",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which suffix is paired with its correct meaning?",
+    "options": [
+     "-paresis: full paralysis",
+     "-lepsy: muscle weakness",
+     "-plegia: paralysis",
+     "-asthenia: attraction"
+    ],
+    "correct": 2,
+    "explain": "-plegia means paralysis. -paresis is slight paralysis, -lepsy is a seizure, -asthenia is weakness, and -mania is abnormal impulse or attraction."
+   },
+   {
+    "id": "MT18021",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "How do hemiparesis and hemiplegia differ?",
+    "options": [
+     "Paresis: partial weakness; plegia: paralysis",
+     "Paresis: paralysis; plegia: partial weakness",
+     "Paresis: limbs only; plegia: face only",
+     "Paresis: seizure; plegia: impulse"
+    ],
+    "correct": 0,
+    "explain": "Both affect one half of the body (hemi-). Hemiparesis is partial weakness; hemiplegia is severe paralysis. Neither is limited to limbs or face, and seizure is -lepsy."
+   },
+   {
+    "id": "MT18022",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which word form is epilepsy?",
+    "options": [
+     "R+S",
+     "CF+S",
+     "P+S",
+     "P+R+S"
+    ],
+    "correct": 2,
+    "explain": "Epilepsy is the prefix epi- (upon) joined directly to the suffix -lepsy (seizure): P+S. Epi is not a root, takes no combining vowel, and there is no hidden root."
+   },
+   {
+    "id": "MT18023",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Where is the cerebellum, and what does it control?",
+    "options": [
+     "Below occipital lobes; muscle coordination",
+     "Above frontal lobes; movement and personality",
+     "Within brainstem; breathing and heart rate",
+     "Below thalamus; autonomic control"
+    ],
+    "correct": 0,
+    "explain": "The cerebellum lies below the occipital lobes and coordinates skeletal muscle. Movement and personality is the frontal lobe, breathing is the brainstem, and autonomic control is the hypothalamus."
+   },
+   {
+    "id": "MT18025",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What is the spinal cord?",
+    "options": [
+     "Nerve column through the vertebrae for conduction",
+     "Fiber bridge joining the two cerebral hemispheres",
+     "Linked cavities holding the cerebrospinal fluid",
+     "Three-layer membrane covering the brain and cord"
+    ],
+    "correct": 0,
+    "explain": "The spinal cord is a column of nervous tissue from the brainstem through the vertebrae, conducting to and from the brain. The bridge is the corpus callosum, the cavities are ventricles, and the membranes are meninges."
+   },
+   {
+    "id": "MT18026",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each lobe of the cerebrum to the function it governs.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Frontal lobe"
+     },
+     {
+      "id": "2",
+      "text": "Parietal lobe"
+     },
+     {
+      "id": "3",
+      "text": "Temporal lobe"
+     },
+     {
+      "id": "4",
+      "text": "Occipital lobe"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Vision, at the back"
+     },
+     {
+      "id": "B",
+      "text": "Movement and personality, at front"
+     },
+     {
+      "id": "C",
+      "text": "Hearing, taste, and smell"
+     },
+     {
+      "id": "D",
+      "text": "Pain, temperature, and touch"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "D",
+     "3": "C",
+     "4": "A"
+    },
+    "explain": "The frontal lobe (anterior) governs voluntary movement and personality; the parietal lobe (behind it) pain, temperature, and touch; the temporal lobe (below the front) hearing, taste, and smell; the occipital lobe (posterior) vision."
+   },
+   {
+    "id": "MT18027",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each meningeal layer to the position it occupies around the brain and spinal cord.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Pia mater"
+     },
+     {
+      "id": "2",
+      "text": "Arachnoid"
+     },
+     {
+      "id": "3",
+      "text": "Dura mater"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Middle layer"
+     },
+     {
+      "id": "B",
+      "text": "Innermost, clinging to nerve tissue"
+     },
+     {
+      "id": "C",
+      "text": "Outermost, tough layer"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "A",
+     "3": "C"
+    },
+    "explain": "Pia mater is the innermost layer clinging to the nerve tissue, arachnoid the middle, and dura mater the tough outermost."
+   },
+   {
+    "id": "MT18028",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each combining form to the structure or idea it denotes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Encephal/o"
+     },
+     {
+      "id": "2",
+      "text": "Crani/o"
+     },
+     {
+      "id": "3",
+      "text": "Gli/o"
+     },
+     {
+      "id": "4",
+      "text": "Esthesi/o"
+     },
+     {
+      "id": "5",
+      "text": "Mening/o"
+     },
+     {
+      "id": "6",
+      "text": "Lex/o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Sensation or feeling"
+     },
+     {
+      "id": "B",
+      "text": "The brain taken as a whole"
+     },
+     {
+      "id": "C",
+      "text": "A word or a phrase"
+     },
+     {
+      "id": "D",
+      "text": "A glue-like tissue"
+     },
+     {
+      "id": "E",
+      "text": "The bony case, or skull"
+     },
+     {
+      "id": "F",
+      "text": "The membranes sheathing the cord"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "E",
+     "3": "D",
+     "4": "A",
+     "5": "F",
+     "6": "C"
+    },
+    "explain": "Encephal/o means the brain taken as a whole. Crani/o means the bony case, or skull. Gli/o means a glue-like tissue. Esthesi/o means sensation or feeling. Mening/o means the membranes sheathing the cord. Lex/o means a word or a phrase. Each form pairs with one of those senses."
+   },
+   {
+    "id": "MT18029",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each combining form to the structure or idea it denotes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Narc/o"
+     },
+     {
+      "id": "2",
+      "text": "Spin/o"
+     },
+     {
+      "id": "3",
+      "text": "Thalam/o"
+     },
+     {
+      "id": "4",
+      "text": "Ton/o"
+     },
+     {
+      "id": "5",
+      "text": "Ventricul/o"
+     },
+     {
+      "id": "6",
+      "text": "Spondyl/o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "One bone of the backbone"
+     },
+     {
+      "id": "B",
+      "text": "A state of stupor or sleep"
+     },
+     {
+      "id": "C",
+      "text": "A belly-like pouch or cavity"
+     },
+     {
+      "id": "D",
+      "text": "Muscle tone or tension"
+     },
+     {
+      "id": "E",
+      "text": "Deep relay chamber of brain"
+     },
+     {
+      "id": "F",
+      "text": "Backbone, likened to a thorn"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "F",
+     "3": "E",
+     "4": "D",
+     "5": "C",
+     "6": "A"
+    },
+    "explain": "Narc/o is stupor or sleep, Spin/o the spine (thorn), Thalam/o the relay chamber, Ton/o tone, Ventricul/o a belly-like cavity, and Spondyl/o one vertebra."
+   },
+   {
+    "id": "MT18030",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which statement correctly describes the peripheral nervous system?",
+    "options": [
+     "Brain and spinal cord",
+     "Cranial and spinal nerves",
+     "Sympathetic and parasympathetic only",
+     "Thalamus and hypothalamus"
+    ],
+    "correct": 1,
+    "explain": "The PNS is the cranial and spinal nerves. The brain and cord are the CNS, sympathetic and parasympathetic are autonomic subdivisions, and the thalamus and hypothalamus are deep brain structures."
+   },
+   {
+    "id": "MT18031",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which set correctly lists the three levels of the brainstem?",
+    "options": [
+     "Thalamus, hypothalamus, and cerebellum",
+     "Mesencephalon, pons, and medulla oblongata",
+     "The frontal, parietal, and temporal lobes",
+     "Pia, arachnoid, and dura mater"
+    ],
+    "correct": 1,
+    "explain": "The brainstem levels are the mesencephalon, pons, and medulla oblongata. The other sets are deep structures, cerebral lobes, and meninges."
+   },
+   {
+    "id": "MT18032",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which statement correctly describes sensory nerves?",
+    "options": [
+     "Carry motor impulses out to muscles",
+     "Carry information from body to brain",
+     "Carry involuntary impulses to glands",
+     "Carry impulses between the hemispheres"
+    ],
+    "correct": 1,
+    "explain": "Sensory nerves carry incoming information from body parts to the brain. Motor nerves carry impulses out, autonomic nerves carry involuntary ones, and the corpus callosum joins the hemispheres."
+   },
+   {
+    "id": "MT18033",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which statement correctly describes motor nerves?",
+    "options": [
+     "Carry sensation from the body to brain",
+     "Carry impulses from brain to muscles, glands",
+     "Carry involuntary impulses to smooth muscle",
+     "Carry impulses between brainstem and cerebellum"
+    ],
+    "correct": 1,
+    "explain": "Motor nerves carry outgoing impulses from the brain to muscles and glands. Sensory nerves carry information in; the autonomic system carries involuntary impulses."
+   },
+   {
+    "id": "MT18034",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which statement correctly describes the autonomic nervous system?",
+    "options": [
+     "Voluntary impulses to the skeletal muscle and skin",
+     "Involuntary impulses to smooth muscle, heart, glands",
+     "Sensory information carried inward to the brain",
+     "Motor impulses out to the limb and trunk muscles"
+    ],
+    "correct": 1,
+    "explain": "The ANS carries involuntary impulses from the brain to smooth muscle, cardiac muscle, and glands. Voluntary skeletal control is somatic; incoming information is sensory."
+   },
+   {
+    "id": "MT18035",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which statement correctly describes the somatic nervous system?",
+    "options": [
+     "It controls internal actions of organs and glands.",
+     "It controls external actions of skin and muscles.",
+     "It controls the sympathetic and parasympathetic responses to stress.",
+     "It controls the relay of sensory information to the cortex."
+    ],
+    "correct": 1,
+    "explain": "The somatic nervous system controls external actions of skin and muscles. \"It controls internal actions of organs and glands\" describes the autonomic nervous system. \"It controls the sympathetic and parasympathetic responses to stress\" names the two autonomic branches, not the somatic limb. \"It controls the relay of sensory information to the cortex\" describes the thalamus."
+   },
+   {
+    "id": "MT18036",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which lobe of the cerebrum is the anterior section?",
+    "options": [
+     "The frontal lobe of movement",
+     "The parietal lobe of sensation",
+     "The temporal lobe of hearing",
+     "The occipital lobe of vision"
+    ],
+    "correct": 0,
+    "explain": "The frontal lobe is the anterior section, and it governs voluntary muscle movement and personality. \"The parietal lobe of sensation\" handles pain, temperature, and touch, behind the frontal lobe. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
+   },
+   {
+    "id": "MT18037",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which lobe of the cerebrum lies posterior to the frontal lobe?",
+    "options": [
+     "The frontal lobe of movement",
+     "The parietal lobe of sensation",
+     "The temporal lobe of hearing",
+     "The occipital lobe of vision"
+    ],
+    "correct": 1,
+    "explain": "The parietal lobe lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
+   },
+   {
+    "id": "MT18038",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which lobe of the cerebrum lies below the frontal lobe?",
+    "options": [
+     "The frontal lobe of movement",
+     "The parietal lobe of sensation",
+     "The temporal lobe of hearing",
+     "The occipital lobe of vision"
+    ],
+    "correct": 2,
+    "explain": "The temporal lobe lies below the frontal lobe and governs hearing, taste, and smell. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The parietal lobe of sensation\" lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The occipital lobe of vision\" lies posterior to the parietal and temporal lobes and governs vision."
+   },
+   {
+    "id": "MT18039",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which lobe of the cerebrum lies posterior to the parietal and temporal lobes?",
+    "options": [
+     "The frontal lobe of movement",
+     "The parietal lobe of sensation",
+     "The temporal lobe of hearing",
+     "The occipital lobe of vision"
+    ],
+    "correct": 3,
+    "explain": "The occipital lobe lies posterior to the parietal and temporal lobes and governs vision. \"The frontal lobe of movement\" is the anterior section for voluntary muscle movement and personality. \"The parietal lobe of sensation\" lies posterior to the frontal lobe and handles pain, temperature, and touch. \"The temporal lobe of hearing\" lies below the frontal lobe and governs hearing, taste, and smell."
+   },
+   {
+    "id": "MT18040",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which structure is responsible for relaying sensory information to the cortex?",
+    "options": [
+     "The hypothalamus",
+     "The thalamus",
+     "The cerebellum",
+     "The brainstem"
+    ],
+    "correct": 1,
+    "explain": "The thalamus, which lies in the diencephalon, relays sensory information to the cortex. \"The hypothalamus\" is the control center for the autonomic nervous system. \"The cerebellum\" coordinates skeletal muscles. \"The brainstem\" relays between the cerebrum, cerebellum, and spinal cord and governs breathing, heart rate, and body temperature."
+   },
+   {
+    "id": "MT18041",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which structure lies below the thalamus?",
+    "options": [
+     "The cerebellum of muscle coordination",
+     "The thalamus of sensory relay",
+     "The hypothalamus of autonomic control",
+     "The brainstem of breathing and heart rate"
+    ],
+    "correct": 2,
+    "explain": "The hypothalamus lies below the thalamus and is the control center for the autonomic nervous system. \"The cerebellum of muscle coordination\" sits below the occipital lobes and coordinates skeletal muscle. \"The thalamus of sensory relay\" is the chamber that passes sensory signals to the cortex, not the center below it. \"The brainstem of breathing and heart rate\" is the relay below the cerebrum for breathing, heart rate, and body temperature."
+   },
+   {
+    "id": "MT18042",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which region relays brain signals and controls breathing, heart rate, and temperature?",
+    "options": [
+     "The cerebellum",
+     "The thalamus",
+     "The hypothalamus",
+     "The brainstem"
+    ],
+    "correct": 3,
+    "explain": "The brainstem relays between the cerebrum, cerebellum, and spinal cord and controls breathing, heart rate, and body temperature. The cerebellum coordinates muscle, the thalamus relays sensation, and the hypothalamus controls the ANS."
+   },
+   {
+    "id": "MT18043",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "The combining form Cerebell/o carries the diminutive sense of little brain. Which structure does it name?",
+    "options": [
+     "The cerebrum, the large portion",
+     "The cerebellum, below the lobes",
+     "The brainstem and its levels",
+     "The meninges, the coverings"
+    ],
+    "correct": 1,
+    "explain": "Cerebell/o names the cerebellum, whose name carries the diminutive sense of little brain, the coordinating mass below the occipital lobes. \"The cerebrum, the large portion\" is named by Cerebr/o. \"The brainstem and its levels\" is not named by this diminutive form. \"The meninges, the coverings\" are named by Mening/o."
+   },
+   {
+    "id": "MT18044",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the combining form Cerebr/o mean?",
+    "options": [
+     "The cerebellum, or the little brain below the lobes",
+     "The cerebrum, the largest part of the brain",
+     "The entire brain, taken as one whole organ here",
+     "The skull, the bony case around the head itself"
+    ],
+    "correct": 1,
+    "explain": "Cerebr/o names the cerebrum, the largest portion of the brain, divided into right and left hemispheres. \"The cerebellum, or little brain\" is Cerebell/o. \"The entire brain, taken as one organ\" is Encephal/o. \"The skull, the bony case of the head\" is Crani/o."
+   },
+   {
+    "id": "MT18045",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the combining form Cerebell/o mean?",
+    "options": [
+     "Cerebrum, the largest brain part",
+     "Cerebellum, or little brain",
+     "Entire brain as one organ",
+     "Meninges, the covering membranes"
+    ],
+    "correct": 1,
+    "explain": "Cerebell/o means cerebellum, the little brain. Cerebrum is cerebr/o, the whole brain is encephal/o, and meninges is mening/o."
+   },
+   {
+    "id": "MT18046",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the combining form Neur/o mean?",
+    "options": [
+     "A nerve",
+     "The mind",
+     "A sleep",
+     "A sense"
+    ],
+    "correct": 0,
+    "explain": "Neur/o means a nerve, as in neurocrine. \"The mind\" is Phren/o, Psych/o, or Thym/o. \"A sleep\" is Somn/o or Hypn/o. \"A sense\" is Esthesi/o."
+   },
+   {
+    "id": "MT18047",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term cerebritis mean?",
+    "options": [
+     "Inflammation of the cerebellum",
+     "Inflammation of the cerebrum",
+     "Inflammation of the meninges",
+     "Inflammation of a conducting nerve"
+    ],
+    "correct": 1,
+    "explain": "Cerebritis is built from Cerebr/o, cerebrum, and -itis, inflammation, so it means inflammation of the cerebrum. \"Inflammation of the cerebellum\" would use Cerebell/o. \"Inflammation of the meninges\" would use Mening/o. \"Inflammation of a conducting nerve\" would use Neur/o."
+   },
+   {
+    "id": "MT18048",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term glioma mean?",
+    "options": [
+     "Tumor of the meninges",
+     "Tumor of conducting nerve tissue",
+     "Tumor of glue-like supporting cells",
+     "Tumor of the spinal cord"
+    ],
+    "correct": 2,
+    "explain": "Glioma is gli/o (glue) + -oma: a tumor of the glue-like supporting cells of the nervous system. Meninges is meningioma, nerve tissue is neuroma, and the cord is myeloma-type terms."
+   },
+   {
+    "id": "MT18049",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term dyslexia mean?",
+    "options": [
+     "Loss of muscular coordination in gait",
+     "Difficulty with words or reading",
+     "Inflammation of the brain as a whole",
+     "Exaggerated fear of sharp pins or needles"
+    ],
+    "correct": 1,
+    "explain": "Dyslexia is built from dys-, bad or difficult, and Lex/o, word or phrase, with -ia, condition, so it denotes difficulty with words or reading. \"Loss of muscular coordination in gait\" is ataxia. \"Inflammation of the brain as a whole\" is encephalitis. \"Exaggerated fear of sharp pins or needles\" is belonephobia."
+   },
+   {
+    "id": "MT18050",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term myelomeningocele mean?",
+    "options": [
+     "A tumor of the bone marrow inside a bone",
+     "A hernia of the spinal cord and meninges",
+     "Inflammation of the spinal cord along its length",
+     "A tumor of the nerve tissue in a peripheral nerve"
+    ],
+    "correct": 1,
+    "explain": "Myelomeningocele is built from Myel/o, spinal cord, Mening/o, meninges, and -cele, hernia, so it denotes a hernia of the spinal cord and its meningeal covering. \"A tumor of the bone marrow inside a bone\" is myeloma, the marrow sense of Myel/o with -oma. \"Inflammation of the spinal cord along its length\" would use -itis. \"A tumor of the nerve tissue in a peripheral nerve\" is a neuroma."
+   },
+   {
+    "id": "MT18051",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term neurocrine mean?",
+    "options": [
+     "Pertaining to the nerve and its covering",
+     "Pertaining to the nerve and its secretion",
+     "Pertaining to a gland without nerves",
+     "Pertaining to the nerve and its fibers"
+    ],
+    "correct": 1,
+    "explain": "Neurocrine is built from Neur/o, nerve, and crin, to secrete, with the suffix -e, so it means pertaining to the nerve and its secretion. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT18052",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term belonephobia mean?",
+    "options": [
+     "Exaggerated fear of water or of drinking it",
+     "Exaggerated fear of sharp pins or needles",
+     "Exaggerated fear of eating or of swallowing",
+     "Exaggerated fear of speaking before a group"
+    ],
+    "correct": 1,
+    "explain": "Belonephobia is built from belon, a sharp pin or needle, and Phob/o, exaggerated fear, so it denotes fear of sharp pins or needles. \"Exaggerated fear of water or of drinking\" is hydrophobia. \"Exaggerated fear of eating or swallowing\" is phagophobia. \"Exaggerated fear of speaking in public\" is glossophobia or lalophobia."
+   },
+   {
+    "id": "MT18053",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "lobe-drill",
+    "groupOrder": 1,
+    "q": "This cerebral lobe sits at the anterior pole.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this lobe?",
+      "options": [
+       "Frontal lobe",
+       "Frontel lobe",
+       "Frontall lobe",
+       "Fruntal lobe"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which work does the Frontal lobe govern?",
+      "options": [
+       "Movement and personality",
+       "Pain, temperature, touch",
+       "Hearing, taste, smell",
+       "Vision"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This anterior lobe is the frontal lobe. Frontel, Frontall, and Fruntal miss the spelling of frontal. It governs voluntary muscle movement and personality. Pain, temperature, and touch belong to the parietal lobe. Hearing, taste, and smell belong to the temporal lobe. Vision belongs to the occipital lobe."
+   },
+   {
+    "id": "MT18054",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "lobe-drill",
+    "groupOrder": 2,
+    "q": "This cerebral lobe lies behind the frontal lobe, under the skull crown.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this lobe?",
+      "options": [
+       "Parietal lobe",
+       "Parietel lobe",
+       "Pariatal lobe",
+       "Parietall lobe"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which work does the Parietal lobe govern?",
+      "options": [
+       "Pain, temperature, touch",
+       "Movement and personality",
+       "Hearing, taste, smell",
+       "Vision"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This lobe behind the frontal lobe is the parietal lobe. Parietel, Pariatal, and Parietall miss the spelling of parietal. It handles pain, temperature, and touch. Voluntary muscle movement and personality belong to the frontal lobe. Hearing, taste, and smell belong to the temporal lobe. Vision belongs to the occipital lobe."
+   },
+   {
+    "id": "MT18055",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "lobe-drill",
+    "groupOrder": 3,
+    "q": "This cerebral lobe lies at the side of the head, beneath the temples.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this lobe?",
+      "options": [
+       "Temporal lobe",
+       "Temporol lobe",
+       "Temporral lobe",
+       "Temporil lobe"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which work does the Temporal lobe govern?",
+      "options": [
+       "Hearing, taste, smell",
+       "Movement and personality",
+       "Pain, temperature, touch",
+       "Vision"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This lobe below the frontal lobe is the temporal lobe. Temporol, Temporral, and Temporil miss the spelling of temporal. It governs hearing, taste, and smell. Voluntary muscle movement and personality belong to the frontal lobe. Pain, temperature, and touch belong to the parietal lobe. Vision belongs to the occipital lobe."
+   },
+   {
+    "id": "MT18056",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "lobe-drill",
+    "groupOrder": 4,
+    "q": "This cerebral lobe lies at the posterior pole.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this lobe?",
+      "options": [
+       "Occipital lobe",
+       "Occipitel lobe",
+       "Occipattal lobe",
+       "Occipittal lobe"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which work does the Occipital lobe govern?",
+      "options": [
+       "Vision",
+       "Movement and personality",
+       "Pain, temperature, touch",
+       "Hearing, taste, smell"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This posterior lobe is the occipital lobe. Occipitel, Occipattal, and Occipittal miss the spelling of occipital. It governs vision. Voluntary muscle movement and personality belong to the frontal lobe. Pain, temperature, and touch belong to the parietal lobe. Hearing, taste, and smell belong to the temporal lobe."
+   },
+   {
+    "id": "MT18057",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "meninges-cluster",
+    "groupOrder": 1,
+    "q": "Which meningeal layer belongs at each depth around the brain and spinal cord?",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Innermost layer, clinging to the nervous tissue",
+      "options": [
+       "Pia mater",
+       "Arachnoid",
+       "Dura mater",
+       "Cerebral cortex"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Middle layer of the three coverings",
+      "options": [
+       "Arachnoid",
+       "Pia mater",
+       "Dura mater",
+       "Cerebral cortex"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Outermost tough layer of the coverings",
+      "options": [
+       "Dura mater",
+       "Pia mater",
+       "Arachnoid",
+       "Cerebral cortex"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The pia mater is the innermost layer clinging to the nervous tissue. The arachnoid is the middle layer. The dura mater is the outermost tough layer. Cerebral cortex is the outer gray layer of the cerebrum, not a meningeal covering. Pia mater is not the middle or outer layer. Arachnoid is not the inner or outer layer. Dura mater is not the inner or middle layer."
+   },
+   {
+    "id": "MT18058",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "brainstem-drill",
+    "groupOrder": 1,
+    "q": "This structure lies just below the thalamus and hypothalamus.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this level?",
+      "options": [
+       "Mesencephalon",
+       "Mesancephalon",
+       "Mesencepholon",
+       "Mesencaphalon"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which set does the Mesencephalon belong to?",
+      "options": [
+       "The three levels of the brainstem",
+       "The four lobes of the cerebral hemispheres",
+       "The three layers of the meningeal coverings",
+       "The cavities that hold the clear fluid"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This mid-brain level is the mesencephalon. Mesancephalon, Mesencepholon, and Mesencaphalon miss that spelling. It is one of the three brainstem levels, with the pons and the medulla oblongata. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
+   },
+   {
+    "id": "MT18059",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "brainstem-drill",
+    "groupOrder": 2,
+    "q": "This structure takes its name from the Latin word for bridge.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this level?",
+      "options": [
+       "Pons",
+       "Ponns",
+       "Ponsus",
+       "Ponse"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which set does the Pons belong to?",
+      "options": [
+       "The three levels of the brainstem",
+       "The four lobes of the cerebral hemispheres",
+       "The three layers of the meningeal coverings",
+       "The cavities that hold the clear fluid"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This level between the mid-brain and the medulla oblongata is the pons. Ponns, Ponsus, and Ponse miss that spelling. It is one of the three brainstem levels. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
+   },
+   {
+    "id": "MT18060",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "brainstem-drill",
+    "groupOrder": 3,
+    "q": "This structure is continuous with the spinal cord below it.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this level?",
+      "options": [
+       "Medulla oblongata",
+       "Medula oblongata",
+       "Medulla oblingata",
+       "Medulla oblongatta"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which set does the Medulla oblongata belong to?",
+      "options": [
+       "The three levels of the brainstem",
+       "The four lobes of the cerebral hemispheres",
+       "The three layers of the meningeal coverings",
+       "The cavities that hold the clear fluid"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This lowest brainstem level is the medulla oblongata. Medula oblongata drops a letter from medulla. Medulla oblingata and Medulla oblongatta miss the spelling of oblongata. It is one of the three brainstem levels, with the mesencephalon and the pons. The four lobes of the cerebrum are frontal, parietal, temporal, and occipital. The three layers of the meninges are pia, arachnoid, and dura. The cavities that hold the fluid are the ventricles."
+   },
+   {
+    "id": "MT18061",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each suffix to the sense it carries. One line stays unmatched.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "-asthenia"
+     },
+     {
+      "id": "2",
+      "text": "-lepsy"
+     },
+     {
+      "id": "3",
+      "text": "-mania"
+     },
+     {
+      "id": "4",
+      "text": "-paresis"
+     },
+     {
+      "id": "5",
+      "text": "-plegia"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Weakness, without full loss of movement"
+     },
+     {
+      "id": "B",
+      "text": "A seizure or a sudden fit"
+     },
+     {
+      "id": "C",
+      "text": "An abnormal impulse or attraction"
+     },
+     {
+      "id": "D",
+      "text": "Slight paralysis, or partial weakness"
+     },
+     {
+      "id": "E",
+      "text": "Paralysis, a severe loss of movement"
+     },
+     {
+      "id": "F",
+      "text": "A hernia or a protruding sac"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E"
+    },
+    "explain": "-asthenia means weakness, without full loss of movement. -lepsy means a seizure or a sudden fit, as in epilepsy. -mania means an abnormal impulse or attraction, as in necromaniac. -paresis means slight paralysis, or partial weakness, as in hemiparesis. -plegia means paralysis, a severe loss of movement, as in hemiplegia. \"A hernia or a protruding sac\" is the sense of -cele, as in myelomeningocele, and matches none of these five suffixes."
+   },
+   {
+    "id": "MT18062",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term encephalitis mean?",
+    "options": [
+     "Softening of the brain taken as a whole",
+     "Inflammation of the brain taken as a whole",
+     "Inflammation of the meninges around the brain",
+     "Hernia of the brain through the skull"
+    ],
+    "correct": 1,
+    "explain": "Encephalitis is built from Encephal/o, the brain taken as a whole, and -itis, inflammation, so it means inflammation of the brain. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT18063",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term neuroma mean?",
+    "options": [
+     "Pain in nerve tissue",
+     "Tumor of nerve tissue",
+     "Inflammation of nerve tissue",
+     "Softening of nerve tissue"
+    ],
+    "correct": 1,
+    "explain": "Neuroma is neur/o + -oma: a tumor of nerve tissue. Pain is neuralgia, inflammation neuritis, and softening neuromalacia."
+   },
+   {
+    "id": "MT18064",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term somniphobia mean?",
+    "options": [
+     "Exaggerated fear of sharp pins",
+     "Exaggerated fear of sleeping",
+     "Exaggerated fear of swallowing",
+     "Exaggerated fear of speaking"
+    ],
+    "correct": 1,
+    "explain": "Somniphobia is built from Somn/i, sleep, and Phob/o, exaggerated fear, so it means exaggerated fear of sleeping. \"Exaggerated fear of sharp pins\" is belonephobia. \"Exaggerated fear of swallowing\" is phagophobia. \"Exaggerated fear of speaking\" is glossophobia or lalophobia."
+   },
+   {
+    "id": "MT18065",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term hypnosis mean?",
+    "options": [
+     "A state related to sleep",
+     "A disorder of too much sleep",
+     "Fear of falling asleep",
+     "A drug that prevents sleep"
+    ],
+    "correct": 0,
+    "explain": "Hypnosis is built from Hypn/o, sleep, so it names a state related to sleep. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT18066",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term leukomyelopathy, which sense of myel applies?",
+    "options": [
+     "Bone marrow, as in a tumor of the marrow cavity",
+     "Spinal cord, as in a disease of the cord",
+     "Meninges, as in a defect of the sheath itself",
+     "Nerve, as in a lesion of a conducting fiber"
+    ],
+    "correct": 1,
+    "explain": "In leukomyelopathy, myel takes the spinal-cord sense, a disease of the cord, which is the reading that does not apply in myeloma. \"Bone marrow, as in a tumor of the marrow\" is the sense used in myeloma, where -oma marks a tumor. \"Meninges, as in a defect of the sheath\" is Mening/o. \"Nerve, as in a lesion of a fiber\" is Neur/o."
+   },
+   {
+    "id": "MT18067",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "deep-drill",
+    "groupOrder": 1,
+    "q": "This deep chamber relays sensory information up to the cortex.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this chamber?",
+      "options": [
+       "Thalamus",
+       "Thalamas",
+       "Thalmus",
+       "Thallamus"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which brain region contains the Thalamus?",
+      "options": [
+       "Diencephalon",
+       "Mesencephalon",
+       "Cerebellum",
+       "Cerebral cortex"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Where does the autonomic control center lie relative to the Thalamus?",
+      "options": [
+       "Below it",
+       "Above it",
+       "Inside its cortex",
+       "Lateral in the skull"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This relay chamber is the thalamus. Thalamas, Thalmus, and Thallamus miss that spelling. The thalamus lies in the diencephalon, the region that contains both the thalamus and the hypothalamus. The mesencephalon is the mid-brain level of the brainstem, the cerebellum coordinates skeletal muscle below the occipital lobes, and the cerebral cortex is the outer gray layer of the cerebrum. The hypothalamus, the autonomic control center, lies below the thalamus. Above it is not where that center lies. Inside its cortex and lateral in the skull are not the position taught for the hypothalamus."
+   },
+   {
+    "id": "MT18068",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "deep-drill",
+    "groupOrder": 2,
+    "q": "This small structure links the nervous system to the pituitary gland.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this center?",
+      "options": [
+       "Hypothalamus",
+       "Hypothalamas",
+       "Hypothalmus",
+       "Hypothallamus"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which structure lies directly above the Hypothalamus?",
+      "options": [
+       "Thalamus",
+       "Cerebellum",
+       "Medulla oblongata",
+       "Pia mater"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which work does the Hypothalamus govern?",
+      "options": [
+       "Autonomic control",
+       "Sensory relay",
+       "Muscle coordination",
+       "Spinal conduction"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This autonomic control center is the hypothalamus. Hypothalamas, Hypothalmus, and Hypothallamus miss that spelling. The thalamus lies directly above it. The cerebellum coordinates skeletal muscle below the occipital lobes. The medulla oblongata is the lowest brainstem level. The pia mater is the inner meningeal layer. Relay of sensory signals to the cortex is the thalamus. Coordination of the skeletal muscles is the cerebellum. Conduction through the vertebral canal is the spinal cord."
+   },
+   {
+    "id": "MT18069",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "ns-abbrev-drill",
+    "groupOrder": 1,
+    "q": "This short form is CNS. Answer each step, then the next short form follows.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What does CNS stand for?",
+      "options": [
+       "Central nervous system",
+       "Cranial neural sheath",
+       "Cerebral nerve synapse",
+       "Cortical nerve signal"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which structures make up the Central nervous system?",
+      "options": [
+       "Brain and spinal cord",
+       "Cranial nerves and spinal nerves",
+       "Sympathetic and parasympathetic divisions",
+       "Smooth muscles, cardiac muscles, and glands"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "CNS stands for central nervous system. Cranial neural sheath, cerebral nerve synapse, and cortical nerve signal share the letters but are not the expansion. The CNS is the brain and spinal cord. Cranial nerves and spinal nerves make up the PNS. The sympathetic and parasympathetic divisions belong to the ANS. Smooth muscles, cardiac muscles, and glands are the targets of the ANS, not parts of the CNS."
+   },
+   {
+    "id": "MT18070",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "ns-abbrev-drill",
+    "groupOrder": 2,
+    "q": "This short form is PNS. Answer each step, then the next short form follows.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What does PNS stand for?",
+      "options": [
+       "Peripheral nervous system",
+       "Parasympathetic nervous system",
+       "Primary neural sheath",
+       "Posterior nerve segment"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which description fits the Peripheral nervous system?",
+      "options": [
+       "Cranial and spinal nerves",
+       "Brain and spinal cord",
+       "Restoring rest after stress",
+       "Control center below thalamus"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "PNS stands for peripheral nervous system. Parasympathetic nervous system is PSNS. Primary neural sheath and posterior nerve segment share the letters but are not the expansion. The PNS is the nerves that branch from the CNS, including nerves of the brain (cranial nerves) and spinal cord (spinal nerves). The brain and the spinal cord are the CNS. Restoring the body to a restful state after stress is the PSNS. The control center for the ANS below the thalamus is the hypothalamus."
+   },
+   {
+    "id": "MT18071",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "ns-abbrev-drill",
+    "groupOrder": 3,
+    "q": "This short form is ANS. Answer each step, then the next short form follows.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What does ANS stand for?",
+      "options": [
+       "Autonomic nervous system",
+       "Automatic nervous system",
+       "Afferent nervous system",
+       "Accessory nervous system"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which impulses does the Autonomic nervous system carry, and to where?",
+      "options": [
+       "Involuntary, to smooth muscle and glands",
+       "Voluntary, to skin and skeletal muscle",
+       "Sensory, from body to brain",
+       "Relayed between brain parts"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which structure is the control center for the Autonomic nervous system?",
+      "options": [
+       "Hypothalamus",
+       "Thalamus",
+       "Cerebellum",
+       "Medulla oblongata"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "ANS stands for autonomic nervous system. Automatic is a misreading of autonomic, afferent is the other name for sensory nerves, and accessory is not a division of the nervous system. The ANS carries involuntary impulses from the brain to smooth muscles, cardiac muscles, and various glands. Voluntary control of external actions of the skin and muscles is the somatic division. Carrying sensory impulses from body parts to the brain is the job of sensory (afferent) nerves. Relaying between the cerebrum, cerebellum, and spinal cord is the brainstem. The hypothalamus is the control center for the ANS. The thalamus relays sensory information to the cortex, the cerebellum coordinates skeletal muscles, and the medulla oblongata is a level of the brainstem."
+   },
+   {
+    "id": "MT18072",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "ns-abbrev-drill",
+    "groupOrder": 4,
+    "q": "This short form is SNS. Answer each step, then the next short form follows.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What does SNS stand for?",
+      "options": [
+       "Sympathetic nervous system",
+       "Somatic nervous system",
+       "Sensory nervous system",
+       "Skeletal nervous system"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "What is the Sympathetic nervous system concerned with?",
+      "options": [
+       "Preparing for stress or emergency",
+       "Restoring rest after stress",
+       "Controlling skin and muscle actions",
+       "Relaying sensation to the cortex"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which larger division is the Sympathetic nervous system a part of?",
+      "options": [
+       "The ANS",
+       "The CNS",
+       "The somatic division",
+       "The PSNS"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "SNS stands for sympathetic nervous system. The somatic division has no standard short form here, sensory nerves are the afferent nerves, and spinal nerves are the 31 pairs from the cord, so none of them is SNS. The SNS is the division of the ANS concerned with preparing the body in stressful or emergency situations, the fight-or-flight picture on the ANS slide. Restoring the body to a restful state after a stressful experience is the PSNS. Controlling external actions of the skin and muscles is the somatic division. Relaying sensory information to the cortex is the thalamus. The SNS is a division of the ANS. The CNS is the brain and spinal cord, the somatic division is the other limb of the peripheral system, and the PSNS is the partner division that counter-balances the SNS."
+   },
+   {
+    "id": "MT18073",
+    "type": "stepped",
+    "cat": "MT_lec18-20",
+    "group": "ns-abbrev-drill",
+    "groupOrder": 5,
+    "q": "This short form is PSNS. Answer each step, then the run ends.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What does PSNS stand for?",
+      "options": [
+       "Parasympathetic nervous system",
+       "Peripheral sympathetic nervous system",
+       "Peripheral somatic nervous system",
+       "Paraspinal nervous system"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "When is the Parasympathetic nervous system most active?",
+      "options": [
+       "Ordinary conditions",
+       "Stress or emergency",
+       "Voluntary movement only",
+       "Sensory relay only"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "How does the Parasympathetic nervous system relate to the SNS?",
+      "options": [
+       "Counter-balances it",
+       "Intensifies its effects",
+       "Controls it directly",
+       "Reports back to it"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "PSNS stands for parasympathetic nervous system. Peripheral sympathetic, peripheral somatic, and paraspinal are not divisions of the nervous system; peripheral nervous system alone is PNS. The PSNS is most active in ordinary conditions. Stressful or emergency situations are the domain of the SNS. Voluntary muscle movement is frontal-lobe and somatic work, and relaying sensation to the cortex is the thalamus. The PSNS counter-balances the effects of the sympathetic system by restoring the body to a restful state after a stressful experience. Preparing the body for an emergency is what the SNS itself does. The control center below the thalamus is the hypothalamus, which governs the whole ANS. Carrying sensory information to the brain is the job of sensory (afferent) nerves."
+   },
+   {
+    "id": "MT18074",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "The brain ventricles are filled with CSF. What does CSF stand for?",
+    "options": [
+     "Cerebellar spinal fluid",
+     "Cranial serous fluid",
+     "Cerebrospinal fluid",
+     "Cerebral synovial fluid"
+    ],
+    "correct": 2,
+    "explain": "CSF stands for cerebrospinal fluid, the plasma-like clear fluid circulating in and around the brain and spinal cord and filling the ventricles. \"Cerebellar spinal fluid\" wrongly uses the cerebellum, the little brain below the occipital lobes. \"Cranial serous fluid\" wrongly uses crani/o, the skull. \"Cerebral synovial fluid\" names joint fluid, which is not part of the nervous system."
+   },
+   {
+    "id": "MT18075",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In \"the CF of NS\", what do CF and NS stand for?",
+    "options": [
+     "CF is cerebrospinal fluid, and NS is nervous system.",
+     "CF is combining form, and NS is nervous system.",
+     "CF is combining form, and NS is nerve sheath.",
+     "CF is cranial foramen, and NS is neural signal."
+    ],
+    "correct": 1,
+    "explain": "CF is combining form and NS is nervous system. Cerebrospinal fluid is CSF; nerve sheath, cranial foramen, and neural signal are not these abbreviations."
+   },
+   {
+    "id": "MT18076",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which ANS division is \"fight or flight\", and what does it do?",
+    "options": [
+     "SNS: prepares for stress or emergency",
+     "PSNS: restores rest after stress",
+     "Somatic: controls skin and muscle actions",
+     "Hypothalamus: controls the ANS"
+    ],
+    "correct": 0,
+    "explain": "Fight or flight is the SNS, which prepares the body in stressful or emergency situations. The PSNS restores rest, the somatic division controls external actions, and the hypothalamus is the ANS control center."
+   },
+   {
+    "id": "MT18077",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which ANS division counter-balances sympathetic effects after stress?",
+    "options": [
+     "SNS (sympathetic nervous system)",
+     "PSNS (parasympathetic nervous system)",
+     "CNS (central nervous system)",
+     "Somatic nervous system (voluntary)"
+    ],
+    "correct": 1,
+    "explain": "The PSNS restores a restful state after stress, counter-balancing the SNS. The CNS is the brain and cord, and the somatic system is voluntary."
+   },
+   {
+    "id": "MT18078",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "The overview chart tags the two autonomic branches with one-word labels in brackets. Which pairing is correct?",
+    "options": [
+     "Sympathetic (Calming) and Parasympathetic (Arousing)",
+     "Sympathetic (Sensory) and Parasympathetic (Motor)",
+     "Sympathetic (Arousing) and Parasympathetic (Calming)",
+     "Sympathetic (Voluntary) and Parasympathetic (Involuntary)"
+    ],
+    "correct": 2,
+    "explain": "The chart labels the sympathetic branch Arousing and the parasympathetic branch Calming, matching the SNS preparing the body for stress and the PSNS restoring a restful state. \"Sympathetic (Calming) and Parasympathetic (Arousing)\" swaps the labels. \"Sympathetic (Sensory) and Parasympathetic (Motor)\" uses the sensory and motor nerve types of the PNS slide. \"Sympathetic (Voluntary) and Parasympathetic (Involuntary)\" is wrong because both branches belong to the ANS, which carries involuntary impulses."
+   },
+   {
+    "id": "MT18079",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which description of the brain is correct?",
+    "options": [
+     "Nervous tissue column through the vertebrae",
+     "Nerves branching from the CNS",
+     "Three membranes covering brain and cord",
+     "CNS portion within the cranium"
+    ],
+    "correct": 3,
+    "explain": "The brain is the part of the CNS within the cranium. The column is the spinal cord, branching nerves are the PNS, and the membranes are the meninges."
+   },
+   {
+    "id": "MT18080",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "The cerebrum is divided into Rt. and Lt. halves. What are these halves called?",
+    "options": [
+     "Cerebral hemispheres",
+     "Cerebral lobes",
+     "Cerebral ventricles",
+     "Cerebral cortex"
+    ],
+    "correct": 0,
+    "explain": "The cerebrum, the largest portion of the brain, is divided into right (Rt.) and left (Lt.) halves called the cerebral hemispheres, connected by the corpus callosum. \"Cerebral lobes\" are the 4 subdivisions (frontal, parietal, temporal, occipital), not the two halves. \"Cerebral ventricles\" are inter-connected cavities filled with CSF. \"Cerebral cortex\" is the outer layer of the cerebrum responsible for higher mental functions."
+   },
+   {
+    "id": "MT18081",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term cerebral cortex, what does the word cortex mean?",
+    "options": [
+     "Room",
+     "Bark",
+     "Thorn",
+     "Glue"
+    ],
+    "correct": 1,
+    "explain": "Cortex means bark, fitting the cerebral cortex as the outer layer of the cerebrum. \"Room\" is the sense given for Thalam/o, the thalamus. \"Thorn\" is the sense given for Spin/o, the spine. \"Glue\" is the meaning of Gli/o."
+   },
+   {
+    "id": "MT18082",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "The combining form Narc/o, as in narcotic (CF+S), carries which meaning?",
+    "options": [
+     "Split or cleft",
+     "Speech",
+     "Sensation",
+     "Stupor / Sleep"
+    ],
+    "correct": 3,
+    "explain": "Narc/o means stupor or sleep, as in narcotic. \"Split\" is Schiz/o. \"Speech\" is Phas/o. \"Sensation\" is Esthesi/o."
+   },
+   {
+    "id": "MT18083",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Phob/o, as in belonephobia (R+R+S), has two meanings. Which pair is correct?",
+    "options": [
+     "Exaggerated fear / Sensitivity",
+     "Abnormal impulse / Attraction toward",
+     "Stupor / Sleep",
+     "Order / Coordination"
+    ],
+    "correct": 0,
+    "explain": "Phob/o means exaggerated fear or sensitivity, as in belonephobia, fear of sharp needles or pins. \"Abnormal impulse / Attraction toward\" is the suffix -mania. \"Stupor / Sleep\" is Narc/o. \"Order / Coordination\" is Tax/o."
+   },
+   {
+    "id": "MT18084",
+    "type": "saq",
+    "cat": "MT_lec18-20",
+    "q": "Besides Spondyl/o, what is the combining form meaning vertebra?",
+    "answer": "Vertebr/o",
+    "explain": "Vertebr/o means vertebra, as in vertebroplasty (CF+S). Spondyl/o is the other combining form for vertebra, as in spondylocostal (CF+R+S). Spin/o means spine (thorn), and Myel/o means spinal cord or bone marrow."
+   },
+   {
+    "id": "MT18085",
+    "type": "saq",
+    "cat": "MT_lec18-20",
+    "q": "Besides Lex/o, what is the combining form meaning word / phrase, as in lexicologist?",
+    "answer": "Lexic/o",
+    "explain": "Lexic/o means word or phrase, as in lexicologist (CF+S). Lex/o is the other form, as in dyslexia (P+R+S). Phas/o means speech, and Esthesi/o means sensation."
+   },
+   {
+    "id": "MT18086",
+    "type": "saq",
+    "cat": "MT_lec18-20",
+    "q": "Besides Mening/o, what is the other combining form meaning meninges / membrane?",
+    "answer": "Meningi/o",
+    "explain": "Meningi/o and Mening/o both mean meninges or membrane, as in myelomeningocele. Myel/o means spinal cord or bone marrow, and Encephal/o means the entire brain."
+   },
+   {
+    "id": "MT18087",
+    "type": "saq",
+    "cat": "MT_lec18-20",
+    "q": "Besides Somn/o and Hypn/o, which combining form meaning sleep appears in somniphobia?",
+    "answer": "Somn/i",
+    "explain": "Somn/i means sleep, as in somniphobia (CF+R+S). Somn/o appears in somnoplasty (CF+S), and Hypn/o appears in hypnosis (R+S). Narc/o means stupor or sleep, as in narcotic."
+   },
+   {
+    "id": "MT18088",
+    "type": "matching",
+    "cat": "MT_lec18-20",
+    "q": "Match each example term to its word structure.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Dyslexia"
+     },
+     {
+      "id": "2",
+      "text": "Leukomyelopathy"
+     },
+     {
+      "id": "3",
+      "text": "Belonephobia"
+     },
+     {
+      "id": "4",
+      "text": "Esthesiography"
+     },
+     {
+      "id": "5",
+      "text": "Glioma"
+     },
+     {
+      "id": "6",
+      "text": "Craniofacial"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "R+R+S"
+     },
+     {
+      "id": "B",
+      "text": "CF+S"
+     },
+     {
+      "id": "C",
+      "text": "P+R+S"
+     },
+     {
+      "id": "D",
+      "text": "CF+R+S"
+     },
+     {
+      "id": "E",
+      "text": "CF+CF+R+S"
+     },
+     {
+      "id": "F",
+      "text": "R+S"
+     }
+    ],
+    "correct_pairs": {
+     "1": "C",
+     "2": "E",
+     "3": "A",
+     "4": "B",
+     "5": "F",
+     "6": "D"
+    },
+    "explain": "Dyslexia is P+R+S: the prefix dys-, the root lex, and a suffix. Leukomyelopathy is CF+CF+R+S: leuk/o and myel/o as combining forms, then the root and suffix. Belonephobia is R+R+S: the roots belon and phob plus a suffix. Esthesiography is CF+S: esthesi/o plus the suffix. Glioma is R+S: gli plus -oma. Craniofacial is CF+R+S: crani/o, the root faci, and the suffix. Each term pairs with its own word structure."
+   },
+   {
+    "id": "MT18089",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term cerebellomedullary (CF+R+S) refer to?",
+    "options": [
+     "Pertaining to the cerebrum and the bone marrow",
+     "Pertaining to the cerebellum and the spinal meninges",
+     "Pertaining to the cerebellum and the medulla oblongata",
+     "Pertaining to the spinal cord and the cerebellum"
+    ],
+    "correct": 2,
+    "explain": "Cerebellomedullary joins Cerebell/o, cerebellum (little brain), with medulla, here meaning the medulla oblongata. \"Pertaining to the cerebrum and the bone marrow\" uses Cerebr/o and the marrow sense of Myel/o, neither of which is in the term. \"Pertaining to the cerebellum and the meninges\" would use Mening/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar."
+   },
+   {
+    "id": "MT18090",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term craniofacial (CF+R+S) refer to?",
+    "options": [
+     "Pertaining to the skull and the face",
+     "Pertaining to the entire brain and the face",
+     "Pertaining to the cerebrum and the face",
+     "Pertaining to the vertebra and the ribs"
+    ],
+    "correct": 0,
+    "explain": "Craniofacial is built from Crani/o, skull, and faci, face, with the suffix -al, so it means pertaining to the skull and the face. \"Pertaining to the entire brain and the face\" would use Encephal/o. \"Pertaining to the cerebrum and the face\" would use Cerebr/o. \"Pertaining to the vertebra and the ribs\" is spondylocostal."
+   },
+   {
+    "id": "MT18091",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term encephalalgia mean?",
+    "options": [
+     "Inflammation of the entire brain",
+     "Pain in the brain",
+     "Weakness of the nerves",
+     "Tumor of glue-like cells"
+    ],
+    "correct": 1,
+    "explain": "Encephalalgia is encephal/o + -algia: pain in the brain (head pain). Inflammation is encephalitis, nerve weakness neurasthenia, and a glue-cell tumor glioma."
+   },
+   {
+    "id": "MT18092",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term esthesiography (CF+S) refer to?",
+    "options": [
+     "Recording of brain activity",
+     "Recording of sensation",
+     "Study of words and phrases",
+     "Surgical repair of a vertebra"
+    ],
+    "correct": 1,
+    "explain": "Esthesiography is esthesi/o + -graphy: recording or description of sensation. Brain activity is encephalography, words is logology-type terms, and vertebral repair is vertebroplasty."
+   },
+   {
+    "id": "MT18093",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term lexicologist (CF+S) mean?",
+    "options": [
+     "A specialist in the study of words",
+     "A specialist in the study of nerves",
+     "A specialist in the study of the mind",
+     "A specialist in the study of sleep"
+    ],
+    "correct": 0,
+    "explain": "Lexicologist is built from Lexic/o, word or phrase, and -logist, one who specializes in the study of, so it names a specialist in the study of words. \"A specialist in the study of nerves\" would use Neur/o. \"A specialist in the study of the mind\" would use Psych/o. \"A specialist in the study of sleep\" would use Somn/o or Hypn/o."
+   },
+   {
+    "id": "MT18094",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Narcotic (CF+S) is built on Narc/o. Which description fits it?",
+    "options": [
+     "Pertaining to nerve secretion",
+     "Pertaining to the thalamus",
+     "Pertaining to stupor or sleep",
+     "Pertaining to a split mind"
+    ],
+    "correct": 2,
+    "explain": "Narcotic is narc/o (stupor or sleep) + -tic: pertaining to stupor or sleep. Nerve secretion, thalamus, and split mind use neur/o, thalam/o, and schiz/o."
+   },
+   {
+    "id": "MT18095",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term spinocerebellar (CF+R+S) refer to?",
+    "options": [
+     "Pertaining to the spine and the cerebellum",
+     "Pertaining to the spine and the cerebrum",
+     "Pertaining to the cerebellum and the medulla oblongata",
+     "Pertaining to the vertebra and the ribs"
+    ],
+    "correct": 0,
+    "explain": "Spinocerebellar is built from Spin/o, spine (thorn), and cerebell, cerebellum, with -ar, so it means pertaining to the spine (spinal cord) and the cerebellum. \"Pertaining to the spine and the cerebrum\" would use Cerebr/o, the largest part, not the cerebellum. \"Pertaining to the cerebellum and the medulla oblongata\" is cerebellomedullary. \"Pertaining to the vertebra and the ribs\" is spondylocostal."
+   },
+   {
+    "id": "MT18096",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term somnoplasty (CF+S) mean?",
+    "options": [
+     "Exaggerated fear of sleeping",
+     "A state related to sleep",
+     "Surgical repair of a fractured vertebra",
+     "Radiation surgery for proper sleep"
+    ],
+    "correct": 3,
+    "explain": "Somnoplasty, from Somn/o, sleep, and -plasty, surgical repair, is radiation surgery for proper sleep. \"Exaggerated fear of sleeping\" is somniphobia. \"A state related to sleep\" is hypnosis. \"Surgical repair of a fractured vertebra\" is vertebroplasty."
+   },
+   {
+    "id": "MT18097",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term spondylocostal (CF+R+S) refer to?",
+    "options": [
+     "Pertaining to the vertebra and the skull",
+     "Pertaining to the vertebra and the ribs",
+     "Pertaining to the spine and the cerebellum",
+     "Pertaining to the spinal cord and the meninges"
+    ],
+    "correct": 1,
+    "explain": "Spondylocostal is built from Spondyl/o, vertebra, and cost, rib, with -al, so it means pertaining to the vertebra and the ribs. \"Pertaining to the vertebra and the skull\" would use Crani/o. \"Pertaining to the spine and the cerebellum\" is spinocerebellar. \"Pertaining to the spinal cord and the meninges\" would use Myel/o and Mening/o."
+   },
+   {
+    "id": "MT18098",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term vertebroplasty (CF+S) mean?",
+    "options": [
+     "Surgical repair of a vertebra",
+     "Inflammation of a vertebra",
+     "Radiation surgery for snoring",
+     "Disease of spinal white matter"
+    ],
+    "correct": 0,
+    "explain": "Vertebroplasty is vertebr/o + -plasty: surgical repair of a vertebra, such as filling a fracture with cement. Inflammation is spondylitis, snoring surgery is somnoplasty, and white-matter disease is leukomyelopathy."
+   },
+   {
+    "id": "MT18099",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term thalamic (R+S) mean?",
+    "options": [
+     "Pertaining to the thalamus, the lowest brainstem level",
+     "Pertaining to the thalamus, the coordinator of balance",
+     "Pertaining to the thalamus, the deep relay chamber",
+     "Pertaining to the thalamus, the outer brain covering"
+    ],
+    "correct": 2,
+    "explain": "Thalamic is Thalam/o (thalamus) plus -ic (pertaining to). The thalamus is the deep relay chamber. The lowest brainstem level is the medulla oblongata, balance is coordinated by the cerebellum, and the outer coverings are the meninges."
+   },
+   {
+    "id": "MT18100",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term neurotony (CF+R+S) refer to?",
+    "options": [
+     "Nerve weakness, an exhausted and tired nervous system",
+     "Nerve tension, also described as nerve stretching",
+     "A tumor arising in the nerve tissue",
+     "A nerve together with its secretion"
+    ],
+    "correct": 1,
+    "explain": "Neurotony is built from Neur/o, nerve, and Ton/o, tone or tension; it is also described as nerve stretching. \"Nerve weakness, an exhausted nervous system\" is neurasthenia. \"A tumor of the nerve tissue\" is neuroma. \"A nerve and its secretion\" is neurocrine."
+   },
+   {
+    "id": "MT18101",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In the term ventriculus (R+S), the element ventricul refers to what?",
+    "options": [
+     "Ventricle (room / chamber)",
+     "Ventricle (thorn / spine)",
+     "Ventricle (vessel / duct)",
+     "Ventricle (belly / pouch)"
+    ],
+    "correct": 3,
+    "explain": "Ventricul/o means ventricle, glossed as belly or pouch, as in ventriculus. Room is the gloss of Thalam/o, thorn is the gloss of Spin/o, and vessel is the gloss of Angi/o or Vas/o."
+   },
+   {
+    "id": "MT18102",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term neurasthenia (R+S) mean?",
+    "options": [
+     "Nerve weakness with physical and mental fatigue",
+     "Nerve pain with burning along the fibers",
+     "Nerve tension with stretching of the fibers",
+     "Nerve tumor with pressure on nearby tissue"
+    ],
+    "correct": 0,
+    "explain": "Neurasthenia is built from neur, nerve, and -asthenia, weakness: an exhausted nervous system with physical and mental fatigue, weakness, aches and pains. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT18103",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term necromaniac (CF+S) describe?",
+    "options": [
+     "Exaggerated fear of dead bodies",
+     "Seizure on seeing death",
+     "Morbid attraction to dead bodies",
+     "Weakness on half the body"
+    ],
+    "correct": 2,
+    "explain": "Necromaniac is necr/o (death) + -maniac: one with a morbid attraction to dead bodies. Fear would be -phobia, seizure -lepsy, and half-body weakness hemiparesis."
+   },
+   {
+    "id": "MT18104",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "How is paramania (P+S) described?",
+    "options": [
+     "Lasting, exaggerated fear of complaining",
+     "Disturbance taking pleasure in complaining",
+     "Saying one wrong word for another",
+     "Slight paralysis of half the body"
+    ],
+    "correct": 1,
+    "explain": "Paramania is para- (abnormal) + -mania: an emotional disturbance that takes pleasure in complaining. Fear is -phobia, the wrong-word disorder is paraphasia, and half-body paralysis is hemiparesis."
+   },
+   {
+    "id": "MT18105",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "What does the term ataxia (P+R+S) mean?",
+    "options": [
+     "Loss of muscle coordination",
+     "Abnormal speech",
+     "Severe half-body weakness",
+     "Weakness of the nerves"
+    ],
+    "correct": 0,
+    "explain": "Ataxia is a- (without) + tax (order) + -ia: loss of muscular coordination. Abnormal speech is dysphasia, half-body paralysis hemiplegia, and nerve weakness neurasthenia."
+   },
+   {
+    "id": "MT18106",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "A person says 'Pencil' instead of saying 'Pen'. Which term fits?",
+    "options": [
+     "Dyslexia",
+     "Ataxia",
+     "Paramania",
+     "Paraphasia"
+    ],
+    "correct": 3,
+    "explain": "Paraphasia (P+R+S) joins para-, abnormal, with Phas/o, speech, so it names abnormal speech such as saying 'Pencil' instead of 'Pen'. \"Dyslexia\" is difficulty with words or reading, built on Lex/o. \"Ataxia\" is loss of muscular co-ordination, built on Tax/o. \"Paramania\" is an emotional disturbance that derives pleasure from complaining, built on -mania."
+   },
+   {
+    "id": "MT18107",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In leukomyelopathy, disease of spinal white matter, which element means white?",
+    "options": [
+     "Myel/o",
+     "Leuk/o",
+     "-pathy",
+     "Mening/o"
+    ],
+    "correct": 1,
+    "explain": "Leuk/o means white. Myel/o is the spinal cord, -pathy is disease, and mening/o is the meninges."
+   },
+   {
+    "id": "MT18108",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "A patient has bacterial meningoencephalitis. What does meningoencephalitis mean?",
+    "options": [
+     "Inflammation of the meninges and the entire brain",
+     "Inflammation of the meninges and the spinal cord",
+     "Hernia of the meninges and the brain",
+     "Inflammation of the brain without the meninges"
+    ],
+    "correct": 0,
+    "explain": "Meningoencephalitis is built from Mening/o, meninges, Encephal/o, entire brain, and -itis, inflammation. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT18109",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "In psychomotor (as in psychomotor skills), the element psych refers to what?",
+    "options": [
+     "Body",
+     "Nerve",
+     "Mind",
+     "Speech"
+    ],
+    "correct": 2,
+    "explain": "Psych/o means mind, as do Phren/o and Thym/o. \"Body\" is Somat/o. \"Nerve\" is Neur/o. \"Speech\" is Phas/o."
+   },
+   {
+    "id": "MT18110",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which body parts show the partial weakness of hemiparesis?",
+    "options": [
+     "Limbs and facial muscles",
+     "Heart and smooth muscles",
+     "Spinal cord and meninges",
+     "Cerebrum and cerebellum"
+    ],
+    "correct": 0,
+    "explain": "Hemiparesis is partial weakness on half of the body, such as the limbs and facial muscles. It does not describe organs, the cord, or brain parts."
+   }
+  ]
+ }
 }

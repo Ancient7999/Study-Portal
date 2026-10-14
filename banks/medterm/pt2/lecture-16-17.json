@@ -1,1777 +1,1813 @@
 {
-  "id": "lecture-16-17---respiratory-system",
-  "subject": "Medical Terminology",
-  "subjectId": "medical_terminology",
-  "title": "Lecture 16 and 17 - Respiratory System",
-  "formSize": 81,
-  "forms": [
-    "A"
-  ],
-  "bank": {
-    "A": [
-      {
-        "id": "MT16001",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly describes the gas movement accomplished by the respiratory system?",
-        "options": [
-          "Inhalation brings carbon dioxide into the lungs and passes it into the blood, while exhalation removes oxygen diffused out of the blood",
-          "Exhalation brings oxygen into the lungs and passes it into the blood, while inhalation removes carbon dioxide diffused out of the blood",
-          "Inhalation brings oxygen into the lungs and passes it into the blood, while exhalation removes carbon dioxide diffused out of the blood",
-          "Exhalation brings carbon dioxide into the lungs and passes it into the blood, while inhalation removes oxygen diffused out of the blood"
-        ],
-        "correct": 2,
-        "explain": "Inhalation, or inspiration, draws oxygen into the lungs and transfers it to the blood, while exhalation, or expiration, removes carbon dioxide that has diffused out of the blood. The wrong statements either assign carbon dioxide to inhalation, assign oxygen to exhalation, or reverse the two phases of ventilation."
-      },
-      {
-        "id": "MT16002",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which structure warms, moistens, and filters incoming air and also houses the olfactory receptors for the sense of smell?",
-        "options": [
-          "Nasal cavity",
-          "Paranasal sinuses",
-          "Palate",
-          "Pharynx"
-        ],
-        "correct": 0,
-        "explain": "The nasal cavity is the initial airway entrance. It conditions incoming air by warming, moistening, and filtering it, and it contains the olfactory receptors for smell. The paranasal sinuses are air-filled skull spaces that open into the nasal cavity and lighten the cranial bones, so they do not house smell or filter the airstream. The palate is the roof of the mouth, and the pharynx is the common food and air passage."
-      },
-      {
-        "id": "MT16003",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which description correctly identifies the sinuses?",
-        "options": [
-          "Oval lymphatic tissues on each side of the pharynx that filter inhaled air and are also called palatine tonsils",
-          "Thin-walled microscopic sacs at the terminal end of the bronchioles where oxygen and carbon dioxide are exchanged",
-          "Hair-like processes on epithelial cells of the bronchi that move mucus and trapped secretions upward toward the pharynx",
-          "Air-filled spaces located within the bones of the skull that open directly into the nasal cavity"
-        ],
-        "correct": 3,
-        "explain": "The sinuses are air-filled spaces within the skull that open into the nasal cavity. The description of oval lymphatic tissue beside the pharynx fits the tonsils, the description of terminal gas-exchanging sacs fits the alveoli, and the description of hair-like mucus-moving processes fits the cilia."
-      },
-      {
-        "id": "MT16004",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly distinguishes the hard palate from the soft palate?",
-        "options": [
-          "The hard palate is the muscular posterior portion of the roof of the mouth, while the soft palate is the bony anterior portion",
-          "The hard palate is the bony anterior portion of the roof of the mouth, while the soft palate is the muscular posterior portion",
-          "The hard palate lines the inner thoracic cavity wall, while the soft palate encloses the lung and separates it from the chest wall",
-          "The hard palate filters air entering the nasal cavity, while the soft palate moves mucus upward from the bronchi to the pharynx"
-        ],
-        "correct": 1,
-        "explain": "The hard palate is the bony front portion of the roof of the mouth, and the soft palate is the muscular back portion. Calling the hard palate muscular and posterior, and the soft palate bony and anterior, reverses those properties. Lining the thoracic cavity and enclosing the lung describes the pleurae. Filtering nasal air and moving bronchial mucus describes the nose and the cilia."
-      },
-      {
-        "id": "MT16005",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly describes the regions of the pharynx from superior to inferior?",
-        "options": [
-          "Nasopharynx directly behind the nasal passages, oropharynx between the roof of the mouth and the upper edge of the epiglottis, laryngopharynx below the oropharyngeal opening into the larynx and esophagus",
-          "Oropharynx directly behind the nasal passages, nasopharynx between the roof of the mouth and the upper edge of the epiglottis, laryngopharynx below the oropharyngeal opening into the larynx and esophagus",
-          "Laryngopharynx directly behind the nasal passages, oropharynx between the roof of the mouth and the upper edge of the epiglottis, nasopharynx below the oropharyngeal opening into the larynx and esophagus",
-          "Nasopharynx between the roof of the mouth and the upper edge of the epiglottis, oropharynx directly behind the nasal passages, laryngopharynx below the oropharyngeal opening into the larynx and esophagus"
-        ],
-        "correct": 0,
-        "explain": "The pharynx runs from the nasal cavity downward: the nasopharynx is directly behind the nasal passages, the oropharynx lies between the roof of the mouth and the upper edge of the epiglottis, and the laryngopharynx lies below the oropharyngeal opening into the larynx and esophagus. The other sequences place one of these regions in the position of another."
-      },
-      {
-        "id": "MT16006",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which structure consists of oval lymphatic tissues on each side of the pharynx and filters air?",
-        "options": [
-          "Uvula",
-          "Epiglottis",
-          "Tonsils",
-          "Adenoids"
-        ],
-        "correct": 2,
-        "explain": "The tonsils are oval lymphatic tissues on each side of the pharynx that filter air and help defend against bacterial invasion. The adenoids are lymphatic tissue at the back of the nasal cavity, not at the sides of the pharynx. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing flap over the larynx."
-      },
-      {
-        "id": "MT16007",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which anatomical term denotes the small projection hanging from the back middle edge of the soft palate?",
-        "options": [
-          "Glottis",
-          "Carina",
-          "Palate",
-          "Uvula"
-        ],
-        "correct": 3,
-        "explain": "The uvula is the small projection hanging from the back middle edge of the soft palate and is named for its grape-like shape. The glottis is the opening between the vocal cords. The carina is the tracheal divide. The palate is the roof of the mouth."
-      },
-      {
-        "id": "MT16008",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly distinguishes the glottis from the epiglottis?",
-        "options": [
-          "The glottis is the lid-like structure covering the larynx during swallowing, while the epiglottis is the opening between the vocal cords inside the larynx.",
-          "The glottis is the opening between the vocal cords in the larynx, while the epiglottis is the lid-like structure that covers the larynx during swallowing.",
-          "The glottis is the projection hanging from the soft palate, while the epiglottis is the lymphatic tissue on each side of the pharynx that filters inhaled air.",
-          "The glottis is the point where the trachea divides into bronchi, while the epiglottis is the membrane enclosing the lung and lining the inner chest wall."
-        ],
-        "correct": 1,
-        "explain": "The glottis is the opening between the vocal cords within the larynx, while the epiglottis is the lid-like structure that covers the larynx during swallowing. Calling the glottis the swallowing lid and the epiglottis the vocal-cord opening swaps the two. A projection from the soft palate is the uvula, lymphatic tissue beside the pharynx is the tonsil, the tracheal divide is the carina, and the membrane on the lung is the pleura."
-      },
-      {
-        "id": "MT16009",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "larynx-cluster",
-        "groupOrder": 1,
-        "q": "Which description belongs to the larynx? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "What is it also called?",
-            "options": [
-              "Voice box",
-              "Windpipe",
-              "Throat",
-              "Air sac"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Where does it carry air?",
-            "options": [
-              "From the pharynx to the trachea",
-              "From the larynx to the carina",
-              "From the mouth to the esophagus",
-              "From the bronchioles to the blood"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "What does it contain?",
-            "options": [
-              "The vocal cords",
-              "The carina",
-              "The olfactory receptors",
-              "The palatine tonsils"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The larynx is the voice box. It carries air from the pharynx to the trachea and contains the vocal cords. Windpipe names the trachea, throat names the pharynx, and air sac names the alveolus. From the larynx to the carina is the trachea. From the mouth to the esophagus is the food path. From the bronchioles to the blood is alveolar exchange. The carina is the tracheal split, the olfactory receptors sit in the nose, and the palatine tonsils lie beside the pharynx."
-      },
-      {
-        "id": "MT16010",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly describes the trachea and the carina?",
-        "options": [
-          "The trachea is the voice box carrying air from the pharynx to the larynx, where it splits into the right and left alveoli.",
-          "The trachea is the bronchial tree carrying air from the carina to the bronchioles, where it splits into the visceral and parietal pleurae.",
-          "The trachea is the windpipe carrying air from the larynx to the carina, where it splits into the right and left bronchi.",
-          "The trachea is the muscular partition separating the thoracic cavity from the abdomen, where it splits into the diaphragm and rib cage."
-        ],
-        "correct": 2,
-        "explain": "The trachea is the windpipe that carries air from the larynx to the carina, where it divides into the right and left bronchi. The other statements assign the trachea the roles of the larynx, bronchial tree, pleura, or diaphragm."
-      },
-      {
-        "id": "MT16011",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which sequence correctly follows the airflow from the trachea to the site of gas exchange?",
-        "options": [
-          "Trachea, bronchioles, bronchi, alveoli",
-          "Bronchi, trachea, alveoli, bronchioles",
-          "Alveoli, bronchioles, bronchi, trachea",
-          "Trachea, bronchi, bronchioles, alveoli"
-        ],
-        "correct": 3,
-        "explain": "Air passes from the trachea into the primary bronchi, then into the smaller bronchioles, and finally into the alveoli where gas exchange occurs. The other orders place the bronchioles before the bronchi, begin at the bronchi or alveoli, or reverse the direction of airflow."
-      },
-      {
-        "id": "MT16012",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which structures are the thin-walled microscopic air sacs where oxygen and carbon dioxide are exchanged?",
-        "options": [
-          "Bronchioles",
-          "Alveoli",
-          "Cilia",
-          "Pleurae"
-        ],
-        "correct": 1,
-        "explain": "The alveoli are the thin-walled microscopic air sacs at the end of the bronchioles where oxygen and carbon dioxide are exchanged. The bronchioles are conducting tubes. The cilia move mucus. The pleurae are membranes around the lung and thoracic cavity."
-      },
-      {
-        "id": "MT16013",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "lung-cluster",
-        "groupOrder": 1,
-        "q": "Which description belongs to the lungs? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "How many spongy organs are they?",
-            "options": [
-              "Two",
-              "Three",
-              "Four"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which cavity holds them?",
-            "options": [
-              "Thoracic cavity",
-              "Abdominal cavity"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "What encloses them?",
-            "options": [
-              "Diaphragm and rib cage",
-              "Palate and the uvula",
-              "Larynx and trachea"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The lungs are two spongy organs in the thoracic cavity, enclosed by the diaphragm and rib cage. Three and four are not the organ count. The abdominal cavity is not where they lie. The palate and uvula are mouth structures, and the larynx and trachea are airway tubes, not the enclosure."
-      },
-      {
-        "id": "MT16014",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly distinguishes the visceral pleura from the parietal pleura?",
-        "options": [
-          "The visceral pleura lines the thoracic cavity, while the parietal pleura encloses the lung surface itself",
-          "The visceral pleura separates the thoracic cavity from the abdomen, while the parietal pleura moves during respiration",
-          "The visceral pleura encloses the lung surface, while the parietal pleura lines the inner surface of the thoracic cavity",
-          "The visceral pleura filters incoming air, while the parietal pleura houses the olfactory receptors for the sense of smell"
-        ],
-        "correct": 2,
-        "explain": "The visceral pleura is the membrane that encloses the lung, and the parietal pleura is the membrane that lines the thoracic cavity. Saying the visceral pleura lines the cavity and the parietal pleura encloses the lung reverses them. Separating the thorax from the abdomen and moving during respiration is the diaphragm. Filtering incoming air and housing smell receptors is the nasal cavity."
-      },
-      {
-        "id": "MT16015",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which structure is the muscular partition that separates the thoracic cavity from the abdominal cavity and moves to aid respiration?",
-        "options": [
-          "Palate",
-          "Epiglottis",
-          "Carina",
-          "Diaphragm"
-        ],
-        "correct": 3,
-        "explain": "The diaphragm is the muscular partition between the thoracic and abdominal cavities, and its movement aids respiration. The palate is the roof of the mouth. The epiglottis is the swallowing cover over the larynx. The carina is the tracheal bifurcation."
-      },
-      {
-        "id": "MT16016",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What is the function of the cilia lining parts of the respiratory tract such as the bronchi?",
-        "options": [
-          "They warm, moisten, and filter the air as it first enters the nasal cavity and contacts the olfactory region.",
-          "They move mucus and trapped secretions upward toward the pharynx by coordinated beating.",
-          "They cover the larynx during swallowing to prevent food and liquid from passing down into the trachea.",
-          "They exchange oxygen and carbon dioxide across the thin walls between the air sacs and the lung capillaries."
-        ],
-        "correct": 1,
-        "explain": "Cilia are hair-like processes on epithelial cells, including those of the bronchi, and their coordinated movement carries mucus and trapped secretions upward toward the pharynx. Warming and filtering air belongs to the nasal cavity. Covering the larynx during swallowing belongs to the epiglottis. Gas exchange belongs to the alveoli."
-      },
-      {
-        "id": "MT16017",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly describes the bronchial tree?",
-        "options": [
-          "A branched set of airways leading from the trachea to the microscopic air sacs called alveoli",
-          "A set of air-filled spaces within the bones of the skull that open into the nasal cavity",
-          "A pair of membranes, one enclosing the lung surface and one lining the thoracic cavity",
-          "A muscular partition separating the thoracic cavity from the abdominal cavity below"
-        ],
-        "correct": 0,
-        "explain": "The bronchial tree is the branched set of airways that leads from the trachea down to the microscopic air sacs called alveoli. The air-filled skull spaces are the sinuses. The paired membranes are the pleurae. The muscular partition is the diaphragm."
-      },
-      {
-        "id": "MT16018",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which set consists entirely of combining forms that mean chest?",
-        "options": [
-          "Thorac/o, Pector/o, and Steth/o",
-          "Phren/o, Thorac/o, and Steth/o",
-          "Pector/o, Pleur/o, and Thorac/o",
-          "Steth/o, Pector/o, and Trache/o"
-        ],
-        "correct": 0,
-        "explain": "Thorac/o, Pector/o, and Steth/o are the three combining forms that mean chest. Each other set holds two chest forms and one intruder: Phren/o means diaphragm, Pleur/o means pleura, and Trache/o means windpipe."
-      },
-      {
-        "id": "MT16019",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "In the term phrenoptosis, the element phren refers to what?",
-        "options": [
-          "Chest, as in the wall enclosing the lungs and ribs",
-          "Pleura, as in the membrane lining the thoracic cavity",
-          "Diaphragm, as in the muscular partition below the lungs",
-          "Palate, as in the roof of the mouth above the tongue"
-        ],
-        "correct": 2,
-        "explain": "In phrenoptosis, phren is the combining form for the diaphragm, and the term refers to a displacement of that muscle. Chest is Thorac/o, Pector/o, or Steth/o. Pleura is Pleur/o. Palate is Palat/o."
-      },
-      {
-        "id": "MT16020",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "In the term lobectomy, the element lob refers to what?",
-        "options": [
-          "Lobe or portion, as in a single air sac of the lung",
-          "Lobe or portion, as in the membrane around the lung",
-          "Lobe or portion, as in a branch of the main airway",
-          "Lobe or portion, as in a subdivision of the lung"
-        ],
-        "correct": 3,
-        "explain": "In lobectomy, lob denotes a lobe or portion, and the term means excision of a lobe, typically of the lung. An air sac is an alveolus, the membrane around the lung is the pleura, and a branch of the main airway is a bronchus."
-      },
-      {
-        "id": "MT16021",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "In the term nasopharyngolaryngoscopy, which element carries the meaning of nose?",
-        "options": [
-          "The element pharyng, because it denotes the throat region",
-          "The element nas, because it denotes the nose",
-          "The element rhin, because it denotes the nose",
-          "The element laryng, because it denotes the voice box"
-        ],
-        "correct": 1,
-        "explain": "The term nasopharyngolaryngoscopy contains the element nas, which is the combining form for nose. Rhin/o also means nose, but it is not the spelling present in this term, while pharyng and laryng name the throat and voice box."
-      },
-      {
-        "id": "MT16022",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "In the term carbohemia, which element carries the meaning of carbon dioxide?",
-        "options": [
-          "The element carb, because it is the combining form for carbon dioxide.",
-          "The element hem, because it is the combining form used here for blood.",
-          "The element capn, because it is the combining form for carbon dioxide.",
-          "The element ox, because it is the combining form used here for oxygen."
-        ],
-        "correct": 0,
-        "explain": "The term carbohemia contains the element carb, which is the combining form for carbon dioxide. Capn/o is the alternate spelling for carbon dioxide but is not present in this word. Hem names blood, and ox names oxygen rather than the waste gas."
-      },
-      {
-        "id": "MT16023",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which combining form is defined as air or lung rather than lung alone?",
-        "options": [
-          "Pulmon/o, because it is reserved for the lung as an organ alone",
-          "Pleur/o, because it names the membrane around the lung surface",
-          "Pneum/o, because it carries the broader sense of air or lung",
-          "Alveol/o, because it names the terminal air sac of the lung"
-        ],
-        "correct": 2,
-        "explain": "Pneum/o and Pneumon/o carry the broader meaning air or lung, whereas Pulmon/o is the form for lung alone. Pleur/o names the lung lining, and Alveol/o names the terminal air sac."
-      },
-      {
-        "id": "MT16024",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Alveol/o mean?",
-        "options": [
-          "A small air sac at the end of the bronchioles where gas exchange occurs",
-          "A small tubular airway leading from a bronchus toward the air sacs",
-          "The voice box containing the vocal cords of the larynx",
-          "The windpipe extending from the larynx down to the carina"
-        ],
-        "correct": 0,
-        "explain": "Alveol/o names the alveolus, the thin-walled microscopic air sac at the end of the bronchioles where oxygen and carbon dioxide are exchanged. The small tubular airway is the bronchiole. The voice box is the larynx. The windpipe is the trachea."
-      },
-      {
-        "id": "MT16025",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Bronch/o or Bronchi/o mean?",
-        "options": [
-          "The small air sac where gas exchange occurs at the airway end",
-          "The primary airway that branches from the trachea at the carina",
-          "The smaller tubular branch of the airway toward the air sacs",
-          "The membrane that encloses the lung and lines the chest wall"
-        ],
-        "correct": 1,
-        "explain": "Bronch/o and Bronchi/o name the bronchus, the primary airway that branches from the trachea at the carina. The air sac is the alveolus. The smaller tubular branch is the bronchiole. The membrane around the lung is the pleura."
-      },
-      {
-        "id": "MT16026",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Bronchiol/o mean?",
-        "options": [
-          "The primary airway branching from the trachea at the carina",
-          "The thin-walled air sac where oxygen and carbon dioxide are exchanged",
-          "The smaller tubular branch of the airway leading toward the alveoli",
-          "The voice box containing the vocal cords between pharynx and trachea"
-        ],
-        "correct": 2,
-        "explain": "Bronchiol/o names the bronchiole, the smaller tubular branch of the airway leading toward the alveoli. The primary airway is the bronchus. The air sac is the alveolus. The voice box is the larynx."
-      },
-      {
-        "id": "MT16027",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Laryng/o mean?",
-        "options": [
-          "The windpipe conducting air from the larynx to the carina",
-          "The voice box containing the vocal cords of the airway",
-          "The throat serving as a passage for food and for air",
-          "The small projection hanging from the soft palate edge"
-        ],
-        "correct": 1,
-        "explain": "Laryng/o names the larynx, the voice box that contains the vocal cords. The windpipe is the trachea. The throat is the pharynx. The small soft-palate projection is the uvula."
-      },
-      {
-        "id": "MT16028",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Ox/o or Ox/i mean?",
-        "options": [
-          "Carbon dioxide, the waste gas expelled during exhalation",
-          "Oxygen, the gas taken in during inhalation and passed into the blood",
-          "Breathing, the process of moving air into and out of the lungs",
-          "Air or lung, the broader sense carried by pneum/o forms"
-        ],
-        "correct": 1,
-        "explain": "Ox/o and Ox/i name oxygen, the gas taken in during inhalation and passed into the blood. Carbon dioxide is Capn/o or Carb/o. Breathing is Spir/o or -pnea. The air-or-lung sense belongs to Pneum/o."
-      },
-      {
-        "id": "MT16029",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Pulmon/o mean?",
-        "options": [
-          "Air or lung",
-          "Lung",
-          "The membrane around the lung",
-          "The air sac inside the lung"
-        ],
-        "correct": 1,
-        "explain": "Pulmon/o names the lung specifically, whereas Pneum/o and Pneumon/o carry the broader sense of air or lung. The membrane around the lung is the pleura, and the air sac is the alveolus."
-      },
-      {
-        "id": "MT16030",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Tonsill/o mean?",
-        "options": [
-          "The tonsil, lymphatic tissue at the back of the nasal cavity",
-          "The tonsil, a gland that secretes saliva into the mouth",
-          "The tonsil, lymphatic tissue on each side of the pharynx",
-          "The tonsil, lymphatic tissue at the base of the tongue only"
-        ],
-        "correct": 2,
-        "explain": "Tonsill/o names the tonsil, the lymphatic tissue on each side of the pharynx that filters air and defends against bacterial invasion. Tissue at the back of the nasal cavity is the adenoid, saliva comes from the salivary glands, and the tonsils are not limited to the base of the tongue."
-      },
-      {
-        "id": "MT16031",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Spir/o or the suffix -pnea mean?",
-        "options": [
-          "Breathing, the process of moving air into and out of the lungs",
-          "Oxygen, the gas taken in during inhalation and passed to blood",
-          "Carbon dioxide, the waste gas expelled during exhalation",
-          "Chest, the cavity and wall enclosing the two lungs"
-        ],
-        "correct": 0,
-        "explain": "Spir/o and the suffix -pnea both denote breathing, the process of moving air into and out of the lungs. Oxygen is Ox/o. Carbon dioxide is Capn/o or Carb/o. Chest is Thorac/o, Pector/o, or Steth/o."
-      },
-      {
-        "id": "MT16032",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Sinus/o mean?",
-        "options": [
-          "The throat serving as a common passage for food and air",
-          "The cavity or air-filled space within the bones of the skull",
-          "The membrane enclosing the lung and lining the chest wall",
-          "The small sac at the end of the bronchiole for gas exchange"
-        ],
-        "correct": 1,
-        "explain": "Sinus/o names the sinus, the cavity or air-filled space within the skull that opens into the nasal cavity. The throat is Pharyng/o. The lung membrane is Pleur/o. The terminal sac is Alveol/o."
-      },
-      {
-        "id": "MT16033",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Pleur/o mean?",
-        "options": [
-          "The pleura, the membrane enclosing the heart and lining the pericardial sac",
-          "The pleura, the muscle separating the thoracic and abdominal cavities",
-          "The pleura, the membrane enclosing the lung and lining the thoracic cavity",
-          "The pleura, the tissue lining the airways and producing protective mucus"
-        ],
-        "correct": 2,
-        "explain": "Pleur/o names the pleura, the membrane that encloses the lung and lines the thoracic cavity. The pericardium encloses the heart, the diaphragm separates the thoracic and abdominal cavities, and the mucous membrane lines the airways."
-      },
-      {
-        "id": "MT16034",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Trache/o mean?",
-        "options": [
-          "The voice box containing the vocal cords of the airway",
-          "The windpipe extending from the larynx to the carina",
-          "The throat serving as a common passage for food and air",
-          "The small tubular airway leading onward to the alveoli"
-        ],
-        "correct": 1,
-        "explain": "Trache/o names the trachea, the windpipe that extends from the larynx to the carina. The voice box is Laryng/o. The throat is Pharyng/o. The small tubular airway is Bronchiol/o."
-      },
-      {
-        "id": "MT16035",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Palat/o mean?",
-        "options": [
-          "The uvula hanging from the posterior edge of the soft palate above",
-          "The tonsil, the lymphatic tissue on each side of the pharynx wall",
-          "The palate, the roof of the mouth that partitions the oral and nasal cavities",
-          "The sinus, the air-filled cavity within the bones of the skull above the nose"
-        ],
-        "correct": 2,
-        "explain": "Palat/o names the palate, the roof of the mouth that partitions the oral and nasal cavities and is divided into hard and soft portions. The uvula is Uvul/o. The tonsil is Tonsill/o. The sinus is Sinus/o."
-      },
-      {
-        "id": "MT16036",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Uvul/o mean?",
-        "options": [
-          "The uvula, the small projection hanging from the front middle edge of the hard palate",
-          "The uvula, the small flap of cartilage covering the larynx during swallowing",
-          "The uvula, the small projection hanging from the back middle edge of the soft palate",
-          "The uvula, the small mass of lymphatic tissue on each side of the throat"
-        ],
-        "correct": 2,
-        "explain": "Uvul/o names the uvula, the small projection hanging from the back middle edge of the soft palate and named for its grape-like shape. The epiglottis covers the larynx during swallowing, the tonsils sit on each side of the throat, and nothing hangs from the hard palate."
-      },
-      {
-        "id": "MT16037",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the combining form Or/o mean?",
-        "options": [
-          "The nose that warms, moistens, and filters incoming air",
-          "The mouth, the opening at the beginning of the digestive tract",
-          "The throat serving as a common passage for food and for air",
-          "The voice box containing the vocal cords of the airway"
-        ],
-        "correct": 1,
-        "explain": "Or/o names the mouth, the opening at the beginning of the digestive tract. The nose is Nas/o or Rhin/o. The throat is Pharyng/o. The voice box is Laryng/o."
-      },
-      {
-        "id": "MT16039",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term oximeter mean?",
-        "options": [
-          "An instrument for measuring oxygen levels in the blood",
-          "An instrument for measuring the volume of air moved in breathing",
-          "An instrument for examining the voice box and its vocal cords",
-          "An instrument for examining the bronchi along their full course"
-        ],
-        "correct": 0,
-        "explain": "Oximeter is built from Ox/i (oxygen) and -meter (measuring instrument), so it names an instrument that measures oxygen levels in the blood. Measuring air volume is spirometry. Examining the voice box is laryngoscopy. Examining the bronchi is bronchoscopy."
-      },
-      {
-        "id": "MT16040",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term spirometry mean?",
-        "options": [
-          "Recording of the oxygen level carried in the circulating blood",
-          "Measurement of the air moved into and out of the lungs during breathing",
-          "Incision into the trachea to create a temporary airway below the larynx",
-          "Surgical puncture of the chest wall to remove collected fluid"
-        ],
-        "correct": 1,
-        "explain": "Spirometry is built from Spir/o (breathing) and -metry (measurement), so it denotes the measurement of the air moved into and out of the lungs during breathing. Recording the oxygen level is oximetry. An incision into the trachea is tracheostomy. Surgical puncture of the chest wall is thoracocentesis."
-      },
-      {
-        "id": "MT16041",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term tonsillopathy mean?",
-        "options": [
-          "Inflammation of the tonsils beside the pharynx",
-          "A disease of the tonsils beside the pharynx",
-          "Surgical removal of the tonsils beside the pharynx",
-          "Pain arising in the tonsils beside the pharynx"
-        ],
-        "correct": 1,
-        "explain": "Tonsillopathy is built from Tonsill/o (tonsil) and -pathy (disease), so it denotes a disease of the tonsils. Inflammation would use -itis. Surgical removal would use -ectomy. Pain would use -dynia."
-      },
-      {
-        "id": "MT16042",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term laryngomalacia mean?",
-        "options": [
-          "Inflammation of the voice box and vocal cords",
-          "A softening of the voice box and vocal cords",
-          "Surgical removal of the voice box and vocal cords",
-          "Pain arising in the voice box and vocal cords"
-        ],
-        "correct": 1,
-        "explain": "Laryngomalacia is built from Laryng/o (larynx) and -malacia (softening), so it denotes a softening of the voice box. Inflammation would use -itis. Surgical removal would use -ectomy. Pain would use -dynia."
-      },
-      {
-        "id": "MT16043",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term bronchiolectasis mean?",
-        "options": [
-          "Inflammation of the smaller airways",
-          "A dilation of the smaller airways",
-          "Surgical removal of the smaller airways",
-          "A narrowing of the smaller airways"
-        ],
-        "correct": 1,
-        "explain": "Bronchiolectasis is built from Bronchiol/o (bronchiole) and -ectasis (dilation), so it denotes a dilation of the smaller airways. Inflammation would use -itis, surgical removal would use -ectomy, and narrowing would use -stenosis."
-      },
-      {
-        "id": "MT16044",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term tracheostomy mean?",
-        "options": [
-          "Surgical creation of an opening in the windpipe",
-          "Surgical removal of the whole windpipe itself",
-          "Inflammation along the whole course of the windpipe",
-          "Pain arising in the wall of the windpipe"
-        ],
-        "correct": 0,
-        "explain": "Tracheostomy is built from Trache/o (trachea) and -stomy (surgical opening), so it denotes the surgical creation of an opening in the windpipe. Removal would use -ectomy. Inflammation would use -itis. Pain would use -dynia."
-      },
-      {
-        "id": "MT16045",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term thoracocentesis mean?",
-        "options": [
-          "Surgical creation of an opening in the chest wall",
-          "Incision cut into the wall of the chest cavity",
-          "Surgical puncture of the chest wall to remove fluid",
-          "Inflammation spreading in the wall of the chest"
-        ],
-        "correct": 2,
-        "explain": "Thoracocentesis is built from Thorac/o (chest) and -centesis (surgical puncture), so it denotes the surgical puncture of the chest wall to remove fluid. Creating an opening would use -stomy. Incision would use -tomy. Inflammation would use -itis."
-      },
-      {
-        "id": "MT16046",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term pectorophony mean?",
-        "options": [
-          "An abnormal sound heard over the chest during auscultation",
-          "Pain felt in the wall of the chest during deep breathing",
-          "Inflammation of the chest wall around the lungs and ribs",
-          "Surgical repair of the chest wall around the lungs"
-        ],
-        "correct": 0,
-        "explain": "Pectorophony is built from Pector/o (chest) and -phony (sound), so it denotes an abnormal sound heard over the chest. Pain would use -dynia. Inflammation would use -itis. Surgical repair would use -plasty."
-      },
-      {
-        "id": "MT16047",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term phrenoptosis mean?",
-        "options": [
-          "Inflammation of the diaphragm below the lungs",
-          "A downward displacement or drooping of the diaphragm",
-          "Surgical repair of the diaphragm muscle below the lungs",
-          "Pain arising in the diaphragm below the lungs"
-        ],
-        "correct": 1,
-        "explain": "Phrenoptosis is built from Phren/o (diaphragm) and -ptosis (downward displacement or drooping), so it denotes a drooping of the diaphragm. Inflammation would use -itis. Surgical repair would use -plasty. Pain would use -dynia."
-      },
-      {
-        "id": "MT16048",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term palatal mean?",
-        "options": [
-          "Pertaining to the palate, the roof of the mouth",
-          "Pertaining to the uvula hanging from the soft palate",
-          "Pertaining to the tonsil beside the pharynx",
-          "Pertaining to the sinus within the skull"
-        ],
-        "correct": 0,
-        "explain": "Palatal is built from Palat/o (palate) and -al (pertaining to), so it means pertaining to the palate. Pertaining to the uvula would use Uvul/o. The tonsil would use Tonsill/o. The sinus would use Sinus/o."
-      },
-      {
-        "id": "MT16049",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term uvulectomy mean?",
-        "options": [
-          "Incision into the uvula of the soft palate",
-          "Surgical removal of the uvula of the soft palate",
-          "Inflammation of the uvula of the soft palate",
-          "Pain arising deep in the uvula of the soft palate"
-        ],
-        "correct": 1,
-        "explain": "Uvulectomy is built from Uvul/o (uvula) and -ectomy (surgical removal), so it denotes the surgical removal of the uvula. Incision would use -tomy. Inflammation would use -itis. Pain would use -dynia."
-      },
-      {
-        "id": "MT16050",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term rhinesthesia mean?",
-        "options": [
-          "The sense of smell, carried by the olfactory receptors of the nose",
-          "Inflammation of the nasal cavity and its olfactory receptors",
-          "Surgical repair of the nose and its olfactory receptors",
-          "Pain arising in the nose and its olfactory receptors"
-        ],
-        "correct": 0,
-        "explain": "Rhinesthesia is built from Rhin/o (nose) and Esthesi/o (sensation) with -ia (condition), so it denotes the sense of smell mediated by the olfactory receptors of the nose. Inflammation would use -itis. Surgical repair would use -plasty. Pain would use -dynia."
-      },
-      {
-        "id": "MT16051",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term oromandibular mean?",
-        "options": [
-          "Pertaining to the mouth and the lower jaw",
-          "Pertaining to the mouth and the upper jaw",
-          "Pertaining to the nose and the lower jaw",
-          "Pain in the mouth and the lower jaw"
-        ],
-        "correct": 0,
-        "explain": "Oromandibular is built from Or/o (mouth) and mandibul/o (lower jaw) with -ar (pertaining to), so it means pertaining to the mouth and the lower jaw. The other options keep part of the term but change another word part, so they do not match."
-      },
-      {
-        "id": "MT16052",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term pneumonectomy mean?",
-        "options": [
-          "Incision into the substance of a lung",
-          "Surgical removal of a lung",
-          "Inflammation of the substance of a lung",
-          "A disease condition of a lung"
-        ],
-        "correct": 1,
-        "explain": "Pneumonectomy is built from Pneumon/o (lung) and -ectomy (surgical removal), so it denotes the surgical removal of a lung. Incision would use -tomy. Inflammation would use -itis. Disease would use -pathy."
-      },
-      {
-        "id": "MT16053",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term bronchitis mean?",
-        "options": [
-          "Inflammation of the smaller airways",
-          "Inflammation of the primary airways",
-          "Inflammation of the air sacs",
-          "Inflammation of the windpipe"
-        ],
-        "correct": 1,
-        "explain": "Bronchitis is built from Bronch/o (bronchus) and -itis (inflammation), so it denotes inflammation of the primary airways. Inflammation of the smaller airways is bronchiolitis. Inflammation of the air sacs is alveolitis. Inflammation of the windpipe is tracheitis."
-      },
-      {
-        "id": "MT16054",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term bronchoscopy mean?",
-        "options": [
-          "Surgical removal of a bronchus through an incision",
-          "Visual examination of the bronchi with an instrument",
-          "Inflammation of the bronchi along their course",
-          "Graphic recording of the bronchi throughout breathing"
-        ],
-        "correct": 1,
-        "explain": "Bronchoscopy is built from Bronch/o (bronchus) and -scopy (visual examination), so it denotes visual examination of the bronchi with an instrument. Surgical removal would use -ectomy. Inflammation would use -itis. Recording would use -graphy."
-      },
-      {
-        "id": "MT16055",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term capnography mean?",
-        "options": [
-          "Measurement of the oxygen carried in circulating blood",
-          "Recording of carbon dioxide levels, typically in exhaled air",
-          "Inflammation of the air sacs at the far end of the airway",
-          "Surgical puncture of the chest wall to withdraw collected fluid"
-        ],
-        "correct": 1,
-        "explain": "Capnography is built from Capn/o (carbon dioxide) and -graphy (recording), so it denotes the recording of carbon dioxide levels, typically in exhaled air. Measurement of oxygen is oximetry. Inflammation of the air sacs is alveolitis. Surgical puncture of the chest wall is thoracocentesis."
-      },
-      {
-        "id": "MT16056",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term carbohemia mean?",
-        "options": [
-          "The presence of oxygen carried in the blood",
-          "The presence of carbon dioxide in the blood",
-          "The presence of carbon dioxide in the urine",
-          "The presence of oxygen stored in the lungs"
-        ],
-        "correct": 1,
-        "explain": "Carbohemia is built from Carb/o (carbon dioxide), hem (blood), and -ia (condition), so it denotes the presence of carbon dioxide in the blood. Oxygen in the blood would use Ox/o. Carbon dioxide in the urine would use a urine form. Oxygen stored in the lungs is not this term."
-      },
-      {
-        "id": "MT16057",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term nasopharyngolaryngoscopy mean?",
-        "options": [
-          "Visual examination of the nose, throat, and voice box",
-          "Surgical removal of the nose, throat, and voice box",
-          "Inflammation of the nose, throat, and voice box",
-          "Graphic recording of the nose, throat, and the voice box"
-        ],
-        "correct": 0,
-        "explain": "Nasopharyngolaryngoscopy is built from Nas/o (nose), Pharyng/o (pharynx), Laryng/o (larynx), and -scopy (visual examination), so it denotes visual examination of the nose, throat, and voice box. Surgical removal would use -ectomy. Inflammation would use -itis. Recording would use -graphy."
-      },
-      {
-        "id": "MT16058",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term pleuritis mean?",
-        "options": [
-          "Inflammation of the pleura, the membrane around the heart",
-          "Inflammation of the pleura, the membrane around the lung",
-          "Inflammation of the pleura, the lining of the airways",
-          "Inflammation of the pleura, the muscle below the lungs"
-        ],
-        "correct": 1,
-        "explain": "Pleuritis is built from Pleur/o (pleura) and -itis (inflammation), so it denotes inflammation of the pleura, the membrane around the lung. The membrane around the heart is the pericardium, the airways are lined by mucous membrane, and the muscle below the lungs is the diaphragm."
-      },
-      {
-        "id": "MT16059",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "What does the term pharyngorhinoscopy mean?",
-        "options": [
-          "Visual examination of the throat and the nose",
-          "Surgical repair of the throat and the nose",
-          "Inflammation of the throat and the nose",
-          "Graphic recording of the throat and of the nose"
-        ],
-        "correct": 0,
-        "explain": "Pharyngorhinoscopy is built from Pharyng/o (pharynx), Rhin/o (nose), and -scopy (visual examination), so it denotes visual examination of the throat and nose. Surgical repair would use -plasty. Inflammation would use -itis. Recording would use -graphy."
-      },
-      {
-        "id": "MT16060",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Aerosinusitis is inflammation caused by changes in air pressure. Which structure is inflamed?",
-        "options": [
-          "The sinus",
-          "The air sacs",
-          "The pleura",
-          "The trachea"
-        ],
-        "correct": 0,
-        "explain": "Aerosinusitis is built from aer/o (air), Sinus/o (sinus), and -itis (inflammation), so the structure inflamed by the change in air pressure is the sinus. The air sacs are the alveoli. The pleura is the lung lining. The trachea is the windpipe."
-      },
-      {
-        "id": "MT16061",
-        "type": "matching",
-        "cat": "MT_lec16-17",
-        "q": "Match each respiratory combining form to the structure it denotes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Alveol/o"
-          },
-          {
-            "id": "2",
-            "text": "Bronch/o, Bronchi/o"
-          },
-          {
-            "id": "3",
-            "text": "Bronchiol/o"
-          },
-          {
-            "id": "4",
-            "text": "Trache/o"
-          },
-          {
-            "id": "5",
-            "text": "Laryng/o"
-          },
-          {
-            "id": "6",
-            "text": "Pharyng/o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Primary airway branch arising where the trachea divides"
-          },
-          {
-            "id": "B",
-            "text": "Terminal microscopic sac where oxygen and carbon dioxide are exchanged"
-          },
-          {
-            "id": "C",
-            "text": "Windpipe extending from the larynx to the carina"
-          },
-          {
-            "id": "D",
-            "text": "Voice box containing the vocal cords and lying between the pharynx and trachea"
-          },
-          {
-            "id": "E",
-            "text": "Smaller tubular airway leading from a bronchus toward the alveoli"
-          },
-          {
-            "id": "F",
-            "text": "Throat serving as a common passage for food and air"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "A",
-          "3": "E",
-          "4": "C",
-          "5": "D",
-          "6": "F"
-        },
-        "explain": "Alveol/o names the terminal microscopic air sac where gas exchange occurs. Bronch/o and Bronchi/o name the primary airway branch arising where the trachea divides. Bronchiol/o names the smaller tubular airway leading toward the alveoli. Trache/o names the windpipe from larynx to carina. Laryng/o names the voice box containing the vocal cords. Pharyng/o names the throat common to food and air."
-      },
-      {
-        "id": "MT16062",
-        "type": "matching",
-        "cat": "MT_lec16-17",
-        "q": "Match each respiratory combining form to the gas, process, or membrane it denotes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Capn/o, Carb/o"
-          },
-          {
-            "id": "2",
-            "text": "Ox/o, Ox/i"
-          },
-          {
-            "id": "3",
-            "text": "Spir/o and -pnea"
-          },
-          {
-            "id": "4",
-            "text": "Pneum/o, Pneumon/o"
-          },
-          {
-            "id": "5",
-            "text": "Pulmon/o"
-          },
-          {
-            "id": "6",
-            "text": "Pleur/o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Gas taken into the lungs during inhalation and passed into the blood"
-          },
-          {
-            "id": "B",
-            "text": "Waste gas carried from the tissues and expelled during exhalation"
-          },
-          {
-            "id": "C",
-            "text": "Membrane enclosing the lung and lining the thoracic cavity"
-          },
-          {
-            "id": "D",
-            "text": "Process of moving air into and out of the lungs"
-          },
-          {
-            "id": "E",
-            "text": "Air or lung"
-          },
-          {
-            "id": "F",
-            "text": "Lung"
-          }
-        ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "A",
-          "3": "D",
-          "4": "E",
-          "5": "F",
-          "6": "C"
-        },
-        "explain": "Capn/o and Carb/o denote carbon dioxide, the waste gas expelled during exhalation. Ox/o and Ox/i denote oxygen, the gas taken in during inhalation. Spir/o with the suffix -pnea denotes breathing. Pneum/o and Pneumon/o denote air or lung, while Pulmon/o denotes lung specifically. Pleur/o denotes the pleura, the membrane enclosing the lung and lining the thoracic cavity."
-      },
-      {
-        "id": "MT16063",
-        "type": "matching",
-        "cat": "MT_lec16-17",
-        "q": "Match each upper-airway combining form to the structure it denotes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Nas/o, Rhin/o"
-          },
-          {
-            "id": "2",
-            "text": "Or/o"
-          },
-          {
-            "id": "3",
-            "text": "Palat/o"
-          },
-          {
-            "id": "4",
-            "text": "Uvul/o"
-          },
-          {
-            "id": "5",
-            "text": "Tonsill/o"
-          },
-          {
-            "id": "6",
-            "text": "Sinus/o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Roof of the mouth that partitions the oral and nasal cavities"
-          },
-          {
-            "id": "B",
-            "text": "Grape-like projection hanging from the posterior edge of the soft palate"
-          },
-          {
-            "id": "C",
-            "text": "Air-filled space in the skull that opens into the nasal cavity"
-          },
-          {
-            "id": "D",
-            "text": "Lymphatic tissue on each side of the pharynx that filters inhaled air"
-          },
-          {
-            "id": "E",
-            "text": "Organ that warms, moistens, and filters inspired air and bears smell receptors"
-          },
-          {
-            "id": "F",
-            "text": "Opening of the oral cavity at the beginning of the digestive tract"
-          }
-        ],
-        "correct_pairs": {
-          "1": "E",
-          "2": "F",
-          "3": "A",
-          "4": "B",
-          "5": "D",
-          "6": "C"
-        },
-        "explain": "Nas/o and Rhin/o denote the nose, the organ that conditions inspired air and bears smell receptors. Or/o denotes the mouth. Palat/o denotes the palate, the roof of the mouth. Uvul/o denotes the uvula, the grape-like posterior soft-palate projection. Tonsill/o denotes the tonsil, the lymphatic tissue beside the pharynx. Sinus/o denotes the sinus, an air-filled skull cavity opening into the nasal cavity."
-      },
-      {
-        "id": "MT16064",
-        "type": "matching",
-        "cat": "MT_lec16-17",
-        "q": "Match each breathing term to the pattern it describes.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Eupnea"
-          },
-          {
-            "id": "2",
-            "text": "Bradypnea"
-          },
-          {
-            "id": "3",
-            "text": "Tachypnea"
-          },
-          {
-            "id": "4",
-            "text": "Hypopnea"
-          },
-          {
-            "id": "5",
-            "text": "Hyperpnea"
-          },
-          {
-            "id": "6",
-            "text": "Dyspnea"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Abnormally rapid breathing rate"
-          },
-          {
-            "id": "B",
-            "text": "Abnormally slow breathing rate"
-          },
-          {
-            "id": "C",
-            "text": "Deep breathing that may also be faster during exercise or exertion"
-          },
-          {
-            "id": "D",
-            "text": "Difficult breathing with shortness of breath and chest tightening"
-          },
-          {
-            "id": "E",
-            "text": "Normal and quiet breathing pattern"
-          },
-          {
-            "id": "F",
-            "text": "Shallow breathing associated with partial airway blockage"
-          }
-        ],
-        "correct_pairs": {
-          "1": "E",
-          "2": "B",
-          "3": "A",
-          "4": "F",
-          "5": "C",
-          "6": "D"
-        },
-        "explain": "Eupnea is normal quiet breathing. Bradypnea is abnormally slow breathing. Tachypnea is abnormally rapid breathing. Hypopnea is shallow breathing associated with partial airway blockage. Hyperpnea is deep breathing that may also be faster during exercise or exertion. Dyspnea is difficult breathing with shortness of breath and chest tightening."
-      },
-      {
-        "id": "MT16065",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which structure is the internal point where the trachea divides into the right and left bronchi?",
-        "options": [
-          "Carina",
-          "Glottis",
-          "Uvula",
-          "Epiglottis"
-        ],
-        "correct": 0,
-        "explain": "The carina is the internal point where the trachea divides into the right and left bronchi. The glottis is the opening between the vocal cords. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing lid over the larynx."
-      },
-      {
-        "id": "MT16066",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which pairing correctly names the two phases of breathing?",
-        "options": [
-          "Inhalation is also called inspiration, and exhalation is also called expiration.",
-          "Inhalation is also called expiration, and exhalation is also called inspiration.",
-          "Inhalation is also called ventilation, and exhalation is also called olfaction.",
-          "Inhalation is also called olfaction, and exhalation is also called ventilation."
-        ],
-        "correct": 0,
-        "explain": "Inhalation, or inspiration, draws oxygen into the lungs, and exhalation, or expiration, removes carbon dioxide. Swapping inspiration and expiration reverses the two phases. Ventilation is the whole process of moving air, not one phase, and olfaction is the sense of smell."
-      },
-      {
-        "id": "MT16067",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which statement correctly describes the paranasal sinuses?",
-        "options": [
-          "Air-filled spaces in the skull bones that open into the nasal cavity and lighten those bones",
-          "Air-filled sacs at the ends of the bronchioles that exchange oxygen and carbon dioxide with blood",
-          "Oval lymphatic tissues on each side of the pharynx that filter inhaled air and trap bacteria",
-          "Hair-like processes on bronchial cells that move mucus and trapped secretions up to the pharynx"
-        ],
-        "correct": 0,
-        "explain": "The paranasal sinuses are air-filled spaces within the skull bones. They open into the nasal cavity and lighten those bones. Terminal gas-exchanging sacs are the alveoli. Oval lymphatic tissue beside the pharynx is the tonsil. Hair-like mucus-moving processes are the cilia."
-      },
-      {
-        "id": "MT16068",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "Which other name is used for the oval lymphatic tissues on each side of the pharynx?",
-        "options": [
-          "Palatine tonsils",
-          "Lingual tonsils",
-          "Pharyngeal tonsils",
-          "Tubal tonsils"
-        ],
-        "correct": 0,
-        "explain": "The tonsils on each side of the pharynx are also called palatine tonsils. They filter air and help defend against bacterial invasion. The lingual tonsils sit at the base of the tongue, the pharyngeal tonsils are the adenoids, and the tubal tonsils sit near the auditory tube openings."
-      },
-      {
-        "id": "MT16069",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "In the term aerosinusitis, which element carries the meaning of air?",
-        "options": [
-          "The element aer",
-          "The element sinus",
-          "The element itis",
-          "The element capn"
-        ],
-        "correct": 0,
-        "explain": "Aerosinusitis contains aer, the combining form for air, with sinus and -itis. Sinus names the skull cavity, not air. The ending -itis names inflammation. Capn/o names carbon dioxide and is not in this word."
-      },
-      {
-        "id": "MT16070",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "pharynx-cluster",
-        "groupOrder": 1,
-        "q": "Which region of the pharynx is being named? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Directly behind the nasal passages",
-            "options": [
-              "Nasopharynx region",
-              "Oropharynx region",
-              "Laryngopharynx region",
-              "Nasal cavity region"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Between the roof of the mouth and the upper edge of the epiglottis",
-            "options": [
-              "Oropharynx",
-              "Nasopharynx",
-              "Laryngopharynx",
-              "Oral cavity"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Below the oropharyngeal opening, into the larynx and esophagus",
-            "options": [
-              "Laryngopharynx region",
-              "Nasopharynx region",
-              "Oropharynx region",
-              "Laryngeal inlet region"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The nasopharynx lies directly behind the nasal passages. The oropharynx lies between the roof of the mouth and the upper edge of the epiglottis. The laryngopharynx lies below the oropharyngeal opening and continues into the larynx and esophagus. The nasal cavity, the oral cavity, and the larynx are neighboring spaces, not pharyngeal regions. Nasopharynx is not the middle or lower region, oropharynx is not the upper or lower region, and laryngopharynx is not the upper or middle region."
-      },
-      {
-        "id": "MT16071",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "pleura-cluster",
-        "groupOrder": 1,
-        "q": "Which pleural membrane is being named? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Membrane on the lung surface",
-            "options": [
-              "Visceral pleura",
-              "Parietal pleura",
-              "Diaphragm muscle",
-              "Nasal mucosa lining"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Membrane on the inner chest wall",
-            "options": [
-              "Parietal pleura",
-              "Visceral pleura",
-              "Diaphragm muscle",
-              "Soft palate muscle"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The visceral pleura encloses the lung surface. The parietal pleura lines the inner surface of the thoracic cavity. The diaphragm is the muscular partition below the lungs, not a pleural membrane. Nasal mucosa conditions incoming air. The soft palate is the muscular posterior roof of the mouth. Visceral pleura is not the chest-wall lining, and parietal pleura is not the lung-surface membrane."
-      },
-      {
-        "id": "MT16072",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "palate-cluster",
-        "groupOrder": 1,
-        "q": "Which part of the palate is being named? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Bony anterior roof of the mouth",
-            "options": [
-              "Hard palate",
-              "Soft palate",
-              "Uvula tip",
-              "Tonsil pad"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Muscular posterior roof of the mouth",
-            "options": [
-              "Soft palate",
-              "Hard palate",
-              "Uvula tip",
-              "Epiglottis lid"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "The hard palate is the bony anterior portion of the roof of the mouth. The soft palate is the muscular posterior portion. The uvula hangs from the back middle edge of the soft palate and is not the palate itself. The tonsil is lymphatic tissue beside the pharynx. The epiglottis is the swallowing lid over the larynx. Hard palate is not the muscular posterior roof, and soft palate is not the bony anterior roof."
-      },
-      {
-        "id": "MT16073",
-        "type": "mcq",
-        "cat": "MT_lec16-17",
-        "q": "How many lobes does each lung have, right then left?",
-        "options": [
-          "Right 3, left 2",
-          "Right 2, left 3",
-          "Right 3, left 3",
-          "Right 2, left 2"
-        ],
-        "correct": 0,
-        "explain": "The right lung has three lobes and the left lung has two, leaving room for the heart on the left. Right 2, left 3 reverses the counts, and Right 3, left 3 and Right 2, left 2 give both lungs the same number."
-      },
-      {
-        "id": "MT16074",
-        "type": "matching",
-        "cat": "MT_lec16-17",
-        "q": "Match each breathing-pattern term to what the breathing looks like.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Eupnea"
-          },
-          {
-            "id": "2",
-            "text": "Bradypnea"
-          },
-          {
-            "id": "3",
-            "text": "Tachypnea"
-          },
-          {
-            "id": "4",
-            "text": "Hypopnea"
-          },
-          {
-            "id": "5",
-            "text": "Hyperpnea"
-          },
-          {
-            "id": "6",
-            "text": "Dyspnea"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "About 12 to 20 quiet, even breaths per minute at rest"
-          },
-          {
-            "id": "B",
-            "text": "Fewer than 12 breaths per minute at rest"
-          },
-          {
-            "id": "C",
-            "text": "More than 20 breaths per minute at rest"
-          },
-          {
-            "id": "D",
-            "text": "Breaths too shallow to move enough air, as with a partly blocked airway"
-          },
-          {
-            "id": "E",
-            "text": "Larger, fuller breaths, as during hard exercise"
-          },
-          {
-            "id": "F",
-            "text": "Breathlessness with a tight chest and a struggle for air"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E",
-          "6": "F"
-        },
-        "explain": "Eupnea is normal quiet breathing at about 12 to 20 breaths per minute. Bradypnea is a rate below 12, and tachypnea is a rate above 20. Hypopnea is breathing too shallow to move enough air, as with a partly blocked airway. Hyperpnea is deeper breathing, as during exercise. Dyspnea is difficult breathing with breathlessness and chest tightness."
-      },
-      {
-        "id": "MT16075",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 1,
-        "q": "This leaf-shaped flap of cartilage sits at the root of the tongue. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this structure?",
-            "options": [
-              "Epiglottis",
-              "Epiglotis",
-              "Epiglottus",
-              "Epiglotties"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which opening does it cover?",
-            "options": [
-              "The larynx",
-              "The esophagus",
-              "The nasal cavity",
-              "The carina"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "When does it close that opening?",
-            "options": [
-              "During swallowing",
-              "During quiet inhalation",
-              "During quiet exhalation",
-              "During gas exchange"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This lid is the epiglottis. Epiglotis drops a t, Epiglottus changes the ending, and Epiglotties is a false plural. It covers the larynx, not the esophagus, the nasal cavity, or the carina. It closes that opening during swallowing, not during quiet inhalation, quiet exhalation, or gas exchange."
-      },
-      {
-        "id": "MT16076",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 2,
-        "q": "This narrow slit lets air pass and changes shape as we speak. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this opening?",
-            "options": [
-              "Glottis",
-              "Glotiss",
-              "Glottus",
-              "Glotties"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which organ contains the Glottis?",
-            "options": [
-              "The larynx",
-              "The trachea",
-              "The pharynx",
-              "The nasal cavity"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "What borders the Glottis?",
-            "options": [
-              "The vocal cords",
-              "The palatine tonsils",
-              "The soft palate",
-              "The primary bronchi"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This opening is the glottis. Glotiss doubles the wrong consonant, Glottus changes the ending, and Glotties is a false plural. It lies in the larynx, not the trachea, the pharynx, or the nasal cavity. The vocal cords border it. The palatine tonsils, the soft palate, and the primary bronchi do not."
-      },
-      {
-        "id": "MT16077",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 3,
-        "q": "This internal point is where the windpipe divides. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this point?",
-            "options": [
-              "Carina",
-              "Carinna",
-              "Carena",
-              "Carrina"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which tube ends at the Carina?",
-            "options": [
-              "The trachea",
-              "The larynx",
-              "The bronchiole",
-              "The pharynx"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "What begins at the Carina?",
-            "options": [
-              "Right and left bronchi",
-              "Right and left alveoli",
-              "Hard and soft palates",
-              "Visceral and parietal pleura"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This point is the carina. Carinna doubles an n, Carena changes the vowel, and Carrina doubles an r. The trachea ends there. The larynx, the bronchiole, and the pharynx do not. The right and left bronchi begin there. Alveoli, palates, and pleurae do not."
-      },
-      {
-        "id": "MT16078",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 4,
-        "q": "These thin-walled microscopic sacs end the airway and exchange gases. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of these sacs?",
-            "options": [
-              "Alveoli",
-              "Alveolis",
-              "Alviolii",
-              "Alveolii"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which tubes lead into these sacs?",
-            "options": [
-              "The bronchioles",
-              "The primary bronchi",
-              "The tracheal tube",
-              "The sinus cavities"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which gases cross their walls?",
-            "options": [
-              "Oxygen and carbon dioxide",
-              "Oxygen and nitrogen only",
-              "Carbon dioxide and nitrogen",
-              "Nitrogen and water vapor"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "These sacs are the alveoli. Alveolis, Alviolii, and Alveolii miss the spelling. Bronchioles lead into them. Primary bronchi, tracheae, and sinuses do not. Oxygen and carbon dioxide cross their walls. Pairings limited to nitrogen or water vapor are not the exchange named here."
-      },
-      {
-        "id": "MT16079",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 5,
-        "q": "This organ carries air from the throat to the windpipe and holds the vocal cords. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this organ?",
-            "options": [
-              "Larynx",
-              "Larnyx",
-              "Larynix",
-              "Larnix"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which other name belongs to the Larynx?",
-            "options": [
-              "Voice box",
-              "Windpipe",
-              "Throat",
-              "Air sac"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which combining form names the Larynx?",
-            "options": [
-              "Laryng/o",
-              "Larynx/o",
-              "Laring/o",
-              "Larynge/o"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This organ is the larynx. Larnyx swaps n and y, Larynix adds a vowel, and Larnix drops a y. Its other name is voice box. Windpipe names the trachea, throat names the pharynx, and air sac names the alveolus. The combining form is Laryng/o. Larynx/o, Laring/o, and Larynge/o miss that form."
-      },
-      {
-        "id": "MT16080",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 6,
-        "q": "This tube carries air from the voice box to the point where it splits. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this tube?",
-            "options": [
-              "Trachea",
-              "Trachia",
-              "Tracheah",
-              "Tracheea"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which other name belongs to the Trachea?",
-            "options": [
-              "Windpipe",
-              "Voice box",
-              "Throat",
-              "Air sac"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Where does the Trachea end?",
-            "options": [
-              "At the carina",
-              "At the glottis",
-              "At the uvula",
-              "At the alveoli"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This tube is the trachea. Trachia swaps the vowel, Tracheah adds an h, and Tracheea doubles an e. Its other name is windpipe. Voice box names the larynx, throat names the pharynx, and air sac names the alveolus. It ends at the carina, not at the glottis, the uvula, or the alveoli."
-      },
-      {
-        "id": "MT16081",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 7,
-        "q": "This dome-shaped muscle contracts and flattens during breathing. Answer each step, then the next structure follows.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this partition?",
-            "options": [
-              "Diaphragm",
-              "Diaphram",
-              "Diaphraghm",
-              "Diaphagm"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which cavities does it separate?",
-            "options": [
-              "Thoracic and abdominal cavities",
-              "Oral and nasal cavities",
-              "Nasal and pharyngeal passages",
-              "Laryngeal and tracheal passages"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which combining form names the Diaphragm?",
-            "options": [
-              "Phren/o",
-              "Phreni/o",
-              "Phreno/o",
-              "Phrenu/o"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This partition is the diaphragm. Diaphram drops a g, Diaphraghm adds an h, and Diaphagm drops an r. It separates the thoracic cavity from the abdominal cavity. Oral and nasal are separated by the palate. Nasal and pharyngeal names the upper airway sequence, not this partition. Laryngeal and tracheal are sequential airway parts, not the cavities this muscle divides. The combining form is Phren/o. Phreni/o, Phreno/o, and Phrenu/o miss that form."
-      },
-      {
-        "id": "MT16082",
-        "type": "stepped",
-        "cat": "MT_lec16-17",
-        "group": "airway-drill",
-        "groupOrder": 8,
-        "q": "This small projection hangs from the back middle edge of the soft palate. Answer each step, then the run ends.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this projection?",
-            "options": [
-              "Uvula",
-              "Uvulla",
-              "Uvola",
-              "Uvulah"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Which shape gives it that name?",
-            "options": [
-              "Grape-like",
-              "Lid-like",
-              "Cone-like",
-              "Sac-like"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Which combining form names the Uvula?",
-            "options": [
-              "Uvul/o",
-              "Uvul/a",
-              "Uvula/o",
-              "Uvola/o"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "This projection is the uvula. Uvulla doubles an l, Uvola changes the vowel, and Uvulah adds an h. It is named for a grape-like shape. Lid-like names the epiglottis, cone-like is a gross organ shape, and sac-like names an alveolus rather than this projection. The combining form is Uvul/o. Uvul/a, Uvula/o, and Uvola/o miss that form."
-      }
-    ]
-  }
+ "id": "lecture-16-17---respiratory-system",
+ "subject": "Medical Terminology",
+ "subjectId": "medical_terminology",
+ "title": "Lecture 16 and 17 - Respiratory System",
+ "formSize": 81,
+ "forms": [
+  "A"
+ ],
+ "bank": {
+  "A": [
+   {
+    "id": "MT16001",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which gas does each breathing phase move?",
+    "options": [
+     "Inhalation: carbon dioxide in; exhalation: oxygen out",
+     "Exhalation: oxygen in; inhalation: carbon dioxide out",
+     "Inhalation: oxygen in; exhalation: carbon dioxide out",
+     "Exhalation: carbon dioxide in; inhalation: oxygen out"
+    ],
+    "correct": 2,
+    "explain": "Inhalation brings oxygen into the lungs, where it passes into the blood; exhalation removes carbon dioxide that diffused out of the blood. The other options swap the gases or the phases."
+   },
+   {
+    "id": "MT16002",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which structure warms, moistens, and filters air and holds the smell receptors?",
+    "options": [
+     "Nasal cavity",
+     "Paranasal sinuses",
+     "Palate",
+     "Pharynx"
+    ],
+    "correct": 0,
+    "explain": "The nasal cavity warms, moistens, and filters incoming air and houses the olfactory receptors. The paranasal sinuses are skull air spaces, the palate is the mouth roof, and the pharynx is the throat."
+   },
+   {
+    "id": "MT16003",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What are the sinuses?",
+    "options": [
+     "Lymphatic tissue beside the pharynx",
+     "Microscopic air sacs ending the bronchioles",
+     "Hair-like processes moving mucus upward",
+     "Skull air spaces opening into nose"
+    ],
+    "correct": 3,
+    "explain": "The sinuses are air-filled spaces in the skull bones that open into the nasal cavity. Lymphatic tissue beside the pharynx is the palatine tonsils, terminal air sacs are alveoli, and mucus-moving processes are cilia."
+   },
+   {
+    "id": "MT16004",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which describes the hard and soft palate?",
+    "options": [
+     "Hard: muscular, posterior; soft: bony, anterior",
+     "Hard: bony, anterior; soft: muscular, posterior",
+     "Hard: lines chest; soft: encloses lung",
+     "Hard: filters air; soft: moves mucus"
+    ],
+    "correct": 1,
+    "explain": "The hard palate is the bony anterior roof of the mouth; the soft palate is the muscular posterior part. Lining the chest and enclosing the lung are the pleurae; filtering air and moving mucus belong to the nose and cilia."
+   },
+   {
+    "id": "MT16005",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "q": "Name the pharynx regions from superior to inferior.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which region lies first, directly behind the nasal passages?",
+      "options": [
+       "Nasopharynx",
+       "Oropharynx",
+       "Laryngopharynx"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "After the nasopharynx, which region comes next?",
+      "options": [
+       "Oropharynx",
+       "Laryngopharynx",
+       "Nasopharynx"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "The oropharynx ends at which upper edge?",
+      "options": [
+       "The epiglottis",
+       "The glottis",
+       "The uvula",
+       "The carina"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "4",
+      "prompt": "Below the oropharynx, which region opens into larynx and esophagus?",
+      "options": [
+       "Laryngopharynx",
+       "Nasopharynx",
+       "Oropharynx"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "From top to bottom: the nasopharynx sits behind the nasal passages; the oropharynx runs from the roof of the mouth to the upper edge of the epiglottis; the laryngopharynx lies below and opens into the larynx and esophagus."
+   },
+   {
+    "id": "MT16006",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which structure consists of oval lymphatic tissues on each side of the pharynx and filters air?",
+    "options": [
+     "Uvula",
+     "Epiglottis",
+     "Tonsils",
+     "Adenoids"
+    ],
+    "correct": 2,
+    "explain": "The tonsils are oval lymphatic tissues on each side of the pharynx that filter air and help defend against bacterial invasion. The adenoids are lymphatic tissue at the back of the nasal cavity, not at the sides of the pharynx. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing flap over the larynx."
+   },
+   {
+    "id": "MT16007",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which anatomical term denotes the small projection hanging from the back middle edge of the soft palate?",
+    "options": [
+     "Glottis",
+     "Carina",
+     "Palate",
+     "Uvula"
+    ],
+    "correct": 3,
+    "explain": "The uvula is the small projection hanging from the back middle edge of the soft palate and is named for its grape-like shape. The glottis is the opening between the vocal cords. The carina is the tracheal divide. The palate is the roof of the mouth."
+   },
+   {
+    "id": "MT16008",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which describes the glottis and the epiglottis?",
+    "options": [
+     "Glottis: lid over larynx; epiglottis: vocal cord opening",
+     "Glottis: vocal cord opening; epiglottis: lid over larynx",
+     "Glottis: soft palate projection; epiglottis: pharyngeal tonsil",
+     "Glottis: tracheal division point; epiglottis: lung membrane"
+    ],
+    "correct": 1,
+    "explain": "The glottis is the opening between the vocal cords in the larynx; the epiglottis is the lid that covers the larynx during swallowing. The soft palate projection is the uvula, the tracheal split is the carina, and the lung membrane is the pleura."
+   },
+   {
+    "id": "MT16009",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "larynx-cluster",
+    "groupOrder": 1,
+    "q": "Which description belongs to the larynx? At each step, choose, then continue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What is it also called?",
+      "options": [
+       "Voice box",
+       "Windpipe",
+       "Throat",
+       "Air sac"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Where does it carry air?",
+      "options": [
+       "From the pharynx to the trachea",
+       "From the larynx to the carina",
+       "From the mouth to the esophagus",
+       "From the bronchioles to the blood"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What does it contain?",
+      "options": [
+       "The vocal cords",
+       "The carina",
+       "The olfactory receptors",
+       "The palatine tonsils"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The larynx is the voice box. It carries air from the pharynx to the trachea and contains the vocal cords. Windpipe names the trachea, throat names the pharynx, and air sac names the alveolus. From the larynx to the carina is the trachea. From the mouth to the esophagus is the food path. From the bronchioles to the blood is alveolar exchange. The carina is the tracheal split, the olfactory receptors sit in the nose, and the palatine tonsils lie beside the pharynx."
+   },
+   {
+    "id": "MT16010",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which describes the trachea and the carina?",
+    "options": [
+     "Voice box; ends where it splits into alveoli",
+     "Bronchial tree; ends where it splits into pleurae",
+     "Windpipe; ends where it splits into bronchi",
+     "Muscle partition; ends where it splits into ribs"
+    ],
+    "correct": 2,
+    "explain": "The trachea is the windpipe, carrying air from the larynx to the carina, where it splits into the right and left bronchi. The voice box is the larynx and the muscular partition is the diaphragm."
+   },
+   {
+    "id": "MT16011",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which sequence correctly follows the airflow from the trachea to the site of gas exchange?",
+    "options": [
+     "Trachea, bronchioles, bronchi, alveoli",
+     "Bronchi, trachea, alveoli, bronchioles",
+     "Alveoli, bronchioles, bronchi, trachea",
+     "Trachea, bronchi, bronchioles, alveoli"
+    ],
+    "correct": 3,
+    "explain": "Air passes from the trachea into the primary bronchi, then into the smaller bronchioles, and finally into the alveoli where gas exchange occurs. The other orders place the bronchioles before the bronchi, begin at the bronchi or alveoli, or reverse the direction of airflow."
+   },
+   {
+    "id": "MT16012",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which structures are the thin-walled microscopic air sacs where oxygen and carbon dioxide are exchanged?",
+    "options": [
+     "Bronchioles",
+     "Alveoli",
+     "Cilia",
+     "Pleurae"
+    ],
+    "correct": 1,
+    "explain": "The alveoli are the thin-walled microscopic air sacs at the end of the bronchioles where oxygen and carbon dioxide are exchanged. The bronchioles are conducting tubes. The cilia move mucus. The pleurae are membranes around the lung and thoracic cavity."
+   },
+   {
+    "id": "MT16013",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "lung-cluster",
+    "groupOrder": 1,
+    "q": "Which description belongs to the lungs? At each step, choose, then continue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "How many spongy organs are they?",
+      "options": [
+       "Two",
+       "Three",
+       "Four"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which cavity holds them?",
+      "options": [
+       "Thoracic cavity",
+       "Abdominal cavity"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What encloses them?",
+      "options": [
+       "Diaphragm and rib cage",
+       "Palate and the uvula",
+       "Larynx and trachea"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The lungs are two spongy organs in the thoracic cavity, enclosed by the diaphragm and rib cage. Three and four are not the organ count. The abdominal cavity is not where they lie. The palate and uvula are mouth structures, and the larynx and trachea are airway tubes, not the enclosure."
+   },
+   {
+    "id": "MT16014",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which describes the visceral and parietal pleura?",
+    "options": [
+     "Visceral lines the chest; parietal encloses the lung",
+     "Visceral separates chest and abdomen; parietal moves",
+     "Visceral encloses the lung; parietal lines the chest",
+     "Visceral filters air; parietal holds smell receptors"
+    ],
+    "correct": 2,
+    "explain": "The visceral pleura encloses the lung surface; the parietal pleura lines the inner thoracic cavity. Separating chest from abdomen is the diaphragm; filtering air and smell belong to the nasal cavity."
+   },
+   {
+    "id": "MT16015",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which muscular partition separates the thoracic and abdominal cavities and aids respiration?",
+    "options": [
+     "Palate",
+     "Epiglottis",
+     "Carina",
+     "Diaphragm"
+    ],
+    "correct": 3,
+    "explain": "The diaphragm is the muscular partition between the thoracic and abdominal cavities that moves to aid breathing. The palate is the mouth roof, the epiglottis covers the larynx, and the carina is where the trachea splits."
+   },
+   {
+    "id": "MT16016",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What do the cilia of the bronchi do?",
+    "options": [
+     "Warm, moisten, and filter incoming air",
+     "Move mucus upward toward the pharynx",
+     "Cover the larynx during swallowing",
+     "Exchange oxygen and carbon dioxide"
+    ],
+    "correct": 1,
+    "explain": "Cilia beat together to move mucus and trapped secretions upward toward the pharynx. Warming and filtering is the nasal cavity, covering the larynx is the epiglottis, and gas exchange happens in the alveoli."
+   },
+   {
+    "id": "MT16017",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What is the bronchial tree?",
+    "options": [
+     "Branched airways from trachea to alveoli",
+     "Skull air spaces opening into the nose",
+     "Two membranes around lung and chest",
+     "Muscle partition above the abdomen"
+    ],
+    "correct": 0,
+    "explain": "The bronchial tree is the branched set of airways from the trachea to the alveoli. Skull air spaces are the sinuses, the two membranes are the pleurae, and the muscle partition is the diaphragm."
+   },
+   {
+    "id": "MT16018",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which set consists entirely of combining forms that mean chest?",
+    "options": [
+     "Thorac/o, Pector/o, and Steth/o",
+     "Phren/o, Thorac/o, and Steth/o",
+     "Pector/o, Pleur/o, and Thorac/o",
+     "Steth/o, Pector/o, and Trache/o"
+    ],
+    "correct": 0,
+    "explain": "Thorac/o, Pector/o, and Steth/o are the three combining forms that mean chest. Each other set holds two chest forms and one intruder: Phren/o means diaphragm, Pleur/o means pleura, and Trache/o means windpipe."
+   },
+   {
+    "id": "MT16019",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "In the term phrenoptosis, the element phren refers to what?",
+    "options": [
+     "Thorax",
+     "Pleura",
+     "Diaphragm",
+     "Pericardium"
+    ],
+    "correct": 2,
+    "explain": "Phren means diaphragm, the muscular partition below the lungs, so phrenoptosis is a drooping diaphragm. Thorax is thorac/o, pleura is pleur/o, and pericardium surrounds the heart."
+   },
+   {
+    "id": "MT16020",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "In lobectomy, what does lob refer to?",
+    "options": [
+     "A single air sac",
+     "The surrounding membrane",
+     "A main airway branch",
+     "A lung subdivision"
+    ],
+    "correct": 3,
+    "explain": "Lob means lobe or portion, a subdivision of the lung, so lobectomy removes a lobe. An air sac is an alveolus, the membrane is the pleura, and an airway branch is a bronchus."
+   },
+   {
+    "id": "MT16021",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "In the term nasopharyngolaryngoscopy, which element carries the meaning of nose?",
+    "options": [
+     "The element pharyng, because it denotes the throat region",
+     "The element nas, because it denotes the nose",
+     "The element rhin, because it denotes the nose",
+     "The element laryng, because it denotes the voice box"
+    ],
+    "correct": 1,
+    "explain": "The term nasopharyngolaryngoscopy contains the element nas, which is the combining form for nose. Rhin/o also means nose, but it is not the spelling present in this term, while pharyng and laryng name the throat and voice box."
+   },
+   {
+    "id": "MT16022",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "In carbohemia, which element means carbon dioxide?",
+    "options": [
+     "Carb",
+     "Hem",
+     "Capn",
+     "Ox"
+    ],
+    "correct": 0,
+    "explain": "Carb is the combining form for carbon dioxide in carbohemia (carbon dioxide in the blood). Hem means blood; capn also means carbon dioxide but is not in this word; ox means oxygen."
+   },
+   {
+    "id": "MT16023",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which combining form means air or lung, not lung alone?",
+    "options": [
+     "Pulmon/o",
+     "Pleur/o",
+     "Pneum/o",
+     "Alveol/o"
+    ],
+    "correct": 2,
+    "explain": "Pneum/o means air or lung. Pulmon/o means lung only, Pleur/o names the membrane around the lung, and Alveol/o names the air sac."
+   },
+   {
+    "id": "MT16024",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Alveol/o mean?",
+    "options": [
+     "Air sac where gas exchange occurs",
+     "Tubular airway leading to air sacs",
+     "Voice box holding the vocal cords",
+     "Windpipe from larynx to carina"
+    ],
+    "correct": 0,
+    "explain": "Alveol/o is the small air sac at the end of the bronchioles where gas exchange occurs. The tubular airway is the bronchiole, the voice box is the larynx, and the windpipe is the trachea."
+   },
+   {
+    "id": "MT16025",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Bronch/o or Bronchi/o mean?",
+    "options": [
+     "Air sac where gas is exchanged",
+     "Primary airway branching at the carina",
+     "Smaller tube leading toward air sacs",
+     "Membrane enclosing lung, lining chest"
+    ],
+    "correct": 1,
+    "explain": "Bronch/o or Bronchi/o is the bronchus, the primary airway branching from the trachea at the carina. The air sac is the alveolus, the smaller tube is the bronchiole, and the membrane is the pleura."
+   },
+   {
+    "id": "MT16026",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Bronchiol/o mean?",
+    "options": [
+     "Primary airway branching at the carina",
+     "Air sac where gases are exchanged",
+     "Smaller tube leading toward the alveoli",
+     "Voice box between pharynx and trachea"
+    ],
+    "correct": 2,
+    "explain": "Bronchiol/o is the bronchiole, the smaller airway leading toward the alveoli. The primary airway is the bronchus, the air sac is the alveolus, and the voice box is the larynx."
+   },
+   {
+    "id": "MT16027",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Laryng/o mean?",
+    "options": [
+     "Windpipe from larynx to the carina",
+     "Voice box holding vocal cords",
+     "Throat passing food and air",
+     "Projection hanging from soft palate"
+    ],
+    "correct": 1,
+    "explain": "Laryng/o is the larynx, the voice box holding the vocal cords. The windpipe is the trachea, the throat is the pharynx, and the projection is the uvula."
+   },
+   {
+    "id": "MT16028",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Ox/o or Ox/i mean?",
+    "options": [
+     "Carbon dioxide",
+     "Oxygen",
+     "Breathing",
+     "Air or lung"
+    ],
+    "correct": 1,
+    "explain": "Ox/o or Ox/i means oxygen, the gas taken in during inhalation and passed into the blood. Carbon dioxide is capn/o or carb/o, breathing is spir/o, and air or lung is pneum/o."
+   },
+   {
+    "id": "MT16029",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Pulmon/o mean?",
+    "options": [
+     "Air or lung",
+     "Lung",
+     "Lung membrane",
+     "Lung air sac"
+    ],
+    "correct": 1,
+    "explain": "Pulmon/o means lung. Air or lung is pneum/o, the lung membrane is pleur/o, and the air sac is alveol/o."
+   },
+   {
+    "id": "MT16030",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Where is the tonsil named by Tonsill/o?",
+    "options": [
+     "Behind the nasal cavity",
+     "Inside the mouth floor",
+     "On each side of the pharynx",
+     "At the base of the tongue"
+    ],
+    "correct": 2,
+    "explain": "Tonsill/o is the tonsil, lymphatic tissue on each side of the pharynx. Tissue behind the nasal cavity is the adenoid; saliva comes from salivary glands."
+   },
+   {
+    "id": "MT16031",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Spir/o or the suffix -pnea mean?",
+    "options": [
+     "Breathing",
+     "Oxygen",
+     "Carbon dioxide",
+     "Chest"
+    ],
+    "correct": 0,
+    "explain": "Spir/o and -pnea mean breathing, moving air into and out of the lungs. Oxygen is ox/o, carbon dioxide is capn/o, and chest is thorac/o or pector/o."
+   },
+   {
+    "id": "MT16032",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Sinus/o mean?",
+    "options": [
+     "Throat passing food and air",
+     "Air space in skull bones",
+     "Membrane enclosing the lung",
+     "Air sac ending a bronchiole"
+    ],
+    "correct": 1,
+    "explain": "Sinus/o is a cavity or air-filled space in the skull bones. The throat is the pharynx, the membrane is the pleura, and the air sac is the alveolus."
+   },
+   {
+    "id": "MT16033",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Pleur/o mean?",
+    "options": [
+     "Membrane enclosing the heart",
+     "Muscle between chest and abdomen",
+     "Membrane enclosing the lung",
+     "Tissue lining the airways"
+    ],
+    "correct": 2,
+    "explain": "Pleur/o is the pleura, the membrane enclosing the lung and lining the thoracic cavity. The heart membrane is the pericardium and the muscle partition is the diaphragm."
+   },
+   {
+    "id": "MT16034",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Trache/o mean?",
+    "options": [
+     "Voice box holding the vocal cords",
+     "Windpipe from larynx to carina",
+     "Throat passing food and air",
+     "Small airway leading to alveoli"
+    ],
+    "correct": 1,
+    "explain": "Trache/o is the trachea, the windpipe from the larynx to the carina. The voice box is the larynx, the throat is the pharynx, and the small airway is the bronchiole."
+   },
+   {
+    "id": "MT16035",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Palat/o mean?",
+    "options": [
+     "Projection from the soft palate",
+     "Lymphatic tissue beside the pharynx",
+     "Roof dividing mouth and nose",
+     "Air space in the skull"
+    ],
+    "correct": 2,
+    "explain": "Palat/o is the palate, the roof of the mouth that separates the oral and nasal cavities. The projection is the uvula, the lymphatic tissue is the tonsil, and the skull air space is a sinus."
+   },
+   {
+    "id": "MT16036",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Where does the uvula, named by Uvul/o, hang?",
+    "options": [
+     "Front of the hard palate",
+     "Over the larynx",
+     "Back of the soft palate",
+     "Beside the throat"
+    ],
+    "correct": 2,
+    "explain": "The uvula hangs from the back middle edge of the soft palate. The flap over the larynx is the epiglottis and tissue beside the throat is the tonsil."
+   },
+   {
+    "id": "MT16037",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the combining form Or/o mean?",
+    "options": [
+     "Nose",
+     "Mouth",
+     "Throat",
+     "Voice box"
+    ],
+    "correct": 1,
+    "explain": "Or/o means mouth, the opening at the start of the digestive tract. Nose is nas/o, throat is pharyng/o, and voice box is laryng/o."
+   },
+   {
+    "id": "MT16039",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term oximeter mean?",
+    "options": [
+     "Instrument measuring blood oxygen",
+     "Instrument measuring breathed air volume",
+     "Instrument examining the voice box",
+     "Instrument examining the bronchi"
+    ],
+    "correct": 0,
+    "explain": "Oximeter is ox/i (oxygen) + -meter: an instrument for measuring oxygen in the blood. Air volume is a spirometer, the voice box is examined with a laryngoscope, the bronchi with a bronchoscope."
+   },
+   {
+    "id": "MT16040",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term spirometry mean?",
+    "options": [
+     "Recording of the blood oxygen level",
+     "Measurement of air moved in breathing",
+     "Incision into the trachea",
+     "Puncture of the chest wall"
+    ],
+    "correct": 1,
+    "explain": "Spirometry is spir/o (breathing) + -metry: measuring air moved into and out of the lungs. Blood oxygen is oximetry, tracheal incision is tracheotomy, and chest puncture is thoracentesis."
+   },
+   {
+    "id": "MT16041",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term tonsillopathy mean?",
+    "options": [
+     "Inflammation of the tonsils beside the pharynx",
+     "A disease of the tonsils beside the pharynx",
+     "Surgical removal of the tonsils beside the pharynx",
+     "Pain arising in the tonsils beside the pharynx"
+    ],
+    "correct": 1,
+    "explain": "Tonsillopathy is built from Tonsill/o (tonsil) and -pathy (disease), so it denotes a disease of the tonsils. Inflammation would use -itis. Surgical removal would use -ectomy. Pain would use -dynia."
+   },
+   {
+    "id": "MT16042",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term laryngomalacia mean?",
+    "options": [
+     "Inflammation of the voice box and vocal cords",
+     "A softening of the voice box and vocal cords",
+     "Surgical removal of the voice box and vocal cords",
+     "Pain arising in the voice box and vocal cords"
+    ],
+    "correct": 1,
+    "explain": "Laryngomalacia is built from Laryng/o (larynx) and -malacia (softening), so it denotes a softening of the voice box. Inflammation would use -itis. Surgical removal would use -ectomy. Pain would use -dynia."
+   },
+   {
+    "id": "MT16043",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term bronchiolectasis mean?",
+    "options": [
+     "Inflammation of the smaller airways",
+     "A dilation of the smaller airways",
+     "Surgical removal of the smaller airways",
+     "A narrowing of the smaller airways"
+    ],
+    "correct": 1,
+    "explain": "Bronchiolectasis is built from Bronchiol/o (bronchiole) and -ectasis (dilation), so it denotes a dilation of the smaller airways. Inflammation would use -itis, surgical removal would use -ectomy, and narrowing would use -stenosis."
+   },
+   {
+    "id": "MT16044",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term tracheostomy mean?",
+    "options": [
+     "Surgical creation of an opening in the windpipe",
+     "Surgical removal of the whole windpipe itself",
+     "Inflammation along the whole course of the windpipe",
+     "Pain arising in the wall of the windpipe"
+    ],
+    "correct": 0,
+    "explain": "Tracheostomy is built from Trache/o (trachea) and -stomy (surgical opening), so it denotes the surgical creation of an opening in the windpipe. Removal would use -ectomy. Inflammation would use -itis. Pain would use -dynia."
+   },
+   {
+    "id": "MT16045",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term thoracocentesis mean?",
+    "options": [
+     "Surgical creation of an opening in the chest wall",
+     "Incision cut into the wall of the chest cavity",
+     "Surgical puncture of the chest wall to remove fluid",
+     "Inflammation spreading in the wall of the chest"
+    ],
+    "correct": 2,
+    "explain": "Thoracocentesis is built from Thorac/o (chest) and -centesis (surgical puncture), so it denotes the surgical puncture of the chest wall to remove fluid. Creating an opening would use -stomy. Incision would use -tomy. Inflammation would use -itis."
+   },
+   {
+    "id": "MT16046",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term pectorophony mean?",
+    "options": [
+     "Abnormal chest sound on auscultation",
+     "Chest wall pain on deep breathing",
+     "Inflammation of the chest wall",
+     "Surgical repair of the chest"
+    ],
+    "correct": 0,
+    "explain": "Pectorophony is pector/o (chest) + -phony (sound): an abnormal sound over the chest on auscultation. Pain, inflammation, and repair would use -algia, -itis, and -plasty."
+   },
+   {
+    "id": "MT16047",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term phrenoptosis mean?",
+    "options": [
+     "Inflammation of the diaphragm below the lungs",
+     "A downward displacement or drooping of the diaphragm",
+     "Surgical repair of the diaphragm muscle below the lungs",
+     "Pain arising in the diaphragm below the lungs"
+    ],
+    "correct": 1,
+    "explain": "Phrenoptosis is built from Phren/o (diaphragm) and -ptosis (downward displacement or drooping), so it denotes a drooping of the diaphragm. Inflammation would use -itis. Surgical repair would use -plasty. Pain would use -dynia."
+   },
+   {
+    "id": "MT16048",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term palatal mean?",
+    "options": [
+     "Pertaining to the palate, the roof of the mouth",
+     "Pertaining to the uvula hanging from the soft palate",
+     "Pertaining to the tonsil beside the pharynx",
+     "Pertaining to the sinus within the skull"
+    ],
+    "correct": 0,
+    "explain": "Palatal is built from Palat/o (palate) and -al (pertaining to), so it means pertaining to the palate. Pertaining to the uvula would use Uvul/o. The tonsil would use Tonsill/o. The sinus would use Sinus/o."
+   },
+   {
+    "id": "MT16049",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term uvulectomy mean?",
+    "options": [
+     "Incision into the uvula of the soft palate",
+     "Surgical removal of the uvula of the soft palate",
+     "Inflammation of the uvula of the soft palate",
+     "Pain arising deep in the uvula of the soft palate"
+    ],
+    "correct": 1,
+    "explain": "Uvulectomy is built from Uvul/o (uvula) and -ectomy (surgical removal), so it denotes the surgical removal of the uvula. Incision would use -tomy. Inflammation would use -itis. Pain would use -dynia."
+   },
+   {
+    "id": "MT16050",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term rhinesthesia mean?",
+    "options": [
+     "Sense of smell",
+     "Inflammation of the nose",
+     "Surgical repair of the nose",
+     "Pain in the nose"
+    ],
+    "correct": 0,
+    "explain": "Rhinesthesia is rhin (nose) + esthesia (sensation): the sense of smell via the olfactory receptors. Inflammation, repair, and pain would be rhinitis, rhinoplasty, and rhinalgia."
+   },
+   {
+    "id": "MT16051",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term oromandibular mean?",
+    "options": [
+     "Pertaining to the mouth and the lower jaw",
+     "Pertaining to the mouth and the upper jaw",
+     "Pertaining to the nose and the lower jaw",
+     "Pain in the mouth and the lower jaw"
+    ],
+    "correct": 0,
+    "explain": "Oromandibular is built from Or/o (mouth) and mandibul/o (lower jaw) with -ar (pertaining to), so it means pertaining to the mouth and the lower jaw. The other options keep part of the term but change another word part, so they do not match."
+   },
+   {
+    "id": "MT16052",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term pneumonectomy mean?",
+    "options": [
+     "Incision into the substance of a lung",
+     "Surgical removal of a lung",
+     "Inflammation of the substance of a lung",
+     "A disease condition of a lung"
+    ],
+    "correct": 1,
+    "explain": "Pneumonectomy is built from Pneumon/o (lung) and -ectomy (surgical removal), so it denotes the surgical removal of a lung. Incision would use -tomy. Inflammation would use -itis. Disease would use -pathy."
+   },
+   {
+    "id": "MT16053",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term bronchitis mean?",
+    "options": [
+     "Inflammation of the smaller airways",
+     "Inflammation of the primary airways",
+     "Inflammation of the air sacs",
+     "Inflammation of the windpipe"
+    ],
+    "correct": 1,
+    "explain": "Bronchitis is built from Bronch/o (bronchus) and -itis (inflammation), so it denotes inflammation of the primary airways. Inflammation of the smaller airways is bronchiolitis. Inflammation of the air sacs is alveolitis. Inflammation of the windpipe is tracheitis."
+   },
+   {
+    "id": "MT16054",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term bronchoscopy mean?",
+    "options": [
+     "Surgical removal of a bronchus through an incision",
+     "Visual examination of the bronchi with an instrument",
+     "Inflammation of the bronchi along their course",
+     "Graphic recording of the bronchi throughout breathing"
+    ],
+    "correct": 1,
+    "explain": "Bronchoscopy is built from Bronch/o (bronchus) and -scopy (visual examination), so it denotes visual examination of the bronchi with an instrument. Surgical removal would use -ectomy. Inflammation would use -itis. Recording would use -graphy."
+   },
+   {
+    "id": "MT16055",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term capnography mean?",
+    "options": [
+     "Measuring oxygen in the blood",
+     "Recording carbon dioxide levels",
+     "Recording breathing air volumes",
+     "Puncturing the chest wall"
+    ],
+    "correct": 1,
+    "explain": "Capnography is capn/o (carbon dioxide) + -graphy: recording carbon dioxide, typically in exhaled air. Blood oxygen is oximetry, air volumes are spirometry, and chest puncture is thoracentesis."
+   },
+   {
+    "id": "MT16056",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term carbohemia mean?",
+    "options": [
+     "The presence of oxygen carried in the blood",
+     "The presence of carbon dioxide in the blood",
+     "The presence of carbon dioxide in the urine",
+     "The presence of oxygen stored in the lungs"
+    ],
+    "correct": 1,
+    "explain": "Carbohemia is built from Carb/o (carbon dioxide), hem (blood), and -ia (condition), so it denotes the presence of carbon dioxide in the blood. Oxygen in the blood would use Ox/o. Carbon dioxide in the urine would use a urine form. Oxygen stored in the lungs is not this term."
+   },
+   {
+    "id": "MT16057",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term nasopharyngolaryngoscopy mean?",
+    "options": [
+     "Visual examination of the nose, throat, and voice box",
+     "Surgical removal of the nose, throat, and voice box",
+     "Inflammation of the nose, throat, and voice box",
+     "Graphic recording of the nose, throat, and the voice box"
+    ],
+    "correct": 0,
+    "explain": "Nasopharyngolaryngoscopy is built from Nas/o (nose), Pharyng/o (pharynx), Laryng/o (larynx), and -scopy (visual examination), so it denotes visual examination of the nose, throat, and voice box. Surgical removal would use -ectomy. Inflammation would use -itis. Recording would use -graphy."
+   },
+   {
+    "id": "MT16058",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term pleuritis mean?",
+    "options": [
+     "Inflammation of the pleura, the membrane around the heart",
+     "Inflammation of the pleura, the membrane around the lung",
+     "Inflammation of the pleura, the lining of the airways",
+     "Inflammation of the pleura, the muscle below the lungs"
+    ],
+    "correct": 1,
+    "explain": "Pleuritis is built from Pleur/o (pleura) and -itis (inflammation), so it denotes inflammation of the pleura, the membrane around the lung. The membrane around the heart is the pericardium, the airways are lined by mucous membrane, and the muscle below the lungs is the diaphragm."
+   },
+   {
+    "id": "MT16059",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What does the term pharyngorhinoscopy mean?",
+    "options": [
+     "Visual examination of the throat and the nose",
+     "Surgical repair of the throat and the nose",
+     "Inflammation of the throat and the nose",
+     "Graphic recording of the throat and of the nose"
+    ],
+    "correct": 0,
+    "explain": "Pharyngorhinoscopy is built from Pharyng/o (pharynx), Rhin/o (nose), and -scopy (visual examination), so it denotes visual examination of the throat and nose. Surgical repair would use -plasty. Inflammation would use -itis. Recording would use -graphy."
+   },
+   {
+    "id": "MT16060",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Aerosinusitis is inflammation caused by changes in air pressure. Which structure is inflamed?",
+    "options": [
+     "The sinus",
+     "The air sacs",
+     "The pleura",
+     "The trachea"
+    ],
+    "correct": 0,
+    "explain": "Aerosinusitis is built from aer/o (air), Sinus/o (sinus), and -itis (inflammation), so the structure inflamed by the change in air pressure is the sinus. The air sacs are the alveoli. The pleura is the lung lining. The trachea is the windpipe."
+   },
+   {
+    "id": "MT16061",
+    "type": "matching",
+    "cat": "MT_lec16-17",
+    "q": "Match each respiratory combining form to the structure it denotes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Alveol/o"
+     },
+     {
+      "id": "2",
+      "text": "Bronch/o, Bronchi/o"
+     },
+     {
+      "id": "3",
+      "text": "Bronchiol/o"
+     },
+     {
+      "id": "4",
+      "text": "Trache/o"
+     },
+     {
+      "id": "5",
+      "text": "Laryng/o"
+     },
+     {
+      "id": "6",
+      "text": "Pharyng/o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Main branch where windpipe divides"
+     },
+     {
+      "id": "B",
+      "text": "Gas-exchange sac at airway end"
+     },
+     {
+      "id": "C",
+      "text": "Windpipe from voice box downward"
+     },
+     {
+      "id": "D",
+      "text": "Voice box holding vocal cords"
+     },
+     {
+      "id": "E",
+      "text": "Small tube toward the air sacs"
+     },
+     {
+      "id": "F",
+      "text": "Throat passing food and air"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "A",
+     "3": "E",
+     "4": "C",
+     "5": "D",
+     "6": "F"
+    },
+    "explain": "Alveol/o is the gas-exchange sac, Bronch/o the main branch at the carina, Bronchiol/o the small tube to the alveoli, Trache/o the windpipe, Laryng/o the voice box, and Pharyng/o the throat."
+   },
+   {
+    "id": "MT16062",
+    "type": "matching",
+    "cat": "MT_lec16-17",
+    "q": "Match each respiratory combining form to the gas, process, or membrane it denotes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Capn/o, Carb/o"
+     },
+     {
+      "id": "2",
+      "text": "Ox/o, Ox/i"
+     },
+     {
+      "id": "3",
+      "text": "Spir/o and -pnea"
+     },
+     {
+      "id": "4",
+      "text": "Pneum/o, Pneumon/o"
+     },
+     {
+      "id": "5",
+      "text": "Pulmon/o"
+     },
+     {
+      "id": "6",
+      "text": "Pleur/o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Gas breathed in to blood"
+     },
+     {
+      "id": "B",
+      "text": "Waste gas breathed out"
+     },
+     {
+      "id": "C",
+      "text": "Membrane around lung, lining chest"
+     },
+     {
+      "id": "D",
+      "text": "Moving air in and out"
+     },
+     {
+      "id": "E",
+      "text": "Air or lung"
+     },
+     {
+      "id": "F",
+      "text": "Lung"
+     }
+    ],
+    "correct_pairs": {
+     "1": "B",
+     "2": "A",
+     "3": "D",
+     "4": "E",
+     "5": "F",
+     "6": "C"
+    },
+    "explain": "Capn/o and Carb/o mean carbon dioxide, the waste gas exhaled. Ox/o and Ox/i mean oxygen. Spir/o and -pnea mean breathing. Pneum/o means air or lung, Pulmon/o lung, and Pleur/o the pleura."
+   },
+   {
+    "id": "MT16063",
+    "type": "matching",
+    "cat": "MT_lec16-17",
+    "q": "Match each upper-airway combining form to the structure it denotes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Nas/o, Rhin/o"
+     },
+     {
+      "id": "2",
+      "text": "Or/o"
+     },
+     {
+      "id": "3",
+      "text": "Palat/o"
+     },
+     {
+      "id": "4",
+      "text": "Uvul/o"
+     },
+     {
+      "id": "5",
+      "text": "Tonsill/o"
+     },
+     {
+      "id": "6",
+      "text": "Sinus/o"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Roof between mouth and nose"
+     },
+     {
+      "id": "B",
+      "text": "Grape-like hanging projection"
+     },
+     {
+      "id": "C",
+      "text": "Skull air space by nose"
+     },
+     {
+      "id": "D",
+      "text": "Lymphatic tissue beside the throat"
+     },
+     {
+      "id": "E",
+      "text": "Warms air, bears smell receptors"
+     },
+     {
+      "id": "F",
+      "text": "Opening starting the digestive tract"
+     }
+    ],
+    "correct_pairs": {
+     "1": "E",
+     "2": "F",
+     "3": "A",
+     "4": "B",
+     "5": "D",
+     "6": "C"
+    },
+    "explain": "Nas/o and Rhin/o name the nose, which warms and filters air and bears smell receptors. Or/o is the mouth, Palat/o the palate, Uvul/o the uvula, Tonsill/o the tonsils, and Sinus/o a skull air space."
+   },
+   {
+    "id": "MT16064",
+    "type": "matching",
+    "cat": "MT_lec16-17",
+    "q": "Match each breathing term to the pattern it describes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Eupnea"
+     },
+     {
+      "id": "2",
+      "text": "Bradypnea"
+     },
+     {
+      "id": "3",
+      "text": "Tachypnea"
+     },
+     {
+      "id": "4",
+      "text": "Hypopnea"
+     },
+     {
+      "id": "5",
+      "text": "Hyperpnea"
+     },
+     {
+      "id": "6",
+      "text": "Dyspnea"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Abnormally rapid breathing rate"
+     },
+     {
+      "id": "B",
+      "text": "Abnormally slow breathing rate"
+     },
+     {
+      "id": "C",
+      "text": "Deep, maybe faster, with exertion"
+     },
+     {
+      "id": "D",
+      "text": "Difficult, short of breath"
+     },
+     {
+      "id": "E",
+      "text": "Normal and quiet breathing pattern"
+     },
+     {
+      "id": "F",
+      "text": "Shallow, as with partial blockage"
+     }
+    ],
+    "correct_pairs": {
+     "1": "E",
+     "2": "B",
+     "3": "A",
+     "4": "F",
+     "5": "C",
+     "6": "D"
+    },
+    "explain": "Eu- is normal, brady- slow, tachy- rapid, hypo- shallow (partial blockage), hyper- deep and possibly faster with exertion, and dys- difficult breathing with breathlessness and chest tightness."
+   },
+   {
+    "id": "MT16065",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which structure is the internal point where the trachea divides into the right and left bronchi?",
+    "options": [
+     "Carina",
+     "Glottis",
+     "Uvula",
+     "Epiglottis"
+    ],
+    "correct": 0,
+    "explain": "The carina is the internal point where the trachea divides into the right and left bronchi. The glottis is the opening between the vocal cords. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing lid over the larynx."
+   },
+   {
+    "id": "MT16066",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What are the other names for inhalation and exhalation?",
+    "options": [
+     "Inspiration; expiration",
+     "Expiration; inspiration",
+     "Ventilation; olfaction",
+     "Olfaction; ventilation"
+    ],
+    "correct": 0,
+    "explain": "Inhalation is also called inspiration and exhalation is also called expiration. Ventilation is moving air generally; olfaction is smell."
+   },
+   {
+    "id": "MT16067",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "What are the paranasal sinuses?",
+    "options": [
+     "Skull air spaces lightening the bones",
+     "Air sacs exchanging gases with blood",
+     "Lymphatic tissue beside the pharynx",
+     "Hair-like processes moving bronchial mucus"
+    ],
+    "correct": 0,
+    "explain": "The paranasal sinuses are air-filled spaces in the skull bones that open into the nasal cavity and lighten the skull. Air sacs are alveoli, the lymphatic tissue is the tonsils, and the processes are cilia."
+   },
+   {
+    "id": "MT16068",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "Which other name is used for the oval lymphatic tissues on each side of the pharynx?",
+    "options": [
+     "Palatine tonsils",
+     "Lingual tonsils",
+     "Pharyngeal tonsils",
+     "Tubal tonsils"
+    ],
+    "correct": 0,
+    "explain": "The tonsils on each side of the pharynx are also called palatine tonsils. They filter air and help defend against bacterial invasion. The lingual tonsils sit at the base of the tongue, the pharyngeal tonsils are the adenoids, and the tubal tonsils sit near the auditory tube openings."
+   },
+   {
+    "id": "MT16069",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "In the term aerosinusitis, which element carries the meaning of air?",
+    "options": [
+     "The element aer",
+     "The element sinus",
+     "The element itis",
+     "The element capn"
+    ],
+    "correct": 0,
+    "explain": "Aerosinusitis contains aer, the combining form for air, with sinus and -itis. Sinus names the skull cavity, not air. The ending -itis names inflammation. Capn/o names carbon dioxide and is not in this word."
+   },
+   {
+    "id": "MT16070",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "pharynx-cluster",
+    "groupOrder": 1,
+    "q": "Which region of the pharynx is being named? At each step, choose, then continue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Directly behind the nasal passages",
+      "options": [
+       "Nasopharynx region",
+       "Oropharynx region",
+       "Laryngopharynx region",
+       "Nasal cavity region"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "From the mouth roof to the epiglottis's upper edge",
+      "options": [
+       "Oropharynx",
+       "Nasopharynx",
+       "Laryngopharynx",
+       "Oral cavity"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Below the oropharyngeal opening, into the larynx and esophagus",
+      "options": [
+       "Laryngopharynx region",
+       "Nasopharynx region",
+       "Oropharynx region",
+       "Laryngeal inlet region"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The nasopharynx lies directly behind the nasal passages. The oropharynx lies between the roof of the mouth and the upper edge of the epiglottis. The laryngopharynx lies below the oropharyngeal opening and continues into the larynx and esophagus. The nasal cavity, the oral cavity, and the larynx are neighboring spaces, not pharyngeal regions. Nasopharynx is not the middle or lower region, oropharynx is not the upper or lower region, and laryngopharynx is not the upper or middle region."
+   },
+   {
+    "id": "MT16071",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "pleura-cluster",
+    "groupOrder": 1,
+    "q": "Which pleural membrane is being named? At each step, choose, then continue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Membrane on the lung surface",
+      "options": [
+       "Visceral pleura",
+       "Parietal pleura",
+       "Diaphragm muscle",
+       "Nasal mucosa lining"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Membrane on the inner chest wall",
+      "options": [
+       "Parietal pleura",
+       "Visceral pleura",
+       "Diaphragm muscle",
+       "Soft palate muscle"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The visceral pleura encloses the lung surface. The parietal pleura lines the inner surface of the thoracic cavity. The diaphragm is the muscular partition below the lungs, not a pleural membrane. Nasal mucosa conditions incoming air. The soft palate is the muscular posterior roof of the mouth. Visceral pleura is not the chest-wall lining, and parietal pleura is not the lung-surface membrane."
+   },
+   {
+    "id": "MT16072",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "palate-cluster",
+    "groupOrder": 1,
+    "q": "Which part of the palate is being named? At each step, choose, then continue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Bony anterior roof of the mouth",
+      "options": [
+       "Hard palate",
+       "Soft palate",
+       "Uvula tip",
+       "Tonsil pad"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Muscular posterior roof of the mouth",
+      "options": [
+       "Soft palate",
+       "Hard palate",
+       "Uvula tip",
+       "Epiglottis lid"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The hard palate is the bony anterior portion of the roof of the mouth. The soft palate is the muscular posterior portion. The uvula hangs from the back middle edge of the soft palate and is not the palate itself. The tonsil is lymphatic tissue beside the pharynx. The epiglottis is the swallowing lid over the larynx. Hard palate is not the muscular posterior roof, and soft palate is not the bony anterior roof."
+   },
+   {
+    "id": "MT16073",
+    "type": "mcq",
+    "cat": "MT_lec16-17",
+    "q": "How many lobes does each lung have, right then left?",
+    "options": [
+     "Right 3, left 2",
+     "Right 2, left 3",
+     "Right 3, left 3",
+     "Right 2, left 2"
+    ],
+    "correct": 0,
+    "explain": "The right lung has three lobes and the left lung has two, leaving room for the heart on the left. Right 2, left 3 reverses the counts, and Right 3, left 3 and Right 2, left 2 give both lungs the same number."
+   },
+   {
+    "id": "MT16074",
+    "type": "matching",
+    "cat": "MT_lec16-17",
+    "q": "Match each breathing-pattern term to what the breathing looks like.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Eupnea"
+     },
+     {
+      "id": "2",
+      "text": "Bradypnea"
+     },
+     {
+      "id": "3",
+      "text": "Tachypnea"
+     },
+     {
+      "id": "4",
+      "text": "Hypopnea"
+     },
+     {
+      "id": "5",
+      "text": "Hyperpnea"
+     },
+     {
+      "id": "6",
+      "text": "Dyspnea"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "12 to 20 quiet breaths/minute"
+     },
+     {
+      "id": "B",
+      "text": "Under 12 breaths per minute"
+     },
+     {
+      "id": "C",
+      "text": "Over 20 breaths per minute"
+     },
+     {
+      "id": "D",
+      "text": "Too shallow, partly blocked airway"
+     },
+     {
+      "id": "E",
+      "text": "Fuller breaths during hard exercise"
+     },
+     {
+      "id": "F",
+      "text": "Breathless, tight chest"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "At rest, eupnea is 12 to 20 quiet breaths a minute, bradypnea under 12, and tachypnea over 20. Hypopnea is too shallow, hyperpnea fuller as in exercise, and dyspnea breathless with a tight chest."
+   },
+   {
+    "id": "MT16075",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 1,
+    "q": "This leaf-shaped flap of cartilage sits at the root of the tongue.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this structure?",
+      "options": [
+       "Epiglottis",
+       "Epiglotis",
+       "Epiglottus",
+       "Epiglotties"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which opening does it cover?",
+      "options": [
+       "The larynx",
+       "The esophagus",
+       "The nasal cavity",
+       "The carina"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "When does it close that opening?",
+      "options": [
+       "During swallowing",
+       "During quiet inhalation",
+       "During quiet exhalation",
+       "During gas exchange"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This lid is the epiglottis. Epiglotis drops a t, Epiglottus changes the ending, and Epiglotties is a false plural. It covers the larynx, not the esophagus, the nasal cavity, or the carina. It closes that opening during swallowing, not during quiet inhalation, quiet exhalation, or gas exchange."
+   },
+   {
+    "id": "MT16076",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 2,
+    "q": "This narrow slit lets air pass and changes shape as we speak.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this opening?",
+      "options": [
+       "Glottis",
+       "Glotiss",
+       "Glottus",
+       "Glotties"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which organ contains the Glottis?",
+      "options": [
+       "The larynx",
+       "The trachea",
+       "The pharynx",
+       "The nasal cavity"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What borders the Glottis?",
+      "options": [
+       "The vocal cords",
+       "The palatine tonsils",
+       "The soft palate",
+       "The primary bronchi"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This opening is the glottis. Glotiss doubles the wrong consonant, Glottus changes the ending, and Glotties is a false plural. It lies in the larynx, not the trachea, the pharynx, or the nasal cavity. The vocal cords border it. The palatine tonsils, the soft palate, and the primary bronchi do not."
+   },
+   {
+    "id": "MT16077",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 3,
+    "q": "This internal point is where the windpipe divides.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this point?",
+      "options": [
+       "Carina",
+       "Carinna",
+       "Carena",
+       "Carrina"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which tube ends at the Carina?",
+      "options": [
+       "The trachea",
+       "The larynx",
+       "The bronchiole",
+       "The pharynx"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "What begins at the Carina?",
+      "options": [
+       "Right and left bronchi",
+       "Right and left alveoli",
+       "Hard and soft palates",
+       "Visceral and parietal pleura"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This point is the carina. Carinna doubles an n, Carena changes the vowel, and Carrina doubles an r. The trachea ends there. The larynx, the bronchiole, and the pharynx do not. The right and left bronchi begin there. Alveoli, palates, and pleurae do not."
+   },
+   {
+    "id": "MT16078",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 4,
+    "q": "These thin-walled microscopic sacs end the airway and exchange gases.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of these sacs?",
+      "options": [
+       "Alveoli",
+       "Alveolis",
+       "Alviolii",
+       "Alveolii"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which tubes lead into these sacs?",
+      "options": [
+       "The bronchioles",
+       "The primary bronchi",
+       "The tracheal tube",
+       "The sinus cavities"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which gases cross their walls?",
+      "options": [
+       "Oxygen and carbon dioxide",
+       "Oxygen and nitrogen only",
+       "Carbon dioxide and nitrogen",
+       "Nitrogen and water vapor"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "These sacs are the alveoli. Alveolis, Alviolii, and Alveolii miss the spelling. Bronchioles lead into them. Primary bronchi, tracheae, and sinuses do not. Oxygen and carbon dioxide cross their walls. Pairings limited to nitrogen or water vapor are not the exchange named here."
+   },
+   {
+    "id": "MT16079",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 5,
+    "q": "This organ carries air from the throat to the windpipe and holds the vocal cords.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this organ?",
+      "options": [
+       "Larynx",
+       "Larnyx",
+       "Larynix",
+       "Larnix"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which other name belongs to the Larynx?",
+      "options": [
+       "Voice box",
+       "Windpipe",
+       "Throat",
+       "Air sac"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which combining form names the Larynx?",
+      "options": [
+       "Laryng/o",
+       "Larynx/o",
+       "Laring/o",
+       "Larynge/o"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This organ is the larynx. Larnyx swaps n and y, Larynix adds a vowel, and Larnix drops a y. Its other name is voice box. Windpipe names the trachea, throat names the pharynx, and air sac names the alveolus. The combining form is Laryng/o. Larynx/o, Laring/o, and Larynge/o miss that form."
+   },
+   {
+    "id": "MT16080",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 6,
+    "q": "This tube carries air from the voice box to the point where it splits.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this tube?",
+      "options": [
+       "Trachea",
+       "Trachia",
+       "Tracheah",
+       "Tracheea"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which other name belongs to the Trachea?",
+      "options": [
+       "Windpipe",
+       "Voice box",
+       "Throat",
+       "Air sac"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Where does the Trachea end?",
+      "options": [
+       "At the carina",
+       "At the glottis",
+       "At the uvula",
+       "At the alveoli"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This tube is the trachea. Trachia swaps the vowel, Tracheah adds an h, and Tracheea doubles an e. Its other name is windpipe. Voice box names the larynx, throat names the pharynx, and air sac names the alveolus. It ends at the carina, not at the glottis, the uvula, or the alveoli."
+   },
+   {
+    "id": "MT16081",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 7,
+    "q": "This dome-shaped muscle contracts and flattens during breathing.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this partition?",
+      "options": [
+       "Diaphragm",
+       "Diaphram",
+       "Diaphraghm",
+       "Diaphagm"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which cavities does it separate?",
+      "options": [
+       "Thoracic and abdominal cavities",
+       "Oral and nasal cavities",
+       "Nasal and pharyngeal passages",
+       "Laryngeal and tracheal passages"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which combining form names the Diaphragm?",
+      "options": [
+       "Phren/o",
+       "Phreni/o",
+       "Phreno/o",
+       "Phrenu/o"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This partition is the diaphragm. Diaphram drops a g, Diaphraghm adds an h, and Diaphagm drops an r. It separates the thoracic cavity from the abdominal cavity. Oral and nasal are separated by the palate. Nasal and pharyngeal names the upper airway sequence, not this partition. Laryngeal and tracheal are sequential airway parts, not the cavities this muscle divides. The combining form is Phren/o. Phreni/o, Phreno/o, and Phrenu/o miss that form."
+   },
+   {
+    "id": "MT16082",
+    "type": "stepped",
+    "cat": "MT_lec16-17",
+    "group": "airway-drill",
+    "groupOrder": 8,
+    "q": "This small projection hangs from the back middle edge of the soft palate.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which is the correct spelling of this projection?",
+      "options": [
+       "Uvula",
+       "Uvulla",
+       "Uvola",
+       "Uvulah"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Which shape gives it that name?",
+      "options": [
+       "Grape-like",
+       "Lid-like",
+       "Cone-like",
+       "Sac-like"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Which combining form names the Uvula?",
+      "options": [
+       "Uvul/o",
+       "Uvul/a",
+       "Uvula/o",
+       "Uvola/o"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "This projection is the uvula. Uvulla doubles an l, Uvola changes the vowel, and Uvulah adds an h. It is named for a grape-like shape. Lid-like names the epiglottis, cone-like is a gross organ shape, and sac-like names an alveolus rather than this projection. The combining form is Uvul/o. Uvul/a, Uvula/o, and Uvola/o miss that form."
+   }
+  ]
+ }
 }
