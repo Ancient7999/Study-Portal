@@ -324,12 +324,12 @@
     "q": "Which abbreviation stands for discharge or discontinue?",
     "options": [
      "DC or D/C",
-     "DOA or D.O.A.",
-     "DNR or D.N.R.",
-     "Dx or DX"
+     "Dx or DX",
+     "DNR or DNAR",
+     "D&C or D and C"
     ],
     "correct": 0,
-    "explain": "DC or D/C stands for discharge or discontinue. Dx is diagnosis, DOA is dead on arrival, and DNR is do not resuscitate."
+    "explain": "DC or D/C stands for discharge or discontinue. Dx is diagnosis, DNR or DNAR is do not resuscitate, and D&C is dilation and curettage."
    },
    {
     "id": "MT10025",
