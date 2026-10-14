@@ -243,29 +243,9 @@
               "Larynx and trachea"
             ],
             "correct": 0
-          },
-          {
-            "id": "4",
-            "prompt": "How many lobes are on the left?",
-            "options": [
-              "Two lobes",
-              "Three lobes",
-              "One lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "5",
-            "prompt": "How many lobes are on the right?",
-            "options": [
-              "Three lobes",
-              "Two lobes",
-              "One lobe"
-            ],
-            "correct": 0
           }
         ],
-        "explain": "The lungs are two spongy organs in the thoracic cavity, enclosed by the diaphragm and rib cage. The left lung has two lobes and the right lung has three. Three and four are not the organ count. The abdominal cavity is not where they lie. The palate and uvula are mouth structures, and the larynx and trachea are airway tubes, not the enclosure. Two lobes is the left lung, not the right. Three lobes is the right lung, not the left. One lobe is not the count for either lung."
+        "explain": "The lungs are two spongy organs in the thoracic cavity, enclosed by the diaphragm and rib cage. Three and four are not the organ count. The abdominal cavity is not where they lie. The palate and uvula are mouth structures, and the larynx and trachea are airway tubes, not the enclosure."
       },
       {
         "id": "MT16014",
@@ -1361,36 +1341,17 @@
       },
       {
         "id": "MT16073",
-        "type": "stepped",
+        "type": "mcq",
         "cat": "MT_lec16-17",
-        "group": "lobe-cluster",
-        "groupOrder": 1,
-        "q": "How many lobes does each lung have? At each step, choose, then continue.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Left lung",
-            "options": [
-              "Two lobes",
-              "Three lobes",
-              "Four lobes",
-              "One lobe"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Right lung",
-            "options": [
-              "Three lobes",
-              "Two lobes",
-              "Four lobes",
-              "One lobe"
-            ],
-            "correct": 0
-          }
+        "q": "How many lobes does each lung have, right then left?",
+        "options": [
+          "Right 3, left 2",
+          "Right 2, left 3",
+          "Right 3, left 3",
+          "Right 2, left 2"
         ],
-        "explain": "The left lung has two lobes and the right lung has three. Four lobes and one lobe are not the counts given for either lung. Three lobes is the right lung, not the left. Two lobes is the left lung, not the right."
+        "correct": 0,
+        "explain": "The right lung has three lobes and the left lung has two, leaving room for the heart on the left. Right 2, left 3 reverses the counts, and Right 3, left 3 and Right 2, left 2 give both lungs the same number."
       },
       {
         "id": "MT16074",
