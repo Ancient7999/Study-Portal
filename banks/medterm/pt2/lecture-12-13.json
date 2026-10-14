@@ -287,7 +287,7 @@
     "id": "MT12021",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which structure is the partition between the right and left atria?",
+    "q": "Which structure is the partition between the two upper chambers of the heart?",
     "options": [
      "The inter-atrial septum",
      "The inter-ventricular septum",
@@ -413,7 +413,7 @@
     "id": "MT12030",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which valve lies between the right ventricle and the pulmonary artery?",
+    "q": "Which valve lies between the right ventricle and the artery leading to the lungs?",
     "options": [
      "The tricuspid valve",
      "The bicuspid or mitral valve",
@@ -499,13 +499,13 @@
     "cat": "MT_lec12-13",
     "q": "What does the combining form Aort/o mean?",
     "options": [
-     "Vessel",
-     "The aorta",
-     "An artery",
-     "A clot"
+     "The aorta, the main trunk leaving the right ventricle",
+     "The aorta, the main trunk leaving the left ventricle",
+     "The aorta, the main vessel draining into the right atrium",
+     "The aorta, the main vessel carrying blood to the lungs"
     ],
     "correct": 1,
-    "explain": "Aort/o means the aorta, the main trunk leaving the left ventricle, as in aortalgia. Vessel is Angi/o or Vas/o, artery is Arteri/o, and clot is Thromb/o."
+    "explain": "Aort/o means the aorta, the main trunk leaving the left ventricle, as in aortalgia. The right ventricle sends blood to the lungs through the pulmonary trunk, and the venae cavae drain into the right atrium."
    },
    {
     "id": "MT12037",
@@ -513,13 +513,13 @@
     "cat": "MT_lec12-13",
     "q": "What does the combining form Arteri/o mean?",
     "options": [
-     "The aorta, the main trunk leaving the left ventricle",
-     "A vessel in general, without naming any type",
+     "An artery, a vessel carrying blood back to the heart",
+     "An artery, a vessel draining lymph from the tissues",
      "An artery, a vessel carrying blood away from the heart",
-     "A vein, a vessel returning blood toward the heart"
+     "An artery, a vessel with valves that stop backflow"
     ],
     "correct": 2,
-    "explain": "Arteri/o means artery, a vessel carrying blood away from the heart, as in arteriostenosis. The aorta is named by Aort/o, the general vessel sense by Angi/o or Vas/o, and a vein by Ven/o or Phleb/o."
+    "explain": "Arteri/o means artery, a vessel carrying blood away from the heart, as in arteriostenosis. Veins return blood to the heart and carry the valves that stop backflow, and lymphatic vessels drain lymph."
    },
    {
     "id": "MT12039",
@@ -527,13 +527,13 @@
     "cat": "MT_lec12-13",
     "q": "What does the combining form Atri/o mean?",
     "options": [
-     "An upper heart chamber, the atrium",
-     "A lower heart chamber, the ventricle",
-     "A valve of the heart",
-     "A septum of the heart"
+     "The atrium, an upper chamber that receives blood",
+     "The atrium, a lower chamber that pumps blood out",
+     "The atrium, a lower chamber with the thickest wall",
+     "The atrium, a chamber that pumps blood to the body"
     ],
     "correct": 0,
-    "explain": "Atri/o means atrium, the upper heart chamber, as in atrioventricular. Ventricul/o means the lower chamber, while valves and septa are named by other terms."
+    "explain": "Atri/o means atrium, an upper heart chamber that receives blood, as in atrioventricular. The lower chambers, the ventricles, pump blood out, and the left ventricle has the thickest wall and pumps blood to the body."
    },
    {
     "id": "MT12041",
@@ -1213,7 +1213,7 @@
     "id": "MT12075",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the flow of blood from the right ventricle into the pulmonary circulation?",
+    "q": "Which statement correctly describes the flow of blood out of the right ventricle?",
     "options": [
      "Contraction of the right ventricle opens the pulmonary valve and blood flows to the lungs by the pulmonary artery",
      "Contraction of the right ventricle opens the aortic valve and blood flows into the aorta and onward to the body",
@@ -1361,7 +1361,7 @@
     "cat": "MT_lec12-13",
     "group": "chamber-drill",
     "groupOrder": 3,
-    "q": "This lower chamber sends blood into the pulmonary artery. Answer each step, then the next chamber follows.",
+    "q": "This lower chamber receives blood through the tricuspid opening from the chamber above it. Answer each step, then the next chamber follows.",
     "steps": [
      {
       "id": "1",
@@ -1909,7 +1909,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 5,
-    "q": "These arteries encircle the heart like a crown and supply its muscle. Answer each step, then the wall cluster follows.",
+    "q": "These arteries branch from the aorta just above its valve. Answer each step, then the wall cluster follows.",
     "steps": [
      {
       "id": "1",
@@ -3275,10 +3275,10 @@
       "id": "3",
       "prompt": "Which organ receives oxygenated blood first?",
       "options": [
-       "The heart, through the right and left coronary arteries",
-       "The lungs, through the pulmonary veins",
-       "The brain, through the carotid arteries",
-       "The body tissues, through the lower branches of the aorta"
+       "The heart",
+       "The lungs",
+       "The brain",
+       "The body tissues"
       ],
       "correct": 0
      }

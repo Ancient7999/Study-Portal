@@ -113,9 +113,9 @@
     "cat": "MT_lec11",
     "q": "Which plane divides the body vertically into front (anterior) and back (posterior) portions?",
     "options": [
-     "The coronal or frontal plane",
-     "The sagittal or median plane",
-     "The transverse or horizontal plane",
+     "The coronal plane",
+     "The sagittal plane",
+     "The transverse plane",
      "The oblique plane"
     ],
     "correct": 0,
@@ -141,10 +141,10 @@
     "cat": "MT_lec11",
     "q": "Which plane divides the body horizontally into upper and lower portions?",
     "options": [
-     "The coronal or frontal plane",
-     "The sagittal or median plane",
-     "The transverse or horizontal plane",
-     "The oblique or angled cut plane"
+     "The coronal plane",
+     "The sagittal plane",
+     "The transverse plane",
+     "The oblique plane"
     ],
     "correct": 2,
     "explain": "The transverse or horizontal plane is the plane that divides the body into upper and lower portions. The coronal plane divides the body into front and back portions, the sagittal plane divides it into right and left portions, and the oblique plane divides it at an angle."
@@ -548,12 +548,12 @@
     "q": "What does the term fibrocartilage mean?",
     "options": [
      "Cartilage made of fibrous tissue that attaches bones to other bones",
-     "Cartilage that lubricates the joint surfaces for articulation",
-     "Bone tissue that stores minerals within the skeleton",
-     "Muscle tissue that contracts to produce body heat"
+     "Cartilage made of fibrous tissue that lines the joint surfaces",
+     "Cartilage made of elastic tissue that shapes the outer ear",
+     "Cartilage made of fibrous tissue that forms the nasal tip"
     ],
     "correct": 0,
-    "explain": "Fibrocartilage is built from Fibr/o (fiber) and Chondr/o (cartilage), so it denotes fibrous cartilage, the tissue that attaches bones to other bones and provides restricted mobility to the joints. Lubricating joint surfaces is the role of articular cartilage, mineral storage is a bone function, and heat production is a muscle function."
+    "explain": "Fibrocartilage is cartilage made of fibrous tissue that attaches bones to other bones, as in the intervertebral discs. Joint surfaces are lined by smooth hyaline cartilage, and the outer ear and nasal tip are shaped by other cartilage types."
    },
    {
     "id": "MT11048",
@@ -604,12 +604,12 @@
     "q": "What does the term fascial mean?",
     "options": [
      "Pertaining to fascia, a connective band",
-     "Pertaining to tendon, a muscle cord",
-     "Pertaining to a joint, an articulation",
-     "Pertaining to muscle, contractile tissue"
+     "Pertaining to fascia, a muscle cord to bone",
+     "Pertaining to fascia, a joint between bones",
+     "Pertaining to fascia, a contractile tissue"
     ],
     "correct": 0,
-    "explain": "Fascial is built from Fasci/o (fascia or band) with -al (pertaining to), so it means pertaining to a fascia. Tendon is Ten/o, joint is Arthr/o, and muscle is My/o."
+    "explain": "Fascial means pertaining to fascia, a band of connective tissue. A cord joining muscle to bone is a tendon, a joint between bones is an articulation, and contractile tissue is muscle."
    },
    {
     "id": "MT11052",
@@ -1268,10 +1268,10 @@
     "cat": "MT_lec11",
     "q": "Which term names movement away from the midline of the body?",
     "options": [
-     "Abduction, movement away from the midline",
-     "Adduction, movement toward the midline",
-     "Flexion, bending that decreases a joint angle",
-     "Extension, straightening that increases a joint angle"
+     "Abduction",
+     "Adduction",
+     "Flexion",
+     "Extension"
     ],
     "correct": 0,
     "explain": "Abduction is movement away from the midline of the body. Adduction is the opposite movement, toward the midline. Flexion is bending that decreases the angle at a joint, and extension is straightening that increases that angle. Neither flexion nor extension is defined by direction relative to the midline."
@@ -2198,10 +2198,10 @@
       "id": "4",
       "prompt": "Which region does the Pelvis occupy?",
       "options": [
-       "The hip of the pelvic girdle",
-       "The shoulder girdle bones",
-       "The chest wall cage bones",
-       "The cranial vault bones"
+       "The hip girdle",
+       "The shoulder girdle",
+       "The chest wall cage",
+       "The cranial vault"
       ],
       "correct": 0
      },

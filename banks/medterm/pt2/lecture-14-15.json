@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 14 and 15 - Blood and Lymphatic System",
- "formSize": 105,
+ "formSize": 103,
  "forms": [
   "A"
  ],
@@ -29,7 +29,7 @@
     "cat": "MT_lec14-15",
     "q": "Which set of duties belongs to the lymphatic system rather than to blood itself?",
     "options": [
-     "Filtering foreign particles from lymph, sustaining lymphocyte responses, balancing tissue fluid, and absorbing dietary fats",
+     "Filtering foreign particles, sustaining immune cell responses, balancing tissue fluid, and absorbing dietary fats",
      "Delivering oxygen and nutrients to cells, conveying hormones to their targets, and removing carbon dioxide and metabolic wastes",
      "Generating the pressure that drives flow, opening and closing its own valves, and perfusing the heart muscle through coronary vessels",
      "Producing red cells, white cells, and platelets, storing calcium salts, and giving attachment to skeletal muscle"
@@ -246,20 +246,6 @@
     ],
     "correct": 1,
     "explain": "Passive immunity supplies preformed antibody. The natural route is maternal transfer across the placenta and through breast milk, and the artificial route is an injection of serum that already contains antibodies. Natural passive immunity follows a vaccine given to the host, while artificial passive immunity follows the host's recovery from a clinical infection, describes active immunity. Natural passive immunity is built by the host after an exposure, while artificial passive immunity is built by the host after a vaccine dose, also describes active immunity. Both natural and artificial passive immunity are long-lasting states created by the host's own memory cells after first contact, gives passive immunity the duration and memory of active immunity."
-   },
-   {
-    "id": "MT14021",
-    "type": "mcq",
-    "cat": "MT_lec14-15",
-    "q": "Which option lists pairs in which both members of every pair carry the same meaning?",
-    "options": [
-     "Chrom/o with Splen/o; Hem/o with Thromb/o; Thym/o with Immun/o",
-     "Chrom/o with Hem/o; Splen/o with Thromb/o; Lymph/o with Immun/o",
-     "Chrom/o with Chromat/o; Hem/o with Hemat/o; Thym/o with Thym/i",
-     "Chrom/o with Lymph/o; Hem/o with Splen/o; Thromb/o with Thym/o"
-    ],
-    "correct": 2,
-    "explain": "Chrom/o and Chromat/o both mean color, Hem/o and Hemat/o both mean blood, and Thym/o and Thym/i both mean thymus. Chrom/o with Splen/o, Hem/o with Thromb/o, and Thym/o with Immun/o pairs color with spleen, blood with clot, and thymus with safe. Chrom/o with Hem/o, Splen/o with Thromb/o, and Lymph/o with Immun/o pairs color with blood, spleen with clot, and clear fluid with safe. Chrom/o with Lymph/o, Hem/o with Splen/o, and Thromb/o with Thym/o pairs color with clear fluid, blood with spleen, and clot with thymus."
    },
    {
     "id": "MT14022",
@@ -1490,46 +1476,6 @@
     ],
     "correct": 2,
     "explain": "The megakaryocyte resides in the bone marrow and sheds platelets. Lymphoblasts, monoblasts, and erythroblasts give rise to other cells."
-   },
-   {
-    "id": "MT14120",
-    "type": "matching",
-    "cat": "MT_lec14-15",
-    "q": "Match each combining form to its other accepted spelling.",
-    "leftItems": [
-     {
-      "id": "1",
-      "text": "Chrom/o"
-     },
-     {
-      "id": "2",
-      "text": "Hem/o"
-     },
-     {
-      "id": "3",
-      "text": "Thym/o"
-     }
-    ],
-    "rightItems": [
-     {
-      "id": "A",
-      "text": "Chromat/o"
-     },
-     {
-      "id": "B",
-      "text": "Hemat/o"
-     },
-     {
-      "id": "C",
-      "text": "Thym/i"
-     }
-    ],
-    "correct_pairs": {
-     "1": "A",
-     "2": "B",
-     "3": "C"
-    },
-    "explain": "Chrom/o is also written chromat/o, hem/o is also written hemat/o, and thym/o is also written thym/i."
    },
    {
     "id": "MT14077",

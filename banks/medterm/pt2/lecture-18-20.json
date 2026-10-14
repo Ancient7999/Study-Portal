@@ -99,13 +99,13 @@
         "cat": "MT_lec18-20",
         "q": "The brainstem relays between the cerebrum, cerebellum, and spinal cord and governs breathing, heart rate, and body temperature. Which structure is NOT one of its three levels?",
         "options": [
-          "The mesencephalon, or mid-brain",
-          "The pons, a brainstem level",
-          "The medulla oblongata level",
-          "The thalamus, a deep relay"
+          "The mesencephalon",
+          "The pons",
+          "The medulla oblongata",
+          "The thalamus"
         ],
         "correct": 3,
-        "explain": "The three brainstem levels are the mesencephalon or mid-brain, the pons, and the medulla oblongata. \"The thalamus, a deep relay\" is a separate deep structure above the brainstem, so it is not one of the three levels."
+        "explain": "The three brainstem levels are the mesencephalon or mid-brain, the pons, and the medulla oblongata. The thalamus is a separate deep structure above the brainstem, so it is not one of the three levels."
       },
       {
         "id": "MT18008",
@@ -284,13 +284,13 @@
         "cat": "MT_lec18-20",
         "q": "The combining form Myel/o carries two senses, spinal cord and bone marrow. In the term myeloma, which sense applies?",
         "options": [
-          "Spinal cord, as in a disease of the cord",
-          "Bone marrow, as in a tumor of the marrow",
-          "Meninges, as in a defect of the sheath itself",
-          "Nerve, as in a lesion of a conducting fiber"
+          "Spinal cord",
+          "Bone marrow",
+          "Meninges",
+          "Nerve"
         ],
         "correct": 1,
-        "explain": "In myeloma the suffix -oma means tumor, so myel takes the bone-marrow sense and the term is a tumor of the marrow. \"Spinal cord, as in a disease of the cord\" is the other sense of Myel/o, the one used in leukomyelopathy, not in myeloma. \"Meninges, as in a defect of the sheath itself\" is Mening/o. \"Nerve, as in a lesion of a conducting fiber\" is Neur/o."
+        "explain": "In myeloma the suffix -oma means tumor, so myel takes the bone-marrow sense and the term is a tumor of the marrow. Spinal cord is the other sense of Myel/o, the one used in leukomyelopathy, not in myeloma. Meninges is Mening/o. Nerve is Neur/o."
       },
       {
         "id": "MT18020",
@@ -620,7 +620,7 @@
         "q": "Which statement correctly describes sensory nerves?",
         "options": [
           "They conduct motor impulses from the brain out to the muscles and the glands of the body.",
-          "They conduct impulses from body parts and carry sensory information to the brain.",
+          "They conduct impulses from body parts and carry incoming information to the brain.",
           "They conduct involuntary impulses from the brain to smooth muscles and to the glands.",
           "They conduct impulses between the two cerebral hemispheres across the midline join."
         ],
@@ -634,7 +634,7 @@
         "q": "Which statement correctly describes motor nerves?",
         "options": [
           "They conduct sensory information from body parts up to the brain.",
-          "They conduct motor impulses from the brain to muscles and glands.",
+          "They conduct outgoing impulses from the brain to muscles and glands.",
           "They conduct involuntary impulses from the brain to smooth muscles and glands.",
           "They conduct impulses between the brainstem and the cerebellum below it."
         ],
@@ -757,15 +757,15 @@
         "id": "MT18042",
         "type": "mcq",
         "cat": "MT_lec18-20",
-        "q": "Which region of the brain serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature?",
+        "q": "Which region serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature?",
         "options": [
-          "The cerebellum below the lobes",
-          "The thalamus, a relay chamber",
-          "The hypothalamus under the relay",
-          "The brainstem, below the cerebrum"
+          "The cerebellum",
+          "The thalamus",
+          "The hypothalamus",
+          "The brainstem"
         ],
         "correct": 3,
-        "explain": "The brainstem serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature. \"The cerebellum below the lobes\" coordinates skeletal muscles. \"The thalamus, a relay chamber\" relays sensory information to the cortex. \"The hypothalamus under the relay\" controls the autonomic nervous system."
+        "explain": "The brainstem serves as a relay between the cerebrum, cerebellum, and spinal cord and is responsible for breathing, heart rate, and body temperature. The cerebellum coordinates skeletal muscles. The thalamus relays sensory information to the cortex. The hypothalamus controls the autonomic nervous system."
       },
       {
         "id": "MT18043",
@@ -933,7 +933,7 @@
               "Voluntary muscle movement and personality",
               "Pain, temperature, and touch on the body",
               "Hearing, taste, and the sense of smell",
-              "Vision sensed at the posterior cerebral pole"
+              "Vision and the processing of what is seen"
             ],
             "correct": 0
           }
@@ -946,7 +946,7 @@
         "cat": "MT_lec18-20",
         "group": "lobe-drill",
         "groupOrder": 2,
-        "q": "This cerebral lobe lies behind the anterior pole and handles pain, temperature, and touch. Answer each step, then the next lobe follows.",
+        "q": "This cerebral lobe lies behind the frontal lobe, under the crown of the skull. Answer each step, then the next lobe follows.",
         "steps": [
           {
             "id": "1",
@@ -966,7 +966,7 @@
               "Pain, temperature, and touch on the body",
               "Voluntary muscle movement and personality",
               "Hearing, taste, and the sense of smell",
-              "Vision sensed at the posterior cerebral pole"
+              "Vision and the processing of what is seen"
             ],
             "correct": 0
           }
@@ -979,7 +979,7 @@
         "cat": "MT_lec18-20",
         "group": "lobe-drill",
         "groupOrder": 3,
-        "q": "This cerebral lobe lies below the anterior pole and governs hearing, taste, and smell. Answer each step, then the next lobe follows.",
+        "q": "This cerebral lobe lies at the side of the head, beneath the temples. Answer each step, then the next lobe follows.",
         "steps": [
           {
             "id": "1",
@@ -999,7 +999,7 @@
               "Hearing, taste, and the sense of smell",
               "Voluntary muscle movement and personality",
               "Pain, temperature, and touch on the body",
-              "Vision sensed at the posterior cerebral pole"
+              "Vision and the processing of what is seen"
             ],
             "correct": 0
           }
@@ -1029,7 +1029,7 @@
             "id": "2",
             "prompt": "Which work does the Occipital lobe govern?",
             "options": [
-              "Vision sensed at the posterior cerebral pole",
+              "Vision and the processing of what is seen",
               "Voluntary muscle movement and personality",
               "Pain, temperature, and touch on the body",
               "Hearing, taste, and the sense of smell itself"
@@ -1089,7 +1089,7 @@
         "cat": "MT_lec18-20",
         "group": "brainstem-drill",
         "groupOrder": 1,
-        "q": "This brainstem level is also called the mid-brain. Answer each step, then the next level follows.",
+        "q": "This structure lies just below the thalamus and hypothalamus. Answer each step, then the next structure follows.",
         "steps": [
           {
             "id": "1",
@@ -1122,7 +1122,7 @@
         "cat": "MT_lec18-20",
         "group": "brainstem-drill",
         "groupOrder": 2,
-        "q": "This brainstem level sits between the mid-brain and the lowest brainstem level. Answer each step, then the next level follows.",
+        "q": "This structure takes its name from the Latin word for bridge. Answer each step, then the next structure follows.",
         "steps": [
           {
             "id": "1",
@@ -1155,7 +1155,7 @@
         "cat": "MT_lec18-20",
         "group": "brainstem-drill",
         "groupOrder": 3,
-        "q": "This is the lowest of the three brainstem levels. Answer each step, then the suffix match follows.",
+        "q": "This structure is continuous with the spinal cord below it. Answer each step, then the suffix match follows.",
         "steps": [
           {
             "id": "1",
@@ -1364,7 +1364,7 @@
         "cat": "MT_lec18-20",
         "group": "deep-drill",
         "groupOrder": 2,
-        "q": "This control center for the autonomic system lies under the sensory relay chamber. Answer each step, then the run ends.",
+        "q": "This small structure links the nervous system to the pituitary gland. Answer each step, then the run ends.",
         "steps": [
           {
             "id": "1",
@@ -1985,13 +1985,13 @@
         "cat": "MT_lec18-20",
         "q": "What does the term thalamic (R+S) mean?",
         "options": [
-          "Pertaining to the ventricle",
-          "Pertaining to the cerebellum",
-          "Pertaining to the thalamus",
-          "Pertaining to the meninges"
+          "Pertaining to the thalamus, the lowest brainstem level",
+          "Pertaining to the thalamus, the coordinator of balance",
+          "Pertaining to the thalamus, the deep relay chamber",
+          "Pertaining to the thalamus, the outer brain covering"
         ],
         "correct": 2,
-        "explain": "Thalamic is built from Thalam/o, thalamus (room), with -ic, pertaining to. \"Pertaining to the ventricle\" would use Ventricul/o. \"Pertaining to the cerebellum\" would use Cerebell/o. \"Pertaining to the meninges\" would use Mening/o."
+        "explain": "Thalamic is Thalam/o (thalamus) plus -ic (pertaining to). The thalamus is the deep relay chamber. The lowest brainstem level is the medulla oblongata, balance is coordinated by the cerebellum, and the outer coverings are the meninges."
       },
       {
         "id": "MT18100",
@@ -2013,13 +2013,13 @@
         "cat": "MT_lec18-20",
         "q": "In the term ventriculus (R+S), the element ventricul refers to what?",
         "options": [
-          "Thalamus (room)",
-          "Spine (thorn)",
-          "Cerebrum (largest part)",
+          "Ventricle (room / chamber)",
+          "Ventricle (thorn / spine)",
+          "Ventricle (vessel / duct)",
           "Ventricle (belly / pouch)"
         ],
         "correct": 3,
-        "explain": "Ventricul/o means ventricle, glossed as belly or pouch, as in ventriculus. \"Thalamus (room)\" is Thalam/o. \"Spine (thorn)\" is Spin/o. \"Cerebrum (largest part)\" is Cerebr/o."
+        "explain": "Ventricul/o means ventricle, glossed as belly or pouch, as in ventriculus. Room is the gloss of Thalam/o, thorn is the gloss of Spin/o, and vessel is the gloss of Angi/o or Vas/o."
       },
       {
         "id": "MT18102",

@@ -548,12 +548,12 @@
     "q": "What does the term esophagoscopy mean?",
     "options": [
      "Process of examining the esophagus with an instrument",
-     "A hernia of the small intestine through a weakness",
-     "Downward displacement or drooping of the stomach",
-     "Surgical removal of part or all of the liver"
+     "Surgical removal of part or all of the esophagus",
+     "Downward displacement or drooping of the esophagus",
+     "A hernia of the esophagus through a weakness"
     ],
     "correct": 0,
-    "explain": "Esophagoscopy is built from Esophag/o (esophagus) and -scopy (process of examining), so it denotes examining the esophagus with an instrument. A hernia of the small intestine is enterocele, drooping of the stomach is gastroptosis, and removal of the liver is hepatectomy."
+    "explain": "Esophagoscopy is Esophag/o (esophagus) plus -scopy (process of examining with an instrument). Removal would be -ectomy, drooping would be -ptosis, and a hernia would be -cele."
    },
    {
     "id": "MT10940",
@@ -632,12 +632,12 @@
     "q": "What does the term fibroadenoma mean?",
     "options": [
      "A benign tumor composed of fibrous and glandular tissue",
-     "A malignant tumor built on the combining form for cancer",
-     "Death of tissue named by the combining form for death",
-     "Hardening of skin named by the combining form for hard"
+     "A malignant tumor composed of fibrous and glandular tissue",
+     "A benign tumor composed of fatty and glandular tissue",
+     "A benign tumor composed of fibrous and muscle tissue"
     ],
     "correct": 0,
-    "explain": "Fibroadenoma is built from Fibr/o (fiber), aden (gland), and -oma (tumor), so it denotes a benign tumor composed of fibrous and glandular tissue. A malignant cancerous tumor is carcinoma, tissue death is necrosis, and hardening of the skin is scleroderma."
+    "explain": "Fibroadenoma is Fibr/o (fiber) plus Aden/o (gland) plus -oma (tumor), a benign tumor of fibrous and glandular tissue. It is not malignant, and it contains neither fat nor muscle."
    },
    {
     "id": "MT10946",

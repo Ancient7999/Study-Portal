@@ -15,10 +15,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a condition with severe symptoms over a short period, such as a cold?",
     "options": [
-     "Chronic, which denotes slow development of symptoms over a long period",
-     "Acute, which denotes severe symptoms over a short period",
-     "Progressive, which denotes increasing severity of signs and symptoms",
-     "Recurrent, which denotes occurrence or repetition of an episode"
+     "Chronic",
+     "Acute",
+     "Progressive",
+     "Recurrent"
     ],
     "correct": 1,
     "explain": "Acute denotes severe symptoms over a short period, as in a cold. Chronic denotes slow development of symptoms over a long period, as in asthma, and is the opposite course. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which matches the short severe course."
@@ -43,10 +43,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a tumor that is mild or non-cancerous?",
     "options": [
-     "Malignant, which denotes a harmful or cancerous growth",
-     "Benign, which denotes a mild or non-cancerous growth",
-     "Systemic, which denotes involvement of the whole body",
-     "Progressive, which denotes an increasing severity of signs"
+     "Malignant",
+     "Benign",
+     "Systemic",
+     "Progressive"
     ],
     "correct": 1,
     "explain": "Benign denotes a mild or non-cancerous growth, as in a venous lymphangioma on the shoulder. Malignant is its opposite, a harmful or cancerous growth such as lung or breast cancer. Systemic relates to the whole body, and progressive denotes increasing severity, neither of which names the mild quality of a tumor."
@@ -99,10 +99,10 @@
     "cat": "MT_lec10",
     "q": "Which term describes a condition limited to a definite area, such as a headache?",
     "options": [
-     "Systemic, which relates to the whole body",
-     "Localized, which is confined to a definite area",
-     "Progressive, which marks an advancing severity",
-     "Recurrent, which marks a return of the condition"
+     "Systemic",
+     "Localized",
+     "Progressive",
+     "Recurrent"
     ],
     "correct": 1,
     "explain": "Localized denotes confinement to a definite area or part, as in a headache. Systemic relates to the whole body, as in a fever, and is the opposite scope. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which describes confinement to one area."
@@ -195,7 +195,7 @@
     "id": "MT10014",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "Which term denotes the group of symptoms and signs of a particular disease, such as Down syndrome?",
+    "q": "Which term denotes the group of symptoms and signs of a particular disease?",
     "options": [
      "Sign",
      "Syndrome",
@@ -323,13 +323,13 @@
     "cat": "MT_lec10",
     "q": "Which abbreviation stands for discharge or discontinue?",
     "options": [
-     "IP, status of an admitted patient",
-     "OP, status of a clinic patient",
-     "DC or D/C, discharge or discontinue",
-     "BP, reading of arterial pressure"
+     "DC or D/C",
+     "DOA or D.O.A.",
+     "DNR or D.N.R.",
+     "Dx or DX"
     ],
-    "correct": 2,
-    "explain": "DC or D/C stands for discharge or discontinue, used either to release a patient or to stop an order. IP is the status of an admitted patient, OP is the status of a clinic patient seen without admission, and BP is the arterial pressure reading."
+    "correct": 0,
+    "explain": "DC or D/C stands for discharge or discontinue. Dx is diagnosis, DOA is dead on arrival, and DNR is do not resuscitate."
    },
    {
     "id": "MT10025",
@@ -1340,10 +1340,10 @@
     "cat": "MT_lec10",
     "q": "Which term completes the meaning of before surgery?",
     "options": [
-     "Postoperative, with post- meaning after the procedure",
-     "Intraoperative, with intra- meaning within the procedure",
-     "Preoperative, with pre- meaning before the procedure",
-     "Perioperative, with peri- meaning around the procedure"
+     "Postoperative",
+     "Intraoperative",
+     "Preoperative",
+     "Perioperative"
     ],
     "correct": 2,
     "explain": "Preoperative uses pre- for before, so it names the period before surgery. Postoperative uses post- for after the procedure. Intraoperative uses intra- for within the procedure. Perioperative uses peri- for around the time of the procedure, which is wider than the period before surgery alone."
@@ -1380,7 +1380,7 @@
     "id": "MT10071",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "A patient who needs emergency treatment, and is not being sent for cardiac monitoring or an operation, is usually directed to which unit?",
+    "q": "A patient who needs urgent treatment, and is not being sent for cardiac monitoring or an operation, is usually directed to which unit?",
     "options": [
      "ICU, the intensive care unit",
      "ECU, the emergency care unit",
