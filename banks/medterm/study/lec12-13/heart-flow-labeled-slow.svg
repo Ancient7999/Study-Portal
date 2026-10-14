@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="DejaVu Sans, Arial, sans-serif">
+<title>Heart blood flow mind map (animated)</title><style>.flow-line{fill:none;stroke-width:4;stroke-linecap:round;stroke-dasharray:2 16;opacity:.75;animation:hf-dash 4.8s linear infinite}.flow-line.deoxy{stroke:#dbeafe}.flow-line.oxy{stroke:#fee2e2}@keyframes hf-dash{to{stroke-dashoffset:-18}}@media (prefers-reduced-motion:reduce){.flow-line{animation:none}.flow-dot{display:none}}</style>
+<rect width="1000" height="480" fill="#ffffff"/>
+<rect data-part="myo" x="354.0" y="158.8" width="291.2" height="208.0" rx="33.8" fill="#fff1f2" stroke="#fda4af" stroke-width="9"/>
+<rect data-part="lungs" x="421.6" y="60.0" width="156.0" height="52.0" rx="13.0" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+<rect data-part="body" x="421.6" y="378.5" width="156.0" height="46.8" rx="13.0" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<rect data-part="ra" x="369.6" y="170.5" width="117.0" height="65.0" rx="13.0" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2.2"/>
+<rect data-part="rv" x="369.6" y="255.0" width="117.0" height="85.8" rx="15.6" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2.2"/>
+<rect data-part="la" x="512.6" y="170.5" width="117.0" height="65.0" rx="13.0" fill="#fee2e2" stroke="#7f1d1d" stroke-width="2.2"/>
+<rect data-part="lv" x="512.6" y="255.0" width="117.0" height="85.8" rx="15.6" fill="#fee2e2" stroke="#7f1d1d" stroke-width="2.2"/>
+<path data-part="vc" d="M421.6 400.6 L291.6 400.6 L291.6 203.0 L369.6 203.0" fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/><path class="flow-line deoxy" d="M421.6 400.6 L291.6 400.6 L291.6 203.0 L369.6 203.0"/>
+<path data-part="pa" d="M369.6 296.6 L330.6 296.6 L330.6 86.0 L421.6 86.0" fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/><path class="flow-line deoxy" d="M369.6 296.6 L330.6 296.6 L330.6 86.0 L421.6 86.0"/>
+<path data-part="pvn" d="M577.6 86.0 L668.6 86.0 L668.6 203.0 L629.6 203.0" fill="none" stroke="#dc2626" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/><path class="flow-line oxy" d="M577.6 86.0 L668.6 86.0 L668.6 203.0 L629.6 203.0"/>
+<path data-part="aorta" d="M638.7 296.6 L707.6 296.6 L707.6 400.6 L577.6 400.6" fill="none" stroke="#dc2626" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/><path class="flow-line oxy" d="M638.7 296.6 L707.6 296.6 L707.6 400.6 L577.6 400.6"/>
+<rect data-part="tv" x="402.1" y="238.1" width="52.0" height="13.0" rx="6.5" fill="#334155" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-part="mv" x="545.1" y="238.1" width="52.0" height="13.0" rx="6.5" fill="#334155" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-part="psv" x="360.5" y="283.6" width="13.0" height="26.0" rx="6.5" fill="#334155" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-part="av" x="625.7" y="283.6" width="13.0" height="26.0" rx="6.5" fill="#334155" stroke="#ffffff" stroke-width="1.5"/>
+<path id="loop" d="M499.6 400.6 L421.6 400.6 L291.6 400.6 L291.6 203.0 L369.6 203.0 L428.1 203.0 L428.1 235.5 L428.1 255.0 L428.1 268.0 L428.1 296.6 L395.6 296.6 L369.6 296.6 L330.6 296.6 L330.6 86.0 L421.6 86.0 L499.6 86.0 L577.6 86.0 L668.6 86.0 L668.6 203.0 L629.6 203.0 L571.1 203.0 L571.1 235.5 L571.1 255.0 L571.1 268.0 L571.1 296.6 L603.6 296.6 L629.6 296.6 L707.6 296.6 L707.6 400.6 L577.6 400.6 L499.6 400.6" fill="none" stroke="none"/>
+<circle class="flow-dot" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"><animateMotion dur="30s" begin="0.0s" repeatCount="indefinite" calcMode="linear"><mpath href="#loop"/></animateMotion><animate attributeName="fill" dur="30s" begin="0.0s" repeatCount="indefinite" calcMode="discrete" values="#2563eb;#dc2626" keyTimes="0;0.5459"/></circle>
+<circle class="flow-dot" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"><animateMotion dur="30s" begin="-6.0s" repeatCount="indefinite" calcMode="linear"><mpath href="#loop"/></animateMotion><animate attributeName="fill" dur="30s" begin="-6.0s" repeatCount="indefinite" calcMode="discrete" values="#2563eb;#dc2626" keyTimes="0;0.5459"/></circle>
+<circle class="flow-dot" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"><animateMotion dur="30s" begin="-12.0s" repeatCount="indefinite" calcMode="linear"><mpath href="#loop"/></animateMotion><animate attributeName="fill" dur="30s" begin="-12.0s" repeatCount="indefinite" calcMode="discrete" values="#2563eb;#dc2626" keyTimes="0;0.5459"/></circle>
+<circle class="flow-dot" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"><animateMotion dur="30s" begin="-18.0s" repeatCount="indefinite" calcMode="linear"><mpath href="#loop"/></animateMotion><animate attributeName="fill" dur="30s" begin="-18.0s" repeatCount="indefinite" calcMode="discrete" values="#2563eb;#dc2626" keyTimes="0;0.5459"/></circle>
+<circle class="flow-dot" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"><animateMotion dur="30s" begin="-24.0s" repeatCount="indefinite" calcMode="linear"><mpath href="#loop"/></animateMotion><animate attributeName="fill" dur="30s" begin="-24.0s" repeatCount="indefinite" calcMode="discrete" values="#2563eb;#dc2626" keyTimes="0;0.5459"/></circle>
+<line x1="274" y1="44.0" x2="376.1" y2="86.0" stroke="#262626" stroke-width="1.7"/><circle cx="376.1" cy="86.0" r="4" fill="#262626"/>
+<line x1="274" y1="109.33333333333331" x2="408.6" y2="203.0" stroke="#262626" stroke-width="1.7"/><circle cx="408.6" cy="203.0" r="4" fill="#262626"/>
+<line x1="274" y1="174.66666666666666" x2="428.1" y2="244.6" stroke="#262626" stroke-width="1.7"/><circle cx="428.1" cy="244.6" r="4" fill="#262626"/>
+<line x1="274" y1="240.0" x2="367.0" y2="296.6" stroke="#262626" stroke-width="1.7"/><circle cx="367.0" cy="296.6" r="4" fill="#262626"/>
+<line x1="274" y1="305.3333333333333" x2="434.6" y2="322.6" stroke="#262626" stroke-width="1.7"/><circle cx="434.6" cy="322.6" r="4" fill="#262626"/>
+<line x1="274" y1="370.66666666666663" x2="291.6" y2="359.0" stroke="#262626" stroke-width="1.7"/><circle cx="291.6" cy="359.0" r="4" fill="#262626"/>
+<line x1="274" y1="436.0" x2="499.6" y2="401.9" stroke="#262626" stroke-width="1.7"/><circle cx="499.6" cy="401.9" r="4" fill="#262626"/>
+<line x1="726" y1="44.0" x2="499.6" y2="86.0" stroke="#262626" stroke-width="1.7"/><circle cx="499.6" cy="86.0" r="4" fill="#262626"/>
+<line x1="726" y1="109.33333333333331" x2="668.6" y2="144.5" stroke="#262626" stroke-width="1.7"/><circle cx="668.6" cy="144.5" r="4" fill="#262626"/>
+<line x1="726" y1="174.66666666666666" x2="590.6" y2="203.0" stroke="#262626" stroke-width="1.7"/><circle cx="590.6" cy="203.0" r="4" fill="#262626"/>
+<line x1="726" y1="240.0" x2="571.1" y2="244.6" stroke="#262626" stroke-width="1.7"/><circle cx="571.1" cy="244.6" r="4" fill="#262626"/>
+<line x1="726" y1="305.3333333333333" x2="632.2" y2="296.6" stroke="#262626" stroke-width="1.7"/><circle cx="632.2" cy="296.6" r="4" fill="#262626"/>
+<line x1="726" y1="370.66666666666663" x2="571.1" y2="307.0" stroke="#262626" stroke-width="1.7"/><circle cx="571.1" cy="307.0" r="4" fill="#262626"/>
+<line x1="726" y1="436.0" x2="707.6" y2="352.5" stroke="#262626" stroke-width="1.7"/><circle cx="707.6" cy="352.5" r="4" fill="#262626"/>
+<rect x="12" y="24.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="50.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Pulmonary Arteries</text>
+<rect x="12" y="89.33333333333333" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="115.33333333333331" font-size="16" text-anchor="middle" fill="#1f1f1f">Right Atrium</text>
+<rect x="12" y="154.66666666666666" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="180.66666666666666" font-size="16" text-anchor="middle" fill="#1f1f1f">Tricuspid AV Valve</text>
+<rect x="12" y="220.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="246.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Pulmonary Semilunar Valve</text>
+<rect x="12" y="285.3333333333333" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="311.3333333333333" font-size="16" text-anchor="middle" fill="#1f1f1f">Right Ventricle</text>
+<rect x="12" y="350.66666666666663" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="376.66666666666663" font-size="16" text-anchor="middle" fill="#1f1f1f">Vena Cava</text>
+<rect x="12" y="416.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="143.0" y="442.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Body Tissues</text>
+<rect x="726" y="24.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="50.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Lungs</text>
+<rect x="726" y="89.33333333333333" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="115.33333333333331" font-size="16" text-anchor="middle" fill="#1f1f1f">Pulmonary Veins</text>
+<rect x="726" y="154.66666666666666" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="180.66666666666666" font-size="16" text-anchor="middle" fill="#1f1f1f">Left Atrium</text>
+<rect x="726" y="220.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="246.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Bicuspid AV Valve</text>
+<rect x="726" y="285.3333333333333" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="311.3333333333333" font-size="16" text-anchor="middle" fill="#1f1f1f">Aortic Semilunar Valve</text>
+<rect x="726" y="350.66666666666663" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="376.66666666666663" font-size="16" text-anchor="middle" fill="#1f1f1f">Left Ventricle</text>
+<rect x="726" y="416.0" width="262" height="40" rx="5" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.3"/>
+<text x="857.0" y="442.0" font-size="16" text-anchor="middle" fill="#1f1f1f">Aorta</text>
+</svg>

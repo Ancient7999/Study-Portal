@@ -26,6 +26,9 @@
   const echoHTML = (l, t) => (typeof labelEchoHTML === 'function') ? labelEchoHTML(l, t) : esc(t);
   const hint = (l, t) => (typeof saqHint === 'function') ? saqHint({ answer: l.answer, accept: l.accept }, t) : 'not that one · try again';
   const reduced = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const isBasic = () => document.documentElement.getAttribute('data-quality') === 'basic';
+  // Basic Quality plays animated SVG diagrams at one-third speed (their -slow.svg twin)
+  const animSrc = (img, src) => (img.animated && isBasic() && /\.svg$/.test(src || '')) ? src.replace(/\.svg$/, '-slow.svg') : src;
   const MODES = {
     bank: { icon: '🧩', text: 'Word bank', tip: 'Drag the words onto the picture (or tap a word, then its box)' },
     type: { icon: '⌨', text: 'Type', tip: 'Type each label' },
@@ -152,7 +155,7 @@
       + '<div class="simg-modes" role="group" aria-label="Study mode">'
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
       + '</div></header>';
-    const src = (mode !== 'show' || !img.labeled) ? img.blank : img.labeled;
+    const src = animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
     h += '<div class="simg-frame"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '">'
       + '<img class="label-img simg-img" loading="lazy" decoding="async" src="' + esc(src) + '" width="' + (img.width || '') + '" height="' + (img.height || '') + '" alt="' + esc(img.alt || img.title) + '" draggable="false">';
     h += regionsSVG(img);
@@ -423,4 +426,12 @@
   }
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }
   window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA };
+  addEventListener('study-prefs-changed', () => {
+    document.querySelectorAll('#chapterList .simg-card img.simg-img').forEach(el => {
+      const cur = el.getAttribute('src') || ''; if (!/heart-flow|\.svg$/.test(cur)) return;
+      const base = cur.replace(/-slow\.svg$/, '.svg'), want = isBasic() ? base.replace(/\.svg$/, '-slow.svg') : base;
+      const animated = !!(DATA && DATA.chapters.some(c => c.images.some(i => i.animated && (i.blank === base || i.labeled === base))));
+      if (animated && want !== cur) el.setAttribute('src', want);
+    });
+  });
 })();

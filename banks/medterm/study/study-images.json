@@ -11281,10 +11281,10 @@
    "images": [
     {
      "id": "heart-flow",
-     "title": "Blood Flow Through the Heart",
+     "title": "Heart Blood Flow Mind Map",
      "kind": "labeled-diagram",
      "caption": "Blue blood from the body enters the right atrium, passes the tricuspid valve into the right ventricle and is pumped through the pulmonary valve to the lungs. Red blood comes back through the pulmonary veins to the left atrium, passes the bicuspid (mitral) valve into the left ventricle and leaves through the aortic valve into the aorta. Cardi/o means heart.",
-     "alt": "Animated schematic heart: dots of blue blood flow from the body through the right atrium and right ventricle to the lungs, turn red, and return through the left atrium and left ventricle to the aorta and body. Four chambers and four valves are drawn.",
+     "alt": "Animated mind-map style schematic of the heart: dots of blue blood flow from the body through the right atrium and right ventricle to the lungs, turn red, and return through the left atrium and left ventricle to the aorta and body. Four chambers and four valves are drawn. Dashed blue and red lines move along the vessels in the direction of flow.",
      "labeled": "banks/medterm/study/lec12-13/heart-flow-labeled.svg",
      "blank": "banks/medterm/study/lec12-13/heart-flow-blank.svg",
      "width": 1000,
@@ -11927,6 +11927,513 @@
      "license": "",
      "licenseUrl": "",
      "sourceUrl": ""
+    },
+    {
+     "id": "heart-real",
+     "title": "Blood Flow Through the Heart",
+     "kind": "labeled-diagram",
+     "caption": "The same route on a cutaway drawing of the heart. Deoxygenated (blue) blood from the vena cava fills the right atrium, passes the tricuspid valve into the right ventricle and leaves through the pulmonary valve into the pulmonary arteries to the lungs. Oxygenated blood returns in the pulmonary veins to the left atrium, passes the bicuspid (mitral) valve into the left ventricle and leaves through the aortic valve into the aorta and on to the body tissues.",
+     "alt": "Cutaway front view of a realistic heart diagram with its chambers, valves and great vessels, plus arrows for blood leaving to the lungs and to the body. All 14 labels are blank.",
+     "labeled": "banks/medterm/study/lec12-13/heart-real-labeled.png",
+     "blank": "banks/medterm/study/lec12-13/heart-real-blank.png",
+     "width": 1200,
+     "height": 900,
+     "labels": [
+      {
+       "id": "heart-real-L1",
+       "answer": "Vena Cava",
+       "accept": [
+        "Superior Vena Cava",
+        "Inferior Vena Cava",
+        "Venae Cavae"
+       ],
+       "x": 1.0,
+       "y": 4.44,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 34.32,
+        "y": 23.08
+       },
+       "region": [
+        [
+         [
+          33.15,
+          21.53
+         ],
+         [
+          35.49,
+          21.53
+         ],
+         [
+          35.49,
+          24.64
+         ],
+         [
+          33.15,
+          24.64
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L2",
+       "answer": "Pulmonary Arteries",
+       "accept": [
+        "Pulmonary Artery",
+        "Pulmonary Trunk"
+       ],
+       "x": 1.0,
+       "y": 21.64,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 28.36,
+        "y": 28.54
+       },
+       "region": [
+        [
+         [
+          27.19,
+          26.99
+         ],
+         [
+          29.53,
+          26.99
+         ],
+         [
+          29.53,
+          30.1
+         ],
+         [
+          27.19,
+          30.1
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L3",
+       "answer": "Right Atrium",
+       "accept": [],
+       "x": 1.0,
+       "y": 38.84,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 35.81,
+        "y": 53.87
+       },
+       "region": [
+        [
+         [
+          34.64,
+          52.32
+         ],
+         [
+          36.98,
+          52.32
+         ],
+         [
+          36.98,
+          55.43
+         ],
+         [
+          34.64,
+          55.43
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L4",
+       "answer": "Pulmonary Semilunar Valve",
+       "accept": [
+        "Pulmonary Valve",
+        "Pulmonic Valve"
+       ],
+       "x": 1.0,
+       "y": 56.04,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 46.76,
+        "y": 57.85
+       },
+       "region": [
+        [
+         [
+          45.6,
+          56.29
+         ],
+         [
+          47.93,
+          56.29
+         ],
+         [
+          47.93,
+          59.4
+         ],
+         [
+          45.6,
+          59.4
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L5",
+       "answer": "Tricuspid AV Valve",
+       "accept": [
+        "Tricuspid Valve",
+        "Right AV Valve",
+        "Right Atrioventricular Valve"
+       ],
+       "x": 1.0,
+       "y": 73.24,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 39.69,
+        "y": 70.76
+       },
+       "region": [
+        [
+         [
+          38.52,
+          69.2
+         ],
+         [
+          40.85,
+          69.2
+         ],
+         [
+          40.85,
+          72.32
+         ],
+         [
+          38.52,
+          72.32
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L6",
+       "answer": "Right Ventricle",
+       "accept": [],
+       "x": 1.0,
+       "y": 90.44,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 49.97,
+        "y": 77.71
+       },
+       "region": [
+        [
+         [
+          48.8,
+          76.16
+         ],
+         [
+          51.13,
+          76.16
+         ],
+         [
+          51.13,
+          79.27
+         ],
+         [
+          48.8,
+          79.27
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L7",
+       "answer": "Body Tissues",
+       "accept": [
+        "Body",
+        "Systemic Circulation"
+       ],
+       "x": 78.17,
+       "y": 4.44,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 50.86,
+        "y": 6.2
+       },
+       "region": [
+        [
+         [
+          49.69,
+          4.64
+         ],
+         [
+          52.03,
+          4.64
+         ],
+         [
+          52.03,
+          7.75
+         ],
+         [
+          49.69,
+          7.75
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L8",
+       "answer": "Aorta",
+       "accept": [],
+       "x": 78.17,
+       "y": 16.73,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 57.42,
+        "y": 21.09
+       },
+       "region": [
+        [
+         [
+          56.25,
+          19.54
+         ],
+         [
+          58.58,
+          19.54
+         ],
+         [
+          58.58,
+          22.65
+         ],
+         [
+          56.25,
+          22.65
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L9",
+       "answer": "Lungs",
+       "accept": [
+        "Lung"
+       ],
+       "x": 78.17,
+       "y": 29.02,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 68.22,
+        "y": 30.53
+       },
+       "region": [
+        [
+         [
+          67.05,
+          28.98
+         ],
+         [
+          69.38,
+          28.98
+         ],
+         [
+          69.38,
+          32.09
+         ],
+         [
+          67.05,
+          32.09
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L10",
+       "answer": "Pulmonary Veins",
+       "accept": [
+        "Pulmonary Vein"
+       ],
+       "x": 78.17,
+       "y": 41.3,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 69.93,
+        "y": 40.46
+       },
+       "region": [
+        [
+         [
+          68.76,
+          38.91
+         ],
+         [
+          71.1,
+          38.91
+         ],
+         [
+          71.1,
+          42.02
+         ],
+         [
+          68.76,
+          42.02
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L11",
+       "answer": "Left Atrium",
+       "accept": [],
+       "x": 78.17,
+       "y": 53.59,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 63.0,
+        "y": 43.94
+       },
+       "region": [
+        [
+         [
+          61.84,
+          42.39
+         ],
+         [
+          64.17,
+          42.39
+         ],
+         [
+          64.17,
+          45.5
+         ],
+         [
+          61.84,
+          45.5
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L12",
+       "answer": "Bicuspid AV Valve",
+       "accept": [
+        "Bicuspid Valve",
+        "Mitral Valve",
+        "Left AV Valve",
+        "Left Atrioventricular Valve"
+       ],
+       "x": 78.17,
+       "y": 65.87,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 59.28,
+        "y": 50.7
+       },
+       "region": [
+        [
+         [
+          58.11,
+          49.14
+         ],
+         [
+          60.44,
+          49.14
+         ],
+         [
+          60.44,
+          52.25
+         ],
+         [
+          58.11,
+          52.25
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L13",
+       "answer": "Aortic Semilunar Valve",
+       "accept": [
+        "Aortic Valve"
+       ],
+       "x": 78.17,
+       "y": 78.16,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 53.69,
+        "y": 55.36
+       },
+       "region": [
+        [
+         [
+          52.52,
+          53.81
+         ],
+         [
+          54.86,
+          53.81
+         ],
+         [
+          54.86,
+          56.92
+         ],
+         [
+          52.52,
+          56.92
+         ]
+        ]
+       ]
+      },
+      {
+       "id": "heart-real-L14",
+       "answer": "Left Ventricle",
+       "accept": [],
+       "x": 78.17,
+       "y": 90.44,
+       "w": 20.83,
+       "h": 5.11,
+       "anchor": {
+        "x": 66.36,
+        "y": 65.79
+       },
+       "region": [
+        [
+         [
+          65.19,
+          64.24
+         ],
+         [
+          67.52,
+          64.24
+         ],
+         [
+          67.52,
+          67.35
+         ],
+         [
+          65.19,
+          67.35
+         ]
+        ]
+       ]
+      }
+     ],
+     "credit": "Wapcaplet; no-labels version by Stenemo and Jmarchn, via Wikimedia Commons (leader lines, label boxes and flow arrows added)",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diagram_of_the_human_heart_(no_labels).svg"
     },
     {
      "id": "heart-q2",
