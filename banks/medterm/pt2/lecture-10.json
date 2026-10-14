@@ -125,7 +125,7 @@
     "id": "MT10009",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "Which term denotes the prediction of the likely outcome of a disease before symptoms appear, as in Alzheimer's disease?",
+    "q": "Which term means predicting a disease's likely outcome before symptoms, as in Alzheimer's?",
     "options": [
      "Prognosis",
      "Progressive",
@@ -133,7 +133,7 @@
      "Diagnosis"
     ],
     "correct": 0,
-    "explain": "Prognosis means to fore know, the prediction of the likely outcome of a disease before symptoms appear. Progressive means advancing severity, prophylaxis denotes preventive measures, and diagnosis identifies the disease from symptoms and tests."
+    "explain": "Prognosis is the prediction of the likely outcome of a disease, possible before symptoms in Alzheimer's. Progressive is worsening, prophylaxis is prevention, and diagnosis is identification."
    },
    {
     "id": "MT10010",
@@ -207,17 +207,34 @@
    },
    {
     "id": "MT10015",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec10",
-    "q": "Alzheimer's disease is used to illustrate both prognosis and a progressive course. Which statement correctly assigns the two concepts to the two phases?",
-    "options": [
-     "Prognosis is the worsening after onset, while progressive foresees the likely outcome beforehand",
-     "Prognosis foresees the likely outcome before symptoms show, while progressive marks worsening after confirmation",
-     "Both prognosis and progressive refer only to the silent twenty-year brain change that precedes any symptom, treating prediction and course as one",
-     "Prognosis identifies the disease from tests, while progressive traces the underlying cause of the illness"
+    "q": "Alzheimer's disease illustrates two course terms.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which term foresees the likely outcome before symptoms show?",
+      "options": [
+       "Prognosis",
+       "Progressive",
+       "Diagnosis",
+       "Etiology"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Prognosis comes before symptoms. Which term marks worsening after confirmation?",
+      "options": [
+       "Progressive",
+       "Prognosis",
+       "Recurrent",
+       "Localized"
+      ],
+      "correct": 0
+     }
     ],
-    "correct": 1,
-    "explain": "Prognosis means to fore know, the prediction of the likely outcome, which is why the long silent brain change before any symptom can be foreseen as risk. Progressive means advancing severity, the nerve degeneration that worsens once the condition is confirmed, as in Alzheimer's. The line that calls prognosis the worsening after onset, and progressive the beforehand forecast, swaps the two senses. The line that confines both terms to the silent twenty-year brain change collapses prediction and course into one phase. The line that has prognosis identify the disease from tests, and progressive trace the cause, substitutes diagnosis and etiology."
+    "explain": "In Alzheimer's, prognosis foresees the likely outcome before symptoms show; progressive describes the worsening after the disease is confirmed. Diagnosis identifies the disease, and etiology studies its cause."
    },
    {
     "id": "MT10016",
@@ -575,13 +592,13 @@
     "cat": "MT_lec10",
     "q": "Which statement correctly describes plaque?",
     "options": [
-     "A sticky deposit of food and bacteria on the teeth",
-     "A tooth decay caused by caries",
-     "The hard outer part of the tooth",
-     "The tissue containing the blood and nerve supply"
+     "Sticky food and bacteria deposit",
+     "Tooth decay caused by caries",
+     "Hard outer part of the tooth",
+     "Tissue holding the blood and nerves"
     ],
     "correct": 0,
-    "explain": "Plaque is the sticky deposit of food and bacteria on the teeth. A tooth decay caused by caries is a cavity, the hard outer part of the tooth is the enamel, and the tissue containing the blood and nerve supply is the pulp."
+    "explain": "Plaque is a sticky deposit of food and bacteria on the teeth. Decay is a cavity, the hard outer part is enamel, and the blood and nerve tissue is pulp."
    },
    {
     "id": "MT10043",
@@ -589,27 +606,27 @@
     "cat": "MT_lec10",
     "q": "Which statement correctly describes a cavity?",
     "options": [
-     "A sticky deposit of food and bacteria on the teeth",
-     "A tooth decay caused by caries",
-     "A narrow tubular passage inside the tooth",
-     "The part fixed in the jaws"
+     "Sticky food and bacteria deposit",
+     "Tooth decay caused by caries",
+     "Narrow passage inside the tooth",
+     "Part fixed in the jaws"
     ],
     "correct": 1,
-    "explain": "A cavity is the tooth decay caused by caries. A sticky deposit of food and bacteria is plaque, a narrow tubular passage inside the tooth is the canal, and the part fixed in the jaws is the root."
+    "explain": "A cavity is tooth decay caused by caries. Plaque is the sticky deposit, the narrow passage is the canal, and the part in the jaws is the root."
    },
    {
     "id": "MT10044",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "Plaque and cavity are linked in dental pathology. Which sequence correctly describes that link?",
+    "q": "How are plaque and a cavity linked?",
     "options": [
-     "A cavity forms first, and plaque then deposits on it.",
-     "The gingiva hardens into plaque, which then calcifies into a cavity.",
-     "Enamel dissolves into pulp, and the empty space is called a cavity.",
-     "Plaque fosters caries, which produces the cavity as tooth decay."
+     "Cavity first, then plaque deposits",
+     "Gingiva hardens into plaque, then cavity",
+     "Enamel dissolves into pulp, leaving cavity",
+     "Plaque fosters caries, causing the cavity"
     ],
     "correct": 3,
-    "explain": "Plaque is the sticky deposit of food and bacteria on the teeth; caries is the decay process that the deposit drives; the cavity is the resulting tooth decay, so the order is plaque, then caries, then cavity. A cavity forming before plaque reverses cause and effect; the gingiva does not harden into plaque or calcify into a cavity; and enamel does not dissolve into pulp to leave a cavity."
+    "explain": "Plaque fosters caries, and caries produces the cavity (tooth decay). The cavity does not come first, and gingiva and enamel do not turn into plaque or pulp."
    },
    {
     "id": "MT10045",
@@ -659,13 +676,13 @@
     "cat": "MT_lec10",
     "q": "What does the term gingiva denote?",
     "options": [
-     "The gums",
-     "The hard outer part of the tooth",
-     "The narrow tubular passage inside the tooth",
-     "The terminal tip of the tooth root"
+     "Gums",
+     "Enamel",
+     "Canal",
+     "Apex"
     ],
     "correct": 0,
-    "explain": "Gingiva denotes the gums. The hard outer part is the enamel, the narrow tubular passage is the canal, and the terminal tip is the apex."
+    "explain": "Gingiva means the gums. Enamel is the hard outer part, the canal is the passage inside the tooth, and the apex is the root tip."
    },
    {
     "id": "MT10049",
@@ -827,7 +844,7 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Study of the causes of a disease"
+      "text": "Study of disease causes"
      },
      {
       "id": "B",
@@ -839,7 +856,7 @@
      },
      {
       "id": "D",
-      "text": "Identification of the disease from symptoms and tests"
+      "text": "Identifying disease from symptoms, tests"
      },
      {
       "id": "E",
@@ -847,7 +864,7 @@
      },
      {
       "id": "F",
-      "text": "Slow development of symptoms over a long period"
+      "text": "Slow symptoms over long period"
      }
     ],
     "correct_pairs": {
@@ -858,7 +875,7 @@
      "5": "D",
      "6": "A"
     },
-    "explain": "Acute and chronic oppose a short severe course, as in a cold, against a long slowly developing one, as in asthma. Benign and malignant oppose a mild or non-cancerous growth, such as a venous lymphangioma on the shoulder, against a harmful or cancerous one, such as lung or breast cancer. Diagnosis identifies the disease from symptoms and tests, as when malaria is identified, while etiology traces the cause, with etio- carrying the sense of cause, as when the parasitic origin of malaria is followed through sporozoite, merozoite, liver, and gametocyte stages transmitted by the mosquito."
+    "explain": "Acute is severe and short, chronic slow and long, benign mild or non-cancerous, malignant harmful or cancerous, diagnosis identification from symptoms and tests, and etiology the study of causes."
    },
    {
     "id": "MT10060",
@@ -894,11 +911,11 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Limited to a definite area or part"
+      "text": "Limited to one definite area"
      },
      {
       "id": "B",
-      "text": "Prediction of the likely outcome of a disease"
+      "text": "Predicting a disease's likely outcome"
      },
      {
       "id": "C",
@@ -925,7 +942,7 @@
      "5": "C",
      "6": "E"
     },
-    "explain": "Localized is confined to a definite area, as in a headache, while systemic relates to the whole body, as in a fever. Prognosis predicts the likely outcome, the fore knowledge of how an illness will run, and progressive marks an advancing worsening of signs and symptoms. Alzheimer's illustrates both, because the brain changes for about twenty years before any symptom appears, a progressive nerve degeneration that can nonetheless be foreseen as risk. Prophylaxis denotes preventive measures such as vaccination, and recurrent denotes a return, as in a recurring viral infection."
+    "explain": "Localized is limited to one area, systemic involves the whole body, prognosis predicts the outcome, progressive means increasing severity, prophylaxis is prevention, and recurrent means repeating."
    },
    {
     "id": "MT10061",
@@ -965,11 +982,11 @@
      },
      {
       "id": "B",
-      "text": "Sticky deposit of food and bacteria on teeth"
+      "text": "Sticky food and bacteria deposit"
      },
      {
       "id": "C",
-      "text": "A mark or symptom of a disease"
+      "text": "A mark or symptom of disease"
      },
      {
       "id": "D",
@@ -981,7 +998,7 @@
      },
      {
       "id": "F",
-      "text": "Group of symptoms and signs of a particular disease"
+      "text": "Cluster of signs of one disease"
      }
     ],
     "correct_pairs": {
@@ -992,7 +1009,7 @@
      "5": "B",
      "6": "D"
     },
-    "explain": "A sign is a single observable mark, such as fever or pain, while a syndrome is the coherent group of signs and symptoms that characterize a particular condition, such as Down syndrome, the trisomy 21 condition written 47,XX,+21 in a female, whose signs include a flat face, small head, protruding tongue, upward slanting eyes, rounded cheeks, and hypotonia. The maxilla is the upper jaw and the mandible is the lower jaw. Plaque is the sticky deposit of food and bacteria on the teeth, and a cavity is the tooth decay that caries produces."
+    "explain": "A sign is a mark of disease, a syndrome a group of signs and symptoms of one disease, the maxilla the upper jaw, the mandible the lower jaw, plaque a sticky deposit, and a cavity decay from caries."
    },
    {
     "id": "MT10062",
@@ -1115,7 +1132,7 @@
      },
      {
       "id": "F",
-      "text": "Three times a day (ter in die)"
+      "text": "Three times daily (ter in die)"
      }
     ],
     "correct_pairs": {
@@ -1126,7 +1143,7 @@
      "5": "C",
      "6": "E"
     },
-    "explain": "DC or D/C covers both discharging a patient and discontinuing an order, and BP is the blood pressure reading. The dosing trio carries its Latin origin in the gloss. Bid comes from bis in die and means twice a day, tid comes from ter in die and means three times a day, and pp comes from post prandial and means after meals. The calendar span wk stands for week."
+    "explain": "DC or D/C is discharge or discontinue, BP blood pressure, bid twice a day, tid three times a day, pp after meals, and wk week."
    },
    {
     "id": "MT10064",
@@ -1296,7 +1313,7 @@
      },
      {
       "id": "B",
-      "text": "Artificial substitute for natural teeth (partial or full)"
+      "text": "Artificial teeth, partial or full"
      },
      {
       "id": "C",
@@ -1318,7 +1335,7 @@
      "4": "C",
      "5": "A"
     },
-    "explain": "A denture is the artificial substitute for natural teeth, supplied as a partial or a full appliance, so it is an object, whereas the four -ist names are practitioners. An endodontist treats pulp-related problems, with endo- pointing within to the pulp. An orthodontist straightens the teeth, with ortho- meaning straight. A pedodontist treats children's teeth, with pedo- meaning child. A prosthodontist replaces missing teeth, with prosth- meaning replacement. The tooth itself is named by the interchangeable combining forms odont/o, dent/o, dent/i, and dent-, seen inside endodontist, orthodontist, dentin, and denture, while gingiv/o names the gums rather than the tooth."
+    "explain": "A denture is a partial or full artificial set of teeth. Endodontists treat pulp, orthodontists straighten teeth, pedodontists treat children, and prosthodontists replace missing teeth."
    },
    {
     "id": "MT10067",
@@ -1352,7 +1369,7 @@
     "id": "MT10069",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "A clinician names the disease from findings and then predicts its likely outcome. Which pair fills those two jobs, in that order?",
+    "q": "A clinician names the disease, then predicts its outcome. Which terms, in order?",
     "options": [
      "Diagnosis, then prognosis",
      "Prognosis, then diagnosis",
@@ -1360,7 +1377,7 @@
      "Syndrome, then diagnosis"
     ],
     "correct": 0,
-    "explain": "Diagnosis is identification from symptoms and tests, and prognosis is the prediction of the likely outcome, so naming is diagnosis and the prediction is prognosis. Prognosis, then diagnosis assigns the prediction to the naming job and the identification to the forecast. Prophylaxis is a preventive measure, not a prediction of outcome. A syndrome is a group of signs and symptoms, not the act of naming the disease."
+    "explain": "Naming the disease from findings is diagnosis; predicting the outcome is prognosis. Prophylaxis is prevention and a syndrome is a group of signs."
    },
    {
     "id": "MT10070",
@@ -1380,7 +1397,7 @@
     "id": "MT10071",
     "type": "mcq",
     "cat": "MT_lec10",
-    "q": "A patient who needs urgent treatment, and is not being sent for cardiac monitoring or an operation, is usually directed to which unit?",
+    "q": "Where is a patient needing urgent care, without cardiac monitoring or surgery, sent?",
     "options": [
      "ICU, the intensive care unit",
      "ECU, the emergency care unit",
@@ -1388,7 +1405,7 @@
      "OP, the out patient clinic"
     ],
     "correct": 1,
-    "explain": "Emergency treatment is the job of the emergency care unit, ECU. ICU is intensive care, for continuous critical support rather than the emergency entry point. CCU is coronary or cardiac care. OP marks an out patient seen without admission, not the emergency unit."
+    "explain": "Urgent treatment goes to the ECU, the emergency care unit. The ICU is intensive care, the CCU coronary or cardiac care, and OP the outpatient clinic."
    },
    {
     "id": "MT10072",
@@ -1408,7 +1425,7 @@
     "id": "MT10073",
     "type": "stepped",
     "cat": "MT_lec10",
-    "q": "Which findings make up the sign cluster of Down syndrome? At each step, choose the finding that belongs, then continue.",
+    "q": "Which findings make up the sign cluster of Down syndrome?",
     "steps": [
      {
       "id": "1",
@@ -1670,7 +1687,7 @@
        "Twice a day",
        "Three times a day",
        "After meals",
-       "Week"
+       "Every week"
       ],
       "correct": 0
      },
@@ -1736,7 +1753,7 @@
        "After meals",
        "Twice a day",
        "Three times a day",
-       "Week"
+       "Every week"
       ],
       "correct": 0
      },
@@ -1790,8 +1807,8 @@
       "options": [
        "Year",
        "Week",
-       "Twice a day",
-       "Three times a day"
+       "Month",
+       "Day"
       ],
       "correct": 0
      }
@@ -1892,7 +1909,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 1,
-    "q": "This is the hard outer part of the tooth. Answer each step, then the next structure follows.",
+    "q": "This is the hard outer part of the tooth.",
     "steps": [
      {
       "id": "1",
@@ -1925,7 +1942,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 2,
-    "q": "This layer lies below the hard outer part and outside the blood and nerve tissue. Answer each step, then the next structure follows.",
+    "q": "This layer lies below the hard outer part and outside the blood and nerve tissue.",
     "steps": [
      {
       "id": "1",
@@ -1969,7 +1986,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 3,
-    "q": "This tissue holds the blood and nerve supply of the tooth. Answer each step, then the next structure follows.",
+    "q": "This tissue holds the blood and nerve supply of the tooth.",
     "steps": [
      {
       "id": "1",
@@ -2035,7 +2052,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 5,
-    "q": "This is the narrow tubular passage inside the tooth. Answer each step, then the next structure follows.",
+    "q": "This is the narrow tubular passage inside the tooth.",
     "steps": [
      {
       "id": "1",
@@ -2068,7 +2085,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 6,
-    "q": "This is the part of the tooth fixed in the jaws. Answer each step, then the next structure follows.",
+    "q": "This is the part of the tooth fixed in the jaws.",
     "steps": [
      {
       "id": "1",
@@ -2101,7 +2118,7 @@
     "cat": "MT_lec10",
     "group": "tooth-drill",
     "groupOrder": 7,
-    "q": "This is the terminal tip of the part fixed in the jaws. Answer each step, then the next structure follows.",
+    "q": "This is the terminal tip of the part fixed in the jaws.",
     "steps": [
      {
       "id": "1",
@@ -2332,7 +2349,7 @@
     "cat": "MT_lec10",
     "group": "specialist-drill",
     "groupOrder": 5,
-    "q": "This is an artificial substitute for natural teeth, partial or full. Answer each step, then the run ends.",
+    "q": "This is an artificial substitute for natural teeth, partial or full.",
     "steps": [
      {
       "id": "1",

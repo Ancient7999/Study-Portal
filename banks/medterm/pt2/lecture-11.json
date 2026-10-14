@@ -15,83 +15,108 @@
     "cat": "MT_lec11",
     "q": "Which set lists only functions of the skeletal system?",
     "options": [
-     "Producing body heat, generating locomotion, and contracting to move the limbs",
-     "Storing minerals, forming blood cells, and providing a surface for muscle attachment",
-     "Filtering lymph, housing immune cells, and removing foreign particles from tissue fluid",
-     "Exchanging oxygen and carbon dioxide, regulating blood pressure, and adjusting heart rate"
+     "Producing heat, generating locomotion, moving the limbs",
+     "Storing minerals, forming blood, anchoring muscles",
+     "Filtering lymph, housing immune cells, clearing particles",
+     "Exchanging gases, regulating pressure and heart rate"
     ],
     "correct": 1,
-    "explain": "The skeletal system stores minerals, performs hemopoiesis (blood cell formation), and provides a surface for muscle attachment, so the set that names mineral storage, blood-cell formation, and a muscle-attachment surface is the skeletal set. Producing body heat, generating locomotion, and contracting to move the limbs are functions of muscle. Filtering lymph, housing immune cells, and removing foreign particles are functions of the lymphatic system. Exchanging oxygen and carbon dioxide, regulating blood pressure, and adjusting heart rate are functions of the respiratory and cardiovascular systems."
+    "explain": "The skeletal system stores minerals, forms blood cells, and gives muscles a surface to attach to. Heat and movement are muscular, filtering is lymphatic, and gas exchange and pressure are respiratory and cardiovascular."
    },
    {
     "id": "MT11002",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Which pairing of a directional term with its point of reference is correct?",
+    "q": "Which directional term is paired with its correct reference?",
     "options": [
-     "Proximal marks a point that lies away from the origin or beginning of a structure.",
-     "Distal marks a point that lies near the origin or beginning of a structure.",
-     "Medial marks a position that lies close to the imaginary midline running down the body.",
-     "Lateral marks a position that lies close to the imaginary midline running down the body."
+     "Proximal: away from the origin",
+     "Distal: near the origin",
+     "Medial: close to the midline",
+     "Lateral: close to the midline"
     ],
     "correct": 2,
-    "explain": "Medial means close to the midline, so the pairing that places medial close to the imaginary midline is correct. Proximal means near the origin or beginning of a structure, not away from it, so the line that places proximal away from the origin reverses the term. Distal means away from the origin, not near it, so the line that places distal near the origin reverses that pair. Lateral means toward the side, away from the midline, so the line that places lateral close to the midline assigns the medial sense to lateral."
+    "explain": "Medial means close to the midline. Proximal is near the origin, distal is away from it, and lateral is away from the midline."
    },
    {
     "id": "MT11003",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Which pairing of anterior, posterior, superior, or inferior with its point of reference is correct?",
+    "q": "Which directional pair is defined correctly?",
     "options": [
-     "Anterior refers to the back or dorsal side of the body, and posterior refers to the front or ventral side",
-     "Superior means away from the head, and inferior means toward the head",
-     "Anterior refers to the front or ventral side of the body, and posterior refers to the back or dorsal side",
-     "Superior means toward the side, and inferior means toward the midline"
+     "Anterior: back; posterior: front",
+     "Superior: away from head; inferior: toward",
+     "Anterior: front; posterior: back",
+     "Superior: lateral; inferior: medial"
     ],
     "correct": 2,
-    "explain": "Anterior refers to the front or ventral side, and posterior refers to the back or dorsal side, so that pairing is correct. The line that assigns anterior to the back or dorsal side and posterior to the front or ventral side reverses the two. Superior means toward the head and inferior means away from the head, so the line that sends superior away from the head and inferior toward the head reverses the vertical pair. The line that sends superior toward the side and inferior toward the midline confuses the vertical pair with lateral and medial."
+    "explain": "Anterior is the front (ventral) and posterior the back (dorsal). Superior is toward the head and inferior away from it."
    },
    {
     "id": "MT11004",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Which statement correctly distinguishes compact bone from spongy (cancellous) bone?",
+    "q": "How do compact and spongy (cancellous) bone differ?",
     "options": [
-     "Compact bone is tight and solid and forms the exterior of bones, while spongy bone is mesh-like and forms the interior around the medullary cavity.",
-     "Compact bone is mesh-like and forms the interior around the medullary cavity, while spongy bone is tight and solid and forms the exterior of bones.",
-     "Compact bone stores the blood cells held in the medullary cavity, while spongy bone provides the principal surface for muscle attachment.",
-     "Compact bone produces the blood components directly, while spongy bone supplies the lubricating gristle at the joints."
+     "Compact: solid, exterior; spongy: mesh-like, interior",
+     "Compact: mesh-like, interior; spongy: solid, exterior",
+     "Compact: stores blood cells; spongy: anchors muscles",
+     "Compact: makes blood; spongy: lubricates joints"
     ],
     "correct": 0,
-    "explain": "Compact bone is the tight, solid tissue that makes up the exterior of bones, and spongy (cancellous) bone is the mesh-like tissue that fills the interior and surrounds the medullary cavity, so that contrast is correct. The line that calls compact bone mesh-like and interior, and spongy bone tight and exterior, reverses the two tissues. Blood-cell storage belongs to marrow rather than to a compact-versus-spongy contrast, and the attachment surface is a general property of bone, so the line about storing blood cells and providing the attachment surface misattributes both roles. Lubrication at the joints is the job of articular cartilage, not of spongy bone, so the line about producing blood components and supplying lubricating gristle is wrong on both points."
+    "explain": "Compact bone is tight, solid, and forms the exterior; spongy bone is mesh-like and forms the interior around the medullary cavity."
    },
    {
     "id": "MT11005",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec11",
-    "q": "Regarding red and yellow bone marrow, which statement is correct?",
-    "options": [
-     "Yellow marrow produces the red cells, white cells, and platelets, while red marrow is the tissue that stores fat.",
-     "At birth all human marrow is yellow, and red tissue gradually replaces some of it as a person matures into adulthood.",
-     "Red marrow produces the blood components, and at birth all marrow is red, after which fat tissue converts part of it to yellow.",
-     "Red marrow is responsible for producing fats, cartilages, and bone, while yellow marrow performs the formation of blood cells."
+    "q": "Compare red and yellow bone marrow.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which marrow produces the blood components?",
+      "options": [
+       "Red marrow",
+       "Yellow marrow"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Red marrow makes blood. Which marrow fills the body at birth?",
+      "options": [
+       "All red",
+       "All yellow",
+       "Half of each"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "All marrow is red at birth. What converts part to yellow?",
+      "options": [
+       "Fat tissue",
+       "Bone tissue",
+       "Cartilage",
+       "Blood cells"
+      ],
+      "correct": 0
+     }
     ],
-    "correct": 2,
-    "explain": "Red marrow forms the blood components (red cells, white cells, and platelets), and because the demand for new blood is high at birth all marrow starts red, after which fat tissue gradually replaces some of it with yellow marrow. The line that assigns blood-cell production to yellow marrow and fat storage to red marrow swaps the products. The line that starts all marrow as yellow and then replaces it with red reverses the age change, since red is the starting tissue and yellow the later replacement. The line that assigns fat, cartilage, and bone production to red marrow and blood formation to yellow marrow swaps the roles again."
+    "explain": "Red marrow produces red cells, white cells, and platelets. At birth all marrow is red; later fat tissue converts part of it to yellow marrow."
    },
    {
     "id": "MT11006",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Fibrocartilage and articular cartilage are both gristle tissues but serve different roles. Which assignment of role to tissue is correct?",
+    "q": "What roles do fibrocartilage and articular cartilage play?",
     "options": [
-     "Fibrocartilage lubricates the bone surfaces for articulation, while articular cartilage attaches bone to bone with restricted mobility at the joints",
-     "Fibrocartilage attaches bone to other bones and limits joint mobility, while articular cartilage lubricates the surfaces for articulation",
-     "Both fibrocartilage and articular cartilage generate the red and white blood cells found within the medullary cavity",
-     "Both fibrocartilage and articular cartilage store the minerals that give the skeleton its overall shape and support"
+     "Fibro: lubricates; articular: binds bones, limits mobility",
+     "Fibro: binds bones, limits mobility; articular: lubricates",
+     "Both: generate blood cells in the medullary cavity",
+     "Both: store minerals that shape the skeleton"
     ],
     "correct": 1,
-    "explain": "Articular cartilage is the gristle-like lubricating layer on bone surfaces where they articulate, and fibrocartilage binds bone to bone while allowing only restricted movement at the joint, so the assignment of limited mobility to fibrocartilage and lubrication to articular cartilage is correct. The line that gives lubrication to fibrocartilage and bone-to-bone attachment to articular cartilage swaps the two. Blood-cell formation is the work of red marrow, not of either cartilage, so the line that assigns both tissues to generation of red and white cells is wrong. Mineral storage and the shaping of the skeleton are properties of bone, not of the two cartilages, so the line about storing minerals misstates their role."
+    "explain": "Fibrocartilage attaches bone to bone and limits joint mobility; articular cartilage lubricates surfaces for articulation. Neither makes blood or stores minerals."
    },
    {
     "id": "MT11007",
@@ -99,13 +124,13 @@
     "cat": "MT_lec11",
     "q": "Which function belongs to the muscular system rather than to the skeletal system?",
     "options": [
-     "Storing minerals within the tissue of the skeleton",
-     "Providing the surface to which muscles attach",
-     "Performing hemopoiesis within the red marrow",
-     "Producing body heat through contraction"
+     "Storing minerals in the skeleton",
+     "Providing a surface for muscles",
+     "Performing hemopoiesis in red marrow",
+     "Producing body heat by contraction"
     ],
     "correct": 3,
-    "explain": "Producing body heat through contraction is a function of muscle activity, so it belongs to the muscular system and is the correct choice. Storing minerals is a skeletal role, since bone is a mineral reservoir. Providing the attachment surface is precisely what bone does for muscle, so it is skeletal. Hemopoiesis, the formation of blood cells, occurs in red bone marrow and is therefore skeletal as well. Note that protecting internal organs is shared by both systems and so cannot separate them."
+    "explain": "Producing heat by contraction is a muscular function. Storing minerals, providing attachment, and hemopoiesis are skeletal."
    },
    {
     "id": "MT11008",
@@ -169,13 +194,13 @@
     "cat": "MT_lec11",
     "q": "The pectoral and pelvic girdles share which structural feature?",
     "options": [
-     "Both are ball and socket joints encircling bone to support the limbs.",
-     "Both are flat bones that form the roof and walls of the chest cage.",
-     "Both are irregular bones that make up the vertebral column itself.",
-     "Both are sesamoid bones embedded in a tendon near a joint."
+     "Ball and socket joints supporting limbs",
+     "Flat bones forming the chest cage walls",
+     "Irregular bones forming the spinal column",
+     "Sesamoid bones embedded within tendons"
     ],
     "correct": 0,
-    "explain": "The pectoral and pelvic girdles both consist of ball and socket joints encircling a bony structure that supports the upper and lower limbs, so that shared feature is correct. Flat bones form the roof and walls of the chest cage, as with the ribs and sternum, and do not form either girdle. Irregular bones form the vertebral column and face, not the girdles. Sesamoid bones such as the patella lie near joints, embedded in tendon, but do not form a girdle."
+    "explain": "Both girdles are ball and socket joints encircling bone to support the limbs. The chest cage, spine, and sesamoid bones are other structures."
    },
    {
     "id": "MT11021",
@@ -251,15 +276,15 @@
     "id": "MT11026",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Myel/o, Sarc/o, Fibr/o, and Ton/o are easily transposed. Which pairing of form to meaning is correct?",
+    "q": "Which combining form is paired with its correct meaning?",
     "options": [
-     "Myel/o means flesh, and Sarc/o means the bone marrow of the spinal cord.",
-     "Fibr/o means tone or tension, and Ton/o means the fiber of connective tissue.",
-     "Sarc/o means fiber, and Fibr/o means the tone or tension of a muscle.",
-     "Myel/o means the bone marrow of the spinal cord, and Sarc/o means flesh."
+     "Myel/o: flesh",
+     "Fibr/o: tone",
+     "Sarc/o: fiber",
+     "Myel/o: marrow"
     ],
     "correct": 3,
-    "explain": "Myel/o denotes bone marrow or the spinal cord and Sarc/o denotes flesh, as in myeloma and sarcoma, so that pairing is correct. The line that assigns flesh to Myel/o and bone marrow of the spinal cord to Sarc/o swaps these two senses. Fibr/o means fiber and Ton/o means tone or tension, so the line that assigns tone or tension to Fibr/o and fiber to Ton/o reverses that pair. The line that assigns fiber to Sarc/o and tone or tension to Fibr/o mixes two unrelated forms."
+    "explain": "Myel/o means bone marrow or spinal cord. Sarc/o means flesh, Fibr/o fiber, and Ton/o tone or tension."
    },
    {
     "id": "MT11027",
@@ -267,13 +292,13 @@
     "cat": "MT_lec11",
     "q": "In the term myeloma, the element myel refers to what?",
     "options": [
-     "The tumor or neoplastic mass",
-     "The flesh or soft tissue",
-     "The bone marrow or spinal cord",
-     "The muscle or contractile tissue"
+     "Tumor or neoplastic mass",
+     "Flesh or soft tissue",
+     "Marrow or spinal cord",
+     "Muscle or contractile tissue"
     ],
     "correct": 2,
-    "explain": "Myel denotes bone marrow or the spinal cord, so the myel element names the tissue in myeloma, a tumor of the bone marrow. The tumor or neoplastic-mass sense in the same word comes from the suffix -oma, not from myel. Flesh is Sarc/o, as in sarcoma, and muscle is My/o or Muscul/o, neither of which is present here. Reading myel as the tumor confuses the combining form with the suffix that follows it."
+    "explain": "Myel means bone marrow or spinal cord; myeloma is a marrow tumor. The tumor sense comes from -oma, flesh is sarc/o, and muscle is my/o."
    },
    {
     "id": "MT11028",
@@ -337,13 +362,13 @@
     "cat": "MT_lec11",
     "q": "What does the term craniotomy mean?",
     "options": [
-     "Surgical removal of a portion of the skull",
+     "Removal of part of the skull",
      "Incision into the skull",
      "Inflammation of the skull",
-     "A record of the skull"
+     "Record of the skull"
     ],
     "correct": 1,
-    "explain": "Craniotomy is built from Crani/o (skull) and -tomy (incision), so it denotes incision into the skull. Surgical removal would use -ectomy, inflammation would use -itis, and a record would use -gram."
+    "explain": "Craniotomy is crani/o + -tomy: incision into the skull. Removal is craniectomy, inflammation cranitis, and a record a craniogram."
    },
    {
     "id": "MT11033",
@@ -407,13 +432,13 @@
     "cat": "MT_lec11",
     "q": "What does the term spondylosis mean?",
     "options": [
-     "Inflammation of a vertebral bone",
-     "A stiff, immobile condition of vertebrae",
+     "Inflammation of a vertebra",
+     "Stiff, immobile vertebral condition",
      "Surgical removal of a vertebral bone",
-     "A benign tumor arising in a vertebral bone"
+     "Benign tumor of a vertebra"
     ],
     "correct": 1,
-    "explain": "Spondylosis is built from Spondyl/o (vertebra) and -osis (condition), so it denotes a condition of stiff and immobile vertebrae. Inflammation would use -itis, surgical removal would use -ectomy, and a tumor would use -oma."
+    "explain": "Spondylosis is spondyl/o + -osis: a stiff, immobile condition of the vertebrae. Inflammation is spondylitis and removal is vertebrectomy."
    },
    {
     "id": "MT11038",
@@ -519,13 +544,13 @@
     "cat": "MT_lec11",
     "q": "What does the term myoma mean?",
     "options": [
-     "A tumor of muscle tissue",
+     "Tumor of muscle tissue",
      "Inflammation of muscle tissue",
-     "Pain in muscle tissue",
+     "Pain in the muscle tissue",
      "Softening of muscle tissue"
     ],
     "correct": 0,
-    "explain": "Myoma is built from My/o (muscle) and -oma (tumor), so it denotes a tumor of muscle tissue. Inflammation would use -itis (myositis), pain would use -dynia, and softening would use -malacia."
+    "explain": "Myoma is my/o + -oma: a tumor of muscle tissue. Inflammation is myositis, pain myalgia, and softening myomalacia."
    },
    {
     "id": "MT11046",
@@ -547,13 +572,13 @@
     "cat": "MT_lec11",
     "q": "What does the term fibrocartilage mean?",
     "options": [
-     "Cartilage made of fibrous tissue that attaches bones to other bones",
-     "Cartilage made of fibrous tissue that lines the joint surfaces",
-     "Cartilage made of elastic tissue that shapes the outer ear",
-     "Cartilage made of fibrous tissue that forms the nasal tip"
+     "Fibrous cartilage binding bone to bone",
+     "Fibrous cartilage lining joint surfaces",
+     "Elastic cartilage shaping the outer ear",
+     "Fibrous cartilage forming the nasal tip"
     ],
     "correct": 0,
-    "explain": "Fibrocartilage is cartilage made of fibrous tissue that attaches bones to other bones, as in the intervertebral discs. Joint surfaces are lined by smooth hyaline cartilage, and the outer ear and nasal tip are shaped by other cartilage types."
+    "explain": "Fibrocartilage is cartilage made of fibrous tissue that attaches bones to other bones. Articular cartilage lines joints and elastic cartilage shapes the ear."
    },
    {
     "id": "MT11048",
@@ -589,13 +614,13 @@
     "cat": "MT_lec11",
     "q": "What does the term lumbar mean?",
     "options": [
-     "Pertaining to the loin or lower back",
-     "Pertaining to the chest or thorax",
+     "Pertaining to the lower back",
+     "Pertaining to the chest",
      "Pertaining to the neck region",
      "Pertaining to the arm region"
     ],
     "correct": 0,
-    "explain": "Lumbar is built from Lumb/o (loin or lower back) with -ar (pertaining to), so it means pertaining to the lower back. The chest is Thorac/o, the neck is Cervic/o, and the arm is Brachi/o."
+    "explain": "Lumbar means pertaining to the loin or lower back. Chest is thoracic, neck is cervical, and arm is brachial."
    },
    {
     "id": "MT11051",
@@ -659,13 +684,13 @@
     "cat": "MT_lec11",
     "q": "Which statement correctly describes the pectoral girdle?",
     "options": [
-     "It encircles the upper limb and is formed by ball and socket joints supporting the arm.",
-     "It encircles the lower limb and is formed by ball and socket joints supporting the leg.",
-     "It forms the roof of the thoracic cage and protects the heart and lungs.",
-     "It forms the central axis of the skeleton and supports the skull."
+     "Encircles upper limb; supports the arm",
+     "Encircles lower limb; supports the leg",
+     "Forms thoracic roof; protects heart",
+     "Forms central axis; supports skull"
     ],
     "correct": 0,
-    "explain": "The pectoral or shoulder girdle encircles the upper limb and is formed by ball and socket joints that support the arm. The line about encircling the lower limb and supporting the leg describes the pelvic girdle. The line about forming the roof of the thoracic cage and protecting the heart and lungs describes the ribs and sternum. The line about forming the central axis and supporting the skull describes the vertebral column."
+    "explain": "The pectoral girdle encircles the upper limb, with ball and socket joints supporting the arm. The pelvic girdle supports the leg."
    },
    {
     "id": "MT11056",
@@ -673,13 +698,13 @@
     "cat": "MT_lec11",
     "q": "Which statement correctly describes the pelvic girdle?",
     "options": [
-     "It encircles the upper limb and supports the arm.",
-     "It encircles the lower limb and supports the leg.",
-     "It forms the roof of the thoracic cage.",
-     "It forms the U-shaped bone at the base of the tongue."
+     "Encircles upper limb; supports the arm",
+     "Encircles lower limb; supports the leg",
+     "Forms thoracic roof; protects heart",
+     "Forms U-shaped bone at tongue base"
     ],
     "correct": 1,
-    "explain": "The pelvic girdle encircles the lower limb and is formed by ball and socket joints that support the leg. The line about encircling the upper limb and supporting the arm describes the pectoral girdle. The line about forming the roof of the thoracic cage describes the ribs and sternum. The line about the U-shaped bone at the base of the tongue describes the hyoid."
+    "explain": "The pelvic girdle encircles the lower limb and supports the leg. The pectoral girdle supports the arm and the hyoid sits at the tongue base."
    },
    {
     "id": "MT11057",
@@ -983,27 +1008,27 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Inflammation of a digit."
+      "text": "Inflammation of a digit"
      },
      {
       "id": "B",
-      "text": "Incision into a bone and a joint."
+      "text": "Incision into bone and joint"
      },
      {
       "id": "C",
-      "text": "Pain in a joint."
+      "text": "Pain in a joint"
      },
      {
       "id": "D",
-      "text": "Softening of cartilage."
+      "text": "Softening of cartilage"
      },
      {
       "id": "E",
-      "text": "Between the ribs."
+      "text": "Between the ribs"
      },
      {
       "id": "F",
-      "text": "Incision into the skull."
+      "text": "Incision into the skull"
      }
     ],
     "correct_pairs": {
@@ -1014,7 +1039,7 @@
      "5": "E",
      "6": "B"
     },
-    "explain": "Arthrodynia is pain in a joint, built from Arthr/o and -dynia. Chondromalacia is softening of cartilage, built from Chondr/o and -malacia. Craniotomy is incision into the skull, built from Crani/o and -tomy. Dactylitis is inflammation of a digit, built from Dactyl/o and -itis. Intercostal means between the ribs, built from the prefix inter- and Cost/o. Osteoarthrotomy is incision into a bone and a joint, built from Oste/o, Arthr/o, and -tomy."
+    "explain": "Arthrodynia is joint pain, chondromalacia cartilage softening, craniotomy skull incision, dactylitis digit inflammation, intercostal between the ribs, and osteoarthrotomy incision into bone and joint."
    },
    {
     "id": "MT11062",
@@ -1050,27 +1075,27 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Inflammation of a tendon."
+      "text": "Inflammation of a tendon"
      },
      {
       "id": "B",
-      "text": "A condition of stiff and immobile vertebrae."
+      "text": "Stiff, immobile vertebrae"
      },
      {
       "id": "C",
-      "text": "Pertaining to the pelvis and the femur."
+      "text": "Pertaining to pelvis and femur"
      },
      {
       "id": "D",
-      "text": "Abnormal tone or tension."
+      "text": "Abnormal tone or tension"
      },
      {
       "id": "E",
-      "text": "Measurement of the pelvis."
+      "text": "Measurement of the pelvis"
      },
      {
       "id": "F",
-      "text": "Incision into a tendon."
+      "text": "Incision into a tendon"
      }
     ],
     "correct_pairs": {
@@ -1081,7 +1106,7 @@
      "5": "E",
      "6": "C"
     },
-    "explain": "Spondylosis is a condition of stiff and immobile vertebrae, built from Spondyl/o and -osis. Tenotomy is incision into a tendon, built from Ten/o and -tomy. Tendinitis is inflammation of a tendon, built from Tendin/o and -itis. Dystonia is abnormal tone or tension, built from dys- and Ton/o with -ia. Pelvimetry is measurement of the pelvis, built from Pelv/i and -metry. Pelvofemoral means pertaining to the pelvis and the femur, built from Pelv/o and Femor/o."
+    "explain": "Spondylosis is stiff, immobile vertebrae; tenotomy tendon incision; tendinitis tendon inflammation; dystonia abnormal tone; pelvimetry pelvic measurement; pelvofemoral pertaining to pelvis and femur."
    },
    {
     "id": "MT11063",
@@ -1117,27 +1142,27 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Pertaining to the sternum and the ribs."
+      "text": "Pertaining to sternum and ribs"
      },
      {
       "id": "B",
-      "text": "A tumor of muscle tissue."
+      "text": "A tumor of muscle tissue"
      },
      {
       "id": "C",
-      "text": "Pertaining to the neck and the arm."
+      "text": "Pertaining to neck and arm"
      },
      {
       "id": "D",
-      "text": "Cartilage made of fibrous tissue that attaches bones to other bones."
+      "text": "Fibrous tissue binding bone to bone"
      },
      {
       "id": "E",
-      "text": "Pertaining to the radius and the ulna."
+      "text": "Pertaining to radius and ulna"
      },
      {
       "id": "F",
-      "text": "Inflammation of muscle tissue."
+      "text": "Inflammation of muscle tissue"
      }
     ],
     "correct_pairs": {
@@ -1148,7 +1173,7 @@
      "5": "D",
      "6": "C"
     },
-    "explain": "Radioulnar means pertaining to the radius and the ulna, built from Radi/o and Uln/o. Sternocostal means pertaining to the sternum and the ribs, built from Stern/o and Cost/o. Myoma is a tumor of muscle tissue, built from My/o and -oma. Myositis is inflammation of muscle tissue, built from Myos/o and -itis. Fibrocartilage is cartilage made of fibrous tissue that attaches bones to other bones, built from Fibr/o and Chondr/o. Cervicobrachial means pertaining to the neck and the arm, built from Cervic/o and Brachi/o."
+    "explain": "Radioulnar is radius and ulna, sternocostal sternum and ribs, myoma a muscle tumor, myositis muscle inflammation, fibrocartilage fibrous tissue binding bone to bone, and cervicobrachial neck and arm."
    },
    {
     "id": "MT11064",
@@ -1156,13 +1181,13 @@
     "cat": "MT_lec11",
     "q": "Which statement correctly describes the thoracic cage?",
     "options": [
-     "It is part of the appendicular skeleton and forms the pelvic girdle.",
-     "It is part of the axial skeleton and encloses the chest, formed by the ribs and sternum.",
-     "It is part of the appendicular skeleton and supports the upper limb.",
-     "It is part of the axial skeleton and forms the U-shaped bone at the base of the tongue."
+     "Appendicular; forms the pelvic girdle",
+     "Axial; ribs and sternum enclosing chest",
+     "Appendicular; supports the upper limb",
+     "Axial; U-shaped bone at tongue base"
     ],
     "correct": 1,
-    "explain": "The thoracic cage is part of the axial skeleton and encloses the chest, being formed by the ribs and sternum. The line that places it in the appendicular skeleton and calls it the pelvic girdle confuses it with the pelvic girdle. The line that places it in the appendicular skeleton and says it supports the upper limb confuses it with the pectoral girdle. The line that calls it the U-shaped bone at the base of the tongue confuses it with the hyoid."
+    "explain": "The thoracic cage is axial skeleton, formed by the ribs and sternum, enclosing the chest. The hyoid is the U-shaped bone at the tongue base."
    },
    {
     "id": "MT11065",
@@ -1170,27 +1195,27 @@
     "cat": "MT_lec11",
     "q": "Which statement correctly describes the vertebral column?",
     "options": [
-     "It is part of the appendicular skeleton and supports the lower limb.",
-     "It is part of the axial skeleton and forms the central axis of the body.",
-     "It is part of the appendicular skeleton and forms the shoulder girdle.",
-     "It is part of the axial skeleton and encloses the chest."
+     "Appendicular; supports the lower limb",
+     "Axial; forms central body axis",
+     "Appendicular; forms shoulder girdle",
+     "Axial; encloses the chest cavity"
     ],
     "correct": 1,
-    "explain": "The vertebral column is part of the axial skeleton and forms the central axis of the body. The line that places it in the appendicular skeleton as support for the lower limb assigns it to the wrong division. The line that places it in the appendicular skeleton as the shoulder girdle does the same. The line that says it encloses the chest describes the thoracic cage, not the vertebral column."
+    "explain": "The vertebral column is axial skeleton forming the central axis of the body. The thoracic cage encloses the chest."
    },
    {
     "id": "MT11066",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Which statement correctly distinguishes the hyoid bone from the laryngeal skeleton?",
+    "q": "How do the hyoid and the laryngeal skeleton differ?",
     "options": [
-     "The hyoid is the U-shaped bone at the base of the tongue, while the laryngeal skeleton is the cartilaginous framework of the voice box.",
-     "The hyoid is the cartilaginous framework of the voice box, while the laryngeal skeleton is the U-shaped bone at the base of the tongue.",
-     "The hyoid is the breastbone of the chest, while the laryngeal skeleton is the heel bone of the foot.",
-     "The hyoid is the kneecap, while the laryngeal skeleton is the shoulder blade."
+     "Hyoid: U-shaped tongue-base bone; larynx: cartilage framework",
+     "Hyoid: cartilage framework; larynx: U-shaped tongue-base bone",
+     "Hyoid: chest breastbone; larynx: foot heel bone",
+     "Hyoid: knee cap; larynx: shoulder blade"
     ],
     "correct": 0,
-    "explain": "The hyoid is the U-shaped bone at the base of the tongue, while the laryngeal skeleton is the cartilaginous framework of the voice box (larynx). The line that calls the hyoid the framework of the voice box and the laryngeal skeleton the U-shaped bone swaps the two. The breastbone is the sternum and the heel bone is the calcaneus, so the line about the breastbone and the heel bone names neither structure. The kneecap is the patella and the shoulder blade is the scapula, so the line about the kneecap and the shoulder blade is wrong as well."
+    "explain": "The hyoid is the U-shaped bone at the base of the tongue; the laryngeal skeleton is the cartilage framework of the voice box."
    },
    {
     "id": "MT11069",
@@ -1336,7 +1361,7 @@
        "The upper arm",
        "The forearm",
        "The thigh",
-       "The shin"
+       "The lower leg"
       ],
       "correct": 0
      },
@@ -1975,10 +2000,10 @@
       "id": "4",
       "prompt": "Which region does the Sternum occupy?",
       "options": [
-       "The breastbone of the chest",
-       "The bone at the tongue base",
-       "The shoulder blade",
-       "The bone of the lower back"
+       "Chest breastbone",
+       "Tongue base",
+       "Shoulder blade",
+       "Lower back"
       ],
       "correct": 0
      },
@@ -2560,10 +2585,10 @@
       "id": "4",
       "prompt": "Which region does the Hyoid occupy?",
       "options": [
-       "The base of the tongue",
-       "The breastbone area",
-       "The knee sesamoid",
-       "The shoulder blade"
+       "Tongue base",
+       "Breastbone area",
+       "Knee sesamoid",
+       "Shoulder blade"
       ],
       "correct": 0
      },
@@ -2783,10 +2808,10 @@
       "id": "4",
       "prompt": "Which region does the Phalanges occupy?",
       "options": [
-       "The digits of hand and foot",
-       "The wrist bone group",
-       "The ankle bone group",
-       "The upper vertebral column"
+       "Hand and foot digits",
+       "The wrist bones",
+       "The ankle bones",
+       "The upper spine bones"
       ],
       "correct": 0
      },
@@ -2824,13 +2849,13 @@
     "cat": "MT_lec11",
     "q": "Which function belongs to the skeleton and is not a function of muscle contraction?",
     "options": [
-     "Supporting the body and giving it shape",
-     "Generating locomotion of the limbs",
-     "Producing body heat through contraction",
-     "Contracting to move a limb"
+     "Supporting and shaping the body",
+     "Generating locomotion of limbs",
+     "Producing heat by contraction",
+     "Contracting to move the limbs"
     ],
     "correct": 0,
-    "explain": "Support and shape are skeletal functions, along with mineral storage, hemopoiesis, and a surface for muscle attachment. Generating locomotion, producing body heat through contraction, and contracting to move a limb are muscle functions. Protecting internal organs is shared by both systems, so it cannot separate them."
+    "explain": "Support and shape are skeletal functions. Locomotion, heat, and limb movement come from muscle contraction."
    },
    {
     "id": "MT11099",
@@ -2850,15 +2875,15 @@
     "id": "MT11100",
     "type": "mcq",
     "cat": "MT_lec11",
-    "q": "Which pairing of marrow with its product is correct?",
+    "q": "Which marrow is paired with its correct product?",
     "options": [
-     "Red marrow forms blood cells, and yellow marrow is tied to fat, cartilage, and bone production.",
-     "Yellow marrow forms blood cells, and red marrow is tied to fat, cartilage, and bone production.",
-     "Both marrows form only blood cells, and neither is tied to fat or cartilage.",
-     "Both marrows form only fat, and neither forms blood cells."
+     "Red: blood cells; yellow: fat, cartilage, bone",
+     "Yellow: blood cells; red: fat, cartilage, bone",
+     "Both: blood cells only, no fat",
+     "Both: fat only, no blood cells"
     ],
     "correct": 0,
-    "explain": "Red marrow produces the blood components, red cells, white cells, and platelets. Yellow marrow is the tissue tied to fats, cartilages, and bone production. At birth all marrow is red, and fat tissue later replaces some of it with yellow marrow. The line that gives blood-cell formation to yellow marrow and fat, cartilage, and bone production to red marrow swaps the two. The line that gives both marrows only blood cells drops the yellow-marrow products. The line that gives both marrows only fat drops blood-cell formation."
+    "explain": "Red marrow forms blood cells; yellow marrow is tied to fat, cartilage, and bone production."
    },
    {
     "id": "MT11101",
