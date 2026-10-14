@@ -88,10 +88,10 @@
           "Uvula",
           "Epiglottis",
           "Tonsils",
-          "Cilia"
+          "Adenoids"
         ],
         "correct": 2,
-        "explain": "The tonsils are oval lymphatic tissues on each side of the pharynx that filter air and help defend against bacterial invasion. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing flap over the larynx. The cilia are the mucus-moving epithelial processes."
+        "explain": "The tonsils are oval lymphatic tissues on each side of the pharynx that filter air and help defend against bacterial invasion. The adenoids are lymphatic tissue at the back of the nasal cavity, not at the sides of the pharynx. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing flap over the larynx."
       },
       {
         "id": "MT16007",

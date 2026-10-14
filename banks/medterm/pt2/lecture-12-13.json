@@ -169,10 +169,10 @@
     "cat": "MT_lec12-13",
     "q": "Which chamber pumps oxygenated blood into the systemic circulation?",
     "options": [
-     "Right atrium, which receives deoxygenated blood from the venae cavae",
-     "Right ventricle, which pumps deoxygenated blood to the pulmonary artery",
-     "Left atrium, which receives oxygenated blood from the pulmonary veins",
-     "Left ventricle, which pumps oxygenated blood into the aorta and body"
+     "Right atrium",
+     "Right ventricle",
+     "Left atrium",
+     "Left ventricle"
     ],
     "correct": 3,
     "explain": "The left ventricle pumps oxygenated blood through the aortic valve into the aorta for systemic circulation. The right atrium receives venous blood, the right ventricle sends blood to the lungs, and the left atrium receives pulmonary venous blood."
@@ -1361,7 +1361,7 @@
     "cat": "MT_lec12-13",
     "group": "chamber-drill",
     "groupOrder": 3,
-    "q": "This lower chamber receives blood through the tricuspid opening from the chamber above it. Answer each step, then the next chamber follows.",
+    "q": "This lower chamber pumps blood that is low in oxygen. Answer each step, then the next chamber follows.",
     "steps": [
      {
       "id": "1",

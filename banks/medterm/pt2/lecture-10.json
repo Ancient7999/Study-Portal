@@ -85,10 +85,10 @@
     "cat": "MT_lec10",
     "q": "In the term etiology, which element supplies the sense of cause?",
     "options": [
-     "etio-, the root that means cause.",
-     "-logy, the suffix that means study.",
-     "-y, the ending that makes a noun.",
-     "-gen, the root that means origin."
+     "etio-",
+     "-logy",
+     "-y",
+     "-gen"
     ],
     "correct": 0,
     "explain": "Etiology decomposes into the root etio- (cause), the suffix -logy (study), and the nominal ending -y. The sense of cause sits in etio-. The suffix -logy supplies study, and -y only makes the noun. The element -gen means origin or production, but it is not part of this word and does not carry the cause sense here."
