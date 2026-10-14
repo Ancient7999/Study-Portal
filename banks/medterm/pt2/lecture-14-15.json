@@ -13,71 +13,71 @@
     "id": "MT14001",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which description of blood's composition is correct?",
+    "q": "What are the liquid and cellular parts of blood?",
     "options": [
-     "The liquid portion is serum, and the formed cellular portion consists of erythrocytes, leukocytes, and thrombocytes.",
-     "The liquid portion is lymph, and the formed cellular portion consists of megakaryocytes, fibroblasts, and osteocytes.",
-     "The liquid portion is plasma, and the formed cellular portion consists of erythrocytes, leukocytes, and thrombocytes.",
-     "The liquid portion is plasma, and the formed cellular portion consists of lymphocytes, monocytes, and platelets."
+     "Serum; red cells, white cells, platelets",
+     "Lymph; megakaryocytes, fibroblasts, osteocytes",
+     "Plasma; red cells, white cells, platelets",
+     "Plasma; lymphocytes, monocytes, and platelets"
     ],
     "correct": 2,
-    "explain": "Blood is a fluid connective tissue whose liquid part is plasma and whose cellular part is erythrocytes, leukocytes, and thrombocytes. Serum is the post-clotting fluid and is not the living liquid matrix of circulating blood. Lymph belongs to the lymphatic system, and megakaryocytes, fibroblasts, and osteocytes are marrow and connective-tissue cells rather than the circulating formed elements. Lymphocytes, monocytes, and platelets omit the red cells and the granulocyte class, so that list is not the full cellular composition."
+    "explain": "Blood is liquid plasma plus formed elements: erythrocytes (red cells), leukocytes (white cells), and thrombocytes (platelets). Serum is plasma after clotting, lymph is lymphatic fluid, and lymphocytes and monocytes are only two white-cell types."
    },
    {
     "id": "MT14002",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which set of duties belongs to the lymphatic system rather than to blood itself?",
+    "q": "Which duties belong to the lymphatic system, not blood?",
     "options": [
-     "Filtering foreign particles, sustaining immune cell responses, balancing tissue fluid, and absorbing dietary fats",
-     "Delivering oxygen and nutrients to cells, conveying hormones to their targets, and removing carbon dioxide and metabolic wastes",
-     "Generating the pressure that drives flow, opening and closing its own valves, and perfusing the heart muscle through coronary vessels",
-     "Producing red cells, white cells, and platelets, storing calcium salts, and giving attachment to skeletal muscle"
+     "Filtering particles, immunity, fluid balance, fat absorption",
+     "Delivering oxygen and hormones, removing metabolic wastes",
+     "Driving the flow, working valves, perfusing the heart",
+     "Making blood cells, storing calcium, anchoring muscles"
     ],
     "correct": 0,
-    "explain": "The lymphatic system filters microorganisms and foreign particles out of lymph, supports lymphocyte activity during immune responses, maintains the internal fluid environment between capillaries and tissue cells, and carries fats away from the digestive system. Delivering oxygen and nutrients and removing carbon dioxide and wastes is the transport work of blood. Generating flow pressure and opening valves describes the heart and its vessels. Producing blood cells, storing minerals, and giving muscle attachment are skeletal and marrow roles."
+    "explain": "The lymphatic system filters foreign particles, sustains immune responses, balances tissue fluid, and absorbs dietary fats. Delivery and waste removal are blood duties, pumping is the heart, and making cells and storing calcium is bone."
    },
    {
     "id": "MT14003",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Plasma and serum are both liquid fractions of blood. Which statement about them is correct?",
+    "q": "How do plasma and serum differ?",
     "options": [
-     "Serum still holds fibrinogen and the other clotting factors; plasma is the fluid left once blood has clotted.",
-     "Plasma and serum both lack clotting factors and differ only in whether red cells remain suspended in them.",
-     "Plasma and serum both hold all the clotting factors and differ only in their content of dissolved proteins.",
-     "Plasma still holds fibrinogen and the other clotting factors; serum is the fluid left once blood has clotted."
+     "Serum keeps clotting factors; plasma remains after clotting",
+     "Both lack clotting factors; differ in red cells",
+     "Both hold clotting factors; differ in proteins",
+     "Plasma keeps clotting factors; serum remains after clotting"
     ],
     "correct": 3,
-    "explain": "Plasma still holds fibrinogen and the other clotting factors. Serum is the fluid left once blood has clotted, without those factors. The other options swap the two or claim they share the same factors."
+    "explain": "Plasma still holds fibrinogen and the other clotting factors; serum is the fluid left after blood clots. They do not differ by red cells or other proteins."
    },
    {
     "id": "MT14005",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Hemoglobin, the pigment within red cells, is best described as which kind of substance?",
+    "q": "What kind of substance is hemoglobin, the pigment in red cells?",
     "options": [
-     "A respiratory pigment built from a protein bound to a calcium compound",
-     "A storage pigment built from a protein bound to an iron-protein compound",
-     "A respiratory pigment built from a protein bound to an iron compound",
-     "A visual pigment built from a protein bound to a retinal-protein compound"
+     "Respiratory pigment: protein with calcium compound",
+     "Storage pigment: protein with iron-protein compound",
+     "Respiratory pigment: protein with iron compound",
+     "Visual pigment: protein with retinal compound"
     ],
     "correct": 2,
-    "explain": "Hemoglobin is a respiratory pigment built from a protein bound to an iron compound. A respiratory pigment built from a protein bound to a calcium compound names the wrong metal. A storage pigment built from a protein bound to an iron-protein compound names the wrong pigment class. A visual pigment built from a protein bound to a retinal-protein compound is not the red-cell pigment."
+    "explain": "Hemoglobin is a respiratory pigment made of a protein (globin) bound to an iron compound (heme). Storage iron is ferritin and the visual pigment is rhodopsin."
    },
    {
     "id": "MT14006",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly separates granulocytes from agranulocytes?",
+    "q": "How do granulocytes and agranulocytes differ?",
     "options": [
-     "Granulocytes have lobed nuclei and visible cytoplasmic granules, while agranulocytes have a single nucleus and no granules",
-     "Granulocytes have a single nucleus and no granules, while agranulocytes have lobed nuclei and visible cytoplasmic granules",
-     "Granulocytes reside in the bone marrow, while agranulocytes reside in the lining of the small intestine",
-     "Granulocytes manufacture antibodies, while agranulocytes perform phagocytosis of invading germs"
+     "Granulocytes: lobed nuclei, granules; agranulocytes: one nucleus, none",
+     "Granulocytes: one nucleus, no granules; agranulocytes: lobed, granules",
+     "Granulocytes: in marrow; agranulocytes: in intestinal lining",
+     "Granulocytes: make antibodies; agranulocytes: phagocytose germs"
     ],
     "correct": 0,
-    "explain": "Granulocytes are the polymorphonuclear leukocytes whose nuclei show several lobes and whose cytoplasm holds protein granules, namely neutrophils, eosinophils, and basophils. Agranulocytes are the mononuclear leukocytes with one large nucleus, clear cytoplasm, and no granules, namely lymphocytes and monocytes. Granulocytes have a single nucleus and no granules, while agranulocytes have lobed nuclei and visible cytoplasmic granules, swaps the two definitions. Location in marrow versus gut does not define the split. Antibody production belongs to B lymphocytes, and phagocytosis is shared by neutrophils and monocytes, so that assignment misreads the classes."
+    "explain": "Granulocytes have lobed nuclei and visible granules; agranulocytes have a single nucleus and no granules. Location and antibody production do not separate them."
    },
    {
     "id": "MT14007",
@@ -125,15 +125,15 @@
     "id": "MT14012",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "The word polymorphonuclear describes the granulocytes. Which reading of its parts is correct?",
+    "q": "What do the parts of polymorphonuclear (granulocytes) mean?",
     "options": [
-     "Poly means many, morpho means form, and nucleus means kernel, so the term refers to the many-lobed nucleus of these cells.",
-     "Poly means few, morpho means color, and nucleus means cell, so the term refers to the pale staining of these cells.",
-     "Poly means many, morpho means granule, and nucleus means sac, so the term refers to the granular cytoplasm of these cells.",
-     "Poly means one, morpho means form, and nucleus means center, so the term refers to the single round nucleus of these cells."
+     "Many, form, kernel: many-lobed nucleus",
+     "Few, color, cell: pale staining",
+     "Many, granule, sac: granular cytoplasm",
+     "One, form, center: single round nucleus"
     ],
     "correct": 0,
-    "explain": "In polymorphonuclear, poly means many, morpho means form, and nucleus means kernel, so the word describes the many-lobed nucleus of the granulocytes. Poly means few, morpho means color, and nucleus means cell misglosses the elements. Poly means many, morpho means granule, and nucleus means sac turns morpho into granule. Poly means one, morpho means form, and nucleus means center turns poly into one and describes a mononuclear cell."
+    "explain": "Poly means many, morpho form, and nucleus kernel, so polymorphonuclear describes the many-lobed nucleus of granulocytes."
    },
    {
     "id": "MT14013",
@@ -181,71 +181,71 @@
     "id": "MT14016",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Immunity, as a physiological mechanism, is best defined as the body's ability to do what?",
+    "q": "What is immunity, as a physiological mechanism?",
     "options": [
-     "Pump oxygen-rich blood to every tissue and return oxygen-poor blood to the lungs",
-     "Recognize foreign materials and neutralize or remove them without harming itself",
-     "Filter out old and damaged red cells and store the iron freed by their breakdown",
-     "Absorb dietary fats from the digestive tract and carry them into the bloodstream"
+     "Pumping blood out to tissues and back again",
+     "Recognizing and removing foreign material harmlessly",
+     "Filtering old red cells and storing their iron",
+     "Absorbing dietary fats into the circulating bloodstream"
     ],
     "correct": 1,
-    "explain": "Immunity is the set of physiological mechanisms by which the body recognizes a material as foreign and then neutralizes, eliminates, or metabolizes it without injuring its own tissue. Pump oxygenated blood to every tissue while returning deoxygenated blood to the lungs is cardiac circulation. Filter out old and damaged red cells and store the iron recovered from their breakdown is a splenic function. Absorb dietary fats from the digestive tract and return them to the bloodstream is a lymphatic function."
+    "explain": "Immunity is the ability to recognize foreign materials and neutralize or remove them without harming the body. Pumping is the heart, filtering red cells is the spleen, and fat absorption is the lacteals."
    },
    {
     "id": "MT14017",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which pairing of term to definition is correct?",
+    "q": "Which defines antigen and antibody correctly?",
     "options": [
-     "Antigen is a Y-shaped protein that destroys an invader, and antibody is the invader that triggers that protein.",
-     "Antigen and antibody are both foreign substances that enter the body from external sources.",
-     "Antigen is any substance that provokes antibody formation, and antibody is the Y-shaped protein that inactivates that antigen.",
-     "Antigen is the Y-shaped protein made by B cells, and antibody is the cytotoxic substance stored in natural killer cells."
+     "Antigen: Y-shaped protein; antibody: the invading substance",
+     "Both: foreign substances entering from outside the body",
+     "Antigen: provokes antibodies; antibody: Y-shaped neutralizing protein",
+     "Antigen: B-cell made protein; antibody: NK-cell cytotoxic substance"
     ],
     "correct": 2,
-    "explain": "An antigen is any substance that, once introduced, causes the body to form antibody against it, and an antibody is the Y-shaped protein the body produces to destroy or inactivate that antigen. Antigen is a Y-shaped protein that destroys an invader, and antibody is the invader that triggers that protein, reverses the two roles. Antigen and antibody are both foreign substances that enter the body from external sources, treats the antibody as a foreign entrant. Antigen is the Y-shaped protein made by B cells, and antibody is the cytotoxic substance stored in natural killer cells, swaps both the shape and the cell of origin."
+    "explain": "An antigen is any substance that provokes antibody formation; an antibody is the Y-shaped protein that inactivates it. Antibodies are made by B cells, and cytotoxic substances belong to NK cells."
    },
    {
     "id": "MT14018",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which contrast between active and passive immunity is correct?",
+    "q": "How do active and passive immunity differ?",
     "options": [
-     "Active immunity is long-lasting and made by the body itself; passive immunity is short-lasting and received from outside.",
-     "Active immunity is short-lived and received from outside; passive immunity is long-lived and made by the body itself.",
-     "Active immunity is long-lived but received from outside; passive immunity is short-lived but made by the body itself.",
-     "Active and passive immunity are both short-lived and both come from maternal antibodies passed across the placenta."
+     "Active: long-lasting, self-made; passive: short, received",
+     "Active: short, received; passive: long-lasting, self-made",
+     "Active: long-lasting, received; passive: short, self-made",
+     "Both: short-lived, from maternal antibodies"
     ],
     "correct": 0,
-    "explain": "Active immunity is long-lasting because the body makes its own antibodies. Passive immunity is short-lasting because the antibodies are received from outside. The other options swap or mix these features."
+    "explain": "Active immunity is long-lasting and made by the body itself; passive immunity is short-lasting and received from outside, as maternal antibodies are."
    },
    {
     "id": "MT14019",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Within active immunity, how do the natural and artificial forms differ?",
+    "q": "How do natural and artificial active immunity differ?",
     "options": [
-     "Natural active immunity follows a vaccine, while artificial active follows an infection",
-     "Natural active immunity is given as serum, while artificial active passes in breast milk",
-     "Both forms are short-lived and depend on antibodies supplied from another person",
-     "Natural active immunity follows an infection, while artificial active follows a vaccine"
+     "Natural: vaccine; artificial: infection",
+     "Natural: serum; artificial: breast milk",
+     "Both: short-lived, from another person",
+     "Natural: infection; artificial: vaccine"
     ],
     "correct": 3,
-    "explain": "Active immunity means the host makes its own antibodies. The natural route is recovery from an actual infection, and the artificial route is vaccination. Natural active immunity follows a vaccine, while artificial active immunity follows a natural infection, swaps the two labels. Natural active immunity is given as antiserum, while artificial active immunity is passed through breast milk, lists transfers of preformed antibody, which are passive. Both natural and artificial active immunity are short-lived and rely on antibodies from another source, calls active immunity short-lived and dependent on an outside source."
+    "explain": "Natural active immunity follows an infection; artificial active immunity follows a vaccine. Serum and breast milk give passive immunity."
    },
    {
     "id": "MT14020",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Within passive immunity, how do the natural and artificial forms differ?",
+    "q": "How do natural and artificial passive immunity differ?",
     "options": [
-     "Natural passive immunity follows a vaccine, while artificial passive follows recovery from infection.",
-     "Natural passive immunity passes by placenta and breast milk, while artificial passive is injected serum.",
-     "Natural passive immunity is built by the host after exposure, and artificial passive after a vaccine.",
-     "Both forms are long-lasting states built by the host’s own memory cells after first contact."
+     "Natural: after vaccine; artificial: after infection recovery",
+     "Natural: placenta, breast milk; artificial: injected serum",
+     "Natural: built by host; artificial: built after vaccine",
+     "Both: long-lasting, from the host memory cells"
     ],
     "correct": 1,
-    "explain": "Passive immunity supplies preformed antibody. The natural route is maternal transfer across the placenta and through breast milk, and the artificial route is an injection of serum that already contains antibodies. Natural passive immunity follows a vaccine given to the host, while artificial passive immunity follows the host's recovery from a clinical infection, describes active immunity. Natural passive immunity is built by the host after an exposure, while artificial passive immunity is built by the host after a vaccine dose, also describes active immunity. Both natural and artificial passive immunity are long-lasting states created by the host's own memory cells after first contact, gives passive immunity the duration and memory of active immunity."
+    "explain": "Natural passive immunity passes through the placenta and breast milk; artificial passive immunity is injected serum. Both are short-lived and not built by the host."
    },
    {
     "id": "MT14022",
@@ -365,13 +365,13 @@
     "cat": "MT_lec14-15",
     "q": "What does the term immunopharmacology mean?",
     "options": [
-     "The study of drugs that act on the immune system",
-     "The study of immune cells circulating in the blood",
-     "The study of the immune response to an infection",
-     "The treatment of immune disorders without any drugs"
+     "Study of drugs acting on immunity",
+     "Study of immune cells in blood",
+     "Study of immune response to infection",
+     "Treatment of immune disorders without drugs"
     ],
     "correct": 0,
-    "explain": "Immunopharmacology joins immun/o (safe, immune), pharmac/o (drug), and -logy (study), so it is the study of drugs that act on the immune system. The other options keep the immune sense but drop the drug or study parts."
+    "explain": "Immunopharmacology is immun/o + pharmac/o (drug) + -logy: the study of drugs that act on the immune system."
    },
    {
     "id": "MT14034",
@@ -419,7 +419,7 @@
     "id": "MT14037",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which structures trap pathogens from food and air and act as the first line of defense against foreign invaders?",
+    "q": "Which structures trap pathogens from food and air as a first defense?",
     "options": [
      "The tonsils and adenoid",
      "The thymus and spleen",
@@ -427,7 +427,7 @@
      "The Peyer's patches and lymph nodes"
     ],
     "correct": 0,
-    "explain": "The tonsils and adenoid trap pathogens from food and air and act as the first line of defense against foreign invaders. The thymus produces T-lymphocytes, the spleen filters blood cells, the bone marrow produces blood cells, the appendix houses good bacteria, and the Peyer's patches monitor bacteria in the small intestine."
+    "explain": "The tonsils and adenoid trap pathogens from food and air, the first line of defense. The thymus makes T cells, the spleen filters blood, the marrow forms cells, and Peyer's patches guard the intestine."
    },
    {
     "id": "MT14038",
@@ -489,57 +489,57 @@
     "id": "MT14042",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the relationship between interstitial fluid and lymph?",
+    "q": "How are interstitial fluid and lymph related?",
     "options": [
-     "Interstitial fluid lies between tissue cells, and lymph is that fluid once inside blood capillaries.",
-     "Interstitial fluid lies between tissue cells, and lymph is that fluid once inside lymphatic capillaries.",
-     "Interstitial fluid lies between tissue cells, and lymph is that fluid once it leaves nodes for veins.",
-     "Interstitial fluid lies between tissue cells, and lymph is a separate fluid made in the lymph nodes."
+     "Lymph is that fluid in blood capillaries",
+     "Lymph is that fluid in lymphatic capillaries",
+     "Lymph is that fluid leaving nodes for veins",
+     "Lymph is a separate fluid made in nodes"
     ],
     "correct": 1,
-    "explain": "Interstitial fluid lies between tissue cells; once it enters the lymphatic capillaries it is called lymph. Fluid that enters blood capillaries joins the plasma, lymph is already lymph before it leaves the nodes, and the nodes filter lymph rather than make it."
+    "explain": "Interstitial fluid lies between tissue cells; once it enters lymphatic capillaries it is called lymph."
    },
    {
     "id": "MT14043",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the function of valves in the lymphatic vessels?",
+    "q": "What do the valves in lymphatic vessels do?",
     "options": [
-     "They stop lymph from flowing backward toward the tissues.",
-     "They contract on their own and push lymph forward like a small pump.",
-     "They let lymph flow both ways so that pressure stays balanced.",
-     "They close to stop lymph from ever entering the bloodstream."
+     "Stop lymph flowing back to tissues",
+     "Pump lymph forward by contracting",
+     "Let lymph flow both ways",
+     "Keep lymph out of the blood"
     ],
     "correct": 0,
-    "explain": "Valves in lymphatic vessels stop lymph from flowing backward, so it keeps moving toward the bloodstream. They do not pump, do not allow two-way flow, and do not block entry into the blood."
+    "explain": "Lymphatic valves stop lymph from flowing backward. They do not pump, allow two-way flow, or keep lymph from the blood."
    },
    {
     "id": "MT14044",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the flow of lymph through a lymph node?",
+    "q": "How does lymph flow through a lymph node?",
     "options": [
-     "Lymph enters through the efferent vessel and leaves through the afferent vessel",
-     "Lymph enters through the afferent vessel and leaves through the efferent vessel",
-     "Lymph enters and leaves through the same afferent vessel of the node",
-     "Lymph enters through the thoracic duct and leaves through the right lymphatic duct"
+     "In by efferent, out by afferent",
+     "In by afferent, out by efferent",
+     "In and out by afferent only",
+     "In by one duct, out by another"
     ],
     "correct": 1,
-    "explain": "Lymph enters a lymph node through the afferent lymphatic vessel and leaves through the efferent lymphatic vessel. The other options reverse the two, use one vessel for both, or name the large ducts instead."
+    "explain": "Lymph enters a node through afferent vessels and leaves through efferent vessels. The ducts drain lymph into veins, not through a node."
    },
    {
     "id": "MT14045",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes how lymph is returned to the bloodstream?",
+    "q": "What path returns lymph to the bloodstream?",
     "options": [
-     "Lymph enters lymphatic capillaries, passes through lymph nodes, and returns to the veins through lymphatic ducts.",
-     "Lymph enters lymph nodes, passes into lymphatic capillaries, and returns to the veins through lymphatic ducts.",
-     "Lymph enters lymphatic capillaries, passes through lymph nodes, and empties straight into the right atrium.",
-     "Lymph enters lymphatic capillaries, passes through lymph nodes, and drains into the hepatic portal vein."
+     "Lymph capillaries, nodes, ducts, then veins",
+     "Lymph nodes, capillaries, ducts, then veins",
+     "Lymph capillaries, nodes, then right atrium",
+     "Lymph capillaries, nodes, then portal vein"
     ],
     "correct": 0,
-    "explain": "Lymph is collected by lymphatic capillaries, filtered as it passes through lymph nodes, and returned to the venous blood through the lymphatic ducts. The other options reverse the order or send lymph to the wrong endpoint."
+    "explain": "Lymph enters lymphatic capillaries, passes through lymph nodes, and returns to the veins through the lymphatic ducts."
    },
    {
     "id": "MT14046",
@@ -575,27 +575,27 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Granulocyte with neutral-staining granules that phagocytoses pathogens"
+      "text": "Neutral granules; phagocytoses pathogens"
      },
      {
       "id": "B",
-      "text": "Cell fragment shed from megakaryocytes that is essential for coagulation"
+      "text": "Megakaryocyte fragment for clotting"
      },
      {
       "id": "C",
-      "text": "Respiratory carrier of oxygen and carbon dioxide that contains hemoglobin"
+      "text": "Carries gases using hemoglobin"
      },
      {
       "id": "D",
-      "text": "Granulocyte with dark blue granules that releases anticoagulants to inflamed tissue"
+      "text": "Dark blue granules; anticoagulants"
      },
      {
       "id": "E",
-      "text": "Agranulocyte with a single large nucleus that phagocytoses germs and infected cells"
+      "text": "Single large nucleus; phagocytic agranulocyte"
      },
      {
       "id": "F",
-      "text": "Granulocyte with orange to rosy granules that rises in parasitic and allergic states"
+      "text": "Rosy granules; rises in allergy"
      }
     ],
     "correct_pairs": {
@@ -606,7 +606,7 @@
      "5": "E",
      "6": "B"
     },
-    "explain": "The erythrocyte is the respiratory carrier with a lifespan of about 110 to 120 days. The neutrophil is the granulocyte whose granules stain neutral and that phagocytoses pathogens with a lifespan up to about 24 hours. The basophil is the granulocyte with dark blue granules that releases anticoagulants to inflamed tissue. The eosinophil is the granulocyte with orange to rosy granules that rises in parasitic and allergic states. The monocyte is the agranulocyte with a single large nucleus that phagocytoses germs. The thrombocyte is the cell fragment shed from megakaryocytes that is essential for coagulation. Each feature is phrased so that the cell must be identified by its granule stain, lifespan, or role rather than by a repeated name."
+    "explain": "Erythrocytes carry oxygen and carbon dioxide on hemoglobin. Neutrophils have neutral granules and phagocytose; basophils have dark blue granules and release anticoagulants; eosinophils have orange-rosy granules and rise in parasitic and allergic states. Monocytes are phagocytic agranulocytes; thrombocytes are megakaryocyte fragments for clotting."
    },
    {
     "id": "MT14047",
@@ -630,15 +630,15 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Matures under thymic influence and attacks foreign, cancerous, and virus-infected cells."
+      "text": "Thymus-matured; attacks infected, cancerous cells"
      },
      {
       "id": "B",
-      "text": "Arises in the bone marrow and manufactures antibodies against antigens."
+      "text": "Marrow-made; produces antibodies"
      },
      {
       "id": "C",
-      "text": "Acts as a natural killer carrying cytotoxic substances that destroy tumor or infected cells."
+      "text": "Carries cytotoxins killing tumor cells"
      }
     ],
     "correct_pairs": {
@@ -646,7 +646,7 @@
      "2": "B",
      "3": "C"
     },
-    "explain": "T-cells are thymus-dependent and target foreign, cancerous, and virus-infected cells, living about 30 to 160 days, so they match the thymic-influence feature. B-cells are bone-marrow derived and produce antibodies, living about five to six weeks, so they match the antibody-manufacturing feature. NK-cells are natural killers holding cytotoxic substances that destroy tumor or infected cells, living up to about two weeks, so they match the cytotoxic feature. The three lineages are distinguished by their site of maturation and their effector mechanism, not by granule content, since all are agranulocytes."
+    "explain": "T cells mature under the thymus and attack foreign, cancerous, and virus-infected cells. B cells arise in marrow and make antibodies. NK cells are natural killers carrying cytotoxic substances."
    },
    {
     "id": "MT14048",
@@ -682,27 +682,27 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Houses beneficial bacteria."
+      "text": "Houses beneficial bacteria"
      },
      {
       "id": "B",
-      "text": "Generates T-lymphocytes that combat foreign organisms."
+      "text": "Generates T-lymphocytes"
      },
      {
       "id": "C",
-      "text": "Filters out and removes aged or damaged blood cells and fights infection."
+      "text": "Removes aged blood cells"
      },
      {
       "id": "D",
-      "text": "Forms red cells, white cells, and platelets."
+      "text": "Forms all blood cells"
      },
      {
       "id": "E",
-      "text": "Traps pathogens from food and air as a first line of defense."
+      "text": "Traps pathogens from food, air"
      },
      {
       "id": "F",
-      "text": "Monitors and destroys bacteria along the small intestine."
+      "text": "Guards the small intestine"
      }
     ],
     "correct_pairs": {
@@ -713,7 +713,7 @@
      "5": "F",
      "6": "A"
     },
-    "explain": "The thymus produces the T-lymphocytes that fight foreign organisms, the spleen filters and removes old and damaged blood cells while resisting infection, the tonsils and adenoids trap pathogens from food and air as a first line of defense, the bone marrow is the source of red cells, white cells, and platelets, the Peyer's patches sit in the wall of the small intestine to monitor and destroy bacteria, and the appendix helps house good bacteria. Each organ is fixed to its own role by what it makes or what it filters, so the pairing follows the function rather than the position in the body."
+    "explain": "The thymus generates T cells, the spleen removes aged blood cells and fights infection, the tonsils and adenoids trap pathogens from food and air, bone marrow forms all blood cells, Peyer's patches guard the small intestine, and the appendix houses good bacteria."
    },
    {
     "id": "MT14049",
@@ -812,23 +812,23 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Inflammation of a vein caused by a clot."
+      "text": "Vein inflammation from a clot"
      },
      {
       "id": "B",
-      "text": "A deficiency of blood cells."
+      "text": "Deficiency of blood cells"
      },
      {
       "id": "C",
-      "text": "A cell of the thymus."
+      "text": "A cell of the thymus"
      },
      {
       "id": "D",
-      "text": "Enlargement of the spleen."
+      "text": "Enlargement of the spleen"
      },
      {
       "id": "E",
-      "text": "Absence of the thymus."
+      "text": "Absence of the thymus"
      }
     ],
     "correct_pairs": {
@@ -838,7 +838,7 @@
      "5": "C",
      "6": "E"
     },
-    "explain": "Hematocytopenia is a deficiency of blood cells. Splenomegaly is enlargement of the spleen. Thrombophlebitis is inflammation of a vein caused by a clot. Thymocyte is a cell of the thymus. Athymism is absence of the thymus. Each term is built from the combining forms and suffixes of this unit, and the meaning follows directly from those elements."
+    "explain": "Hematocytopenia is a blood-cell deficiency, splenomegaly an enlarged spleen, thrombophlebitis vein inflammation with a clot, a thymocyte a thymus cell, and athymism absence of the thymus."
    },
    {
     "id": "MT14105",
@@ -975,57 +975,57 @@
     "id": "MT14051",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the lymph nodes in the lymphatic system?",
+    "q": "What do the lymph nodes do?",
     "options": [
-     "They filter microorganisms and foreign particles from lymph passing through.",
-     "They collect interstitial fluid from between the tissue cells to form lymph.",
-     "They drain lymph from the right side of the head and chest into the blood.",
-     "They stop lymph from flowing backward along the length of the vessels."
+     "Filter microorganisms and particles from lymph",
+     "Collect interstitial fluid to form new lymph",
+     "Drain the right head and chest into blood",
+     "Stop lymph flowing backward in the vessels"
     ],
     "correct": 0,
-    "explain": "Lymph nodes filter microorganisms and foreign particles from lymph. Collecting interstitial fluid is the job of lymphatic capillaries, draining the right upper body is the right lymphatic duct, and preventing backflow is the job of valves."
+    "explain": "Lymph nodes filter microorganisms and foreign particles from lymph. Capillaries collect fluid, the right lymphatic duct drains the right head and chest, and valves stop backflow."
    },
    {
     "id": "MT14052",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of lymphatic capillaries?",
+    "q": "What do lymphatic capillaries do?",
     "options": [
-     "They filter foreign particles from lymph inside the lymph nodes.",
-     "They collect interstitial fluid and begin its return to the blood.",
-     "They drain lymph from the left upper body into the left subclavian.",
-     "They return lymph straight into the right atrium of the heart."
+     "Filter the particles inside lymph nodes",
+     "Collect interstitial fluid for return to blood",
+     "Drain the left upper body into subclavian",
+     "Return lymph straight into the right atrium"
     ],
     "correct": 1,
-    "explain": "Lymphatic capillaries collect interstitial fluid, which becomes lymph, and begin its return to the blood. Filtering happens in the nodes, the thoracic duct drains the left upper body, and lymph does not go straight to the heart."
+    "explain": "Lymphatic capillaries collect interstitial fluid and begin its return to the blood. Nodes filter, and the thoracic duct drains the left upper body."
    },
    {
     "id": "MT14053",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the thoracic duct in the lymphatic system?",
+    "q": "Which areas does the thoracic duct drain into the blood?",
     "options": [
-     "It drains lymph from the lower body and the left upper body into the blood.",
-     "It drains lymph from the right side of the head, neck, and chest into the blood.",
-     "It drains lymph from the lower body only into the right atrium.",
-     "It drains lymph from the left arm only into the lymph nodes."
+     "Lower body and left upper body",
+     "Right head, neck, and chest",
+     "Lower body only, into right atrium",
+     "Left arm only, into lymph nodes"
     ],
     "correct": 0,
-    "explain": "The thoracic duct drains lymph from the lower body and the left upper body into the blood. The right side of the head, neck, and chest drains through the right lymphatic duct."
+    "explain": "The thoracic duct drains lymph from the lower body and left upper body into the blood. The right lymphatic duct drains the right head, neck, and chest."
    },
    {
     "id": "MT14054",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the right lymphatic duct in the lymphatic system?",
+    "q": "Which areas does the right lymphatic duct drain into the blood?",
     "options": [
-     "It collects lymph from the lower body and left upper body and returns it to the blood.",
-     "It collects lymph from the right side of the head and chest and returns it to the blood.",
-     "It collects lymph from the right arm only and returns it to the lymph nodes.",
-     "It collects lymph from both legs and returns it straight to the right atrium."
+     "Lower body and left upper body",
+     "Right side of head and chest",
+     "Right arm only, into the nodes",
+     "Both legs, into the right atrium"
     ],
     "correct": 1,
-    "explain": "The right lymphatic duct collects lymph from the right side of the head and chest and returns it to the blood. The lower body and left upper body drain through the thoracic duct."
+    "explain": "The right lymphatic duct drains the right side of the head and chest into the blood. The thoracic duct drains the lower body and left upper body."
    },
    {
     "id": "MT14056",
@@ -1045,43 +1045,43 @@
     "id": "MT14058",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the bone marrow in the lymphatic system?",
+    "q": "What does the bone marrow produce?",
     "options": [
-     "It produces red blood cells and platelets, but no white cells.",
-     "It produces white blood cells and antibodies, but no red cells.",
-     "It produces lymph, lymphocytes, and antibodies, but no platelets.",
-     "It produces red blood cells, white blood cells, and platelets."
+     "Red cells and platelets only",
+     "White cells and antibodies only",
+     "Lymph, lymphocytes, and antibodies",
+     "Red cells, white cells, platelets"
     ],
     "correct": 3,
-    "explain": "The bone marrow produces red blood cells, white blood cells, and platelets. Each other option leaves out at least one of these or adds lymph and antibodies, which the marrow does not produce."
+    "explain": "Bone marrow forms red blood cells, white blood cells, and platelets."
    },
    {
     "id": "MT14059",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the Peyer's patches in the lymphatic system?",
+    "q": "Where do Peyer's patches monitor and destroy bacteria?",
     "options": [
-     "They monitor and destroy bacteria in the stomach and colon lining.",
-     "They monitor and destroy bacteria in the throat tonsils.",
-     "They monitor and destroy bacteria in the small intestine lining.",
-     "They monitor and destroy old blood cells in the spleen."
+     "Stomach and colon lining",
+     "Throat tonsil tissue",
+     "Small intestine lining",
+     "Spleen red pulp"
     ],
     "correct": 2,
-    "explain": "Peyer's patches sit in the lining of the small intestine, where they monitor and destroy bacteria. The tonsils guard the throat and the spleen removes old blood cells."
+    "explain": "Peyer's patches monitor and destroy bacteria in the lining of the small intestine."
    },
    {
     "id": "MT14060",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "Which statement correctly describes the role of the appendix in the lymphatic system?",
+    "q": "What does the appendix house?",
     "options": [
-     "It houses old blood cells until they are removed.",
-     "It houses T-lymphocytes until they mature.",
-     "It houses good bacteria that support the gut.",
-     "It houses lymph until it returns to the veins."
+     "Old blood cells",
+     "Immature T-lymphocytes",
+     "Good gut bacteria",
+     "Returning lymph"
     ],
     "correct": 2,
-    "explain": "The appendix plays a role in housing good bacteria. Old blood cells are removed by the spleen, T-lymphocytes mature in the thymus, and lymph returns to the veins through the lymphatic ducts."
+    "explain": "The appendix houses good bacteria that support the gut."
    },
    {
     "id": "MT14061",
@@ -1101,7 +1101,7 @@
     "id": "MT14062",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "This white cell is the most common one in the blood and fights infection by phagocytosis. Which is the correct spelling of this cell?",
+    "q": "Which is the correct spelling of the most common white cell, a phagocyte?",
     "options": [
      "Neutrophill",
      "Neutrophil",
@@ -1109,7 +1109,7 @@
      "Neutraphil"
     ],
     "correct": 1,
-    "explain": "The correct spelling is Neutrophil. Neutrophill, Neutrofil, and Neutraphil are misspellings."
+    "explain": "Neutrophil is the most common white cell and fights infection by phagocytosis. The others are misspellings."
    },
    {
     "id": "MT14063",
@@ -1129,7 +1129,7 @@
     "id": "MT14064",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "This white cell takes part in immune surveillance and brings anticoagulants to inflamed tissue. Which is the correct spelling of this cell?",
+    "q": "Which is the correct spelling of the white cell that brings anticoagulants to inflamed tissue?",
     "options": [
      "Basophill",
      "Basofil",
@@ -1137,13 +1137,13 @@
      "Basophil"
     ],
     "correct": 3,
-    "explain": "The correct spelling is Basophil. Basophill, Basofil, and Basaphil are misspellings."
+    "explain": "Basophil takes part in immune surveillance and brings anticoagulants to inflamed tissue. The others are misspellings."
    },
    {
     "id": "MT14065",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "A white cell with one large nucleus and no granules that gives rise to three lineages is which type?",
+    "q": "Which single-nucleus, non-granular white cell gives rise to three lineages?",
     "options": [
      "Monocyte",
      "Neutrophil",
@@ -1151,7 +1151,7 @@
      "Lymphocyte"
     ],
     "correct": 3,
-    "explain": "This is the lymphocyte, the agranulocyte that gives rise to T-cells, B-cells, and NK-cells. The monocyte has no lineages, and the neutrophil and basophil carry granules."
+    "explain": "The lymphocyte has one large nucleus, no granules, and three lineages (T, B, NK). The monocyte is also agranular but has no lineages; neutrophils and basophils are granulocytes."
    },
    {
     "id": "MT14066",
@@ -1397,7 +1397,7 @@
     "id": "MT14072",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "This organ filters out old and damaged blood cells and fights infection. Which is the correct spelling of this organ?",
+    "q": "Which spells the organ that filters old blood cells and fights infection?",
     "options": [
      "Spleen",
      "Splean",
@@ -1405,13 +1405,13 @@
      "Splein"
     ],
     "correct": 0,
-    "explain": "The correct spelling is Spleen. Splean, Splene, and Splein are misspellings."
+    "explain": "The spleen filters out old and damaged blood cells and fights infection. The others are misspellings."
    },
    {
     "id": "MT14073",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "This structure pairs with the tonsils to trap pathogens from food and air. Which is the correct spelling of this structure?",
+    "q": "Which spells the structure that pairs with the tonsils to trap pathogens?",
     "options": [
      "Adeniod",
      "Adenoid",
@@ -1419,13 +1419,13 @@
      "Adenoide"
     ],
     "correct": 1,
-    "explain": "The correct spelling is Adenoid. Adeniod, Adinoid, and Adenoide are misspellings."
+    "explain": "The adenoid pairs with the tonsils to trap pathogens from food and air. The others are misspellings."
    },
    {
     "id": "MT14074",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "This soft tissue fills the cavities inside bones and is where blood cells form. Which is the correct spelling of this tissue?",
+    "q": "Which spells the soft tissue inside bones where blood cells form?",
     "options": [
      "Bone marroww",
      "Bone merrow",
@@ -1433,13 +1433,13 @@
      "Bone marow"
     ],
     "correct": 2,
-    "explain": "The correct spelling is Bone marrow. Bone marroww, Bone merrow, and Bone marow are misspellings."
+    "explain": "Bone marrow fills bone cavities and forms blood cells. The others are misspellings."
    },
    {
     "id": "MT14075",
     "type": "mcq",
     "cat": "MT_lec14-15",
-    "q": "These structures sit in the lining of the small intestine and monitor bacteria. Which is the correct spelling of these structures?",
+    "q": "Which spells the small-intestine structures that monitor bacteria?",
     "options": [
      "Payer's patches",
      "Peir's patches",
@@ -1447,7 +1447,7 @@
      "Peyer's patches"
     ],
     "correct": 3,
-    "explain": "The correct spelling is Peyer's patches. Payer's patches, Peir's patches, and Peyar's patches are misspellings."
+    "explain": "Peyer's patches lie in the small-intestine lining and monitor bacteria. The others are misspellings."
    },
    {
     "id": "MT14076",
@@ -1790,19 +1790,19 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Clear yellowish blood fraction that still holds clotting factors"
+      "text": "Yellowish fraction with clotting factors"
      },
      {
       "id": "B",
-      "text": "Liquid left after clotting, without clotting factors"
+      "text": "Liquid left after clotting"
      },
      {
       "id": "C",
-      "text": "Fluid that bathes tissue cells outside the vessels"
+      "text": "Bathes cells outside vessels"
      },
      {
       "id": "D",
-      "text": "Colorless watery liquid inside the lymphatic vessels"
+      "text": "Colorless liquid in lymphatic vessels"
      }
     ],
     "correct_pairs": {
@@ -1811,7 +1811,7 @@
      "3": "C",
      "4": "D"
     },
-    "explain": "Plasma still holds the clotting factors, and serum is what remains after clotting. Interstitial fluid bathes the tissue cells and is called lymph once it enters a lymphatic capillary."
+    "explain": "Plasma is the yellowish blood fraction with clotting factors; serum is what remains after clotting; interstitial fluid bathes cells outside vessels; lymph is the colorless liquid inside lymphatic vessels."
    },
    {
     "id": "MT14124",
@@ -1833,7 +1833,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 1,
-    "q": "This term names an inherited disorder seen in blood and lymph work-ups. Answer each step, then the next term follows.",
+    "q": "This term names an inherited disorder seen in blood and lymph work-ups.",
     "steps": [
      {
       "id": "1",
@@ -1877,7 +1877,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 2,
-    "q": "This term appears when blood test results are reported. Answer each step, then the next term follows.",
+    "q": "This term appears when blood test results are reported.",
     "steps": [
      {
       "id": "1",
@@ -1921,7 +1921,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 3,
-    "q": "This term is used when an abdominal organ is examined. Answer each step, then the next term follows.",
+    "q": "This term is used when an abdominal organ is examined.",
     "steps": [
      {
       "id": "1",
@@ -1965,7 +1965,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 4,
-    "q": "This term names a problem found in a limb after a long period of immobility. Answer each step, then the next term follows.",
+    "q": "This term names a problem found in a limb after a long period of immobility.",
     "steps": [
      {
       "id": "1",
@@ -2009,7 +2009,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 5,
-    "q": "This term names a field of study within the immune topics. Answer each step, then the next term follows.",
+    "q": "This term names a field of study within the immune topics.",
     "steps": [
      {
       "id": "1",
@@ -2026,10 +2026,10 @@
       "id": "2",
       "prompt": "Which meaning belongs to Immunopharmacology?",
       "options": [
-       "The study of drugs that act on the immune system",
-       "The study of immune cells circulating in the blood",
-       "The study of the immune response to an infection",
-       "The treatment of immune disorders without any drugs"
+       "Study of drugs acting on immunity",
+       "Study of immune cells in blood",
+       "Study of immune response to infection",
+       "Treatment of immune disorders without drugs"
       ],
       "correct": 0
      },
@@ -2053,7 +2053,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 7,
-    "q": "This term names a cell found in an immune organ. Answer each step, then the next term follows.",
+    "q": "This term names a cell found in an immune organ.",
     "steps": [
      {
       "id": "1",
@@ -2097,7 +2097,7 @@
     "cat": "MT_lec14-15",
     "group": "term-drill",
     "groupOrder": 8,
-    "q": "This term names an immune problem present from early life. Answer each step, then the immunity run follows.",
+    "q": "This term names an immune problem present from early life.",
     "steps": [
      {
       "id": "1",

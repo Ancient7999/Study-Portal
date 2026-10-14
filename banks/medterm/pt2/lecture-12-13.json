@@ -13,43 +13,43 @@
     "id": "MT12001",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the position and shape of the heart?",
+    "q": "Where does the heart lie, and what is its shape?",
     "options": [
-     "It lies slightly left of centre in the chest and is pear-shaped or an inverted cone.",
-     "It lies slightly right of centre in the chest and is spherical or a rounded cone.",
-     "It lies centrally behind the sternum and is oval-shaped or a flattened cone.",
-     "It lies low in the abdomen and is bean-shaped or a curved cone."
+     "Slightly left of centre; pear-shaped, inverted cone",
+     "Slightly right of centre; spherical, rounded cone",
+     "Centrally behind sternum; oval, flattened cone",
+     "Low in abdomen; bean-shaped, curved cone"
     ],
     "correct": 0,
-    "explain": "The heart lies slightly left of centre in the chest and is described as pear-shaped or an inverted cone. Positions to the right, centrally behind the sternum, or low in the abdomen do not match its anatomical location, and spherical, oval, or bean shapes do not match its gross form."
+    "explain": "The heart lies slightly left of centre in the chest and is pear-shaped, like an inverted cone."
    },
    {
     "id": "MT12002",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly distinguishes the heart from the blood vessels?",
+    "q": "How do the heart and blood vessels differ in role?",
     "options": [
-     "The heart delivers blood to the lungs and body, while the blood vessels pump blood out to the heart and back again",
-     "The heart pumps blood out to the lungs and body, while the blood vessels deliver and receive blood to and from the body",
-     "The heart receives blood from the lungs and body, while the blood vessels pump blood out to the heart and back again",
-     "The heart regulates one-way flow through valves, while the blood vessels contract to produce body heat and movement"
+     "Heart delivers blood; vessels pump it around",
+     "Heart pumps blood; vessels deliver, receive it",
+     "Heart receives blood; vessels pump it onward",
+     "Heart regulates valves; vessels produce body heat"
     ],
     "correct": 1,
-    "explain": "The heart is the muscular pump sending blood to the lungs and body, while arteries and veins are the vessels that deliver and receive blood to and from the body. Describing the heart as a receiver or regulator of one-way flow, or assigning pumping to the vessels, reverses the roles; blood vessels do not generate the main propulsive force of circulation."
+    "explain": "The heart pumps blood out to the lungs and body; the blood vessels deliver and receive blood to and from the body."
    },
    {
     "id": "MT12003",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the cardiac chambers and septa?",
+    "q": "Which describes the cardiac chambers and septa?",
     "options": [
-     "The atria are the lower chambers, the ventricles are the upper chambers, and the septa join the right and left sides.",
-     "The atria are the upper chambers, the ventricles are the lower chambers, and the septa join the right and left sides.",
-     "The atria are the upper chambers, the ventricles are the lower chambers, and the septa partition the right and left sides.",
-     "The atria are the lower chambers, the ventricles are the upper chambers, and the septa partition the right and left sides."
+     "Atria lower, ventricles upper; septa join sides",
+     "Atria upper, ventricles lower; septa join sides",
+     "Atria upper, ventricles lower; septa divide sides",
+     "Atria lower, ventricles upper; septa divide sides"
     ],
     "correct": 2,
-    "explain": "Atria are upper chambers, ventricles are lower chambers, and septa partition the right and left sides. Calling atria lower or ventricles upper reverses chamber position, and saying septa join rather than partition sides misstates their role."
+    "explain": "The atria are the upper chambers, the ventricles the lower chambers, and the septa partition the right and left sides."
    },
    {
     "id": "MT12004",
@@ -67,45 +67,71 @@
    },
    {
     "id": "MT12005",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the pericardium and its parts?",
-    "options": [
-     "The pericardium is a two-layered sac with fluid between, the visceral layer lies closest to the heart, and the parietal layer forms the outer wall.",
-     "The pericardium is a single muscular wall of the heart, the visceral layer lines the chambers, and the parietal layer covers the valves and septa.",
-     "The pericardium is a fluid cavity within the ventricles, the visceral layer forms the outer sac, and the parietal layer lies closest to the heart muscle.",
-     "The pericardium is a one-way valve at the aorta, the visceral layer opens with systole, and the parietal layer closes during diastole and relaxation."
+    "q": "Describe the pericardium and its two layers.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What kind of structure is the pericardium?",
+      "options": [
+       "Two-layered sac with fluid",
+       "Single muscular heart wall",
+       "Fluid cavity in ventricles",
+       "One-way aortic valve"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "It is a two-layered sac. Which layer lies closest to the heart?",
+      "options": [
+       "Visceral",
+       "Parietal"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "The visceral layer is inner. What does the parietal layer form?",
+      "options": [
+       "The outer wall",
+       "The heart muscle",
+       "The valve cusps",
+       "The septum"
+      ],
+      "correct": 0
+     }
     ],
-    "correct": 0,
-    "explain": "The pericardium is a two-layered protective sac with fluid in the pericardial cavity. The visceral pericardium is the layer closest to the heart, corresponding to the epicardium, and the parietal pericardium lines the outer wall. Descriptions that make it a single muscular wall, an internal ventricular cavity, or an aortic valve confuse it with heart wall layers or valves."
+    "explain": "The pericardium is a two-layered sac with fluid between the layers. The visceral layer lies closest to the heart; the parietal layer forms the outer wall. It is not the muscle wall, a ventricular cavity, or a valve."
    },
    {
     "id": "MT12006",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly defines heart valves?",
+    "q": "What are heart valves?",
     "options": [
-     "They are partitions between the right and left atria that prevent mixing of oxygenated and deoxygenated blood.",
-     "They are structures that open and close with the heartbeat to regulate the one-way flow of blood through the heart.",
-     "They are muscular layers of the heart wall that generate the force needed to pump blood to the lungs.",
-     "They are receptors in the veins that sense pressure changes and trigger contraction of the cardiac muscle."
+     "Partitions dividing the two atria",
+     "Structures controlling one-way flow",
+     "Muscle layers that pump the blood",
+     "Receptors sensing pressure in veins"
     ],
     "correct": 1,
-    "explain": "Heart valves open and close with the heartbeat to maintain one-way blood flow. Septa partition chambers, myocardium generates force, and venous receptors sense pressure; none of these are valves."
+    "explain": "Heart valves open and close with the heartbeat to keep blood flowing one way through the heart. The partitions are septa and the muscle layer is the myocardium."
    },
    {
     "id": "MT12007",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes valves in veins?",
+    "q": "Where are vein valves found, and what do they do?",
     "options": [
-     "They lie continuously along the lining of veins, especially in the arms, and push blood away from the heart.",
-     "They lie at intervals in the lining of veins, especially in the neck, and stop blood from reaching the heart.",
-     "They lie at intervals in the lining of veins, especially in the legs, and help move blood returning to the heart.",
-     "They lie only where veins join the heart chambers, especially the atria, and regulate one-way flow out of the heart."
+     "Continuously, in arms; push blood away",
+     "At intervals, in neck; block return",
+     "At intervals, in legs; aid return",
+     "Only at heart entries; regulate outflow"
     ],
     "correct": 2,
-    "explain": "Venous valves occur at intervals in the lining of veins, particularly in the legs, and assist the return of blood to the heart. A continuous layer in the arms, valves that stop blood reaching the heart, or valves only at the heart chambers give the wrong place or the wrong job."
+    "explain": "Vein valves lie at intervals in the vein lining, especially in the legs, and help blood return to the heart."
    },
    {
     "id": "MT12008",
@@ -113,13 +139,13 @@
     "cat": "MT_lec12-13",
     "q": "Which event immediately follows contraction of the right atrium?",
     "options": [
-     "The aortic valve opens and blood enters the aorta from the left ventricle",
-     "The pulmonary valve opens and blood enters the pulmonary artery from the right ventricle",
-     "The mitral valve opens and blood enters the left ventricle from the left atrium",
-     "The tricuspid valve opens and blood enters the right ventricle from the right atrium"
+     "Aortic valve opens into the aorta",
+     "Pulmonary valve opens toward the lungs",
+     "Mitral valve opens into the left ventricle",
+     "Tricuspid valve opens into ventricle below"
     ],
     "correct": 3,
-    "explain": "Contraction of the right atrium opens the tricuspid valve so blood passes into the right ventricle. The pulmonary semilunar valve opens after right ventricular contraction, while the mitral and aortic valves belong to the left side of the heart."
+    "explain": "When the right atrium contracts, the tricuspid valve opens and blood enters the right ventricle. The other valves serve other chambers."
    },
    {
     "id": "MT12009",
@@ -127,13 +153,13 @@
     "cat": "MT_lec12-13",
     "q": "Which vessel carries deoxygenated blood away from the heart?",
     "options": [
-     "The pulmonary artery, which carries deoxygenated blood to the lungs.",
-     "The pulmonary vein, which carries oxygenated blood from the lungs.",
-     "The aorta, which carries oxygenated blood to all parts of the body.",
-     "The coronary vein, which returns deoxygenated blood from the myocardium."
+     "Pulmonary artery",
+     "Pulmonary vein",
+     "Aorta",
+     "Coronary vein"
     ],
     "correct": 0,
-    "explain": "The pulmonary artery carries deoxygenated blood away from the right ventricle to the lungs. The pulmonary vein carries oxygenated blood to the left atrium, the aorta carries oxygenated blood to the body, and coronary veins return deoxygenated blood from the heart muscle."
+    "explain": "The pulmonary artery carries deoxygenated blood from the heart to the lungs. The pulmonary vein carries oxygenated blood back, the aorta carries oxygenated blood to the body, and the coronary vein returns blood from the heart muscle."
    },
    {
     "id": "MT12010",
@@ -141,13 +167,13 @@
     "cat": "MT_lec12-13",
     "q": "Which vessel returns oxygenated blood to the left atrium?",
     "options": [
-     "The superior vena cava, which returns deoxygenated blood from the body",
-     "The pulmonary vein, which returns oxygenated blood back from the lungs",
-     "The pulmonary artery, which carries deoxygenated blood to the lungs",
-     "The aorta, which carries oxygenated blood to all parts of the body"
+     "Superior vena cava",
+     "Pulmonary vein",
+     "Pulmonary artery",
+     "Aorta"
     ],
     "correct": 1,
-    "explain": "The pulmonary vein returns oxygenated blood from the lungs to the left atrium. The superior vena cava returns deoxygenated blood from the body, the pulmonary artery carries deoxygenated blood to the lungs, and the aorta distributes oxygenated blood systemically."
+    "explain": "The pulmonary vein returns oxygenated blood from the lungs to the left atrium. The venae cavae return deoxygenated blood, the pulmonary artery goes to the lungs, and the aorta goes to the body."
    },
    {
     "id": "MT12011",
@@ -155,13 +181,13 @@
     "cat": "MT_lec12-13",
     "q": "Which chamber receives deoxygenated blood returning from the body?",
     "options": [
-     "Left atrium, which receives oxygenated blood from the pulmonary veins",
-     "Left ventricle, which pumps oxygenated blood into the aorta and body",
-     "Right atrium, which receives deoxygenated blood from the venae cavae",
-     "Right ventricle, which pumps deoxygenated blood to the pulmonary artery"
+     "Left atrium",
+     "Left ventricle",
+     "Right atrium",
+     "Right ventricle"
     ],
     "correct": 2,
-    "explain": "Deoxygenated blood from the body enters the right atrium through the superior and inferior venae cavae. The left atrium receives oxygenated pulmonary venous blood, the left ventricle ejects into the aorta, and the right ventricle ejects into the pulmonary artery."
+    "explain": "The right atrium receives deoxygenated blood from the venae cavae. The left atrium receives the pulmonary veins, the left ventricle pumps into the aorta, and the right ventricle pumps to the pulmonary artery."
    },
    {
     "id": "MT12012",
@@ -219,13 +245,13 @@
     "cat": "MT_lec12-13",
     "q": "In the term myocardial, the element myo refers to which structure?",
     "options": [
-     "Heart, as the pumping organ of the circulation",
-     "Vessel, as the tube that carries the blood",
-     "Chest, as the cavity that contains the heart",
-     "Muscle, as the middle layer of the heart wall"
+     "Heart",
+     "Vessel",
+     "Chest",
+     "Muscle"
     ],
     "correct": 3,
-    "explain": "In myocardial, myo means muscle, referring to the middle muscular layer of the heart wall. The heart sense belongs to cardi/o, the vessel sense to angi/o or vas/o, and the chest sense to pector/o or steth/o."
+    "explain": "My/o means muscle, the myocardium being the middle muscle layer of the heart wall. Heart is cardi/o, vessel is angi/o or vas/o, and chest is thorac/o."
    },
    {
     "id": "MT12017",
@@ -429,13 +455,13 @@
     "cat": "MT_lec12-13",
     "q": "Which valve lies between the left atrium and the left ventricle?",
     "options": [
-     "The tricuspid valve",
-     "The pulmonary semilunar valve",
-     "The aortic valve",
-     "The bicuspid or mitral valve"
+     "Tricuspid valve",
+     "Pulmonary semilunar valve",
+     "Aortic semilunar valve",
+     "Bicuspid (mitral) valve"
     ],
     "correct": 3,
-    "explain": "The bicuspid or mitral valve lies between the left atrium and the left ventricle. The tricuspid valve is between the right atrium and right ventricle, the pulmonary semilunar valve is between the right ventricle and pulmonary artery, and the aortic valve is between the left ventricle and aorta."
+    "explain": "The bicuspid (mitral) valve lies between the left atrium and left ventricle. The tricuspid is on the right, and the semilunar valves guard the ventricle outlets."
    },
    {
     "id": "MT12032",
@@ -455,15 +481,15 @@
     "id": "MT12033",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "The tricuspid valve takes its name from cuspis, and the pulmonary semilunar valve from luna. Which pairing of element to meaning is correct?",
+    "q": "The tricuspid is named from cuspis, the semilunar from luna. What do they mean?",
     "options": [
-     "Cuspis means moon, and luna means point.",
-     "Cuspis means point, and luna means moon.",
-     "Cuspis means three, and luna means half.",
-     "Cuspis means valve, and luna means artery."
+     "Cuspis: moon; luna: point",
+     "Cuspis: point; luna: moon",
+     "Cuspis: three; luna: half",
+     "Cuspis: valve; luna: artery"
     ],
     "correct": 1,
-    "explain": "Cuspis means point, which is why the tricuspid valve is named for its pointed leaflets, and luna means moon, which is why the pulmonary semilunar valve is named for its half-moon cusps. Pairing cuspis with moon and luna with point reverses the two roots. Pairing cuspis with three and luna with half, or cuspis with valve and luna with artery, assigns senses those roots do not carry."
+    "explain": "Cuspis means point (cusp) and luna means moon, so tricuspid has three points and semilunar is half-moon shaped."
    },
    {
     "id": "MT12034",
@@ -805,13 +831,13 @@
     "cat": "MT_lec12-13",
     "q": "What does the term thrombosis mean?",
     "options": [
-     "An inflammation of a vein caused by a clot",
-     "A condition in which a clot forms in a vessel",
-     "Surgical removal of a clot from a vessel",
-     "A recorded image of a clot inside a vessel"
+     "Vein inflammation from a clot",
+     "Clot formation in a vessel",
+     "Surgical removal of a clot",
+     "Recorded image of a clot"
     ],
     "correct": 1,
-    "explain": "Thrombosis is built from Thromb/o (clot) and -osis (condition), so it denotes the condition in which a clot forms within a vessel. The other options keep part of the term but change another word part, so they do not match."
+    "explain": "Thrombosis is thromb/o + -osis: a condition in which a clot forms in a vessel. Inflammation is thrombophlebitis, removal thrombectomy, and an image a thrombogram."
    },
    {
     "id": "MT12077",
@@ -895,23 +921,23 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Guards the outlet from the left ventricle into the systemic trunk"
+      "text": "Left ventricle to aorta"
      },
      {
       "id": "B",
-      "text": "Guards the inlet from the right atrium into the right ventricle"
+      "text": "Right atrium to right ventricle"
      },
      {
       "id": "C",
-      "text": "Guards the outlet from the right ventricle into the pulmonary trunk"
+      "text": "Right ventricle to pulmonary trunk"
      },
      {
       "id": "D",
-      "text": "Guards the inlet from the left atrium into the left ventricle"
+      "text": "Left atrium to left ventricle"
      },
      {
       "id": "E",
-      "text": "Guards the return from the body veins into the right atrium"
+      "text": "Body veins to right atrium"
      }
     ],
     "correct_pairs": {
@@ -920,7 +946,7 @@
      "3": "D",
      "4": "A"
     },
-    "explain": "The tricuspid valve guards flow from the right atrium into the right ventricle, the pulmonary semilunar valve guards flow from the right ventricle into the pulmonary trunk, the bicuspid or mitral valve guards flow from the left atrium into the left ventricle, and the aortic valve guards flow from the left ventricle into the aorta. The return from the body veins into the right atrium is the vena caval inlet, which none of these four valves guards."
+    "explain": "The tricuspid guards right atrium to right ventricle; the pulmonary semilunar right ventricle to pulmonary trunk; the mitral left atrium to left ventricle; the aortic left ventricle to aorta. No valve guards the venae cavae entry."
    },
    {
     "id": "MT12068",
@@ -944,19 +970,19 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Flow between the heart and the body tissues"
+      "text": "Heart and the body tissues"
      },
      {
       "id": "B",
-      "text": "Flow between the heart and the gas exchange organs"
+      "text": "Heart and the gas-exchange organs"
      },
      {
       "id": "C",
-      "text": "Flow between the heart and its own muscular wall"
+      "text": "Heart and its own wall"
      },
      {
       "id": "D",
-      "text": "Flow between the atria across the dividing septum"
+      "text": "Atria across the septum"
      }
     ],
     "correct_pairs": {
@@ -964,7 +990,7 @@
      "2": "B",
      "3": "C"
     },
-    "explain": "Systemic circulation is flow between the heart and the body tissues, pulmonary circulation is flow between the heart and the lungs, and coronary circulation is flow between the heart and its own muscular wall. Flow across the inter-atrial septum is not a named circulation: the septum partitions the atria rather than carrying a circuit."
+    "explain": "Systemic circulation runs between the heart and body tissues, pulmonary between the heart and the lungs, and coronary between the heart and its own wall. No circulation runs across the septum."
    },
    {
     "id": "MT12076",
@@ -1067,11 +1093,11 @@
      },
      {
       "id": "B",
-      "text": "Main trunk leaving the left ventricle"
+      "text": "Main trunk from left ventricle"
      },
      {
       "id": "C",
-      "text": "Vessel carrying blood away from the heart"
+      "text": "Vessel carrying blood outward"
      },
      {
       "id": "D",
@@ -1084,7 +1110,7 @@
      "3": "D",
      "4": "A"
     },
-    "explain": "Aort/o means aorta, the main trunk leaving the left ventricle. Arteri/o means artery, a vessel carrying blood away from the heart. Coron/o means circle or crown, giving coronary its sense of encircling the heart. Atri/o means atrium, an upper heart chamber."
+    "explain": "Aort/o is the aorta, the main trunk from the left ventricle; Arteri/o an artery carrying blood away from the heart; Coron/o ring or wreath; Atri/o an upper chamber."
    },
    {
     "id": "MT12070",
@@ -1173,55 +1199,55 @@
     "cat": "MT_lec12-13",
     "q": "Which statement correctly describes the ventricles?",
     "options": [
-     "They are the upper right and left chambers of the heart.",
-     "They are the lower right and left chambers of the heart.",
-     "They are the valves between the atria and the ventricles.",
-     "They are the septa that partition the right and left sides."
+     "Upper right and left chambers",
+     "Lower right and left chambers",
+     "Valves between atria and ventricles",
+     "Septa partitioning the two sides"
     ],
     "correct": 1,
-    "explain": "The ventricles are the lower right and left chambers of the heart. The upper chambers are the atria, the valves between atria and ventricles are the atrioventricular valves, and the septa are the partitions between the right and left sides."
+    "explain": "The ventricles are the lower right and left chambers. The atria are upper, and the valves and septa are separate structures."
    },
    {
     "id": "MT12073",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the flow of oxygenated blood from the lungs back to the heart?",
+    "q": "How does oxygenated blood return from the lungs into the heart?",
     "options": [
-     "It returns through the pulmonary vein into the left atrium, then through the mitral valve into the left ventricle.",
-     "It returns through the pulmonary artery into the right atrium, then through the tricuspid valve into the right ventricle.",
-     "It returns through the superior vena cava into the right atrium, then through the tricuspid valve into the right ventricle.",
-     "It returns through the aorta into the left atrium, then through the aortic valve into the left ventricle."
+     "Pulmonary vein, left atrium, mitral valve, left ventricle",
+     "Pulmonary artery, right atrium, tricuspid valve, right ventricle",
+     "Superior vena cava, right atrium, tricuspid, right ventricle",
+     "Aorta, left atrium, aortic valve, left ventricle"
     ],
     "correct": 0,
-    "explain": "Oxygenated blood returns from the lungs through the pulmonary vein into the left atrium, and contraction of the left atrium opens the mitral or bicuspid valve so blood flows into the left ventricle. The pulmonary artery carries deoxygenated blood to the lungs, the superior vena cava returns deoxygenated blood from the body, and the aorta carries blood away from the left ventricle rather than returning it to the left atrium."
+    "explain": "Oxygenated blood returns through the pulmonary vein into the left atrium, then through the mitral valve into the left ventricle."
    },
    {
     "id": "MT12074",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the flow of blood from the left ventricle into the systemic circulation?",
+    "q": "When the left ventricle contracts, which valve opens and where does blood go?",
     "options": [
-     "Contraction of the left ventricle opens the aortic valve and blood flows into the aorta and to all parts of the body",
-     "Contraction of the left ventricle opens the pulmonary semilunar valve and blood flows into the pulmonary artery and lungs",
-     "Contraction of the left ventricle opens the tricuspid valve and blood flows back into the right atrium",
-     "Contraction of the left ventricle opens the mitral valve and blood flows back into the left atrium"
+     "Aortic valve; into aorta and body",
+     "Pulmonary valve; into the lungs",
+     "Tricuspid valve; back to right atrium",
+     "Mitral valve; back to left atrium"
     ],
     "correct": 0,
-    "explain": "Contraction of the left ventricle opens the aortic valve and blood flows into the aorta and to all parts of the body, which is the systemic circulation. The pulmonary semilunar valve is the right ventricular outlet, and the tricuspid and mitral valves are inlet valves rather than outlets from the left ventricle."
+    "explain": "Left ventricular contraction opens the aortic valve, sending blood into the aorta and the body. The mitral valve closes to stop backflow."
    },
    {
     "id": "MT12075",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes the flow of blood out of the right ventricle?",
+    "q": "When the right ventricle contracts, which valve opens and where does blood go?",
     "options": [
-     "Contraction of the right ventricle opens the pulmonary valve and blood flows to the lungs by the pulmonary artery",
-     "Contraction of the right ventricle opens the aortic valve and blood flows into the aorta and onward to the body",
-     "Contraction of the right ventricle opens the mitral valve and blood flows across the heart into the left atrium",
-     "Contraction of the right ventricle opens the tricuspid valve and blood flows backward into the right atrium again"
+     "Pulmonary valve; to the lungs",
+     "Aortic valve; to the body",
+     "Mitral valve; to left atrium",
+     "Tricuspid valve; back to right atrium"
     ],
     "correct": 0,
-    "explain": "Contraction of the right ventricle opens the pulmonary valve, and blood flows to the lungs by the pulmonary artery, where it is oxygenated. The aortic valve is the left ventricular outlet, and the mitral and tricuspid valves are inlet valves rather than outlets from the right ventricle."
+    "explain": "Right ventricular contraction opens the pulmonary valve, sending blood through the pulmonary artery to the lungs."
    },
    {
     "id": "MT12079",
@@ -1270,8 +1296,8 @@
       "options": [
        "Inferior to it",
        "Superior to it",
-       "Medial inside the septum",
-       "On the opposite side of the chest"
+       "Medial in septum",
+       "Opposite chest side"
       ],
       "correct": 0
      },
@@ -1336,8 +1362,8 @@
       "options": [
        "Inferior to it",
        "Superior to it",
-       "Medial inside the septum",
-       "On the opposite side of the chest"
+       "Medial in septum",
+       "Opposite chest side"
       ],
       "correct": 0
      },
@@ -1346,7 +1372,7 @@
       "prompt": "What lies on its medial side?",
       "options": [
        "The inter-atrial septum",
-       "The pulmonary semilunar valve",
+       "The pulmonary valve",
        "The pericardial cavity",
        "The vena cava"
       ],
@@ -1361,7 +1387,7 @@
     "cat": "MT_lec12-13",
     "group": "chamber-drill",
     "groupOrder": 3,
-    "q": "This lower chamber pumps blood that is low in oxygen. Answer each step, then the next chamber follows.",
+    "q": "This lower chamber pumps blood that is low in oxygen.",
     "steps": [
      {
       "id": "1",
@@ -1402,8 +1428,8 @@
       "options": [
        "Superior to it",
        "Inferior to it",
-       "Medial inside the septum",
-       "On the left side of the heart"
+       "Medial in septum",
+       "Left of heart"
       ],
       "correct": 0
      },
@@ -1413,8 +1439,8 @@
       "options": [
        "To its left",
        "To its right",
-       "Superior to its atrium",
-       "Inside the pericardial cavity"
+       "Above its atrium",
+       "In pericardial cavity"
       ],
       "correct": 0
      }
@@ -1427,7 +1453,7 @@
     "cat": "MT_lec12-13",
     "group": "chamber-drill",
     "groupOrder": 4,
-    "q": "This lower chamber sends blood into the aorta. Answer each step, then the valve run follows.",
+    "q": "This lower chamber sends blood into the aorta.",
     "steps": [
      {
       "id": "1",
@@ -1468,8 +1494,8 @@
       "options": [
        "Superior to it",
        "Inferior to it",
-       "Medial inside the septum",
-       "On the right side of the heart"
+       "Medial in septum",
+       "Right of heart"
       ],
       "correct": 0
      },
@@ -1479,8 +1505,8 @@
       "options": [
        "To its right",
        "To its left",
-       "Superior to its atrium",
-       "Inside the pericardial cavity"
+       "Above its atrium",
+       "In pericardial cavity"
       ],
       "correct": 0
      }
@@ -1493,7 +1519,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 1,
-    "q": "This valve stands between the right atrium and the right ventricle. Answer each step, then the next valve follows.",
+    "q": "This valve stands between the right atrium and the right ventricle.",
     "steps": [
      {
       "id": "1",
@@ -1521,8 +1547,8 @@
       "options": [
        "Superior to it",
        "Inferior to it",
-       "Medial inside the septum",
-       "On the left side of the heart"
+       "Medial in septum",
+       "Left of heart"
       ],
       "correct": 0
      },
@@ -1532,8 +1558,8 @@
       "options": [
        "Inferior to it",
        "Superior to it",
-       "On the left side of the heart",
-       "Inside the pericardial cavity"
+       "Left of heart",
+       "In pericardial cavity"
       ],
       "correct": 0
      }
@@ -1546,7 +1572,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 2,
-    "q": "This half-moon valve on the right side of the heart opens toward the lungs. Answer each step, then the next valve follows.",
+    "q": "This half-moon valve on the right side of the heart opens toward the lungs.",
     "steps": [
      {
       "id": "1",
@@ -1599,7 +1625,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 3,
-    "q": "This valve stands between the left atrium and the left ventricle. Answer each step, then the next valve follows.",
+    "q": "This valve stands between the left atrium and the left ventricle.",
     "steps": [
      {
       "id": "1",
@@ -1638,8 +1664,8 @@
       "options": [
        "Inferior to it",
        "Superior to it",
-       "On the right side of the heart",
-       "Inside the pericardial cavity"
+       "Right of heart",
+       "In pericardial cavity"
       ],
       "correct": 0
      }
@@ -1652,7 +1678,7 @@
     "cat": "MT_lec12-13",
     "group": "valve-drill",
     "groupOrder": 4,
-    "q": "This half-moon valve on the left side of the heart opens toward the body. Answer each step, then the vessel run follows.",
+    "q": "This half-moon valve on the left side of the heart opens toward the body.",
     "steps": [
      {
       "id": "1",
@@ -1705,7 +1731,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 1,
-    "q": "This vessel links the heart to the lungs and has thick, muscular walls. Answer each step, then the next vessel follows.",
+    "q": "This vessel links the heart to the lungs and has thick, muscular walls.",
     "steps": [
      {
       "id": "1",
@@ -1722,7 +1748,7 @@
       "id": "2",
       "prompt": "Which direction does the Pulmonary artery run?",
       "options": [
-       "Away from the heart",
+       "Away from heart",
        "Toward the heart"
       ],
       "correct": 0
@@ -1756,7 +1782,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 2,
-    "q": "This vessel is one of four that join the lungs and the heart. Answer each step, then the next vessel follows.",
+    "q": "This vessel is one of four that join the lungs and the heart.",
     "steps": [
      {
       "id": "1",
@@ -1807,7 +1833,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 3,
-    "q": "This is the largest vessel in the body. Answer each step, then the next vessel follows.",
+    "q": "This is the largest vessel in the body.",
     "steps": [
      {
       "id": "1",
@@ -1824,7 +1850,7 @@
       "id": "2",
       "prompt": "Which direction does the Aorta run?",
       "options": [
-       "Away from the heart",
+       "Away from heart",
        "Toward the heart"
       ],
       "correct": 0
@@ -1858,7 +1884,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 4,
-    "q": "These two large vessels, one superior and one inferior, are named for their hollow shape. Answer each step, then the next vessel follows.",
+    "q": "These two large vessels, one superior and one inferior, are named for their hollow shape.",
     "steps": [
      {
       "id": "1",
@@ -1909,7 +1935,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 5,
-    "q": "These arteries branch from the aorta just above its valve. Answer each step, then the wall cluster follows.",
+    "q": "These arteries branch from the aorta just above its valve.",
     "steps": [
      {
       "id": "1",
@@ -1964,7 +1990,7 @@
     "cat": "MT_lec12-13",
     "group": "wall-cluster",
     "groupOrder": 1,
-    "q": "Which layer belongs at each depth of the heart wall? At each step, choose, then continue.",
+    "q": "Which layer belongs at each depth of the heart wall?",
     "steps": [
      {
       "id": "1",
@@ -2060,8 +2086,8 @@
       "options": [
        "Heart and body tissues",
        "Heart and lungs",
-       "Heart and its own muscle",
-       "Atrium across the septum"
+       "Heart and its muscle",
+       "Atrium across septum"
       ],
       "correct": 0
      },
@@ -2071,8 +2097,8 @@
       "options": [
        "Heart and lungs",
        "Heart and body tissues",
-       "Heart and its own muscle",
-       "Atrium across the septum"
+       "Heart and its muscle",
+       "Atrium across septum"
       ],
       "correct": 0
      },
@@ -2080,10 +2106,10 @@
       "id": "3",
       "prompt": "Coronary circulation",
       "options": [
-       "Heart and its own muscle",
+       "Heart and its muscle",
        "Heart and lungs",
        "Heart and body tissues",
-       "Atrium across the septum"
+       "Atrium across septum"
       ],
       "correct": 0
      }
@@ -2951,7 +2977,7 @@
     "type": "order",
     "cat": "MT_lec12-13",
     "title": "Pulmonary Circulation",
-    "q": "Pulmonary circulation: put the stages in the order blood flows from the right ventricle to the lungs and back to the heart.",
+    "q": "Order the stages of pulmonary circulation, from the right ventricle.",
     "stages": [
      {
       "id": "s1",
@@ -2991,7 +3017,7 @@
     "type": "order",
     "cat": "MT_lec12-13",
     "title": "Systemic Circulation",
-    "q": "Systemic circulation: put the stages in the order blood flows from the left ventricle to the body and back to the heart.",
+    "q": "Order the stages of systemic circulation, from the left ventricle.",
     "stages": [
      {
       "id": "s1",
@@ -3031,7 +3057,7 @@
     "type": "order",
     "cat": "MT_lec12-13",
     "title": "Full Loop",
-    "q": "Full loop: put the stages in the order blood flows from the body tissues, through both sides of the heart and the lungs, and out again in the aorta.",
+    "q": "Order the full loop, from the body tissues out to the aorta.",
     "stages": [
      {
       "id": "s1",
@@ -3223,19 +3249,19 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Carries blood from the heart to all parts of the body and back to the heart"
+      "text": "Heart to body and back"
      },
      {
       "id": "B",
-      "text": "Supplies the heart muscle itself through the right and left coronary arteries"
+      "text": "Feeds heart muscle via coronary arteries"
      },
      {
       "id": "C",
-      "text": "Carries blood from the lungs straight to the body without passing through the heart"
+      "text": "Lungs straight to body, bypassing heart"
      },
      {
       "id": "D",
-      "text": "Carries blood from the heart to the lungs for oxygenation and back to the heart"
+      "text": "Heart to lungs and back"
      }
     ],
     "correct_pairs": {
@@ -3243,7 +3269,7 @@
      "2": "A",
      "3": "B"
     },
-    "explain": "Pulmonary circulation carries blood from the heart to the lungs for oxygenation and back to the heart. Systemic circulation carries blood from the heart to all parts of the body and back to the heart. Coronary circulation supplies the heart muscle itself through the right and left coronary arteries. \"Carries blood from the lungs straight to the body without passing through the heart\" matches none of them: blood from the lungs always returns to the left atrium before the left ventricle pumps it to the body."
+    "explain": "Pulmonary circulation runs heart to lungs and back; systemic heart to body and back; coronary supplies the heart muscle through the right and left coronary arteries. No circulation bypasses the heart."
    },
    {
     "id": "MT12107",
@@ -3253,7 +3279,7 @@
     "steps": [
      {
       "id": "1",
-      "prompt": "Leaving the right ventricle, which circulation does the blood enter first?",
+      "prompt": "Leaving the right ventricle, which circulation comes first?",
       "options": [
        "Pulmonary circulation",
        "Systemic circulation",
@@ -3263,7 +3289,7 @@
      },
      {
       "id": "2",
-      "prompt": "Back on the left side of the heart, which circulation does it enter next?",
+      "prompt": "Back on the left side, which circulation comes next?",
       "options": [
        "Systemic circulation",
        "Pulmonary circulation",
@@ -3289,15 +3315,15 @@
     "id": "MT12108",
     "type": "mcq",
     "cat": "MT_lec12-13",
-    "q": "Which statement correctly describes which vessels carry deoxygenated and oxygenated blood in pulmonary and systemic circulation?",
+    "q": "Across pulmonary and systemic circulation, which vessels carry deoxygenated blood?",
     "options": [
-     "In pulmonary circulation the pulmonary arteries carry deoxygenated blood and the pulmonary veins oxygenated blood; in systemic circulation the arteries carry oxygenated blood and the veins deoxygenated blood",
-     "In pulmonary circulation the pulmonary arteries carry oxygenated blood and the pulmonary veins deoxygenated blood; in systemic circulation the arteries carry deoxygenated blood and the veins oxygenated blood",
-     "In both pulmonary and systemic circulation every artery carries oxygenated blood and every vein carries deoxygenated blood, with no exceptions anywhere in the body at all",
-     "In pulmonary circulation both the pulmonary arteries and the pulmonary veins carry oxygenated blood, and in systemic circulation only the vena cava carries deoxygenated blood"
+     "Pulmonary arteries and systemic veins",
+     "Pulmonary veins and systemic arteries",
+     "Every artery in both circuits",
+     "Only the two venae cavae"
     ],
     "correct": 0,
-    "explain": "Arteries carry blood away from the heart and veins carry it back, whatever its oxygen content. In pulmonary circulation the pulmonary arteries take deoxygenated blood to the lungs and the pulmonary veins bring oxygenated blood back to the left atrium. In systemic circulation the aorta and arteries carry oxygenated blood to the body, and the vena cava and veins return deoxygenated blood to the right atrium. \"In pulmonary circulation the pulmonary arteries carry oxygenated blood…\" swaps both circulations. \"In both circulations every artery carries oxygenated blood…\" ignores the pulmonary exception. \"In pulmonary circulation both the pulmonary arteries and the pulmonary veins carry oxygenated blood…\" forgets that blood reaches the lungs deoxygenated."
+    "explain": "In pulmonary circulation the arteries carry deoxygenated blood to the lungs and the veins return oxygenated blood. In systemic circulation the arteries carry oxygenated blood and the veins deoxygenated blood. So not every artery is oxygenated, and the venae cavae are not the only deoxygenated vessels."
    }
   ]
  }
