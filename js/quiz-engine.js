@@ -615,6 +615,7 @@ function serializeAnswers(){
 }
 let runDeck=null; // un-expanded deck of the active run (for saving)
 function saveRunState(extra){
+  if(quizActive) updateSolvedProgress();
   if(!runCard || !questions.length || !window.StudyStore) return;
   const st=StudyStore.load(bankId());
   const el=runElapsedSec();
@@ -1123,7 +1124,22 @@ function hideNextBtn(){
   btn.dataset.action='next';
   delete btn.dataset.target;
 }
+/* Counter on the timer line and the progress bar both show solved / total. */
+function updateSolvedProgress(){
+  if(!questions.length) return;
+  const solved=answers.filter((a,i)=>isAnswered(a,questions[i])).length;
+  const num=document.getElementById('qNum'), tot=document.getElementById('qTotal');
+  if(num) num.textContent=solved;
+  if(tot) tot.textContent=questions.length;
+  if(runMastery>=1 && window.StudyMastery){
+    StudyMastery.updateProgressBar(); // PORTAL: Mastery+ layer bar
+  } else {
+    const bar=document.getElementById('progressBar');
+    if(bar) bar.style.width=Math.round(solved/questions.length*100)+'%';
+  }
+}
 function afterAnswerProgress(){
+  updateSolvedProgress();
   renderNav();
   updateCounters();
   saveRunState();
@@ -2717,12 +2733,7 @@ function renderQuestion(){
     qb.innerHTML=q.badges.map(b=>noteBadgeHTML(b)).join('');
     if(qb.innerHTML) qText.prepend(qb);
   }
-  document.getElementById('qNum').textContent=current+1;
-  if(runMastery>=1 && window.StudyMastery){
-    StudyMastery.updateProgressBar(); // PORTAL: Mastery+ layer bar
-  } else {
-    document.getElementById('progressBar').style.width=Math.round((answers.filter((a,i)=>isAnswered(a,questions[i])).length/questions.length)*100)+'%';
-  }
+  updateSolvedProgress();
   // Reveal red marks for earlier unanswered questions when the user lands on the final question
   if(questions.length>0 && current===questions.length-1 && !allQuestionsAnswered()){
     unansweredMarkersVisible=true;
