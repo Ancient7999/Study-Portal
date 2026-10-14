@@ -29,10 +29,10 @@
         "cat": "MT_lec16-17",
         "q": "Which structure warms, moistens, and filters incoming air and also houses the olfactory receptors for the sense of smell?",
         "options": [
-          "The nasal cavity, which warms, moistens, and filters incoming air and houses the olfactory receptors for the sense of smell",
-          "The paranasal sinuses, which are air-filled spaces within the skull that open into the nasal cavity and lighten the cranial bones",
-          "The palate, which forms the roof of the mouth, partitions the oral and nasal cavities, and divides into hard and soft portions",
-          "The pharynx, which serves as a common passageway for food toward the esophagus and for air toward the larynx and trachea"
+          "Nasal cavity",
+          "Paranasal sinuses",
+          "Palate",
+          "Pharynx"
         ],
         "correct": 0,
         "explain": "The nasal cavity is the initial airway entrance. It conditions incoming air by warming, moistening, and filtering it, and it contains the olfactory receptors for smell. The paranasal sinuses are air-filled skull spaces that open into the nasal cavity and lighten the cranial bones, so they do not house smell or filter the airstream. The palate is the roof of the mouth, and the pharynx is the common food and air passage."
@@ -83,12 +83,12 @@
         "id": "MT16006",
         "type": "mcq",
         "cat": "MT_lec16-17",
-        "q": "Which structure consists of oval lymphatic tissues on each side of the pharynx, filters air, and is also called the palatine tonsil?",
+        "q": "Which structure consists of oval lymphatic tissues on each side of the pharynx and filters air?",
         "options": [
-          "The uvula, a small grape-like projection hanging from the back middle edge of the soft palate above the throat",
-          "The epiglottis, a lid-like structure that covers the larynx during swallowing to prevent food entry into the trachea",
-          "The tonsils, oval lymphatic tissues on each side of the pharynx that filter air and defend against bacterial invasion",
-          "The cilia, hair-like processes on epithelial cells that move mucus and secretions upward from the lower airways"
+          "Uvula",
+          "Epiglottis",
+          "Tonsils",
+          "Cilia"
         ],
         "correct": 2,
         "explain": "The tonsils are oval lymphatic tissues on each side of the pharynx that filter air and help defend against bacterial invasion. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing flap over the larynx. The cilia are the mucus-moving epithelial processes."
@@ -99,10 +99,10 @@
         "cat": "MT_lec16-17",
         "q": "Which anatomical term denotes the small projection hanging from the back middle edge of the soft palate?",
         "options": [
-          "The glottis, the opening between the vocal cords inside the larynx that guides airflow through the voice box",
-          "The carina, the internal point where the trachea divides into the right and left primary bronchi at its lower end",
-          "The palate, the roof of the mouth that partitions the oral cavity from the nasal cavity and has hard and soft portions",
-          "The uvula, the small projection hanging from the back middle edge of the soft palate and named for its grape-like shape"
+          "Glottis",
+          "Carina",
+          "Palate",
+          "Uvula"
         ],
         "correct": 3,
         "explain": "The uvula is the small projection hanging from the back middle edge of the soft palate and is named for its grape-like shape. The glottis is the opening between the vocal cords. The carina is the tracheal divide. The palate is the roof of the mouth."
@@ -199,10 +199,10 @@
         "cat": "MT_lec16-17",
         "q": "Which structures are the thin-walled microscopic air sacs where oxygen and carbon dioxide are exchanged?",
         "options": [
-          "The bronchioles, smaller tubular branches that conduct air from the bronchi toward the terminal sacs of the lung",
-          "The alveoli, thin-walled microscopic air sacs at the end of the bronchioles where gases are exchanged with blood",
-          "The cilia, hair-like epithelial processes that move mucus and trapped particles upward from the bronchi to the pharynx",
-          "The pleurae, membranes that enclose the lung surface and line the inner surface of the thoracic cavity wall"
+          "Bronchioles",
+          "Alveoli",
+          "Cilia",
+          "Pleurae"
         ],
         "correct": 1,
         "explain": "The alveoli are the thin-walled microscopic air sacs at the end of the bronchioles where oxygen and carbon dioxide are exchanged. The bronchioles are conducting tubes. The cilia move mucus. The pleurae are membranes around the lung and thoracic cavity."
@@ -287,10 +287,10 @@
         "cat": "MT_lec16-17",
         "q": "Which structure is the muscular partition that separates the thoracic cavity from the abdominal cavity and moves to aid respiration?",
         "options": [
-          "The palate, which forms the roof of the mouth and separates the oral cavity from the nasal cavity above it",
-          "The epiglottis, which covers the larynx during swallowing to prevent food from entering the airway below",
-          "The carina, which marks the internal point where the trachea divides into the right and left bronchi",
-          "The diaphragm, which separates the thoracic cavity from the abdominal cavity and moves to aid respiration"
+          "Palate",
+          "Epiglottis",
+          "Carina",
+          "Diaphragm"
         ],
         "correct": 3,
         "explain": "The diaphragm is the muscular partition between the thoracic and abdominal cavities, and its movement aids respiration. The palate is the roof of the mouth. The epiglottis is the swallowing cover over the larynx. The carina is the tracheal bifurcation."
@@ -302,7 +302,7 @@
         "q": "What is the function of the cilia lining parts of the respiratory tract such as the bronchi?",
         "options": [
           "They warm, moisten, and filter the air as it first enters the nasal cavity and contacts the olfactory region.",
-          "They move mucus and trapped secretions upward from the bronchi toward the pharynx by coordinated beating.",
+          "They move mucus and trapped secretions upward toward the pharynx by coordinated beating.",
           "They cover the larynx during swallowing to prevent food and liquid from passing down into the trachea.",
           "They exchange oxygen and carbon dioxide across the thin walls between the air sacs and the lung capillaries."
         ],
@@ -357,13 +357,13 @@
         "cat": "MT_lec16-17",
         "q": "In the term lobectomy, the element lob refers to what?",
         "options": [
-          "Air sac, as in the terminal structure for gas exchange",
-          "Windpipe, as in the tube running from larynx to carina",
-          "Voice box, as in the organ containing the vocal cords",
+          "Lobe or portion, as in a single air sac of the lung",
+          "Lobe or portion, as in the membrane around the lung",
+          "Lobe or portion, as in a branch of the main airway",
           "Lobe or portion, as in a subdivision of the lung"
         ],
         "correct": 3,
-        "explain": "In lobectomy, lob denotes a lobe or portion, and the term means excision of a lobe, typically of the lung. Air sac is Alveol/o. Windpipe is Trache/o. Voice box is Laryng/o."
+        "explain": "In lobectomy, lob denotes a lobe or portion, and the term means excision of a lobe, typically of the lung. An air sac is an alveolus, the membrane around the lung is the pleura, and a branch of the main airway is a bronchus."
       },
       {
         "id": "MT16021",
@@ -497,13 +497,13 @@
         "cat": "MT_lec16-17",
         "q": "What does the combining form Tonsill/o mean?",
         "options": [
-          "The uvula hanging from the posterior edge of the soft palate",
-          "The sinus cavity within the bones of the skull above",
-          "The tonsil, the lymphatic tissue on each side of the pharynx",
-          "The palate forming the roof of the mouth and nasal floor"
+          "The tonsil, lymphatic tissue at the back of the nasal cavity",
+          "The tonsil, a gland that secretes saliva into the mouth",
+          "The tonsil, lymphatic tissue on each side of the pharynx",
+          "The tonsil, lymphatic tissue at the base of the tongue only"
         ],
         "correct": 2,
-        "explain": "Tonsill/o names the tonsil, the lymphatic tissue on each side of the pharynx that filters air and defends against bacterial invasion. The uvula is Uvul/o. The sinus is Sinus/o. The palate is Palat/o."
+        "explain": "Tonsill/o names the tonsil, the lymphatic tissue on each side of the pharynx that filters air and defends against bacterial invasion. Tissue at the back of the nasal cavity is the adenoid, saliva comes from the salivary glands, and the tonsils are not limited to the base of the tongue."
       },
       {
         "id": "MT16031",
@@ -539,13 +539,13 @@
         "cat": "MT_lec16-17",
         "q": "What does the combining form Pleur/o mean?",
         "options": [
-          "The air sac where gas exchange occurs at the end of the airway",
-          "The primary airway branching from the trachea at the carina below",
+          "The pleura, the membrane enclosing the heart and lining the pericardial sac",
+          "The pleura, the muscle separating the thoracic and abdominal cavities",
           "The pleura, the membrane enclosing the lung and lining the thoracic cavity",
-          "The diaphragm separating the thoracic cavity from the abdominal cavity"
+          "The pleura, the tissue lining the airways and producing protective mucus"
         ],
         "correct": 2,
-        "explain": "Pleur/o names the pleura, the membrane that encloses the lung and lines the thoracic cavity. The air sac is Alveol/o. The primary airway is Bronch/o. The diaphragm is Phren/o."
+        "explain": "Pleur/o names the pleura, the membrane that encloses the lung and lines the thoracic cavity. The pericardium encloses the heart, the diaphragm separates the thoracic and abdominal cavities, and the mucous membrane lines the airways."
       },
       {
         "id": "MT16034",
@@ -581,13 +581,13 @@
         "cat": "MT_lec16-17",
         "q": "What does the combining form Uvul/o mean?",
         "options": [
-          "The tonsil, the lymphatic tissue on each side of the pharyngeal wall",
-          "The palate, the roof of the mouth that partitions the oral and nasal cavities",
+          "The uvula, the small projection hanging from the front middle edge of the hard palate",
+          "The uvula, the small flap of cartilage covering the larynx during swallowing",
           "The uvula, the small projection hanging from the back middle edge of the soft palate",
-          "The sinus, the air-filled cavity within the bones of the skull above the nose"
+          "The uvula, the small mass of lymphatic tissue on each side of the throat"
         ],
         "correct": 2,
-        "explain": "Uvul/o names the uvula, the small projection hanging from the back middle edge of the soft palate and named for its grape-like shape. The tonsil is Tonsill/o. The palate is Palat/o. The sinus is Sinus/o."
+        "explain": "Uvul/o names the uvula, the small projection hanging from the back middle edge of the soft palate and named for its grape-like shape. The epiglottis covers the larynx during swallowing, the tonsils sit on each side of the throat, and nothing hangs from the hard palate."
       },
       {
         "id": "MT16037",
@@ -875,13 +875,13 @@
         "cat": "MT_lec16-17",
         "q": "What does the term pleuritis mean?",
         "options": [
-          "Inflammation of the lung tissue itself, not its lining",
+          "Inflammation of the pleura, the membrane around the heart",
           "Inflammation of the pleura, the membrane around the lung",
-          "Inflammation of the air sacs at the ends of the airways",
-          "Inflammation of the diaphragm below the lung bases"
+          "Inflammation of the pleura, the lining of the airways",
+          "Inflammation of the pleura, the muscle below the lungs"
         ],
         "correct": 1,
-        "explain": "Pleuritis is built from Pleur/o (pleura) and -itis (inflammation), so it denotes inflammation of the pleura, the membrane around the lung. Inflammation of the lung tissue is pneumonitis. Inflammation of the air sacs is alveolitis. Inflammation of the diaphragm is phrenitis."
+        "explain": "Pleuritis is built from Pleur/o (pleura) and -itis (inflammation), so it denotes inflammation of the pleura, the membrane around the lung. The membrane around the heart is the pericardium, the airways are lined by mucous membrane, and the muscle below the lungs is the diaphragm."
       },
       {
         "id": "MT16059",
@@ -1185,10 +1185,10 @@
         "cat": "MT_lec16-17",
         "q": "Which structure is the internal point where the trachea divides into the right and left bronchi?",
         "options": [
-          "The carina, the internal ridge where the windpipe splits into the right and left primary bronchi",
-          "The glottis, the opening between the vocal cords that guides airflow through the voice box",
-          "The uvula, the grape-like projection hanging from the back middle edge of the soft palate",
-          "The epiglottis, the lid that covers the larynx during swallowing to keep food out of the airway"
+          "Carina",
+          "Glottis",
+          "Uvula",
+          "Epiglottis"
         ],
         "correct": 0,
         "explain": "The carina is the internal point where the trachea divides into the right and left bronchi. The glottis is the opening between the vocal cords. The uvula is the grape-like soft-palate projection. The epiglottis is the swallowing lid over the larynx."
@@ -1227,13 +1227,13 @@
         "cat": "MT_lec16-17",
         "q": "Which other name is used for the oval lymphatic tissues on each side of the pharynx?",
         "options": [
-          "Palatine tonsils, the lymphoid filters beside the pharyngeal passage",
-          "Palatine uvulae, the grape-like projections of the soft palate edge",
-          "Palatine cilia, the hair-like movers of mucus in the lower airways",
-          "Palatine sinuses, the air spaces that open into the nasal cavity"
+          "Palatine tonsils",
+          "Lingual tonsils",
+          "Pharyngeal tonsils",
+          "Tubal tonsils"
         ],
         "correct": 0,
-        "explain": "The tonsils on each side of the pharynx are also called palatine tonsils. They filter air and help defend against bacterial invasion. A grape-like soft-palate projection is the uvula. Hair-like mucus movers are cilia. Air spaces opening into the nose are sinuses."
+        "explain": "The tonsils on each side of the pharynx are also called palatine tonsils. They filter air and help defend against bacterial invasion. The lingual tonsils sit at the base of the tongue, the pharyngeal tonsils are the adenoids, and the tubal tonsils sit near the auditory tube openings."
       },
       {
         "id": "MT16069",
@@ -1739,7 +1739,7 @@
         "cat": "MT_lec16-17",
         "group": "airway-drill",
         "groupOrder": 7,
-        "q": "This muscular partition separates the chest cavity from the abdomen and moves during breathing. Answer each step, then the next structure follows.",
+        "q": "This dome-shaped muscle contracts and flattens during breathing. Answer each step, then the next structure follows.",
         "steps": [
           {
             "id": "1",
