@@ -617,7 +617,7 @@ let runDeck=null; // un-expanded deck of the active run (for saving)
 function saveRunState(extra){
   if(!runCard || !questions.length || !window.StudyStore) return;
   const st=StudyStore.load(bankId());
-  const el=startTime?Math.floor((Date.now()-startTime)/1000):0;
+  const el=runElapsedSec();
   st.runs[runCard.id]=Object.assign({
     v:2, card:runCard.id, deck:serializeDeck(runDeck||[]), ans:serializeAnswers(),
     cur:current, el, mp:runMastery|0, uv:!!unansweredMarkersVisible, finished:false, updated:Date.now()
@@ -966,15 +966,51 @@ document.getElementById('resetSolvedBtn').addEventListener('click',()=>{
 });
 
 /* —— quiz engine (PT1 3000–3949) —— */
+/* The run clock pauses while the page is hidden or unfocused (tab switch,
+   minimised window, phone screen off, pagehide). Away time is shifted out of
+   startTime on return, so the timestamp-based clock never jumps. */
+let clockPausedAt=0;
+function runElapsedSec(){
+  if(!startTime) return 0;
+  const now=clockPausedAt||Date.now();
+  return Math.max(0, Math.floor((now-startTime)/1000));
+}
+function paintElapsed(){
+  const e=runElapsedSec(), el=document.getElementById('elapsed');
+  if(el) el.textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
+}
+function pageIsAway(){ return document.hidden; }
+function pauseElapsedClock(){
+  if(!elapsedTimer || clockPausedAt) return;
+  clockPausedAt=Date.now();
+  paintElapsed();
+}
+function resumeElapsedClock(){
+  if(!clockPausedAt) return;
+  if(pageIsAway()) return;
+  startTime+=Date.now()-clockPausedAt;
+  clockPausedAt=0;
+  paintElapsed();
+}
+document.addEventListener('visibilitychange',()=>{ document.hidden?pauseElapsedClock():resumeElapsedClock(); });
+window.addEventListener('blur',pauseElapsedClock);
+window.addEventListener('focus',resumeElapsedClock);
+window.addEventListener('pagehide',pauseElapsedClock);
+window.addEventListener('pageshow',resumeElapsedClock);
 function startElapsedClock(offsetSec){
   startTime=Date.now()-(offsetSec||0)*1000;
+  clockPausedAt=0;
   if(elapsedTimer) clearInterval(elapsedTimer);
-  const paint=()=>{ const e=Math.floor((Date.now()-startTime)/1000); document.getElementById('elapsed').textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0'); };
-  paint();
-  elapsedTimer=setInterval(paint,1000);
+  paintElapsed();
+  elapsedTimer=setInterval(paintElapsed,1000);
+  if(document.hidden) pauseElapsedClock();
 }
 /* FIX (PT1 quirk): the clock now stops when the run ends or is left. */
-function stopElapsedClock(){ if(elapsedTimer){ clearInterval(elapsedTimer); elapsedTimer=null; } }
+function stopElapsedClock(){
+  if(clockPausedAt&&startTime){ startTime+=Date.now()-clockPausedAt; }
+  clockPausedAt=0;
+  if(elapsedTimer){ clearInterval(elapsedTimer); elapsedTimer=null; }
+}
 function enterRunChrome(label){
   setTitleText('quizTitle', label);
   document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+questions.length+' remaining this run';
@@ -1008,6 +1044,22 @@ function startRun(pool, label, opts){
   renderQuestion();
   saveRunState();
 }
+/* Re-sync a resumed run with the current bank: unsolved questions of this card
+   that are not in the saved deck (for example added to the bank later) are
+   appended to the queue. Saved answers and positions stay untouched. */
+function syncRunWithBank(card){
+  if(!card || !Array.isArray(card.pool) || !runDeck) return 0;
+  const have=new Set(runDeck.map(q=>q.__id));
+  const missing=remainingOf(card.pool).filter(q=>!have.has(q.__id));
+  if(!missing.length) return 0;
+  const extra=prepareDeck(missing, {card});
+  if(!extra.length) return 0;
+  runDeck=runDeck.concat(extra);
+  const more=expandDeck(extra);
+  questions=questions.concat(more);
+  answers=answers.concat(new Array(more.length).fill(null));
+  return extra.length;
+}
 /* PORTAL: resume a half-done run (by question id). */
 function resumeRun(card){
   cardCtx(card);
@@ -1016,9 +1068,11 @@ function resumeRun(card){
   runCard=card; currentForm=card.id; runMastery=run.mp|0; runLabel=card.label;
   const r=restoreRun(run);
   if(!r){ clearRunState(card.id); return false; }
+  const added=runMastery?0:syncRunWithBank(card);
   quizActive=true; locked=isAnswered(answers[current],questions[current]);
   beginMasterySession();
   startElapsedClock(r.elapsed);
+  if(added) saveRunState();
   enterRunChrome(card.label);
   if(allQuestionsAnswered()){ finishQuiz(); return true; }
   renderQuestion();
@@ -1940,6 +1994,8 @@ addEventListener('scroll',relayoutWires,true);
 addEventListener('resize',relayoutWires);
 function celebrateLink(x,y){
   const bits=['😊','😄','🤩','🥳','🌸','🌺','🌼','🌷','💮','✨','🌻','💐'];
+  // Basic quality plays the burst at one-third speed (see index.html CSS).
+  const slow=document.documentElement.getAttribute('data-quality')==='basic'?3:1;
   for(let i=0;i<16;i++){
     const el=document.createElement('span'); el.className='float-bit'; el.textContent=bits[i%bits.length];
     el.style.left=(x+(Math.random()*24-12))+'px'; el.style.top=y+'px';
@@ -1947,7 +2003,7 @@ function celebrateLink(x,y){
     el.style.setProperty('--dur',(900+Math.random()*800)+'ms');
     el.style.setProperty('--scale',(0.75+Math.random()*0.9).toFixed(2));
     el.style.setProperty('--spin',((Math.random()*50)-20)+'deg');
-    document.body.appendChild(el); setTimeout(()=>el.remove(),1900);
+    document.body.appendChild(el); setTimeout(()=>el.remove(),1900*slow);
   }
   spawnFireworkBurst(x, Math.max(40,y-40), 18);
 }
@@ -2318,7 +2374,7 @@ function onDrawUp(ev){
       // Persist only correct pairs; replace this left's prior committed wire.
       // Unfinished/loose strokes stay on the canvas. A right may intentionally
       // serve multiple lefts (e.g. shared base units).
-      spreadSnapAnchors(hit, drawState.points, cur.wires, leftId);
+      // Keep the exact hand-drawn path: no end snapping, trimming or straightening.
       const pts=drawState.points.map(pt=>({x:pt.x,y:pt.y}));
       cur.wires=cur.wires.filter(w=>w.loose || w.leftId!==leftId);
       cur.pairs[leftId]=rightId;
@@ -2432,13 +2488,35 @@ function anchorPoint(a){
   const b=pillBox(matchPill(a.side,a.id)); if(!b) return null;
   return {x:b.x+a.fx*b.w, y:b.y+a.fy*b.h};
 }
+function stageSize(){
+  const stage=document.querySelector('.match-stage');
+  if(!stage) return null;
+  const r=stage.getBoundingClientRect();
+  return (r.width>=2&&r.height>=2)?{w:r.width,h:r.height}:null;
+}
 function tagWireAnchors(w, srcEl, dstEl){
   const pts=wirePoints(w); if(!pts.length) return w;
+  const sz=stageSize(); if(sz && w){ w.sw=sz.w; w.sh=sz.h; }
   if(srcEl) w.a0=anchorOf(srcEl, pts[0]);
   if(dstEl) w.a1=anchorOf(dstEl, pts[pts.length-1]);
   return w;
 }
+/* Hand-drawn lines keep their exact shape. Points are stored relative to the
+   match container, so scrolling needs no change; on a resize the whole path is
+   scaled by the container's size change instead of being redrawn. */
 function refitWire(w){
+  const pts=wirePoints(w); if(!pts.length || !w) return;
+  const sz=stageSize(); if(!sz) return;
+  if(!(w.sw>0&&w.sh>0)){
+    if(w.a0) legacyRefitWire(w);
+    w.sw=sz.w; w.sh=sz.h; return;
+  }
+  const kx=sz.w/w.sw, ky=sz.h/w.sh;
+  if(Math.abs(kx-1)<0.001 && Math.abs(ky-1)<0.001) return;
+  pts.forEach(p=>{ p.x*=kx; p.y*=ky; });
+  w.sw=sz.w; w.sh=sz.h;
+}
+function legacyRefitWire(w){
   const pts=wirePoints(w); if(!pts.length || !w || !w.a0) return;
   const p0=pts[0], p1=pts[pts.length-1];
   const n0=anchorPoint(w.a0); if(!n0) return;
@@ -2489,6 +2567,90 @@ function rebuildMissingWires(q, ans){
   new ResizeObserver(()=>{ cancelAnimationFrame(raf); raf=requestAnimationFrame(relayoutWires); }).observe(el);
 })();
 
+/* Solved-pair tooltip: tapping or left-clicking a solved item on either side
+   shows the item it is linked to on the other side. Solved pills are often
+   disabled buttons (no click events), so the hit test runs at document level. */
+function hideMatchPairTip(){
+  const tip=document.getElementById('matchPairTip');
+  if(tip){ tip.hidden=true; tip.dataset.for=''; }
+}
+function matchPairPartners(q, ans, side, id){
+  if(!q||!ans||!ans.pairs||!q.correct_pairs) return [];
+  const solved=Object.keys(ans.pairs).filter(lid=>ans.pairs[lid]===q.correct_pairs[lid]);
+  const textOf=(list,x)=>{ const it=(list||[]).find(i=>String(i.id)===String(x)); return it?it.text:''; };
+  if(side==='L'){
+    return solved.filter(lid=>String(lid)===String(id)).map(lid=>textOf(q.rightItems,ans.pairs[lid])).filter(Boolean);
+  }
+  return solved.filter(lid=>String(ans.pairs[lid])===String(id)).map(lid=>textOf(q.leftItems,lid)).filter(Boolean);
+}
+function showMatchPairTip(pill, partners){
+  let tip=document.getElementById('matchPairTip');
+  if(!tip){
+    tip=document.createElement('div');
+    tip.id='matchPairTip'; tip.className='match-pair-tip'; tip.setAttribute('role','tooltip');
+    document.body.appendChild(tip);
+  }
+  const host=pill.closest('.pt1q')||document.documentElement;
+  const cs=getComputedStyle(host);
+  ['--accent-0','--accent-1','--accent-0-rgb','--text','--border','--mono'].forEach(v=>{
+    const val=cs.getPropertyValue(v); if(val) tip.style.setProperty(v,val.trim());
+  });
+  const side=pill.dataset.side;
+  tip.innerHTML='';
+  const head=document.createElement('div'); head.className='match-pair-tip-head';
+  head.textContent=side==='L'?'Linked meaning':'Linked term'+(partners.length>1?'s':'');
+  tip.appendChild(head);
+  partners.forEach(t=>{ const row=document.createElement('div'); row.className='match-pair-tip-row'; row.textContent=t; tip.appendChild(row); });
+  tip.hidden=false; tip.dataset.for=side+':'+pill.dataset.id;
+  const r=pill.getBoundingClientRect();
+  tip.style.maxWidth=Math.min(320, window.innerWidth-16)+'px';
+  tip.style.left='0px'; tip.style.top='0px';
+  const tr=tip.getBoundingClientRect();
+  let x=r.left+r.width/2-tr.width/2;
+  x=Math.max(8, Math.min(x, window.innerWidth-tr.width-8));
+  let y=r.top-tr.height-10, below=false;
+  if(y<8){ y=r.bottom+10; below=true; }
+  tip.classList.toggle('below', below);
+  tip.style.left=Math.round(x)+'px'; tip.style.top=Math.round(y)+'px';
+}
+function solvedPillAt(x,y){
+  const list=document.querySelectorAll('.match-stage .match-item.paired');
+  for(let i=0;i<list.length;i++){
+    const r=list[i].getBoundingClientRect();
+    if(x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom) return list[i];
+  }
+  return null;
+}
+function onMatchPairTap(ev){
+  if(ev.button!=null && ev.button!==0) return;
+  const tipEl=document.getElementById('matchPairTip');
+  if(tipEl && !tipEl.hidden && tipEl.contains(ev.target)) return;
+  const pill=quizActive?solvedPillAt(ev.clientX, ev.clientY):null;
+  const q=questions[current];
+  if(!pill || !q || !isMatching(q)){ hideMatchPairTip(); return; }
+  const partners=matchPairPartners(q, answers[current], pill.dataset.side, pill.dataset.id);
+  if(!partners.length){ hideMatchPairTip(); return; }
+  const key=pill.dataset.side+':'+pill.dataset.id;
+  if(tipEl && !tipEl.hidden && tipEl.dataset.for===key){ hideMatchPairTip(); return; }
+  showMatchPairTip(pill, partners);
+}
+/* Tap/click on a disabled button produces no click, so listen for pointerup
+   too; a short press without movement counts as a tap. */
+(function wireMatchPairTip(){
+  let down=null;
+  document.addEventListener('pointerdown',ev=>{ down={x:ev.clientX,y:ev.clientY,b:ev.button}; },true);
+  document.addEventListener('pointerup',ev=>{
+    if(!down) return;
+    const moved=Math.hypot(ev.clientX-down.x, ev.clientY-down.y)>8;
+    const b=down.b; down=null;
+    if(moved || b!==0) return;
+    onMatchPairTap({clientX:ev.clientX, clientY:ev.clientY, button:0, target:ev.target});
+  },true);
+  document.addEventListener('keydown',ev=>{ if(ev.key==='Escape') hideMatchPairTip(); });
+  addEventListener('resize',hideMatchPairTip);
+  addEventListener('scroll',hideMatchPairTip,true);
+})();
+
 /* —— PT1 3161–3221 renderQuestion (+ STEPPED stem / step prompt) —— */
 function correctFeedbackText(q){
   if(isStep(q) && q.__stepIdx<q.__stepCount-1){
@@ -2520,6 +2682,7 @@ function renderStepRecap(){
   fb.insertAdjacentHTML('afterend', html);
 }
 function renderQuestion(){
+  hideMatchPairTip();
   const q=questions[current];
   drawState=null;
   clearWireLayer();
@@ -2732,10 +2895,11 @@ function fillResults(list){
   });
 }
 function elapsedLabel(){
-  const e=startTime?Math.floor((Date.now()-startTime)/1000):0;
+  const e=runElapsedSec();
   return String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
 }
 function finishQuiz(){
+  hideMatchPairTip();
   clearTimeout(afterAnswerProgress._finishT);
   clearWireLayer();
   const el=elapsedLabel();

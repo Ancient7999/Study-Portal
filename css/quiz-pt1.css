@@ -649,3 +649,12 @@ html[data-pointer-input="touch"] .kbd-hint{display:none}
 .label-zoom button:disabled{opacity:.4;cursor:default}
 .label-zoom button:focus-visible{outline:2px solid var(--accent-0);outline-offset:1px}
 .label-zoom .lz-level{font-family:var(--mono);font-size:.74rem;color:var(--text-dim,var(--col-text-muted));min-width:42px;text-align:center}
+
+/* Solved-pair tooltip (theme accents are copied from the quiz container) */
+.match-pair-tip{position:fixed;z-index:320;left:0;top:0;padding:9px 13px 10px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb,255,185,104),.55);background:linear-gradient(165deg,rgba(var(--accent-0-rgb,255,185,104),.16) 0%,rgba(10,14,22,.94) 55%);color:var(--text,#e8eef5);font-size:.86rem;line-height:1.35;box-shadow:0 0 18px rgba(var(--accent-0-rgb,255,185,104),.28),0 12px 28px -12px rgba(0,0,0,.7);backdrop-filter:blur(10px);pointer-events:auto;overflow-wrap:break-word}
+.match-pair-tip[hidden]{display:none}
+.match-pair-tip-head{font-family:var(--mono,monospace);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-0,#ffb968);margin-bottom:4px;opacity:.9}
+.match-pair-tip-row{color:var(--accent-1,#ffd9a8)}
+.match-pair-tip-row+.match-pair-tip-row{margin-top:3px}
+.match-pair-tip::after{content:'';position:absolute;left:50%;bottom:-6px;width:10px;height:10px;margin-left:-5px;transform:rotate(45deg);background:rgb(14,18,26);border-right:1px solid rgba(var(--accent-0-rgb,255,185,104),.55);border-bottom:1px solid rgba(var(--accent-0-rgb,255,185,104),.55)}
+.match-pair-tip.below::after{bottom:auto;top:-6px;transform:rotate(225deg)}

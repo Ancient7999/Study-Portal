@@ -298,6 +298,11 @@ html[data-quality="basic"] *::after{
 }
 html[data-quality="basic"] #fxCanvas,
 html[data-quality="basic"] .friend-cursor-aura{display:none!important}
+/* Basic quality: the link-made emoji burst still plays, in slow motion */
+html[data-quality="basic"] .float-bit{
+  animation:floatBloom calc(var(--dur,1200ms) * 3) linear forwards!important;
+  filter:none!important;
+}
 html[data-quality="basic"] .portal-card,
 html[data-quality="basic"] .modal-card,
 html[data-quality="basic"] .chat-dock,
