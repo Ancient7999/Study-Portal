@@ -275,6 +275,15 @@
     };
     const labelById = id => labelsOf(img).find(x => x.id === id);
 
+    /* auto-check: lock at once, unless the text is also the start of a longer accepted answer ("Facial bone" → "Facial bones"); then wait for typing to pause */
+    const autoLock = (l, input, doLock) => {
+      clearTimeout(input._al);
+      if (!matches(l, input.value)) return;
+      const t = norm(input.value).toLowerCase();
+      const longer = [l.answer].concat(l.accept || []).some(c => { const n = norm(c).toLowerCase(); return n.length > t.length && n.startsWith(t); });
+      if (!longer) { doLock(); return; }
+      input._al = setTimeout(() => { if (input.isConnected && matches(l, input.value)) doLock(); }, 700);
+    };
     /* typed slots */
     sec.querySelectorAll('.label-slot.typing').forEach(slot => {
       const input = slot.querySelector('input'), echo = slot.querySelector('.label-echo');
@@ -282,7 +291,7 @@
       input.addEventListener('input', () => {
         echo.innerHTML = echoHTML(l, input.value);
         slot.classList.toggle('has-echo', !!echo.innerHTML);
-        if (matches(l, input.value)) lock(l, input.value, slot, 'type');
+        autoLock(l, input, () => lock(l, input.value, slot, 'type'));
       });
       input.addEventListener('keydown', e => {
         if (e.key !== 'Enter') return;
@@ -300,7 +309,7 @@
         if (matches(l, ni.value)) lock(l, ni.value, ni.closest('.simg-name'), 'type');
         else { shake(ni); say('soft', hint(l, ni.value), 1400); ni.select(); }
       };
-      ni.addEventListener('input', () => { echo.innerHTML = echoHTML(l, ni.value); if (matches(l, ni.value)) lock(l, ni.value, ni.closest('.simg-name'), 'type'); });
+      ni.addEventListener('input', () => { echo.innerHTML = echoHTML(l, ni.value); autoLock(l, ni, () => lock(l, ni.value, ni.closest('.simg-name'), 'type')); });
       ni.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); check(); } });
       sec.querySelector('.simg-name-check').addEventListener('click', check);
     }
