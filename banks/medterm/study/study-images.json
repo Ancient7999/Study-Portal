@@ -10783,8 +10783,8 @@
      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Structure_of_a_Long_Bone.png",
      "labeled": "banks/medterm/study/lec11/long-bone-labeled.png",
      "blank": "banks/medterm/study/lec11/long-bone-blank.png",
-     "width": 800,
-     "height": 1200,
+     "width": 706,
+     "height": 1130,
      "labels": [
       {
        "id": "long-bone-L1",
@@ -10793,10 +10793,10 @@
         "Cancellous Bone",
         "Trabecular Bone"
        ],
-       "x": 1.9,
-       "y": 12.6,
-       "w": 12.8,
-       "h": 5.27
+       "x": 1.02,
+       "y": 7.36,
+       "w": 14.5,
+       "h": 5.6
       },
       {
        "id": "long-bone-L2",
@@ -10804,10 +10804,10 @@
        "accept": [
         "Marrow Cavity"
        ],
-       "x": 2.3,
-       "y": 35.33,
-       "w": 16.2,
-       "h": 5.73
+       "x": 1.47,
+       "y": 31.5,
+       "w": 18.36,
+       "h": 6.08
       },
       {
        "id": "long-bone-L3",
@@ -10815,10 +10815,10 @@
        "accept": [
         "Cortical Bone"
        ],
-       "x": 2.4,
-       "y": 58.67,
-       "w": 15.0,
-       "h": 5.33
+       "x": 1.59,
+       "y": 56.29,
+       "w": 17.0,
+       "h": 5.66
       },
       {
        "id": "long-bone-L4",
@@ -10826,20 +10826,20 @@
        "accept": [
         "Proximal Epiphysis"
        ],
-       "x": 64.4,
-       "y": 13.2,
-       "w": 15.8,
-       "h": 2.8,
+       "x": 71.84,
+       "y": 8.0,
+       "w": 17.9,
+       "h": 2.97,
        "hint": "bone region"
       },
       {
        "id": "long-bone-L5",
        "answer": "Metaphysis",
        "accept": [],
-       "x": 63.4,
-       "y": 22.27,
-       "w": 18.6,
-       "h": 2.8,
+       "x": 70.71,
+       "y": 17.63,
+       "w": 21.08,
+       "h": 2.97,
        "hint": "bone region"
       },
       {
@@ -10848,20 +10848,20 @@
        "accept": [
         "Shaft"
        ],
-       "x": 64.6,
-       "y": 51.47,
-       "w": 16.0,
-       "h": 5.73,
+       "x": 72.07,
+       "y": 48.64,
+       "w": 18.13,
+       "h": 6.08,
        "hint": "bone region"
       },
       {
        "id": "long-bone-L7",
        "answer": "Metaphysis",
        "accept": [],
-       "x": 63.2,
-       "y": 84.53,
-       "w": 18.6,
-       "h": 2.8,
+       "x": 70.48,
+       "y": 83.75,
+       "w": 21.08,
+       "h": 2.97,
        "hint": "bone region"
       },
       {
@@ -10870,10 +10870,10 @@
        "accept": [
         "Distal Epiphysis"
        ],
-       "x": 64.4,
-       "y": 92.13,
-       "w": 15.8,
-       "h": 2.8,
+       "x": 71.84,
+       "y": 91.82,
+       "w": 17.9,
+       "h": 2.97,
        "hint": "bone region"
       }
      ]
