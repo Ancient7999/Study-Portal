@@ -24,6 +24,9 @@
   const cands = l => [l.answer].concat(Array.isArray(l.accept) ? l.accept : []).filter(x => x != null && String(x).trim() !== '');
   const matches = (l, t) => (typeof labelMatches === 'function') ? labelMatches(l, t) : (!!norm(t) && cands(l).some(c => norm(c) === norm(t)));
   const echoHTML = (l, t) => (typeof labelEchoHTML === 'function') ? labelEchoHTML(l, t) : esc(t);
+  /* hint category -> colour family (direction / muscle / bone-structure / division / other) */
+  const hintCat = h => !h ? '' : /direction/i.test(h) ? 'dir' : /muscle/i.test(h) ? 'muscle' : /bone|structure|region/i.test(h) ? 'bone' : /division/i.test(h) ? 'division' : 'other';
+  const catAttr = h => { const c = hintCat(h); return c ? ' data-cat="' + c + '"' : ''; };
   const hint = (l, t) => (typeof saqHint === 'function') ? saqHint({ answer: l.answer, accept: l.accept }, t) : 'not that one · try again';
   const reduced = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   const isBasic = () => document.documentElement.getAttribute('data-quality') === 'basic';
@@ -62,6 +65,10 @@
     saveJSON(STORE, all);
   }
   const isSingle = img => img.kind === 'single-structure' || !(img.labels && img.labels.length);
+  /* Bone Anatomy: multi-word names are stored in Title Case, e.g. "Facial Bones" */
+  /* typed bone names: first word as stored, each later word either Title or lower case ("Facial Bones" / "Facial bones") */
+  const caseVariants = t => { const w = String(t).split(' '); let out = [w[0]]; for (let k = 1; k < w.length; k++) { const lo = w[k].charAt(0).toLowerCase() + w[k].slice(1), up = w[k].charAt(0).toUpperCase() + w[k].slice(1); out = out.flatMap(p => lo === up ? [p + ' ' + up] : [p + ' ' + up, p + ' ' + lo]); } return out.slice(0, 32); };
+  const titleCase = t => String(t).replace(/(^|[\s-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
   const labelsOf = img => isSingle(img) ? [{ id: 'name', answer: img.answer, accept: img.accept || [] }] : img.labels;
   const keyOf = (ch, img) => ch.lecture + '/' + img.id;
   const modesOf = img => (Array.isArray(img.modes) && img.modes.length) ? img.modes : (isSingle(img) ? ['type', 'bank', 'show'] : ['bank', 'type', 'show']);
@@ -156,7 +163,7 @@
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
       + '</div></header>';
     const src = animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
-    h += '<div class="simg-frame"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '">'
+    h += '<div class="simg-frame"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '"' + ((img.width && img.height) ? ' style="--ar:' + (img.width / img.height).toFixed(4) + '"' : '') + '>'
       + '<img class="label-img simg-img" loading="lazy" decoding="async" src="' + esc(src) + '" width="' + (img.width || '') + '" height="' + (img.height || '') + '" alt="' + esc(img.alt || img.title) + '" draggable="false">';
     h += regionsSVG(img);
     if (!single) {
@@ -166,8 +173,8 @@
         if (mode === 'show') { h += '<div class="simg-hot" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '"></div>'; return; }
         const t = slots[l.id];
         if (t != null && matches(l, t)) h += '<div class="label-slot locked" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
-        else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
-        else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
+        else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
+        else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
     h += '</div></div><button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button></div>';
@@ -176,13 +183,13 @@
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
       else if (t != null && matches(l, t)) h += '<div class="simg-name done"><span class="simg-name-label">' + q + '</span><span class="simg-name-locked">✓ ' + esc(t) + '</span></div>';
       else if (mode === 'bank') h += '<div class="simg-name"><span class="simg-name-label">' + q + '</span><div class="label-slot open simg-name-slot" data-id="name" tabindex="0" role="button" aria-label="Drop the name here">drop the name here</div></div>';
-      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><button type="button" class="nav-btn primary simg-name-check">Check</button><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
+      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" name="simg-name-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><button type="button" class="nav-btn primary simg-name-check">Check</button><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
     }
     if (mode === 'bank') {
       const open = labels.filter(l => !(slots[l.id] != null && matches(l, slots[l.id])));
       if (open.length) {
         const words = single ? boneChips(ch, img) : seededShuffle(open.map(l => l.answer), key);
-        h += '<div class="label-bank simg-bank" aria-label="Word bank">' + words.map(w => '<button type="button" class="label-chip" data-text="' + esc(w) + '">' + esc(w) + '</button>').join('') + '</div>';
+        h += '<div class="label-bank simg-bank" aria-label="Word bank">' + words.map(w => { const hl = open.find(l => l.answer === w); return '<button type="button" class="label-chip" draggable="false"' + catAttr(hl && hl.hint) + ' data-text="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>';
       }
     }
     h += '<div class="feedback idle simg-fb" aria-live="polite"></div>';
@@ -208,7 +215,7 @@
     }));
     sec.querySelector('.simg-restart').addEventListener('click', () => { writeModeSlots(key, mode, {}); rerender(); updateSummary(); });
     if (pager) {
-      const go = d => { pageOf[ch.lecture] = Math.max(0, Math.min(pager.n - 1, pager.i + d)); pager.render(); };
+      const go = d => { if (pager.stopCd) pager.stopCd(); pageOf[ch.lecture] = Math.max(0, Math.min(pager.n - 1, pager.i + d)); pager.render(); };
       sec.querySelector('.simg-prev').addEventListener('click', () => go(-1));
       sec.querySelector('.simg-next').addEventListener('click', () => go(1));
     }
@@ -229,9 +236,42 @@
       const fb2 = sec.querySelector('.simg-fb');
       fb2.className = 'feedback good simg-fb';
       fb2.textContent = (n === 1 ? '✓ correct' : k >= n ? ('✓ all ' + n + ' solved') : ('✓ ' + k + ' of ' + n + ' labels')) + (xp ? ' · +' + xp + ' XP' : '');
+      if (single && how === 'type' && String(text).trim() !== l.answer && String(text).trim().toLowerCase() === l.answer.toLowerCase()) {
+        const typed = String(text).trim();
+        const proper = l.answer.split('').map((c, i) => c !== typed[i] ? '<strong class="simg-case-fix">' + esc(c) + '</strong>' : esc(c)).join('');
+        const inl = sec.querySelector('.simg-name.done .simg-name-locked'); if (inl) inl.innerHTML = '✓ ' + proper;
+        fb2.textContent += ' · Written as ' + l.answer;
+      }
       if (k >= n) { sec.classList.add('correct-pulse'); setTimeout(() => sec.classList.remove('correct-pulse'), 650); if (typeof pt1Confetti === 'function') pt1Confetti(); }
       updateSummary();
+      if (pager && single && pager.i < pager.n - 1) startAdvance();
       if (hadFocus) { const nx = sec.querySelector('.label-slot.typing input'); if (nx) try { nx.focus({ preventScroll: true }); } catch (e) {} }
+    };
+    /* bone pages: auto-advance countdown after a correct answer (same bar as formula practice), pausable / cancellable */
+    const ADVANCE_MS = 3200;
+    const startAdvance = () => {
+      if (pager.stopCd) pager.stopCd();
+      const host = sec.querySelector('.simg-name.done') || sec.querySelector('.simg-pager-nav'); if (!host) return;
+      const w = document.createElement('div');
+      w.className = 'formula-advance-wrap simg-advance'; w.setAttribute('aria-hidden', 'false');
+      w.innerHTML = '<div class="formula-advance-track" aria-hidden="true"><div class="formula-advance-fill"></div></div>'
+        + '<div class="simg-advance-row"><span class="formula-advance-label">Next bone</span>'
+        + '<button type="button" class="nav-btn simg-adv-pause" aria-pressed="false">Pause</button>'
+        + '<button type="button" class="nav-btn simg-adv-cancel">Cancel</button></div>';
+      host.insertAdjacentElement('afterend', w);
+      const fill = w.querySelector('.formula-advance-fill');
+      let left = ADVANCE_MS, last = performance.now(), paused = false, raf = 0, alive = true;
+      const stop = () => { alive = false; cancelAnimationFrame(raf); if (w.isConnected) w.remove(); if (pager.stopCd === stop) pager.stopCd = null; };
+      const tick = now => {
+        if (!alive) return;
+        if (!paused) left -= now - last; last = now;
+        fill.style.transform = 'scaleX(' + Math.max(0, left / ADVANCE_MS) + ')';
+        if (left <= 0) { stop(); if (sec.isConnected) { pageOf[ch.lecture] = Math.min(pager.n - 1, pager.i + 1); pager.render(); } return; }
+        raf = requestAnimationFrame(tick);
+      };
+      w.querySelector('.simg-adv-pause').addEventListener('click', e => { paused = !paused; e.currentTarget.textContent = paused ? 'Resume' : 'Pause'; e.currentTarget.setAttribute('aria-pressed', String(paused)); w.classList.toggle('paused', paused); });
+      w.querySelector('.simg-adv-cancel').addEventListener('click', stop);
+      pager.stopCd = stop; raf = requestAnimationFrame(tick);
     };
     const labelById = id => labelsOf(img).find(x => x.id === id);
 
@@ -260,7 +300,7 @@
         if (matches(l, ni.value)) lock(l, ni.value, ni.closest('.simg-name'), 'type');
         else { shake(ni); say('soft', hint(l, ni.value), 1400); ni.select(); }
       };
-      ni.addEventListener('input', () => { echo.innerHTML = echoHTML(l, ni.value); });
+      ni.addEventListener('input', () => { echo.innerHTML = echoHTML(l, ni.value); if (matches(l, ni.value)) lock(l, ni.value, ni.closest('.simg-name'), 'type'); });
       ni.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); check(); } });
       sec.querySelector('.simg-name-check').addEventListener('click', check);
     }
@@ -268,6 +308,7 @@
     /* word bank: drag a chip onto a slot, or tap a chip then a slot (or a slot then a chip) */
     let selChip = null, selSlot = null;
     const fig = sec.querySelector('.simg-figure');
+    { const bk = sec.querySelector('.simg-bank'); const setBH = () => sec.style.setProperty('--simg-bank-h', (bk ? Math.ceil(bk.getBoundingClientRect().height) + 10 : 0) + 'px'); setBH(); if (bk) requestAnimationFrame(setBH); }
     const select = chip => {
       sec.querySelectorAll('.label-chip.selected').forEach(c => c.classList.remove('selected'));
       selChip = chip || null; if (chip) chip.classList.add('selected');
@@ -295,9 +336,39 @@
       if (ghost) ghost.remove();
       lock(l, chip.dataset.text, slot, 'drop');
     };
+    /* filled boxes grow to show the whole word: widen (keeping the edge that faces the leader line), wrap to 2 lines if needed, never past the image edge */
+    const fitLocked = () => {
+      if (!fig || single) return;
+      const F = fig.getBoundingClientRect(); if (!F.width) return;
+      sec.querySelectorAll('.label-figure .label-slot.locked').forEach(slot => {
+        const l = labelById(slot.dataset.id); if (!l) return;
+        const span = slot.querySelector('.label-slot-text'); if (!span) return;
+        slot.style.left = l.x + '%'; slot.style.width = l.w + '%'; slot.style.top = l.y + '%'; slot.style.height = l.h + '%'; slot.classList.remove('grown', 'wrapped');
+        const need = span.scrollWidth + 10, have = slot.getBoundingClientRect().width;
+        if (need <= have + 1) return;
+        const maxW = Math.max(have, F.width * 0.42);
+        let w = Math.min(need, maxW) / F.width * 100;
+        const a = l.anchor, right = l.x + l.w;
+        let x = a && a.x > right ? right - w : a && a.x < l.x ? l.x : l.x + l.w / 2 - w / 2;
+        x = Math.max(0, Math.min(100 - w, x));
+        slot.style.left = x + '%'; slot.style.width = w + '%'; slot.classList.add('grown');
+        if (need > maxW) {
+          slot.classList.add('wrapped');
+          const h2 = Math.max(l.h, (span.scrollHeight + 6) / F.height * 100);
+          slot.style.height = h2 + '%'; slot.style.top = Math.max(0, Math.min(100 - h2, l.y + l.h / 2 - h2 / 2)) + '%';
+        }
+      });
+    };
+    fitLocked(); requestAnimationFrame(fitLocked);
+    if (fig && window.ResizeObserver) { let lastW = 0; new ResizeObserver(() => { const w = fig.getBoundingClientRect().width; if (Math.abs(w - lastW) > 0.5) { lastW = w; fitLocked(); } }).observe(fig); }
+    /* no native text/HTML drag or selection inside the bank or picture (inputs stay selectable) */
+    sec.querySelectorAll('.simg-bank, .simg-stage').forEach(z => {
+      ['dragstart', 'selectstart'].forEach(t => z.addEventListener(t, e => { if (!(e.target.closest && e.target.closest('input, textarea'))) e.preventDefault(); }));
+    });
     sec.querySelectorAll('.label-chip').forEach(chip => {
       chip.addEventListener('pointerdown', e => {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
+        try { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); } catch (er) {}
         const sx = e.clientX, sy = e.clientY; let ghost = null, over = null;
         const move = ev => {
           if (!ghost) {
@@ -309,7 +380,12 @@
           ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
           if (ev.clientY < 48) window.scrollBy(0, -14); else if (ev.clientY > window.innerHeight - 48) window.scrollBy(0, 14);
           const el = document.elementFromPoint(ev.clientX, ev.clientY);
-          const s = el && el.closest ? el.closest('.label-slot.open') : null;
+          let s = el && el.closest ? el.closest('.label-slot.open') : null;
+          if (!s && el && el.closest) {
+            /* released over a structure/region: drop into its linked label box */
+            const r = el.closest('.simg-reg[data-id], .simg-hot[data-id]');
+            if (r && sec.contains(r)) s = sec.querySelector('.label-slot[data-id="' + CSS.escape(r.dataset.id) + '"]');
+          }
           const s2 = (s && sec.contains(s)) ? s : null;
           if (s2 !== over) { if (over) over.classList.remove('drop-over'); over = s2; if (over) over.classList.add('drop-over'); }
         };
@@ -397,6 +473,7 @@
       const res = await fetch(src, { cache: 'no-store' });
       if (!res.ok) throw new Error(src + ' → ' + res.status);
       DATA = await res.json(); dataSrc = src;
+      DATA.chapters.forEach(c => (c.images || []).forEach(i => { if (!isSingle(i) || !i.answer) return; const tc = t => /\s/.test(String(t).trim()) ? titleCase(t) : t; i.answer = tc(i.answer); const acc = (Array.isArray(i.accept) ? i.accept : []).map(tc); [i.answer].concat(acc.slice()).forEach(t => caseVariants(t).forEach(v => { if (v !== i.answer && !acc.includes(v)) acc.push(v); })); i.accept = acc; }));
     }
     listEl.innerHTML = '';
     DATA.chapters.forEach(ch => {
@@ -425,7 +502,7 @@
     }
   }
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }
-  window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA };
+  window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA, _matchName: (img, t) => matches(labelsOf(img)[0], t) };
   addEventListener('study-prefs-changed', () => {
     document.querySelectorAll('#chapterList .simg-card img.simg-img').forEach(el => {
       const cur = el.getAttribute('src') || ''; if (!/heart-flow|\.svg$/.test(cur)) return;

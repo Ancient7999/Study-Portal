@@ -295,3 +295,43 @@
   pointer-events: auto;
 }
 #studyView .sym-tip[hidden] { display: none; }
+
+/* label-hint categories: readable hint text in the empty box + matching chip tint (light & dark) */
+#studyView .label-slot[data-cat],#studyView .label-chip[data-cat]{--cat:#475569;--cat-bg:rgba(71,85,105,.12)}
+#studyView .label-slot[data-cat="dir"],#studyView .label-chip[data-cat="dir"]{--cat:#1d4ed8;--cat-bg:rgba(37,99,235,.14)}
+#studyView .label-slot[data-cat="muscle"],#studyView .label-chip[data-cat="muscle"]{--cat:#b91c1c;--cat-bg:rgba(220,38,38,.13)}
+#studyView .label-slot[data-cat="bone"],#studyView .label-chip[data-cat="bone"]{--cat:#047857;--cat-bg:rgba(5,150,105,.14)}
+#studyView .label-slot[data-cat="division"],#studyView .label-chip[data-cat="division"]{--cat:#7e22ce;--cat-bg:rgba(147,51,234,.13)}
+#studyView .label-slot.open[data-cat] .simg-slot-hint{color:var(--cat);font-weight:600;opacity:1}
+#studyView .label-slot.open[data-cat],#studyView .label-slot.typing[data-cat]{border-color:var(--cat)}
+#studyView .label-slot.typing[data-cat] .label-input::placeholder{color:var(--cat);font-weight:600}
+#studyView .simg-bank .label-chip[data-cat]{border-color:var(--cat);box-shadow:inset 3px 0 0 var(--cat);background-image:linear-gradient(var(--cat-bg),var(--cat-bg))}
+/* chips sit on the dark/light page: same hue, brighter shade so the border reads in either context */
+#studyView .simg-bank .label-chip[data-cat="dir"]{--chip-cat:#60a5fa}
+#studyView .simg-bank .label-chip[data-cat="muscle"]{--chip-cat:#f87171}
+#studyView .simg-bank .label-chip[data-cat="bone"]{--chip-cat:#34d399}
+#studyView .simg-bank .label-chip[data-cat="division"]{--chip-cat:#c084fc}
+#studyView .simg-bank .label-chip[data-cat="other"]{--chip-cat:#94a3b8}
+#studyView .simg-bank .label-chip[data-cat]{border-color:var(--chip-cat);box-shadow:inset 4px 0 0 var(--chip-cat)}
+/* fit the whole picture on screen: cap the fitted height to the viewport minus the word bank (labels are % based, so they follow) */
+#studyView .simg-figure:not(.single)[style*="--ar"]{width:calc(min(100%, (100vh - var(--simg-bank-h, 150px) - 90px) * var(--ar)) * var(--lz,1));width:calc(min(100%, (100dvh - var(--simg-bank-h, 150px) - 90px) * var(--ar)) * var(--lz,1));margin-inline:auto}
+#studyView .simg-stage.lz-zoomed .simg-figure{margin-inline:0}
+/* word bank sticks to the bottom of the viewport while its exercise is on screen */
+#studyView .simg-bank{position:sticky;bottom:0;z-index:6;background:var(--bg1,#0a1420);border:1px solid var(--border);border-radius:12px;padding:8px;max-height:min(30vh,220px);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 -6px 16px rgba(0,0,0,.35)}
+/* bone auto-advance countdown (formula-practice bar) */
+#studyView .simg-advance{display:block;margin:10px 0 4px}
+#studyView .simg-advance-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+#studyView .simg-advance-row .formula-advance-label{margin:0;flex:1;font-family:var(--mono);font-size:.68rem;color:var(--text-dim)}
+#studyView .simg-advance-row .nav-btn{padding:4px 10px;font-size:.74rem}
+#studyView .simg-advance .formula-advance-track{position:relative;height:8px;border-radius:999px;overflow:hidden;background:rgba(var(--accent-0-rgb),.12);border:1px solid rgba(var(--accent-0-rgb),.28)}
+#studyView .simg-advance .formula-advance-fill{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent-0),var(--accent-1));transform-origin:left center;transform:scaleX(1)}
+#studyView .simg-advance.paused .formula-advance-fill{opacity:.5}
+#studyView .chapter-card.simg-chapter-card{overflow:clip}
+#studyView .simg-case-fix{color:var(--accent-0);font-weight:800;text-decoration:underline;text-underline-offset:2px}#studyView .simg-fb .simg-proper-note{opacity:.85;font-size:.9em}
+/* no native text/HTML drag on the word bank, chips or picture; inputs stay selectable */
+#studyView .simg-bank,#studyView .simg-bank .label-chip,#studyView .simg-stage,#studyView .simg-figure,#studyView .simg-figure img{-webkit-user-select:none;user-select:none;-webkit-user-drag:none}
+#studyView .simg-stage input,#studyView .simg-name-input{-webkit-user-select:text;user-select:text}
+/* filled label boxes show the whole word (no ellipsis); grown boxes sit above neighbours */
+#studyView .label-figure .label-slot.locked .label-slot-text{overflow:visible;text-overflow:clip;white-space:nowrap;max-width:none}
+#studyView .label-figure .label-slot.locked.grown{z-index:3}
+#studyView .label-figure .label-slot.locked.wrapped .label-slot-text{white-space:normal;overflow-wrap:anywhere;line-height:1.1}

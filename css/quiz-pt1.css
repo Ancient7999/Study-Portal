@@ -658,3 +658,6 @@ html[data-pointer-input="touch"] .kbd-hint{display:none}
 .match-pair-tip-row+.match-pair-tip-row{margin-top:3px}
 .match-pair-tip::after{content:'';position:absolute;left:50%;bottom:-6px;width:10px;height:10px;margin-left:-5px;transform:rotate(45deg);background:rgb(14,18,26);border-right:1px solid rgba(var(--accent-0-rgb,255,185,104),.55);border-bottom:1px solid rgba(var(--accent-0-rgb,255,185,104),.55)}
 .match-pair-tip.below::after{bottom:auto;top:-6px;transform:rotate(225deg)}
+
+.label-stage.lz-zoomed{touch-action:pinch-zoom;cursor:grab}
+.label-stage.lz-panning{cursor:grabbing;user-select:none}
