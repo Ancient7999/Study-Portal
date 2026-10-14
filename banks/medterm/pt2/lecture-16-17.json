@@ -1355,80 +1355,70 @@
       },
       {
         "id": "MT16074",
-        "type": "stepped",
+        "type": "matching",
         "cat": "MT_lec16-17",
-        "group": "breathing-cluster",
-        "groupOrder": 1,
-        "q": "Which breathing pattern is being named? At each step, choose, then continue.",
-        "steps": [
+        "q": "Match each breathing-pattern term to what the breathing looks like.",
+        "leftItems": [
           {
             "id": "1",
-            "prompt": "Normal and quiet breathing",
-            "options": [
-              "Eupnea",
-              "Bradypnea",
-              "Tachypnea",
-              "Hypopnea"
-            ],
-            "correct": 0
+            "text": "Eupnea"
           },
           {
             "id": "2",
-            "prompt": "Abnormally slow breathing rate",
-            "options": [
-              "Bradypnea",
-              "Tachypnea",
-              "Hypopnea",
-              "Hyperpnea"
-            ],
-            "correct": 0
+            "text": "Bradypnea"
           },
           {
             "id": "3",
-            "prompt": "Abnormally rapid breathing rate",
-            "options": [
-              "Tachypnea",
-              "Bradypnea",
-              "Hyperpnea",
-              "Dyspnea"
-            ],
-            "correct": 0
+            "text": "Tachypnea"
           },
           {
             "id": "4",
-            "prompt": "Shallow breathing with partial airway blockage",
-            "options": [
-              "Hypopnea",
-              "Hyperpnea",
-              "Dyspnea",
-              "Eupnea"
-            ],
-            "correct": 0
+            "text": "Hypopnea"
           },
           {
             "id": "5",
-            "prompt": "Deep breathing that may also be faster in exertion",
-            "options": [
-              "Hyperpnea",
-              "Hypopnea",
-              "Dyspnea",
-              "Bradypnea"
-            ],
-            "correct": 0
+            "text": "Hyperpnea"
           },
           {
             "id": "6",
-            "prompt": "Difficult breathing with shortness of breath and chest tightening",
-            "options": [
-              "Dyspnea",
-              "Eupnea",
-              "Bradypnea",
-              "Tachypnea"
-            ],
-            "correct": 0
+            "text": "Dyspnea"
           }
         ],
-        "explain": "Eupnea is normal quiet breathing. Bradypnea is an abnormally slow rate. Tachypnea is an abnormally rapid rate. Hypopnea is shallow breathing associated with partial airway blockage. Hyperpnea is deep breathing that may also be faster during exercise or exertion. Dyspnea is difficult breathing with shortness of breath and chest tightening. A slow rate is not tachypnea, a rapid rate is not bradypnea, shallow blocked breathing is not hyperpnea or eupnea, deep exertional breathing is not hypopnea, and difficult chest-tightening breathlessness is not eupnea."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "About 12 to 20 quiet, even breaths per minute at rest"
+          },
+          {
+            "id": "B",
+            "text": "Fewer than 12 breaths per minute at rest"
+          },
+          {
+            "id": "C",
+            "text": "More than 20 breaths per minute at rest"
+          },
+          {
+            "id": "D",
+            "text": "Breaths too shallow to move enough air, as with a partly blocked airway"
+          },
+          {
+            "id": "E",
+            "text": "Larger, fuller breaths, as during hard exercise"
+          },
+          {
+            "id": "F",
+            "text": "Breathlessness with a tight chest and a struggle for air"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Eupnea is normal quiet breathing at about 12 to 20 breaths per minute. Bradypnea is a rate below 12, and tachypnea is a rate above 20. Hypopnea is breathing too shallow to move enough air, as with a partly blocked airway. Hyperpnea is deeper breathing, as during exercise. Dyspnea is difficult breathing with breathlessness and chest tightness."
       },
       {
         "id": "MT16075",
