@@ -119,8 +119,8 @@ html[data-custom-cursor="off"] .mood-cursor-hint,html[data-pointer-input="touch"
 .pt1q .options{display:flex;flex-direction:column;gap:12px}
 .pt1q .opt{position:relative;background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.08) 0%,rgba(10,14,22,.62) 48%,rgba(8,10,16,.82) 100%);border:1px solid rgba(var(--accent-0-rgb),.2);border-left:3px solid rgba(var(--accent-0-rgb),.42);border-radius:14px;padding:16px 18px 16px 56px;font-size:1.12rem;line-height:1.45;text-align:left;color:var(--text);width:100%;font-family:var(--font-choice,var(--body));box-shadow:0 8px 22px -16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(10px) saturate(1.05);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
 .pt1q .opt::before{content:attr(data-key);position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.78rem;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(var(--accent-0-rgb),.1);border:1px solid rgba(var(--accent-0-rgb),.28);color:var(--accent-0);transition:border-color .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease}
-.pt1q .opt:hover:not(:disabled){border-color:rgba(var(--accent-0-rgb),.55);border-left-color:var(--accent-0);background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.16) 0%,rgba(10,14,22,.7) 48%,rgba(8,10,16,.88) 100%);transform:translateX(4px);box-shadow:0 0 20px rgba(var(--accent-0-rgb),.28),0 10px 24px -14px rgba(0,0,0,.5)}
-.pt1q .opt:hover:not(:disabled)::before{border-color:var(--accent-0);color:var(--accent-1);background:rgba(var(--accent-0-rgb),.18);box-shadow:0 0 10px rgba(var(--accent-0-rgb),.25)}
+.pt1q .opt:hover:not(:disabled),.pt1q .opt.kb-hl:not(:disabled){border-color:rgba(var(--accent-0-rgb),.55);border-left-color:var(--accent-0);background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.16) 0%,rgba(10,14,22,.7) 48%,rgba(8,10,16,.88) 100%);transform:translateX(4px);box-shadow:0 0 20px rgba(var(--accent-0-rgb),.28),0 10px 24px -14px rgba(0,0,0,.5)}
+.pt1q .opt:hover:not(:disabled)::before,.pt1q .opt.kb-hl:not(:disabled)::before{border-color:var(--accent-0);color:var(--accent-1);background:rgba(var(--accent-0-rgb),.18);box-shadow:0 0 10px rgba(var(--accent-0-rgb),.25)}
 .pt1q .opt:active:not(:disabled){transform:translateX(2px) scale(.987)}
 .pt1q .opt:focus-visible{outline:2px solid var(--accent-1);outline-offset:2px;box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.2)}
 .pt1q .opt.correct{border-color:var(--success);border-left-color:var(--success);background:rgba(52,211,153,.12);color:var(--success)}
@@ -429,7 +429,7 @@ html[data-custom-cursor="on"]:not([data-pointer-input="touch"]) .pt1q .q-nav-btn
 .pt1q .card-meta,
 .pt1q .form-letter{color:var(--accent-0)!important}
 .pt1q .track-fill{background:linear-gradient(90deg,var(--accent-0),var(--accent-1),var(--accent-2))!important}
-.pt1q .opt:hover:not(:disabled){border-color:rgba(var(--accent-0-rgb),.55)!important;border-left-color:var(--accent-0)!important;background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.16) 0%,rgba(10,14,22,.7) 48%,rgba(8,10,16,.88) 100%)!important;box-shadow:0 0 20px rgba(var(--accent-0-rgb),.28),0 10px 24px -14px rgba(0,0,0,.5)!important}
+.pt1q .opt:hover:not(:disabled),.pt1q .opt.kb-hl:not(:disabled){border-color:rgba(var(--accent-0-rgb),.55)!important;border-left-color:var(--accent-0)!important;background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.16) 0%,rgba(10,14,22,.7) 48%,rgba(8,10,16,.88) 100%)!important;box-shadow:0 0 20px rgba(var(--accent-0-rgb),.28),0 10px 24px -14px rgba(0,0,0,.5)!important}
 .pt1q .nav-btn.primary,
 .pt1q .btn-gold,
 .pt1q .cta-glow{background:linear-gradient(135deg,var(--accent-0),var(--accent-1))!important;box-shadow:0 12px 28px rgba(var(--accent-0-rgb),.32)!important}
@@ -661,3 +661,18 @@ html[data-pointer-input="touch"] .kbd-hint{display:none}
 
 .label-stage.lz-zoomed{touch-action:pinch-zoom;cursor:grab}
 .label-stage.lz-panning{cursor:grabbing;user-select:none}
+
+/* —— app UI is not selectable (mouse drag / Ctrl+A); reading regions and fields stay selectable —— */
+body{-webkit-user-select:none;user-select:none}
+input,textarea,select,[contenteditable]:not([contenteditable="false"]),
+.chat-msg-body,.chat-input,.selectable-text,
+#studyView .chapter-body .md:not(.simg-chapter),#studyView .chapter-body .md:not(.simg-chapter) *,
+#studyView .simg-caption,#studyView .simg-caption *,#studyView .simg-credit,#studyView .simg-credit *,
+.pt1q .explanation,.pt1q .feedback.good,.pt1q .feedback.bad{-webkit-user-select:text;user-select:text}
+/* fullscreen button on every view; the " · F" key hint hides on touch devices like the shortcuts HUD */
+html[data-pointer-input="touch"] .fs-key{display:none}
+.fs-any{font-family:var(--font-nav,var(--mono));font-size:.85rem;color:var(--accent-0);border:1px solid rgba(var(--accent-0-rgb),.28);padding:8px 14px;border-radius:999px;background:rgba(var(--accent-0-rgb),.08);cursor:pointer}
+.fs-any:hover{background:rgba(var(--accent-0-rgb),.14);border-color:rgba(var(--accent-0-rgb),.55)}
+.fs-any:focus-visible{outline:2px solid var(--accent-1);outline-offset:3px}
+.portal-fs{display:flex;justify-content:flex-end;margin:0 0 6px}
+.sets-back{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}

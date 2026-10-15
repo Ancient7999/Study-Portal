@@ -1371,7 +1371,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
 .achievement-popup-desc{font-size:.8em;opacity:.92;color:#4a3500}
 
 </style>
-<link rel="stylesheet" href="css/quiz-pt1.css?v=6">
+<link rel="stylesheet" href="css/quiz-pt1.css?v=7">
 <link rel="stylesheet" href="css/formula-practice.css?v=2">
 <link rel="stylesheet" href="css/study-pt1.css?v=5">
 </head>
@@ -1452,6 +1452,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
 <!-- ========== PORTAL HOME ========== -->
 <div class="app view active" id="portalView">
   <div class="portal-wrap">
+    <div class="portal-fs"><button class="fs-btn fs-any" type="button" data-fs>Fullscreen<span class="fs-key"> · F</span></button></div>
     <h1>Study Portal</h1>
     <p class="portal-kicker">Practice · subjects &amp; materials</p>
     <div class="portal-sub">Pick a subject · unlocked materials open in this page</div>
@@ -1470,7 +1471,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
 <!-- ========== SETS VIEW (PT1 sets markup, portal back button) ========== -->
 <div class="app view pt1q" id="setsView">
   <div class="sets-view sets-wrap">
-    <div class="sets-back"><button type="button" id="portalBackBtn">← Study Portal</button></div>
+    <div class="sets-back"><button type="button" id="portalBackBtn">← Study Portal</button><button class="fs-btn fs-any" type="button" data-fs>Fullscreen<span class="fs-key"> · F</span></button></div>
     <h1 id="setsTitle">Practice</h1>
     <p class="sets-kicker" id="setsKicker">Practice sets</p>
     <div class="sub" id="setsSub"></div>
@@ -1506,6 +1507,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
     <div class="study-actions">
       <button type="button" class="btn" id="studyBackBtn">← Study Portal</button>
       <button type="button" class="btn primary" id="studyQuizBtn">Open Quiz</button>
+      <button class="fs-btn fs-any" type="button" data-fs>Fullscreen<span class="fs-key"> · F</span></button>
     </div>
   </header>
 
@@ -1523,6 +1525,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
     </div>
     <div class="header-right">
       <button class="fs-btn" type="button" id="formulaSetsBtn">← Return to interface</button>
+      <button class="fs-btn fs-any" type="button" data-fs>Fullscreen<span class="fs-key"> · F</span></button>
     </div>
   </div>
   <div class="panel" id="formulaPanel">
@@ -1566,7 +1569,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
     </div>
     <div class="header-right">
       <button class="fs-btn" type="button" id="setsBtn">← Return to interface</button>
-      <button class="fs-btn" type="button" id="fsBtn">Fullscreen · F</button>
+      <button class="fs-btn" type="button" id="fsBtn" data-fs>Fullscreen<span class="fs-key"> · F</span></button>
     </div>
   </div>
   <div class="panel" id="mainPanel">
@@ -1592,7 +1595,7 @@ body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
           <button class="nav-btn primary" id="nextBtn" type="button" disabled>Next →</button>
         </div>
         <div class="feedback idle" id="feedback"></div>
-        <div class="kbd-hint"><span class="kbd">← →</span> move · <span class="kbd">Enter</span> next · <span class="kbd">F</span> fullscreen · <span class="kbd">Esc</span> <span id="quizEscLabel">back to sets</span></div>
+        <div class="kbd-hint"><span class="kbd">↑ ↓</span> / <span class="kbd">1–4</span> pick · <span class="kbd">Enter</span> answer / next · <span class="kbd">← →</span> move · <span class="kbd">F</span> fullscreen · <span class="kbd">Esc</span> <span id="quizEscLabel">back to sets</span></div>
       </div>
       <div class="final" id="finalScreen" style="display:none">
         <h2 id="finalHeading">Run complete</h2>
@@ -3185,7 +3188,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=9"></script>
+<script src="js/quiz-engine.js?v=10"></script>
 <script src="js/formula-gen-pt2.js?v=1"></script>
 <script src="js/formula-practice.js?v=2"></script>
 <script src="js/study-images.js?v=5"></script>

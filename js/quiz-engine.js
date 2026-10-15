@@ -3055,7 +3055,17 @@ document.getElementById('reviewBackBtn').addEventListener('click', ()=>{
   document.getElementById('statusText').textContent='results';
 });
 function toggleFullscreen(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{}); else document.exitFullscreen(); }
-document.getElementById('fsBtn').addEventListener('click', toggleFullscreen);
+document.querySelectorAll('[data-fs]').forEach(b=>b.addEventListener('click', toggleFullscreen));
+/* app chrome is unselectable; Ctrl/Cmd+A selects nothing unless focus is in a field or a selectable reading region */
+const SELECTABLE_SEL='input,textarea,select,[contenteditable]:not([contenteditable="false"]),.chat-msg-body,.chat-input,.selectable-text,#studyView .chapter-body .md:not(.simg-chapter),#studyView .study-note,#studyView .simg-caption,#studyView .simg-credit,.pt1q .explanation,.pt1q .feedback.good,.pt1q .feedback.bad';
+document.addEventListener('keydown', e=>{
+  if(!(e.ctrlKey||e.metaKey) || e.altKey || (e.key!=='a'&&e.key!=='A')) return;
+  const t=document.activeElement;
+  if(t && t!==document.body && t.closest && t.closest(SELECTABLE_SEL)) return;
+  try{ const a=getSelection().anchorNode, el=a&&(a.nodeType===1?a:a.parentElement); if(el && el.closest && el.closest(SELECTABLE_SEL) && !getSelection().isCollapsed) return; }catch(er){}
+  e.preventDefault();
+  try{ const sel=getSelection(); if(sel) sel.removeAllRanges(); }catch(er){}
+}, true);
 
 /* —— keyboard (PT1 3977–3987 + portal Esc) ——
    FIX: Enter only works inside an active run, and not while a button or link
@@ -3072,10 +3082,33 @@ window.addEventListener('keydown', e=>{
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
   goSets();
 }, true);
+function kbOptions(){ const o=document.getElementById('options'); return o ? [...o.querySelectorAll('.opt')].filter(b=>!b.disabled && b.offsetParent!==null) : []; }
+function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
   const typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
   if(e.key==='f'||e.key==='F'){ if(!typing && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); toggleFullscreen(); } }
+  /* keyboard answering for choice questions / steps: ↑ ↓ or 1–n highlight (same look as hover), same number again or Enter chooses */
+  if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey){
+    const opts=kbOptions();
+    if(opts.length && (e.key==='ArrowUp'||e.key==='ArrowDown')){
+      e.preventDefault();
+      const i=opts.findIndex(b=>b.classList.contains('kb-hl'));
+      const n=i<0 ? (e.key==='ArrowDown'?0:opts.length-1) : (i+(e.key==='ArrowDown'?1:-1)+opts.length)%opts.length;
+      kbHighlight(opts[n]); return;
+    }
+    if(opts.length && /^[1-9]$/.test(e.key)){
+      const k=+e.key-1; if(k>=opts.length) return;
+      e.preventDefault();
+      if(opts[k].classList.contains('kb-hl')){ kbHighlight(null); opts[k].click(); }
+      else kbHighlight(opts[k]);
+      return;
+    }
+    if(e.key==='Enter'){
+      const hl=opts.find(b=>b.classList.contains('kb-hl'));
+      if(hl){ e.preventDefault(); kbHighlight(null); hl.click(); return; }
+    }
+  }
   if(e.key==='Enter' && !typing && runKeysActive()){
     const t=e.target;
     if(t && t.closest && t.closest('button,a,[role="button"]')) return;
