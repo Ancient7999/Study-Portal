@@ -13,7 +13,10 @@ Periodic Test 1 covered the start of Chapter 3: what a fluid is, laminar and tur
 ```
 Continuity: A₁ v₁ = A₂ v₂        ← smaller vessel area → higher velocity
 Volume flow rate: Q = A v
+Density changes:  ρ₁ A₁ v₁ = ρ₂ A₂ v₂   ← mass flow rate stays the same
 ```
+
+A₁v₁ = A₂v₂ holds when the density is constant, ρ₁ = ρ₂. When the density differs between the two sections, use ρ₁A₁v₁ = ρ₂A₂v₂.
 
 ### Topics map
 
@@ -430,6 +433,8 @@ Re = ρ v D / η
 ρ = density of the fluid,  v = velocity,  D = diameter of the tube,  η = viscosity
 ```
 
+**Reading the symbols:** **ρ** is the Greek letter **rho** and means **density**; it is easily misread as the Latin p. **η** is the Greek letter **eta** and means **viscosity**; it looks like the Latin n. The numerator ρvD reflects the **inertial force** and η the **viscous force**.
+
 **How Re is made:** the top (ρvD) grows with how much **momentum** the fluid carries, since inertia keeps it going and swirling; the bottom (η) is the **internal friction** that smooths the flow into layers. Re has **no units**.
 
 | Re | Type of flow |
@@ -481,13 +486,32 @@ Surface tension is the property of a liquid surface that makes it behave like a 
 T = F / L
 ```
 
-**How T = F/L is made:** take a line of length L on the surface; the surface pulls along the surface on that line with force F. Force per unit length is the surface tension. Some books write it as **γ**. Do not mix it up with the **wall tension T** of Laplace's law, which also has units N/m.
+**How T = F/L is made:** take a line of length L on the surface; the surface pulls along the surface on that line with force F. Force per unit length is the surface tension. Some books write it as **γ**, the Greek letter **gamma**: γ = F/L. Do not mix it up with the **wall tension T** of Laplace's law, which also has units N/m.
 
 <div class="optics-diagram" role="img" aria-label="Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury">
 <svg viewBox="0 0 640 274" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
 <rect x="30" y="70" width="250" height="170" fill="rgba(var(--accent-1-rgb),0.16)" stroke="var(--accent-1)" stroke-width="1.5"/><line x1="30" y1="70" x2="280" y2="70" stroke="var(--accent-1)" stroke-width="3"/><circle cx="60" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><line x1="165" y1="174" x2="186" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="190.2,174 181.8,177.2 181.8,170.8" fill="var(--accent-0)"/><line x1="162.4" y1="180.4" x2="177.2" y2="195.2" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="180.2,198.2 172,194.5 176.5,190" fill="var(--accent-0)"/><line x1="156" y1="183" x2="156" y2="204" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,208.2 152.8,199.8 159.2,199.8" fill="var(--accent-0)"/><line x1="149.6" y1="180.4" x2="134.8" y2="195.2" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="131.8,198.2 135.5,190 140,194.5" fill="var(--accent-0)"/><line x1="147" y1="174" x2="126" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="121.8,174 130.2,170.8 130.2,177.2" fill="var(--accent-0)"/><line x1="149.6" y1="167.6" x2="134.8" y2="152.8" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="131.8,149.8 140,153.5 135.5,158" fill="var(--accent-0)"/><line x1="156" y1="165" x2="156" y2="144" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,139.8 159.2,148.2 152.8,148.2" fill="var(--accent-0)"/><line x1="162.4" y1="167.6" x2="177.2" y2="152.8" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="180.2,149.8 176.5,158 172,153.5" fill="var(--accent-0)"/><line x1="165" y1="86" x2="186" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="190.2,86 181.8,89.2 181.8,82.8" fill="var(--accent-2)"/><line x1="162.4" y1="92.4" x2="177.2" y2="107.2" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="180.2,110.2 172,106.5 176.5,102" fill="var(--accent-2)"/><line x1="156" y1="95" x2="156" y2="116" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="156,120.2 152.8,111.8 159.2,111.8" fill="var(--accent-2)"/><line x1="149.6" y1="92.4" x2="134.8" y2="107.2" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="131.8,110.2 135.5,102 140,106.5" fill="var(--accent-2)"/><line x1="147" y1="86" x2="126" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="121.8,86 130.2,82.8 130.2,89.2" fill="var(--accent-2)"/><text x="155" y="46" text-anchor="middle" fill="var(--accent-2)" font-family="Outfit,sans-serif" font-size="11">surface molecule: pulled sideways and down</text><text x="155" y="60" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">→ the surface acts like a stretched skin</text><text x="155" y="262" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11">inside: pulled equally in all directions</text><rect x="340" y="150" width="120" height="90" fill="rgba(var(--accent-1-rgb),0.3)"/><path d="M340,110 L340,240 L460,240 L460,110" fill="none" stroke="var(--col-text-muted)" stroke-width="1.5"/><rect x="392" y="104" width="16" height="136" fill="rgba(var(--accent-1-rgb),0.55)"/><line x1="392" y1="70" x2="392" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><line x1="408" y1="70" x2="408" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><path d="M392,104 Q400,112 408,104" fill="none" stroke="var(--col-text-main)" stroke-width="1.4"/><text x="400" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">water rises, concave top</text><rect x="490" y="150" width="120" height="90" fill="rgba(var(--accent-4-rgb),0.3)"/><path d="M490,110 L490,240 L610,240 L610,110" fill="none" stroke="var(--col-text-muted)" stroke-width="1.5"/><rect x="542" y="184" width="16" height="56" fill="rgba(var(--accent-4-rgb),0.55)"/><line x1="542" y1="70" x2="542" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><line x1="558" y1="70" x2="558" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><path d="M542,184 Q550,176 558,184" fill="none" stroke="var(--col-text-main)" stroke-width="1.4"/><text x="550" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">mercury falls, convex top</text><text x="475" y="40" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Capillarity in thin tubes</text><text x="155" y="22" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Surface tension: T = F/L</text>
 </svg>
 </div>
+
+**Units of surface tension:**
+
+```
+SI unit:   N/m, the same as J/m², energy per unit area
+CGS unit:  dyne/cm
+1 dyne/cm = 10⁻³ N/m
+```
+
+**Cohesive and adhesive forces:**
+- **Cohesive force** is the attraction between molecules of the **same** liquid or substance. It causes surface tension.
+- **Adhesive force** is the attraction between molecules of **different** substances, such as a liquid and its container wall.
+
+**Contact angle θ:** the angle between the liquid surface and the solid wall. It shows how well the liquid **wets** the solid, that is, adhesion compared with cohesion. A small θ means good wetting. It is used when measuring surface tension by the capillary rise method:
+
+```
+h = 2γ cos θ / (ρ g r)
+h = rise in the tube,  r = tube radius,  ρ = liquid density
+```
 
 ### Factors affecting surface tension
 
@@ -595,7 +619,8 @@ Poiseuille: Q = π r⁴ ΔP / (8 η L)              ← Q ∝ r⁴, Q ∝ ΔP, Q
 Laplace, cylinder:  T = P × r                  ← wall tension [N/m]
 Wall stress: σ = P r / t = Pₜ R / μ   ← Pₜ = Pᵢ − Pₑ, μ = thickness
 Reynolds: Re = ρ v D / η                       ← inertia ÷ viscosity, no units
-Surface tension: T = F / L                    ← [N/m]
+Surface tension: T = γ = F / L                ← [N/m]; 1 dyne/cm = 10⁻³ N/m
+Capillary rise: h = 2γ cos θ / (ρ g r)         ← θ = contact angle
 Alveolar stability: P = 2T / r                 ← sphere version of Laplace
 ```
 

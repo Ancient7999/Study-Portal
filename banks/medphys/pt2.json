@@ -3,8 +3,8 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (42), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 155,
+ "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (57), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 170,
  "forms": [
   "A"
  ],
@@ -861,6 +861,370 @@
     ],
     "correct": 0,
     "explain": "From T = P r, tension is directly proportional to radius when pressure is fixed, so doubling the radius doubles the tension. Halving, equality, or a four-fold change would require a different functional dependence."
+   },
+   {
+    "id": "PHY30043",
+    "type": "mcq",
+    "cat": "Chapter 3: Bernoulli's Equation",
+    "q": "Fluid density differs between two sections of a tube. Which continuity equation applies?",
+    "options": [
+     "ρ₁A₁v₁ = ρ₂A₂v₂",
+     "A₁v₁ = A₂v₂",
+     "ρ₁A₁/v₁ = ρ₂A₂/v₂",
+     "ρ₁v₁/A₁ = ρ₂v₂/A₂"
+    ],
+    "correct": 1,
+    "explain": "Conservation of mass requires the mass flow rate ρAv to be the same at every section, so ρ₁A₁v₁ = ρ₂A₂v₂. Only when the density is constant, ρ₁ = ρ₂, does it cancel to give A₁v₁ = A₂v₂, the volume flow rate form Q = Av. Dividing by velocity or by area does not give a conserved quantity."
+   },
+   {
+    "id": "PHY30044",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "In F/A = η v/y, the quantity F/A is which type of stress?",
+    "options": [
+     "Tensile stress",
+     "Shear stress",
+     "Compressive stress",
+     "Bulk stress"
+    ],
+    "correct": 1,
+    "explain": "The force F acts along the surface of the fluid layer, parallel to the plate, so F/A is a shear stress. Its unit is Pa, like pressure, but tensile, compressive and bulk stresses act at right angles to a surface or on a whole volume."
+   },
+   {
+    "id": "PHY30045",
+    "type": "mcq",
+    "cat": "Chapter 3: Viscosity",
+    "q": "Which expression defines the coefficient of viscosity η?",
+    "options": [
+     "η = (F/A) × (v/y)",
+     "η = (v/y) / (F/A)",
+     "η = (F/A) / (v/y)",
+     "η = (F/y) / (v/A)"
+    ],
+    "correct": 2,
+    "explain": "Viscosity is shear stress divided by velocity gradient: η = (F/A) / (v/y) = Fy/(Av). This rearranges F = ηAv/y and gives the unit Pa·s. Multiplying the two ratios, inverting them, or swapping A and y does not match F = ηAv/y."
+   },
+   {
+    "id": "PHY30046",
+    "type": "mcq",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "Which expression gives the mean velocity of viscous flow through a tube?",
+    "options": [
+     "v̄ = ΔP r⁴ / (8 η L)",
+     "v̄ = π ΔP r² / (8 η L)",
+     "v̄ = ΔP r² / (4 η L)",
+     "v̄ = ΔP r² / (8 η L)"
+    ],
+    "correct": 3,
+    "explain": "The mean velocity is v̄ = ΔP r² / (8ηL). Multiplying it by the area πr² gives Q = πr⁴ΔP/(8ηL), so the π and the r⁴ belong to the flow rate, not to the velocity. A factor of 4 instead of 8 does not match Poiseuille's result."
+   },
+   {
+    "id": "PHY30047",
+    "type": "stepped",
+    "cat": "Chapter 3: Poiseuille's Law",
+    "q": "Poiseuille's law can be built from flow rate, tube area and mean velocity. Answer each step.",
+    "explain": "Volume flow rate is area times mean velocity, Q = A v̄. A round tube has A = πr². With v̄ = ΔP r²/(8ηL), Q = πr² × ΔP r²/(8ηL) = πr⁴ΔP/(8ηL), so the two r² factors combine to r⁴. That is why flow depends so strongly on radius.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which relation links volume flow rate to area and mean velocity?",
+      "options": [
+       "Q = v̄ / A",
+       "Q = A v̄",
+       "Q = A / v̄",
+       "Q = A v̄²"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "2",
+      "prompt": "Given Q = A v̄, what is A for a round tube of radius r?",
+      "options": [
+       "2πr",
+       "πr²/2",
+       "πr²",
+       "4πr²"
+      ],
+      "correct": 2
+     },
+     {
+      "id": "3",
+      "prompt": "Multiplying πr² by ΔP r²/(8ηL) leaves the radius raised to which power?",
+      "options": [
+       "r⁴",
+       "r²",
+       "r³",
+       "r⁸"
+      ],
+      "correct": 0
+     }
+    ]
+   },
+   {
+    "id": "PHY30048",
+    "type": "stepped",
+    "cat": "Chapter 3: Reynolds Number",
+    "q": "Re = ρ v D / η. Identify each Greek symbol in this formula.",
+    "explain": "ρ is the Greek letter rho and stands for fluid density; it is easily misread as the Latin p. η is the Greek letter eta and stands for viscosity; it looks like the Latin n. The numerator ρvD reflects inertial force and the denominator η reflects viscous force, so Re is their ratio.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "What is the name of the Greek letter ρ?",
+      "options": [
+       "Nu",
+       "Rho",
+       "Mu",
+       "Sigma"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "2",
+      "prompt": "Which property does rho represent in this formula?",
+      "options": [
+       "Viscosity",
+       "Pressure",
+       "Density",
+       "Velocity"
+      ],
+      "correct": 2
+     },
+     {
+      "id": "3",
+      "prompt": "What is the name of the Greek letter η?",
+      "options": [
+       "Nu",
+       "Mu",
+       "Tau",
+       "Eta"
+      ],
+      "correct": 3
+     },
+     {
+      "id": "4",
+      "prompt": "Which property does eta represent in this formula?",
+      "options": [
+       "Viscosity",
+       "Density",
+       "Diameter",
+       "Pressure"
+      ],
+      "correct": 0
+     }
+    ]
+   },
+   {
+    "id": "PHY30049",
+    "type": "mcq",
+    "cat": "Chapter 3: Laplace's Law",
+    "q": "In the wall stress relation σ = P r / μ, what does μ represent?",
+    "options": [
+     "Fluid viscosity",
+     "Vessel radius",
+     "Wall thickness",
+     "Wall tension"
+    ],
+    "correct": 2,
+    "explain": "μ is the wall thickness. Wall tension T = P × r is spread through the thickness of the wall, giving wall stress σ = Pr/μ. Thickness is also commonly written t, as in σ = Pr/t. A thicker wall therefore carries less stress for the same pressure and radius."
+   },
+   {
+    "id": "PHY30050",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Which is the SI unit of surface tension?",
+    "options": [
+     "N/m²",
+     "N·m",
+     "N/m",
+     "Pa·s"
+    ],
+    "correct": 2,
+    "explain": "Surface tension is force per unit length, γ = F/L, so its SI unit is N/m. N/m² is the pascal, used for pressure and stress, N·m is the unit of work or torque, and Pa·s is the unit of viscosity."
+   },
+   {
+    "id": "PHY30051",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Surface tension in N/m is equivalent to which unit of energy per area?",
+    "options": [
+     "J/m³",
+     "J/m²",
+     "W/m²",
+     "J/m"
+    ],
+    "correct": 1,
+    "explain": "1 N/m = 1 N·m/m² = 1 J/m², so surface tension can also be read as surface energy per unit area. J/m³ is energy per volume, W/m² is intensity, and J/m equals the newton."
+   },
+   {
+    "id": "PHY30052",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "A liquid has a surface tension of 72 dyne/cm. What is this in N/m?",
+    "options": [
+     "7.2 N/m",
+     "0.72 N/m",
+     "0.0072 N/m",
+     "0.072 N/m"
+    ],
+    "correct": 3,
+    "explain": "1 dyne/cm = 10⁻³ N/m, because 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m. So 72 dyne/cm = 72 × 10⁻³ N/m = 0.072 N/m, close to the value for water at room temperature."
+   },
+   {
+    "id": "PHY30053",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Surface tension is commonly written with which Greek letter?",
+    "options": [
+     "Gamma, γ",
+     "Eta, η",
+     "Rho, ρ",
+     "Mu, μ"
+    ],
+    "correct": 0,
+    "explain": "Surface tension is commonly written γ, gamma, and is also written T, as in T = F/L. η is used for viscosity, ρ for density, and μ here for wall thickness in the wall stress relation."
+   },
+   {
+    "id": "PHY30054",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Water rises in a narrow glass tube. Which comparison of forces explains this?",
+    "options": [
+     "Cohesion within water exceeds adhesion to glass",
+     "Adhesion to glass exceeds cohesion within water",
+     "Viscous drag exceeds adhesion to glass",
+     "Gravity on water exceeds cohesion within it"
+    ],
+    "correct": 1,
+    "explain": "Adhesive force is attraction between molecules of different substances, here water and glass. Cohesive force is attraction between molecules of the same substance. Because adhesion to glass is stronger than cohesion within water, water wets the glass, curves up at the edges and rises. Mercury shows the opposite and falls."
+   },
+   {
+    "id": "PHY30055",
+    "type": "mcq",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "In capillary rise h = 2γ cos θ / (ρ g r), what does θ represent?",
+    "options": [
+     "Angle of incidence",
+     "Contact angle",
+     "Angle of refraction",
+     "Phase angle"
+    ],
+    "correct": 1,
+    "explain": "θ is the contact angle between the liquid surface and the tube wall. It shows how well the liquid wets the solid, that is, adhesion compared with cohesion. A small θ means good wetting and a large rise. Measuring h, r and θ lets the surface tension γ be found."
+   },
+   {
+    "id": "PHY30056",
+    "type": "matching",
+    "cat": "Chapter 3: Surface Tension",
+    "q": "Match each force or quantity to its description.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Cohesive force"
+     },
+     {
+      "id": "2",
+      "text": "Adhesive force"
+     },
+     {
+      "id": "3",
+      "text": "Contact angle"
+     },
+     {
+      "id": "4",
+      "text": "Capillary rise height"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Attraction between molecules of one substance"
+     },
+     {
+      "id": "B",
+      "text": "Shows how well a liquid wets a solid"
+     },
+     {
+      "id": "C",
+      "text": "Attraction between molecules of two different substances"
+     },
+     {
+      "id": "D",
+      "text": "2γ cos θ / (ρ g r)"
+     },
+     {
+      "id": "E",
+      "text": "Force per unit area on a surface"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "C",
+     "3": "B",
+     "4": "D"
+    },
+    "explain": "Cohesion holds molecules of the same liquid together; adhesion attracts molecules of different substances, such as a liquid and its container wall. The contact angle shows the balance between them, that is, how well the liquid wets the solid. Capillary rise is h = 2γ cos θ / (ρ g r). Force per unit area is pressure or stress, not one of these."
+   },
+   {
+    "id": "PHY30057",
+    "type": "matching",
+    "cat": "Chapter 3: Clinical Applications",
+    "q": "Match each surface tension concept to its medical importance.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Surface tension"
+     },
+     {
+      "id": "2",
+      "text": "Pulmonary surfactant"
+     },
+     {
+      "id": "3",
+      "text": "Respiratory distress syndrome"
+     },
+     {
+      "id": "4",
+      "text": "Capillary action"
+     },
+     {
+      "id": "5",
+      "text": "Alveolar stability, P = 2T/r"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Prevents collapse of air sacs"
+     },
+     {
+      "id": "B",
+      "text": "Blood collection and microfluidic devices"
+     },
+     {
+      "id": "C",
+      "text": "Liquid surface tends to contract"
+     },
+     {
+      "id": "D",
+      "text": "Explains lung mechanics"
+     },
+     {
+      "id": "E",
+      "text": "Breathing difficulty in premature infants"
+     },
+     {
+      "id": "F",
+      "text": "Measures blood flow velocity"
+     }
+    ],
+    "correct_pairs": {
+     "1": "C",
+     "2": "A",
+     "3": "E",
+     "4": "B",
+     "5": "D"
+    },
+    "explain": "Surface tension, T = F/L, is the tendency of a liquid surface to contract. Pulmonary surfactant lowers surface tension and prevents alveolar collapse. Respiratory distress syndrome is surfactant deficiency causing breathing difficulty in premature infants. Capillary action, surface tension plus adhesion, is used in blood collection and microfluidic devices. P = 2T/r for alveolar stability explains lung mechanics. Measuring blood flow velocity is Doppler ultrasound."
    },
    {
     "id": "PHY40001",
