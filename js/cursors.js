@@ -1,4 +1,4 @@
-/* Study Portal — Live party cursors (RTDB, ATC aura aesthetic) */
+/* Study Portal — Live party cursors (RTDB, ATC aura aesthetic, layout-anchored positions) */
 (function (global) {
   const THROTTLE_MS = 80;
   let unsub = null;
@@ -98,32 +98,222 @@
     Object.keys(els).forEach(removeEl);
   }
 
-  async function publish(x, y) {
+  /* —— Layout-independent positions ——
+     A pointer is described by the stable element under it (data-anchor) plus
+     rx/ry inside that element's rect, with a fallback nx/ny inside the main
+     content container. Receivers resolve both against their own layout, so
+     reflow between desktop and phone layouts keeps cursors on the same thing. */
+  function curQ() {
+    const Q = global.StudyQuiz;
+    if (!Q || !Q.active || !Q.questions) return null;
+    return Q.questions[Q.current] || null;
+  }
+  function qKey(q) {
+    return q ? String(q.__id || q.id || '') : '';
+  }
+  function anchorOf(el) {
+    if (!el || el.nodeType !== 1) return null;
+    if (el.dataset && el.dataset.anchor) return el.dataset.anchor;
+    const q = curQ(), k = qKey(q);
+    const cls = el.classList;
+    if (el.id === 'qText') return 'q:' + k + ':stem';
+    if (cls.contains('opt') && el.parentNode && el.parentNode.id === 'options') {
+      const i = Array.prototype.indexOf.call(el.parentNode.querySelectorAll('.opt'), el);
+      const orig = q && q.__perm && q.__perm[i] != null ? q.__perm[i] : i;
+      return 'q:' + k + ':opt:' + orig;
+    }
+    if (cls.contains('match-item') && el.dataset.id != null) return 'q:' + k + ':match:' + (el.dataset.side || '') + ':' + el.dataset.id;
+    if (cls.contains('label-slot') && el.dataset.id != null) return 'q:' + k + ':slot:' + el.dataset.id;
+    if (cls.contains('label-chip') && el.dataset.for != null) return 'q:' + k + ':chip:' + el.dataset.for;
+    if (cls.contains('order-card') && el.dataset.id != null) return 'q:' + k + ':order:' + el.dataset.id;
+    if (el.id && !/^(app|root)$/.test(el.id)) return '#' + el.id;
+    return null;
+  }
+  const ANCHOR_SEL = '#qText, #options .opt, .match-item, .label-slot[data-id], .label-chip, .order-card, [id]';
+  function stampAnchors(root) {
+    (root || document).querySelectorAll(ANCHOR_SEL).forEach((el) => {
+      if (el.closest && el.closest('.friend-cursor')) return;
+      const a = anchorOf(el);
+      if (a && el.dataset.anchor !== a) el.dataset.anchor = a;
+    });
+  }
+  function usable(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+  function container() {
+    const cands = ['#multi-quiz-container', '.app.view.active #mainPanel', '.app.view.active', '.view.active'];
+    for (let i = 0; i < cands.length; i++) {
+      const el = document.querySelector(cands[i]);
+      if (el && usable(el) && getComputedStyle(el).display !== 'none') return el;
+    }
+    return document.documentElement;
+  }
+  function clamp01(v) {
+    return v < 0 ? 0 : v > 1 ? 1 : v;
+  }
+  function round4(v) {
+    return Math.round(v * 10000) / 10000;
+  }
+  function describe(cx, cy, target) {
+    let el = target && target.nodeType === 1 ? target : document.elementFromPoint(cx, cy);
+    let anchor = null, rx = 0, ry = 0;
+    for (let n = el; n && n !== document.body && n !== document.documentElement; n = n.parentElement) {
+      if (n.closest && n.closest('.friend-cursor')) continue;
+      const a = anchorOf(n);
+      if (a && usable(n)) {
+        const r = n.getBoundingClientRect();
+        anchor = a;
+        rx = clamp01((cx - r.left) / r.width);
+        ry = clamp01((cy - r.top) / r.height);
+        if (!n.dataset.anchor) n.dataset.anchor = a;
+        break;
+      }
+    }
+    const c = container();
+    const cr = c.getBoundingClientRect();
+    const se = document.scrollingElement || document.documentElement;
+    const maxS = Math.max(1, se.scrollHeight - global.innerHeight);
+    const out = {
+      nx: round4(cr.width ? (cx - cr.left) / cr.width : cx / global.innerWidth),
+      ny: round4(cr.height ? (cy - cr.top) / cr.height : cy / global.innerHeight),
+      container: c.id ? '#' + c.id : c.className ? String(c.className).split(' ')[0] : 'html',
+      scrollY: round4(clamp01((global.scrollY || se.scrollTop || 0) / maxS))
+    };
+    if (anchor) {
+      out.anchor = anchor.slice(0, 160);
+      out.rx = round4(rx);
+      out.ry = round4(ry);
+    }
+    return out;
+  }
+  function findAnchor(a) {
+    if (!a) return null;
+    let el = null;
+    try {
+      el = document.querySelector('[data-anchor="' + String(a).replace(/["\\]/g, '\\$&') + '"]');
+    } catch (e) {}
+    if (!el || anchorOf(el) !== a) {
+      stampAnchors();
+      try {
+        el = document.querySelector('[data-anchor="' + String(a).replace(/["\\]/g, '\\$&') + '"]');
+      } catch (e) {}
+    }
+    return el && usable(el) && !(el.closest && el.closest('[hidden]')) ? el : null;
+  }
+  /* local viewport point for a remote cursor record */
+  function resolve(c) {
+    const el = findAnchor(c.anchor);
+    if (el && typeof c.rx === 'number' && typeof c.ry === 'number') {
+      const r = el.getBoundingClientRect();
+      return { x: r.left + c.rx * r.width, y: r.top + c.ry * r.height, via: 'anchor' };
+    }
+    const nx = typeof c.nx === 'number' ? c.nx : c.x;
+    const ny = typeof c.ny === 'number' ? c.ny : c.y;
+    if (typeof nx === 'number' && nx <= 1.5 && ny <= 1.5 && nx >= -0.5 && ny >= -0.5) {
+      const cr = container().getBoundingClientRect();
+      return { x: cr.left + nx * cr.width, y: cr.top + ny * cr.height, via: 'container' };
+    }
+    return { x: nx || 0, y: ny || 0, via: 'px' }; // legacy pixel record
+  }
+
+  let lastDesc = null;
+  async function publish(x, y, target) {
     const me = uid();
     if (!me || !partyId) return;
     const now = Date.now();
     if (now - lastWrite < THROTTLE_MS) return;
     lastWrite = now;
+    const d = describe(x, y, target);
+    lastDesc = d;
     const bits = profileBits();
     const db = ensureDb();
     const ref = db.ref('parties/' + partyId + '/cursors/' + me);
-    await ref.set({
-      x: Math.round(x),
-      y: Math.round(y),
+    const rec = {
+      x: d.nx,
+      y: d.ny,
+      nx: d.nx,
+      ny: d.ny,
+      container: d.container,
+      scrollY: d.scrollY,
       updatedAt: now,
       displayName: bits.displayName,
       mood: bits.mood || '😊',
       hue: bits.hue != null ? bits.hue : hueFromName(bits.displayName)
-    });
+    };
+    if (d.anchor) {
+      rec.anchor = d.anchor;
+      rec.rx = d.rx;
+      rec.ry = d.ry;
+    }
+    await ref.set(rec);
     await ref.onDisconnect().remove();
   }
 
   function onMove(e) {
     if (!partyId) return;
-    const x = e.clientX != null ? e.clientX : (e.touches && e.touches[0] && e.touches[0].clientX);
-    const y = e.clientY != null ? e.clientY : (e.touches && e.touches[0] && e.touches[0].clientY);
+    const t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]);
+    const x = t ? t.clientX : e.clientX;
+    const y = t ? t.clientY : e.clientY;
     if (x == null) return;
-    publish(x, y).catch(() => {});
+    global._lastPointerX = x;
+    global._lastPointerY = y;
+    // touch: the finger's element is under the point, not the gesture's start target
+    publish(x, y, t ? null : e.target).catch(() => {});
+  }
+  function onTouchEnd(e) {
+    if (!partyId) return;
+    lastWrite = 0; // the last touch always goes out
+    onMove(e);
+  }
+
+  /* —— receiver placement —— */
+  const remote = {}; // uid -> last record
+  let placeQueued = false;
+  function placeAll() {
+    placeQueued = false;
+    Object.keys(els).forEach((id) => {
+      const c = remote[id];
+      if (!c) return;
+      const p = resolve(c);
+      els[id].style.left = Math.round(p.x) + 'px';
+      els[id].style.top = Math.round(p.y) + 'px';
+    });
+  }
+  function queuePlace() {
+    if (placeQueued) return;
+    placeQueued = true;
+    (global.requestAnimationFrame || setTimeout)(placeAll);
+  }
+  let ro = null, mo = null, roTarget = null;
+  function watchLayout(on) {
+    if (on) {
+      global.addEventListener('resize', queuePlace, { passive: true });
+      global.addEventListener('scroll', queuePlace, { passive: true, capture: true });
+      if (global.ResizeObserver && !ro) {
+        ro = new ResizeObserver(queuePlace);
+        ro.observe(document.documentElement);
+      }
+      if (global.MutationObserver && !mo) {
+        mo = new MutationObserver((list) => {
+          if (list.every((m) => m.target.closest && m.target.closest('.friend-cursor'))) return;
+          const c = container();
+          if (ro && c !== roTarget) {
+            if (roTarget) ro.unobserve(roTarget);
+            roTarget = c;
+            ro.observe(c);
+          }
+          queuePlace();
+        });
+        mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'hidden', 'style'] });
+      }
+    } else {
+      global.removeEventListener('resize', queuePlace, { capture: false });
+      global.removeEventListener('scroll', queuePlace, { capture: true });
+      if (ro) { ro.disconnect(); ro = null; roTarget = null; }
+      if (mo) { mo.disconnect(); mo = null; }
+    }
   }
 
   function listen(pid) {
@@ -143,18 +333,21 @@
         if (id === me) return; // hide own remote cursor
         seen[id] = true;
         const c = val[id];
-        const el = ensureEl(id, c);
-        el.style.left = (c.x || 0) + 'px';
-        el.style.top = (c.y || 0) + 'px';
+        ensureEl(id, c);
+        remote[id] = c;
       });
       Object.keys(els).forEach((id) => {
-        if (!seen[id]) removeEl(id);
+        if (!seen[id]) { removeEl(id); delete remote[id]; }
       });
+      placeAll();
     };
     ref.on('value', handler);
     unsub = () => ref.off('value', handler);
     document.addEventListener('mousemove', onMove, { passive: true });
     document.addEventListener('touchmove', onMove, { passive: true });
+    document.addEventListener('touchstart', onMove, { passive: true });
+    document.addEventListener('touchend', onTouchEnd, { passive: true });
+    watchLayout(true);
   }
 
   function stop() {
@@ -164,6 +357,10 @@
     }
     document.removeEventListener('mousemove', onMove);
     document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchstart', onMove);
+    document.removeEventListener('touchend', onTouchEnd);
+    watchLayout(false);
+    Object.keys(remote).forEach((k) => delete remote[k]);
     partyId = null;
     clearAll();
   }
@@ -183,5 +380,6 @@
     if (x != null && y != null) publish(x, y).catch(function () {});
   }
 
-  global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange };
+  global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange, describe, resolve, anchorOf, stampAnchors, _place: placeAll, _remote: remote, _els: els,
+    _inject: function (id, rec) { ensureEl(id, rec); remote[id] = rec; watchLayout(true); placeAll(); } };
 })(window);
