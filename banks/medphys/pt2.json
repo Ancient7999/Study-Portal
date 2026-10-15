@@ -3,8 +3,8 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (57), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 170,
+ "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (56), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 169,
  "forms": [
   "A"
  ],
@@ -861,20 +861,6 @@
     ],
     "correct": 0,
     "explain": "From T = P r, tension is directly proportional to radius when pressure is fixed, so doubling the radius doubles the tension. Halving, equality, or a four-fold change would require a different functional dependence."
-   },
-   {
-    "id": "PHY30043",
-    "type": "mcq",
-    "cat": "Chapter 3: Bernoulli's Equation",
-    "q": "Fluid density differs between two sections of a tube. Which continuity equation applies?",
-    "options": [
-     "ρ₁A₁v₁ = ρ₂A₂v₂",
-     "A₁v₁ = A₂v₂",
-     "ρ₁A₁/v₁ = ρ₂A₂/v₂",
-     "ρ₁v₁/A₁ = ρ₂v₂/A₂"
-    ],
-    "correct": 1,
-    "explain": "Conservation of mass requires the mass flow rate ρAv to be the same at every section, so ρ₁A₁v₁ = ρ₂A₂v₂. Only when the density is constant, ρ₁ = ρ₂, does it cancel to give A₁v₁ = A₂v₂, the volume flow rate form Q = Av. Dividing by velocity or by area does not give a conserved quantity."
    },
    {
     "id": "PHY30044",
