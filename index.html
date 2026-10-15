@@ -1267,6 +1267,43 @@ body.split-quiz-active #chatDock{z-index:60}
   .lobby-panel{right:8px;left:8px;width:auto;top:60px}
 }
 
+/* Screen share + spectate */
+.share-view{position:fixed;left:8px;right:8px;bottom:8px;top:max(56px,var(--mp-top-clear,0px));z-index:88;overflow:auto;
+  max-width:900px;margin:0 auto;padding:12px 14px;border-radius:16px;background:rgba(5,7,12,.92);border:1px solid var(--border);backdrop-filter:blur(10px);box-sizing:border-box}
+.share-view[hidden]{display:none!important}
+.share-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-family:var(--mono);font-size:.78rem}
+.share-badge{padding:4px 10px;border-radius:999px;border:1px solid var(--cyan);color:var(--cyan-bright);font-weight:800}
+.share-ctl{color:var(--text-dim)}
+.share-bar .danger{margin-left:auto}
+.share-qhead{font-family:var(--mono);font-size:.72rem;color:var(--text-dim);margin-bottom:6px}
+.share-nav{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:10px}
+.share-lock{font-family:var(--mono);font-size:.72rem;color:var(--gold)}
+.share-view .opt.wrong{border-color:var(--danger,#f87171)}
+.viewer-count{font-family:var(--mono);font-size:.72rem;color:var(--text-dim);margin-left:6px}
+.viewer-count[hidden]{display:none!important}
+.spectate-dock{position:fixed;left:12px;bottom:12px;z-index:86;display:flex;gap:8px;flex-wrap:wrap;max-width:calc(100vw - 24px);pointer-events:none}
+.spectate-dock[hidden]{display:none!important}
+.spectate-tile{pointer-events:auto;width:220px;height:150px;overflow:hidden;display:flex;flex-direction:column;border-radius:12px;background:rgba(8,12,20,.92);border:1px solid var(--border);box-shadow:0 8px 20px rgba(0,0,0,.45);font-size:.7rem}
+.spectate-tile .st-head{display:flex;gap:6px;align-items:center;padding:4px 6px;border-bottom:1px solid var(--border);font-family:var(--mono)}
+.spectate-tile .st-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--cyan-bright)}
+.spectate-tile .st-btn{background:transparent;border:0;color:var(--text);font:inherit;padding:0 4px}
+.spectate-tile .st-body{flex:1;overflow:hidden;padding:4px 6px}
+.spectate-tile .st-body .opt{padding:3px 6px;font-size:.65rem;margin:2px 0}
+.spectate-tile .st-body .question{font-size:.72rem;margin:2px 0}
+.spectate-tile .st-row{display:flex;justify-content:space-between}
+.spectate-tile .st-foot{display:flex;gap:6px;align-items:center;padding:4px 6px}
+.spectate-tile .st-foot .chat-tool-btn{padding:2px 8px;font-size:.65rem}
+.spectate-tile .st-note{color:var(--text-dim);font-size:.62rem}
+.spectate-tile.zoomed{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(860px,94vw);height:min(80vh,640px);z-index:98;font-size:.9rem}
+.spectate-tile.zoomed .st-body{overflow:auto}
+.spectate-tile.zoomed .st-body .opt{font-size:.9rem;padding:8px 12px}
+.spectate-tile.zoomed .st-body .question{font-size:1rem}
+.lobby-live-box{margin-top:10px;border-top:1px solid var(--border);padding-top:8px}
+.lobby-live-box[hidden]{display:none!important}
+.lobby-live-box h4{margin:4px 0;font-size:.85rem;color:var(--cyan-bright)}
+.llb-row{display:flex;gap:6px;align-items:center;justify-content:space-between;margin:4px 0;font-size:.8rem}
+.llb-note{font-size:.76rem;color:var(--text-dim)}
+@media (max-width:800px){ .spectate-tile{width:150px;height:110px} }
 /* Multiplayer layout: top-centre bars never cover the question box */
 .lobby-head-btns{display:flex;gap:4px;align-items:center}
 .lobby-collapse-btn{display:none}
@@ -1898,11 +1935,13 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 <script src="js/mastery.js?v=4"></script>
 <script src="js/party.js?v=4"></script>
 <script src="js/party-timers.js?v=1"></script>
-<script src="js/cursors.js?v=5"></script>
+<script src="js/cursors.js?v=6"></script>
 <script src="js/net-status.js?v=1"></script>
 <script src="js/bank-picker.js?v=1"></script>
-<script src="js/lobby.js?v=6"></script>
+<script src="js/lobby.js?v=7"></script>
 <script src="js/split-quiz.js?v=7"></script>
+<script src="js/screenshare.js?v=1"></script>
+<script src="js/spectate.js?v=1"></script>
 <script src="js/mp-mobile.js?v=1"></script>
 <script src="js/chat.js?v=7"></script>
 <script>

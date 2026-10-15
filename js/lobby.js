@@ -790,6 +790,9 @@
 
   function render() {
     syncCollapse();
+    if (global.StudySpectate && StudySpectate.renderLobbyBox) {
+      try { StudySpectate.renderLobbyBox(); } catch (e) {}
+    }
     const list = document.getElementById('lobbyList');
     const detail = document.getElementById('lobbyDetail');
     if (!list || !detail) return;
@@ -834,6 +837,7 @@
                 id +
                 '">Join</button>'
               : '') +
+            (!inIt ? '<button type="button" class="lobby-watch-btn chat-tool-btn" data-watch="' + id + '" title="Watch as a spectator tile">👁 Watch</button>' : '') +
             '</div>'
           );
         })
@@ -843,6 +847,12 @@
           state.activeLobbyId = btn.dataset.id;
           listenActive(state.activeLobbyId);
           render();
+        };
+      });
+      list.querySelectorAll('[data-watch]').forEach((btn) => {
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          if (global.StudySpectate) StudySpectate.watch(btn.dataset.watch).catch((err) => toast(err.message || 'Watch failed'));
         };
       });
       list.querySelectorAll('[data-join]').forEach((btn) => {
@@ -1119,6 +1129,7 @@
     setGameMode,
     getActiveLobbyId,
     getActiveLobby,
+    getLobbies: () => state.lobbies,
     SEATS
   };
 })(window);
