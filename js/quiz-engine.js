@@ -2847,10 +2847,12 @@ function selectAnswer(idx){
   pt1Confetti();
   rewardCorrect();
   afterAnswerProgress();
+  if(selectAnswer._kb && !allQuestionsAnswered()) startKbAdvance();
 }
 
 /* PT1 3892–3926 + STEPPED: moves never land on a locked step. */
 function stepTo(i){
+  if(typeof clearKbAdvance==='function') clearKbAdvance();
   current=i;
   locked=isAnswered(answers[current], questions[current]);
   renderQuestion();
@@ -3082,6 +3084,20 @@ window.addEventListener('keydown', e=>{
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
   goSets();
 }, true);
+/* after a keyboard correct answer: the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
+let kbAdv=null;
+function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
+function startKbAdvance(){
+  clearKbAdvance();
+  const host=document.getElementById('feedback'); if(!host) return;
+  const MS=3200; // formula practice's ADVANCE_MS
+  const w=document.createElement('div'); w.className='formula-advance-wrap kb-advance';
+  w.innerHTML='<div class="formula-advance-track" aria-hidden="true"><div class="formula-advance-fill"></div></div>';
+  host.insertAdjacentElement('afterend', w);
+  const fill=w.querySelector('.formula-advance-fill'), t0=performance.now();
+  const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
+  kbAdv={wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
+}
 function kbOptions(){ const o=document.getElementById('options'); return o ? [...o.querySelectorAll('.opt')].filter(b=>!b.disabled && b.offsetParent!==null) : []; }
 function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
@@ -3097,16 +3113,17 @@ document.addEventListener('keydown', e=>{
       const n=i<0 ? (e.key==='ArrowDown'?0:opts.length-1) : (i+(e.key==='ArrowDown'?1:-1)+opts.length)%opts.length;
       kbHighlight(opts[n]); return;
     }
-    if(opts.length && /^[1-9]$/.test(e.key)){
-      const k=+e.key-1; if(k>=opts.length) return;
-      e.preventDefault();
-      if(opts[k].classList.contains('kb-hl')){ kbHighlight(null); opts[k].click(); }
-      else kbHighlight(opts[k]);
-      return;
-    }
+    if(e.key==='Enter' || e.key==='ArrowRight'){ if(kbAdv){ e.preventDefault(); clearKbAdvance(); goNext(); return; } }
     if(e.key==='Enter'){
       const hl=opts.find(b=>b.classList.contains('kb-hl'));
-      if(hl){ e.preventDefault(); kbHighlight(null); hl.click(); return; }
+      if(hl){ e.preventDefault(); kbHighlight(null); selectAnswer._kb=true; try{ hl.click(); } finally { selectAnswer._kb=false; } return; }
+    }
+    if(/^[1-9]$/.test(e.key)){
+      const k=+e.key-1; if(k>=opts.length) return;
+      e.preventDefault();
+      if(opts[k].classList.contains('kb-hl')){ kbHighlight(null); selectAnswer._kb=true; try{ opts[k].click(); } finally { selectAnswer._kb=false; } }
+      else kbHighlight(opts[k]);
+      return;
     }
   }
   if(e.key==='Enter' && !typing && runKeysActive()){
