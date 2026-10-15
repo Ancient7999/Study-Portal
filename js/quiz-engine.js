@@ -967,9 +967,11 @@ document.getElementById('resetSolvedBtn').addEventListener('click',()=>{
 });
 
 /* —— quiz engine (PT1 3000–3949) —— */
-/* The run clock pauses while the page is hidden or unfocused (tab switch,
-   minimised window, phone screen off, pagehide). Away time is shifted out of
-   startTime on return, so the timestamp-based clock never jumps. */
+/* The run clock pauses only while the page truly isn't visible: hidden tab,
+   minimised window, phone screen off (visibilityState), pagehide, or a window
+   dragged almost entirely off-screen (checked about once a second). Losing focus
+   to another app while the page stays visible does NOT pause it. Away time is
+   shifted out of startTime on return, so the timestamp-based clock never jumps. */
 let clockPausedAt=0;
 function runElapsedSec(){
   if(!startTime) return 0;
@@ -980,7 +982,38 @@ function paintElapsed(){
   const e=runElapsedSec(), el=document.getElementById('elapsed');
   if(el) el.textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
 }
-function pageIsAway(){ return document.hidden; }
+let pageHiddenByNav=false, windowOffscreen=false, screenAreas=null;
+function pageIsAway(){ return document.visibilityState==='hidden' || document.hidden || pageHiddenByNav || windowOffscreen; }
+/* fraction of the browser window that lies on a screen (1 = fully on screen) */
+function windowOnScreenFraction(){
+  const w=window.outerWidth, h=window.outerHeight, x=window.screenX, y=window.screenY;
+  if(!(w>0 && h>0) || !isFinite(x) || !isFinite(y)) return 1;
+  const areas=(screenAreas && screenAreas.length) ? screenAreas : [{l:screen.availLeft||0, t:screen.availTop||0, w:screen.availWidth||0, h:screen.availHeight||0}];
+  let on=0;
+  areas.forEach(a=>{ if(!(a.w>0 && a.h>0)) return; const ix=Math.max(0, Math.min(x+w, a.l+a.w)-Math.max(x, a.l)), iy=Math.max(0, Math.min(y+h, a.t+a.h)-Math.max(y, a.t)); on+=ix*iy; });
+  if(!areas.some(a=>a.w>0 && a.h>0)) return 1;
+  return Math.min(1, on/(w*h));
+}
+function checkWindowOffscreen(){
+  const off=windowOnScreenFraction()<0.1;
+  if(off===windowOffscreen) return;
+  windowOffscreen=off;
+  off?pauseElapsedClock():resumeElapsedClock();
+}
+/* Window Management API: use every screen's area, but only if permission is already granted (never prompt) */
+(function(){
+  try{
+    if(!('getScreenDetails' in window) || !navigator.permissions || !navigator.permissions.query) return;
+    navigator.permissions.query({name:'window-management'}).then(st=>{
+      if(st.state!=='granted') return;
+      window.getScreenDetails().then(d=>{
+        const upd=()=>{ screenAreas=d.screens.map(s=>({l:s.availLeft, t:s.availTop, w:s.availWidth, h:s.availHeight})); };
+        upd(); d.addEventListener('screenschange',upd);
+      }).catch(()=>{});
+    }).catch(()=>{});
+  }catch(e){}
+})();
+setInterval(checkWindowOffscreen,1000);
 function pauseElapsedClock(){
   if(!elapsedTimer || clockPausedAt) return;
   clockPausedAt=Date.now();
@@ -993,11 +1026,9 @@ function resumeElapsedClock(){
   clockPausedAt=0;
   paintElapsed();
 }
-document.addEventListener('visibilitychange',()=>{ document.hidden?pauseElapsedClock():resumeElapsedClock(); });
-window.addEventListener('blur',pauseElapsedClock);
-window.addEventListener('focus',resumeElapsedClock);
-window.addEventListener('pagehide',pauseElapsedClock);
-window.addEventListener('pageshow',resumeElapsedClock);
+document.addEventListener('visibilitychange',()=>{ (document.visibilityState==='hidden'||document.hidden)?pauseElapsedClock():resumeElapsedClock(); });
+window.addEventListener('pagehide',()=>{ pageHiddenByNav=true; pauseElapsedClock(); });
+window.addEventListener('pageshow',()=>{ pageHiddenByNav=false; resumeElapsedClock(); });
 function startElapsedClock(offsetSec){
   startTime=Date.now()-(offsetSec||0)*1000;
   clockPausedAt=0;
