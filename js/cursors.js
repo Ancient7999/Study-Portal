@@ -143,7 +143,7 @@
     return r.width > 0 && r.height > 0;
   }
   function container() {
-    const cands = ['#multi-quiz-container', '.app.view.active #mainPanel', '.app.view.active', '.view.active'];
+    const cands = ['#shareView', '#multi-quiz-container', '.app.view.active #mainPanel', '.app.view.active', '.view.active'];
     for (let i = 0; i < cands.length; i++) {
       const el = document.querySelector(cands[i]);
       if (el && usable(el) && getComputedStyle(el).display !== 'none') return el;
