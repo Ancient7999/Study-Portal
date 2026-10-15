@@ -12153,8 +12153,11 @@
       },
       {
        "id": "heart-real-L7",
-       "answer": "Body Tissues",
+       "answer": "Towards Body Tissues",
        "accept": [
+        "Toward Body Tissues",
+        "To Body Tissues",
+        "Body Tissues",
         "Body",
         "Systemic Circulation"
        ],
@@ -12222,8 +12225,14 @@
       },
       {
        "id": "heart-real-L9",
-       "answer": "Lungs",
+       "answer": "Towards Lungs",
        "accept": [
+        "Toward Lungs",
+        "Toward The Lungs",
+        "Towards The Lungs",
+        "To Lungs",
+        "To The Lungs",
+        "Lungs",
         "Lung"
        ],
        "x": 78.17,
