@@ -1267,6 +1267,32 @@ body.split-quiz-active #chatDock{z-index:60}
   .lobby-panel{right:8px;left:8px;width:auto;top:60px}
 }
 
+/* Multiplayer layout: top-centre bars never cover the question box */
+.lobby-head-btns{display:flex;gap:4px;align-items:center}
+.lobby-collapse-btn{display:none}
+.lobby-fab{
+  position:fixed;top:8px;right:8px;z-index:97;width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;padding:0;
+  background:rgba(8,12,20,.88);border:1px solid var(--border);color:var(--text);
+  backdrop-filter:blur(12px);box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+.lobby-fab[hidden]{display:none!important}
+body.mp-top-bar #multi-quiz-container.layout-stack,
+body.mp-top-bar #multi-quiz-container.layout-classic{top:max(56px,var(--mp-top-clear,0px))}
+body.mp-top-bar .app.view.active{padding-top:max(0px,var(--mp-top-clear,0px))}
+@media (max-width:800px){
+  .lobby-collapse-btn{display:inline-flex}
+  .lobby-panel{top:56px}
+  .party-nav-lock-banner{max-width:calc(100vw - 128px);padding:5px 10px;gap:6px;font-size:.62rem;line-height:1.25}
+  .party-nav-lock-banner .chat-tool-btn{padding:4px 8px;font-size:.66rem;white-space:nowrap}
+  .split-mode-bar{top:8px;max-width:calc(100vw - 128px);padding:5px 10px}
+  body.mp-top-bar #multi-quiz-container.layout-stack,
+  body.mp-top-bar #multi-quiz-container.layout-classic{top:max(48px,var(--mp-top-clear,0px))}
+  body.mp-active .profile-chip{position:fixed!important;top:8px!important;left:8px!important;right:auto!important;bottom:auto!important;z-index:97;min-width:0;max-width:52px;padding:4px;gap:0;overflow:hidden;transform:none}
+  body.mp-active .profile-chip .pc-body{display:none}
+  body.mp-active .profile-chip > .pc-name:only-child{font-size:.66rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:44px}
+}
+
 
 /* Achievements (ATC port) */
 .achievement-card{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.28);margin-bottom:10px;transition:border-color .3s,box-shadow .3s;position:relative}
@@ -1872,11 +1898,12 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 <script src="js/mastery.js?v=4"></script>
 <script src="js/party.js?v=4"></script>
 <script src="js/party-timers.js?v=1"></script>
-<script src="js/cursors.js?v=4"></script>
+<script src="js/cursors.js?v=5"></script>
 <script src="js/net-status.js?v=1"></script>
 <script src="js/bank-picker.js?v=1"></script>
-<script src="js/lobby.js?v=5"></script>
+<script src="js/lobby.js?v=6"></script>
 <script src="js/split-quiz.js?v=7"></script>
+<script src="js/mp-mobile.js?v=1"></script>
 <script src="js/chat.js?v=7"></script>
 <script>
 /* Bank loading + quiz state now live in js/quiz-engine.js (PT1 engine port). */

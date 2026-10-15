@@ -262,7 +262,10 @@
     panel.innerHTML =
       '<div class="lobby-panel-head">' +
       '<h3>Online Lobbies</h3>' +
+      '<span class="lobby-head-btns">' +
+      '<button type="button" class="chat-minimize lobby-collapse-btn" id="lobbyCollapseBtn" aria-label="Collapse lobby">–</button>' +
       '<button type="button" class="chat-minimize" id="lobbyCloseBtn" aria-label="Close">×</button>' +
+      '</span>' +
       '</div>' +
       '<p class="lobby-hint">Join an open lobby, or create one. Owner assigns banks per seat. Classic = shared quiz · Pane = split view.</p>' +
       '<div class="lobby-toolbar lobby-create-block">' +
@@ -278,6 +281,23 @@
       '<div class="lobby-detail" id="lobbyDetail" hidden></div>';
     document.body.appendChild(panel);
     panel.querySelector('#lobbyCloseBtn').onclick = () => setOpen(false);
+    panel.querySelector('#lobbyCollapseBtn').onclick = () => setCollapsed(true);
+    const fab = document.createElement('button');
+    fab.type = 'button';
+    fab.id = 'lobbyFab';
+    fab.className = 'lobby-fab';
+    fab.hidden = true;
+    fab.setAttribute('aria-label', 'Open lobby');
+    fab.title = 'Lobby';
+    fab.textContent = '👥';
+    fab.onclick = () => setCollapsed(false);
+    document.body.appendChild(fab);
+    if (global.matchMedia) {
+      const mq = global.matchMedia(MOBILE_MQ);
+      const onMq = () => syncCollapse();
+      if (mq.addEventListener) mq.addEventListener('change', onMq);
+      else if (mq.addListener) mq.addListener(onMq);
+    }
     panel.querySelector('#lobbyCreateBtn').onclick = () =>
       createLobby().catch((e) => toast(e.message || 'Create failed'));
     panel.querySelector('#lobbyModePane').onclick = () => setCreateMode('pane');
@@ -309,11 +329,40 @@
     if (classic) classic.classList.toggle('active', state.createMode === 'classic');
   }
 
+  /* Phones: the lobby panel collapses into a small icon pinned at the top. */
+  const MOBILE_MQ = '(max-width: 800px)';
+  function isMobile() {
+    return !!(global.matchMedia && global.matchMedia(MOBILE_MQ).matches);
+  }
+  function syncCollapse() {
+    const panel = document.getElementById('lobbyPanel');
+    const fab = document.getElementById('lobbyFab');
+    if (!panel || !fab) return;
+    const mobile = isMobile();
+    const inLobby = !!(state.activeLobbyId || (typeof getActiveLobbyId === 'function' && getActiveLobbyId()));
+    const collapsed = mobile && !!state.collapsed && (state.open || inLobby);
+    panel.hidden = !state.open || collapsed;
+    panel.classList.toggle('lobby-collapsed', collapsed);
+    fab.hidden = !(mobile && (collapsed || (inLobby && !state.open)));
+    fab.setAttribute('aria-expanded', String(!panel.hidden));
+  }
+  function setCollapsed(c) {
+    ensurePanel();
+    state.collapsed = !!c;
+    if (!c && !state.open) {
+      setOpen(true);
+      return;
+    }
+    syncCollapse();
+  }
+
   function setOpen(open) {
     ensurePanel();
     state.open = !!open;
+    if (state.open) state.collapsed = false;
     const panel = document.getElementById('lobbyPanel');
     if (panel) panel.hidden = !state.open;
+    syncCollapse();
     if (state.open) {
       listenList();
       render();
@@ -740,6 +789,7 @@
   }
 
   function render() {
+    syncCollapse();
     const list = document.getElementById('lobbyList');
     const detail = document.getElementById('lobbyDetail');
     if (!list || !detail) return;
@@ -1059,6 +1109,7 @@
   global.StudyLobby = {
     open,
     setOpen,
+    setCollapsed,
     create: createLobby,
     join: joinLobby,
     leave: leaveLobby,
