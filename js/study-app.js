@@ -35,6 +35,45 @@
     let i = 0;
     let inCode = false;
     let codeBuf = [];
+    let codeLang = '';
+    /* formula boxes → formula cards. Each formula line is a row: small title ("Label:"), the
+       formula large in math type (a spaced " / " becomes a stacked fraction), an arrow note, and
+       legend lines ("σ = wall stress,  t = wall thickness") as chips under it.
+       ```example blocks are worked examples shown under a formula card. */
+    const FX_WORD = /^[a-z][a-z'’-]*/;
+    const fxSplitTop = (str, sep) => { const out = []; let depth = 0, last = 0; for (let k = 0; k < str.length; k++) { const c = str[k]; if (c === '(') depth++; else if (c === ')') depth--; else if (depth === 0 && str.startsWith(sep, k)) { out.push(str.slice(last, k)); last = k + sep.length; k += sep.length - 1; } } out.push(str.slice(last)); return out; };
+    const fxUnparen = t => { t = t.trim(); if (/^\(.*\)$/.test(t) && fxSplitTop(t.slice(1, -1), ')').length === 1 && !/[()]/.test(t.slice(1, -1).replace(/\([^()]*\)/g, ''))) return t.slice(1, -1).trim(); return t; };
+    const FX_UP = /^(Re|Pa|Hz|kg|cm|mm|km|nm|ms|eV|mA|Gy|Sv|Bq|Ci|dB|SI|or|of|in|to|at|is|by|so|if|N|J|W|K|V|Pa)$/;
+    const fxVars = t => { let out = '', last = 0; const re = /(^|[^A-Za-z])([A-Za-z]{1,2})(?![A-Za-z])/g; let m;
+      while ((m = re.exec(t))) { const v = m[2], at = m.index + m[1].length; const unitAfterNum = /\d\s?$/.test(t.slice(0, at)); if (FX_UP.test(v) || /^[A-Z][a-z]$/.test(v) || unitAfterNum) continue; out += escapeHtml(t.slice(last, at)) + '<i>' + escapeHtml(v) + '</i>'; last = at + v.length; }
+      return out + escapeHtml(t.slice(last)); };
+    const fxMath = t => fxSplitTop(t, ' = ').map(part => {
+      const halves = fxSplitTop(part, ' / ');
+      if (halves.length === 2 && halves[0].trim() && halves[1].trim() && !/^[\d.,\s×⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+[A-Za-zΩμ]/.test(halves[1].trim()) && !/^\s*\d[\d.,\s]*[a-zA-Z]+$/.test(part.trim()))
+        return '<span class="fx-frac"><span class="fx-num">' + fxVars(fxUnparen(halves[0])) + '</span><span class="fx-den">' + fxVars(fxUnparen(halves[1])) + '</span></span>';
+      return fxVars(part.trim());
+    }).join(' <span class="fx-op">=</span> ');
+    const fxIsLegend = l => { const items = l.split(/,\s+(?=\S{1,6}\s*=\s)/); return items.length >= 1 && /=/.test(l) && items.every(it => { const m = it.match(/^\s*([^\s=]{1,6})\s*=\s*(.+)$/); return m && FX_WORD.test(m[2].trim()) && m[2].trim().split(/\s+/)[0].length >= 3; }); };
+    const fxLegendHTML = l => '<span class="fx-legend">' + l.split(/,\s+(?=\S{1,6}\s*=\s)/).map(it => { const m = it.match(/^\s*([^\s=]{1,6})\s*=\s*(.+)$/); return '<span class="fx-chip"><span class="fx-chip-sym">' + fxVars(m[1]) + '</span> ' + escapeHtml(m[2].trim()) + '</span>'; }).join('') + '</span>';
+    const fxBlock = (lines, lang) => {
+      const ex = lang === 'example';
+      if (ex) return '<div class="fx-example"><span class="fx-example-head">Example</span>' + lines.filter(l => l.trim()).map(l => '<span class="fx-ex-line">' + escapeHtml(l.trim()) + '</span>').join('') + '</div>';
+      const rows = []; let cur = null;
+      lines.forEach(raw => {
+        const l = raw.replace(/\s+$/, ''); if (!l.trim()) { cur = null; return; }
+        if (cur && fxIsLegend(l.trim())) { cur.legend.push(l.trim()); return; }
+        let body = l.trim(), title = '', note = '';
+        const k = body.indexOf('←'); if (k > 0) { note = body.slice(k + 1).trim(); body = body.slice(0, k).trim(); }
+        const t = body.match(/^((?:\(\d+\)\s*)?[A-Za-z][^:=]{1,44}):\s+(.+)$/); if (t && !/[=∝]/.test(t[1])) { title = t[1].trim(); body = t[2].trim(); }
+        const isFormula = /[=∝]/.test(body);
+        cur = { title, body, note, legend: [], isFormula }; rows.push(cur);
+      });
+      return '<div class="fx-box">' + rows.map(r => '<div class="fx-row' + (r.isFormula ? '' : ' fx-text') + '">' +
+        (r.title ? '<span class="fx-title">' + escapeHtml(r.title) + '</span>' : '') +
+        (r.isFormula ? '<span class="fx-formula" data-fx="' + escapeHtml(r.body) + '">' + fxMath(r.body) + '</span>' : '<span class="fx-plain">' + escapeHtml(r.body) + '</span>') +
+        (r.note ? '<span class="fx-note">' + escapeHtml(r.note) + '</span>' : '') +
+        r.legend.map(fxLegendHTML).join('') + '</div>').join('') + '</div>';
+    };
     let listType = null;
     let inHtmlBlock = false;
     let htmlBuf = [];
@@ -90,11 +129,12 @@
 
       if (line.startsWith('```')) {
         if (inCode) {
-          out.push('<pre><code>' + escapeHtml(codeBuf.join('\n')) + '</code></pre>');
+          out.push(fxBlock(codeBuf, codeLang));
           codeBuf = [];
           inCode = false;
         } else {
           closeList();
+          codeLang = line.slice(3).trim().toLowerCase();
           inCode = true;
         }
         i++;
@@ -204,7 +244,7 @@
       i++;
     }
     closeList();
-    if (inCode) out.push('<pre><code>' + escapeHtml(codeBuf.join('\n')) + '</code></pre>');
+    if (inCode) out.push(fxBlock(codeBuf, codeLang));
     if (inHtmlBlock && htmlBuf.length) out.push(sanitizeSvgAttrs(htmlBuf.join('\n')));
     return out.join('\n');
   }

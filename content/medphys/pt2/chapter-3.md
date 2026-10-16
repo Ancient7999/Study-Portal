@@ -16,6 +16,12 @@ Volume flow rate: Q = A v
 Density changes:  ρ₁ A₁ v₁ = ρ₂ A₂ v₂   ← mass flow rate stays the same
 ```
 
+```example
+Given A₁ = 2 cm², v₁ = 0.3 m/s, A₂ = 0.5 cm²
+v₂ = A₁v₁ / A₂ = 2 × 0.3 / 0.5 = 1.2 m/s
+Q = A₁v₁ = 2 × 10⁻⁴ m² × 0.3 m/s = 6 × 10⁻⁵ m³/s
+```
+
 A₁v₁ = A₂v₂ holds when the density is constant, ρ₁ = ρ₂. When the density differs between the two sections, use ρ₁A₁v₁ = ρ₂A₂v₂.
 
 ### Topics map
@@ -69,6 +75,13 @@ Bernoulli's equation is an **energy** statement:
 ```
 pressure energy + kinetic energy + potential energy = constant
 P₁ + ½ ρ v₁² + ρ g h₁ = P₂ + ½ ρ v₂² + ρ g h₂
+```
+
+```example
+Given P₁ = 10 000 Pa, v₁ = 1 m/s, h₁ = 0, v₂ = 2 m/s, h₂ = 0.5 m, ρ = 1000 kg/m³
+P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂)
+P₂ = 10 000 + ½ × 1000 × (1 − 4) + 1000 × 9.8 × (0 − 0.5)
+P₂ = 10 000 − 1500 − 4900 = 3600 Pa
 ```
 
 Every term is **per unit volume**, so **KE = ½mv² becomes ½ρv²** and **PE = mgh becomes ρgh**. The mass m is replaced by the density ρ.
@@ -187,6 +200,12 @@ F / A = η × (v / y)
 Shear stress (F/A) = coefficient of viscosity × velocity gradient
 ```
 
+```example
+Given η = 4 × 10⁻³ Pa·s, A = 0.01 m², v = 0.1 m/s, y = 2 × 10⁻³ m
+F = (4 × 10⁻³ × 0.01 × 0.1) / (2 × 10⁻³) = 2 × 10⁻³ N
+F / A = 2 × 10⁻³ / 0.01 = 0.2 Pa
+```
+
 **How F = ηAv/y is made:** start from F ∝ Av/y and put in a constant to make it an equation. That constant of proportionality, **η (eta)**, is the **viscosity**. Divide both sides by A to get the shear stress form.
 
 **Three ways to write the same law**
@@ -269,6 +288,12 @@ An **incompressible** fluid of constant viscosity **η** flows through a tube of
 Average velocity:  v̄ = ΔP r² / (8 η L)
 Flow rate:         Q = A × v̄ = πr² × ΔP r² / (8 η L)
 Poiseuille's law:  Q = π r⁴ ΔP / (8 η L)
+```
+
+```example
+Given r = 2 mm = 2 × 10⁻³ m, ΔP = 1000 Pa, η = 4 × 10⁻³ Pa·s, L = 0.1 m
+v̄ = ΔP r² / (8ηL) = 1000 × 4 × 10⁻⁶ / (3.2 × 10⁻³) = 1.25 m/s
+Q = π r⁴ ΔP / (8ηL) = π × 1.6 × 10⁻¹¹ × 1000 / (3.2 × 10⁻³) ≈ 1.57 × 10⁻⁵ m³/s
 ```
 
 **How Q = πr⁴ΔP/(8ηL) is made, step by step:**
@@ -381,11 +406,19 @@ Cylindrical blood vessel:   T = P × r
 Thin-walled vessel, wall stress:   σ = P r / t
 σ = wall stress,  t = wall thickness
 
-Form with wall thickness:   σ = Pₜ × R / μ   ← also written T = Pₜ × R / μ
-Pₜ = transmural pressure = Pᵢ − Pₑ = inside − outside,  R = radius,  μ = wall thickness
+Using transmural pressure:   σ = Pₜ R / μ
+Pₜ = transmural pressure Pᵢ − Pₑ,  R = radius,  μ = wall thickness, same as t
 ```
 
-**How these fit together:** **wall tension** T = P × r is a force **per unit length** of wall (N/m). Dividing it by the wall thickness spreads it through the wall and gives the **wall stress** σ = Pr/t, a force per area in Pa. So **Pₜ × R / μ is a wall stress**: it is σ = Pr/t with the **transmural pressure** Pₜ, the pressure difference across the wall, as P and μ as the thickness. When it is written with the letter T, as T = Pₜ × R / μ, that T means this wall stress, not the wall tension P × r.
+```example
+Given P = 16 000 Pa, r = 0.01 m, t = 1 mm = 1 × 10⁻³ m
+T = P × r = 16 000 × 0.01 = 160 N/m
+σ = P r / t = 160 / (1 × 10⁻³) = 1.6 × 10⁵ Pa
+With Pᵢ = 16 000 Pa and Pₑ = 1000 Pa: Pₜ = 15 000 Pa
+σ = Pₜ R / μ = 15 000 × 0.01 / (1 × 10⁻³) = 1.5 × 10⁵ Pa
+```
+
+**How these fit together:** **wall tension** T = P × r is a force **per unit length** of wall (N/m). Dividing it by the wall thickness spreads it through the wall and gives the **wall stress** σ = Pr/t, a force per area in Pa. So **Pₜ × R / μ is a wall stress**: it is σ = Pr/t with the **transmural pressure** Pₜ, the pressure difference across the wall, as P and μ as the thickness.
 
 - **Larger vessel radius → greater wall tension** (T ∝ r).
 - **Higher blood pressure → greater wall tension** (T ∝ P).
@@ -431,6 +464,12 @@ The Reynolds number, **Re**, tells you the **type of flow** in a vessel or tube:
 Re = inertial force / viscous force
 Re = ρ v D / η
 ρ = density of the fluid,  v = velocity,  D = diameter of the tube,  η = viscosity
+```
+
+```example
+Given water: ρ = 1000 kg/m³, v = 0.1 m/s, D = 0.01 m, η = 1 × 10⁻³ Pa·s
+Re = 1000 × 0.1 × 0.01 / (1 × 10⁻³) = 1000
+Re below 2000 → laminar flow
 ```
 
 **Reading the symbols:** **ρ** is the Greek letter **rho** and means **density**; it is easily misread as the Latin p. **η** is the Greek letter **eta** and means **viscosity**; it looks like the Latin n. The numerator ρvD reflects the **inertial force** and η the **viscous force**.
@@ -486,6 +525,11 @@ Surface tension is the property of a liquid surface that makes it behave like a 
 T = F / L
 ```
 
+```example
+Given F = 0.0146 N acting along L = 0.2 m
+T = 0.0146 / 0.2 = 0.073 N/m
+```
+
 **How T = F/L is made:** take a line of length L on the surface; the surface pulls along the surface on that line with force F. Force per unit length is the surface tension. Some books write it as **γ**, the Greek letter **gamma**: γ = F/L. Do not mix it up with the **wall tension T** of Laplace's law, which also has units N/m.
 
 <div class="optics-diagram" role="img" aria-label="Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury">
@@ -513,6 +557,12 @@ h = 2γ cos θ / (ρ g r)
 h = rise in the tube,  r = tube radius,  ρ = liquid density
 ```
 
+```example
+Given water: γ = 0.072 N/m, θ = 0 so cos θ = 1, ρ = 1000 kg/m³, r = 0.5 mm = 5 × 10⁻⁴ m
+h = 2 × 0.072 × 1 / (1000 × 9.8 × 5 × 10⁻⁴) = 0.144 / 4.9
+h ≈ 0.029 m ≈ 2.9 cm
+```
+
 ### Factors affecting surface tension
 
 | Surface tension increases with | Surface tension decreases with |
@@ -537,6 +587,12 @@ Medical use: **blood collection** in thin capillary tubes and **microfluidic dev
 ```
 Alveolar stability:  P = 2T / r
 P = pressure needed to keep the alveolus open,  T = surface tension,  r = alveolar radius
+```
+
+```example
+Given T = 0.05 N/m, r = 0.2 mm = 2 × 10⁻⁴ m
+P = 2 × 0.05 / (2 × 10⁻⁴) = 500 Pa
+Halving r doubles P → 1000 Pa
 ```
 
 **How P = 2T/r is used:** a **higher** surface tension T needs a **higher** pressure to keep an alveolus open, and a **smaller** alveolus, with a smaller r, needs **more** pressure too. Surfactant lowers T, so much less pressure is needed and the alveoli do not collapse.

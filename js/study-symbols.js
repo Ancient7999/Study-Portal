@@ -239,23 +239,90 @@
     return count;
   }
 
+  /* —— whole-formula tooltips (no per-letter tooltips) ——
+     A formula is a formula-card row or an inline formula in the text such as "Q = Av".
+     Its tooltip names what the formula describes and what each symbol stands for. */
+  function symbolsIn(g, src, f, ctx) {
+    var seen = Object.create(null), out = [], m, units = unitRanges(f).filter(function (r) { return !/\d/.test(f.charAt(r[0] - 1)); });
+    WORD.lastIndex = 0;
+    while ((m = WORD.exec(f))) {
+      if (inRanges(units, m.index)) continue;
+      if (/\d\s$/.test(f.slice(0, m.index)) && UNIT_WORDS.test(m[0])) continue;
+      var parts = segment(g, src, m[0]); if (!parts) continue;
+      parts.forEach(function (t) { if (seen[t]) return; var d = lookup(g, src, t, ctx); if (!d) return; seen[t] = 1; out.push(label(t, d)); });
+    }
+    return out;
+  }
+  function cleanHeading(h) { return String(h || '').replace(/^\s*\d+(\.\d+)*[.)]?\s*/, '').trim(); }
+  function formulaTip(g, src, f, meaning, section, line) {
+    var parts = section.split(' › ');
+    var mean = meaning || cleanHeading(parts[1]) || cleanHeading(parts[0]);
+    var syms = symbolsIn(g, src, f, [line || f, section]);
+    return f + (mean ? '\n' + mean : '') + (syms.length ? '\n\n' + syms.join('\n') : '');
+  }
+  // inline formulas: a run of math tokens with "=" or "∝" and at least two symbols on it
+  var MTOK = new RegExp('^[A-Za-zα-ωΑ-ΩΔṁℓπ\\u0304' + SUBS + '′_½0-9.,+−\\-×÷/·=∝≈<>()²³⁴⁻¹⁰√|]+$');
+  function inlineFormulas(g, src, s) {
+    var toks = [], re = /\S+/g, m, out = [];
+    while ((m = re.exec(s))) toks.push({ t: m[0], a: m.index, b: m.index + m[0].length });
+    var isMath = function (t) {
+      var core = t.replace(/^[(\[]+/, '').replace(/[.,;:!?)\]]+$/, '');
+      if (!core) return false;
+      if (/^[=∝≈<>×÷·+−\-/→]+$/.test(core) || core === 'constant') return true;
+      if (!MTOK.test(core)) return false;
+      var words = core.match(new RegExp('[A-Za-zα-ωΑ-ΩΔṁℓ][A-Za-zα-ωΑ-ΩΔṁℓ\\u0304' + SUBS + '′]*', 'g')) || [];
+      return words.every(function (w) { return known(g, src, w) || segment(g, src, w) || UNIT_WORDS.test(w); });
+    };
+    var k = 0;
+    while (k < toks.length) {
+      if (!isMath(toks[k].t)) { k++; continue; }
+      var e = k; while (e + 1 < toks.length && isMath(toks[e + 1].t) && !/[.,;:!?]$/.test(toks[e].t)) e++;
+      var a = toks[k].a, b = toks[e].b, txt = s.slice(a, b);
+      var lead = txt.match(/^[(\[]+/); if (lead && !/\)/.test(txt)) { a += lead[0].length; txt = txt.slice(lead[0].length); }
+      var trail = txt.match(/[.,;:!?\]]+$/); if (trail) { b -= trail[0].length; txt = txt.slice(0, -trail[0].length); }
+      if (/\)$/.test(txt) && (txt.match(/\(/g) || []).length < (txt.match(/\)/g) || []).length) { b--; txt = txt.slice(0, -1); }
+      var sides = txt.split(/\s*[=∝]\s*/);
+      var symCount = symbolsIn(g, src, txt, [txt]).length;
+      if (/[=∝]/.test(txt) && sides.length >= 2 && sides.every(function (x) { return x.trim(); }) && symCount >= 2 && /[A-Za-zα-ωΑ-ΩΔ]/.test(sides[sides.length - 1]))
+        out.push({ a: a, b: b, f: txt });
+      k = e + 1;
+    }
+    return out;
+  }
   function decorateWith(g, mdEl, src) {
     if (!g || !mdEl) return 0;
     var ch = (g.chapters && g.chapters[src]) || {};
     var map = sectionMap(mdEl);
     var total = wrapTerms(mdEl, ch.terms, map);
+    mdEl.querySelectorAll('.fx-formula').forEach(function (el) {
+      var row = el.closest('.fx-row'), f = el.dataset.fx || el.textContent;
+      var title = row && row.querySelector('.fx-title'), note = row && row.querySelector('.fx-note');
+      var meaning = (title ? title.textContent.replace(/^\(\d+\)\s*/, '') : '') || (note ? note.textContent : '');
+      var t = formulaTip(g, src, f, meaning, sectionOf(el, mdEl, map), f);
+      el.classList.add('sym'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.dataset.tip = t; el.setAttribute('aria-label', t.replace(/\n+/g, '. '));
+      total++;
+    });
     var walker = document.createTreeWalker(mdEl, NodeFilter.SHOW_TEXT, {
       acceptNode: function (n) {
         var p = n.parentNode;
-        if (!p || p.closest('svg,h1,h2,h3,h4,.sym,a,button')) return NodeFilter.FILTER_REJECT;
+        if (!p || p.closest('svg,h1,h2,h3,h4,.sym,a,button,.fx-box,.fx-example,pre')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
     var list = [], n;
     while ((n = walker.nextNode())) list.push(n);
     list.forEach(function (tn) {
-      var sec = sectionOf(tn, mdEl, map);
-      total += wrapSymbols(tn, g, src, sec, !!tn.parentNode.closest('pre,code'));
+      var s = tn.nodeValue; if (!s || !/[=∝]/.test(s)) return;
+      var hits = inlineFormulas(g, src, s); if (!hits.length) return;
+      var sec = sectionOf(tn, mdEl, map), frag = document.createDocumentFragment(), last = 0;
+      hits.forEach(function (h) {
+        frag.appendChild(document.createTextNode(s.slice(last, h.a)));
+        var t = formulaTip(g, src, h.f, '', sec, sentenceAround(s, h.a));
+        var sp = makeTip(h.f, t, 'sym fx-inline', t.replace(/\n+/g, '. '));
+        frag.appendChild(sp); last = h.b; total++;
+      });
+      frag.appendChild(document.createTextNode(s.slice(last)));
+      tn.parentNode.replaceChild(frag, tn);
     });
     mdEl.dataset.symbols = String(total);
     return total;
@@ -293,7 +360,15 @@
     var t = ensureTip();
     if (current && current !== el) current.removeAttribute('aria-describedby');
     current = el; pinned = !!pin;
-    t.textContent = el.dataset.tip;
+    t.textContent = '';
+    if (el.classList.contains('fx-formula') || el.classList.contains('fx-inline')) {
+      var lines = String(el.dataset.tip).split('\n');
+      var f = document.createElement('div'); f.className = 'tip-f'; f.textContent = lines[0]; t.appendChild(f);
+      var k = 1;
+      if (lines[1]) { var mm = document.createElement('div'); mm.className = 'tip-m'; mm.textContent = lines[1]; t.appendChild(mm); k = 2; }
+      var rest = lines.slice(k).filter(Boolean);
+      if (rest.length) { var ul = document.createElement('ul'); ul.className = 'tip-syms'; rest.forEach(function (r) { var li = document.createElement('li'); li.textContent = r; ul.appendChild(li); }); t.appendChild(ul); }
+    } else t.textContent = el.dataset.tip;
     t.hidden = false;
     el.setAttribute('aria-describedby', 'symTip');
     el.classList.add('sym-on');
