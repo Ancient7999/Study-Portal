@@ -93,6 +93,11 @@ Spherical mirrors are shaped like a **section of a sphere**. A **concave** mirro
 f = r / 2   ← r = 2f
 ```
 
+```example
+Given r = 40 cm
+f = 40 / 2 = 20 cm
+```
+
 **How f = r/2 is made:** using the geometry of a ray reflecting at a curved surface, where the angles to the normal are equal and the normal at any point of a sphere passes through C, a parallel ray close to the axis crosses the axis halfway between C and the mirror. So F sits **halfway** between the mirror and C.
 
 <div class="optics-diagram" role="img" aria-label="Concave mirror brings parallel rays to F; convex mirror spreads them as if from F behind it">
@@ -150,6 +155,11 @@ Light slows down a little when it travels through a material, called a medium. T
 n = c / v
 c = speed of light in vacuum = 3 × 10⁸ m/s
 v = speed of light in the medium
+```
+
+```example
+Given v = 2.25 × 10⁸ m/s in water
+n = (3 × 10⁸) / (2.25 × 10⁸) ≈ 1.33
 ```
 
 **How n is made:** divide the vacuum speed by the speed in the medium. Light is never faster than c, so n ≥ 1, and vacuum is exactly 1. n has **no units**.
@@ -245,6 +255,12 @@ If we slowly increase the angle of incidence, the angle of refraction also incre
 ```
 n₁ sin θc = n₂ sin 90°
 sin θc = n₂ / n₁   ← n₁ = denser, n₂ = rarer, n₁ > n₂
+```
+
+```example
+Given glass n₁ = 1.5 to air n₂ = 1.0
+sin θc = 1.0 / 1.5 ≈ 0.667
+θc = sin⁻¹(0.667) ≈ 41.8°
 ```
 
 **How the critical-angle formula is made:** it is just Snell's law with θ₂ = 90°, and sin 90° = 1.
@@ -422,6 +438,12 @@ di = image distance
 f  = focal length
 ```
 
+```example
+Given do = 15 cm, f = 10 cm
+1/di = 1/10 − 1/15 = 3/30 − 2/30 = 1/30
+di = +30 cm
+```
+
 **How it is used:** put in the two distances you know, with their signs, and solve for the third. Use the **same units** for all three: all cm or all m.
 
 ### Magnification
@@ -432,6 +454,12 @@ The magnification is:
 m = hi / ho = −di / do
 hi = height of the image
 ho = height of the object
+```
+
+```example
+Given do = 15 cm, di = 30 cm, ho = 1 cm
+m = −di / do = −30 / 15 = −2
+hi = m × ho = −2 × 1 = −2 cm → inverted, twice the size
 ```
 
 You may also see the simple size form:

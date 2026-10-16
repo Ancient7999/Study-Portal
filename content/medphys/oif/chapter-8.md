@@ -107,6 +107,11 @@ E = k Q / r²   ← field of a point charge Q
 F = q E   ← force on a charge q placed in a field
 ```
 
+```example
+Given F = 0.02 N on q = 4 × 10⁻⁶ C
+E = 0.02 / (4 × 10⁻⁶) = 5000 N/C
+```
+
 - **Field lines** point the way a positive charge would be pushed: **away from positive** charges and **toward negative** charges. Around a **negatively charged sphere** the lines **come inward from every direction**.
 
 <div class="optics-diagram" role="img" aria-label="Electric field lines leave a positive charge and enter a negative charge">
@@ -161,6 +166,11 @@ In electron-volts: 0.02 / 1.6 × 10⁻¹⁹ = 1.25 × 10¹⁷ eV
 
 ```
 I = dq / dt = Q / t   ← unit: ampere, 1 A = 1 C/s
+```
+
+```example
+Given Q = 6 C passing in t = 3 s
+I = 6 / 3 = 2 A
 ```
 
 Example: **100 C** passing a point in **1 s** gives **I = 100 A**.
@@ -232,6 +242,11 @@ E = V / L   ← field along a wire of length L
 ρ = E / J
 ```
 
+```example
+Given I = 2 A through A = 1 × 10⁻⁶ m²
+J = 2 / (1 × 10⁻⁶) = 2 × 10⁶ A/m²
+```
+
 ---
 
 ## 9. Nerve conduction
@@ -291,6 +306,11 @@ The membrane has **three types of gated channels**:
 ```
 F = q v B sin θ   ← θ = angle between v and B
 B = F / (q v)   ← when v is perpendicular to B
+```
+
+```example
+Given q = 1.6 × 10⁻¹⁹ C, v = 1 × 10⁶ m/s, B = 0.5 T, θ = 90° so sin θ = 1
+F = 1.6 × 10⁻¹⁹ × 1 × 10⁶ × 0.5 × 1 = 8 × 10⁻¹⁴ N
 ```
 
 - The force is **perpendicular to the velocity** and **perpendicular to the field**. It is largest when v ⟂ B and zero when v is parallel to B.

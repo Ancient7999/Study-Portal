@@ -67,6 +67,11 @@ Since m = ρ V and V = A × ℓ:
 Mass flow rate = ρ A (ℓ / t) = ρ A v
 ```
 
+```example
+Given blood ρ = 1060 kg/m³, A = 3 × 10⁻⁴ m², v = 0.2 m/s
+Mass flow rate = 1060 × 3 × 10⁻⁴ × 0.2 ≈ 0.0636 kg/s
+```
+
 **How mass flow rate is assembled:**
 - Start from definition: mass passing a cross-section per time → m/t.
 - Mass of a fluid slug is density × volume: m = ρV.
@@ -82,6 +87,11 @@ Unit check: (kg/m³)·(m²)·(m/s) = **kg/s**.
 
 ```
 Q = A v
+```
+
+```example
+Given A = 3 × 10⁻⁴ m², v = 0.2 m/s
+Q = 3 × 10⁻⁴ × 0.2 = 6 × 10⁻⁵ m³/s
 ```
 
 **How volume flow rate is assembled:** it is separate from mass flow. Q is volume per time. A fluid slug of cross-section A advancing at speed v sweeps volume A×v each second — so Q = A v. No density here: this tracks space occupied, not mass. Unit: **m³/s**.

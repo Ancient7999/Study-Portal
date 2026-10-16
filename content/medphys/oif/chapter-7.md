@@ -88,6 +88,11 @@ In eV:  1.19 × 10⁻¹⁵ / 1.602 × 10⁻¹⁹ ≈ 7.45 × 10³ eV
 h f = Kₘₐₓ + φ
 ```
 
+```example
+Given photon energy h f = 5.0 eV, work function φ = 2.3 eV
+Kₘₐₓ = h f − φ = 5.0 − 2.3 = 2.7 eV
+```
+
 <div class="optics-diagram" role="img" aria-label="Photoelectric effect: photon energy hf is shared between the work function and the electron kinetic energy">
 <svg viewBox="0 0 640 248" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
 <rect x="60" y="150" width="280" height="50" rx="4" fill="rgba(var(--accent-1-rgb),0.35)" stroke="var(--accent-1)" stroke-width="1.8"/><text x="200" y="182" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">metal surface</text><path d="M30.0,20.0 L35.2,22.7 L39.2,25.4 L41.2,28.1 L41.3,30.8 L39.8,33.5 L38.1,36.2 L37.4,38.9 L38.4,41.6 L41.6,44.3 L46.3,47.0 L51.7,49.7 L56.4,52.4 L59.4,55.1 L60.3,57.8 L59.5,60.5 L57.8,63.2 L56.4,65.9 L56.5,68.6 L58.7,71.3 L62.8,74.0 L68.0,76.7 L73.2,79.4 L77.1,82.1 L79.0,84.8 L78.9,87.5 L77.4,90.2 L75.8,92.9 L75.1,95.6 L76.2,98.3 L79.5,101.0 L84.3,103.7 L89.7,106.4 L94.3,109.1 L97.2,111.8 L98.0,114.5 L97.1,117.2 L95.4,119.9 L94.1,122.6 L94.3,125.3 L96.6,128.0 L100.8,130.7 L106.0,133.4 L111.1,136.1 L114.9,138.8 L116.7,141.5 L116.5,144.2" fill="none" stroke="var(--accent-6)" stroke-width="2"/><path d="M90.0,20.0 L95.2,22.7 L99.2,25.4 L101.2,28.1 L101.3,30.8 L99.8,33.5 L98.1,36.2 L97.4,38.9 L98.4,41.6 L101.6,44.3 L106.3,47.0 L111.7,49.7 L116.4,52.4 L119.4,55.1 L120.3,57.8 L119.5,60.5 L117.8,63.2 L116.4,65.9 L116.5,68.6 L118.7,71.3 L122.8,74.0 L128.0,76.7 L133.2,79.4 L137.1,82.1 L139.0,84.8 L138.9,87.5 L137.4,90.2 L135.8,92.9 L135.1,95.6 L136.2,98.3 L139.5,101.0 L144.3,103.7 L149.7,106.4 L154.3,109.1 L157.2,111.8 L158.0,114.5 L157.1,117.2 L155.4,119.9 L154.1,122.6 L154.3,125.3 L156.6,128.0 L160.8,130.7 L166.0,133.4 L171.1,136.1 L174.9,138.8 L176.7,141.5 L176.5,144.2" fill="none" stroke="var(--accent-6)" stroke-width="2"/><path d="M150.0,20.0 L155.2,22.7 L159.2,25.4 L161.2,28.1 L161.3,30.8 L159.8,33.5 L158.1,36.2 L157.4,38.9 L158.4,41.6 L161.6,44.3 L166.3,47.0 L171.7,49.7 L176.4,52.4 L179.4,55.1 L180.3,57.8 L179.5,60.5 L177.8,63.2 L176.4,65.9 L176.5,68.6 L178.7,71.3 L182.8,74.0 L188.0,76.7 L193.2,79.4 L197.1,82.1 L199.0,84.8 L198.9,87.5 L197.4,90.2 L195.8,92.9 L195.1,95.6 L196.2,98.3 L199.5,101.0 L204.3,103.7 L209.7,106.4 L214.3,109.1 L217.2,111.8 L218.0,114.5 L217.1,117.2 L215.4,119.9 L214.1,122.6 L214.3,125.3 L216.6,128.0 L220.8,130.7 L226.0,133.4 L231.1,136.1 L234.9,138.8 L236.7,141.5 L236.5,144.2" fill="none" stroke="var(--accent-6)" stroke-width="2"/><text x="250" y="30" text-anchor="start" fill="var(--accent-6)" font-family="Outfit,sans-serif" font-size="12">photons, energy hf each</text><circle cx="260" cy="150" r="6" fill="var(--accent-4)"/><line x1="266" y1="144" x2="320" y2="96" stroke="var(--accent-4)" stroke-width="2"/><polygon points="325.4,90.6 321.2,99.9 316.1,94.8" fill="var(--accent-4)"/><text x="330" y="90" text-anchor="start" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12">ejected electron</text><rect x="480" y="40" width="60" height="70" rx="3" fill="rgba(var(--accent-4-rgb),0.4)" stroke="var(--accent-4)" stroke-width="1.8"/><text x="550" y="80" text-anchor="start" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12">Kₘₐₓ</text><rect x="480" y="110" width="60" height="90" rx="3" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.8"/><text x="542" y="160" text-anchor="start" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="12">φ: work function</text><line x1="470" y1="40" x2="470" y2="200" stroke="var(--accent-6)" stroke-width="2"/><text x="464" y="124" text-anchor="end" fill="var(--accent-6)" font-family="Outfit,sans-serif" font-size="13" font-weight="700">hf</text><text x="320" y="236" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="700">h f = Kₘₐₓ + φ</text>
@@ -157,6 +162,11 @@ A nuclide is written with A at the top left and Z at the bottom left of the elem
 
 ```
 r = R₀ A^(1/3),   R₀ = 1.2 × 10⁻¹⁵ m
+```
+
+```example
+Given A = 27
+r = 1.2 × 10⁻¹⁵ × 27^(1/3) = 1.2 × 10⁻¹⁵ × 3 = 3.6 × 10⁻¹⁵ m
 ```
 
 ### Worked examples
@@ -254,6 +264,11 @@ Daughter: Z = 85, A = 226 → astatine-226
 
 ```
 R = λ N = − dN/dt
+```
+
+```example
+Given λ = 0.01 s⁻¹, N = 5000 nuclei
+R = 0.01 × 5000 = 50 decays per second = 50 Bq
 ```
 
 - **Units of activity:** the **becquerel**, **1 Bq = 1 decay per second**, the SI unit, and the **curie**, **1 Ci = 3.70 × 10¹⁰ Bq**.

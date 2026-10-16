@@ -181,6 +181,11 @@ Stress = F / A
 SI unit: N/m² = Pascal (Pa)
 ```
 
+```example
+Given F = 200 N on A = 4 × 10⁻⁴ m²
+Stress = 200 / (4 × 10⁻⁴) = 5 × 10⁵ Pa
+```
+
 **How this formula is made:** F is the restoring force inside the material, in newtons; A is the cross-sectional area that force acts through (m²). Stress is force divided by area — same push concentrated on a smaller area means larger stress. When you apply an external force, a restoring force develops in the opposite direction inside the material; that restoring force per unit area is stress.
 
 ### Strain
@@ -191,6 +196,11 @@ SI unit: N/m² = Pascal (Pa)
 Strain = (deformation in direction of force) / (original dimension)
 For length: Strain = ΔL / L₀
 Dimensionless — NO units
+```
+
+```example
+Given L₀ = 2 m, ΔL = 1 mm = 1 × 10⁻³ m
+Strain = 1 × 10⁻³ / 2 = 5 × 10⁻⁴, no units
 ```
 
 **How this formula is made:** ΔL is the change in length; L₀ is the original length. Strain is a ratio of two lengths, so the units cancel — it is a pure number. It answers “how much did the object stretch or shorten relative to how long it was?”
@@ -270,6 +280,11 @@ Force **parallel to the surface**, a tangential force. Material slides like a pa
 Shear strain = Δx / L
 ```
 
+```example
+Given Δx = 2 mm = 2 × 10⁻³ m, L = 0.1 m
+Shear strain = 2 × 10⁻³ / 0.1 = 0.02
+```
+
 **How this formula is made:** Δx is the sideways, tangential displacement of one face; L is the perpendicular height or thickness. Dividing sideways shift by height gives a dimensionless measure of how much the material has been skewed, like sliding a pack of cards.
 
 ### 3 · Hydraulic stress
@@ -278,6 +293,11 @@ Hydraulic stress is also called volume stress. It is a uniform pressure from a f
 
 ```
 Hydraulic strain = ΔV / V   ← also called volume strain
+```
+
+```example
+Given ΔV = 1 cm³ from V = 1000 cm³
+Hydraulic strain = 1 / 1000 = 1 × 10⁻³
 ```
 
 **How this formula is made:** ΔV is the change in volume; V is the original volume. Uniform pressure from all sides changes size, not shape — so strain is written as a volume ratio, again dimensionless.
@@ -325,6 +345,13 @@ G = (F / A) / (Δx / L)
 Unit: Pa
 ```
 
+```example
+Given F = 500 N, A = 0.01 m², Δx = 1 × 10⁻⁴ m, L = 0.05 m
+Shear stress = 500 / 0.01 = 5 × 10⁴ Pa
+Shear strain = 1 × 10⁻⁴ / 0.05 = 2 × 10⁻³
+G = 5 × 10⁴ / (2 × 10⁻³) = 2.5 × 10⁷ Pa
+```
+
 **How the shear modulus is assembled:** shear stress is the tangential force per area F/A; shear strain is Δx/L. G is that stress divided by that strain — how much tangential stress you need for a given sideways skew. Resistance to **shape** change without volume change.
 
 ### Bulk modulus
@@ -335,6 +362,11 @@ The bulk modulus, **B**, measures resistance to a change in volume.
 B = (Hydraulic stress) / (Hydraulic strain)
 B = (F / A) / (ΔV / V)
 Unit: Pa
+```
+
+```example
+Given pressure F/A = 2 × 10⁶ Pa, ΔV / V = 1 × 10⁻³
+B = 2 × 10⁶ / (1 × 10⁻³) = 2 × 10⁹ Pa
 ```
 
 **How the bulk modulus is assembled:** hydraulic stress is the uniform pressure F/A from all sides; hydraulic strain is ΔV/V. B is pressure divided by fractional volume change — how much pressure you need to squeeze the volume by a given fraction. Resistance to **volume** change. Water has B ≈ 2.2 × 10⁹ Pa, so it is nearly incompressible.

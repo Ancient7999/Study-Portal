@@ -109,6 +109,14 @@ At a fixed speed:   f ∝ 1 / λ
 Intensity:     I ∝ A²   ← double the amplitude → 4 × the intensity
 ```
 
+```example
+Given 50 cycles in 2 s, wavelength λ = 2 m
+f = 50 / 2 = 25 Hz
+T = 1 / f = 1 / 25 = 0.04 s
+v = λ × f = 2 × 25 = 50 m/s
+Doubling the amplitude A → I × 2² = 4 × the intensity
+```
+
 **Intensity and amplitude:** the **intensity** of a wave, the energy it carries, is proportional to the **square of its amplitude**. A louder sound has a bigger amplitude.
 
 **How v = λf is made:** in one period T the wave moves forward by one wavelength λ. Speed = distance ÷ time = λ / T, and 1/T = f, so v = λ × f. If the speed stays the same, a **higher frequency** means a **shorter wavelength** (f ∝ 1/λ).
@@ -259,6 +267,12 @@ v = speed of sound in air,  v_S = speed of the source,  v_D = speed of the detec
 f′ = f × (v + v_D) / (v − v_S)
 ```
 
+```example
+Given f = 500 Hz, v = 343 m/s, v_D = 10 m/s, v_S = 20 m/s, moving towards each other
+f′ = 500 × (343 + 10) / (343 − 20) = 500 × 353 / 323
+f′ ≈ 546 Hz
+```
+
 All the cases:
 
 | Situation | Top: detector | Bottom: source | Effect on f′ |
@@ -323,6 +337,11 @@ Higher pitch as it comes, lower pitch as it leaves.
 ```
 Ma = vₛ / v
 vₛ = speed of the source,  v = speed of sound
+```
+
+```example
+Given vₛ = 686 m/s, v = 343 m/s
+Ma = 686 / 343 = 2 → supersonic
 ```
 
 **How Ma is made:** it is just "how many times faster than sound". A plane at **Mach 2.3** flies at **2.3 times the speed of sound** in the air it flies through, so it makes shock waves.

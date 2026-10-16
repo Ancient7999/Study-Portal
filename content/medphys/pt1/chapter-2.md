@@ -48,12 +48,22 @@ Conversion: (g/cm³) × 1000 = kg/m³
 Example: 1 g/cm³ = 1000 kg/m³   ← water
 ```
 
+```example
+Given m = 2.7 kg, V = 1 × 10⁻³ m³
+ρ = 2.7 / (1 × 10⁻³) = 2700 kg/m³
+```
+
 **How density is made:** m is mass, how much matter; V is volume, how much space. Density is mass divided by volume — how tightly matter is packed. Same mass in a smaller volume means higher density.
 
 ### Specific gravity
 
 ```
 Specific gravity = ρ_substance / ρ_water
+```
+
+```example
+Given ρ_substance = 2700 kg/m³, ρ_water = 1000 kg/m³
+SG = 2700 / 1000 = 2.7, no units
 ```
 
 **How specific gravity is made:** divide the substance’s density by water’s density. Both have the same units, so they cancel — SG is a pure number. Water: ρ = 1000 kg/m³ = 1 g/cm³ → SG = 1 by definition. SG = 2 means “twice as dense as water.”
@@ -82,6 +92,11 @@ P = Force / Area
 SI unit: pascal (Pa) = N/m²
 ```
 
+```example
+Given F = 600 N on A = 0.03 m²
+P = 600 / 0.03 = 2 × 10⁴ Pa
+```
+
 **How pressure is made:** Force is the push, in newtons; Area is the surface that push spreads over (m²). Pressure = force ÷ area — same force on a smaller patch means higher pressure.
 
 ### Direction & depth behaviour
@@ -97,6 +112,11 @@ Pressure at depth h below the free surface is due to the weight of the liquid ab
 ```
 P = F/A = (mg)/A = (ρ V g)/A = ρ g h
 ΔP = ρ g Δh
+```
+
+```example
+Given water ρ = 1000 kg/m³, h = 2 m, g = 9.8 m/s²
+P = 1000 × 9.8 × 2 = 19 600 Pa
 ```
 
 **How P = ρgh is assembled, step by step:**
@@ -194,6 +214,12 @@ P_gauge = ρ g Δh
 P_abs = P_atm + P_gauge
 ```
 
+```example
+Given P_atm = 1.013 × 10⁵ Pa, water Δh = 0.5 m
+P_gauge = 1000 × 9.8 × 0.5 = 4900 Pa
+P_abs = 101 300 + 4900 = 106 200 Pa ≈ 1.06 × 10⁵ Pa
+```
+
 **How each variant is made:** keep them separate.
 - **P_gauge = ρ g Δh:** the manometer’s height difference Δh tells you how much the gas pressure exceeds, or falls short of, the open-limb atmosphere. Multiply density × g × that height difference.
 - **P_abs = P_atm + ρ g Δh:** absolute pressure of the gas is atmosphere plus that gauge contribution — you add the two because the open limb already sits at P_atm, and the liquid column accounts for the rest.
@@ -225,6 +251,11 @@ If an external pressure is applied to a **confined** fluid, the pressure at **ev
 ```
 P_in = P_out
 F_in / A_in = F_out / A_out
+```
+
+```example
+Given F_in = 100 N, A_in = 0.01 m², A_out = 0.5 m²
+F_out = F_in × A_out / A_in = 100 × 0.5 / 0.01 = 5000 N
 ```
 
 **How each Pascal form is made:**
@@ -269,6 +300,11 @@ F_B = weight of the fluid displaced by the object
 F_B = m_fluid g = ρ_fluid × V_displaced × g
 ```
 
+```example
+Given V_displaced = 2 × 10⁻³ m³ of water, ρ_fluid = 1000 kg/m³
+F_B = 1000 × 2 × 10⁻³ × 9.8 = 19.6 N
+```
+
 **How buoyancy is assembled:**
 - Words first: buoyant force equals the **weight of the fluid displaced**, not the weight of the object.
 - Weight is mass × g, so F_B = m_fluid g.
@@ -279,6 +315,11 @@ F_B = m_fluid g = ρ_fluid × V_displaced × g
 
 ```
 Apparent weight = Actual weight − F_B
+```
+
+```example
+Given actual weight 50 N, F_B = 19.6 N
+Apparent weight = 50 − 19.6 = 30.4 N
 ```
 
 **How apparent weight is made:** actual weight pulls down; buoyant force pushes up. What a scale or your hand feels underwater is the difference: W − F_B. Subtracting F_B from weight is why submerged objects feel lighter.
