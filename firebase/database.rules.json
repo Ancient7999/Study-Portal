@@ -208,6 +208,9 @@
             ".validate": "$seat.matches(/^[0-3]$/) && (!newData.exists() || (newData.hasChildren(['uid','displayName']) && newData.child('uid').isString() && newData.child('displayName').isString() && (!newData.hasChild('role') || newData.child('role').val().matches(/^(play|spectate)$/)) && (!newData.hasChild('bank') || newData.child('bank').isString()) && (!newData.hasChild('form') || newData.child('form').isString())))"
           }
         },
+        "settings": {
+          ".validate": "newData.parent().child('leader').val() == auth.uid && (!newData.hasChild('spectate') || newData.child('spectate').isBoolean()) && (!newData.hasChild('share') || newData.child('share').isBoolean()) && (!newData.hasChild('cursors') || newData.child('cursors').isBoolean()) && (!newData.hasChild('policy') || newData.child('policy').val().matches(/^(ask|restrict|all)$/))"
+        },
         "session": {
           ".write": "auth != null",
           "panes": {
@@ -218,7 +221,7 @@
           }
         },
         "share": {
-          ".validate": "newData.hasChildren(['controllerUid','sharedBy','bank','form','seed','currentIndex','updatedAt']) && newData.child('controllerUid').isString() && (newData.child('controllerUid').val() == root.child('lobbies').child($lobbyId).child('leader').val() || root.child('lobbies').child($lobbyId).child('members').child(newData.child('controllerUid').val()).exists()) && newData.child('sharedBy').isString() && newData.child('bank').isString() && newData.child('bank').val().length <= 200 && newData.child('form').isString() && newData.child('form').val().length <= 8 && newData.child('seed').isNumber() && newData.child('currentIndex').isNumber() && newData.child('currentIndex').val() >= 0 && newData.child('updatedAt').isNumber() && newData.child('updatedAt').val() <= now + 60000 && (!newData.hasChild('controllerName') || (newData.child('controllerName').isString() && newData.child('controllerName').val().length <= 40)) && (!newData.hasChild('sharedByName') || (newData.child('sharedByName').isString() && newData.child('sharedByName').val().length <= 40)) && (data.exists() ? ((auth.uid == data.child('controllerUid').val() || auth.uid == root.child('lobbies').child($lobbyId).child('leader').val()) && newData.child('sharedBy').val() == data.child('sharedBy').val() && newData.child('seed').val() == data.child('seed').val() && newData.child('bank').val() == data.child('bank').val() && newData.child('form').val() == data.child('form').val()) : (auth.uid == root.child('lobbies').child($lobbyId).child('leader').val() && newData.child('sharedBy').val() == auth.uid))",
+          ".validate": "newData.hasChildren(['controllerUid','sharedBy','bank','form','seed','currentIndex','updatedAt']) && newData.child('controllerUid').isString() && (newData.child('controllerUid').val() == root.child('lobbies').child($lobbyId).child('leader').val() || root.child('lobbies').child($lobbyId).child('members').child(newData.child('controllerUid').val()).exists()) && newData.child('sharedBy').isString() && newData.child('bank').isString() && newData.child('bank').val().length <= 200 && newData.child('form').isString() && newData.child('form').val().length <= 8 && newData.child('seed').isNumber() && newData.child('currentIndex').isNumber() && newData.child('currentIndex').val() >= 0 && newData.child('updatedAt').isNumber() && newData.child('updatedAt').val() <= now + 60000 && (!newData.hasChild('controllerName') || (newData.child('controllerName').isString() && newData.child('controllerName').val().length <= 40)) && (!newData.hasChild('sharedByName') || (newData.child('sharedByName').isString() && newData.child('sharedByName').val().length <= 40)) && (data.exists() ? ((auth.uid == data.child('controllerUid').val() || auth.uid == root.child('lobbies').child($lobbyId).child('leader').val()) && newData.child('sharedBy').val() == data.child('sharedBy').val() && newData.child('seed').val() == data.child('seed').val() && newData.child('bank').val() == data.child('bank').val() && newData.child('form').val() == data.child('form').val()) : (auth.uid == root.child('lobbies').child($lobbyId).child('leader').val() && newData.child('sharedBy').val() == auth.uid)) && (data.exists() || root.child('lobbies').child($lobbyId).child('settings').child('share').val() != false)",
           "answers": {
             "$qid": {
               ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 16"
@@ -239,7 +242,7 @@
         },
         "spectators": {
           "$uid": {
-            ".write": "auth != null && auth.uid == $uid",
+            ".write": "auth != null && auth.uid == $uid && (!newData.exists() || root.child('lobbies').child($lobbyId).child('settings').child('spectate').val() != false)",
             ".validate": "newData.hasChildren(['displayName','since','lastSeen']) && newData.child('displayName').isString() && newData.child('displayName').val().length <= 40 && newData.child('since').isNumber() && newData.child('lastSeen').isNumber() && newData.child('lastSeen').val() <= now + 60000"
           }
         },

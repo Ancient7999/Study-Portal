@@ -74,7 +74,7 @@
       const lid = L && L.getActiveLobbyId && L.getActiveLobbyId();
       const lobby = lid && L.getActiveLobby && L.getActiveLobby();
       if (lid && lobby && lobby.members && lobby.members[uid()]) {
-        return { kind: 'lobby', id: lid, base: 'lobbies/' + lid, sessionPath: 'lobbies/' + lid + '/share', leader: lobby.leader, members: lobby.members || {} };
+        return { kind: 'lobby', id: lid, base: 'lobbies/' + lid, sessionPath: 'lobbies/' + lid + '/share', leader: lobby.leader, members: lobby.members || {}, settings: lobby.settings || null };
       }
     } catch (e) {}
     return null;
@@ -125,34 +125,63 @@
     });
   }
 
+  /* bank + form, optionally narrowed to one Practice set card (js/study-sets.js) */
   const bankCache = {};
-  async function loadBank(path, form) {
-    const key = path + '|' + form;
+  async function loadBank(path, form, card) {
+    const key = path + '|' + form + (card ? '|' + card : '');
     if (bankCache[key]) return bankCache[key];
-    const res = await fetch(path, { cache: 'no-cache' });
-    if (!res.ok) throw new Error('bank HTTP ' + res.status);
-    const data = await res.json();
-    const bank = data.bank || data.FORM_BANK || {};
-    let qs = bank[form] || bank[String(form).toUpperCase()];
-    if (!qs || !qs.length) {
-      const first = (data.forms && data.forms[0]) || Object.keys(bank)[0];
-      qs = first ? bank[first] : null;
+    let qs = null;
+    if (global.StudySets) {
+      const data = await StudySets.fetchData(path);
+      let material = null;
+      if (card && global.StudyBankPicker && StudyBankPicker.loadCatalog) {
+        try {
+          material = StudySets.materialForBank(await StudyBankPicker.loadCatalog(), path);
+        } catch (e) {}
+      }
+      qs = StudySets.poolFor(data, form, card, material);
+    } else {
+      const res = await fetch(path, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('bank HTTP ' + res.status);
+      const data = await res.json();
+      const bank = data.bank || data.FORM_BANK || {};
+      qs = bank[form] || bank[String(form).toUpperCase()];
+      if (!qs || !qs.length) {
+        const first = (data.forms && data.forms[0]) || Object.keys(bank)[0];
+        qs = first ? bank[first] : null;
+      }
     }
-    if (!qs || !qs.length) throw new Error('Form ' + form + ' missing');
+    if (!qs || !qs.length) throw new Error('Set ' + (card || form) + ' missing');
     // like the party quiz: plain multiple choice only
     const out = qs
-      .map((q, i) => Object.assign({}, q, { __id: q.id != null ? String(q.id) : 'q_' + i }))
+      .map((q, i) => Object.assign({}, q, { __id: q.id != null ? String(q.id) : 'q_' + (q.__pos != null ? q.__pos : i) }))
       .filter((q) => (!q.type || q.type === 'mcq') && !q.steps && !q.correct_pairs && Array.isArray(q.options) && typeof q.correct === 'number');
     if (!out.length) throw new Error('No multiple-choice questions in this set');
     bankCache[key] = out;
     return out;
   }
+  /* the set card of a share lives beside it at {group}/shareSet = {card, label, seed};
+     it only counts while its seed matches the share's seed */
+  function cardOf(s, shareSet) {
+    return shareSet && s && shareSet.seed === s.seed && shareSet.card ? String(shareSet.card) : null;
+  }
+  async function shareSetOf(g) {
+    if (!g) return null;
+    try {
+      return (await db().ref(g.base + '/shareSet').once('value')).val();
+    } catch (e) {
+      return null;
+    }
+  }
   async function sharedQuestions(s) {
-    const key = s.bank + '|' + s.form + '|' + s.seed;
+    const set = await shareSetOf(state.group);
+    const card = cardOf(s, set);
+    const key = s.bank + '|' + s.form + '|' + s.seed + (card ? '|' + card : '');
     if (state.questionsKey === key && state.questions) return state.questions;
-    const qs = orderQuestions(await loadBank(s.bank, s.form), s.seed);
+    const qs = orderQuestions(await loadBank(s.bank, s.form, card), s.seed);
     state.questions = qs;
     state.questionsKey = key;
+    state.setLabel = (card && set && set.label) || '';
     return qs;
   }
   function progressOf(qs, answers) {
@@ -179,9 +208,11 @@
     const me = uid();
     if (!g || !me) throw new Error('Join a party or lobby first');
     if (g.leader !== me) throw new Error('Only the leader can start a screen share');
+    if (g.kind === 'lobby' && g.settings && g.settings.share === false) throw new Error('Screen share is off for this lobby');
     const bank = opts.bank || 'banks/medphys/pt1.json';
     const form = opts.form || 'A';
-    const qs = await loadBank(bank, form);
+    const card = opts.card || null;
+    const qs = await loadBank(bank, form, card);
     const seed = opts.seed != null ? opts.seed >>> 0 : Math.floor(Math.random() * 4294967295);
     const now = Date.now();
     const rec = {
@@ -200,6 +231,8 @@
     const ref = sessionRef(g);
     try {
       await ref.remove();
+      // the Practice set card travels beside the share (the share node keeps its fixed fields)
+      await db().ref(g.base + '/shareSet').set(card ? { card: String(card), label: String(opts.label || '').slice(0, 120), seed: seed } : null);
       await ref.set(rec);
       await ref.onDisconnect().remove();
       await db().ref(g.base + '/shareBeat/' + me).set(now);
@@ -405,7 +438,7 @@
       unlisten();
     }
     if (g) {
-      if (state.group) state.group.leader = g.leader, (state.group.members = g.members);
+      if (state.group) state.group.leader = g.leader, (state.group.members = g.members), (state.group.settings = g.settings);
       listen(g);
     }
   }
@@ -417,7 +450,7 @@
   /* read-only or interactive mirror of a session into el */
   async function renderMirror(s, el, opts) {
     opts = opts || {};
-    const qs = await (opts.questions ? Promise.resolve(opts.questions) : orderQuestions(await loadBank(s.bank, s.form), s.seed));
+    const qs = await (opts.questions ? Promise.resolve(opts.questions) : orderQuestions(await loadBank(s.bank, s.form, cardOf(s, opts.shareSet)), s.seed));
     const i = Math.max(0, Math.min(qs.length - 1, s.currentIndex | 0));
     const q = qs[i];
     const ans = s.answers && s.answers[safeKey(q.__id)];
@@ -520,6 +553,8 @@
     orderQuestions,
     seededShuffle,
     loadBank,
+    cardOf,
+    getSetLabel: () => state.setLabel || '',
     isPermission,
     RULES_MSG,
     _check: checkLiveness,

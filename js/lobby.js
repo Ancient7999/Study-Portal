@@ -19,8 +19,45 @@
     bankPicker: null,
     createBank: 'banks/medphys/pt1.json',
     createForm: 'A',
-    createMode: 'pane'
+    createCard: null,
+    createChoice: null,
+    createMode: 'pane',
+    // lobby settings chosen at creation (stored at lobbies/{id}/settings; policy also at requestPolicy)
+    createSettings: { spectate: true, policy: 'ask', share: true, cursors: true }
   };
+
+  const POLICY_LABEL = { ask: 'Ask me', restrict: 'Restrict', all: 'Allow all' };
+  const POLICY_HINT = {
+    ask: 'You accept or decline each request to join.',
+    restrict: 'Nobody can ask to join. You can still seat party members.',
+    all: 'Anyone can join straight away while seats are free.'
+  };
+  const MODE_HINT = {
+    pane: 'Everyone answers in their own pane, side by side.',
+    classic: 'One shared question view with a roster of players.'
+  };
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  /* settings of a lobby; lobbies made before settings existed allow everything */
+  function settingsOf(lobby) {
+    const st = (lobby && lobby.settings) || {};
+    return {
+      spectate: st.spectate !== false,
+      share: st.share !== false,
+      cursors: st.cursors !== false,
+      policy: (lobby && lobby.requestPolicy) || st.policy || 'ask',
+      legacy: !(lobby && lobby.settings)
+    };
+  }
+  /* how a non-member gets in from the list: join, ask the leader, or closed */
+  function joinModeOf(lobby) {
+    const st = settingsOf(lobby);
+    if (st.legacy) return 'join';
+    return st.policy === 'all' ? 'join' : st.policy === 'restrict' ? 'closed' : 'ask';
+  }
 
   function toast(msg) {
     if (typeof showToast === 'function') showToast(msg, 2600);
@@ -259,6 +296,13 @@
     panel.id = 'lobbyPanel';
     panel.className = 'lobby-panel';
     panel.hidden = true;
+    const sw = (id, on, text, hint) =>
+      '<div class="lobby-field">' +
+      '<label class="lobby-switch" for="' + id + '"><input type="checkbox" role="switch" id="' + id + '"' + (on ? ' checked' : '') + ' aria-describedby="' + id + 'Hint">' +
+      '<span class="lobby-switch-track" aria-hidden="true"><span class="lobby-switch-thumb"></span></span>' +
+      '<span class="lobby-switch-text">' + text + '</span></label>' +
+      '<p class="lobby-field-hint" id="' + id + 'Hint">' + hint + '</p></div>';
+    const cs = state.createSettings;
     panel.innerHTML =
       '<div class="lobby-panel-head">' +
       '<h3>Online Lobbies</h3>' +
@@ -267,18 +311,45 @@
       '<button type="button" class="chat-minimize" id="lobbyCloseBtn" aria-label="Close">×</button>' +
       '</span>' +
       '</div>' +
-      '<p class="lobby-hint">Join an open lobby, or create one. Owner assigns banks per seat. Classic = shared quiz · Pane = split view.</p>' +
-      '<div class="lobby-toolbar lobby-create-block">' +
+      '<p class="lobby-hint">Join an open lobby, or set up your own and invite your party.</p>' +
+      '<div class="lobby-detail" id="lobbyDetail" hidden></div>' +
+      '<section class="lobby-create lobby-toolbar lobby-create-block" id="lobbyCreate" aria-labelledby="lobbyCreateTitle">' +
+      '<h4 class="lobby-section-title" id="lobbyCreateTitle">Create a Lobby</h4>' +
+      '<div class="lobby-group">' +
+      '<div class="lobby-group-title">Questions</div>' +
+      '<p class="lobby-field-hint">The same tests and sets as on the Practice page.</p>' +
       '<div id="lobbyCreateBankMount" class="lobby-bank-mount"></div>' +
-      '<div class="lobby-mode-row">' +
-      '<span class="lobby-mode-label">Mode</span>' +
-      '<button type="button" class="mp-mode-pill active" data-mode="pane" id="lobbyModePane">Pane</button>' +
-      '<button type="button" class="mp-mode-pill" data-mode="classic" id="lobbyModeClassic">Classic</button>' +
       '</div>' +
-      '<button type="button" class="chat-tool-btn" id="lobbyCreateBtn">Create lobby</button>' +
+      '<div class="lobby-group">' +
+      '<div class="lobby-group-title" id="lobbyModeTitle">Mode</div>' +
+      '<div class="lobby-mode-row lobby-segment" role="radiogroup" aria-labelledby="lobbyModeTitle">' +
+      '<button type="button" class="mp-mode-pill active" role="radio" aria-checked="true" data-mode="pane" id="lobbyModePane">Pane</button>' +
+      '<button type="button" class="mp-mode-pill" role="radio" aria-checked="false" data-mode="classic" id="lobbyModeClassic">Classic</button>' +
       '</div>' +
+      '<p class="lobby-field-hint" id="lobbyModeHint">' + MODE_HINT.pane + '</p>' +
+      '</div>' +
+      '<div class="lobby-group">' +
+      '<div class="lobby-group-title">Spectators and Joining</div>' +
+      sw('lobbyOptSpectate', cs.spectate, 'Allow spectators', 'Others can watch this lobby as a live tile.') +
+      '<div class="lobby-field">' +
+      '<label class="bank-picker-label" for="lobbyOptPolicy">Join requests</label>' +
+      '<select id="lobbyOptPolicy" class="chat-tool-input" aria-describedby="lobbyOptPolicyHint">' +
+      ['ask', 'restrict', 'all'].map((p) => '<option value="' + p + '"' + (p === cs.policy ? ' selected' : '') + '>' + POLICY_LABEL[p] + '</option>').join('') +
+      '</select>' +
+      '<p class="lobby-field-hint" id="lobbyOptPolicyHint">' + POLICY_HINT[cs.policy] + '</p>' +
+      '</div>' +
+      '</div>' +
+      '<div class="lobby-group">' +
+      '<div class="lobby-group-title">Playing Together</div>' +
+      sw('lobbyOptShare', cs.share, 'Allow screen share', 'You can mirror one quiz to everyone and hand over control.') +
+      sw('lobbyOptCursors', cs.cursors, 'Show party cursors', 'See where party members point while you play.') +
+      '</div>' +
+      '<button type="button" class="btn-gold lobby-create-btn" id="lobbyCreateBtn">Create Lobby</button>' +
+      '</section>' +
+      '<section class="lobby-open" aria-labelledby="lobbyListTitle">' +
+      '<h4 class="lobby-section-title" id="lobbyListTitle">Open Lobbies</h4>' +
       '<div class="lobby-list" id="lobbyList"></div>' +
-      '<div class="lobby-detail" id="lobbyDetail" hidden></div>';
+      '</section>';
     document.body.appendChild(panel);
     panel.querySelector('#lobbyCloseBtn').onclick = () => setOpen(false);
     panel.querySelector('#lobbyCollapseBtn').onclick = () => setCollapsed(true);
@@ -302,15 +373,40 @@
       createLobby().catch((e) => toast(e.message || 'Create failed'));
     panel.querySelector('#lobbyModePane').onclick = () => setCreateMode('pane');
     panel.querySelector('#lobbyModeClassic').onclick = () => setCreateMode('classic');
+    // arrow keys move between the two mode radios
+    panel.querySelector('.lobby-segment').addEventListener('keydown', (e) => {
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(e.key) < 0) return;
+      e.preventDefault();
+      setCreateMode(state.createMode === 'pane' ? 'classic' : 'pane');
+      const b = document.getElementById(state.createMode === 'pane' ? 'lobbyModePane' : 'lobbyModeClassic');
+      if (b) b.focus();
+    });
+    const optSpec = panel.querySelector('#lobbyOptSpectate');
+    const optPolicy = panel.querySelector('#lobbyOptPolicy');
+    optSpec.onchange = () => {
+      state.createSettings.spectate = optSpec.checked;
+    };
+    optPolicy.onchange = () => {
+      state.createSettings.policy = POLICY_LABEL[optPolicy.value] ? optPolicy.value : 'ask';
+      panel.querySelector('#lobbyOptPolicyHint').textContent = POLICY_HINT[state.createSettings.policy];
+    };
+    panel.querySelector('#lobbyOptShare').onchange = (e) => {
+      state.createSettings.share = e.target.checked;
+    };
+    panel.querySelector('#lobbyOptCursors').onchange = (e) => {
+      state.createSettings.cursors = e.target.checked;
+    };
 
     if (global.StudyBankPicker && StudyBankPicker.mount) {
       state.bankPicker = StudyBankPicker.mount(panel.querySelector('#lobbyCreateBankMount'), {
         idPrefix: 'lobbyCreate',
         compact: true,
-        value: { bank: state.createBank, form: state.createForm },
-        onChange: (bank, form) => {
+        value: { bank: state.createBank, form: state.createForm, card: state.createCard },
+        onChange: (bank, form, enc, choice) => {
           state.createBank = bank;
           state.createForm = form;
+          state.createCard = (choice && choice.card) || null;
+          state.createChoice = choice || null;
         }
       });
     } else {
@@ -325,8 +421,18 @@
     state.createMode = mode === 'classic' ? 'classic' : 'pane';
     const pane = document.getElementById('lobbyModePane');
     const classic = document.getElementById('lobbyModeClassic');
-    if (pane) pane.classList.toggle('active', state.createMode === 'pane');
-    if (classic) classic.classList.toggle('active', state.createMode === 'classic');
+    if (pane) {
+      pane.classList.toggle('active', state.createMode === 'pane');
+      pane.setAttribute('aria-checked', String(state.createMode === 'pane'));
+      pane.tabIndex = state.createMode === 'pane' ? 0 : -1;
+    }
+    if (classic) {
+      classic.classList.toggle('active', state.createMode === 'classic');
+      classic.setAttribute('aria-checked', String(state.createMode === 'classic'));
+      classic.tabIndex = state.createMode === 'classic' ? 0 : -1;
+    }
+    const hint = document.getElementById('lobbyModeHint');
+    if (hint) hint.textContent = MODE_HINT[state.createMode];
   }
 
   /* Phones: the lobby panel collapses into a small icon pinned at the top. */
@@ -402,7 +508,7 @@
     if (!me) throw new Error('Sign in first');
     
     // Safety lock: prevent creating multiple lobbies
-    if (state.activeLobbyId) {
+    if (myJoinedLobby()) {
       throw new Error('You are already in a lobby. Leave it first.');
     }
 
@@ -412,18 +518,29 @@
 
     let bank = state.createBank;
     let form = state.createForm;
-    if (state.bankPicker && state.bankPicker.getValue) {
-      const v = state.bankPicker.getValue();
-      bank = v.bank;
-      form = v.form;
+    let card = state.createCard || null;
+    let choice = state.createChoice || null;
+    if (state.bankPicker && state.bankPicker.getChoice) {
+      if (state.bankPicker.ready) await state.bankPicker.ready();
+      choice = state.bankPicker.getChoice();
+      if (!choice) throw new Error('Pick a test and a set first');
+      if (!choice.party) throw new Error('That set has no multiple-choice questions');
+      bank = choice.bank;
+      form = choice.form;
+      card = choice.card || null;
     } else {
       const sel = document.getElementById('lobbyBankSelect');
       if (sel && global.StudyBankPicker) {
         const v = StudyBankPicker.parseValue(sel.value);
         bank = v.bank;
         form = v.form;
+        card = v.card;
       }
     }
+    const setLabel = (choice && choice.setLabel) || '';
+    const testLabel = choice ? choice.subjectName + ' · ' + choice.testTitle : '';
+    const cs = state.createSettings;
+    const settings = { v: 1, spectate: !!cs.spectate, share: !!cs.share, cursors: !!cs.cursors, policy: cs.policy || 'ask' };
     
     const id = randomId();
     const bits = profileBits();
@@ -438,6 +555,8 @@
       role: 'play',
       bank: bank,
       form: form || 'A',
+      card: card,
+      setLabel: setLabel,
       updatedAt: now
     };
     
@@ -459,6 +578,10 @@
       gameMode: state.createMode || 'pane',
       bank: bank,
       form: form || 'A',
+      card: card,
+      setLabel: setLabel,
+      testLabel: testLabel,
+      settings: settings,
       chatSessionId: chatSessionId,
       createdAt: now,
       seats: seats,
@@ -466,6 +589,12 @@
     };
     
     await ensureDb().ref('lobbies/' + id).set(payload);
+    // requestPolicy is checked against the stored leader, so it is written after the lobby exists
+    try {
+      await ensureDb().ref('lobbies/' + id + '/requestPolicy').set(settings.policy);
+    } catch (e) {
+      console.warn('[lobby] join request policy not saved', e);
+    }
     state.activeLobbyId = id;
     state.mySeat = 0;
     
@@ -484,6 +613,9 @@
     const snap = await db.ref('lobbies/' + lobbyId).once('value');
     const lobby = snap.val();
     if (!lobby) throw new Error('Lobby gone');
+    if (opts.role === 'spectate' && findMySeat(lobby, me) == null && !settingsOf(lobby).spectate) {
+      throw new Error('This lobby does not allow spectators');
+    }
     if (lobby.status && lobby.status !== 'open' && lobby.status !== 'live') {
       throw new Error('Lobby not joinable');
     }
@@ -511,6 +643,8 @@
         role: role,
         bank: lobby.bank || 'banks/medphys/pt1.json',
         form: lobby.form || 'A',
+        card: lobby.card || null,
+        setLabel: lobby.setLabel || '',
         updatedAt: now
       };
       // Claim seat transactionally
@@ -586,6 +720,8 @@
       role: prev.role || 'play',
       bank: prev.bank || lobby.bank || 'banks/medphys/pt1.json',
       form: prev.form || lobby.form || 'A',
+      card: (prev.bank ? prev.card : lobby.card) || null,
+      setLabel: (prev.bank ? prev.setLabel : lobby.setLabel) || '',
       updatedAt: Date.now()
     };
     if (Object.keys(seats).length > SEATS) throw new Error('Lobby full (max 4)');
@@ -622,7 +758,7 @@
     }
   }
 
-  async function setSeatBank(lobbyId, seatIdx, bank, form) {
+  async function setSeatBank(lobbyId, seatIdx, bank, form, card, setLabel) {
     const lobby = state.lobbies[lobbyId];
     if (!isLeaderOf(lobby)) throw new Error('Only leader can assign banks');
     const seat = lobby.seats && lobby.seats[String(seatIdx)];
@@ -632,6 +768,8 @@
       .update({
         bank: bank || lobby.bank,
         form: (form || 'A').toUpperCase(),
+        card: card || null,
+        setLabel: setLabel || '',
         updatedAt: Date.now()
       });
   }
@@ -675,6 +813,8 @@
         role: s.role || 'play',
         bank: s.bank || lobby.bank || 'banks/medphys/pt1.json',
         form: s.form || lobby.form || 'A',
+        card: (s.bank ? s.card : lobby.card) || null,
+        setLabel: (s.bank ? s.setLabel : lobby.setLabel) || '',
         done: false,
         score: 0,
         updatedAt: startedAt
@@ -686,6 +826,8 @@
     await db.ref('lobbies/' + lobbyId + '/session').set({
       bank: sessionBank,
       form: sessionForm,
+      card: lobby.card || null,
+      setLabel: lobby.setLabel || '',
       gameMode: gameMode,
       startedAt: startedAt,
       leader: lobby.leader,
@@ -693,7 +835,8 @@
       classic: {
         qIndex: 0,
         bank: sessionBank,
-        form: sessionForm
+        form: sessionForm,
+        card: lobby.card || null
       },
       panes: panes
     });
@@ -781,11 +924,53 @@
   }
 
   function bankLabel(bank, form) {
-    if (global.StudyBankPicker && StudyBankPicker.parseValue) {
-      const short = String(bank || '').split('/').pop() || 'bank';
-      return short.replace('.json', '') + ' · ' + (form || 'A');
-    }
-    return (form ? 'Form ' + form : 'Lobby');
+    const short = String(bank || '').split('/').pop() || 'bank';
+    return short.replace('.json', '') + ' · ' + (form || 'A');
+  }
+  /* "Periodic Test 2 · Chapter 3: …" from the stored labels; older lobbies fall back to file · form */
+  function setLabelOf(lobby, seat) {
+    const own = seat && seat.bank;
+    const label = own ? seat.setLabel : lobby && lobby.setLabel;
+    if (label) return label;
+    return bankLabel(own ? seat.bank : lobby && lobby.bank, own ? seat.form : lobby && lobby.form);
+  }
+  function testLabelOf(lobby) {
+    if (lobby && lobby.testLabel) return lobby.testLabel;
+    try {
+      const t = global.StudyBankPicker && StudyBankPicker.testForBank && StudyBankPicker.testForBank(lobby && lobby.bank);
+      if (t) return t.subjectName + ' · ' + t.title;
+    } catch (e) {}
+    return 'Lobby';
+  }
+  function chip(text, on) {
+    return '<span class="lobby-chip' + (on === false ? ' off' : '') + '">' + esc(text) + '</span>';
+  }
+  function settingsChips(lobby) {
+    const st = settingsOf(lobby);
+    return (
+      chip(lobby.gameMode === 'classic' ? 'Classic' : 'Pane') +
+      chip(st.spectate ? 'Spectators On' : 'Spectators Off', st.spectate) +
+      chip('Requests: ' + ({ ask: 'Ask Me', restrict: 'Restricted', all: 'Allow All' }[st.policy] || 'Ask Me'), st.policy !== 'restrict') +
+      chip(st.share ? 'Screen Share On' : 'Screen Share Off', st.share) +
+      chip(st.cursors ? 'Cursors On' : 'Cursors Off', st.cursors)
+    );
+  }
+  function myJoinedLobby() {
+    const me = uid();
+    if (!me) return null;
+    const id = Object.keys(state.lobbies).find((k) => state.lobbies[k] && state.lobbies[k].members && state.lobbies[k].members[me]);
+    return id ? state.lobbies[id] : null;
+  }
+  function askToJoin(id) {
+    if (global.StudySpectate && StudySpectate.askToJoin) return StudySpectate.askToJoin(id);
+    return Promise.reject(new Error('Join requests are unavailable'));
+  }
+  function joinAction(id) {
+    const L = state.lobbies[id];
+    const m = joinModeOf(L);
+    if (m === 'closed') return Promise.reject(new Error('This lobby is not taking join requests'));
+    if (m === 'ask') return askToJoin(id).then(() => toast('Request sent to the leader'));
+    return joinLobby(id, { role: 'play' });
   }
 
   function render() {
@@ -793,55 +978,50 @@
     if (global.StudySpectate && StudySpectate.renderLobbyBox) {
       try { StudySpectate.renderLobbyBox(); } catch (e) {}
     }
+    const mine = myJoinedLobby();
+    if (global.StudyCursors && StudyCursors.setLobbyHidden) {
+      try { StudyCursors.setLobbyHidden(!!(mine && !settingsOf(mine).cursors)); } catch (e) {}
+    }
     const list = document.getElementById('lobbyList');
     const detail = document.getElementById('lobbyDetail');
     if (!list || !detail) return;
+    const createSec = document.getElementById('lobbyCreate');
+    if (createSec) createSec.hidden = !!mine; // one lobby at a time: the form returns after leaving
     const me = uid();
     const ids = Object.keys(state.lobbies)
       .filter((id) => isLobbyAlive(state.lobbies[id]))
       .sort((a, b) => (state.lobbies[b].createdAt || 0) - (state.lobbies[a].createdAt || 0));
 
-    if (!ids.length) {
-      list.innerHTML = '<div class="chat-empty">No open lobbies — create one.</div>';
-    } else {
-      list.innerHTML = ids
+    const listHtml = !ids.length
+      ? '<div class="chat-empty lobby-empty">' + (mine ? 'No other open lobbies right now.' : 'No open lobbies yet. Create one above.') + '</div>'
+      : ids
         .map((id) => {
           const L = state.lobbies[id];
           const n = Math.max(memberCount(L), seatCount(L));
           const mode = L.gameMode === 'classic' ? 'Classic' : 'Pane';
           const inIt = !!(L.members && me && L.members[me]);
+          const st = settingsOf(L);
+          const jm = joinModeOf(L);
+          const canJoin = !inIt && (L.status === 'open' || L.status === 'live');
           return (
-            '<div class="lobby-row-wrap' +
-            (id === state.activeLobbyId ? ' active' : '') +
-            '" data-id="' +
-            id +
-            '">' +
-            '<button type="button" class="lobby-row' +
-            (id === state.activeLobbyId ? ' active' : '') +
-            '" data-id="' +
-            id +
-            '"><span>' +
-            mode +
-            ' · ' +
-            bankLabel(L.bank, L.form) +
-            ' · ' +
-            n +
-            '/4 · ' +
-            (L.status || 'open') +
-            (inIt ? ' · you' : '') +
-            '</span><em>' +
-            id.slice(0, 6) +
-            '</em></button>' +
-            (!inIt && (L.status === 'open' || L.status === 'live')
-              ? '<button type="button" class="lobby-join-btn chat-tool-btn" data-join="' +
-                id +
-                '">Join</button>'
+            '<div class="lobby-row-wrap' + (id === state.activeLobbyId ? ' active' : '') + '" data-id="' + id + '">' +
+            '<button type="button" class="lobby-row' + (id === state.activeLobbyId ? ' active' : '') + '" data-id="' + id + '">' +
+            '<span class="lobby-row-main"><span class="lobby-row-title">' + esc(testLabelOf(L)) + '</span>' +
+            '<span class="lobby-row-set">' + esc(setLabelOf(L)) + '</span>' +
+            '<span class="lobby-row-meta">' + mode + ' · ' + n + '/4 · ' + esc(L.status || 'open') + (inIt ? ' · you' : '') + '</span></span>' +
+            '<em>' + id.slice(0, 6) + '</em></button>' +
+            '<span class="lobby-row-btns">' +
+            (canJoin && jm !== 'closed'
+              ? '<button type="button" class="lobby-join-btn chat-tool-btn" data-join="' + id + '">' + (jm === 'ask' ? 'Ask to Join' : 'Join') + '</button>'
               : '') +
-            (!inIt ? '<button type="button" class="lobby-watch-btn chat-tool-btn" data-watch="' + id + '" title="Watch as a spectator tile">👁 Watch</button>' : '') +
-            '</div>'
+            (!inIt && st.spectate ? '<button type="button" class="lobby-watch-btn chat-tool-btn" data-watch="' + id + '" title="Watch as a spectator tile">👁 Watch</button>' : '') +
+            '</span></div>'
           );
         })
         .join('');
+    if (list.__h !== listHtml) {
+      list.__h = listHtml;
+      list.innerHTML = listHtml;
       list.querySelectorAll('.lobby-row').forEach((btn) => {
         btn.onclick = () => {
           state.activeLobbyId = btn.dataset.id;
@@ -858,7 +1038,7 @@
       list.querySelectorAll('[data-join]').forEach((btn) => {
         btn.onclick = (e) => {
           e.stopPropagation();
-          joinLobby(btn.dataset.join).catch((err) => toast(err.message || 'Join failed'));
+          joinAction(btn.dataset.join).catch((err) => toast(err.message || 'Join failed'));
         };
       });
     }
@@ -868,146 +1048,118 @@
     if (!lobby || !isLobbyAlive(lobby)) {
       detail.hidden = true;
       detail.innerHTML = '';
+      detail.__h = '';
       return;
     }
     detail.hidden = false;
     const leader = isLeaderOf(lobby);
     const seats = lobby.seats || {};
-    const mySeatIdx = findMySeat(lobby, me);
     const inLobby = !!(lobby.members && me && lobby.members[me]);
+    const st = settingsOf(lobby);
 
     let seatsHtml = '<div class="lobby-seats">';
     for (let i = 0; i < SEATS; i++) {
       const s = seats[String(i)];
       const role = (s && s.role) || 'play';
       seatsHtml +=
-        '<div class="lobby-seat" data-seat="' +
-        i +
-        '" data-drop="1">' +
-        '<div class="lobby-seat-num">Seat ' +
-        (i + 1) +
-        (s ? ' · ' + (role === 'spectate' ? 'Spectate' : 'Play') : '') +
-        '</div>' +
+        '<div class="lobby-seat' + (s ? ' filled' : '') + '" data-seat="' + i + '" data-drop="1">' +
+        '<div class="lobby-seat-num">Seat ' + (i + 1) + (s ? ' · ' + (role === 'spectate' ? 'Spectate' : 'Play') : '') + '</div>' +
         (s
-          ? '<div class="lobby-seat-occ" draggable="' +
-            (leader ? 'true' : 'false') +
-            '" data-uid="' +
-            s.uid +
-            '">' +
-            s.displayName +
-            ' · LV' +
-            (s.level || 1) +
-            '</div>' +
-            '<div class="lobby-seat-bank">' +
-            bankLabel(s.bank || lobby.bank, s.form || lobby.form) +
-            '</div>' +
+          ? '<div class="lobby-seat-occ" draggable="' + (leader ? 'true' : 'false') + '" data-uid="' + esc(s.uid) + '">' + esc(s.displayName) + ' · LV' + (s.level || 1) + '</div>' +
+            '<div class="lobby-seat-bank">' + esc(setLabelOf(lobby, s)) + '</div>' +
             (leader || s.uid === me
               ? '<div class="lobby-seat-actions">' +
-                '<button type="button" class="lobby-mini-btn" data-role-seat="' +
-                i +
-                '" data-role="' +
-                (role === 'spectate' ? 'play' : 'spectate') +
-                '">' +
-                (role === 'spectate' ? 'Set Play' : 'Set Spec') +
-                '</button>' +
-                (leader
-                  ? '<select class="lobby-seat-bank-sel chat-tool-input" data-bank-seat="' +
-                    i +
-                    '"></select>'
+                '<button type="button" class="lobby-mini-btn" data-role-seat="' + i + '" data-role="' + (role === 'spectate' ? 'play' : 'spectate') + '">' +
+                (role === 'spectate' ? 'Set Play' : 'Set Spec') + '</button>' +
+                (leader && lobby.status !== 'live'
+                  ? '<select class="lobby-seat-bank-sel chat-tool-input" data-bank-seat="' + i + '" aria-label="Set for seat ' + (i + 1) + '"></select>'
                   : '') +
                 '</div>'
               : '')
-          : '<div class="lobby-seat-empty">Empty — Join or drop</div>') +
+          : '<div class="lobby-seat-empty">Empty · join or drop a member here</div>') +
         '</div>';
     }
     seatsHtml += '</div>';
 
     const members = partyMembers();
-    let bench =
-      '<div class="lobby-bench"><div class="lobby-bench-label">Party bench (drag into seats)</div>';
+    let bench = '<div class="lobby-bench"><div class="lobby-bench-label">Party bench · drag into seats</div>';
     if (!members.length) {
-      bench += '<div class="chat-empty">Form a party to drag members, or use Join on the list.</div>';
+      bench += '<div class="chat-empty">Form a party to drag members in, or let others join from the list.</div>';
     } else {
       members.forEach((m) => {
         bench +=
-          '<div class="lobby-bench-chip" draggable="' +
-          (leader ? 'true' : 'false') +
-          '" data-uid="' +
-          m.uid +
-          '" data-name="' +
-          m.displayName +
-          '" data-level="' +
-          m.level +
-          '">' +
-          m.displayName +
-          (m.leader ? ' ★' : '') +
-          '</div>';
+          '<div class="lobby-bench-chip" draggable="' + (leader ? 'true' : 'false') + '" data-uid="' + esc(m.uid) + '" data-name="' + esc(m.displayName) + '" data-level="' + m.level + '">' +
+          esc(m.displayName) + (m.leader ? ' ★' : '') + '</div>';
       });
     }
     bench += '</div>';
 
     const mode = lobby.gameMode === 'classic' ? 'classic' : 'pane';
-    detail.innerHTML =
-      '<div class="lobby-mode-row lobby-detail-mode">' +
+    const jm = joinModeOf(lobby);
+    const html =
+      '<div class="lobby-detail-head">' +
+      '<div class="lobby-detail-title">' + esc(testLabelOf(lobby)) + '</div>' +
+      '<div class="lobby-detail-set">' + esc(setLabelOf(lobby)) + '</div>' +
+      '<div class="lobby-chips">' + settingsChips(lobby) + '</div>' +
+      '</div>' +
+      '<div class="lobby-mode-row lobby-detail-mode lobby-segment" role="radiogroup" aria-label="Mode">' +
       '<span class="lobby-mode-label">Mode</span>' +
-      '<button type="button" class="mp-mode-pill' +
-      (mode === 'pane' ? ' active' : '') +
-      '" data-set-mode="pane"' +
-      (leader && lobby.status === 'open' ? '' : ' disabled') +
-      '>Pane</button>' +
-      '<button type="button" class="mp-mode-pill' +
-      (mode === 'classic' ? ' active' : '') +
-      '" data-set-mode="classic"' +
-      (leader && lobby.status === 'open' ? '' : ' disabled') +
-      '>Classic</button>' +
+      '<button type="button" role="radio" aria-checked="' + (mode === 'pane') + '" class="mp-mode-pill' + (mode === 'pane' ? ' active' : '') + '" data-set-mode="pane"' + (leader && lobby.status === 'open' ? '' : ' disabled') + '>Pane</button>' +
+      '<button type="button" role="radio" aria-checked="' + (mode === 'classic') + '" class="mp-mode-pill' + (mode === 'classic' ? ' active' : '') + '" data-set-mode="classic"' + (leader && lobby.status === 'open' ? '' : ' disabled') + '>Classic</button>' +
       '</div>' +
       seatsHtml +
       bench +
       '<div class="lobby-actions">' +
       (leader && lobby.status === 'open'
-        ? '<button type="button" class="btn-gold" id="lobbyStartBtn">Start · ' +
-          Object.keys(seats).length +
-          ' · ' +
-          (mode === 'classic' ? 'Classic' : 'Pane') +
-          '</button>'
+        ? '<button type="button" class="btn-gold" id="lobbyStartBtn">Start · ' + Object.keys(seats).length + ' · ' + (mode === 'classic' ? 'Classic' : 'Pane') + '</button>'
         : lobby.status === 'live'
           ? '<span class="chat-tool-label">Quiz live</span>'
           : '<span class="chat-tool-label">Waiting for leader…</span>') +
       (inLobby
         ? '<button type="button" class="chat-tool-btn" id="lobbyLeaveBtn">Leave</button>'
-        : '<button type="button" class="chat-tool-btn" id="lobbyJoinHereBtn">Join</button>' +
-          '<button type="button" class="chat-tool-btn" id="lobbySpectateBtn">Spectate</button>') +
+        : (jm !== 'closed' ? '<button type="button" class="chat-tool-btn" id="lobbyJoinHereBtn">' + (jm === 'ask' ? 'Ask to Join' : 'Join') + '</button>' : '') +
+          (st.spectate ? '<button type="button" class="chat-tool-btn" id="lobbySpectateBtn">Spectate</button>' : '')) +
       '</div>';
+    // unchanged (e.g. a heartbeat): keep the DOM so open dropdowns and focus survive
+    if (detail.__h === html && detail.__id === id && detail.__leader === leader) return;
+    detail.__h = html;
+    detail.__id = id;
+    detail.__leader = leader;
+    detail.innerHTML = html;
 
-    // Fill per-seat bank selects
-    if (leader && global.StudyBankPicker) {
-      StudyBankPicker.optionsHtml().then((html) => {
+    // per-seat set selects: the Practice sets of this lobby's subject
+    if (leader && global.StudyBankPicker && detail.querySelector('[data-bank-seat]')) {
+      const t = StudyBankPicker.testForBank && StudyBankPicker.testForBank(lobby.bank);
+      StudyBankPicker.optionsHtml(t ? { subjectId: t.subjectId } : {}).then((html) => {
         detail.querySelectorAll('[data-bank-seat]').forEach((sel) => {
           const seatIdx = Number(sel.dataset.bankSeat);
           const s = seats[String(seatIdx)];
           sel.innerHTML = html;
           if (s) {
-            const enc = StudyBankPicker.encodeValue(s.bank || lobby.bank, s.form || lobby.form);
-            sel.value = enc;
+            const own = !!s.bank;
+            sel.value = StudyBankPicker.encodeValue(own ? s.bank : lobby.bank, own ? s.form : lobby.form, own ? s.card : lobby.card);
           }
           sel.onchange = () => {
             const v = StudyBankPicker.parseValue(sel.value);
-            setSeatBank(id, seatIdx, v.bank, v.form).catch((e) => toast(e.message || 'Bank failed'));
+            const opt = sel.options[sel.selectedIndex];
+            const grp = opt && opt.parentNode && opt.parentNode.label;
+            const label = (grp && t ? grp + ' · ' : '') + (opt ? opt.textContent : '');
+            setSeatBank(id, seatIdx, v.bank, v.form, v.card, label).catch((e) => toast(e.message || 'Set failed'));
           };
         });
       });
     }
 
     if (leader) {
-      detail.querySelectorAll('.lobby-bench-chip, .lobby-seat-occ').forEach((chip) => {
-        chip.addEventListener('dragstart', (e) => {
-          state.dragUid = chip.dataset.uid;
+      detail.querySelectorAll('.lobby-bench-chip, .lobby-seat-occ').forEach((chipEl) => {
+        chipEl.addEventListener('dragstart', (e) => {
+          state.dragUid = chipEl.dataset.uid;
           e.dataTransfer.setData(
             'text/plain',
             JSON.stringify({
-              uid: chip.dataset.uid,
-              displayName: chip.dataset.name || chip.textContent,
-              level: Number(chip.dataset.level) || 1
+              uid: chipEl.dataset.uid,
+              displayName: chipEl.dataset.name || chipEl.textContent,
+              level: Number(chipEl.dataset.level) || 1
             })
           );
         });
@@ -1054,8 +1206,7 @@
     const leaveBtn = detail.querySelector('#lobbyLeaveBtn');
     if (leaveBtn) leaveBtn.onclick = () => leaveLobby(id).catch((e) => toast(e.message || 'Leave failed'));
     const joinHere = detail.querySelector('#lobbyJoinHereBtn');
-    if (joinHere)
-      joinHere.onclick = () => joinLobby(id, { role: 'play' }).catch((e) => toast(e.message || 'Join failed'));
+    if (joinHere) joinHere.onclick = () => joinAction(id).catch((e) => toast(e.message || 'Join failed'));
     const specBtn = detail.querySelector('#lobbySpectateBtn');
     if (specBtn)
       specBtn.onclick = () =>
@@ -1130,6 +1281,11 @@
     getActiveLobbyId,
     getActiveLobby,
     getLobbies: () => state.lobbies,
+    settingsOf,
+    joinModeOf,
+    getCreateSettings: () => Object.assign({}, state.createSettings),
+    getCreateChoice: () => (state.bankPicker && state.bankPicker.getChoice ? state.bankPicker.getChoice() : null),
+    pickerReady: () => (state.bankPicker && state.bankPicker.ready ? state.bankPicker.ready() : Promise.resolve()),
     SEATS
   };
 })(window);

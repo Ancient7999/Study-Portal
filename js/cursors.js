@@ -218,10 +218,23 @@
     return { x: nx || 0, y: ny || 0, via: 'px' }; // legacy pixel record
   }
 
+  /* a lobby can turn party cursors off (lobby settings.cursors === false):
+     nothing is published and other cursors are hidden while you are in it */
+  let lobbyOff = false;
+  function setLobbyHidden(on) {
+    on = !!on;
+    if (on === lobbyOff) return;
+    lobbyOff = on;
+    document.documentElement.classList.toggle('cursors-off', on);
+    if (on && partyId && uid()) {
+      try { ensureDb().ref('parties/' + partyId + '/cursors/' + uid()).remove().catch(() => {}); } catch (e) {}
+    }
+  }
+
   let lastDesc = null;
   async function publish(x, y, target) {
     const me = uid();
-    if (!me || !partyId) return;
+    if (!me || !partyId || lobbyOff) return;
     const now = Date.now();
     if (now - lastWrite < THROTTLE_MS) return;
     lastWrite = now;
@@ -380,6 +393,6 @@
     if (x != null && y != null) publish(x, y).catch(function () {});
   }
 
-  global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange, describe, resolve, anchorOf, stampAnchors, _place: placeAll, _remote: remote, _els: els,
+  global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange, setLobbyHidden, isLobbyHidden: () => lobbyOff, describe, resolve, anchorOf, stampAnchors, _place: placeAll, _remote: remote, _els: els,
     _inject: function (id, rec) { ensureEl(id, rec); remote[id] = rec; watchLayout(true); placeAll(); } };
 })(window);

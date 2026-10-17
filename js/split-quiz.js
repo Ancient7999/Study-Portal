@@ -11,6 +11,7 @@
     questions: [],
     questionsByKey: {}, // bank|form -> questions
     form: 'A',
+    card: null,
     unsub: null,
     myUid: null,
     focused: 0,
@@ -39,8 +40,15 @@
     return h % 360;
   }
 
-  function bankKey(bank, form) {
-    return String(bank || '') + '|' + String(form || 'A').toUpperCase();
+  /* bank + form + Practice set card (js/study-sets.js); no card = the whole form */
+  function bankKey(bank, form, card) {
+    return String(bank || '') + '|' + String(form || 'A').toUpperCase() + (card ? '|' + card : '');
+  }
+  function paneKey(p) {
+    return bankKey((p && p.bank) || state.bankPath, (p && p.form) || state.form, p && p.bank ? p.card || null : (p && p.card) || state.card);
+  }
+  function paneQuestions(p) {
+    return state.questionsByKey[paneKey(p)] || state.questions;
   }
 
   function ensureContainer() {
@@ -72,28 +80,41 @@
     return el;
   }
 
-  async function loadBank(path, form) {
-    const key = bankKey(path, form);
+  /* Every member builds the same list from the same bank, form and set card, in bank order
+     (no shuffle), so a lobby plays one identical question set. */
+  async function loadBank(path, form, card) {
+    const key = bankKey(path, form, card);
     if (state.questionsByKey[key]) return state.questionsByKey[key];
-    const res = await fetch(path, { cache: 'no-cache' });
-    if (!res.ok) throw new Error('bank HTTP ' + res.status);
-    const data = await res.json();
-    const bank = data.bank || data.FORM_BANK || {};
-    // pt1-quiz-upgrade: banks may have fewer forms than the picker's A–H list;
-    // a missing form falls back to the bank's first form.
-    let qs = bank[form] || bank[String(form).toUpperCase()];
-    if (!qs || !qs.length) {
-      const first = (data.forms && data.forms[0]) || Object.keys(bank)[0];
-      qs = first ? bank[first] : null;
+    let qs = null;
+    if (global.StudySets) {
+      const data = await StudySets.fetchData(path);
+      let material = null;
+      if (card && global.StudyBankPicker && StudyBankPicker.loadCatalog) {
+        try {
+          material = StudySets.materialForBank(await StudyBankPicker.loadCatalog(), path);
+        } catch (e) {}
+      }
+      qs = StudySets.poolFor(data, form, card, material);
+    } else {
+      const res = await fetch(path, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('bank HTTP ' + res.status);
+      const data = await res.json();
+      const bank = data.bank || data.FORM_BANK || {};
+      // banks may have fewer forms than asked for; a missing form falls back to the first form
+      qs = bank[form] || bank[String(form).toUpperCase()];
+      if (!qs || !qs.length) {
+        const first = (data.forms && data.forms[0]) || Object.keys(bank)[0];
+        qs = first ? bank[first] : null;
+      }
     }
-    if (!qs || !qs.length) throw new Error('Form ' + form + ' missing');
+    if (!qs || !qs.length) throw new Error('Set ' + (card || form) + ' missing');
     // Party/split mode shows plain multiple-choice only. Linking (matching),
     // stepped and short-answer (saq) questions need the full quiz screen,
     // so they are left out.
     const copy = qs
       .map(function (q, i) {
         const c = Object.assign({}, q);
-        c.__id = q.id != null ? String(q.id) : 'q_' + String(q.q || '').slice(0, 48) + '_' + i;
+        c.__id = q.id != null ? String(q.id) : 'q_' + String(q.q || '').slice(0, 48) + '_' + (q.__pos != null ? q.__pos : i);
         return c;
       })
       .filter(function (q) {
@@ -108,7 +129,7 @@
   async function questionsForPane(pane) {
     const path = (pane && pane.bank) || state.bankPath;
     const form = (pane && pane.form) || state.form;
-    return loadBank(path, form);
+    return loadBank(path, form, pane && pane.bank ? pane.card || null : state.card);
   }
 
   function myPane() {
@@ -141,6 +162,8 @@
     state.gameMode = lobby.session.gameMode === 'classic' || lobby.gameMode === 'classic' ? 'classic' : 'pane';
     state.form = lobby.session.form || lobby.form || 'A';
     state.bankPath = lobby.session.bank || lobby.bank || 'banks/medphys/pt1.json';
+    state.card = (lobby.session.bank ? lobby.session.card : lobby.card) || null;
+    state.setLabel = lobby.session.setLabel || lobby.setLabel || '';
 
     const seat =
       lobby.seats &&
@@ -150,15 +173,16 @@
     state.role = (seat && seat.role) || 'play';
 
     // Prefetch default + my seat bank
-    state.questions = await loadBank(state.bankPath, state.form);
+    state.questions = await loadBank(state.bankPath, state.form, state.card);
+    const seatChoice = (s) => (s && s.bank ? [s.bank, s.form || 'A', s.card || null] : [state.bankPath, (s && s.form) || state.form, state.card]);
     if (seat && (seat.bank || seat.form)) {
-      await loadBank(seat.bank || state.bankPath, seat.form || state.form);
+      await loadBank.apply(null, seatChoice(seat));
     }
     // Prefetch all seat banks for pane spectators
     if (lobby.seats) {
       const jobs = Object.keys(lobby.seats).map((k) => {
         const s = lobby.seats[k];
-        return loadBank(s.bank || state.bankPath, s.form || state.form).catch(() => null);
+        return loadBank.apply(null, seatChoice(s)).catch(() => null);
       });
       await Promise.all(jobs);
     }
@@ -169,8 +193,8 @@
       );
       StudyMastery.beginSession(
         bankKeyM,
-        'party:' + ((seat && seat.form) || state.form),
-        state.questions.map(function (q) { return q.__id; })
+        'party:' + ((seat && seat.bank ? seat.card || seat.form : state.card || state.form) || 'A'),
+        paneQuestions(seat ? { bank: seatChoice(seat)[0], form: seatChoice(seat)[1], card: seatChoice(seat)[2] } : null).map(function (q) { return q.__id; })
       );
     }
 
@@ -192,8 +216,10 @@
         level: bits.level || 1,
         seat: seatIdx,
         role: state.role || 'play',
-        bank: (seat && seat.bank) || state.bankPath,
-        form: (seat && seat.form) || state.form,
+        bank: seatChoice(seat)[0],
+        form: seatChoice(seat)[1],
+        card: seatChoice(seat)[2],
+        setLabel: (seat && seat.bank ? seat.setLabel : state.setLabel) || '',
         done: false,
         score: 0,
         updatedAt: Date.now()
@@ -276,7 +302,7 @@
     panes.forEach((pane, idx) => {
       const mine = pane.uid === state.myUid;
       const hue = hueFromName(pane.displayName);
-      const qs = state.questionsByKey[bankKey(pane.bank || state.bankPath, pane.form || state.form)] || state.questions;
+      const qs = paneQuestions(pane);
       const qIndex = Math.min(pane.qIndex | 0, Math.max(0, qs.length - 1));
       const q = qs[qIndex];
       const box = document.createElement('div');
@@ -308,7 +334,7 @@
       const bankEl = box.querySelector('.pane-current-bank');
       if (bankEl) {
         const b = (pane.bank || state.bankPath || '').split('/').pop() || '';
-        bankEl.textContent = b.replace('.json', '') + ' · ' + (pane.form || state.form);
+        bankEl.textContent = pane.setLabel || state.setLabel || b.replace('.json', '') + ' · ' + (pane.form || state.form);
       }
 
       const body = box.querySelector('.pane-body');
@@ -366,8 +392,7 @@
       panes[0] ||
       null;
     const qs = focusPane
-      ? state.questionsByKey[bankKey(focusPane.bank || state.bankPath, focusPane.form || state.form)] ||
-        state.questions
+      ? paneQuestions(focusPane)
       : state.questions;
     const qIndex = focusPane ? Math.min(focusPane.qIndex | 0, Math.max(0, qs.length - 1)) : 0;
     const q = qs[qIndex];
@@ -381,8 +406,7 @@
       '<div class="classic-roster">' +
       panes
         .map((p, i) => {
-          const pqs =
-            state.questionsByKey[bankKey(p.bank || state.bankPath, p.form || state.form)] || state.questions;
+          const pqs = paneQuestions(p);
           const done = p.done ? ' done' : '';
           const active = focusPane && p.uid === focusPane.uid ? ' active' : '';
           return (
@@ -472,9 +496,7 @@
     }
     const pane = state.session.panes && state.session.panes[state.myUid];
     if (!pane || pane.selected != null || pane.role === 'spectate') return;
-    const qs =
-      state.questionsByKey[bankKey(pane.bank || state.bankPath, pane.form || state.form)] ||
-      state.questions;
+    const qs = paneQuestions(pane);
     const qIndex = pane.qIndex | 0;
     const q = qs[qIndex];
     if (!q) return;
@@ -551,6 +573,8 @@
     state.session = null;
     state.lobby = null;
     state.bankPath = 'banks/medphys/pt1.json';
+    state.card = null;
+    state.setLabel = '';
     state.questionsByKey = {};
     state.gameMode = 'pane';
     state.role = 'play';
@@ -585,7 +609,8 @@
   global.StudySplitQuiz = {
     joinLobbySession,
     leave,
-    loadBank, // read-only: the multiple-choice questions party mode would use
+    loadBank, // read-only: the multiple-choice questions party mode would use (bank, form, card)
+    bankKey,
     MAX_SLOTS
   };
 })(window);

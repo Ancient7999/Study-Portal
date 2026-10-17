@@ -1,0 +1,153 @@
+/* Study Portal — themed form controls: dropdowns (native + js/theme-select.js), lobby
+   switches and the lobby window layout. Colours come from the page theme variables, with an
+   amber accent border; html.light-mode / [data-theme="light"] switch the control palette. */
+:root{
+  --sel-bg:rgba(8,12,20,.92);
+  --sel-bg-hover:rgba(20,26,38,.96);
+  --sel-list-bg:rgba(10,14,22,.98);
+  --sel-text:var(--text,#e8edf5);
+  --sel-dim:var(--text-dim,#94a3b8);
+  --sel-border:rgba(245,158,11,.55);
+  --sel-border-hover:var(--amber,#f59e0b);
+  --sel-ring:rgba(251,191,36,.32);
+  --sel-active:rgba(245,158,11,.18);
+  --sel-accent:var(--gold,#fbbf24);
+  --sel-chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23f59e0b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+html.light-mode,html[data-theme="light"]{
+  --sel-bg:#ffffff;--sel-bg-hover:#fff7e6;--sel-list-bg:#ffffff;--sel-text:#1f2937;--sel-dim:#6b7280;
+  --sel-border:rgba(217,119,6,.6);--sel-border-hover:#d97706;--sel-ring:rgba(217,119,6,.28);--sel-active:rgba(245,158,11,.16);--sel-accent:#b45309;
+}
+
+/* —— closed dropdowns (every native select) —— */
+select:not([multiple]):not([size]){
+  -webkit-appearance:none;appearance:none;
+  background-color:var(--sel-bg);background-image:var(--sel-chev);background-repeat:no-repeat;background-position:right 10px center;background-size:12px 8px;
+  color:var(--sel-text);border:1px solid var(--sel-border);border-radius:10px;
+  padding:7px 32px 7px 10px!important;min-height:34px;font:inherit;line-height:1.25;cursor:pointer;
+  color-scheme:dark;transition:border-color .15s,box-shadow .15s,background-color .15s;
+  text-overflow:ellipsis;max-width:100%;
+}
+html.light-mode select,html[data-theme="light"] select{color-scheme:light}
+select:not([multiple]):not([size]):hover{border-color:var(--sel-border-hover);background-color:var(--sel-bg-hover)}
+select:not([multiple]):not([size]):focus{outline:none}
+select:not([multiple]):not([size]):focus-visible{outline:none;border-color:var(--sel-accent);box-shadow:0 0 0 3px var(--sel-ring)}
+select:disabled{opacity:.55;cursor:default}
+/* option list: honoured by Chromium/Firefox on desktop; phones use their own picker */
+select option,select optgroup{background-color:var(--sel-list-bg);color:var(--sel-text)}
+select optgroup{color:var(--sel-dim);font-style:normal}
+select option:disabled{color:var(--sel-dim)}
+
+/* —— themed option list (mouse/trackpad devices) —— */
+.ts-wrap{position:relative;display:inline-flex;min-width:0;max-width:100%;vertical-align:middle}
+.ts-native{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important;margin:0!important}
+.ts-button{
+  display:flex;align-items:center;gap:8px;width:100%;min-width:0;min-height:34px;margin:0;
+  padding:7px 10px;border-radius:10px;border:1px solid var(--sel-border);background:var(--sel-bg);color:var(--sel-text);
+  font:inherit;line-height:1.25;text-align:left;cursor:pointer;transition:border-color .15s,box-shadow .15s,background-color .15s;
+}
+.ts-button:hover:not(:disabled){border-color:var(--sel-border-hover);background:var(--sel-bg-hover)}
+.ts-button:focus{outline:none}
+.ts-button:focus-visible,.ts-open .ts-button{border-color:var(--sel-accent);box-shadow:0 0 0 3px var(--sel-ring)}
+.ts-button:disabled{opacity:.55;cursor:default}
+.ts-value{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ts-chev{flex:0 0 12px;height:8px;background:var(--sel-chev) center/12px 8px no-repeat;transition:transform .15s}
+.ts-open .ts-chev{transform:rotate(180deg)}
+.ts-list{
+  position:fixed;z-index:10050;overflow:auto;overscroll-behavior:contain;box-sizing:border-box;
+  padding:4px;border-radius:12px;border:1px solid var(--sel-border);background:var(--sel-list-bg);color:var(--sel-text);
+  box-shadow:0 18px 42px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.2);backdrop-filter:blur(14px);
+  font-family:var(--body,inherit);font-size:.8rem;line-height:1.3;
+  -webkit-user-select:none;user-select:none;animation:tsIn .12s ease-out;
+}
+.ts-list.ts-up{animation-name:tsInUp}
+@keyframes tsIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes tsInUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.ts-list{animation:none}}
+.ts-option{position:relative;padding:8px 10px 8px 26px;border-radius:8px;cursor:pointer;overflow-wrap:anywhere}
+.ts-option.ts-active{background:var(--sel-active)}
+.ts-option[aria-selected="true"]{color:var(--sel-accent);font-weight:700}
+.ts-option[aria-selected="true"]::before{content:"";position:absolute;left:9px;top:50%;width:8px;height:4px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(-45deg)}
+.ts-option[aria-disabled="true"]{opacity:.45;cursor:default}
+.ts-group+.ts-group,.ts-option+.ts-group{margin-top:4px;padding-top:4px;border-top:1px solid rgba(148,163,184,.16)}
+.ts-group-label{padding:6px 10px 4px;font-family:var(--mono,monospace);font-size:.66rem;letter-spacing:.04em;color:var(--sel-dim)}
+@media (pointer:coarse){
+  select:not([multiple]):not([size]),.ts-button{min-height:44px;font-size:16px}
+}
+
+/* —— lobby window —— */
+.lobby-panel{scrollbar-width:thin;width:min(420px,94vw)}
+.lobby-panel .btn-gold{border:0;border-radius:999px;padding:10px 16px;font:inherit;font-family:var(--mono);font-size:.76rem;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 8px 22px color-mix(in srgb, var(--gold) 26%, transparent),0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent)}
+.lobby-panel .btn-gold:hover{transform:translateY(-1px)}
+.lobby-panel .btn-gold:focus-visible{outline:none;box-shadow:0 0 0 3px var(--sel-ring),0 8px 22px color-mix(in srgb, var(--gold) 26%, transparent)}
+.lobby-section-title{margin:0;font-size:.9rem;font-weight:800;color:var(--cyan-bright)}
+.lobby-create{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:0 0 12px;padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.025)}
+.lobby-create[hidden]{display:none!important}
+.lobby-group{display:flex;flex-direction:column;gap:8px;padding-top:10px;border-top:1px solid rgba(148,163,184,.14)}
+.lobby-group-title{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.05em;color:var(--gold)}
+.lobby-field{display:flex;flex-direction:column;gap:4px}
+.lobby-field-hint{margin:0;font-size:.7rem;line-height:1.4;color:var(--text-dim)}
+.lobby-group>.lobby-field-hint:first-of-type{margin-top:-4px}
+.lobby-create-btn{width:100%;margin-top:2px;padding:10px 14px}
+.lobby-segment{display:flex;gap:6px;margin:0}
+.lobby-segment .mp-mode-pill{flex:1;min-height:34px}
+.mp-mode-pill:focus-visible{outline:none;box-shadow:0 0 0 3px var(--sel-ring);border-color:var(--sel-accent)}
+.bank-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.bank-picker-field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bank-picker-field-wide,.bank-picker-summary{grid-column:1/-1}
+.bank-picker-label{font-family:var(--mono);font-size:.64rem;color:var(--text-dim)}
+.bank-picker-summary{margin:0;font-size:.7rem;line-height:1.4;color:var(--text-dim);min-height:1em}
+.bank-picker .ts-wrap,.bank-picker select,.lobby-field .ts-wrap,.lobby-field select,.llb-field .ts-wrap,.llb-field select{width:100%}
+.bank-picker select,.lobby-field select{font-size:.74rem}
+/* switches */
+.lobby-switch{position:relative;display:flex;align-items:center;gap:10px;min-height:32px;cursor:pointer;font-size:.8rem;color:var(--text)}
+.lobby-switch input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.lobby-switch-track{position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:999px;border:1px solid var(--sel-border);background:rgba(148,163,184,.22);transition:background .15s,border-color .15s,box-shadow .15s}
+.lobby-switch-thumb{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--text-dim);transition:transform .18s,background .18s}
+.lobby-switch:hover .lobby-switch-track{border-color:var(--sel-border-hover)}
+.lobby-switch input:checked+.lobby-switch-track{background:rgba(245,158,11,.32);border-color:var(--amber,#f59e0b)}
+.lobby-switch input:checked+.lobby-switch-track .lobby-switch-thumb{transform:translateX(16px);background:var(--sel-accent)}
+.lobby-switch input:focus-visible+.lobby-switch-track{box-shadow:0 0 0 3px var(--sel-ring)}
+.lobby-switch-text{font-weight:600}
+.lobby-switch+.lobby-field-hint{padding-left:48px}
+/* list */
+.lobby-open{margin-bottom:6px}
+.lobby-open .lobby-section-title{margin-bottom:8px}
+.lobby-row{align-items:center;gap:8px;min-width:0;text-align:left}
+.lobby-row-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.lobby-row-title{font-weight:700;font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lobby-row-set{font-size:.72rem;color:var(--gold);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lobby-row-meta{font-family:var(--mono);font-size:.62rem;color:var(--text-dim)}
+.lobby-row-btns{display:flex;flex-direction:column;gap:4px;justify-content:center;flex-shrink:0}
+.lobby-row-btns:empty{display:none}
+.lobby-empty{padding:10px;text-align:center}
+/* detail */
+.lobby-detail{margin:0 0 12px;padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.025)}
+.lobby-detail-title{font-weight:800;font-size:.86rem;color:var(--cyan-bright)}
+.lobby-detail-set{margin:2px 0 8px;font-size:.78rem;color:var(--gold)}
+.lobby-chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.lobby-chip{font-family:var(--mono);font-size:.62rem;padding:3px 8px;border-radius:999px;border:1px solid var(--sel-border);color:var(--text);text-transform:none}
+.lobby-chip.off{opacity:.62;border-style:dashed}
+.lobby-seat-bank{font-family:var(--body,inherit);font-size:.66rem;line-height:1.3;color:var(--gold);opacity:.9}
+.lobby-seat .ts-wrap{width:100%}
+.lobby-seat-bank-sel{font-size:.66rem!important}
+.lobby-seat-actions .ts-button{min-height:30px;padding:4px 8px;font-size:.66rem}
+/* live box */
+.lobby-live-box .llb-sec{padding:8px 0;border-top:1px solid rgba(148,163,184,.14)}
+.lobby-live-box .llb-sec:first-child{border-top:0}
+.llb-field{display:flex;flex-direction:column;gap:4px;margin:6px 0}
+.llb-row-end{justify-content:flex-end}
+.llb-picker{margin:6px 0}
+@media (max-width:800px){
+  .lobby-switch{min-height:44px}
+  .lobby-segment .mp-mode-pill{min-height:42px}
+  .lobby-create,.lobby-detail{padding:10px}
+}
+@media (max-width:480px){ .bank-picker{grid-template-columns:1fr} }
+.bank-picker-field-wide .ts-value{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lobby-seats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lobby-seat{min-width:0}
+.lobby-seat-occ{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* party cursors switched off for the current lobby */
+html.cursors-off .friend-cursor{display:none!important}
