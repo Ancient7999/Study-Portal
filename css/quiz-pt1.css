@@ -505,6 +505,26 @@ html.bg-edit-hide-glows body{
 .pt1q .saq-check{flex:0 0 auto;min-width:110px}
 .pt1q .q-nav-btn.saq .q-nav-icon{font-size:.8em;opacity:.85}
 @media (prefers-reduced-motion: reduce){ .pt1q .saq-input.soft-wrong{animation:none} }
+/* —— PORTAL: select-all-that-apply (multi) questions — PT1 options with a checkbox key —— */
+.pt1q .multi-hint{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:6px 12px;border-radius:999px;font-family:var(--font-nav,var(--mono));font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-1);background:rgba(var(--accent-0-rgb),.1);border:1px solid rgba(var(--accent-0-rgb),.32);user-select:none;-webkit-user-select:none}
+.pt1q .multi-hint-icon{font-size:1rem;line-height:1}
+.pt1q .opt.multi-opt::before{border-radius:6px}
+.pt1q .opt.multi-opt.selected{border-color:rgba(var(--accent-0-rgb),.72);border-left-color:var(--accent-1);background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.2) 0%,rgba(10,14,22,.7) 48%,rgba(8,10,16,.86) 100%)}
+.pt1q #mainPanel .opt.multi-opt.selected{background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.2) 0%,rgba(10,14,22,.5) 48%,rgba(8,10,16,.62) 100%)}
+.pt1q .opt.multi-opt.selected::before{content:'✓';background:linear-gradient(135deg,var(--accent-0),var(--accent-1));border-color:var(--accent-1);color:#0a0e17;font-weight:700;font-size:.95rem}
+.pt1q .opt.multi-opt.multi-wrong{border-style:dashed;border-left-style:solid;border-color:rgba(var(--accent-0-rgb),.5);border-left-color:var(--accent-0);background:rgba(var(--accent-0-rgb),.06)}
+.pt1q .opt.multi-opt.multi-wrong::before{content:'✗';background:rgba(var(--accent-0-rgb),.14);border-color:var(--accent-0);color:var(--accent-0)}
+.pt1q .opt.multi-opt.correct::before{content:'✓';background:var(--success);border-color:var(--success);color:#0a0e17;font-weight:700}
+.pt1q .opt.multi-opt.multi-not{opacity:.5}
+.pt1q .multi-actions{display:flex;justify-content:flex-end}
+.pt1q .multi-check{min-width:120px}
+.pt1q .multi-check.soft-wrong{animation:softReject calc(420ms / var(--anim-speed)) ease}
+.pt1q .multi-check-key{font-weight:500;opacity:.7}
+html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
+.pt1q .q-nav-btn.multi .q-nav-icon{font-size:.8em;opacity:.85}
+.pt1q .review-item .rmulti-tag{color:var(--text-dim);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:600px){ .pt1q .multi-actions .multi-check{width:100%;min-height:48px} }
+@media (prefers-reduced-motion: reduce){ .pt1q .multi-check.soft-wrong{animation:none} }
 
 /* —— PORTAL: card badges (Draft / Coming soon) + coming-soon lecture cards —— */
 .pt1q .card-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:-2px}

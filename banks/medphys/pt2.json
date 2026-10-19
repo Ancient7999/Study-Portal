@@ -3,16 +3,17 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (56), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 169,
+ "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (60), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 173,
  "forms": [
   "A"
  ],
  "cards": [
   {
    "id": "ch3",
-   "title": "Chapter 3: Bernoulli's Equation to Surface Tension",
+   "title": "Chapter 3: Fluids, Bernoulli's Equation to Surface Tension",
    "cats": [
+    "Chapter 3: Fluids, Flow Rate and Continuity",
     "Chapter 3: Bernoulli's Equation",
     "Chapter 3: Viscosity",
     "Chapter 3: Poiseuille's Law",
@@ -49,6 +50,69 @@
  ],
  "bank": {
   "A": [
+   {
+    "id": "PHY30058",
+    "type": "mcq",
+    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
+    "q": "Which statement best defines a fluid?",
+    "options": [
+     "A substance that keeps a fixed shape and volume",
+     "A substance that flows under shear",
+     "A substance that resists static shear without flowing",
+     "A substance that resists deformation without flowing"
+    ],
+    "correct": 1,
+    "explain": "A fluid deforms continuously when shear is applied. The line 'A substance that keeps a fixed shape and volume' describes a solid. The line 'A substance that resists static shear without flowing' describes solid-like shear resistance. The line 'A substance that resists deformation without flowing' denies flow."
+   },
+   {
+    "id": "PHY30059",
+    "type": "multi",
+    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
+    "q": "Which properties are shared by liquids and gases because they are fluids? Select all that apply.",
+    "options": [
+     "They flow under pressure gradients.",
+     "They cannot sustain static shear.",
+     "They deform continuously when sheared.",
+     "They keep a fixed shape under shear."
+    ],
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "Fluids flow under pressure gradients, cannot sustain static shear, and deform continuously when sheared. Keeping a fixed shape describes a solid, not a fluid."
+   },
+   {
+    "id": "PHY30060",
+    "type": "saq",
+    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
+    "q": "A vessel narrows from A₁ = 0.12 m² to A₂ = 0.03 m². If v₁ = 0.40 m/s, what is v₂ in m/s?",
+    "explain": "For steady incompressible flow the volume flow rate is constant, A₁v₁ = A₂v₂, so v₂ = A₁v₁ / A₂ = 0.12 × 0.40 / 0.03 = 1.6 m/s. The smaller area gives the larger velocity.",
+    "answer": "1.6",
+    "accept": [
+     "1.60",
+     "1.6 m/s",
+     "1.60 m/s"
+    ]
+   },
+   {
+    "id": "PHY30061",
+    "type": "multi",
+    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
+    "q": "Which statements correctly describe flow rate and the continuity equation for blood flow? Select all that apply.",
+    "options": [
+     "Volume flow rate is Q = A v.",
+     "Mass flow rate is Qₘ = ρ A v.",
+     "Steady incompressible flow gives A₁v₁ = A₂v₂.",
+     "Mass flow rate is Qₘ = A v / ρ."
+    ],
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "Volume flow rate is area times velocity, mass flow rate multiplies it by density, and steady incompressible continuity gives A₁v₁ = A₂v₂. The line 'Qₘ = A v / ρ' divides by density instead of multiplying."
+   },
    {
     "id": "PHY30001",
     "type": "mcq",
@@ -118,17 +182,20 @@
    },
    {
     "id": "PHY30003",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Bernoulli's Equation",
-    "q": "According to Bernoulli's principle, how do pressure and velocity change relative to each other in a horizontal tube?",
+    "q": "For an ideal incompressible fluid in a horizontal tube, which statements are true when velocity increases? Select all that apply.",
     "options": [
-     "Pressure decreases as velocity increases",
-     "Pressure increases as velocity increases",
-     "Pressure stays constant as velocity increases",
-     "Pressure and velocity both decrease together"
+     "Static pressure falls.",
+     "Kinetic energy density rises.",
+     "Total mechanical energy density rises.",
+     "Potential energy density rises."
     ],
-    "correct": 0,
-    "explain": "In Bernoulli's equation at constant height the sum P + ½ ρ v² is constant, so an increase in velocity raises the kinetic term and must lower the pressure term. The opposite relation, no change, or both quantities falling would violate energy conservation per unit volume along the streamline."
+    "correct": [
+     0,
+     1
+    ],
+    "explain": "In horizontal ideal flow, P + ½ρv² is constant, so rising velocity raises the kinetic energy density and lowers the static pressure. The total mechanical energy density stays constant rather than rising, and the potential energy density does not change because the height of a horizontal tube is fixed."
    },
    {
     "id": "PHY30004",
@@ -230,17 +297,34 @@
    },
    {
     "id": "PHY30011",
-    "type": "mcq",
+    "type": "stepped",
     "cat": "Chapter 3: Viscosity",
-    "q": "Viscosity is best defined as the resistance of a fluid to which type of deformation?",
-    "options": [
-     "Shear deformation caused by internal friction between adjacent layers",
-     "Compressive deformation caused by external pressure on the bulk",
-     "Tensile deformation caused by stretching of molecular bonds",
-     "Volumetric deformation caused by changes in temperature alone"
+    "q": "Define viscosity and give its SI unit.",
+    "steps": [
+     {
+      "id": "1",
+      "type": "saq",
+      "prompt": "Viscosity is a fluid's resistance to which type of deformation?",
+      "answer": "Shear",
+      "accept": [
+       "Shear deformation"
+      ]
+     },
+     {
+      "id": "2",
+      "type": "saq",
+      "prompt": "What is the SI unit of viscosity?",
+      "answer": "Pa·s",
+      "accept": [
+       "Pa s",
+       "Pa.s",
+       "N·s/m²",
+       "N·s·m⁻²",
+       "pascal-second"
+      ]
+     }
     ],
-    "correct": 0,
-    "explain": "Viscosity quantifies the internal friction that resists relative sliding (shear) between neighboring fluid layers. Compressive, tensile, and pure volumetric changes are governed by bulk modulus or thermal expansion, not by the shear coefficient η."
+    "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s."
    },
    {
     "id": "PHY30012",
@@ -258,17 +342,20 @@
    },
    {
     "id": "PHY30013",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Viscosity",
-    "q": "The SI unit of the coefficient of viscosity is which of the following?",
+    "q": "Which units are equivalent to the SI unit of dynamic viscosity? Select all that apply.",
     "options": [
-     "Pascal-second (Pa·s)",
-     "Newton-meter (N·m)",
-     "Kilogram per cubic meter (kg/m³)",
-     "Joule per second (J/s)"
+     "Pa·s",
+     "N·s·m⁻²",
+     "kg·m⁻¹·s⁻²",
+     "Pa·s⁻¹"
     ],
-    "correct": 0,
-    "explain": "From F = η A v / y the dimensions of η are force per area times time, or pascal-second. Newton-meter is energy or torque, kilogram per cubic meter is density, and joule per second is power; none matches the coefficient of viscosity."
+    "correct": [
+     0,
+     1
+    ],
+    "explain": "Dynamic viscosity is pressure times time, so Pa·s and its equivalent N·s·m⁻² are correct; in base units it is kg·m⁻¹·s⁻¹. The unit kg·m⁻¹·s⁻² is the pascal itself, and Pa·s⁻¹ divides by time instead of multiplying."
    },
    {
     "id": "PHY30014",
@@ -300,17 +387,21 @@
    },
    {
     "id": "PHY30016",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Viscosity",
-    "q": "Polycythemia raises blood viscosity primarily because of which change?",
+    "q": "Which changes are expected in polycythemia? Select all that apply.",
     "options": [
-     "Increased red-blood-cell concentration",
-     "Decreased plasma-protein concentration",
-     "Increased red-blood-cell deformability",
-     "Decreased plasma temperature"
+     "RBC count rises.",
+     "Blood viscosity rises.",
+     "Vascular resistance rises.",
+     "Blood flow rate rises."
     ],
-    "correct": 0,
-    "explain": "The number of red cells is the dominant determinant of whole-blood viscosity; more cells increase particle interactions and raise η. Lower plasma proteins, higher deformability, or lower temperature would each tend to reduce rather than raise viscosity."
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "Polycythemia raises red cell concentration, which raises viscosity and therefore vascular resistance. With higher resistance the flow rate for the same pressure difference falls, so it does not rise."
    },
    {
     "id": "PHY30017",
@@ -342,17 +433,21 @@
    },
    {
     "id": "PHY30019",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Poiseuille's Law",
-    "q": "If the radius of a vessel is doubled while all other quantities remain constant, the volume flow rate becomes how many times larger?",
+    "q": "If vessel radius doubles while pressure difference, viscosity, and length remain constant, which changes are predicted? Select all that apply.",
     "options": [
-     "16 times larger",
-     "8 times larger",
-     "4 times larger",
-     "2 times larger"
+     "Q becomes 16 times larger.",
+     "Resistance becomes 1/16.",
+     "Mean velocity becomes 4 times larger.",
+     "Q becomes 8 times larger."
     ],
-    "correct": 0,
-    "explain": "Because Q is proportional to r⁴, a factor-of-two increase in radius multiplies flow by 2⁴ = 16. The factors 8, 4, and 2 correspond to lower powers of radius and therefore understate the change."
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "Poiseuille's law gives Q ∝ r⁴, so doubling the radius gives 16 times the flow, the resistance falls to 1/16, and the mean velocity rises by 16/4 = 4 because the area grows 4 times. The line 'Q becomes 8 times larger' uses a cubic dependence instead of the fourth power."
    },
    {
     "id": "PHY30020",
@@ -384,17 +479,20 @@
    },
    {
     "id": "PHY30022",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Poiseuille's Law",
-    "q": "A 65-year-old patient has severe carotid stenosis. Which physical changes occur in the narrowed segment?",
+    "q": "A stenotic carotid artery has a smaller radius. Which effects are expected in the narrowed segment? Select all that apply.",
     "options": [
-     "Velocity increases and pressure decreases",
-     "Velocity decreases and pressure increases",
-     "Velocity decreases and flow increases",
-     "Pressure increases and resistance decreases"
+     "Velocity rises in the stenosis.",
+     "Local pressure falls in the stenosis.",
+     "Resistance falls through the segment.",
+     "Flow rate rises through the segment."
     ],
-    "correct": 0,
-    "explain": "Continuity raises velocity when area falls; Bernoulli then lowers local pressure. Resistance rises because of the r⁴ dependence in Poiseuille's law, so flow does not increase and pressure does not rise inside the stenosis itself."
+    "correct": [
+     0,
+     1
+    ],
+    "explain": "Continuity raises velocity when area falls, and Bernoulli lowers local pressure when velocity rises. Poiseuille's law makes resistance rise, not fall, when the radius shrinks, so the flow rate through the segment does not rise."
    },
    {
     "id": "PHY30023",
@@ -440,17 +538,21 @@
    },
    {
     "id": "PHY30026",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Laplace's Law",
-    "q": "Hypertension raises the risk of arterial-wall damage primarily because which quantity increases?",
+    "q": "Which statements correctly apply Laplace's law to a thin-walled cylindrical blood vessel? Select all that apply.",
     "options": [
-     "Wall tension",
-     "Blood viscosity",
-     "Reynolds number",
-     "Surface tension"
+     "T = P r.",
+     "Higher P raises T if r is fixed.",
+     "σ = P r / t.",
+     "T = P / r."
     ],
-    "correct": 0,
-    "explain": "Elevated pressure directly increases wall tension (T = P r) and therefore wall stress. Viscosity, Reynolds number, and surface tension are not the immediate mechanical consequences of the higher transmural pressure."
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "For a thin-walled cylinder, wall tension is T = Pr, so a higher pressure raises the tension when the radius is fixed, and the wall stress is σ = Pr/t. The line 'T = P / r' inverts the radius dependence; tension grows with radius."
    },
    {
     "id": "PHY30027",
@@ -482,31 +584,36 @@
    },
    {
     "id": "PHY30029",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Reynolds Number",
-    "q": "Flow is expected to be laminar when the Reynolds number satisfies which condition?",
+    "q": "A vessel flow has Reynolds number below 2000. Which statements are generally true? Select all that apply.",
     "options": [
-     "Re < 2000",
-     "Re > 2000",
-     "Re = 1",
-     "Re > 4000"
+     "Flow is generally laminar.",
+     "Viscous forces dominate.",
+     "Inertial forces dominate.",
+     "Eddies form throughout the flow."
     ],
-    "correct": 0,
-    "explain": "Values below approximately 2000 indicate that viscous forces dominate and the flow remains laminar. Values above 2000 favor turbulence, while the specific numbers 1 and 4000 are not the conventional transition thresholds used for tube flow."
+    "correct": [
+     0,
+     1
+    ],
+    "explain": "Below Re = 2000 viscous forces dominate and damp disturbances, so the flow is laminar, smooth and layered. Dominant inertial forces and eddies throughout the flow describe high-Re turbulent flow."
    },
    {
     "id": "PHY30030",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Reynolds Number",
-    "q": "Reynolds number increases when which combination of changes occurs?",
+    "q": "Which changes increase the Reynolds number of blood flow? Select all that apply.",
     "options": [
-     "Velocity, diameter, or density rises",
-     "Viscosity rises while velocity falls",
-     "Diameter falls while density falls",
-     "Viscosity rises while diameter rises"
+     "Velocity rises.",
+     "Viscosity rises.",
+     "Diameter falls.",
+     "Density falls."
     ],
-    "correct": 0,
-    "explain": "Because Re = ρ v D / η, any increase in velocity, diameter, or density raises the number, while an increase in viscosity lowers it. The other listed combinations move at least one variable in the direction that reduces Re."
+    "correct": [
+     0
+    ],
+    "explain": "Re = ρvD/η, so a rise in velocity raises the Reynolds number. Viscosity is in the denominator, so a rise in viscosity lowers Re, and a fall in diameter or density also lowers it."
    },
    {
     "id": "PHY30031",
@@ -538,17 +645,21 @@
    },
    {
     "id": "PHY30033",
-    "type": "mcq",
+    "type": "multi",
     "cat": "Chapter 3: Surface Tension",
-    "q": "Pulmonary surfactant prevents alveolar collapse primarily by which action?",
+    "q": "Pulmonary surfactant contributes to alveolar stability by which mechanisms? Select all that apply.",
     "options": [
-     "Lowering surface tension of the alveolar lining fluid",
-     "Raising surface tension of the alveolar lining fluid",
-     "Increasing the radius of every alveolus",
-     "Decreasing the transmural pressure across the alveolar wall"
+     "It lowers surface tension.",
+     "It lowers opening pressure.",
+     "It helps prevent collapse.",
+     "It enlarges every alveolus."
     ],
-    "correct": 0,
-    "explain": "Surfactant reduces the surface tension T that appears in the Laplace relation P = 2T/r, thereby lowering the pressure needed to keep small alveoli open. Raising T, changing radius independently, or directly lowering transmural pressure are not the mechanisms of surfactant action."
+    "correct": [
+     0,
+     1,
+     2
+    ],
+    "explain": "Surfactant lowers T, and because P = 2T/r for a spherical alveolus, a lower T lowers the pressure needed to keep alveoli open and helps prevent collapse. It does not act by enlarging the alveoli."
    },
    {
     "id": "PHY30034",

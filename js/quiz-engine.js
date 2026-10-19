@@ -73,7 +73,14 @@ function isTypedStep(q){ return isStep(q) && isSaq(q); }
 /* SAQ (short answer): {q, answer, explain} — typed answer, lenient match. */
 function isOrder(q){ return !!(q && q.type==='order' && Array.isArray(q.stages)); }
 function isLabel(q){ return !!(q && q.type==='label' && Array.isArray(q.labels)); }
-function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && (q.type==='saq' || (q.answer!=null && !Array.isArray(q.options)))); }
+/* MULTI (select all that apply): {id, type:'multi', cat, q, options:[...], correct:[0-based indexes], explain}.
+   Graded all-or-nothing: solved only when the picked set equals the correct set. */
+function isMulti(q){ return !!(q && q.type==='multi' && Array.isArray(q.options) && Array.isArray(q.correct)); }
+function multiSetEq(a,b){ if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length) return false; const s=new Set(a); return b.every(x=>s.has(x)); }
+/* the engine shows its own "Select all that apply" hint, so a trailing copy in the stem is not repeated */
+const MULTI_HINT_RE=/\s*\(?\s*select all that apply\s*[.:!]?\s*\)?\s*$/i;
+function multiStem(s){ const t=String(s==null?'':s).replace(MULTI_HINT_RE,'').trim(); return t||String(s==null?'':s); }
+function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && !isMulti(q) && (q.type==='saq' || (q.answer!=null && !Array.isArray(q.options)))); }
 /* saq grading is STRICT: case, punctuation and slashes all count. Only leading/trailing
    whitespace is trimmed and runs of internal whitespace collapse to one space. */
 function saqNorm(s){ return String(s==null?'':s).trim().replace(/\s+/g,' '); }
@@ -90,13 +97,14 @@ function saqHint(q, typed){
   return 'not that one · try again';
 }
 function isSingleStep(q){ return isStep(q) && q.__stepCount===1; }
-function qType(q){ return isMatching(q)?'matching':(isStepped(q)?'stepped':(isSaq(q)?'saq':(isLabel(q)?'label':(isOrder(q)?'order':'mcq')))); }
+function qType(q){ return isMatching(q)?'matching':(isStepped(q)?'stepped':(isSaq(q)?'saq':(isLabel(q)?'label':(isOrder(q)?'order':(isMulti(q)?'multi':'mcq'))))); }
 function isAnswered(val,q){
   if(val==null) return false;
   if(isMatching(q)) return !!(val && val.correct);
   if(isSaq(q)) return !!(val && val.correct);
   if(isLabel(q)) return !!(val && val.correct);
   if(isOrder(q)) return !!(val && val.correct);
+  if(isMulti(q)) return !!(val && val.correct);
   return val!==null && val!==undefined;
 }
 /* ADAPT: PT1 showToast defaults to 2200ms; the portal's showToast defaults to 2800ms. */
@@ -344,10 +352,11 @@ function prepareDeck(pool, opts){
   return deck;
 }
 function permuteChoices(q, doShuffle){
-  const paired=(q.options||[]).map((opt,i)=>({opt,ok:i===q.correct,i}));
+  const multi=Array.isArray(q.correct), cs=multi?new Set(q.correct):null; // MULTI: a set of right indexes
+  const paired=(q.options||[]).map((opt,i)=>({opt,ok:multi?cs.has(i):i===q.correct,i}));
   const mixed=doShuffle?shuffle(paired):paired;
   q.options=mixed.map(x=>x.opt);
-  q.correct=mixed.findIndex(x=>x.ok);
+  q.correct=multi?mixed.map((x,k)=>x.ok?k:-1).filter(k=>k>=0):mixed.findIndex(x=>x.ok);
   q.__perm=mixed.map(x=>x.i);
   return q;
 }
@@ -356,7 +365,7 @@ function applyPerm(q, perm){
   if(!Array.isArray(perm) || perm.length!==n || perm.some(x=>!(x>=0&&x<n)) || new Set(perm).size!==n) return permuteChoices(q,false);
   const orig=q.options.slice(), origCorrect=q.correct;
   q.options=perm.map(i=>orig[i]);
-  q.correct=perm.indexOf(origCorrect);
+  q.correct=Array.isArray(origCorrect)?origCorrect.map(c=>perm.indexOf(c)).sort((a,b)=>a-b):perm.indexOf(origCorrect);
   q.__perm=perm.slice();
   return q;
 }
@@ -609,6 +618,7 @@ function serializeAnswers(){
     else if(isSaq(q)) out[entryKey(q)]={text:String(a.text||''), correct:true};
     else if(isLabel(q)) out[entryKey(q)]={slots:Object.assign({},a.slots), correct:!!a.correct}; // partial progress too, per label id
     else if(isOrder(q)) out[entryKey(q)]={order:a.order.slice(), locked:Object.keys(a.locked||{}).filter(k=>a.locked[k]), correct:!!a.correct};
+    else if(isMulti(q)) out[entryKey(q)]={sel:(a.sel||[]).map(k=>(q.__perm&&q.__perm[k]!=null)?q.__perm[k]:k), correct:true}; // original option indexes
     else out[entryKey(q)]=(q.__perm&&q.__perm[a]!=null)?q.__perm[a]:a;
   });
   return out;
@@ -682,6 +692,15 @@ function restoreRun(run){
       }
       return;
     }
+    if(isMulti(q)){
+      // saved as original option indexes; restored only when they still make the right set
+      if(a && typeof a==='object' && a.correct && Array.isArray(a.sel)){
+        const perm=Array.isArray(q.__perm)?q.__perm:q.options.map((_,k)=>k);
+        const cur=a.sel.map(o=>perm.indexOf(o));
+        if(cur.every(k=>k>=0) && multiSetEq(cur,q.correct)) answers[i]={sel:cur.sort((x,y)=>x-y), correct:true};
+      }
+      return;
+    }
     if(isLabel(q)){
       // keep only slots that still exist and still hold a right answer
       if(a && typeof a==='object' && a.slots && typeof a.slots==='object'){
@@ -715,7 +734,8 @@ function cardCounts(pool){
   const saq=pool.filter(isSaq).length;
   const label=pool.filter(isLabel).length;
   const order=pool.filter(isOrder).length;
-  return {linking, stepped, saq, label, order, choice:pool.length-linking-stepped-saq-label-order};
+  const multi=pool.filter(isMulti).length;
+  return {linking, stepped, saq, label, order, multi, choice:pool.length-linking-stepped-saq-label-order-multi};
 }
 /* Badges are data-driven: card.draft / card.soon, material flags (examDiffers) and
    badge lists [{text, tip, tone:'amber'|'grey'}] on the catalog material (every card)
@@ -769,7 +789,7 @@ function appendPoolCard(grid, label, pool, card){
   const btn=document.createElement('button'); btn.type='button'; btn.className='card';
   btn.dataset.card=card.id;
   // PT1 line "N linking · M choice" + STEPPED count when the card has any
-  const sub=(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
+  const sub=(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.multi?(' · '+c.multi+' select-all'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
   btn.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(label)}</span><span class="mood-stamp">${escapeHtml(meta.mood||'')}</span></div>${cardBadgesHTML(card)}
     <div class="card-sub">${sub}</div>
     <div class="card-stats"><div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}${inProgress?' · in progress':''}</div></div>`;
@@ -1253,14 +1273,16 @@ function renderNav(){
     b.classList.toggle('saq', isSaq(q));
     b.classList.toggle('label', isLabel(q));
     b.classList.toggle('order', isOrder(q));
+    b.classList.toggle('multi', isMulti(q));
     b.innerHTML=isMatching(q)
       ? '<span class=\"q-nav-icon\" aria-hidden=\"true\">🔗</span><span class=\"q-nav-number\">'+(i+1)+'</span>'
       : (isSaq(q) ? '<span class=\"q-nav-icon\" aria-hidden=\"true\">✎</span><span class=\"q-nav-number\">'+(i+1)+'</span>'
       : isLabel(q) ? '<span class=\"q-nav-icon\" aria-hidden=\"true\">🏷</span><span class=\"q-nav-number\">'+(i+1)+'</span>'
       : isOrder(q) ? '<span class=\"q-nav-icon\" aria-hidden=\"true\">⇅</span><span class=\"q-nav-number\">'+(i+1)+'</span>'
+      : isMulti(q) ? '<span class=\"q-nav-icon\" aria-hidden=\"true\">☑</span><span class=\"q-nav-number\">'+(i+1)+'</span>'
       : '<span class=\"q-nav-number\">'+(i+1)+'</span>');
     b.title=isMatching(q)?'Linking question'+(skipped?' — skipped — unanswered':(done?' — answered':''))
-      :((isSaq(q)?'Short answer':'')+(skipped?((isSaq(q)?' — ':'')+'Skipped — unanswered'):(done?((isSaq(q)?' — ':'')+'Answered'):'')));
+      :((isSaq(q)?'Short answer':(isMulti(q)?'Select all that apply':''))+(skipped?(((isSaq(q)||isMulti(q))?' — ':'')+'Skipped — unanswered'):(done?(((isSaq(q)||isMulti(q))?' — ':'')+'Answered'):'')));
     const idx=i;
     b.addEventListener('click',()=>{ current=idx; locked=isAnswered(answers[idx],q); renderQuestion(); });
     nav.appendChild(b);
@@ -1393,6 +1415,7 @@ function submitSaq(){
   input.disabled=true; input.classList.add('correct');
   const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  renderStepRecap(); // a typed last step shows the series recap at once, like a choice step
   document.getElementById('mainPanel').classList.add('correct-pulse');
   setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
   pt1Confetti();
@@ -1880,6 +1903,92 @@ function renderMcq(q, answered){
     if(answered){ btn.disabled=true; if(i===q.correct) btn.classList.add('correct'); }
     opts.appendChild(btn);
   });
+}
+
+/* MULTI: checkbox-style options (each toggles), a "Select all that apply" hint and a Check
+   button. Keys: ↑ ↓ highlight, 1–n toggle (never submit), Space toggles the highlighted one,
+   Enter checks. A wrong check shakes and marks the wrong picks and says how many picks are
+   right, wrong and missed, without naming the missed ones (retry like a choice question). */
+function multiState(i){
+  let a=answers[i];
+  if(!a || typeof a!=='object' || !Array.isArray(a.sel)){ a={sel:[], correct:false}; answers[i]=a; }
+  return a;
+}
+function renderMulti(q, ans){
+  const opts=document.getElementById('options');
+  const done=!!(ans && ans.correct);
+  const sel=new Set(ans && Array.isArray(ans.sel)?ans.sel:[]);
+  const wrongMarks=new Set(ans && Array.isArray(ans.wrong)?ans.wrong:[]);
+  const hint=document.createElement('div'); hint.className='multi-hint'; hint.id='multiHint';
+  hint.innerHTML='<span class="multi-hint-icon" aria-hidden="true">☑</span><span class="multi-hint-text">Select all that apply</span>';
+  opts.appendChild(hint);
+  (q.options||[]).forEach((opt,i)=>{
+    const btn=document.createElement('button');
+    btn.className='opt multi-opt'; btn.type='button'; btn.dataset.key=String.fromCharCode(65+i); btn.dataset.idx=String(i);
+    btn.setAttribute('role','checkbox'); btn.setAttribute('aria-checked', sel.has(i)?'true':'false');
+    btn.textContent=opt;
+    if(sel.has(i)) btn.classList.add('selected');
+    if(!done && wrongMarks.has(i) && sel.has(i)) btn.classList.add('multi-wrong');
+    if(done){ btn.disabled=true; if(q.correct.includes(i)) btn.classList.add('correct'); else btn.classList.add('multi-not'); }
+    btn.onclick=()=>toggleMulti(i);
+    opts.appendChild(btn);
+  });
+  if(!done){
+    const act=document.createElement('div'); act.className='multi-actions';
+    const cb=document.createElement('button'); cb.type='button'; cb.className='nav-btn primary multi-check'; cb.id='multiCheck';
+    cb.innerHTML='Check<span class="multi-check-key" aria-hidden="true"> · Enter</span>';
+    cb.disabled=!sel.size;
+    cb.addEventListener('click',()=>submitMulti());
+    act.appendChild(cb); opts.appendChild(act);
+  }
+}
+function toggleMulti(idx){
+  if(!quizActive||locked) return;
+  const q=questions[current]; if(!isMulti(q) || !(idx>=0 && idx<q.options.length)) return;
+  const a=multiState(current);
+  const k=a.sel.indexOf(idx);
+  if(k>=0) a.sel.splice(k,1); else a.sel.push(idx);
+  a.sel.sort((x,y)=>x-y);
+  if(Array.isArray(a.wrong)) a.wrong=a.wrong.filter(x=>x!==idx);
+  const btn=document.querySelector('#options .multi-opt[data-idx="'+idx+'"]');
+  if(btn){ const on=a.sel.includes(idx); btn.classList.toggle('selected',on); btn.setAttribute('aria-checked',on?'true':'false'); btn.classList.remove('multi-wrong'); }
+  const cb=document.getElementById('multiCheck'); if(cb) cb.disabled=!a.sel.length;
+  const fb=document.getElementById('feedback');
+  if(fb && fb.classList.contains('soft')){ clearTimeout(selectAnswer._t); fb.className='feedback idle'; fb.textContent=''; }
+}
+function multiFeedbackText(right, wrong, missed){
+  const parts=[];
+  if(right) parts.push(right+' right');
+  if(wrong) parts.push(wrong+' wrong');
+  if(missed) parts.push(missed+' missed');
+  return parts.join(' · ')+' · try again';
+}
+function submitMulti(){
+  if(!quizActive||locked) return;
+  const q=questions[current]; if(!isMulti(q)) return;
+  const a=multiState(current);
+  const fb=document.getElementById('feedback');
+  if(!a.sel.length){ fb.className='feedback soft'; fb.textContent='select at least one option'; clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400); return; }
+  const right=a.sel.filter(k=>q.correct.includes(k)), wrong=a.sel.filter(k=>!q.correct.includes(k)), missed=q.correct.filter(k=>!a.sel.includes(k));
+  if(wrong.length || missed.length){
+    if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
+    a.wrong=wrong.slice();
+    wrong.forEach(k=>{ const btn=document.querySelector('#options .multi-opt[data-idx="'+k+'"]'); if(btn){ btn.classList.remove('soft-wrong'); void btn.offsetWidth; btn.classList.add('soft-wrong','multi-wrong'); setTimeout(()=>btn.classList.remove('soft-wrong'),480); } });
+    if(!wrong.length){ const cb=document.getElementById('multiCheck'); if(cb){ cb.classList.remove('soft-wrong'); void cb.offsetWidth; cb.classList.add('soft-wrong'); setTimeout(()=>cb.classList.remove('soft-wrong'),480); } }
+    fb.className='feedback soft'; fb.textContent=multiFeedbackText(right.length, wrong.length, missed.length);
+    clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },2600);
+    return;
+  }
+  locked=true; a.correct=true; delete a.wrong; onQuestionSolved(q);
+  document.querySelectorAll('#options .multi-opt').forEach(o=>{ const k=+o.dataset.idx; o.disabled=true; o.classList.remove('multi-wrong'); o.classList.add(q.correct.includes(k)?'correct':'multi-not'); });
+  const act=document.querySelector('#options .multi-actions'); if(act) act.remove();
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  document.getElementById('mainPanel').classList.add('correct-pulse');
+  setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
+  pt1Confetti();
+  rewardCorrect();
+  afterAnswerProgress();
+  if(submitMulti._kb && !allQuestionsAnswered()) startKbAdvance();
 }
 
 function ensureMatchAns(){
@@ -2756,7 +2865,7 @@ function renderQuestion(){
     pr.append(txt);
     qText.append(stem,pr);
   }else{
-    qText.textContent=q.q;
+    qText.textContent=isMulti(q)?multiStem(q.q):q.q;
   }
   // per-question badges (bank field q.badges = [{text, tone?, tip?}]), same component as the card badges
   if(Array.isArray(q.badges) && q.badges.length){
@@ -2771,7 +2880,7 @@ function renderQuestion(){
   }
   renderNav();
   updateCounters();
-  document.getElementById('catTag').textContent=(isMatching(q)?'linking · ':((isStep(q)&&!isSingleStep(q))?'stepped · ':(isSaq(q)?'short answer · ':(isLabel(q)?'labeling · ':(isOrder(q)?'ordering · ':'')))))+((q.cat||q.__form||'').toString().replace(/_/g,' '));
+  document.getElementById('catTag').textContent=(isMatching(q)?'linking · ':((isStep(q)&&!isSingleStep(q))?'stepped · ':(isSaq(q)?'short answer · ':(isLabel(q)?'labeling · ':(isOrder(q)?'ordering · ':(isMulti(q)?'select all · ':''))))))+((q.cat||q.__form||'').toString().replace(/_/g,' '));
   const opts=document.getElementById('options'); opts.innerHTML='';
   const answered=isAnswered(answers[current], q);
   locked=answered;
@@ -2779,6 +2888,7 @@ function renderQuestion(){
   else if(isSaq(q)) renderSaq(q, answers[current]);
   else if(isLabel(q)) renderLabel(q, answers[current]);
   else if(isOrder(q)) renderOrder(q, answers[current]);
+  else if(isMulti(q)) renderMulti(q, answers[current]);
   else renderMcq(q, answered);
   const fb=document.getElementById('feedback');
   if(answered){ fb.className='feedback good'; fb.textContent=correctFeedbackText(q); }
@@ -2823,7 +2933,7 @@ function onQuestionSolved(q){
 /* PT1 3850–3890 (formula branches removed) */
 function selectAnswer(idx){
   if(!quizActive||locked) return;
-  const q=questions[current]; if(isMatching(q) || isSaq(q) || isLabel(q) || isOrder(q)) return;
+  const q=questions[current]; if(isMatching(q) || isSaq(q) || isLabel(q) || isOrder(q) || isMulti(q)) return;
   if(isStep(q) && !isUnlocked(current)) return;
   const fb=document.getElementById('feedback');
   if(idx!==q.correct){
@@ -2900,7 +3010,7 @@ function jumpToQuestion(i, dir){
   }
   stepTo(i);
 }
-function score(){ let c=0; answers.forEach((a,i)=>{ const q=questions[i]; if(isMatching(q)||isSaq(q)||isLabel(q)||isOrder(q)){ if(a&&a.correct)c++; } else if(a===q.correct)c++; }); return c; }
+function score(){ let c=0; answers.forEach((a,i)=>{ const q=questions[i]; if(isMatching(q)||isSaq(q)||isLabel(q)||isOrder(q)||isMulti(q)){ if(a&&a.correct)c++; } else if(a===q.correct)c++; }); return c; }
 
 /* —— PT1 3928–3949 finishQuiz + portal extras (elapsed, mood stamp, Mastery box, review) —— */
 function resultItemHTML(q,i){
@@ -2915,6 +3025,12 @@ function resultItemHTML(q,i){
   if(isLabel(q)){
     const a=answers[i], n=(q.labels||[]).length, k=labelDoneCount(q,a);
     return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div><div class="rline '+(k===n?'rok':'rbad')+'">Labels placed: '+k+' / '+n+'</div><div class="label-review">'+labelFigureHTML(q,a,true)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+  }
+  if(isMulti(q)){
+    const a=answers[i], ok=!!(a&&a.correct), opts=q.options||[];
+    const picks=(a&&Array.isArray(a.sel))?a.sel:[];
+    const list=(ks)=>ks.length?ks.map(k=>escapeHtml(opts[k]==null?'':opts[k])).join(' · '):'—';
+    return '<div class="rq">'+(i+1)+'. '+escapeHtml(multiStem(q.q))+'</div><div class="rline rmulti-tag">Select all that apply</div><div class="rline '+(ok?'rok':'rbad')+'">Your picks: '+list(ok?picks:[])+'</div><div class="rline rok">Correct: '+list(q.correct)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isSaq(q)){
     const a=answers[i], ok=!!(a&&a.correct);
@@ -3105,6 +3221,17 @@ document.addEventListener('keydown', e=>{
   const typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
   if(e.key==='f'||e.key==='F'){ if(!typing && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); toggleFullscreen(); } }
   /* keyboard answering for choice questions / steps: ↑ ↓ or 1–n highlight (same look as hover), same number again or Enter chooses */
+  /* MULTI: 1–n (and Space on the highlighted option) toggle, Enter checks; ↑ ↓ fall through to the shared highlight */
+  if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && !locked && isMulti(questions[current])){
+    const opts=kbOptions();
+    if(e.key==='Enter'){ e.preventDefault(); kbHighlight(null); submitMulti._kb=true; try{ submitMulti(); } finally { submitMulti._kb=false; } return; }
+    if(/^[1-9]$/.test(e.key)){ const k=+e.key-1; if(k>=opts.length) return; e.preventDefault(); kbHighlight(opts[k]); toggleMulti(+opts[k].dataset.idx); return; }
+    if(e.key===' ' || e.code==='Space'){
+      const onBtn=e.target && e.target.closest && e.target.closest('button');
+      const hl=opts.find(b=>b.classList.contains('kb-hl'));
+      if(hl && !onBtn){ e.preventDefault(); toggleMulti(+hl.dataset.idx); return; }
+    }
+  }
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey){
     const opts=kbOptions();
     if(opts.length && (e.key==='ArrowUp'||e.key==='ArrowDown')){
@@ -3205,4 +3332,4 @@ placeSettingsGear();
 
 window.StudyQuiz={ loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
-  get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };
+  get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };
