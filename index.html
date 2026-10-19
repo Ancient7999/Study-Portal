@@ -627,6 +627,13 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .portal-tab .lock-ico{margin-right:.35rem}
 .portal-section-label{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);opacity:.9;margin:0 0 12px}
 .portal-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:28px}
+/* paired layout: a "PTn Remake" card sits in row 2 under its "Periodic Test n" card; other cards keep row 1 */
+.portal-cards.paired{grid-template-columns:repeat(var(--pair-cols,3),minmax(0,1fr))}
+.portal-cards.paired>*{grid-column:var(--pc);grid-row:var(--pr)}
+@media (max-width:760px){
+  .portal-cards.paired{grid-template-columns:1fr}
+  .portal-cards.paired>*{grid-column:auto;grid-row:auto;order:var(--po)}
+}
 .portal-card{display:block;text-decoration:none;color:inherit;background:rgba(14,22,40,.55);border:1.5px solid var(--border);border-radius:20px;padding:24px 22px;transition:transform var(--transition-ms),border-color var(--transition-ms),box-shadow var(--transition-ms);box-shadow:0 18px 40px -16px rgba(0,0,0,.55);text-align:left;width:100%;font:inherit;backdrop-filter:blur(16px);position:relative;cursor:pointer}
 .portal-card:hover:not(.locked){transform:translateY(-4px);border-color:var(--cyan-bright);box-shadow:0 0 28px var(--mood-glow),0 18px 40px -12px rgba(0,0,0,.55)}
 .portal-card:active:not(.locked){transform:translateY(-1px) scale(.985)}
@@ -3043,6 +3050,24 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       cardsEl.innerHTML = '<p class="portal-sub">No materials listed.</p>';
       return;
     }
+    // "PTn Remake" cards pair with the "Periodic Test n" card: row 2, same column (one column on phones: right after it)
+    const remakeNo = m=>{ const r=/^PT\s*(\d+) Remake$/i.exec(String(m.title||'')); return r ? r[1] : null; };
+    const row1 = materials.filter(m=>!remakeNo(m));
+    const partnerCol = m=>{ const n=remakeNo(m); const k=row1.findIndex(x=>new RegExp('^Periodic Test '+n+'$','i').test(String(x.title||''))); return k; };
+    const paired = materials.some(m=>remakeNo(m) && partnerCol(m)>=0);
+    cardsEl.classList.toggle('paired', paired);
+    if(paired) cardsEl.style.setProperty('--pair-cols', String(row1.length)); else cardsEl.style.removeProperty('--pair-cols');
+    let spare = row1.length; // a Remake with no partner goes to the end of row 2
+    const place = (el, m)=>{
+      if(paired){
+        const k = remakeNo(m) ? partnerCol(m) : row1.indexOf(m);
+        if(remakeNo(m)){
+          const col = k>=0 ? k : (spare++ % Math.max(1,row1.length));
+          el.style.setProperty('--pc', String(col+1)); el.style.setProperty('--pr', '2'); el.style.setProperty('--po', String(k>=0 ? k*2+1 : 999));
+        } else { el.style.setProperty('--pc', String(k+1)); el.style.setProperty('--pr', '1'); el.style.setProperty('--po', String(k*2)); }
+      }
+      cardsEl.appendChild(el);
+    };
     materials.forEach(m=>{
       const hasQuiz = !!(m.bank || (Array.isArray(m.lectures) && m.lectures.length));
       // study-only material (notes ready, quiz bank not yet): open, the card itself opens the notes
@@ -3092,10 +3117,10 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
           openStudy();
         });
         wrap.appendChild(sb);
-        cardsEl.appendChild(wrap);
+        place(wrap, m);
         return;
       }
-      cardsEl.appendChild(card);
+      place(card, m);
     });
   }
 
