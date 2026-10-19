@@ -3057,12 +3057,16 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       card.className = 'portal-card' + (locked ? ' locked' : '');
       if(locked){
         card.setAttribute('aria-disabled','true');
+        // badges on a locked card (e.g. the PT Remake placeholders) are tooltip-only; their tip is also the toast
+        const lb = matBadges(m);
+        const lockTip = (lb.find(b=>b.tip)||{}).tip || '';
+        if(lockTip) card.title = lockTip;
         card.innerHTML =
-          '<span class="lock-badge" title="Locked">🔒</span>' +
-          '<h3>' + esc(m.title) + '</h3>' +
+          '<span class="lock-badge" title="' + esc(lockTip || 'Locked') + '">🔒</span>' +
+          '<h3>' + esc(m.title) + lb.map(b=>'<span class="note-badge ' + b.tone + (b.cls ? ' ' + b.cls : '') + '" title="' + esc(b.tip) + '" data-tip="' + esc(b.tip) + '">' + esc(b.text) + '</span>').join('') + '</h3>' +
           '<p class="sub">' + esc(m.subtitle || 'Locked') + '</p>' +
           '<span class="go">Unavailable</span>';
-        card.addEventListener('click', e=>{ e.preventDefault(); portalToast('This material is locked'); });
+        card.addEventListener('click', e=>{ e.preventDefault(); portalToast(lockTip ? 'Locked · ' + lockTip : 'This material is locked'); });
       } else {
         card.innerHTML =
           '<h3>' + esc(m.title) + (m.draft ? '<span class="draft-badge" title="Unfinished · still being written">Draft</span>' : '') +

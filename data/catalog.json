@@ -110,6 +110,36 @@
           }
         },
         {
+          "id": "medphys-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
+          "id": "medphys-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
           "id": "medphys-finals",
           "title": "Finals",
           "subtitle": "Coming soon",
@@ -138,6 +168,36 @@
           "subtitle": "Coming soon",
           "bank": null,
           "locked": true
+        },
+        {
+          "id": "studyskills-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
+          "id": "studyskills-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
         },
         {
           "id": "studyskills-oif",
@@ -248,6 +308,36 @@
           "subtitle": "Coming soon",
           "bank": null,
           "locked": true
+        },
+        {
+          "id": "english-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
+          "id": "english-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
         },
         {
           "id": "english-oif",
@@ -452,6 +542,36 @@
           }
         },
         {
+          "id": "medterm-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
+          "id": "medterm-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
           "id": "medterm-finals",
           "title": "Finals",
           "subtitle": "Coming soon",
@@ -485,6 +605,36 @@
           "subtitle": "Coming soon",
           "bank": null,
           "locked": true
+        },
+        {
+          "id": "iths-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
+        },
+        {
+          "id": "iths-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true,
+          "badges": [
+            {
+              "text": "Locked",
+              "tip": "Finals version, coming soon.",
+              "tone": "grey",
+              "note": false
+            }
+          ]
         },
         {
           "id": "iths-oif",
