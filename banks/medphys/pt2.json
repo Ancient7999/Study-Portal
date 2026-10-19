@@ -3,17 +3,16 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (60), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 173,
+ "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (56), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 169,
  "forms": [
   "A"
  ],
  "cards": [
   {
    "id": "ch3",
-   "title": "Chapter 3: Fluids, Bernoulli's Equation to Surface Tension",
+   "title": "Chapter 3: Bernoulli's Equation to Surface Tension",
    "cats": [
-    "Chapter 3: Fluids, Flow Rate and Continuity",
     "Chapter 3: Bernoulli's Equation",
     "Chapter 3: Viscosity",
     "Chapter 3: Poiseuille's Law",
@@ -50,69 +49,6 @@
  ],
  "bank": {
   "A": [
-   {
-    "id": "PHY30058",
-    "type": "mcq",
-    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
-    "q": "Which statement best defines a fluid?",
-    "options": [
-     "A substance that keeps a fixed shape and volume",
-     "A substance that flows under shear",
-     "A substance that resists static shear without flowing",
-     "A substance that resists deformation without flowing"
-    ],
-    "correct": 1,
-    "explain": "A fluid deforms continuously when shear is applied. The line 'A substance that keeps a fixed shape and volume' describes a solid. The line 'A substance that resists static shear without flowing' describes solid-like shear resistance. The line 'A substance that resists deformation without flowing' denies flow."
-   },
-   {
-    "id": "PHY30059",
-    "type": "multi",
-    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
-    "q": "Which properties are shared by liquids and gases because they are fluids? Select all that apply.",
-    "options": [
-     "They flow under pressure gradients.",
-     "They cannot sustain static shear.",
-     "They deform continuously when sheared.",
-     "They keep a fixed shape under shear."
-    ],
-    "correct": [
-     0,
-     1,
-     2
-    ],
-    "explain": "Fluids flow under pressure gradients, cannot sustain static shear, and deform continuously when sheared. Keeping a fixed shape describes a solid, not a fluid."
-   },
-   {
-    "id": "PHY30060",
-    "type": "saq",
-    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
-    "q": "A vessel narrows from A₁ = 0.12 m² to A₂ = 0.03 m². If v₁ = 0.40 m/s, what is v₂ in m/s?",
-    "explain": "For steady incompressible flow the volume flow rate is constant, A₁v₁ = A₂v₂, so v₂ = A₁v₁ / A₂ = 0.12 × 0.40 / 0.03 = 1.6 m/s. The smaller area gives the larger velocity.",
-    "answer": "1.6",
-    "accept": [
-     "1.60",
-     "1.6 m/s",
-     "1.60 m/s"
-    ]
-   },
-   {
-    "id": "PHY30061",
-    "type": "multi",
-    "cat": "Chapter 3: Fluids, Flow Rate and Continuity",
-    "q": "Which statements correctly describe flow rate and the continuity equation for blood flow? Select all that apply.",
-    "options": [
-     "Volume flow rate is Q = A v.",
-     "Mass flow rate is Qₘ = ρ A v.",
-     "Steady incompressible flow gives A₁v₁ = A₂v₂.",
-     "Mass flow rate is Qₘ = A v / ρ."
-    ],
-    "correct": [
-     0,
-     1,
-     2
-    ],
-    "explain": "Volume flow rate is area times velocity, mass flow rate multiplies it by density, and steady incompressible continuity gives A₁v₁ = A₂v₂. The line 'Qₘ = A v / ρ' divides by density instead of multiplying."
-   },
    {
     "id": "PHY30001",
     "type": "mcq",

@@ -41,7 +41,7 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "3 sets by chapter · 173 questions · choice, select-all, linking, stepped & short answer · study notes",
+          "subtitle": "3 sets by chapter · 169 questions · choice, select-all, linking, stepped & short answer · study notes",
           "bank": "banks/medphys/pt2.json",
           "locked": false,
           "draft": true,
