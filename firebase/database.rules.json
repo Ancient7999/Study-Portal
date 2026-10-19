@@ -196,6 +196,9 @@
       "$lobbyId": {
         ".write": "auth != null && ((!data.exists() && newData.child('leader').val() == auth.uid) || (data.exists() && (data.child('leader').val() == auth.uid || data.child('members').child(auth.uid).exists() || newData.child('members').child(auth.uid).exists() || (!newData.exists() && (!data.hasChild('members') || data.child('members').val() == null)))))",
         ".validate": "!newData.exists() || (newData.hasChildren(['leader','status','createdAt','chatSessionId']) && newData.child('leader').isString() && newData.child('status').isString() && newData.child('createdAt').isNumber() && newData.child('chatSessionId').isString())",
+        "leader": {
+          ".validate": "newData.isString() && (!data.exists() || newData.val() == data.val() || data.val() == auth.uid || (newData.val() == auth.uid && newData.parent().child('members').child(auth.uid).exists() && !newData.parent().child('members').child(data.val()).exists()))"
+        },
         "members": {
           "$uid": {
             ".write": "auth != null && (auth.uid == $uid || root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid || (data.exists() && root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists()))",

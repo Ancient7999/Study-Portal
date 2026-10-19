@@ -71,6 +71,8 @@
       document.body.appendChild(bar);
       bar.querySelector('#splitExitBtn').onclick = () => {
         const id = state.lobbyId;
+        // leaving a lobby is an explicit, confirmed action
+        if (id && global.StudyLobby && StudyLobby.confirmLeave) { StudyLobby.confirmLeave(id); return; }
         leave({ skipSets: false, silent: true });
         if (id && global.StudyLobby && StudyLobby.leave) {
           StudyLobby.leave(id).catch(() => {});
@@ -144,7 +146,15 @@
     return false;
   }
 
-  async function joinLobbySession(lobbyId) {
+  /* one join at a time: lobby value events (heartbeats, pane writes) can arrive while a join is still loading banks */
+  function joinLobbySession(lobbyId) {
+    if (state.lobbyId === lobbyId && state.session) return Promise.resolve();
+    if (state.joining === lobbyId && state.joinPromise) return state.joinPromise;
+    state.joining = lobbyId;
+    state.joinPromise = joinLobbySessionInner(lobbyId).finally(() => { if (state.joining === lobbyId) { state.joining = null; state.joinPromise = null; } });
+    return state.joinPromise;
+  }
+  async function joinLobbySessionInner(lobbyId) {
     if (state.lobbyId === lobbyId && state.session) return;
     leave({ skipSets: true, silent: true });
     state.lobbyId = lobbyId;
@@ -360,6 +370,8 @@
             btn.disabled = true;
           }
           if (!mine && pane.selected === oi) btn.classList.add('ai-hover');
+          const lp = pane.lastPick;
+          if (!mine && lp && lp.q === qIndex && lp.i === oi && Date.now() - (lp.at || 0) < 1500) btn.classList.add(lp.ok ? 'pick-flash-ok' : 'pick-flash-bad');
           opts.appendChild(btn);
         });
         body.appendChild(opts);
@@ -488,7 +500,13 @@
     });
   }
 
-  async function answer(optIdx) {
+  function answer(optIdx) {
+    return answerInner(optIdx).catch((e) => {
+      console.warn('[split] answer not saved', e);
+      toast(/PERMISSION/i.test(String(e && (e.code || e.message))) ? 'Answer not saved · the database refused the write' : 'Answer not saved · check your connection');
+    });
+  }
+  async function answerInner(optIdx) {
     if (!state.lobbyId || !state.myUid || !state.session) return;
     if (isSpectator()) {
       toast('Spectating — answers disabled');
@@ -501,6 +519,9 @@
     const q = qs[qIndex];
     if (!q) return;
 
+    // every pick is shared (lastPick) so other members and spectators see the flash
+    ensureDb().ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid + '/lastPick')
+      .set({ q: qIndex, i: optIdx, ok: optIdx === q.correct, at: Date.now() }).catch(() => {});
     if (optIdx !== q.correct) {
       if (window.StudyAchievements && typeof StudyAchievements.recordWrong === 'function') {
         StudyAchievements.recordWrong();
@@ -527,10 +548,13 @@
       await ensureDb()
         .ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid)
         .update({ selected: optIdx, answers: answers, score: score, updatedAt: Date.now() });
+      const lid = state.lobbyId, me = state.myUid;
       setTimeout(() => {
+        if (!lid || state.lobbyId !== lid) return;
         ensureDb()
-          .ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid)
-          .update({ selected: null, qIndex: nextIndex, updatedAt: Date.now() });
+          .ref('lobbies/' + lid + '/session/panes/' + me)
+          .update({ selected: null, qIndex: nextIndex, updatedAt: Date.now() })
+          .catch((e) => { console.warn('[split] next question not saved', e); toast('Progress not saved · check your connection'); });
       }, 450);
     } else {
       await ensureDb()
@@ -588,6 +612,8 @@
     const bar = document.getElementById('splitModeBar');
     if (bar) bar.classList.add('hidden');
     document.body.classList.remove('split-quiz-active', 'classic-quiz-active');
+    if (global.StudyCursors && StudyCursors.syncFromParty) { try { StudyCursors.syncFromParty(); } catch (e) {} }
+    if (global.StudyLobby && StudyLobby.refresh) { try { StudyLobby.refresh(); } catch (e) {} }
     if (global.StudyMastery && typeof StudyMastery.endSession === 'function') {
       try {
         StudyMastery.endSession();
@@ -609,6 +635,10 @@
   global.StudySplitQuiz = {
     joinLobbySession,
     leave,
+    getLobbyId: () => (state.session ? state.lobbyId : null),
+    getSession: () => state.session,
+    paneQuestions: (p) => paneQuestions(p),
+    rerender: () => { if (state.session) render(); },
     loadBank, // read-only: the multiple-choice questions party mode would use (bank, form, card)
     bankKey,
     MAX_SLOTS

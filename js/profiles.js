@@ -166,6 +166,10 @@
     }
   }
 
+  /* lobbies, panes and presence listen for this to keep your callsign and level current */
+  function emitProfile() {
+    try { global.dispatchEvent(new CustomEvent('study:profile', { detail: Object.assign({}, state.profile) })); } catch (e) {}
+  }
   async function saveDisplayName(name) {
     const cleaned = String(name || '').trim().slice(0, 16);
     if (cleaned.length < 1) throw new Error('Name is required');
@@ -186,6 +190,7 @@
     state.profile = payload;
     renderChip();
     fillModal();
+    emitProfile();
     return payload;
   }
 
@@ -242,6 +247,7 @@
       });
       renderChip();
       fillModal();
+      emitProfile();
       if (leveled != null) celebrateLevelUp(leveled);
     } catch (e) {
       console.warn('profile bump failed', e);
@@ -433,10 +439,12 @@
       '<button type="button" class="profile-auth-tab" data-auth-tab="signin" id="profileAuthTabSignin">Sign in</button>' +
       '</div>' +
       '<p class="profile-auth-lead" id="profileAuthLead">Claim this guest progress so it follows you on any device.</p>' +
+      '<form class="profile-auth-form" id="profileAuthForm" novalidate>' +
       '<label class="profile-label" for="profileAuthEmail">Email</label>' +
-      '<input id="profileAuthEmail" class="profile-input" type="email" autocomplete="email" placeholder="you@example.com" />' +
+      '<input id="profileAuthEmail" name="email" class="profile-input" type="email" autocomplete="username" placeholder="you@example.com" />' +
       '<label class="profile-label" for="profileAuthPassword">Password</label>' +
-      '<input id="profileAuthPassword" class="profile-input" type="password" autocomplete="new-password" placeholder="At least 6 characters" />' +
+      '<input id="profileAuthPassword" name="password" class="profile-input" type="password" autocomplete="new-password" placeholder="At least 6 characters" />' +
+      '</form>' +
       '<div class="profile-auth-actions">' +
       '<button type="button" class="btn-gold" id="profileAuthEmailBtn">Register</button>' +
             '</div>' +
@@ -656,8 +664,10 @@
         '<h3 id="profileTitle">Commander profile</h3>' +
         '<p class="profile-help">Callsign, rank, and sortie count. Level rises every 10 correct lock-ins.</p>' +
         '</div></div>' +
+        '<form class="profile-name-form" id="profileNameForm" autocomplete="off" novalidate>' +
         '<label class="profile-label" for="profileNameInput">Callsign</label>' +
-        '<input id="profileNameInput" class="profile-input" maxlength="16" autocomplete="nickname" placeholder="Your display name" />' +
+        '<input id="profileNameInput" name="pp-callsign" class="profile-input" type="text" maxlength="16" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="done" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" aria-describedby="profileStatus" placeholder="Your display name" />' +
+        '</form>' +
         '<div class="profile-xp-wrap">' +
         '<div class="profile-xp-head"><span>EXP</span><span id="profileXpLabel">0 / 10</span></div>' +
         '<div class="pc-bar-track lg"><span class="pc-bar-fill exp" id="profileXpFill" style="width:0%"></span></div>' +
@@ -678,18 +688,29 @@
         if (e.target === overlay) closeProfileModal();
       });
       overlay.querySelector('#profileCloseBtn').addEventListener('click', closeProfileModal);
-      overlay.querySelector('#profileSaveBtn').addEventListener('click', async function () {
+      async function confirmAndSave() {
         const input = overlay.querySelector('#profileNameInput');
         const status = overlay.querySelector('#profileStatus');
+        const next = String(input.value || '').trim().slice(0, 16);
+        const cur = String((state.profile && state.profile.displayName) || '').trim();
+        if (!next) { status.textContent = 'Name is required'; input.focus(); return; }
+        if (next === cur) { status.textContent = 'That is already your callsign'; return; }
+        const ok = global.StudyConfirm && StudyConfirm.ask
+          ? await StudyConfirm.ask({ title: 'Change your callsign to "' + next + '"?', text: 'Lobby seats and party panes show the new name right away.', confirm: 'Confirm', cancel: 'Cancel' })
+          : true;
+        if (!ok) { status.textContent = ''; input.focus(); return; }
         try {
           status.textContent = 'Saving…';
-          await saveDisplayName(input.value);
+          await saveDisplayName(next);
           status.textContent = 'Saved';
           toast('Callsign locked in');
         } catch (e) {
           status.textContent = e.message || 'Save failed';
         }
-      });
+      }
+      overlay.querySelector('#profileSaveBtn').addEventListener('click', confirmAndSave);
+      overlay.querySelector('#profileNameForm').addEventListener('submit', function (e) { e.preventDefault(); confirmAndSave(); });
+      overlay.querySelector('#profileAuthForm').addEventListener('submit', function (e) { e.preventDefault(); });
       overlay.querySelector('#profileNameInput').addEventListener('input', function () {
         const v = overlay.querySelector('#profileNameInput').value || 'S';
         const el = document.getElementById('profileHeroInit');
@@ -799,6 +820,7 @@
   // Registered on window in the capture phase before the quiz engine's own Esc handler.
   global.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
+    if (global.StudyConfirm && StudyConfirm.isOpen && StudyConfirm.isOpen()) return; // the confirm dialog takes Esc first
     const top = topOverlay();
     if (!top || !LAYERED[top.id]) return;
     const btn = top.querySelector(LAYERED[top.id]);

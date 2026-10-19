@@ -71,8 +71,12 @@
   }
 
   function uid() {
-    const u = firebase.auth && firebase.auth().currentUser;
-    return u ? u.uid : null;
+    try {
+      const u = global.firebase && firebase.auth && firebase.auth().currentUser;
+      return u ? u.uid : null;
+    } catch (e) {
+      return null; // SDK not loaded (offline or blocked)
+    }
   }
 
   function profileBits() {
@@ -226,13 +230,36 @@
         notifyChatLeave();
       }
     } else if (fresh.leader && !(fresh.members || {})[fresh.leader]) {
-      // Transfer leadership to earliest remaining member
-      const ids = Object.keys(fresh.members || {}).sort(
-        (a, b) => (fresh.members[a].joinedAt || 0) - (fresh.members[b].joinedAt || 0)
-      );
-      if (ids.length) {
-        await db.ref('lobbies/' + lobbyId + '/leader').set(ids[0]);
-      }
+      await claimLeadIfNext(lobbyId, fresh);
+    }
+  }
+
+  /* —— host migration ——
+     successor = earliest joined remaining member (then seat order, then id); only the successor claims,
+     with a transaction on the leader field, so two clients can never both take it */
+  function successorOf(L, excludeUid) {
+    const mem = (L && L.members) || {};
+    const seatOf = (id) => { const k = findMySeat(L, id); return k == null ? 99 : Number(k); };
+    const ids = Object.keys(mem).filter((id) => id !== excludeUid && mem[id] && mem[id].role !== 'spectate');
+    const pool = ids.length ? ids : Object.keys(mem).filter((id) => id !== excludeUid);
+    pool.sort((a, b) => ((mem[a].joinedAt || 0) - (mem[b].joinedAt || 0)) || (seatOf(a) - seatOf(b)) || (a < b ? -1 : a > b ? 1 : 0));
+    return pool[0] || null;
+  }
+  async function claimLeadIfNext(lobbyId, L) {
+    const me = uid();
+    if (!me || !L || !L.members || !L.members[me] || !L.leader || L.members[L.leader]) return false;
+    if (successorOf(L) !== me) return false;
+    const old = L.leader;
+    if (state.claiming === lobbyId + ':' + old) return false;
+    state.claiming = lobbyId + ':' + old;
+    try {
+      const r = await ensureDb().ref('lobbies/' + lobbyId + '/leader').transaction((cur) => (cur === old ? me : undefined));
+      return !!(r && r.committed);
+    } catch (e) {
+      console.warn('[lobby] leadership not claimed', e);
+      return false;
+    } finally {
+      setTimeout(() => { if (state.claiming === lobbyId + ':' + old) state.claiming = null; }, 3000);
     }
   }
 
@@ -251,11 +278,8 @@
     });
     
     if (lobby.leader === memberUid) {
-      const remainingMembers = Object.keys(lobby.members || {}).filter(id => id !== memberUid);
-      if (remainingMembers.length > 0) {
-        remainingMembers.sort((a, b) => (lobby.members[a].joinedAt || 0) - (lobby.members[b].joinedAt || 0));
-        updates['leader'] = remainingMembers[0];
-      }
+      const next = successorOf(lobby, memberUid);
+      if (next) updates['leader'] = next;
     }
 
     await db.ref('lobbies/' + lobbyId).update(updates);
@@ -307,7 +331,7 @@
       '<div class="lobby-panel-head">' +
       '<h3>Online Lobbies</h3>' +
       '<span class="lobby-head-btns">' +
-      '<button type="button" class="chat-minimize lobby-collapse-btn" id="lobbyCollapseBtn" aria-label="Collapse lobby">–</button>' +
+      '<button type="button" class="chat-minimize lobby-collapse-btn" id="lobbyCollapseBtn" aria-label="Collapse lobby" title="Collapse to a small bar">–</button>' +
       '<button type="button" class="chat-minimize" id="lobbyCloseBtn" aria-label="Close">×</button>' +
       '</span>' +
       '</div>' +
@@ -352,7 +376,7 @@
       '</section>';
     document.body.appendChild(panel);
     panel.querySelector('#lobbyCloseBtn').onclick = () => setOpen(false);
-    panel.querySelector('#lobbyCollapseBtn').onclick = () => setCollapsed(true);
+    panel.querySelector('#lobbyCollapseBtn').onclick = () => setCollapsed(true, { user: true });
     const fab = document.createElement('button');
     fab.type = 'button';
     fab.id = 'lobbyFab';
@@ -363,6 +387,23 @@
     fab.textContent = '👥';
     fab.onclick = () => setCollapsed(false);
     document.body.appendChild(fab);
+    // in a lobby the panel never hides completely: it shrinks to this bar (desktop) / chip (phone)
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.id = 'lobbyPill';
+    pill.className = 'lobby-pill';
+    pill.hidden = true;
+    pill.setAttribute('aria-expanded', 'false');
+    pill.innerHTML = '<span class="lp-ico" aria-hidden="true">👥</span><span class="lp-text" id="lobbyPillText">Lobby</span><span class="lp-short" id="lobbyPillShort" aria-hidden="true"></span>' +
+      '<span class="lp-badge" id="lobbyPillBadge" hidden></span><span class="lp-chev" aria-hidden="true">▾</span>';
+    pill.onclick = () => setCollapsed(false);
+    document.body.appendChild(pill);
+    const notes = document.createElement('div');
+    notes.id = 'lobbyNotes';
+    notes.className = 'lobby-notes';
+    notes.setAttribute('role', 'status');
+    notes.setAttribute('aria-live', 'polite');
+    document.body.appendChild(notes);
     if (global.matchMedia) {
       const mq = global.matchMedia(MOBILE_MQ);
       const onMq = () => syncCollapse();
@@ -444,6 +485,22 @@
     const panel = document.getElementById('lobbyPanel');
     const fab = document.getElementById('lobbyFab');
     if (!panel || !fab) return;
+    const pill = document.getElementById('lobbyPill');
+    const mineL = myJoinedLobby();
+    panel.classList.toggle('in-lobby', !!mineL);
+    if (mineL && pill) {
+      // member of a lobby: the panel is either open or the compact bar, never gone
+      if (!state.open) { state.open = true; state.collapsed = true; }
+      const c = !!state.collapsed;
+      panel.hidden = c;
+      panel.classList.toggle('lobby-collapsed', c);
+      fab.hidden = true;
+      pill.hidden = !c;
+      pill.setAttribute('aria-expanded', String(!c));
+      paintPill(mineL);
+      return;
+    }
+    if (pill) pill.hidden = true;
     const mobile = isMobile();
     const inLobby = !!(state.activeLobbyId || (typeof getActiveLobbyId === 'function' && getActiveLobbyId()));
     const collapsed = mobile && !!state.collapsed && (state.open || inLobby);
@@ -452,9 +509,12 @@
     fab.hidden = !(mobile && (collapsed || (inLobby && !state.open)));
     fab.setAttribute('aria-expanded', String(!panel.hidden));
   }
-  function setCollapsed(c) {
+  function setCollapsed(c, o) {
     ensurePanel();
     state.collapsed = !!c;
+    const mineL = myJoinedLobby();
+    if (mineL && mineL.status === 'live') { try { sessionStorage.setItem('lobby_live_collapsed', c ? '1' : '0'); } catch (e) {} }
+    if (!c) { state.unseen = 0; }
     if (!c && !state.open) {
       setOpen(true);
       return;
@@ -464,6 +524,8 @@
 
   function setOpen(open) {
     ensurePanel();
+    // while you are in a lobby, "close" only shrinks the panel to the compact bar
+    if (!open && myJoinedLobby()) { setCollapsed(true, { user: true }); return; }
     state.open = !!open;
     if (state.open) state.collapsed = false;
     const panel = document.getElementById('lobbyPanel');
@@ -882,8 +944,27 @@
         render();
         return;
       }
+      // compare against our own last copy (the open-lobbies list listener also refreshes state.lobbies)
+      const prevVal = state.notesSeen === lobbyId ? state.notePrev : null;
       state.lobbies[lobbyId] = val;
       const me = uid();
+      try { diffNotes(lobbyId, prevVal, val); } catch (e) { console.warn('[lobby] notes', e); }
+      state.notesSeen = lobbyId;
+      try { state.notePrev = JSON.parse(JSON.stringify(val)); } catch (e) { state.notePrev = val; }
+      // the quiz going live folds the panel into the compact bar (your last choice this session wins)
+      if (me && val.members && val.members[me] && val.status === 'live') {
+        const key = lobbyId + ':' + (val.startedAt || '');
+        if (state.autoKey !== key) {
+          state.autoKey = key;
+          let pref = null;
+          try { pref = sessionStorage.getItem('lobby_live_collapsed'); } catch (e) {}
+          state.open = true;
+          state.collapsed = pref !== '0';
+          if (!state.collapsed) state.unseen = 0;
+        }
+      }
+      try { syncMyProfile(); } catch (e) {}
+      if (me && val.members && val.members[me] && val.leader && !val.members[val.leader]) claimLeadIfNext(lobbyId, val);
       if (me && val.members && !val.members[me] && state.activeLobbyId === lobbyId) {
         // Kicked / removed remotely
         state.activeLobbyId = null;
@@ -973,8 +1054,128 @@
     return joinLobby(id, { role: 'play' });
   }
 
+  /* —— compact bar —— */
+  function pendingRequests(L) {
+    const me = uid();
+    if (!L || L.leader !== me || !L.joinRequests) return [];
+    return Object.keys(L.joinRequests).filter((k) => L.joinRequests[k] && L.joinRequests[k].status === 'pending');
+  }
+  function paintPill(L) {
+    const t = document.getElementById('lobbyPillText');
+    const b = document.getElementById('lobbyPillBadge');
+    if (!t || !b || !L) return;
+    const n = Math.max(memberCount(L), seatCount(L));
+    const st = L.status === 'live' ? 'Live' : 'Open';
+    t.textContent = 'Lobby · ' + n + '/' + SEATS + ' · ' + st;
+    const sh = document.getElementById('lobbyPillShort');
+    if (sh) sh.textContent = n + '/' + SEATS;
+    const count = pendingRequests(L).length + (state.unseen | 0);
+    b.hidden = !count;
+    b.textContent = String(count);
+    const pill = document.getElementById('lobbyPill');
+    if (pill) {
+      pill.classList.toggle('live', L.status === 'live');
+      pill.setAttribute('aria-label', t.textContent + (count ? ' · ' + count + ' new' : '') + ' · expand');
+      pill.title = 'Expand the lobby';
+    }
+  }
+
+  /* —— live updates: banners at the top (join requests carry Accept / Decline) —— */
+  const NOTE_MS = 6000;
+  function noteBox() {
+    let n = document.getElementById('lobbyNotes');
+    if (!n) { ensurePanel(); n = document.getElementById('lobbyNotes'); }
+    return n;
+  }
+  function pushNote(key, text, opts) {
+    opts = opts || {};
+    const box = noteBox();
+    if (!box) return;
+    let el = key ? box.querySelector('[data-key="' + key.replace(/"/g, '') + '"]') : null;
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'lobby-note' + (opts.kind ? ' ' + opts.kind : '');
+      if (key) el.dataset.key = key;
+      box.appendChild(el);
+    }
+    el.innerHTML = '<span class="lobby-note-ico" aria-hidden="true">' + (opts.icon || '👥') + '</span><span class="lobby-note-text"></span>' +
+      (opts.actions ? '<span class="lobby-note-btns">' + opts.actions.map((a, i) => '<button type="button" class="chat-tool-btn' + (a.primary ? ' primary' : '') + '" data-i="' + i + '">' + esc(a.label) + '</button>').join('') + '</span>' : '') +
+      '<button type="button" class="lobby-note-x" aria-label="Dismiss">×</button>';
+    el.querySelector('.lobby-note-text').textContent = text;
+    el.querySelectorAll('[data-i]').forEach((b) => { b.onclick = () => { const a = opts.actions[+b.dataset.i]; el.remove(); if (a && a.run) a.run(); }; });
+    el.querySelector('.lobby-note-x').onclick = () => el.remove();
+    clearTimeout(el._t);
+    if (!opts.sticky) el._t = setTimeout(() => el.remove(), NOTE_MS);
+    if (state.collapsed) { state.unseen = (state.unseen | 0) + (opts.count === false ? 0 : 1); paintPill(myJoinedLobby()); }
+    if (opts.sound && global.StudyAudio && typeof StudyAudio.notify === 'function') { try { StudyAudio.notify(); } catch (e) {} }
+  }
+  function dropNote(key) {
+    const box = document.getElementById('lobbyNotes');
+    const el = box && box.querySelector('[data-key="' + key + '"]');
+    if (el) el.remove();
+  }
+  function respondRequest(lobbyId, reqUid, ok) {
+    return ensureDb().ref('lobbies/' + lobbyId + '/joinRequests/' + reqUid + '/status').set(ok ? 'accepted' : 'declined')
+      .catch((e) => toast((e && e.message) || 'Could not answer the request'));
+  }
+  function diffNotes(lobbyId, prev, cur) {
+    const me = uid();
+    if (!cur || !me || !cur.members || !cur.members[me]) return;
+    // join requests (leader): one sticky banner each, with the answer buttons right there
+    const reqs = cur.leader === me ? pendingRequests(cur) : [];
+    reqs.forEach((k) => {
+      const r = cur.joinRequests[k];
+      const had = prev && prev.joinRequests && prev.joinRequests[k] && prev.joinRequests[k].status === 'pending';
+      if (had && document.querySelector('#lobbyNotes [data-key="req-' + k + '"]')) return;
+      pushNote('req-' + k, (r.displayName || 'Someone') + ' wants to join', {
+        icon: '✋', kind: 'req', sticky: true, sound: !had, count: false,
+        actions: [{ label: 'Accept', primary: true, run: () => respondRequest(lobbyId, k, true) }, { label: 'Decline', run: () => respondRequest(lobbyId, k, false) }]
+      });
+    });
+    if (prev && prev.joinRequests) Object.keys(prev.joinRequests).forEach((k) => { if (reqs.indexOf(k) < 0) dropNote('req-' + k); });
+    if (!prev) return; // first look: no "joined" noise for people already there
+    if (prev.leader && cur.leader && prev.leader !== cur.leader && cur.members[cur.leader]) {
+      const msg = cur.leader === me ? 'You are now the lobby leader' : (cur.members[cur.leader].displayName || 'Someone') + ' is now the lobby leader';
+      pushNote('lead', msg, { icon: '★', count: false });
+      toast(msg);
+    }
+    const pm = prev.members || {}, cm = cur.members || {};
+    Object.keys(cm).forEach((k) => {
+      if (k === me || pm[k]) return;
+      const spec = cm[k].role === 'spectate';
+      pushNote('join-' + k, (cm[k].displayName || 'Someone') + (spec ? ' joined as a spectator' : ' joined the lobby'), { icon: spec ? '👁' : '👋' });
+    });
+    Object.keys(pm).forEach((k) => { if (k !== me && !cm[k]) pushNote('left-' + k, (pm[k].displayName || 'Someone') + ' left the lobby', { icon: '🚪' }); });
+    const ps = prev.spectators || {}, cs = cur.spectators || {};
+    Object.keys(cs).forEach((k) => { if (k !== me && !ps[k] && !cm[k]) pushNote('spec-' + k, (cs[k].displayName || 'Someone') + ' is spectating', { icon: '👁' }); });
+    if (cur.share && !prev.share) pushNote('share', 'Screen share started' + (cur.share.sharedByName ? ' by ' + cur.share.sharedByName : ''), { icon: '🖥' });
+    if (cur.status === 'live' && prev.status !== 'live') pushNote('live', 'The quiz is live', { icon: '▶', count: false });
+  }
+
+  /* —— callsign and level follow your profile live (members, seat and pane records) —— */
+  function syncMyProfile() {
+    const id = state.activeLobbyId;
+    const me = uid();
+    const L = id && state.lobbies[id];
+    if (!me || !L || !L.members || !L.members[me]) return;
+    const b = profileBits();
+    const db = ensureDb();
+    const jobs = [];
+    const diff = (rec) => rec && (rec.displayName !== b.displayName || (rec.level || 1) !== b.level);
+    if (diff(L.members[me])) jobs.push(db.ref('lobbies/' + id + '/members/' + me).update({ displayName: b.displayName, level: b.level }));
+    const sk = findMySeat(L, me);
+    if (sk != null && L.seats && diff(L.seats[sk])) jobs.push(db.ref('lobbies/' + id + '/seats/' + sk).update({ displayName: b.displayName, level: b.level }));
+    const pane = L.session && L.session.panes && L.session.panes[me];
+    if (diff(pane)) jobs.push(db.ref('lobbies/' + id + '/session/panes/' + me).update({ displayName: b.displayName, level: b.level, updatedAt: Date.now() }));
+    if (jobs.length) Promise.all(jobs).catch((e) => console.warn('[lobby] profile not synced', e));
+  }
+  global.addEventListener('study:profile', () => { try { syncMyProfile(); } catch (e) {} });
+
   function render() {
     syncCollapse();
+    if (global.StudyCursors && StudyCursors.syncFromParty) {
+      try { StudyCursors.syncFromParty(); } catch (e) {}
+    }
     if (global.StudySpectate && StudySpectate.renderLobbyBox) {
       try { StudySpectate.renderLobbyBox(); } catch (e) {}
     }
@@ -1204,13 +1405,32 @@
         );
     });
     const leaveBtn = detail.querySelector('#lobbyLeaveBtn');
-    if (leaveBtn) leaveBtn.onclick = () => leaveLobby(id).catch((e) => toast(e.message || 'Leave failed'));
+    if (leaveBtn) leaveBtn.onclick = () => confirmLeave(id);
     const joinHere = detail.querySelector('#lobbyJoinHereBtn');
     if (joinHere) joinHere.onclick = () => joinAction(id).catch((e) => toast(e.message || 'Join failed'));
     const specBtn = detail.querySelector('#lobbySpectateBtn');
     if (specBtn)
       specBtn.onclick = () =>
         joinLobby(id, { role: 'spectate' }).catch((e) => toast(e.message || 'Spectate failed'));
+  }
+
+  function leaveText(L) {
+    const me = uid();
+    let t = L && L.status === 'live' ? 'You leave the live quiz and your seat opens up.' : 'Your seat opens up for someone else.';
+    if (L && L.leader === me) {
+      const next = successorOf(L, me);
+      const nm = next && L.members[next] && L.members[next].displayName;
+      t += next ? ' Leadership passes to ' + (nm || 'the next player') + '.' : ' You are the last member, so the lobby closes.';
+    }
+    return t;
+  }
+  function confirmLeave(id) {
+    id = id || state.activeLobbyId;
+    const L = id && state.lobbies[id];
+    const ask = global.StudyConfirm && StudyConfirm.ask
+      ? StudyConfirm.ask({ title: 'Leave this lobby?', text: leaveText(L), confirm: 'Leave', cancel: 'Stay' })
+      : Promise.resolve(global.confirm ? global.confirm('Leave this lobby?') : true);
+    return ask.then((ok) => (ok ? leaveLobby(id).catch((e) => toast(e.message || 'Leave failed')) : null));
   }
 
   function open() {
@@ -1274,6 +1494,11 @@
     create: createLobby,
     join: joinLobby,
     leave: leaveLobby,
+    confirmLeave,
+    refresh: () => render(),
+    notify: pushNote,
+    syncProfile: () => syncMyProfile(),
+    successorOf,
     start: startLobby,
     setSeatRole,
     setSeatBank,

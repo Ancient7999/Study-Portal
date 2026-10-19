@@ -87,8 +87,8 @@
       '<button type="button" class="st-btn st-zoom" aria-label="Enlarge" title="Enlarge">⤢</button>' +
       '<button type="button" class="st-btn st-close" aria-label="Stop watching" title="Stop watching">×</button></div>' +
       '<div class="st-body"><div class="st-wait">Connecting…</div></div>' +
-      '<div class="st-foot"><button type="button" class="chat-tool-btn st-request">Request to join</button><span class="st-note"></span></div>';
-    const t = { el, off: null, lobby: null, req: null };
+      '<div class="st-foot"><button type="button" class="btn-gold st-request">Request to join</button><span class="st-note"></span></div>';
+    const t = { el, off: null, lobby: null, req: null, qs: {}, cursors: {}, coff: null };
     tiles[lobbyId] = t;
     dock().appendChild(el);
     dock();
@@ -102,6 +102,12 @@
     };
     ref.on('value', onVal, (e) => note(lobbyId, rulesMsg(e)));
     t.off = () => ref.off('value', onVal);
+    // the players' live cursors, drawn on the spectator's copy of their panes
+    const cref = db().ref('lobbies/' + lobbyId + '/cursors');
+    const onCur = (snap) => { t.cursors = snap.val() || {}; placeCursors(lobbyId); };
+    cref.on('value', onCur, () => {});
+    t.coff = () => cref.off('value', onCur);
+    if (!t.ro && global.ResizeObserver) { t.ro = new ResizeObserver(() => placeCursors(lobbyId)); t.ro.observe(el); }
     const sref = db().ref('lobbies/' + lobbyId + '/spectators/' + me);
     try {
       await sref.set({ displayName: myName(), since: Date.now(), lastSeen: Date.now() });
@@ -120,6 +126,8 @@
     const t = tiles[lobbyId];
     if (!t) return;
     if (t.off) t.off();
+    if (t.coff) t.coff();
+    if (t.ro) t.ro.disconnect();
     if (t.req) t.req();
     t.el.remove();
     delete tiles[lobbyId];
@@ -138,6 +146,135 @@
       el.classList.toggle('zoomed', z);
     });
     document.body.classList.toggle('spectate-zoomed', Object.keys(tiles).some((id) => tiles[id].el.classList.contains('zoomed')));
+    Object.keys(tiles).forEach((id) => {
+      const b = tiles[id].el.querySelector('.st-zoom');
+      const z = tiles[id].el.classList.contains('zoomed');
+      if (b) { b.textContent = z ? '⤡' : '⤢'; b.title = z ? 'Shrink' : 'Enlarge'; b.setAttribute('aria-label', b.title); }
+      setTimeout(() => placeCursors(id), 30);
+    });
+  }
+
+  /* —— read-only copy of the session's question interface (pane mode: every player's pane; classic: the shared card) ——
+     built only from lobby session data (question index, picks, results) and the public bank; nothing personal */
+  function questionsFor(t, p, L) {
+    const S = global.StudySplitQuiz;
+    const bank = (p && p.bank) || (L.session && L.session.bank) || L.bank;
+    const form = (p && p.form) || (L.session && L.session.form) || L.form || 'A';
+    const card = p && p.bank ? p.card || null : (L.session && L.session.card) || L.card || null;
+    if (!S || !S.loadBank || !bank) return null;
+    const key = bank + '|' + form + '|' + (card || '');
+    if (t.qs[key] && t.qs[key].v) return t.qs[key].v;
+    if (!t.qs[key]) {
+      t.qs[key] = { p: S.loadBank(bank, form, card).then((v) => { t.qs[key].v = v; const lid = t.el.dataset.lobby; if (tiles[lid]) renderTile(lid).catch(() => {}); }, () => { t.qs[key].v = []; }) };
+    }
+    return null;
+  }
+  function hueOf(name) {
+    let h = 0; const s2 = String(name || 'x');
+    for (let i = 0; i < s2.length; i++) h = (h * 31 + s2.charCodeAt(i)) >>> 0;
+    return h % 360;
+  }
+  function paneBox(t, L, p, id, opts) {
+    const qs = questionsFor(t, p, L);
+    const n = qs ? qs.length : 0;
+    const qi = Math.min(p.qIndex | 0, Math.max(0, n - 1));
+    const q = qs && qs[qi];
+    const name = p.displayName || (L.members && L.members[id] && L.members[id].displayName) || 'Player';
+    const lv = p.level || (L.members && L.members[id] && L.members[id].level) || 1;
+    const lp = p.lastPick;
+    const fresh = lp && lp.q === qi && Date.now() - (lp.at || 0) < 1500;
+    let opts2 = '';
+    if (q) {
+      opts2 = (q.options || []).map((o, oi) => {
+        let c = 'pane-opt-btn';
+        if (p.selected === oi) c += oi === q.correct ? ' correct' : ' wrong';
+        if (fresh && lp.i === oi) c += lp.ok ? ' pick-flash-ok' : ' pick-flash-bad';
+        return '<button type="button" class="' + c + '" disabled tabindex="-1">' + esc(o) + '</button>';
+      }).join('');
+    }
+    const status = (n ? 'Q' + (qi + 1) + '/' + n : 'Q' + ((p.qIndex | 0) + 1)) + ' · ' + (p.score | 0) + (p.done ? ' · done' : '') + (p.role === 'spectate' ? ' · spec' : '');
+    return '<div class="party-member-box quiz-pane party-pane st-pane' + (p.done ? ' pane-done' : '') + (opts && opts.focus ? ' pane-focused' : '') + '" data-uid="' + esc(id) + '" style="--friend-hue:' + hueOf(name) + '">' +
+      '<div class="pane-friend-header"><div class="pane-header-row"><span class="pane-label">' + (id === L.leader ? '★ Leader' : 'Player') + '</span><span class="pane-status">' + esc(status) + '</span></div>' +
+      '<div class="pane-friend-name">' + esc(name) + ' · LV' + (lv | 0 || 1) + '</div></div>' +
+      '<div class="pane-body">' + (q
+        ? '<div class="pane-question-text">' + esc(q.q || '') + '</div><div class="pane-options">' + opts2 + '</div>' +
+          (p.selected != null && q.explain ? '<div class="pane-result-msg">' + (p.selected === q.correct ? '✓ ' : '') + esc(q.explain) + '</div>' : '')
+        : '<div class="pane-question-text st-wait">' + (qs ? 'No question' : 'Loading questions…') + '</div>') +
+      '</div></div>';
+  }
+  function sessionView(t, L) {
+    const panes = (L.session && L.session.panes) || {};
+    const ids = Object.keys(panes).sort((a, b) => ((panes[a].seat | 0) - (panes[b].seat | 0)));
+    if (!ids.length) return '';
+    const classic = (L.session && L.session.gameMode === 'classic') || L.gameMode === 'classic';
+    if (classic) {
+      // the shared question card (the leader's question), with the roster of every player
+      const focus = ids.indexOf(L.leader) >= 0 ? L.leader : ids[0];
+      const roster = '<div class="classic-roster st-roster">' + ids.map((id) => {
+        const p = panes[id];
+        return '<span class="classic-roster-chip' + (id === focus ? ' active' : '') + (p.done ? ' done' : '') + '">' + esc(p.displayName || 'Player') + ' · LV' + (p.level || 1) + '<em>' + ((p.qIndex | 0) + 1) + ' · ' + (p.score | 0) + '</em></span>';
+      }).join('') + '</div>';
+      return '<div class="st-session st-classic">' + roster + paneBox(t, L, panes[focus], focus, { focus: true }) + '</div>';
+    }
+    return '<div class="st-session st-panes" data-n="' + ids.length + '">' + ids.map((id) => paneBox(t, L, panes[id], id)).join('') + '</div>';
+  }
+  /* cursor records carry a layout anchor (js/cursors.js): pane:<uid>:opt:<i>, pane:<uid>:q, classic:opt:<i> … */
+  function anchorEl(root, a) {
+    if (!a) return null;
+    let m = /^pane:([^:]+)(?::(opt|q|head):?(\d+)?)?$/.exec(a);
+    if (m) {
+      const box = [...root.querySelectorAll('.party-member-box[data-uid]')].find((b) => b.dataset.uid === m[1]);
+      if (!box) return null;
+      if (!m[2]) return box;
+      if (m[2] === 'opt') return box.querySelectorAll('.pane-opt-btn')[+m[3]] || box;
+      if (m[2] === 'q') return box.querySelector('.pane-question-text') || box;
+      return box.querySelector('.pane-friend-header') || box;
+    }
+    m = /^classic:(opt|q|main):?(\d+)?$/.exec(a);
+    if (m) {
+      const main = root.querySelector('.st-classic .party-member-box');
+      if (!main) return null;
+      if (m[1] === 'opt') return main.querySelectorAll('.pane-opt-btn')[+m[2]] || main;
+      if (m[1] === 'q') return main.querySelector('.pane-question-text') || main;
+      return main;
+    }
+    return null;
+  }
+  function placeCursors(lobbyId) {
+    const t = tiles[lobbyId];
+    if (!t) return;
+    const body = t.el.querySelector('.st-body');
+    let layer = t.el.querySelector('.st-cursors');
+    const view = body && body.querySelector('.st-session');
+    if (!view) { if (layer) layer.innerHTML = ''; return; }
+    if (!layer) { layer = document.createElement('div'); layer.className = 'st-cursors'; t.el.appendChild(layer); }
+    const tr = t.el.getBoundingClientRect();
+    const vr = view.getBoundingClientRect();
+    const now = Date.now();
+    const seen = {};
+    Object.keys(t.cursors || {}).forEach((id) => {
+      const c = t.cursors[id];
+      if (!c || now - (c.updatedAt || 0) > 30000) return;
+      let x, y;
+      const el = anchorEl(view, c.anchor);
+      if (el && typeof c.rx === 'number') { const r = el.getBoundingClientRect(); x = r.left + c.rx * r.width; y = r.top + c.ry * r.height; }
+      else if (typeof c.nx === 'number') { x = vr.left + c.nx * vr.width; y = vr.top + c.ny * vr.height; }
+      else return;
+      if (x < tr.left || y < tr.top || x > tr.right || y > tr.bottom) return;
+      seen[id] = true;
+      let d = layer.querySelector('[data-uid="' + id + '"]');
+      if (!d) {
+        d = document.createElement('div');
+        d.className = 'st-cursor';
+        d.dataset.uid = id;
+        d.innerHTML = '<span class="st-cursor-dot"></span><span class="st-cursor-name"></span>';
+        layer.appendChild(d);
+      }
+      d.style.setProperty('--friend-hue', c.hue != null ? c.hue : hueOf(c.displayName));
+      d.querySelector('.st-cursor-name').textContent = c.displayName || '';
+      d.style.transform = 'translate(' + Math.round(x - tr.left) + 'px,' + Math.round(y - tr.top) + 'px)';
+    });
+    [...layer.children].forEach((d) => { if (!seen[d.dataset.uid]) d.remove(); });
   }
   async function renderTile(lobbyId) {
     const t = tiles[lobbyId];
@@ -145,14 +282,14 @@
     const L = t.lobby;
     const body = t.el.querySelector('.st-body');
     if (!L) {
-      body.innerHTML = '<div class="st-wait">This lobby has closed.</div>';
+      body.__h = ''; body.innerHTML = '<div class="st-wait">This lobby has closed.</div>';
       t.el.querySelector('.st-request').disabled = true;
       return;
     }
     t.el.querySelector('.st-title').textContent = leaderName(L) + "'s lobby";
     t.el.querySelector('.st-viewers').textContent = '👁 ' + freshCount(L.spectators);
     if (spectatingOff(L)) {
-      body.innerHTML = '<div class="st-wait">The leader turned spectating off for this lobby.</div>';
+      body.__h = ''; body.innerHTML = '<div class="st-wait">The leader turned spectating off for this lobby.</div>';
       t.el.querySelector('.st-request').disabled = true;
       const me = uid();
       if (me && L.spectators && L.spectators[me]) db().ref('lobbies/' + lobbyId + '/spectators/' + me).remove().catch(() => {});
@@ -176,19 +313,30 @@
         holder.textContent = 'Shared set unavailable';
       }
       if (!tiles[lobbyId]) return;
-      body.innerHTML = '<div class="share-badge st-badge">Screen Share of ' + esc(s.sharedByName || 'leader') + '</div>';
+      body.__h = ''; body.innerHTML = '<div class="share-badge st-badge">Screen Share of ' + esc(s.sharedByName || 'leader') + '</div>';
       body.appendChild(holder);
       return;
     }
-    // no share: each member's pane progress
-    const panes = (L.session && L.session.panes) || {};
-    const rows = Object.keys(L.members || {}).map((id) => {
-      const m = L.members[id];
-      const p = panes[id];
-      return '<div class="st-row"><span>' + esc(m.displayName) + (id === L.leader ? ' ★' : '') + '</span><em>' +
-        (p ? 'Q' + ((p.qIndex | 0) + 1) + (p.score != null ? ' · ' + p.score : '') : esc(L.status || 'open')) + '</em></div>';
-    });
-    body.innerHTML = '<div class="st-status">' + esc(L.status || 'open') + '</div>' + (rows.join('') || '<div class="st-wait">No players yet</div>');
+    // no share: a read-only copy of the session's question interface
+    const view = L.status === 'live' ? sessionView(t, L) : '';
+    let html;
+    if (view) html = view;
+    else {
+      const rows = Object.keys(L.members || {}).map((id) => {
+        const m = L.members[id];
+        return '<div class="st-row"><span>' + esc(m.displayName) + ' · LV' + (m.level || 1) + (id === L.leader ? ' ★' : '') + '</span><em>' + (m.role === 'spectate' ? 'spectating' : 'ready') + '</em></div>';
+      });
+      html = '<div class="st-lobby-wait"><div class="st-status">' + (L.status === 'live' ? 'Starting…' : 'Waiting for the leader to start') + '</div>' + (rows.join('') || '<div class="st-wait">No players yet</div>') + '</div>';
+    }
+    const live = L.status === 'live';
+    t.el.classList.toggle('st-live', live);
+    const titleEl = t.el.querySelector('.st-title');
+    if (titleEl) titleEl.innerHTML = esc(leaderName(L)) + "'s lobby" + (live ? ' <span class="st-live-dot" title="Live">LIVE</span>' : '');
+    if (body.__h !== html) { body.__h = html; body.innerHTML = html; }
+    placeCursors(lobbyId);
+    // pick flashes fade on their own
+    clearTimeout(t.flashT);
+    if (body.querySelector('.pick-flash-ok,.pick-flash-bad')) t.flashT = setTimeout(() => { body.__h = ''; renderTile(lobbyId).catch(() => {}); }, 1500);
   }
 
   /* —— join requests (spectator side) —— */
@@ -382,25 +530,39 @@
       h += '</section>';
     }
     const L = joinedLobby();
+    let rh = '';
     if (L && L.leader === me) {
       const policy = policyOf(L);
-      h += '<section class="llb-sec"><h4>Join Requests</h4>' +
+      rh += '<section class="llb-sec llb-requests"><h4>Join Requests</h4>' +
         '<div class="llb-field"><label class="bank-picker-label" for="llbPolicy">Who can ask to join</label><select class="chat-tool-input" id="llbPolicy">' +
         ['ask', 'restrict', 'all'].map((p) => '<option value="' + p + '"' + (p === policy ? ' selected' : '') + '>' + ({ ask: 'Ask me', restrict: 'Restrict', all: 'Allow all' }[p]) + '</option>').join('') +
         '</select></div>';
       const reqs = Object.keys(live.requests).filter((k) => live.requests[k] && live.requests[k].status === 'pending');
-      h += reqs.length
+      rh += reqs.length
         ? reqs
           .map((k) => '<div class="llb-row llb-req"><span>' + esc(live.requests[k].displayName) + ' wants to join</span>' +
             '<button type="button" class="chat-tool-btn" data-act="accept" data-uid="' + esc(k) + '">Accept</button>' +
             '<button type="button" class="chat-tool-btn" data-act="decline" data-uid="' + esc(k) + '">Decline</button></div>')
           .join('')
         : '<div class="llb-note">No requests waiting.</div>';
-      h += '</section>';
+      rh += '</section>';
       h += '<section class="llb-sec"><h4>Spectators <span class="llb-count" id="llbViewers">👁 ' + freshCount(live.spectators) + '</span></h4>' +
         (spectatingOff(L) ? '<div class="llb-note">Spectating is off for this lobby.</div>' : '<div class="llb-note">Viewers watching this lobby as a live tile.</div>') +
         '</section>';
     }
+    // join requests sit at the TOP of the panel, right under its header
+    let rbox = document.getElementById('lobbyReqBox');
+    if (!rbox) {
+      rbox = document.createElement('div');
+      rbox.id = 'lobbyReqBox';
+      rbox.className = 'lobby-live-box lobby-req-box';
+      const head = panel.querySelector('.lobby-panel-head');
+      if (head && head.nextSibling) panel.insertBefore(rbox, head.nextSibling); else panel.insertBefore(rbox, panel.firstChild);
+      rbox.addEventListener('click', onBoxClick);
+      rbox.addEventListener('change', onBoxChange);
+    }
+    if (rbox.__h !== rh) { rbox.__h = rh; rbox.innerHTML = rh; }
+    rbox.hidden = !rh;
     if (box.__h !== h) {
       box.__h = h;
       box.innerHTML = h;

@@ -128,13 +128,13 @@
      "M = 1 / (25 cm × f)"
     ],
     "correct": 1,
-    "explain": "The angular magnification is the ratio of the angle subtended by the image to the angle subtended by the object at the near point. When the image is at the near point (25 cm), the formula is M = 25 cm / f, where f is the focal length of the lens in centimeters. A shorter focal length gives a larger magnification. The other options invert the ratio, multiply, or take a reciprocal product, none of which matches the definition."
+    "explain": "The angular magnification is the ratio of the angle subtended by the image to the angle subtended by the object at the near point. For a relaxed eye, with the object at the focal point and the image at infinity, the formula is M = 25 cm / f, with 25 cm the near point, where f is the focal length of the lens in centimeters. A shorter focal length gives a larger magnification. The other options invert the ratio, multiply, or take a reciprocal product, none of which matches the definition."
    },
    {
     "id": "PHY60006",
     "type": "mcq",
     "cat": "Chapter 6: Optical Instruments",
-    "q": "A simple magnifier has a focal length of 5 cm. What is its angular magnification when the image is at the least distance of distinct vision?",
+    "q": "A simple magnifier has a focal length of 5 cm. What is its angular magnification for a relaxed eye, with the image at infinity?",
     "options": [
      "5",
      "10",
@@ -142,7 +142,7 @@
      "50"
     ],
     "correct": 0,
-    "explain": "Using M = 25 cm / f, substitute f = 5 cm: M = 25 / 5 = 5. The magnification is 5 times. The other values result from using a different focal length or misapplying the formula."
+    "explain": "For a relaxed eye the object sits at the focal point and the image is at infinity, so M = 25 cm / f, where 25 cm is the near point N. With f = 5 cm, M = 25 / 5 = 5. The other values come from using a different focal length or misapplying the formula."
    },
    {
     "id": "PHY60007",

@@ -3,7 +3,7 @@
   const THROTTLE_MS = 80;
   let unsub = null;
   let lastWrite = 0;
-  let partyId = null;
+  let partyId = null; // the live channel: 'parties/<id>' or 'lobbies/<id>' (cursors live under <channel>/cursors)
   const els = {}; // uid -> DOM
 
   function ensureDb() {
@@ -117,6 +117,23 @@
     const q = curQ(), k = qKey(q);
     const cls = el.classList;
     if (el.id === 'qText') return 'q:' + k + ':stem';
+    // lobby Pane mode: every player has a pane (data-uid) on every screen, so anchor inside that pane
+    const pane = el.closest && el.closest('#multi-quiz-container .party-member-box[data-uid]');
+    if (pane) {
+      const pu = pane.dataset.uid;
+      if (el === pane) return 'pane:' + pu;
+      if (cls.contains('pane-opt-btn')) return 'pane:' + pu + ':opt:' + Array.prototype.indexOf.call(pane.querySelectorAll('.pane-opt-btn'), el);
+      if (cls.contains('pane-question-text')) return 'pane:' + pu + ':q';
+      if (cls.contains('pane-friend-header')) return 'pane:' + pu + ':head';
+    }
+    // lobby Classic mode: one shared question card
+    const cmain = el.closest && el.closest('#multi-quiz-container .classic-main');
+    if (cmain) {
+      if (el === cmain) return 'classic:main';
+      if (cls.contains('pane-opt-btn')) return 'classic:opt:' + Array.prototype.indexOf.call(cmain.querySelectorAll('.pane-opt-btn'), el);
+      if (cls.contains('pane-question-text')) return 'classic:q';
+    }
+    if (cls.contains('classic-roster-chip') && el.dataset.focus != null) return 'classic:chip:' + el.dataset.focus;
     if (cls.contains('opt') && el.parentNode && el.parentNode.id === 'options') {
       const i = Array.prototype.indexOf.call(el.parentNode.querySelectorAll('.opt'), el);
       const orig = q && q.__perm && q.__perm[i] != null ? q.__perm[i] : i;
@@ -129,7 +146,7 @@
     if (el.id && !/^(app|root)$/.test(el.id)) return '#' + el.id;
     return null;
   }
-  const ANCHOR_SEL = '#qText, #options .opt, .match-item, .label-slot[data-id], .label-chip, .order-card, [id]';
+  const ANCHOR_SEL = '#qText, #options .opt, .match-item, .label-slot[data-id], .label-chip, .order-card, .party-member-box[data-uid], .party-member-box .pane-opt-btn, .party-member-box .pane-question-text, .party-member-box .pane-friend-header, .classic-main, .classic-main .pane-opt-btn, .classic-main .pane-question-text, .classic-roster-chip, [id]';
   function stampAnchors(root) {
     (root || document).querySelectorAll(ANCHOR_SEL).forEach((el) => {
       if (el.closest && el.closest('.friend-cursor')) return;
@@ -227,7 +244,7 @@
     lobbyOff = on;
     document.documentElement.classList.toggle('cursors-off', on);
     if (on && partyId && uid()) {
-      try { ensureDb().ref('parties/' + partyId + '/cursors/' + uid()).remove().catch(() => {}); } catch (e) {}
+      try { ensureDb().ref(partyId + '/cursors/' + uid()).remove().catch(() => {}); } catch (e) {}
     }
   }
 
@@ -242,7 +259,7 @@
     lastDesc = d;
     const bits = profileBits();
     const db = ensureDb();
-    const ref = db.ref('parties/' + partyId + '/cursors/' + me);
+    const ref = db.ref(partyId + '/cursors/' + me);
     const rec = {
       x: d.nx,
       y: d.ny,
@@ -329,16 +346,24 @@
     }
   }
 
+  /* listen(channel): 'parties/<id>' or 'lobbies/<id>'; a bare id means a party (older callers) */
+  function chanOf(pid) {
+    if (!pid) return null;
+    pid = String(pid);
+    return /^(parties|lobbies)\//.test(pid) ? pid : 'parties/' + pid;
+  }
   function listen(pid) {
+    const ch = chanOf(pid);
+    if (ch && ch === partyId && unsub) return; // already on this channel
     stop();
-    partyId = pid || null;
+    partyId = ch;
     if (!partyId) {
       clearAll();
       return;
     }
     const me = uid();
     const db = ensureDb();
-    const ref = db.ref('parties/' + partyId + '/cursors');
+    const ref = db.ref(partyId + '/cursors');
     const handler = (snap) => {
       const val = snap.val() || {};
       const seen = {};
@@ -378,10 +403,25 @@
     clearAll();
   }
 
-  function syncFromParty() {
+  /* channel choice: a live lobby quiz (pane/classic) first, then the party, then a lobby you sit in */
+  function currentChannel() {
+    const S = global.StudySplitQuiz;
+    const live = S && S.getLobbyId && S.getLobbyId();
+    if (live) return 'lobbies/' + live;
     const pid = global.StudyParty && StudyParty.getPartyId && StudyParty.getPartyId();
-    if (pid) listen(pid);
-    else stop();
+    if (pid) return 'parties/' + pid;
+    const L = global.StudyLobby;
+    const lid = L && L.getActiveLobbyId && L.getActiveLobbyId();
+    const lob = L && L.getActiveLobby && L.getActiveLobby();
+    const me = uid();
+    if (lid && lob && me && lob.members && lob.members[me]) return 'lobbies/' + lid;
+    return null;
+  }
+  function syncFromParty() {
+    let ch = null;
+    try { ch = currentChannel(); } catch (e) {}
+    if (ch) listen(ch);
+    else if (partyId) stop();
   }
 
   function onMoodChange() {
@@ -394,5 +434,6 @@
   }
 
   global.StudyCursors = { listen, stop, syncFromParty, publish, onMoodChange, setLobbyHidden, isLobbyHidden: () => lobbyOff, describe, resolve, anchorOf, stampAnchors, _place: placeAll, _remote: remote, _els: els,
+    channel: () => partyId, sync: syncFromParty,
     _inject: function (id, rec) { ensureEl(id, rec); remote[id] = rec; watchLayout(true); placeAll(); } };
 })(window);
