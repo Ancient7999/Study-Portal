@@ -3,8 +3,8 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Only In Finals",
- "source": "Medical Physics finals banks chapter-6-optical-instruments-and-medical-applications (44), chapter-7-atomic-and-nuclear-physics (61), chapter-8-electricity-and-magnetism (58); merged in source order, ids unchanged",
- "formSize": 163,
+ "source": "Medical Physics finals banks chapter-6-optical-instruments-and-medical-applications (56), chapter-7-atomic-and-nuclear-physics (61), chapter-8-electricity-and-magnetism (58); merged in source order, ids unchanged",
+ "formSize": 175,
  "forms": [
   "A"
  ],
@@ -618,7 +618,7 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "Forms a real, inverted, magnified image of the object"
+      "text": "Forms a real, inverted, magnified image of the specimen"
      },
      {
       "id": "B",
@@ -626,7 +626,7 @@
      },
      {
       "id": "C",
-      "text": "The distance separating the two lenses, much greater than either focal length"
+      "text": "The separation of the two lenses, much greater than fo or fe"
      },
      {
       "id": "D",
@@ -700,7 +700,7 @@
     "id": "PHY60040",
     "type": "mcq",
     "cat": "Chapter 6: Vision Defects",
-    "q": "Which of the following lists the four types of vision defects mentioned in the course?",
+    "q": "Which list gives the four common vision defects?",
     "options": [
      "Myopia, hyperopia, astigmatism, and presbyopia",
      "Myopia, hyperopia, cataract formation, and glaucoma",
@@ -775,7 +775,7 @@
      },
      {
       "id": "3",
-      "prompt": "Hyperopia is the condition in which a person:",
+      "prompt": "Hyperopia is the defect in which a person:",
       "options": [
        "Can see distant objects clearly but near objects are blurry",
        "Can see near objects clearly but distant objects are blurry",
@@ -885,6 +885,289 @@
      }
     ],
     "explain": "A laser has three essential parts. The active medium is the material that amplifies light by stimulated emission. The energy source pumps energy into that medium. The reflecting cavity (usually two mirrors) lets the light bounce back and forth so amplification can build. A focusing lens, a photocell or a glass tube is not one of the three defining components."
+   },
+   {
+    "id": "PHY60045",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "For a spherical mirror, how is the focal length f related to the radius of curvature r?",
+    "options": [
+     "f = 2r",
+     "f = r / 2",
+     "f = r",
+     "f = r / 4"
+    ],
+    "correct": 1,
+    "explain": "The focal length is half the radius of curvature, f = r / 2, so r = 2f. The forms f = 2r, f = r and f = r / 4 give the wrong ratio."
+   },
+   {
+    "id": "PHY60046",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "A concave mirror has a focal length of 25 cm. What is its radius of curvature?",
+    "options": [
+     "12.5 cm",
+     "25 cm",
+     "50 cm",
+     "100 cm"
+    ],
+    "correct": 2,
+    "explain": "The radius of curvature is twice the focal length: r = 2f = 2 × 25 = 50 cm. 12.5 cm halves f instead of doubling it, 25 cm is f itself, and 100 cm doubles it twice."
+   },
+   {
+    "id": "PHY60047",
+    "type": "matching",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Match each part of the human eye to its main function.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Cornea"
+     },
+     {
+      "id": "2",
+      "text": "Iris"
+     },
+     {
+      "id": "3",
+      "text": "Pupil"
+     },
+     {
+      "id": "4",
+      "text": "Lens"
+     },
+     {
+      "id": "5",
+      "text": "Retina"
+     },
+     {
+      "id": "6",
+      "text": "Optic nerve"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Provides most of the eye's refraction"
+     },
+     {
+      "id": "B",
+      "text": "Controls the amount of light entering the eye"
+     },
+     {
+      "id": "C",
+      "text": "Opening that allows light to enter the eye"
+     },
+     {
+      "id": "D",
+      "text": "Makes fine adjustments to focus light"
+     },
+     {
+      "id": "E",
+      "text": "Layer where the image is formed"
+     },
+     {
+      "id": "F",
+      "text": "Transmits visual signals to the brain"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "The cornea provides most refraction, the iris controls light entry, the pupil is the opening, the lens fine-focuses, the retina forms the image, and the optic nerve carries signals to the brain."
+   },
+   {
+    "id": "PHY60048",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Which simplified sequence correctly follows the path of light into the human eye?",
+    "options": [
+     "Cornea → pupil → lens → retina",
+     "Pupil → cornea → lens → retina",
+     "Cornea → lens → pupil → retina",
+     "Cornea → pupil → retina → lens"
+    ],
+    "correct": 0,
+    "explain": "Light is refracted first at the cornea, passes through the pupil, is fine-focused by the lens and forms an image on the retina. The other orders swap one structure out of place."
+   },
+   {
+    "id": "PHY60049",
+    "type": "stepped",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "An older adult gradually has difficulty reading small print at a normal reading distance.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which vision defect is most likely?",
+      "options": [
+       "Myopia",
+       "Presbyopia",
+       "Astigmatism",
+       "Hyperopia"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "2",
+      "prompt": "What causes presbyopia?",
+      "options": [
+       "Irregular curvature of the cornea",
+       "Reduced ability of the lens to change shape",
+       "Distant light focused in front of the retina",
+       "Weakened signal transmission in the optic nerve"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "3",
+      "prompt": "Which lens improves near vision in presbyopia?",
+      "options": [
+       "Concave lens",
+       "Convex lens",
+       "Cylindrical lens"
+      ],
+      "correct": 1
+     }
+    ],
+    "explain": "Poor near focusing with age is presbyopia. The eye lens can no longer change its shape enough for near vision, and a convex reading lens (+) helps. Myopia blurs distant objects, hyperopia affects young people too, and astigmatism comes from irregular corneal curvature and uses cylindrical lenses."
+   },
+   {
+    "id": "PHY60050",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Which cause and correction belong to astigmatism?",
+    "options": [
+     "Irregular corneal curvature – cylindrical lenses",
+     "Light focused in front of the retina – concave lenses",
+     "Light focused behind the retina – convex lenses",
+     "Lens unable to change shape – convex lenses"
+    ],
+    "correct": 0,
+    "explain": "Astigmatism is irregular curvature of the cornea, giving blurred, distorted images and eye strain; cylindrical lenses correct it. Light focused in front of the retina is myopia, light focused behind it is hyperopia, and a lens unable to change shape is presbyopia."
+   },
+   {
+    "id": "PHY60051",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "When light meets biological tissue, which set of interactions can occur?",
+    "options": [
+     "Reflected, absorbed, transmitted, or scattered",
+     "Amplified, absorbed, transmitted, or scattered",
+     "Reflected, absorbed, magnified, or scattered",
+     "Reflected, absorbed, transmitted, or ionized"
+    ],
+    "correct": 0,
+    "explain": "Light reaching tissue can be reflected, absorbed, transmitted, or scattered, which lets it be used in diagnosis, imaging and treatment. Amplification happens inside a laser, magnification in lenses, and ionization is not one of the listed interactions."
+   },
+   {
+    "id": "PHY60052",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "In a laser's optical cavity, what does the output mirror allow?",
+    "options": [
+     "All light to stay trapped inside the cavity",
+     "The active medium to cool during operation",
+     "The pump energy to enter the cavity",
+     "Some amplified light to leave as the beam"
+    ],
+    "correct": 3,
+    "explain": "Two mirrors reflect light back and forth through the active medium, and one of them lets the amplified light out as the laser beam. The pump, not the mirror, supplies energy, and the cavity does not trap all light or cool the medium."
+   },
+   {
+    "id": "PHY60053",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which sequence best describes the production of a laser beam?",
+    "options": [
+     "Energy → excitation → amplification → laser beam",
+     "Excitation → energy → amplification → laser beam",
+     "Energy → amplification → excitation → laser beam",
+     "Energy → excitation → laser beam → amplification"
+    ],
+    "correct": 0,
+    "explain": "The pump supplies energy, which excites the atoms of the active medium; stimulated emission between the mirrors amplifies the light, and the laser beam comes out. Each other order puts one stage out of place."
+   },
+   {
+    "id": "PHY60054",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which of the following is NOT a medical application of lasers?",
+    "options": [
+     "Dermatology",
+     "Retinal photocoagulation",
+     "Barcode scanning",
+     "Microsurgery"
+    ],
+    "correct": 2,
+    "explain": "Barcode scanning is one of the other, non-medical laser uses, with optical devices, holography and isotope separation. Dermatology, retinal photocoagulation and microsurgery are medical applications."
+   },
+   {
+    "id": "PHY60055",
+    "type": "matching",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Match each optical instrument to its medical use.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Ophthalmoscope"
+     },
+     {
+      "id": "2",
+      "text": "Endoscope"
+     },
+     {
+      "id": "3",
+      "text": "Compound microscope"
+     },
+     {
+      "id": "4",
+      "text": "Simple magnifier"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Examine the interior of the eye"
+     },
+     {
+      "id": "B",
+      "text": "View internal organs"
+     },
+     {
+      "id": "C",
+      "text": "Examine blood cells and tissue samples"
+     },
+     {
+      "id": "D",
+      "text": "Inspect skin lesions or dental surfaces"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Ophthalmoscopes examine the eye, endoscopes view internal organs, compound microscopes examine blood cells, tissue and microorganisms, and simple magnifiers help with skin lesions, dental inspection and reading medical scales."
+   },
+   {
+    "id": "PHY60056",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Which of the following is NOT an optical instrument used in medicine?",
+    "options": [
+     "Endoscope",
+     "Ophthalmoscope",
+     "Stethoscope",
+     "Microscope"
+    ],
+    "correct": 2,
+    "explain": "A stethoscope is used for listening, not for optics. Endoscopes, ophthalmoscopes and microscopes are optical instruments used in medicine."
    },
    {
     "id": "PHY70001",
@@ -1632,75 +1915,69 @@
     "id": "PHY70054",
     "type": "matching",
     "cat": "Chapter 7: Radioactivity",
-    "q": "Match each type of nuclear radiation to its properties.",
+    "q": "Match each property to the type of nuclear radiation it describes.",
     "leftItems": [
      {
       "id": "1",
-      "text": "Alpha particle"
+      "text": "Two protons and two neutrons bound together"
      },
      {
       "id": "2",
-      "text": "Beta particle"
+      "text": "A fast-moving electron or positron"
      },
      {
       "id": "3",
-      "text": "Gamma ray"
+      "text": "High-energy electromagnetic radiation"
+     },
+     {
+      "id": "4",
+      "text": "Carries a positive charge of plus two"
+     },
+     {
+      "id": "5",
+      "text": "Carries a negative charge of minus one"
+     },
+     {
+      "id": "6",
+      "text": "Carries no electric charge"
+     },
+     {
+      "id": "7",
+      "text": "Greatest ionizing power and shortest range"
+     },
+     {
+      "id": "8",
+      "text": "Intermediate ionizing power and intermediate range"
+     },
+     {
+      "id": "9",
+      "text": "Lowest ionizing power and greatest penetrating power"
      }
     ],
     "rightItems": [
      {
       "id": "A",
-      "text": "Two protons and two neutrons bound together"
+      "text": "Alpha particle"
      },
      {
       "id": "B",
-      "text": "A fast-moving electron or positron"
+      "text": "Beta particle"
      },
      {
       "id": "C",
-      "text": "High-energy electromagnetic radiation"
-     },
-     {
-      "id": "D",
-      "text": "Carries a positive charge of plus two"
-     },
-     {
-      "id": "E",
-      "text": "Carries a negative charge of minus one"
-     },
-     {
-      "id": "F",
-      "text": "Carries no electric charge"
-     },
-     {
-      "id": "G",
-      "text": "Greatest ionizing power and shortest range"
-     },
-     {
-      "id": "H",
-      "text": "Intermediate ionizing power and intermediate range"
-     },
-     {
-      "id": "I",
-      "text": "Lowest ionizing power and greatest penetrating power"
+      "text": "Gamma ray"
      }
     ],
     "correct_pairs": {
-     "1": [
-      "A",
-      "D",
-      "G"
-     ],
-     "2": [
-      "B",
-      "E",
-      "H"
-     ],
-     "3": [
-      "C",
-      "F",
-      "I"
-     ]
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "A",
+     "5": "B",
+     "6": "C",
+     "7": "A",
+     "8": "B",
+     "9": "C"
     },
     "explain": "Alpha particles are helium-4 nuclei, carrying two protons and two neutrons and a charge of plus two. Their large mass and double charge make them strongly ionizing but easily stopped, so they have the shortest range. Beta particles are fast electrons or positrons, carrying a single negative or positive charge, with intermediate mass, intermediate ionizing power, and intermediate range. Gamma rays are high-energy photons with no mass and no charge, so they interact weakly and have the lowest ionizing power but the greatest penetrating power."
    },
@@ -1726,38 +2003,21 @@
     "rightItems": [
      {
       "id": "A",
-      "text": "The atomic number decreases by two"
+      "text": "Z falls by two, A falls by four"
      },
      {
       "id": "B",
-      "text": "The atomic number increases by one"
+      "text": "Z rises by one, A unchanged"
      },
      {
       "id": "C",
-      "text": "The atomic number decreases by one"
-     },
-     {
-      "id": "D",
-      "text": "The mass number decreases by four"
-     },
-     {
-      "id": "E",
-      "text": "The mass number remains unchanged"
+      "text": "Z falls by one, A unchanged"
      }
     ],
     "correct_pairs": {
-     "1": [
-      "A",
-      "D"
-     ],
-     "2": [
-      "B",
-      "E"
-     ],
-     "3": [
-      "C",
-      "E"
-     ]
+     "1": "A",
+     "2": "B",
+     "3": "C"
     },
     "explain": "In alpha decay, the nucleus emits two protons and two neutrons, so the atomic number decreases by two and the mass number decreases by four. In beta minus decay, a neutron becomes a proton, so the atomic number increases by one while the mass number stays the same because the total count of nucleons is unchanged. In beta plus decay, a proton becomes a neutron, so the atomic number decreases by one while the mass number again stays the same."
    },
