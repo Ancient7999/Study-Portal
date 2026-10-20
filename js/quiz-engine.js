@@ -1418,8 +1418,34 @@ const LINK_PENCIL_SVG='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 3
   '<stop offset="86%" stop-color="var(--text)"/><stop offset="100%" stop-color="var(--text)"/></linearGradient></defs>'+
   '<path d="M3.6 0H8.4V3.8H9.36V7.22H8.4V25.08L6 38L3.6 25.08V7.22H2.64V3.8H3.6Z" fill="url(#link-pencil-gradient)"/></svg>';
 
-/* SAQ: text box + Check. Enter in the box checks (the global Enter → Next
-   handler ignores keys typed in inputs, so one press never does both). */
+/* SAQ: a text box graded on Enter or when the box loses focus (no Check button). The global
+   Enter → Next handler ignores keys typed in inputs, so one press never does both; a blur right
+   after Enter does not grade the same text twice, and an empty box on blur does nothing. */
+/* a blur caused by a press (Back / Next, a navigator pill, another box) is graded at the start of
+   that click, so a re-drawn navigator never swallows the click and navigation still happens */
+let saqPtrDown=false;
+document.addEventListener('pointerdown',()=>{ saqPtrDown=true; },true);
+document.addEventListener('pointerup',()=>{ setTimeout(()=>{ saqPtrDown=false; },0); },true);
+document.addEventListener('pointercancel',()=>{ saqPtrDown=false; },true);
+function saqAutoGrade(input, grade){
+  input.addEventListener('keydown',e=>{
+    if(e.key!=='Enter') return;
+    e.preventDefault(); e.stopPropagation();
+    input._saqGraded=input.value;
+    grade({kb:true});
+  });
+  input.addEventListener('focusout',e=>{
+    if(input.disabled || !input.isConnected || !quizActive || locked) return;
+    if(!saqNorm(input.value) || input._saqGraded===input.value) return;
+    input._saqGraded=input.value;
+    const o={blur:true, to:e.relatedTarget||null};
+    if(!saqPtrDown){ grade(o); return; }
+    let ran=false;
+    const run=()=>{ if(ran) return; ran=true; window.removeEventListener('click', run, true); grade(o); };
+    window.addEventListener('click', run, true);
+    document.addEventListener('pointerup', ()=>setTimeout(run,0), {capture:true, once:true});
+  });
+}
 /* picture on a stepped question (shown on every step), with its license caption */
 function stepFigureHTML(q, review){
   if(!q || !q.image) return '';
@@ -1458,14 +1484,9 @@ function renderSaq(q, ans){
   if(done) input.classList.add('correct');
   input.value=done?ans.text:'';
   input.disabled=done;
-  const btn=document.createElement('button');
-  btn.type='button'; btn.className='nav-btn primary saq-check'; btn.id='saqCheck'; btn.textContent='Check';
-  btn.disabled=done;
-  btn.addEventListener('click',()=>submitSaq());
-  input.addEventListener('keydown',e=>{
-    if(e.key==='Enter'){ e.preventDefault(); e.stopPropagation(); submitSaq(); }
-  });
-  wrap.append(input,btn);
+  const qi=current;
+  saqAutoGrade(input, o=>{ if(current===qi) submitSaq(undefined, o); });
+  wrap.append(input);
   opts.appendChild(wrap);
   if(done) saqShowCompleted(input, ans);
   // typed step in a stepped question: the labeling highlighter under the box
@@ -1478,7 +1499,7 @@ function renderSaq(q, ans){
   }
   if(!done && quizActive) setTimeout(()=>{ if(document.activeElement!==input && document.getElementById('quizView').classList.contains('active')) try{ input.focus({preventScroll:true}); }catch(e){} },0);
 }
-function saqSoftWrong(input, msg){
+function saqSoftWrong(input, msg, o){
   if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
   input.classList.remove('soft-wrong'); void input.offsetWidth;
   input.classList.add('soft-wrong');
@@ -1486,9 +1507,9 @@ function saqSoftWrong(input, msg){
   const fb=document.getElementById('feedback');
   fb.className='feedback soft'; fb.textContent=msg;
   clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400);
-  input.select();
+  if(!(o && o.blur)) input.select(); // a blur grade never pulls the focus back
 }
-function saqSolvedFx(q){
+function saqSolvedFx(q, o){
   const fb=document.getElementById('feedback');
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
   renderStepRecap(); // a typed last step shows the series recap at once, like a choice step
@@ -1497,23 +1518,24 @@ function saqSolvedFx(q){
   pt1Confetti();
   rewardCorrect();
   afterAnswerProgress();
+  if(o && o.kb && !allQuestionsAnswered()) startKbAdvance();
 }
-function submitSaq(k){
+function submitSaq(k, o){
+  o=o||{};
   if(!quizActive||locked) return;
   const q=questions[current]; if(!isSaq(q)) return;
-  if(isSaqMulti(q)) return submitSaqBlank(k);
+  if(isSaqMulti(q)) return submitSaqBlank(k, o);
   const input=document.getElementById('saqInput'); if(!input) return;
   const typed=input.value;
-  if(!saqNorm(typed)){ input.focus(); return; }
+  if(!saqNorm(typed)){ if(!o.blur) input.focus(); return; }
   const r=saqResult(q, typed);
-  if(!r){ saqSoftWrong(input, saqHint(q, typed)); return; }
+  if(!r){ saqSoftWrong(input, saqHint(q, typed), o); return; }
   locked=true; answers[current]=Object.assign({text:r.text, correct:true}, r.fill?{fill:r.fill}:{}); onQuestionSolved(q);
   input.disabled=true; input.classList.add('correct'); input.value=r.text;
-  const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
   if(r.fill) saqShowCompleted(input, answers[current]);
-  saqSolvedFx(q);
+  saqSolvedFx(q, o);
 }
-/* —— several blanks: one box per blank, in order. Enter checks that box; a right one locks and the
+/* —— several blanks: one box per blank, in order. Enter or leaving a box grades that box; a right one locks and the
    focus moves to the next open blank; the question is solved when every blank is right. —— */
 function saqBlankResult(q, k, typed){
   const cs=!!q.caseSensitive, t=saqNorm(typed); if(!t) return null;
@@ -1568,20 +1590,18 @@ function renderSaqMulti(q, ans){
     input.dataset.k=String(k);
     const done=a.parts[k]!=null;
     if(done){ input.value=a.parts[k]; input.disabled=true; input.classList.add('correct'); }
-    input.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); e.stopPropagation(); submitSaq(k); } });
+    const qi=current;
+    saqAutoGrade(input, o=>{ if(current===qi) submitSaq(k, o); });
     row.append(num,ctx,input);
     list.appendChild(row);
   });
-  const btn=document.createElement('button');
-  btn.type='button'; btn.className='nav-btn primary saq-check'; btn.id='saqCheck'; btn.textContent='Check';
-  btn.disabled=!!a.correct;
-  btn.addEventListener('click',()=>submitSaq());
-  wrap.append(list,btn);
+  wrap.append(list);
   opts.appendChild(wrap);
   paintSaqBlanks(q,a);
   if(!a.correct && quizActive) setTimeout(()=>{ const f=wrap.querySelector('input.saq-input:not(:disabled)'); if(f && document.activeElement!==f && document.getElementById('quizView').classList.contains('active')) try{ f.focus({preventScroll:true}); }catch(e){} },0);
 }
-function submitSaqBlank(k){
+function submitSaqBlank(k, o){
+  o=o||{};
   const q=questions[current], a=saqMultiState(current);
   const inputs=[...document.querySelectorAll('.saq-multi input.saq-input')];
   const lockPart=(j,text)=>{ a.parts[j]=text; const inp=inputs[j]; if(inp){ inp.value=text; inp.disabled=true; inp.classList.add('correct'); } };
@@ -1606,14 +1626,13 @@ function submitSaqBlank(k){
   paintSaqBlanks(q,a); document.querySelectorAll('#qText .saq-blank').forEach(sp=>{ const j=+sp.dataset.k; if(a.parts[j]!=null){ sp.textContent=a.parts[j]; sp.classList.add('filled'); } });
   if(a.parts.every(x=>x!=null)){
     a.correct=true; locked=true; onQuestionSolved(q);
-    const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
-    saqSolvedFx(q);
+    saqSolvedFx(q, o);
     return;
   }
   saveRunState();
   if(firstWrong){
     const j=firstWrong[0];
-    saqSoftWrong(inputs[j], (q.answers.length>1?'blank '+(j+1)+' · ':'')+saqHint({answer:saqBlankAlts(q,j), caseSensitive:q.caseSensitive}, inputs[j].value));
+    saqSoftWrong(inputs[j], (q.answers.length>1?'blank '+(j+1)+' · ':'')+saqHint({answer:saqBlankAlts(q,j), caseSensitive:q.caseSensitive}, inputs[j].value), o);
     return;
   }
   if(res.some(r=>r[1]==='ok')){
@@ -1622,10 +1641,13 @@ function submitSaqBlank(k){
     fb.className='feedback good'; fb.textContent='✓ blank right · '+left+' to go';
     const from=k!=null?k:0;
     const order=inputs.map((_,j)=>(from+1+j)%inputs.length);
+    // a right blank moves on to the next open one, unless the blur already took the focus
+    // somewhere (another blank, Back / Next, the navigator)
     const next=order.map(j=>inputs[j]).find(x=>x && !x.disabled);
-    if(next) try{ next.focus({preventScroll:true}); }catch(e){}
+    if(next && !(o.blur && o.to)) try{ next.focus({preventScroll:true}); }catch(e){}
     return;
   }
+  if(o.blur) return;
   const empty=inputs.find(x=>!x.disabled && !saqNorm(x.value)); if(empty) empty.focus();
 }
 /* —— LABEL (image labeling) questions ——

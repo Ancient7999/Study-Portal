@@ -23,7 +23,7 @@
     createChoice: null,
     createMode: 'pane',
     // lobby settings chosen at creation (stored at lobbies/{id}/settings; policy also at requestPolicy)
-    createSettings: { spectate: true, policy: 'ask', share: true, cursors: true }
+    createSettings: { spectate: true, policy: 'ask', hostControl: false }
   };
 
   const POLICY_LABEL = { ask: 'Ask me', restrict: 'Restrict', all: 'Allow all' };
@@ -41,13 +41,56 @@
     return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
+  const COPY_SVG = '<svg class="lobby-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M8 3h9a2 2 0 0 1 2 2v11h-2V5H8V3Zm-3 4h9a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm0 2v11h9V9H5Z" fill="currentColor"/></svg>';
+  const CHEV_SVG = '<svg class="lobby-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M6.4 8.6 12 14.2l5.6-5.6L19 10l-7 7-7-7 1.4-1.4Z" fill="currentColor"/></svg>';
+  const X_SVG = '<svg class="lobby-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z" fill="currentColor"/></svg>';
+  function hueOf(name) { let h = 0; const t = String(name || 'x'); for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h % 360; }
+  function initialsOf(name) { const p = String(name || '?').trim().split(/\s+/).filter(Boolean); return ((p[0] || '?')[0] + (p.length > 1 ? p[p.length - 1][0] : (p[0] || '')[1] || '')).toUpperCase(); }
+  function codeOf(id) { return String(id || '').slice(0, 6).toUpperCase(); }
+  function copyCode() {
+    const code = codeOf(state.activeLobbyId);
+    if (!code) return;
+    const done = () => toast('Lobby code ' + code + ' copied');
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(code).then(done, done); return; }
+    } catch (e) {}
+    done();
+  }
+  /* spectators: watchers with a live tile plus members who switched to spectating */
+  function spectatorCount(L) {
+    if (global.StudySpectate && StudySpectate.spectatorCount) return StudySpectate.spectatorCount(L);
+    return Object.keys((L && L.members) || {}).filter((k) => L.members[k] && L.members[k].role === 'spectate').length;
+  }
+  function paintEye(el, n) {
+    if (!el) return;
+    if (global.StudySpectate && StudySpectate.paintEye) StudySpectate.paintEye(el, n);
+    else el.textContent = String(n);
+  }
+  function myRole(L) {
+    const me = uid();
+    const m = L && L.members && me && L.members[me];
+    return m && m.role === 'spectate' ? 'spectate' : 'play';
+  }
+  /* why you cannot switch right now ('' when you can) */
+  function spectateBlock(L) {
+    const me = uid();
+    if (!settingsOf(L).spectate) return 'Spectating is off for this lobby';
+    if (Object.keys((L && L.members) || {}).filter((k) => k !== me).length === 0) return 'You are the only member';
+    return '';
+  }
+  function playBlock(L) {
+    if (findMySeat(L, uid()) != null) return '';
+    if (findEmptySeat(L) == null) return 'Every seat is taken';
+    if (settingsOf(L).policy === 'restrict' && !isLeaderOf(L)) return 'The leader has closed joining';
+    return '';
+  }
+
   /* settings of a lobby; lobbies made before settings existed allow everything */
   function settingsOf(lobby) {
     const st = (lobby && lobby.settings) || {};
     return {
       spectate: st.spectate !== false,
-      share: st.share !== false,
-      cursors: st.cursors !== false,
+      hostControl: st.hostControl === true,
       policy: (lobby && lobby.requestPolicy) || st.policy || 'ask',
       legacy: !(lobby && lobby.settings)
     };
@@ -329,10 +372,15 @@
     const cs = state.createSettings;
     panel.innerHTML =
       '<div class="lobby-panel-head">' +
-      '<h3>Online Lobbies</h3>' +
+      '<h3 id="lobbyPanelTitle">Online Lobbies</h3>' +
+      '<span class="lobby-head-meta" id="lobbyHeadMeta" hidden>' +
+      '<span class="lobby-status-pill" id="lobbyHeadStatus"></span>' +
+      '<button type="button" class="lobby-code" id="lobbyCodeBtn" title="Copy the lobby code" aria-label="Copy the lobby code"><span class="lobby-code-text" id="lobbyCodeText"></span>' + COPY_SVG + '</button>' +
+      '<span class="lobby-spec-count" id="lobbyHeadSpec"></span>' +
+      '</span>' +
       '<span class="lobby-head-btns">' +
-      '<button type="button" class="chat-minimize lobby-collapse-btn" id="lobbyCollapseBtn" aria-label="Collapse lobby" title="Collapse to a small bar">–</button>' +
-      '<button type="button" class="chat-minimize" id="lobbyCloseBtn" aria-label="Close">×</button>' +
+      '<button type="button" class="lobby-icon-btn lobby-collapse-btn" id="lobbyCollapseBtn" aria-label="Collapse lobby" title="Collapse to a small bar">' + CHEV_SVG + '</button>' +
+      '<button type="button" class="lobby-icon-btn" id="lobbyCloseBtn" aria-label="Close" title="Close">' + X_SVG + '</button>' +
       '</span>' +
       '</div>' +
       '<p class="lobby-hint">Join an open lobby, or set up your own and invite your party.</p>' +
@@ -363,11 +411,6 @@
       '<p class="lobby-field-hint" id="lobbyOptPolicyHint">' + POLICY_HINT[cs.policy] + '</p>' +
       '</div>' +
       '</div>' +
-      '<div class="lobby-group">' +
-      '<div class="lobby-group-title">Playing Together</div>' +
-      sw('lobbyOptShare', cs.share, 'Allow screen share', 'You can mirror one quiz to everyone and hand over control.') +
-      sw('lobbyOptCursors', cs.cursors, 'Show party cursors', 'See where party members point while you play.') +
-      '</div>' +
       '<button type="button" class="btn-gold lobby-create-btn" id="lobbyCreateBtn">Create Lobby</button>' +
       '</section>' +
       '<section class="lobby-open" aria-labelledby="lobbyListTitle">' +
@@ -395,7 +438,8 @@
     pill.hidden = true;
     pill.setAttribute('aria-expanded', 'false');
     pill.innerHTML = '<span class="lp-ico" aria-hidden="true">👥</span><span class="lp-text" id="lobbyPillText">Lobby</span><span class="lp-short" id="lobbyPillShort" aria-hidden="true"></span>' +
-      '<span class="lp-badge" id="lobbyPillBadge" hidden></span><span class="lp-chev" aria-hidden="true">▾</span>';
+      '<span class="lp-spec lobby-spec-count" id="lobbyPillSpec"></span>' +
+      '<span class="lp-badge" id="lobbyPillBadge" hidden></span><span class="lp-chev" aria-hidden="true">' + CHEV_SVG + '</span>';
     pill.onclick = () => setCollapsed(false);
     document.body.appendChild(pill);
     const notes = document.createElement('div');
@@ -431,12 +475,7 @@
       state.createSettings.policy = POLICY_LABEL[optPolicy.value] ? optPolicy.value : 'ask';
       panel.querySelector('#lobbyOptPolicyHint').textContent = POLICY_HINT[state.createSettings.policy];
     };
-    panel.querySelector('#lobbyOptShare').onchange = (e) => {
-      state.createSettings.share = e.target.checked;
-    };
-    panel.querySelector('#lobbyOptCursors').onchange = (e) => {
-      state.createSettings.cursors = e.target.checked;
-    };
+    panel.querySelector('#lobbyCodeBtn').onclick = () => copyCode();
 
     if (global.StudyBankPicker && StudyBankPicker.mount) {
       state.bankPicker = StudyBankPicker.mount(panel.querySelector('#lobbyCreateBankMount'), {
@@ -602,7 +641,7 @@
     const setLabel = (choice && choice.setLabel) || '';
     const testLabel = choice ? choice.subjectName + ' · ' + choice.testTitle : '';
     const cs = state.createSettings;
-    const settings = { v: 1, spectate: !!cs.spectate, share: !!cs.share, cursors: !!cs.cursors, policy: cs.policy || 'ask' };
+    const settings = { v: 1, spectate: !!cs.spectate, policy: cs.policy || 'ask' };
     
     const id = randomId();
     const bits = profileBits();
@@ -686,14 +725,10 @@
       throw new Error('Lobby expired');
     }
 
-    // Already seated?
+    // Already seated? Spectators join without a seat.
     let seatIdx = findMySeat(lobby, me);
     const role = opts.role || 'play';
-    if (seatIdx == null) {
-      if (lobby.status === 'live' && role === 'play') {
-        // Late joiners to a live quiz default to spectate unless empty seat + owner allows
-        // Still allow claiming empty seat as play if open seats remain
-      }
+    if (seatIdx == null && role !== 'spectate') {
       seatIdx = findEmptySeat(lobby);
       if (seatIdx == null) throw new Error('Lobby full (max 4)');
       const bits = profileBits();
@@ -735,6 +770,12 @@
 
     const fresh = (await db.ref('lobbies/' + lobbyId).once('value')).val();
     notifyChatLobby(fresh || lobby);
+    // an accepted request, or a quiz that is already live: start on the compact bar
+    if (opts.collapsed || (fresh && fresh.status === 'live')) {
+      state.open = true;
+      state.collapsed = true;
+      if (fresh && fresh.status === 'live') state.autoKey = lobbyId + ':' + (fresh.startedAt || '');
+    }
 
     if (fresh && fresh.status === 'live' && global.StudySplitQuiz) {
       StudySplitQuiz.joinLobbySession(lobbyId);
@@ -759,6 +800,63 @@
     }
     notifyChatLeave();
     toast('Left lobby');
+    render();
+  }
+
+  /* the Spectate switch: give up your seat and watch, or take a free seat again.
+     A leader who starts spectating hands leadership on, as when leaving. */
+  async function setMyRole(lobbyId, role) {
+    lobbyId = lobbyId || state.activeLobbyId;
+    const me = uid();
+    if (!me || !lobbyId) return;
+    const db = ensureDb();
+    const L = (await db.ref('lobbies/' + lobbyId).once('value')).val();
+    if (!L || !L.members || !L.members[me]) throw new Error('You are not in this lobby');
+    const want = role === 'spectate' ? 'spectate' : 'play';
+    if (myRole(L) === want && (want === 'spectate' || findMySeat(L, me) != null)) return;
+    const now = Date.now();
+    const pane = L.session && L.session.panes && L.session.panes[me];
+    if (want === 'spectate') {
+      const why = spectateBlock(L);
+      if (why) throw new Error(why);
+      const up = {};
+      const k = findMySeat(L, me);
+      if (k != null) up['seats/' + k] = null;
+      up['members/' + me + '/role'] = 'spectate';
+      up['members/' + me + '/seat'] = null;
+      if (pane) { up['session/panes/' + me + '/role'] = 'spectate'; up['session/panes/' + me + '/updatedAt'] = now; }
+      let next = null;
+      if (L.leader === me) { next = successorOf(L, me); if (next) up.leader = next; }
+      await db.ref('lobbies/' + lobbyId).update(up);
+      state.mySeat = null;
+      await bindPresence(lobbyId, null, 'spectate');
+      toast(next ? 'You are spectating · ' + ((L.members[next] && L.members[next].displayName) || 'the next player') + ' now leads' : 'You are spectating');
+    } else {
+      const why = playBlock(L);
+      if (why) throw new Error(why);
+      let k = findMySeat(L, me);
+      if (k == null) {
+        const bits = profileBits();
+        const c = pane && pane.bank ? pane : L;
+        const seat = { uid: me, displayName: bits.displayName, level: bits.level, role: 'play', bank: c.bank || 'banks/medphys/pt1.json', form: c.form || 'A', card: c.card || null, setLabel: c.setLabel || '', updatedAt: now };
+        for (let tries = 0; tries < 2 && k == null; tries++) {
+          const fresh = tries ? (await db.ref('lobbies/' + lobbyId).once('value')).val() : L;
+          const free = findEmptySeat(fresh);
+          if (free == null) throw new Error('Every seat is taken');
+          const tx = await db.ref('lobbies/' + lobbyId + '/seats/' + free).transaction((cur) => (cur != null ? undefined : seat));
+          if (tx.committed) k = free;
+        }
+        if (k == null) throw new Error('Could not take a seat · try again');
+      }
+      const up = {};
+      up['members/' + me + '/role'] = 'play';
+      up['members/' + me + '/seat'] = k;
+      if (pane) { up['session/panes/' + me + '/role'] = 'play'; up['session/panes/' + me + '/seat'] = k; up['session/panes/' + me + '/updatedAt'] = now; }
+      await db.ref('lobbies/' + lobbyId).update(up);
+      state.mySeat = k;
+      await bindPresence(lobbyId, k, 'play');
+      toast('You are playing again');
+    }
     render();
   }
 
@@ -1031,9 +1129,7 @@
     return (
       chip(lobby.gameMode === 'classic' ? 'Classic' : 'Pane') +
       chip(st.spectate ? 'Spectators On' : 'Spectators Off', st.spectate) +
-      chip('Requests: ' + ({ ask: 'Ask Me', restrict: 'Restricted', all: 'Allow All' }[st.policy] || 'Ask Me'), st.policy !== 'restrict') +
-      chip(st.share ? 'Screen Share On' : 'Screen Share Off', st.share) +
-      chip(st.cursors ? 'Cursors On' : 'Cursors Off', st.cursors)
+      chip('Requests: ' + ({ ask: 'Ask Me', restrict: 'Restricted', all: 'Allow All' }[st.policy] || 'Ask Me'), st.policy !== 'restrict')
     );
   }
   function myJoinedLobby() {
@@ -1069,13 +1165,15 @@
     t.textContent = 'Lobby · ' + n + '/' + SEATS + ' · ' + st;
     const sh = document.getElementById('lobbyPillShort');
     if (sh) sh.textContent = n + '/' + SEATS;
+    paintEye(document.getElementById('lobbyPillSpec'), spectatorCount(L));
     const count = pendingRequests(L).length + (state.unseen | 0);
     b.hidden = !count;
     b.textContent = String(count);
     const pill = document.getElementById('lobbyPill');
     if (pill) {
       pill.classList.toggle('live', L.status === 'live');
-      pill.setAttribute('aria-label', t.textContent + (count ? ' · ' + count + ' new' : '') + ' · expand');
+      const sc = spectatorCount(L);
+      pill.setAttribute('aria-label', t.textContent + ' · ' + (sc === 1 ? '1 spectator' : sc + ' spectators') + (count ? ' · ' + count + ' new' : '') + ' · expand');
       pill.title = 'Expand the lobby';
     }
   }
@@ -1148,7 +1246,6 @@
     Object.keys(pm).forEach((k) => { if (k !== me && !cm[k]) pushNote('left-' + k, (pm[k].displayName || 'Someone') + ' left the lobby', { icon: '🚪' }); });
     const ps = prev.spectators || {}, cs = cur.spectators || {};
     Object.keys(cs).forEach((k) => { if (k !== me && !ps[k] && !cm[k]) pushNote('spec-' + k, (cs[k].displayName || 'Someone') + ' is spectating', { icon: '👁' }); });
-    if (cur.share && !prev.share) pushNote('share', 'Screen share started' + (cur.share.sharedByName ? ' by ' + cur.share.sharedByName : ''), { icon: '🖥' });
     if (cur.status === 'live' && prev.status !== 'live') pushNote('live', 'The quiz is live', { icon: '▶', count: false });
   }
 
@@ -1180,9 +1277,6 @@
       try { StudySpectate.renderLobbyBox(); } catch (e) {}
     }
     const mine = myJoinedLobby();
-    if (global.StudyCursors && StudyCursors.setLobbyHidden) {
-      try { StudyCursors.setLobbyHidden(!!(mine && !settingsOf(mine).cursors)); } catch (e) {}
-    }
     const list = document.getElementById('lobbyList');
     const detail = document.getElementById('lobbyDetail');
     if (!list || !detail) return;
@@ -1246,6 +1340,7 @@
 
     const id = state.activeLobbyId;
     const lobby = id && state.lobbies[id];
+    paintHead(lobby && isLobbyAlive(lobby) ? lobby : null, id);
     if (!lobby || !isLobbyAlive(lobby)) {
       detail.hidden = true;
       detail.innerHTML = '';
@@ -1258,29 +1353,53 @@
     const inLobby = !!(lobby.members && me && lobby.members[me]);
     const st = settingsOf(lobby);
 
+    const live = lobby.status === 'live';
+    const panes = (lobby.session && lobby.session.panes) || {};
     let seatsHtml = '<div class="lobby-seats">';
     for (let i = 0; i < SEATS; i++) {
       const s = seats[String(i)];
-      const role = (s && s.role) || 'play';
+      if (!s) {
+        seatsHtml +=
+          '<div class="lobby-seat empty" data-seat="' + i + '" data-drop="1">' +
+          '<span class="ls-avatar ls-avatar-empty" aria-hidden="true">+</span>' +
+          '<div class="lobby-seat-empty">Open seat' + (leader ? '<span class="ls-sub">Drop a party member here</span>' : '') + '</div></div>';
+        continue;
+      }
+      const role = s.role === 'spectate' ? 'spectate' : 'play';
+      const p = panes[s.uid] || null;
+      const total = p ? p.total | 0 : 0;
+      const pct = total ? Math.round(((p.answered | 0) / total) * 100) : 0;
+      const pill = role === 'spectate' ? '<span class="lobby-pill-tag spec">Spectating</span>' : live ? '<span class="lobby-pill-tag live">Live</span>' : '<span class="lobby-pill-tag wait">Waiting</span>';
       seatsHtml +=
-        '<div class="lobby-seat' + (s ? ' filled' : '') + '" data-seat="' + i + '" data-drop="1">' +
-        '<div class="lobby-seat-num">Seat ' + (i + 1) + (s ? ' · ' + (role === 'spectate' ? 'Spectate' : 'Play') : '') + '</div>' +
-        (s
-          ? '<div class="lobby-seat-occ" draggable="' + (leader ? 'true' : 'false') + '" data-uid="' + esc(s.uid) + '">' + esc(s.displayName) + ' · LV' + (s.level || 1) + '</div>' +
-            '<div class="lobby-seat-bank">' + esc(setLabelOf(lobby, s)) + '</div>' +
-            (leader || s.uid === me
-              ? '<div class="lobby-seat-actions">' +
-                '<button type="button" class="lobby-mini-btn" data-role-seat="' + i + '" data-role="' + (role === 'spectate' ? 'play' : 'spectate') + '">' +
-                (role === 'spectate' ? 'Set Play' : 'Set Spec') + '</button>' +
-                (leader && lobby.status !== 'live'
-                  ? '<select class="lobby-seat-bank-sel chat-tool-input" data-bank-seat="' + i + '" aria-label="Set for seat ' + (i + 1) + '"></select>'
-                  : '') +
-                '</div>'
-              : '')
-          : '<div class="lobby-seat-empty">Empty · join or drop a member here</div>') +
+        '<div class="lobby-seat filled' + (s.uid === me ? ' is-me' : '') + (s.uid === lobby.leader ? ' is-leader' : '') + '" data-seat="' + i + '" data-drop="1" style="--friend-hue:' + hueOf(s.displayName) + '">' +
+        '<div class="ls-top">' +
+        '<span class="ls-avatar" aria-hidden="true">' + esc(initialsOf(s.displayName)) + '</span>' +
+        '<div class="ls-who">' +
+        '<div class="lobby-seat-occ" draggable="' + (leader ? 'true' : 'false') + '" data-uid="' + esc(s.uid) + '" title="' + esc(s.displayName) + '">' + esc(s.displayName) + (s.uid === lobby.leader ? ' <span class="ls-star" title="Lobby leader">★</span>' : '') + '</div>' +
+        '<div class="lobby-seat-bank">' + esc(setLabelOf(lobby, s)) + '</div>' +
+        '</div>' +
+        '<span class="ls-level">LV ' + (s.level || 1) + '</span>' +
+        '</div>' +
+        '<div class="ls-foot">' + pill +
+        '<span class="ls-prog" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></span>' +
+        '<span class="ls-count">' + (total ? (p.answered | 0) + '/' + total : '') + '</span>' +
+        '</div>' +
+        (leader && !live
+          ? '<div class="lobby-seat-actions"><select class="lobby-seat-bank-sel chat-tool-input" data-bank-seat="' + i + '" aria-label="Set for seat ' + (i + 1) + '"></select></div>'
+          : '') +
         '</div>';
     }
     seatsHtml += '</div>';
+
+    // spectators: members who switched to watching plus live-tile watchers
+    const mem = lobby.members || {};
+    const watchers = [];
+    Object.keys(mem).forEach((k) => { if (mem[k] && mem[k].role === 'spectate') watchers.push({ name: mem[k].displayName || 'Member', member: true, me: k === me }); });
+    Object.keys(lobby.spectators || {}).forEach((k) => { const v = lobby.spectators[k]; if (v && !mem[k] && Date.now() - (v.lastSeen || 0) < 60000) watchers.push({ name: v.displayName || 'Viewer', member: false }); });
+    const specHtml = watchers.length
+      ? '<div class="lobby-specs" aria-label="Spectators"><span class="lobby-specs-title">Spectating</span>' +
+        watchers.map((w) => '<span class="lobby-spec-chip' + (w.me ? ' is-me' : '') + '" title="' + (w.member ? 'Lobby member' : 'Watching as a live tile') + '">' + esc(w.name) + '</span>').join('') + '</div>'
+      : '';
 
     const members = partyMembers();
     let bench = '<div class="lobby-bench"><div class="lobby-bench-label">Party bench · drag into seats</div>';
@@ -1297,29 +1416,42 @@
 
     const mode = lobby.gameMode === 'classic' ? 'classic' : 'pane';
     const jm = joinModeOf(lobby);
+    const myR = inLobby ? myRole(lobby) : null;
+    const block = inLobby ? (myR === 'spectate' ? playBlock(lobby) : spectateBlock(lobby)) : '';
+    const specSwitch = inLobby
+      ? '<label class="lobby-switch lobby-spec-switch' + (block ? ' is-blocked' : '') + '" for="lobbySpecSw" title="' + esc(block || (myR === 'spectate' ? 'Take a free seat and play' : 'Watch without a seat')) + '">' +
+        '<input type="checkbox" role="switch" id="lobbySpecSw"' + (myR === 'spectate' ? ' checked' : '') + (block ? ' disabled' : '') + ' aria-describedby="lobbySpecHint">' +
+        '<span class="lobby-switch-track" aria-hidden="true"><span class="lobby-switch-thumb"></span></span><span class="lobby-switch-text">Spectate</span></label>'
+      : '';
     const html =
       '<div class="lobby-detail-head">' +
-      '<div class="lobby-detail-title">' + esc(testLabelOf(lobby)) + '</div>' +
+      '<div class="lobby-detail-top"><div class="lobby-detail-title">' + esc(testLabelOf(lobby)) + '</div>' +
+      '<span class="lobby-pill-tag ' + (live ? 'live' : 'wait') + '">' + (live ? 'Live' : 'Waiting') + '</span>' +
+      (myR === 'spectate' ? '<span class="lobby-pill-tag spec">Spectating</span>' : '') + '</div>' +
       '<div class="lobby-detail-set">' + esc(setLabelOf(lobby)) + '</div>' +
       '<div class="lobby-chips">' + settingsChips(lobby) + '</div>' +
       '</div>' +
-      '<div class="lobby-mode-row lobby-detail-mode lobby-segment" role="radiogroup" aria-label="Mode">' +
-      '<span class="lobby-mode-label">Mode</span>' +
-      '<button type="button" role="radio" aria-checked="' + (mode === 'pane') + '" class="mp-mode-pill' + (mode === 'pane' ? ' active' : '') + '" data-set-mode="pane"' + (leader && lobby.status === 'open' ? '' : ' disabled') + '>Pane</button>' +
-      '<button type="button" role="radio" aria-checked="' + (mode === 'classic') + '" class="mp-mode-pill' + (mode === 'classic' ? ' active' : '') + '" data-set-mode="classic"' + (leader && lobby.status === 'open' ? '' : ' disabled') + '>Classic</button>' +
-      '</div>' +
+      (leader && lobby.status === 'open'
+        ? '<div class="lobby-mode-row lobby-detail-mode lobby-segment" role="radiogroup" aria-label="Mode">' +
+          '<button type="button" role="radio" aria-checked="' + (mode === 'pane') + '" class="mp-mode-pill' + (mode === 'pane' ? ' active' : '') + '" data-set-mode="pane">Pane</button>' +
+          '<button type="button" role="radio" aria-checked="' + (mode === 'classic') + '" class="mp-mode-pill' + (mode === 'classic' ? ' active' : '') + '" data-set-mode="classic">Classic</button>' +
+          '</div>'
+        : '') +
+      '<div class="lobby-group-title lobby-seats-title">Seats <span class="lobby-count-chip">' + Object.keys(seats).length + '/' + SEATS + '</span></div>' +
       seatsHtml +
-      bench +
+      specHtml +
+      (leader ? bench : '') +
       '<div class="lobby-actions">' +
       (leader && lobby.status === 'open'
         ? '<button type="button" class="btn-gold" id="lobbyStartBtn">Start · ' + Object.keys(seats).length + ' · ' + (mode === 'classic' ? 'Classic' : 'Pane') + '</button>'
         : lobby.status === 'live'
-          ? '<span class="chat-tool-label">Quiz live</span>'
-          : '<span class="chat-tool-label">Waiting for leader…</span>') +
+          ? ''
+          : '<span class="chat-tool-label lobby-wait-note">Waiting for the leader to start</span>') +
       (inLobby
-        ? '<button type="button" class="chat-tool-btn" id="lobbyLeaveBtn">Leave</button>'
-        : (jm !== 'closed' ? '<button type="button" class="chat-tool-btn" id="lobbyJoinHereBtn">' + (jm === 'ask' ? 'Ask to Join' : 'Join') + '</button>' : '') +
-          (st.spectate ? '<button type="button" class="chat-tool-btn" id="lobbySpectateBtn">Spectate</button>' : '')) +
+        ? '<div class="lobby-action-row">' + specSwitch + '<button type="button" class="chat-tool-btn danger lobby-leave-btn" id="lobbyLeaveBtn">Leave</button></div>' +
+          '<p class="lobby-field-hint" id="lobbySpecHint">' + esc(block || (myR === 'spectate' ? 'You are watching. Switch off to take a free seat.' : 'Watch without leaving the lobby.')) + '</p>'
+        : '<div class="lobby-action-row">' + (jm !== 'closed' ? '<button type="button" class="chat-tool-btn primary" id="lobbyJoinHereBtn">' + (jm === 'ask' ? 'Ask to Join' : 'Join') + '</button>' : '') +
+          (st.spectate ? '<button type="button" class="chat-tool-btn" id="lobbySpectateBtn">Spectate</button>' : '') + '</div>') +
       '</div>';
     // unchanged (e.g. a heartbeat): keep the DOM so open dropdowns and focus survive
     if (detail.__h === html && detail.__id === id && detail.__leader === leader) return;
@@ -1398,12 +1530,12 @@
       btn.onclick = () =>
         setGameMode(id, btn.dataset.setMode).catch((e) => toast(e.message || 'Mode failed'));
     });
-    detail.querySelectorAll('[data-role-seat]').forEach((btn) => {
-      btn.onclick = () =>
-        setSeatRole(id, Number(btn.dataset.roleSeat), btn.dataset.role).catch((e) =>
-          toast(e.message || 'Role failed')
-        );
-    });
+    const specSw = detail.querySelector('#lobbySpecSw');
+    if (specSw) specSw.onchange = () => {
+      const want = specSw.checked ? 'spectate' : 'play';
+      specSw.disabled = true;
+      setMyRole(id, want).catch((e) => { toast(e.message || 'Could not switch'); render(); });
+    };
     const leaveBtn = detail.querySelector('#lobbyLeaveBtn');
     if (leaveBtn) leaveBtn.onclick = () => confirmLeave(id);
     const joinHere = detail.querySelector('#lobbyJoinHereBtn');
@@ -1414,13 +1546,28 @@
         joinLobby(id, { role: 'spectate' }).catch((e) => toast(e.message || 'Spectate failed'));
   }
 
+  function paintHead(L, id) {
+    const meta = document.getElementById('lobbyHeadMeta');
+    const title = document.getElementById('lobbyPanelTitle');
+    if (!meta || !title) return;
+    meta.hidden = !L;
+    title.textContent = L ? 'Lobby' : 'Online Lobbies';
+    const hint = document.querySelector('#lobbyPanel .lobby-hint');
+    if (hint) hint.hidden = !!myJoinedLobby();
+    if (!L) return;
+    const st = document.getElementById('lobbyHeadStatus');
+    if (st) { st.textContent = L.status === 'live' ? 'Live' : 'Waiting'; st.className = 'lobby-status-pill lobby-pill-tag ' + (L.status === 'live' ? 'live' : 'wait'); }
+    const ct = document.getElementById('lobbyCodeText');
+    if (ct) ct.textContent = codeOf(id);
+    paintEye(document.getElementById('lobbyHeadSpec'), spectatorCount(L));
+  }
   function leaveText(L) {
     const me = uid();
-    let t = L && L.status === 'live' ? 'You leave the live quiz and your seat opens up.' : 'Your seat opens up for someone else.';
+    let t = L && L.status === 'live' ? "You'll leave the live quiz." : 'Your seat opens up.';
     if (L && L.leader === me) {
       const next = successorOf(L, me);
       const nm = next && L.members[next] && L.members[next].displayName;
-      t += next ? ' Leadership passes to ' + (nm || 'the next player') + '.' : ' You are the last member, so the lobby closes.';
+      t += next ? ' Leadership passes to ' + (nm || 'the next player') + '.' : ' As the last member, the lobby will close.';
     }
     return t;
   }
@@ -1428,7 +1575,7 @@
     id = id || state.activeLobbyId;
     const L = id && state.lobbies[id];
     const ask = global.StudyConfirm && StudyConfirm.ask
-      ? StudyConfirm.ask({ title: 'Leave this lobby?', text: leaveText(L), confirm: 'Leave', cancel: 'Stay' })
+      ? StudyConfirm.ask({ title: 'Leave the lobby?', text: leaveText(L), confirm: 'Leave', cancel: 'Stay', danger: true, icon: 'leave' })
       : Promise.resolve(global.confirm ? global.confirm('Leave this lobby?') : true);
     return ask.then((ok) => (ok ? leaveLobby(id).catch((e) => toast(e.message || 'Leave failed')) : null));
   }
@@ -1501,6 +1648,11 @@
     successorOf,
     start: startLobby,
     setSeatRole,
+    setMyRole,
+    spectatorCount,
+    canSpectate: (L) => spectateBlock(L || getActiveLobby()),
+    canPlay: (L) => playBlock(L || getActiveLobby()),
+    myRole: (L) => myRole(L || getActiveLobby()),
     setSeatBank,
     setGameMode,
     getActiveLobbyId,

@@ -32,8 +32,7 @@
     return String((p && p.displayName) || 'Scholar').slice(0, 40);
   }
   function rulesMsg(e) {
-    const S = global.StudyShare;
-    const perm = S ? S.isPermission(e) : /permission/i.test(String(e && (e.code || e.message)));
+    const perm = /permission/i.test(String(e && (e.code || e.message)));
     return perm ? 'Spectating needs the updated database rules — ask the site owner to publish them.' : (e && e.message) || String(e);
   }
   function esc(s) {
@@ -49,9 +48,6 @@
   }
   function spectatingOff(L) {
     return !!(L && L.settings && L.settings.spectate === false);
-  }
-  function shareOff(L) {
-    return !!(L && L.settings && L.settings.share === false);
   }
   function leaderName(L) {
     return (L && L.members && L.leader && L.members[L.leader] && L.members[L.leader].displayName) || 'Leader';
@@ -267,7 +263,7 @@
       return;
     }
     t.el.querySelector('.st-title').textContent = leaderName(L) + "'s lobby";
-    t.el.querySelector('.st-viewers').textContent = '👁 ' + freshCount(L.spectators);
+    paintEye(t.el.querySelector('.st-viewers'), spectatorCount(L));
     if (spectatingOff(L)) {
       body.__h = ''; body.innerHTML = '<div class="st-wait">The leader turned spectating off for this lobby.</div>';
       t.el.querySelector('.st-request').disabled = true;
@@ -283,20 +279,6 @@
     if (policy === 'restrict') note(lobbyId, 'Join requests are closed');
     if (mine && mine.status === 'accepted') return acceptAndJoin(lobbyId);
     if (mine && mine.status === 'declined') note(lobbyId, 'The leader declined your request');
-    const s = L.share;
-    if (s && s.bank && global.StudyShare) {
-      const holder = document.createElement('div');
-      holder.className = 'st-share';
-      try {
-        await StudyShare.renderMirror(s, holder, { interactive: false, anchorPrefix: 'tile-' + lobbyId, shareSet: L.shareSet || null });
-      } catch (e) {
-        holder.textContent = 'Shared set unavailable';
-      }
-      if (!tiles[lobbyId]) return;
-      body.__h = ''; body.innerHTML = '<div class="share-badge st-badge">Screen Share of ' + esc(s.sharedByName || 'leader') + '</div>';
-      body.appendChild(holder);
-      return;
-    }
     // live: every player's pane, mirrored
     const live = L.status === 'live' && L.session && L.session.panes;
     if (live) {
@@ -373,7 +355,7 @@
       // accepted into one lobby: leave any other lobby first
       const cur = joinedLobbyId();
       if (cur && cur !== lobbyId && L && L.leave) await L.leave(cur);
-      if (L && L.join) await L.join(lobbyId, { role: 'play' });
+      if (L && L.join) await L.join(lobbyId, { role: 'play', collapsed: true });
       db().ref('lobbies/' + lobbyId + '/joinRequests/' + uid()).remove().catch(() => {});
       unwatch(lobbyId);
       toast('Joined the lobby');
@@ -445,152 +427,86 @@
     }
   }
 
+  /* spectators of a lobby: watchers with a live tile plus members who switched to spectating */
+  function spectatorCount(L) {
+    if (!L) return 0;
+    const mem = L.members || {};
+    const now = Date.now();
+    const watch = Object.keys(L.spectators || {}).filter((k) => !mem[k] && L.spectators[k] && now - (L.spectators[k].lastSeen || 0) < FRESH_MS);
+    return watch.length + Object.keys(mem).filter((k) => mem[k] && mem[k].role === 'spectate').length;
+  }
+  const EYE_SVG = '<svg class="eye-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M12 5C6.5 5 2.7 9.2 1.5 12c1.2 2.8 5 7 10.5 7s9.3-4.2 10.5-7C21.3 9.2 17.5 5 12 5Zm0 11.2a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4Zm0-2.2a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor"/></svg>';
+  function paintEye(el, n) {
+    if (!el) return;
+    n = n | 0;
+    const key = 'n' + n;
+    if (el.__eye !== key) { el.__eye = key; el.innerHTML = EYE_SVG + '<span class="eye-n">' + n + '</span>'; }
+    el.classList.add('spec-count');
+    el.setAttribute('aria-label', n === 1 ? '1 spectator' : n + ' spectators');
+    el.title = n === 1 ? '1 spectator watching' : n + ' spectators watching';
+  }
   /* viewer count next to the online indicator */
   function paintBadge() {
     let b = document.getElementById('viewerCount');
     const net = document.getElementById('netStatus');
-    const n = freshCount(live.spectators);
+    const n = spectatorCount(Object.assign({}, joinedLobby() || {}, { spectators: live.spectators }));
     if (!b) {
       b = document.createElement('span');
       b.id = 'viewerCount';
       b.className = 'viewer-count';
-      b.title = 'Spectators watching your lobby';
+
       if (net && net.parentNode) net.parentNode.insertBefore(b, net.nextSibling);
       else document.body.appendChild(b);
     } else if (net && b.previousSibling !== net && net.parentNode) net.parentNode.insertBefore(b, net.nextSibling);
     b.hidden = !live.lobbyId;
-    b.textContent = '👁 ' + n;
+    paintEye(b, n);
   }
 
-  /* lobby panel section: screen share controls, join requests and spectators */
-  let sharePicker = null;
-  let shareChoice = null;
+  /* lobby panel section: join requests (leader), right under the panel header */
   function renderLobbyBox() {
     const panel = document.getElementById('lobbyPanel');
     if (!panel) return;
-    let box = document.getElementById('lobbyLiveBox');
-    if (!box) {
-      box = document.createElement('div');
-      box.id = 'lobbyLiveBox';
-      box.className = 'lobby-live-box';
-      panel.appendChild(box);
-      box.addEventListener('click', onBoxClick);
-      box.addEventListener('change', onBoxChange);
-    }
+    const old = document.getElementById('lobbyLiveBox');
+    if (old) old.remove();
     const me = uid();
-    const S = global.StudyShare;
-    const g = S && S.currentGroup();
-    const JL = g && g.kind === 'lobby' ? joinedLobby() : null;
-    let h = '';
-    if (g) {
-      const s = S.getSession();
-      const lead = g.leader === me;
-      h += '<section class="llb-sec"><h4>Screen Share</h4>';
-      if (!s) {
-        if (JL && shareOff(JL)) {
-          h += '<div class="llb-note">Screen share is off for this lobby.</div>';
-        } else if (!lead) {
-          h += '<div class="llb-note">The leader can start a screen share.</div>';
-        } else if (JL) {
-          h += '<div class="llb-note">Mirror the lobby set to everyone: ' + esc(JL.setLabel || 'the lobby set') + '.</div>' +
-            '<div class="llb-row llb-row-end"><button type="button" class="chat-tool-btn" data-act="share-start">Start Share</button></div>';
-        } else {
-          h += '<div class="llb-note">Pick a set to mirror to your party.</div><div id="shareSetMount" class="llb-picker"></div>' +
-            '<div class="llb-row llb-row-end"><button type="button" class="chat-tool-btn" data-act="share-start">Start Share</button></div>';
-        }
-      } else {
-        const sl = (S.getSetLabel && S.getSetLabel()) || '';
-        h += '<div class="llb-note">Screen Share of ' + esc(s.sharedByName) + (sl ? ' · ' + esc(sl) : '') + ' · control: ' + esc(s.controllerName || '') + '</div>';
-        if (lead) {
-          h += Object.keys(g.members || {})
-            .map((id) => {
-              const m = g.members[id];
-              const has = s.controllerUid === id;
-              return '<div class="llb-row"><span>' + esc(m.displayName || 'Member') + (id === g.leader ? ' ★' : '') + '</span>' +
-                '<button type="button" class="chat-tool-btn' + (has ? ' active' : '') + '" data-act="control" data-uid="' + esc(id) + '" aria-pressed="' + has + '">' +
-                (has ? 'Has control' : 'Give control') + '</button></div>';
-            })
-            .join('');
-        }
-        if (lead || s.sharedBy === me) h += '<button type="button" class="chat-tool-btn danger" data-act="share-stop">End share</button>';
-      }
-      h += '</section>';
-    }
     const L = joinedLobby();
     let rh = '';
     if (L && L.leader === me) {
       const policy = policyOf(L);
-      rh += '<section class="llb-sec llb-requests"><h4>Join Requests</h4>' +
+      const reqs = Object.keys(live.requests).filter((k) => live.requests[k] && live.requests[k].status === 'pending');
+      rh += '<section class="llb-sec llb-requests"><h4>Join Requests' + (reqs.length ? ' <span class="lobby-count-chip">' + reqs.length + '</span>' : '') + '</h4>' +
         '<div class="llb-field"><label class="bank-picker-label" for="llbPolicy">Who can ask to join</label><select class="chat-tool-input" id="llbPolicy">' +
         ['ask', 'restrict', 'all'].map((p) => '<option value="' + p + '"' + (p === policy ? ' selected' : '') + '>' + ({ ask: 'Ask me', restrict: 'Restrict', all: 'Allow all' }[p]) + '</option>').join('') +
         '</select></div>';
-      const reqs = Object.keys(live.requests).filter((k) => live.requests[k] && live.requests[k].status === 'pending');
       rh += reqs.length
         ? reqs
           .map((k) => '<div class="llb-row llb-req"><span>' + esc(live.requests[k].displayName) + ' wants to join</span>' +
-            '<button type="button" class="chat-tool-btn" data-act="accept" data-uid="' + esc(k) + '">Accept</button>' +
+            '<button type="button" class="chat-tool-btn primary" data-act="accept" data-uid="' + esc(k) + '">Accept</button>' +
             '<button type="button" class="chat-tool-btn" data-act="decline" data-uid="' + esc(k) + '">Decline</button></div>')
           .join('')
         : '<div class="llb-note">No requests waiting.</div>';
       rh += '</section>';
-      h += '<section class="llb-sec"><h4>Spectators <span class="llb-count" id="llbViewers">👁 ' + freshCount(live.spectators) + '</span></h4>' +
-        (spectatingOff(L) ? '<div class="llb-note">Spectating is off for this lobby.</div>' : '<div class="llb-note">Viewers watching this lobby as a live tile.</div>') +
-        '</section>';
     }
-    // join requests sit at the TOP of the panel, right under its header
     let rbox = document.getElementById('lobbyReqBox');
     if (!rbox) {
       rbox = document.createElement('div');
       rbox.id = 'lobbyReqBox';
       rbox.className = 'lobby-live-box lobby-req-box';
-      const head = panel.querySelector('.lobby-panel-head');
-      if (head && head.nextSibling) panel.insertBefore(rbox, head.nextSibling); else panel.insertBefore(rbox, panel.firstChild);
       rbox.addEventListener('click', onBoxClick);
       rbox.addEventListener('change', onBoxChange);
     }
+    // inside the joined lobby's card, after its header; otherwise right under the panel header
+    const anchor = panel.querySelector('#lobbyDetail:not([hidden]) .lobby-detail-head') || panel.querySelector('.lobby-panel-head');
+    if (anchor) { if (rbox.previousElementSibling !== anchor) anchor.after(rbox); }
+    else if (rbox.parentNode !== panel) panel.prepend(rbox);
     if (rbox.__h !== rh) { rbox.__h = rh; rbox.innerHTML = rh; }
     rbox.hidden = !rh;
-    if (box.__h !== h) {
-      box.__h = h;
-      box.innerHTML = h;
-      const mountEl = box.querySelector('#shareSetMount');
-      sharePicker = null;
-      if (mountEl && global.StudyBankPicker && StudyBankPicker.mount) {
-        sharePicker = StudyBankPicker.mount(mountEl, {
-          idPrefix: 'share',
-          compact: true,
-          value: shareChoice || undefined,
-          onChange: (bank, form, enc, choice) => {
-            shareChoice = choice ? { bank: choice.bank, form: choice.form, card: choice.card } : null;
-          }
-        });
-      }
-    }
-    box.hidden = !h;
   }
   function onBoxClick(e) {
     const b = e.target.closest && e.target.closest('[data-act]');
     if (!b) return;
-    const S = global.StudyShare;
     const act = b.dataset.act;
-    const done = () => renderLobbyBox();
-    if (act === 'share-start' && S) {
-      const JL = joinedLobby();
-      let opts;
-      if (JL) opts = { bank: JL.bank, form: JL.form || 'A', card: JL.card || null, label: JL.setLabel || '' };
-      else {
-        const c = sharePicker && sharePicker.getChoice && sharePicker.getChoice();
-        opts = c ? { bank: c.bank, form: c.form, card: c.card, label: c.label } : {};
-      }
-      S.start(opts).then(done, (err) => toast(err.message));
-    } else if (act === 'share-stop' && S) S.stop().then(done, (err) => toast(err.message));
-    else if (act === 'control' && S) {
-      const s = S.getSession();
-      const g = S.getGroup();
-      // toggle: giving control to the holder again hands it back to the leader
-      const target = s && s.controllerUid === b.dataset.uid ? g.leader : b.dataset.uid;
-      S.setController(target).then(done, (err) => toast(err.message));
-    } else if (act === 'accept') respond(b.dataset.uid, true);
+    if (act === 'accept') respond(b.dataset.uid, true);
     else if (act === 'decline') respond(b.dataset.uid, false);
   }
   function onBoxChange(e) {
@@ -630,6 +546,8 @@
     respond,
     setPolicy,
     renderLobbyBox,
+    spectatorCount,
+    paintEye,
     tiles: () => Object.keys(tiles),
     _tick: tick,
     MAX_TILES

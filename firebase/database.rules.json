@@ -128,25 +128,6 @@
           ".read": "auth != null",
           ".write": "auth != null && root.child('parties').child($partyId).child('leader').val() == auth.uid",
           ".validate": "newData.hasChildren(['by','mode','phaseEndsAt','at']) && newData.child('by').isString() && newData.child('by').val() == auth.uid && newData.child('mode').val().matches(/^(focus|break)$/) && newData.child('phaseEndsAt').isNumber() && newData.child('at').isNumber()"
-        },
-        "session": {
-          ".validate": "newData.hasChildren(['controllerUid','sharedBy','bank','form','seed','currentIndex','updatedAt']) && newData.child('controllerUid').isString() && (newData.child('controllerUid').val() == root.child('parties').child($partyId).child('leader').val() || root.child('parties').child($partyId).child('members').child(newData.child('controllerUid').val()).exists()) && newData.child('sharedBy').isString() && newData.child('bank').isString() && newData.child('bank').val().length <= 200 && newData.child('form').isString() && newData.child('form').val().length <= 8 && newData.child('seed').isNumber() && newData.child('currentIndex').isNumber() && newData.child('currentIndex').val() >= 0 && newData.child('updatedAt').isNumber() && newData.child('updatedAt').val() <= now + 60000 && (!newData.hasChild('controllerName') || (newData.child('controllerName').isString() && newData.child('controllerName').val().length <= 40)) && (!newData.hasChild('sharedByName') || (newData.child('sharedByName').isString() && newData.child('sharedByName').val().length <= 40)) && (data.exists() ? ((auth.uid == data.child('controllerUid').val() || auth.uid == root.child('parties').child($partyId).child('leader').val()) && newData.child('sharedBy').val() == data.child('sharedBy').val() && newData.child('seed').val() == data.child('seed').val() && newData.child('bank').val() == data.child('bank').val() && newData.child('form').val() == data.child('form').val()) : (auth.uid == root.child('parties').child($partyId).child('leader').val() && newData.child('sharedBy').val() == auth.uid))",
-          "answers": {
-            "$qid": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 16"
-            }
-          },
-          "progress": {
-            ".validate": "newData.hasChildren(['solved','correct']) && newData.child('solved').isNumber() && newData.child('correct').isNumber() && (!newData.hasChild('total') || newData.child('total').isNumber())"
-          },
-          "$other": {
-            ".validate": "$other.matches(/^(controllerUid|controllerName|sharedBy|sharedByName|bank|form|seed|currentIndex|updatedAt)$/)"
-          }
-        },
-        "shareBeat": {
-          "$uid": {
-            ".validate": "auth != null && auth.uid == $uid && newData.isNumber() && newData.val() <= now + 60000"
-          }
         }
       }
     },
@@ -212,7 +193,7 @@
           }
         },
         "settings": {
-          ".validate": "newData.parent().child('leader').val() == auth.uid && (!newData.hasChild('spectate') || newData.child('spectate').isBoolean()) && (!newData.hasChild('share') || newData.child('share').isBoolean()) && (!newData.hasChild('cursors') || newData.child('cursors').isBoolean()) && (!newData.hasChild('policy') || newData.child('policy').val().matches(/^(ask|restrict|all)$/))"
+          ".validate": "newData.parent().child('leader').val() == auth.uid && (!newData.hasChild('spectate') || newData.child('spectate').isBoolean()) && (!newData.hasChild('policy') || newData.child('policy').val().matches(/^(ask|restrict|all)$/))"
         },
         "session": {
           ".write": "auth != null",
@@ -221,26 +202,6 @@
               ".write": "auth != null && (auth.uid == $uid || root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid)",
               ".validate": "!newData.exists() || (newData.hasChildren(['qIndex','updatedAt']) && newData.child('qIndex').isNumber() && newData.child('updatedAt').isNumber())"
             }
-          }
-        },
-        "share": {
-          ".validate": "newData.hasChildren(['controllerUid','sharedBy','bank','form','seed','currentIndex','updatedAt']) && newData.child('controllerUid').isString() && (newData.child('controllerUid').val() == root.child('lobbies').child($lobbyId).child('leader').val() || root.child('lobbies').child($lobbyId).child('members').child(newData.child('controllerUid').val()).exists()) && newData.child('sharedBy').isString() && newData.child('bank').isString() && newData.child('bank').val().length <= 200 && newData.child('form').isString() && newData.child('form').val().length <= 8 && newData.child('seed').isNumber() && newData.child('currentIndex').isNumber() && newData.child('currentIndex').val() >= 0 && newData.child('updatedAt').isNumber() && newData.child('updatedAt').val() <= now + 60000 && (!newData.hasChild('controllerName') || (newData.child('controllerName').isString() && newData.child('controllerName').val().length <= 40)) && (!newData.hasChild('sharedByName') || (newData.child('sharedByName').isString() && newData.child('sharedByName').val().length <= 40)) && (data.exists() ? ((auth.uid == data.child('controllerUid').val() || auth.uid == root.child('lobbies').child($lobbyId).child('leader').val()) && newData.child('sharedBy').val() == data.child('sharedBy').val() && newData.child('seed').val() == data.child('seed').val() && newData.child('bank').val() == data.child('bank').val() && newData.child('form').val() == data.child('form').val()) : (auth.uid == root.child('lobbies').child($lobbyId).child('leader').val() && newData.child('sharedBy').val() == auth.uid)) && (data.exists() || root.child('lobbies').child($lobbyId).child('settings').child('share').val() != false)",
-          "answers": {
-            "$qid": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 16"
-            }
-          },
-          "progress": {
-            ".validate": "newData.hasChildren(['solved','correct']) && newData.child('solved').isNumber() && newData.child('correct').isNumber() && (!newData.hasChild('total') || newData.child('total').isNumber())"
-          },
-          "$other": {
-            ".validate": "$other.matches(/^(controllerUid|controllerName|sharedBy|sharedByName|bank|form|seed|currentIndex|updatedAt)$/)"
-          }
-        },
-        "shareBeat": {
-          "$uid": {
-            ".write": "auth != null && auth.uid == $uid && root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists()",
-            ".validate": "auth != null && auth.uid == $uid && newData.isNumber() && newData.val() <= now + 60000"
           }
         },
         "spectators": {

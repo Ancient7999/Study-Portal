@@ -160,6 +160,7 @@
       if (!state.session) { leave({ skipSets: false }); return; }
       const p = myPane();
       if (p && p.role && p.role !== state.role) setRole(p.role);
+      paintBar();
       render();
     };
     ref.on('value', handler);
@@ -238,6 +239,8 @@
         '<span class="split-mode-label" id="splitModeLabel">Pane Quiz</span>' +
         '<span class="split-mode-meta" id="splitModeMeta"></span>' +
         '<button type="button" class="kb-mode-btn" id="splitSetBtn" aria-haspopup="dialog" title="Choose the set you play">Change Set</button>' +
+        '<label class="lobby-switch split-spec-switch" for="splitSpecSw" title="Watch without a seat"><input type="checkbox" role="switch" id="splitSpecSw">' +
+        '<span class="lobby-switch-track" aria-hidden="true"><span class="lobby-switch-thumb"></span></span><span class="lobby-switch-text">Spectate</span></label>' +
         '<button type="button" class="kb-mode-btn" id="splitExitBtn">Exit</button>' +
         '<div class="split-set-pop" id="splitSetPop" role="dialog" aria-label="Choose your set" hidden><div id="splitSetMount"></div>' +
         '<div class="split-set-actions"><button type="button" class="kb-mode-btn" id="splitSetCancel">Cancel</button><button type="button" class="kb-mode-btn primary" id="splitSetGo">Play This Set</button></div></div>';
@@ -247,6 +250,13 @@
         if (id && global.StudyLobby && StudyLobby.confirmLeave) { StudyLobby.confirmLeave(id); return; }
         leave({ skipSets: false, silent: true });
         if (id && global.StudyLobby && StudyLobby.leave) StudyLobby.leave(id).catch(() => {});
+      };
+      const sw = bar.querySelector('#splitSpecSw');
+      sw.onchange = () => {
+        if (!state.lobbyId || !global.StudyLobby || !StudyLobby.setMyRole) return;
+        const want = sw.checked ? 'spectate' : 'play';
+        sw.disabled = true;
+        StudyLobby.setMyRole(state.lobbyId, want).catch((e) => toast((e && e.message) || 'Could not switch')).finally(() => paintBar());
       };
       bar.querySelector('#splitSetBtn').onclick = () => (bar.querySelector('#splitSetPop').hidden ? openPicker() : closePicker());
       bar.querySelector('#splitSetCancel').onclick = closePicker;
@@ -279,6 +289,15 @@
     if (meta) meta.textContent = isSpectator() ? 'Spectating' : 'Playing · ' + setText(state.choice);
     const b = document.getElementById('splitSetBtn');
     if (b) b.hidden = isSpectator();
+    const sw = document.getElementById('splitSpecSw');
+    if (sw) {
+      const L = global.StudyLobby && StudyLobby.getLobbies && StudyLobby.getLobbies()[state.lobbyId];
+      const why = L ? (isSpectator() ? StudyLobby.canPlay(L) : StudyLobby.canSpectate(L)) : '';
+      sw.checked = isSpectator();
+      sw.disabled = !!why;
+      const lab = sw.closest('label');
+      if (lab) { lab.title = why || (isSpectator() ? 'Take a free seat and play' : 'Watch without a seat'); lab.classList.toggle('is-blocked', !!why); }
+    }
   }
 
   function sortedPanes() {

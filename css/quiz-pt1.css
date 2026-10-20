@@ -501,7 +501,6 @@ html.bg-edit-hide-glows body{
 .pt1q .saq-input:focus{outline:none;border-color:rgba(var(--accent-0-rgb),.6);border-left-color:var(--accent-0);box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.18),0 0 20px rgba(var(--accent-0-rgb),.22)}
 .pt1q .saq-input.soft-wrong{border-color:rgba(var(--accent-0-rgb),.5);border-left-color:var(--accent-0);background:rgba(var(--accent-0-rgb),.06);animation:softReject calc(420ms / var(--anim-speed)) ease}
 .pt1q .saq-input.correct,.pt1q .saq-input:disabled.correct{border-color:var(--success);border-left-color:var(--success);background:rgba(52,211,153,.12);color:var(--success);opacity:1;-webkit-text-fill-color:var(--success)}
-.pt1q .saq-check{flex:0 0 auto;min-width:110px}
 .pt1q .q-nav-btn.saq .q-nav-icon{font-size:.8em;opacity:.85}
 @media (prefers-reduced-motion: reduce){ .pt1q .saq-input.soft-wrong{animation:none} }
 /* an answer the engine completed ("Coronary" → "Coronary Circulation"): the added word in a yellow highlight */
@@ -514,7 +513,6 @@ html.bg-edit-hide-glows body{
 .pt1q .saq-blank-num{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:800 .85rem var(--mono);background:rgba(var(--accent-0-rgb),.18);color:var(--accent-0);border:1px solid rgba(var(--accent-0-rgb),.45)}
 .pt1q .saq-blank-ctx{font-size:.85rem;color:var(--text-dim);white-space:nowrap;user-select:none;-webkit-user-select:none}
 .pt1q .saq-blank-row .saq-input{flex:none;width:100%}
-.pt1q .saq-multi .saq-check{align-self:flex-end}
 .saq-blank{display:inline-block;min-width:2.4em;padding:0 8px;margin:0 2px;border-bottom:2px solid rgba(var(--accent-0-rgb),.7);color:var(--accent-0);font-family:var(--mono);font-size:.85em;text-align:center;border-radius:4px;background:rgba(var(--accent-0-rgb),.08)}
 .saq-blank.filled{color:var(--success);border-bottom-color:var(--success);background:rgba(52,211,153,.1);font-family:inherit}
 @media (max-width:600px){ .pt1q .saq-blank-row{grid-template-columns:auto 1fr} .pt1q .saq-blank-row .saq-input{grid-column:1 / -1} }

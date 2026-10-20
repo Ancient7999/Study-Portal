@@ -658,6 +658,8 @@
       overlay.className = 'modal-overlay';
       overlay.innerHTML =
         '<div class="modal-card profile-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">' +
+        '<div class="profile-card-top"><button type="button" class="icon-btn modal-x" id="profileCloseBtn" aria-label="Close" title="Close">' +
+        '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z" fill="currentColor"/></svg></button></div>' +
         '<div class="profile-hero">' +
         '<div class="profile-hero-av" id="profileHeroAv"><span class="pc-av-aura"></span><span class="pc-av-core" id="profileHeroInit">S</span></div>' +
         '<div class="profile-hero-text">' +
@@ -666,7 +668,10 @@
         '</div></div>' +
         '<form class="profile-name-form" id="profileNameForm" autocomplete="off" novalidate>' +
         '<label class="profile-label" for="profileNameInput">Callsign</label>' +
+        '<div class="profile-name-row">' +
         '<input id="profileNameInput" name="pp-callsign" class="profile-input" type="text" maxlength="16" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="done" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" aria-describedby="profileStatus" placeholder="Your display name" />' +
+        '<button type="submit" class="btn-ghost btn-sm profile-save-btn" id="profileSaveBtn" disabled title="Change the name first">Save</button>' +
+        '</div>' +
         '</form>' +
         '<div class="profile-xp-wrap">' +
         '<div class="profile-xp-head"><span>EXP</span><span id="profileXpLabel">0 / 10</span></div>' +
@@ -677,10 +682,7 @@
         '<div><span class="ps-k">Questions answered</span><span class="ps-v" id="profileQsVal">0</span></div>' +
         '</div>' +
         authSectionHTML() +
-        '<div class="modal-actions">' +
-        '<button type="button" class="btn-ghost" id="profileCloseBtn">Close</button>' +
-        '<button type="button" class="btn-gold" id="profileSaveBtn">Save callsign</button>' +
-        '</div>' +
+        '<div class="modal-actions profile-actions"></div>' +
         '<p class="profile-foot" id="profileStatus"></p>' +
         '</div>';
       document.body.appendChild(overlay);
@@ -692,26 +694,28 @@
         const input = overlay.querySelector('#profileNameInput');
         const status = overlay.querySelector('#profileStatus');
         const next = String(input.value || '').trim().slice(0, 16);
-        const cur = String((state.profile && state.profile.displayName) || '').trim();
+        const cur = String(input.dataset.saved != null ? input.dataset.saved : ((state.profile && state.profile.displayName) || '')).trim();
         if (!next) { status.textContent = 'Name is required'; input.focus(); return; }
         if (next === cur) { status.textContent = 'That is already your callsign'; return; }
         const ok = global.StudyConfirm && StudyConfirm.ask
-          ? await StudyConfirm.ask({ title: 'Change your callsign to "' + next + '"?', text: 'Lobby seats and party panes show the new name right away.', confirm: 'Confirm', cancel: 'Cancel' })
+          ? await StudyConfirm.ask({ title: 'Change your callsign to "' + next + '"?', text: 'Lobby seats and party panes show the new name right away.', confirm: 'Confirm', cancel: 'Cancel', icon: 'edit' })
           : true;
         if (!ok) { status.textContent = ''; input.focus(); return; }
         try {
           status.textContent = 'Saving…';
           await saveDisplayName(next);
           status.textContent = 'Saved';
+          if (input) input.dataset.saved = String(input.value || '').trim();
+          syncSaveBtn();
           toast('Callsign locked in');
         } catch (e) {
           status.textContent = e.message || 'Save failed';
         }
       }
-      overlay.querySelector('#profileSaveBtn').addEventListener('click', confirmAndSave);
       overlay.querySelector('#profileNameForm').addEventListener('submit', function (e) { e.preventDefault(); confirmAndSave(); });
       overlay.querySelector('#profileAuthForm').addEventListener('submit', function (e) { e.preventDefault(); });
       overlay.querySelector('#profileNameInput').addEventListener('input', function () {
+        syncSaveBtn();
         const v = overlay.querySelector('#profileNameInput').value || 'S';
         const el = document.getElementById('profileHeroInit');
         const av = document.getElementById('profileHeroAv');
@@ -731,6 +735,17 @@
     }, 50);
   }
 
+  /* the inline Save stays disabled until the callsign differs from the saved one */
+  function syncSaveBtn() {
+    const input = document.getElementById('profileNameInput');
+    const btn = document.getElementById('profileSaveBtn');
+    if (!input || !btn) return;
+    const next = String(input.value || '').trim();
+    const cur = String(input.dataset.saved != null ? input.dataset.saved : ((state.profile && state.profile.displayName) || '')).trim();
+    const changed = !!next && next !== cur;
+    btn.disabled = !changed;
+    btn.title = changed ? 'Save the new callsign' : 'Change the name first';
+  }
   function fillModal() {
     const p = state.profile || normalizeProfile({});
     const prog = expProgress(p.questionsAnswered);
@@ -741,7 +756,8 @@
     const lab = document.getElementById('profileXpLabel');
     const init = document.getElementById('profileHeroInit');
     const av = document.getElementById('profileHeroAv');
-    if (input) input.value = p.displayName || '';
+    if (input) { input.value = p.displayName || ''; input.dataset.saved = input.value; }
+    syncSaveBtn();
     if (lv) lv.textContent = String(prog.level);
     if (qs) qs.textContent = String(asInt(p.questionsAnswered));
     if (fill) fill.style.width = prog.pct + '%';

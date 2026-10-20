@@ -92,7 +92,7 @@ Each card shows:
 | Stepped (`stepped`) | `q, explain, steps[{id,prompt,options,correct}]` | See section 6. |
 | Labeling (`label`) | `q, image, alt, labels[{id, answer, accept[], x, y, w, h}], explain` (optional `credit`, `creditUrl`) | Put every label on the picture by dragging (or typing). See section 14. |
 | Ordering (`order`) | `q, title, stages[{id, text, part}], explain` (stages listed in the right order) | Shuffled cards; drag them or use ▲▼, then **Check**. See section 15. |
-| Short answer (`saq`) | `q, answer, explain` (optional `accept[]` for other exact forms) | A text box and a **Check** button. See section 13. |
+| Short answer (`saq`) | `q, answer, explain` (optional `accept[]` for other exact forms) | A text box, graded on **Enter** or when the box loses focus (there is no Check button). See section 13. |
 
 A question without an explanation just shows ✓ (never "undefined").
 
@@ -143,7 +143,7 @@ A question without an explanation just shows ✓ (never "undefined").
   every step, with the `credit` caption (linked to `creditUrl`) under it. It is also shown,
   small, in the results list next to the typed step.
 - **Typed step:** a step with `"type":"saq"` (`answer`, optional `accept[]`) is a text box
-  with **Check**, graded exactly like short answer (section 13): capitals and slashes
+  graded on **Enter** or blur, exactly like short answer (section 13): capitals and slashes
   must match, spaces are only trimmed and collapsed, and the same hints show
   ("wrong capitalization", "missing slash", both, or "not that one · try again"). While
   you type, the labeling highlighter (section 14) under the box marks every wrong letter
@@ -415,7 +415,13 @@ A material can have a picture study instead of Markdown notes:
 { "id": "MT12045", "type": "saq", "cat": "…", "q": "…", "answer": "Thromb/o", "explain": "…" }
 ```
 
-- The student types into a box and presses **Check** or **Enter**.
+- The student types into a box. There is no Check button: the answer is graded on **Enter**,
+  or when the box loses focus (Tab, a click elsewhere, Back / Next or a navigator pill, which
+  still navigate). An empty or spaces-only box is not graded on blur, and a blur straight after
+  Enter does not grade the same text again. After a right answer by Enter the keyboard
+  auto-advance bar runs, as for choice questions.
+- Several blanks: each box is graded on its own Enter or blur. A right box locks and Enter moves
+  the focus to the next open box (a blur leaves the focus where it went).
 - Grading is **strict**: capital letters, punctuation and slashes all count. For the
   answer "Thromb/o", only `Thromb/o` is right; `thromb/o`, `Thrombo`, `thrombo`,
   `THROMB/O`, `Thromb/o.` and `Thromb / o` are all wrong.
