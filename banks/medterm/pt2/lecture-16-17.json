@@ -1477,7 +1477,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which opening does it cover?",
+      "prompt": "Which opening does the epiglottis cover?",
       "options": [
        "The larynx",
        "The esophagus",
@@ -1488,7 +1488,7 @@
      },
      {
       "id": "3",
-      "prompt": "When does it close that opening?",
+      "prompt": "When does the epiglottis close that opening?",
       "options": [
        "During swallowing",
        "During quiet inhalation",

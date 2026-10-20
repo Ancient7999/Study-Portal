@@ -4,7 +4,7 @@
  * Three modes per picture (switch in the section header):
  *   🧩 Word bank — drag a chip onto its slot, or tap a chip then tap the slot (the default);
  *   ⌨ Type      — a typing slot at every hotspot, graded with the quiz engine's labeling logic
- *                  (labelMatches / labelEchoHTML / saqHint: strict capitals and spelling, `accept`
+ *                  (labelMatches / labelEchoHTML / saqHint: strict spelling, capitals not graded, `accept`
  *                  alternatives, live highlighter, lowercase hints) — the default for bone pictures;
  *   👁 Labels    — the labeled picture.
  * A right slot locks for good and celebrates. Progress is kept per picture AND per mode, so ↺ restart
@@ -27,7 +27,7 @@
   /* hint category -> colour family (direction / muscle / bone-structure / division / other) */
   const hintCat = h => !h ? '' : /direction/i.test(h) ? 'dir' : /muscle/i.test(h) ? 'muscle' : /bone|structure|region/i.test(h) ? 'bone' : /division/i.test(h) ? 'division' : 'other';
   const catAttr = h => { const c = hintCat(h); return c ? ' data-cat="' + c + '"' : ''; };
-  const hint = (l, t) => (typeof saqHint === 'function') ? saqHint({ answer: l.answer, accept: l.accept }, t) : 'not that one · try again';
+  const hint = (l, t) => (typeof saqHint === 'function') ? saqHint({ answer: l.answer, accept: l.accept, caseSensitive: l.caseSensitive }, t) : 'not that one · try again';
   const reduced = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   const isBasic = () => document.documentElement.getAttribute('data-quality') === 'basic';
   // Basic Quality plays animated SVG diagrams at one-third speed (their -slow.svg twin)
@@ -126,8 +126,9 @@
     return a;
   }
   const pt = p => p[0] + ',' + p[1];
-  function leaderStart(l) {
-    const a = l.anchor, x0 = l.x, y0 = l.y, x1 = l.x + l.w, y1 = l.y + l.h;
+  const anchorsOf = l => (Array.isArray(l.anchor) ? l.anchor : l.anchor ? [l.anchor] : []).filter(a => a && isFinite(a.x) && isFinite(a.y));
+  function leaderStart(l, a) {
+    a = a || anchorsOf(l)[0]; const x0 = l.x, y0 = l.y, x1 = l.x + l.w, y1 = l.y + l.h;
     if (a.x > x1) return [x1, (y0 + y1) / 2];
     if (a.x < x0) return [x0, (y0 + y1) / 2];
     return [(x0 + x1) / 2, a.y > y1 ? y1 : y0];
@@ -136,7 +137,10 @@
     if (isSingle(img)) return '';
     const parts = img.labels.map(l => {
       const polys = (l.region || []).map(p => '<polygon class="simg-reg-poly" points="' + p.map(pt).join(' ') + '"/>').join('');
-      const line = l.anchor ? (() => { const s = leaderStart(l); return '<line class="simg-leader-hit" x1="' + s[0] + '" y1="' + s[1] + '" x2="' + l.anchor.x + '" y2="' + l.anchor.y + '"/>'; })() : '';
+      const line = anchorsOf(l).map(a => {
+        const pts = [a.from && isFinite(a.from.x) ? [a.from.x, a.from.y] : leaderStart(l, a)].concat((a.via || []).map(v => [v.x, v.y]), [[a.x, a.y]]);
+        return '<polyline class="simg-leader-hit" points="' + pts.map(pt).join(' ') + '"/>';
+      }).join('');
       return (polys || line) ? '<g class="simg-reg" data-id="' + esc(l.id) + '">' + polys + line + '</g>' : '';
     }).join('');
     return parts ? '<svg class="simg-regions" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' + parts + '</svg>' : '';
@@ -224,7 +228,7 @@
     const shake = el => { if (!el) return; el.classList.remove('soft-wrong'); void el.offsetWidth; el.classList.add('soft-wrong'); setTimeout(() => el.classList.remove('soft-wrong'), 480); };
     const lock = (l, text, el, how) => {
       const slots = modeSlots(key, mode); if (slots[l.id] != null) return;
-      slots[l.id] = norm(text); writeModeSlots(key, mode, slots);
+      slots[l.id] = (typeof labelCanon === 'function') ? labelCanon(l, text) : norm(text); writeModeSlots(key, mode, slots);
       const r = el.getBoundingClientRect();
       const labels = labelsOf(img), k = labels.filter(x => slots[x.id] != null).length, n = labels.length;
       const xp = how === 'drop' ? awardDropXP(key, l.id) : 0;
@@ -317,6 +321,8 @@
     /* word bank: drag a chip onto a slot, or tap a chip then a slot (or a slot then a chip) */
     let selChip = null, selSlot = null;
     const fig = sec.querySelector('.simg-figure');
+    /* the drop target's leader line glows with it */
+    const litLeader = slot => sec.querySelectorAll('.simg-reg[data-id]').forEach(g => g.classList.toggle('drop-lit', !!slot && g.dataset.id === slot.dataset.id));
     { const bk = sec.querySelector('.simg-bank'); const setBH = () => sec.style.setProperty('--simg-bank-h', (bk ? Math.ceil(bk.getBoundingClientRect().height) + 10 : 0) + 'px'); setBH(); if (bk) requestAnimationFrame(setBH); }
     const select = chip => {
       sec.querySelectorAll('.label-chip.selected').forEach(c => c.classList.remove('selected'));
@@ -325,7 +331,7 @@
     };
     const selectSlot = slot => {
       sec.querySelectorAll('.label-slot.slot-picked').forEach(s => s.classList.remove('slot-picked'));
-      selSlot = slot || null; if (slot) slot.classList.add('slot-picked');
+      selSlot = slot || null; if (slot) slot.classList.add('slot-picked'); litLeader(selSlot);
     };
     const bounce = (chip, ghost) => {
       if (!ghost) return;
@@ -348,6 +354,7 @@
     /* filled boxes grow to show the whole word: widen (keeping the edge that faces the leader line), wrap to 2 lines if needed, never past the image edge */
     const fitLocked = () => {
       if (!fig || single) return;
+      if (window.StudyQuiz && typeof StudyQuiz.labelFit === 'function') { StudyQuiz.labelFit(fig, labelsOf(img)); return; }
       const F = fig.getBoundingClientRect(); if (!F.width) return;
       sec.querySelectorAll('.label-figure .label-slot.locked').forEach(slot => {
         const l = labelById(slot.dataset.id); if (!l) return;
@@ -357,7 +364,7 @@
         if (need <= have + 1) return;
         const maxW = Math.max(have, F.width * 0.42);
         let w = Math.min(need, maxW) / F.width * 100;
-        const a = l.anchor, right = l.x + l.w;
+        const a = anchorsOf(l)[0], right = l.x + l.w;
         let x = a && a.x > right ? right - w : a && a.x < l.x ? l.x : l.x + l.w / 2 - w / 2;
         x = Math.max(0, Math.min(100 - w, x));
         slot.style.left = x + '%'; slot.style.width = w + '%'; slot.classList.add('grown');
@@ -379,6 +386,8 @@
         if (e.pointerType === 'mouse' && e.button !== 0) return;
         try { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); } catch (er) {}
         const sx = e.clientX, sy = e.clientY; let ghost = null, over = null;
+        const cr = chip.getBoundingClientRect(), off = { x: cr.left + cr.width / 2 - sx, y: cr.top + cr.height / 2 - sy };
+        const zoneT = (window.StudyQuiz && typeof StudyQuiz.labelZoneTarget === 'function') ? StudyQuiz.labelZoneTarget : null;
         const move = ev => {
           if (!ghost) {
             if (Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
@@ -388,19 +397,24 @@
           ev.preventDefault();
           ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
           if (ev.clientY < 48) window.scrollBy(0, -14); else if (ev.clientY > window.innerHeight - 48) window.scrollBy(0, 14);
-          const el = document.elementFromPoint(ev.clientX, ev.clientY);
-          let s = el && el.closest ? el.closest('.label-slot.open') : null;
+          const ptr = { x: ev.clientX, y: ev.clientY }, ctr = { x: ev.clientX + off.x, y: ev.clientY + off.y };
+          /* enlarged hit zones with hysteresis (shared with the quiz): nearest slot wins, a locked slot holds until the exit zone */
+          let s = (zoneT && fig) ? zoneT(fig, [ptr, ctr], over) : null;
+          const el = s ? null : document.elementFromPoint(ev.clientX, ev.clientY);
+          if (!s && el && el.closest) s = el.closest('.label-slot.open');
           if (!s && el && el.closest) {
             /* released over a structure/region: drop into its linked label box */
             const r = el.closest('.simg-reg[data-id], .simg-hot[data-id]');
             if (r && sec.contains(r)) s = sec.querySelector('.label-slot[data-id="' + CSS.escape(r.dataset.id) + '"]');
           }
           const s2 = (s && sec.contains(s)) ? s : null;
-          if (s2 !== over) { if (over) over.classList.remove('drop-over'); over = s2; if (over) over.classList.add('drop-over'); }
+          if (s2 !== over) { if (over) over.classList.remove('drop-over'); over = s2; if (over) { over.classList.add('drop-over'); try { if (navigator.vibrate) navigator.vibrate(10); } catch (er) {} } ghost.classList.toggle('snapped', !!over); litLeader(over); }
+          if (over) { const r = over.getBoundingClientRect(); ghost.style.left = (r.left + r.width / 2) + 'px'; ghost.style.top = (r.top + r.height / 2) + 'px'; }
+          else { ghost.style.left = ctr.x + 'px'; ghost.style.top = ctr.y + 'px'; }
         };
         const end = ev => {
           window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', end); window.removeEventListener('pointercancel', end);
-          if (over) over.classList.remove('drop-over');
+          if (over) over.classList.remove('drop-over'); litLeader(null);
           if (!ghost) return; // a tap: the click handler selects the chip
           chip.__suppressClick = true; setTimeout(() => { chip.__suppressClick = false; }, 60);
           chip.classList.remove('dragging');
@@ -419,6 +433,12 @@
       const go = () => { if (selChip) { const c = selChip; select(null); tryPlace(c, slot, null); } else selectSlot(selSlot === slot ? null : slot); };
       slot.addEventListener('click', go);
       slot.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); go(); } });
+    });
+    /* tap-to-place: a tap near (not only on) a blank uses the same enlarged zones */
+    if (fig && window.StudyQuiz && typeof StudyQuiz.labelZoneTarget === 'function') fig.addEventListener('click', e => {
+      if (!selChip || (e.target.closest && e.target.closest('.label-slot.open'))) return;
+      const slot = StudyQuiz.labelZoneTarget(fig, [{ x: e.clientX, y: e.clientY }], null);
+      if (slot) { const c = selChip; select(null); tryPlace(c, slot, null); }
     });
 
     /* hover / tap highlight: term (slot or hot box), its leader line, or the region itself */

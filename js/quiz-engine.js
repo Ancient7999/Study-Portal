@@ -80,20 +80,69 @@ function multiSetEq(a,b){ if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.
 /* the engine shows its own "Select all that apply" hint, so a trailing copy in the stem is not repeated */
 const MULTI_HINT_RE=/\s*\(?\s*select all that apply\s*[.:!]?\s*\)?\s*$/i;
 function multiStem(s){ const t=String(s==null?'':s).replace(MULTI_HINT_RE,'').trim(); return t||String(s==null?'':s); }
-function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && !isMulti(q) && (q.type==='saq' || (q.answer!=null && !Array.isArray(q.options)))); }
-/* saq grading is STRICT: case, punctuation and slashes all count. Only leading/trailing
-   whitespace is trimmed and runs of internal whitespace collapse to one space. */
+function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && !isMulti(q) && (q.type==='saq' || Array.isArray(q.answers) || (q.answer!=null && !Array.isArray(q.options)))); }
+/* several blanks in one stem: {type:'saq', q:'… ____ meaning ____.', answers:[[alts for blank 1],[alts for blank 2]]} */
+function isSaqMulti(q){ return isSaq(q) && Array.isArray(q.answers) && q.answers.length>1; }
+const SAQ_BLANK_RE=/_{3,}/g;
+function saqBlankAlts(q,k){ const a=q.answers[k]; return (Array.isArray(a)?a:[a]).filter(x=>x!=null&&String(x).trim()!==''); }
+/* saq grading: spelling, punctuation and slashes count; capitals do NOT (a question can opt back in
+   with "caseSensitive": true, e.g. a unit symbol). Leading/trailing whitespace is trimmed and runs of
+   internal whitespace collapse to one space. */
 function saqNorm(s){ return String(s==null?'':s).trim().replace(/\s+/g,' '); }
-function saqAccepts(q){ const a=q&&q.answer; return (Array.isArray(a)?a:[a]).concat(Array.isArray(q&&q.accept)?q.accept:[]).filter(x=>x!=null&&String(x).trim()!==''); }
-function saqMatches(q, typed){ const t=saqNorm(typed); return !!t && saqAccepts(q).some(a=>saqNorm(a)===t); }
+function saqKey(s, cs){ const t=saqNorm(s); return cs?t:t.toLowerCase(); }
+function saqAccepts(q){
+  if(q && Array.isArray(q.answers)) return [q.answers.map((a,k)=>saqBlankAlts(q,k)[0]||'').join(', ')];
+  const a=q&&q.answer; return (Array.isArray(a)?a:[a]).concat(Array.isArray(q&&q.accept)?q.accept:[]).filter(x=>x!=null&&String(x).trim()!=='');
+}
+/* implied-word completion: "Coronary" for "Coronary circulation" when the stem itself already names the
+   circulation. The added word is shown highlighted. The generic word alone never counts. */
+const SAQ_GENERIC=new Set(['circulation','system','systems','muscle','muscles','gland','glands','valve','valves','artery','arteries','vein','veins','bone','bones','node','nodes','cell','cells','tissue','tissues','membrane','membranes','layer','layers','nerve','nerves','vessel','vessels','duct','ducts','cavity','cavities','chamber','chambers','sac','organ','organs','circuit','fluid','disease','disorder','condition','procedure']);
+function saqStem(q){ return String((q&&q.q)||'')+' '+String((q&&q.prompt)||''); }
+function saqWordBase(w){ w=String(w).toLowerCase(); return w.replace(/(ies)$/,'y').replace(/(es|s)$/,''); }
+function saqStemNames(q, word){ const b=saqWordBase(word); return (saqStem(q).toLowerCase().match(/[a-z]+/g)||[]).some(w=>saqWordBase(w)===b); }
+function saqCompletions(q){
+  const out=[], cs=!!(q&&q.caseSensitive), seen=new Set();
+  const add=(part, fill, at, full)=>{ const k=saqKey(part,cs)+'|'+at; if(!saqNorm(part) || seen.has(k)) return; seen.add(k); out.push({part:saqNorm(part), fill, at, full}); };
+  const accs=saqAccepts(q).map(saqNorm);
+  // explicit: "complete": ["coronary"] — each entry is the start or the end of an accepted answer
+  (Array.isArray(q&&q.complete)?q.complete:[]).forEach(p=>{
+    const pk=saqKey(p,cs);
+    accs.forEach(a=>{ const ak=saqKey(a,cs);
+      if(ak.startsWith(pk+' ')) add(p, a.slice(saqNorm(p).length), 'end', a);
+      else if(ak.endsWith(' '+pk)) add(p, a.slice(0, a.length-saqNorm(p).length), 'start', a); });
+  });
+  if(q && q.complete===false) return out;
+  // automatic: a trailing or leading generic word that the stem already names
+  accs.forEach(a=>{
+    const w=a.split(' '); if(w.length<2) return;
+    const allGeneric=ws=>ws.every(x=>SAQ_GENERIC.has(x.toLowerCase()));
+    const last=w[w.length-1], first=w[0];
+    if(SAQ_GENERIC.has(last.toLowerCase()) && saqStemNames(q,last) && !allGeneric(w.slice(0,-1))) add(w.slice(0,-1).join(' '), ' '+last, 'end', a);
+    if(SAQ_GENERIC.has(first.toLowerCase()) && saqStemNames(q,first) && !allGeneric(w.slice(1))) add(w.slice(1).join(' '), first+' ', 'start', a);
+  });
+  return out;
+}
+/* → {text, fill?:{text, at}} for an accepted answer, else null */
+function saqResult(q, typed){
+  const cs=!!(q&&q.caseSensitive), t=saqNorm(typed); if(!t) return null;
+  const tk=saqKey(t,cs);
+  if(saqAccepts(q).some(a=>saqKey(a,cs)===tk)) return {text:t};
+  const c=saqCompletions(q).find(c=>saqKey(c.part,cs)===tk);
+  if(!c) return null;
+  // the added word follows the way the answer was typed: "Coronary" → "Coronary Circulation"
+  const titled=t.split(' ').every(x=>/^[A-Z]/.test(x));
+  let fill=c.fill; if(titled) fill=fill.replace(/(^|\s)([a-z])/g,(m,s,ch)=>s+ch.toUpperCase());
+  return {text:c.at==='end'?t+fill:fill+t, fill:{text:fill, at:c.at}};
+}
+function saqMatches(q, typed){ return !!saqResult(q, typed); }
 /* Hint for a wrong short answer (the answer itself is never shown). Lower case, PT1 style. */
 function saqHint(q, typed){
-  const t=saqNorm(typed), lc=x=>x.toLowerCase();
+  const t=saqNorm(typed), lc=x=>x.toLowerCase(), cs=!!(q&&q.caseSensitive);
   const acc=saqAccepts(q).map(saqNorm);
-  if(acc.some(a=>lc(a)===lc(t))) return 'wrong capitalization · try again';
+  if(cs && acc.some(a=>lc(a)===lc(t))) return 'wrong capitalization · try again';
   const noSlash=acc.filter(a=>a.includes('/')).map(a=>a.replace(/\//g,''));
-  if(noSlash.some(a=>a===t)) return 'missing slash · try again';
-  if(noSlash.some(a=>lc(a)===lc(t))) return 'missing slash and wrong capitalization · try again';
+  if(noSlash.some(a=>saqKey(a,cs)===saqKey(t,cs))) return 'missing slash · try again';
+  if(cs && noSlash.some(a=>lc(a)===lc(t))) return 'missing slash and wrong capitalization · try again';
   return 'not that one · try again';
 }
 function isSingleStep(q){ return isStep(q) && q.__stepCount===1; }
@@ -385,7 +434,7 @@ function expandDeck(deck){
         q:q.q, prompt:st.prompt||'', options:st.options||[], correct:st.correct, __perm:st.__perm,
         cat:q.cat, explain:q.explain
       };
-      if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; delete e.options; delete e.correct; delete e.__perm; }
+      if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete; delete e.options; delete e.correct; delete e.__perm; }
       if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; }
       out.push(e);
     });
@@ -613,9 +662,11 @@ function serializeAnswers(){
     const a=answers[i];
     if(!isAnswered(a,q) && !(isMatching(q) && a && ((a.wires&&a.wires.length)||Object.keys(a.pairs||{}).length))
        && !(isLabel(q) && a && a.slots && Object.keys(a.slots).length)
-       && !(isOrder(q) && a && Array.isArray(a.order))) return;
+       && !(isOrder(q) && a && Array.isArray(a.order))
+       && !(isSaqMulti(q) && a && Array.isArray(a.parts) && a.parts.some(x=>x!=null))) return;
     if(isMatching(q)) out[entryKey(q)]={pairs:Object.assign({},a.pairs||{}), correct:!!a.correct, wires:(a.wires||[]).map(w=>Object.assign({},w,{points:(w.points||[]).map(p=>({x:+p.x.toFixed(1),y:+p.y.toFixed(1)}))}))};
-    else if(isSaq(q)) out[entryKey(q)]={text:String(a.text||''), correct:true};
+    else if(isSaqMulti(q)) out[entryKey(q)]={parts:a.parts.slice(), correct:!!a.correct}; // solved blanks too
+    else if(isSaq(q)) out[entryKey(q)]=Object.assign({text:String(a.text||''), correct:true}, a.fill?{fill:a.fill}:{});
     else if(isLabel(q)) out[entryKey(q)]={slots:Object.assign({},a.slots), correct:!!a.correct}; // partial progress too, per label id
     else if(isOrder(q)) out[entryKey(q)]={order:a.order.slice(), locked:Object.keys(a.locked||{}).filter(k=>a.locked[k]), correct:!!a.correct};
     else if(isMulti(q)) out[entryKey(q)]={sel:(a.sel||[]).map(k=>(q.__perm&&q.__perm[k]!=null)?q.__perm[k]:k), correct:true}; // original option indexes
@@ -680,7 +731,17 @@ function restoreRun(run){
       return;
     }
     if(isSaq(q)){
-      if(a && typeof a==='object' && a.correct && saqMatches(q, a.text)) answers[i]={text:String(a.text), correct:true};
+      if(isSaqMulti(q)){
+        if(a && typeof a==='object' && Array.isArray(a.parts)){
+          const parts=q.answers.map((_,k)=>{ const v=a.parts[k]; return v!=null && saqBlankResult(q,k,v) ? String(v) : null; });
+          if(parts.some(x=>x!=null)) answers[i]={parts, correct:parts.every(x=>x!=null)};
+        }
+        return;
+      }
+      if(a && typeof a==='object' && a.correct && saqMatches(q, a.text)){
+        const r=saqResult(q, a.text);
+        answers[i]=Object.assign({text:String(a.text), correct:true}, a.fill&&a.fill.text?{fill:{text:String(a.fill.text), at:a.fill.at==='start'?'start':'end'}}:(r&&r.fill?{fill:r.fill}:{}));
+      }
       return;
     }
     if(isOrder(q)){
@@ -1365,14 +1426,36 @@ function stepFigureHTML(q, review){
   const cr=q.credit?('<figcaption class="label-credit step-credit">'+(q.creditUrl?'<a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">'+escapeHtml(q.credit)+'</a>':escapeHtml(q.credit))+'</figcaption>'):'';
   return '<figure class="step-figure'+(review?' in-review':'')+'"><img class="step-img" src="'+escapeHtml(q.image)+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+cr+'</figure>';
 }
+/* a solved answer that the engine completed: the added word is highlighted */
+function saqDoneHTML(ans){
+  const f=ans.fill, t=String(ans.text||'');
+  if(!f||!f.text) return escapeHtml(t);
+  const typed=f.at==='start'?t.slice(f.text.length):t.slice(0,t.length-f.text.length);
+  const mark='<mark class="saq-fill" title="Completed for you">'+escapeHtml(f.text)+'</mark>';
+  return f.at==='start'?mark+escapeHtml(typed):escapeHtml(typed)+mark;
+}
+function saqShowCompleted(input, ans){
+  if(!ans||!ans.fill||!input) return;
+  const d=document.createElement('div');
+  d.className='saq-input correct saq-done'; d.id='saqInput'; d.setAttribute('role','textbox'); d.setAttribute('aria-readonly','true');
+  d.setAttribute('aria-label','Your answer: '+ans.text);
+  d.innerHTML=saqDoneHTML(ans);
+  input.replaceWith(d);
+}
+function saqInputEl(id, name, label){
+  const input=document.createElement('input');
+  input.type='text'; input.className='saq-input'; if(id) input.id=id;
+  input.name=name; input.autocomplete='off'; input.setAttribute('autocomplete','off'); input.setAttribute('data-form-type','other'); input.setAttribute('data-lpignore','true'); input.setAttribute('data-1p-ignore',''); input.spellcheck=false; input.setAttribute('autocapitalize','sentences'); input.setAttribute('autocorrect','off');
+  input.placeholder='Type your answer'; input.setAttribute('aria-label',label||'Your answer');
+  return input;
+}
 function renderSaq(q, ans){
+  if(isSaqMulti(q)) return renderSaqMulti(q, ans);
   const opts=document.getElementById('options');
   const done=!!(ans && ans.correct);
   const wrap=document.createElement('div'); wrap.className='saq-wrap';
-  const input=document.createElement('input');
-  input.type='text'; input.className='saq-input'+(done?' correct':''); input.id='saqInput';
-  input.name='saqAnswer'; input.autocomplete='off'; input.setAttribute('autocomplete','off'); input.setAttribute('data-form-type','other'); input.setAttribute('data-lpignore','true'); input.setAttribute('data-1p-ignore',''); input.spellcheck=false; input.setAttribute('autocapitalize','sentences'); input.setAttribute('autocorrect','off');
-  input.placeholder='Type your answer'; input.setAttribute('aria-label','Your answer');
+  const input=saqInputEl('saqInput','saqAnswer');
+  if(done) input.classList.add('correct');
   input.value=done?ans.text:'';
   input.disabled=done;
   const btn=document.createElement('button');
@@ -1384,36 +1467,29 @@ function renderSaq(q, ans){
   });
   wrap.append(input,btn);
   opts.appendChild(wrap);
+  if(done) saqShowCompleted(input, ans);
   // typed step in a stepped question: the labeling highlighter under the box
-  // (each wrong letter or wrong capital is marked in the accent colour as you type)
+  // (each wrong letter is marked in the accent colour as you type)
   if(isTypedStep(q) && !done){
     const echo=document.createElement('div'); echo.className='label-echo saq-echo'; echo.id='saqEcho'; echo.setAttribute('aria-live','polite');
     wrap.appendChild(echo);
-    const cand={answer:q.answer, accept:q.accept};
+    const cand={answer:q.answer, accept:q.accept, caseSensitive:q.caseSensitive};
     input.addEventListener('input',()=>{ echo.innerHTML=labelEchoHTML(cand, input.value); });
   }
   if(!done && quizActive) setTimeout(()=>{ if(document.activeElement!==input && document.getElementById('quizView').classList.contains('active')) try{ input.focus({preventScroll:true}); }catch(e){} },0);
 }
-function submitSaq(){
-  if(!quizActive||locked) return;
-  const q=questions[current]; if(!isSaq(q)) return;
-  const input=document.getElementById('saqInput'); if(!input) return;
-  const typed=input.value;
+function saqSoftWrong(input, msg){
+  if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
+  input.classList.remove('soft-wrong'); void input.offsetWidth;
+  input.classList.add('soft-wrong');
+  setTimeout(()=>input.classList.remove('soft-wrong'), 480);
   const fb=document.getElementById('feedback');
-  if(!saqNorm(typed)){ input.focus(); return; }
-  if(!saqMatches(q, typed)){
-    if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
-    input.classList.remove('soft-wrong'); void input.offsetWidth;
-    input.classList.add('soft-wrong');
-    setTimeout(()=>input.classList.remove('soft-wrong'), 480);
-    fb.className='feedback soft'; fb.textContent=saqHint(q, typed);
-    clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400);
-    input.select();
-    return;
-  }
-  locked=true; answers[current]={text:saqNorm(typed), correct:true}; onQuestionSolved(q);
-  input.disabled=true; input.classList.add('correct');
-  const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
+  fb.className='feedback soft'; fb.textContent=msg;
+  clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400);
+  input.select();
+}
+function saqSolvedFx(q){
+  const fb=document.getElementById('feedback');
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
   renderStepRecap(); // a typed last step shows the series recap at once, like a choice step
   document.getElementById('mainPanel').classList.add('correct-pulse');
@@ -1421,6 +1497,136 @@ function submitSaq(){
   pt1Confetti();
   rewardCorrect();
   afterAnswerProgress();
+}
+function submitSaq(k){
+  if(!quizActive||locked) return;
+  const q=questions[current]; if(!isSaq(q)) return;
+  if(isSaqMulti(q)) return submitSaqBlank(k);
+  const input=document.getElementById('saqInput'); if(!input) return;
+  const typed=input.value;
+  if(!saqNorm(typed)){ input.focus(); return; }
+  const r=saqResult(q, typed);
+  if(!r){ saqSoftWrong(input, saqHint(q, typed)); return; }
+  locked=true; answers[current]=Object.assign({text:r.text, correct:true}, r.fill?{fill:r.fill}:{}); onQuestionSolved(q);
+  input.disabled=true; input.classList.add('correct'); input.value=r.text;
+  const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
+  if(r.fill) saqShowCompleted(input, answers[current]);
+  saqSolvedFx(q);
+}
+/* —— several blanks: one box per blank, in order. Enter checks that box; a right one locks and the
+   focus moves to the next open blank; the question is solved when every blank is right. —— */
+function saqBlankResult(q, k, typed){
+  const cs=!!q.caseSensitive, t=saqNorm(typed); if(!t) return null;
+  return saqBlankAlts(q,k).some(a=>saqKey(a,cs)===saqKey(t,cs)) ? t : null;
+}
+function saqBlankContext(q, k){
+  // the words just before the blank name it ("combining form", "meaning")
+  const parts=String(q.q||'').split(SAQ_BLANK_RE);
+  const before=(parts[k]||'').replace(/[^A-Za-z0-9/' -]+/g,' ').trim().split(/\s+/).filter(Boolean);
+  const stop=new Set(['the','a','an','of','is','are','and','its','from','to','in']);
+  while(before.length && stop.has(before[before.length-1].toLowerCase())) before.pop();
+  const w=before.slice(-2).join(' ');
+  return w || ('blank '+(k+1));
+}
+function saqMultiState(i){
+  const q=questions[i]; let a=answers[i];
+  if(!(a && Array.isArray(a.parts) && a.parts.length===q.answers.length)){ a={parts:q.answers.map(()=>null), correct:false}; answers[i]=a; }
+  return a;
+}
+function paintSaqBlanks(q, a){
+  const qText=document.getElementById('qText'); if(!qText) return;
+  let k=0;
+  const walk=n=>{ [...n.childNodes].forEach(c=>{
+    if(c.nodeType===3 && SAQ_BLANK_RE.test(c.nodeValue)){
+      SAQ_BLANK_RE.lastIndex=0;
+      const frag=document.createDocumentFragment(); let last=0, m;
+      const v=c.nodeValue;
+      while((m=SAQ_BLANK_RE.exec(v))){
+        frag.append(document.createTextNode(v.slice(last,m.index)));
+        const sp=document.createElement('span'); const done=a&&a.parts&&a.parts[k]!=null;
+        sp.className='saq-blank'+(done?' filled':''); sp.dataset.k=String(k);
+        sp.textContent=done?a.parts[k]:String(k+1);
+        frag.append(sp); k++; last=m.index+m[0].length;
+      }
+      frag.append(document.createTextNode(v.slice(last)));
+      c.replaceWith(frag);
+    } else if(c.nodeType===1 && !c.classList.contains('saq-blank')) walk(c);
+    SAQ_BLANK_RE.lastIndex=0;
+  }); };
+  walk(qText);
+}
+function renderSaqMulti(q, ans){
+  const opts=document.getElementById('options');
+  const a=(ans && Array.isArray(ans.parts))?ans:{parts:q.answers.map(()=>null), correct:false};
+  const wrap=document.createElement('div'); wrap.className='saq-wrap saq-multi';
+  const list=document.createElement('div'); list.className='saq-blanks';
+  q.answers.forEach((_,k)=>{
+    const row=document.createElement('label'); row.className='saq-blank-row';
+    const num=document.createElement('span'); num.className='saq-blank-num'; num.textContent=String(k+1);
+    const ctx=document.createElement('span'); ctx.className='saq-blank-ctx'; ctx.textContent=saqBlankContext(q,k);
+    const input=saqInputEl('saqInput'+k,'saqAnswer'+k,'Blank '+(k+1)+' · '+saqBlankContext(q,k));
+    input.dataset.k=String(k);
+    const done=a.parts[k]!=null;
+    if(done){ input.value=a.parts[k]; input.disabled=true; input.classList.add('correct'); }
+    input.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); e.stopPropagation(); submitSaq(k); } });
+    row.append(num,ctx,input);
+    list.appendChild(row);
+  });
+  const btn=document.createElement('button');
+  btn.type='button'; btn.className='nav-btn primary saq-check'; btn.id='saqCheck'; btn.textContent='Check';
+  btn.disabled=!!a.correct;
+  btn.addEventListener('click',()=>submitSaq());
+  wrap.append(list,btn);
+  opts.appendChild(wrap);
+  paintSaqBlanks(q,a);
+  if(!a.correct && quizActive) setTimeout(()=>{ const f=wrap.querySelector('input.saq-input:not(:disabled)'); if(f && document.activeElement!==f && document.getElementById('quizView').classList.contains('active')) try{ f.focus({preventScroll:true}); }catch(e){} },0);
+}
+function submitSaqBlank(k){
+  const q=questions[current], a=saqMultiState(current);
+  const inputs=[...document.querySelectorAll('.saq-multi input.saq-input')];
+  const lockPart=(j,text)=>{ a.parts[j]=text; const inp=inputs[j]; if(inp){ inp.value=text; inp.disabled=true; inp.classList.add('correct'); } };
+  const check=j=>{
+    const inp=inputs[j]; if(!inp || inp.disabled) return 'skip';
+    const typed=inp.value; if(!saqNorm(typed)) return 'empty';
+    const r=saqBlankResult(q,j,typed);
+    if(r){ lockPart(j,r); return 'ok'; }
+    // the whole answer typed into one box ("Phleb/o vein"): fill this blank and the next one
+    if(j+1<q.answers.length && a.parts[j+1]==null){
+      const t=saqNorm(typed);
+      for(const x of saqBlankAlts(q,j)) for(const y of saqBlankAlts(q,j+1)){
+        for(const sep of [' ',', ',',',' meaning ',' - ',' – ']){ if(saqKey(x+sep+y,q.caseSensitive)===saqKey(t,q.caseSensitive)){ lockPart(j,saqNorm(x)); lockPart(j+1,saqNorm(y)); return 'ok'; } }
+      }
+    }
+    return 'wrong';
+  };
+  let res=[];
+  if(k!=null) res=[[k,check(k)]];
+  else inputs.forEach((_,j)=>res.push([j,check(j)]));
+  const firstWrong=res.find(r=>r[1]==='wrong');
+  paintSaqBlanks(q,a); document.querySelectorAll('#qText .saq-blank').forEach(sp=>{ const j=+sp.dataset.k; if(a.parts[j]!=null){ sp.textContent=a.parts[j]; sp.classList.add('filled'); } });
+  if(a.parts.every(x=>x!=null)){
+    a.correct=true; locked=true; onQuestionSolved(q);
+    const cb=document.getElementById('saqCheck'); if(cb) cb.disabled=true;
+    saqSolvedFx(q);
+    return;
+  }
+  saveRunState();
+  if(firstWrong){
+    const j=firstWrong[0];
+    saqSoftWrong(inputs[j], (q.answers.length>1?'blank '+(j+1)+' · ':'')+saqHint({answer:saqBlankAlts(q,j), caseSensitive:q.caseSensitive}, inputs[j].value));
+    return;
+  }
+  if(res.some(r=>r[1]==='ok')){
+    const fb=document.getElementById('feedback');
+    const left=a.parts.filter(x=>x==null).length;
+    fb.className='feedback good'; fb.textContent='✓ blank right · '+left+' to go';
+    const from=k!=null?k:0;
+    const order=inputs.map((_,j)=>(from+1+j)%inputs.length);
+    const next=order.map(j=>inputs[j]).find(x=>x && !x.disabled);
+    if(next) try{ next.focus({preventScroll:true}); }catch(e){}
+    return;
+  }
+  const empty=inputs.find(x=>!x.disabled && !saqNorm(x.value)); if(empty) empty.focus();
 }
 /* —— LABEL (image labeling) questions ——
    q: {id, type:'label', cat, q, image, alt, credit?, creditUrl?, labels:[{id, answer, accept?, x, y, w, h}], explain}
@@ -1430,7 +1636,7 @@ function submitSaq(){
 let labelTyping=(function(){ try{ return localStorage.getItem('sp_label_mode_v1')==='type'; }catch(e){ return false; } })();
 let labelSelectedChip=null;
 function labelCands(l){ return [l.answer].concat(Array.isArray(l.accept)?l.accept:[]).filter(x=>x!=null&&String(x).trim()!==''); }
-function labelMatches(l, text){ const t=saqNorm(text); return !!t && labelCands(l).some(c=>saqNorm(c)===t); }
+function labelMatches(l, text){ const cs=!!(l&&l.caseSensitive), t=saqKey(text,cs); return !!t && labelCands(l).some(c=>saqKey(c,cs)===t); }
 function labelState(i){
   const a=answers[i];
   if(a && typeof a==='object' && a.slots) return a;
@@ -1443,22 +1649,196 @@ function labelEchoHTML(l, typed){
   const t=String(typed||'').replace(/^\s+/,'').replace(/\s+/g,' ');
   if(!t) return '';
   let best='', bestN=-1;
-  labelCands(l).forEach(c=>{ c=saqNorm(c); let n=0; while(n<c.length && n<t.length && c[n]===t[n]) n++; if(n>bestN){ bestN=n; best=c; } });
+  // capitals are not graded (unless the item opts in), so only wrong letters are marked
+  const cs=!!(l&&l.caseSensitive), eq=(a,b)=>a!=null&&b!=null&&(cs?a===b:a.toLowerCase()===b.toLowerCase());
+  labelCands(l).forEach(c=>{ c=saqNorm(c); let n=0; while(n<c.length && n<t.length && eq(c[n],t[n])) n++; if(n>bestN){ bestN=n; best=c; } });
   let h='';
   for(let k=0;k<t.length;k++){
     const ch=escapeHtml(t[k]===' '?'\u00a0':t[k]);
-    h+= (best[k]===t[k]) ? ch : '<mark class="label-mark">'+ch+'</mark>';
+    h+= eq(best[k],t[k]) ? ch : '<mark class="label-mark">'+ch+'</mark>';
   }
   return h;
 }
+/* —— label box fitting ——
+   A placed label (or a typing box) grows to show its whole text: it widens first, wraps to
+   two lines when one line would be too wide, and never shows an ellipsis. Each candidate
+   position is scored against the other boxes and against the picture's own ink (arrows,
+   leader lines) so a grown box does not cover them; the best one wins. Re-run on resize/zoom. */
+const LABEL_INK={};
+function labelInk(img, done){
+  const src=img && img.currentSrc || (img && img.src) || '';
+  if(!src) return null;
+  const c=LABEL_INK[src];
+  if(c) return c.grid ? c : (c.wait.push(done), null);
+  const ent=LABEL_INK[src]={wait:[done], grid:null};
+  const build=()=>{
+    try{
+      const W=160, H=Math.max(1, Math.round(W*(img.naturalHeight||1)/(img.naturalWidth||1)));
+      const cv=document.createElement('canvas'); cv.width=W; cv.height=H;
+      const cx=cv.getContext('2d', {willReadFrequently:true}); cx.drawImage(img,0,0,W,H);
+      const px=cx.getImageData(0,0,W,H).data, g=new Uint8Array(W*H);
+      for(let i=0;i<W*H;i++){ const r=px[i*4], gg=px[i*4+1], b=px[i*4+2], al=px[i*4+3]; g[i]= al>40 && (r+gg+b)/3<170 ? 1 : 0; }
+      ent.grid={W,H,g};
+    }catch(e){ ent.grid={W:1,H:1,g:new Uint8Array(1)}; }
+    const w=ent.wait; ent.wait=[]; w.forEach(f=>{ try{ f(); }catch(e){} });
+  };
+  if(img.complete && img.naturalWidth) setTimeout(build,0); else img.addEventListener('load', build, {once:true});
+  return null;
+}
+function labelInkIn(ink, F, r, skip){
+  if(!ink || !ink.grid) return 0;
+  const {W,H,g}=ink.grid; let n=0;
+  const x0=Math.max(0,Math.floor(r.x/F.w*W)), x1=Math.min(W-1,Math.ceil((r.x+r.w)/F.w*W)-1);
+  const y0=Math.max(0,Math.floor(r.y/F.h*H)), y1=Math.min(H-1,Math.ceil((r.y+r.h)/F.h*H)-1);
+  for(let y=y0;y<=y1;y++) for(let x=x0;x<=x1;x++){
+    if(!g[y*W+x]) continue;
+    const px=(x+.5)/W*F.w, py=(y+.5)/H*F.h;
+    if(skip && px>=skip.x && px<=skip.x+skip.w && py>=skip.y && py<=skip.y+skip.h) continue;
+    n++;
+  }
+  return n*(F.w/W)*(F.h/H);
+}
+function labelOverlap(a,b){ const w=Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x), h=Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y); return w>0&&h>0 ? w*h : 0; }
+let labelMeasureCv=null;
+function labelTextWidth(el, text){
+  const cs=getComputedStyle(el);
+  labelMeasureCv=labelMeasureCv||document.createElement('canvas');
+  const cx=labelMeasureCv.getContext('2d');
+  cx.font=cs.fontStyle+' '+cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
+  return {w:cx.measureText(String(text)).width, fs:parseFloat(cs.fontSize)||12};
+}
+function labelFit(fig, labels){
+  if(!fig || !labels || !labels.length) return;
+  const FR=fig.getBoundingClientRect(); if(!FR.width || !FR.height) return;
+  const F={w:FR.width, h:FR.height};
+  const img=fig.querySelector('.label-img');
+  const ink=labelInk(img, ()=>labelFit(fig, labels));
+  const byId={}; labels.forEach(l=>{ byId[l.id]=l; });
+  const orig=l=>({x:l.x/100*F.w, y:l.y/100*F.h, w:l.w/100*F.w, h:l.h/100*F.h});
+  const slots=[...fig.querySelectorAll('.label-slot[data-id]')].filter(s=>byId[s.dataset.id]);
+  const placed={}, cands={};
+  slots.forEach(s=>{ placed[s.dataset.id]=orig(byId[s.dataset.id]); });
+  const pad=8, maxW=Math.max(F.w*0.46, 60);
+  // 1) candidate boxes for every slot whose text does not fit its own box
+  slots.forEach(slot=>{
+    const id=slot.dataset.id, l=byId[id], o=orig(l);
+    const locked=slot.classList.contains('locked'), typing=slot.classList.contains('typing');
+    slot.classList.remove('grown','wrapped');
+    slot.style.left=l.x+'%'; slot.style.top=l.y+'%'; slot.style.width=l.w+'%'; slot.style.height=l.h+'%';
+    let text='', el=null;
+    if(locked){ el=slot.querySelector('.label-slot-text'); text=el ? el.textContent : ''; }
+    else if(typing){ el=slot.querySelector('input'); text=el ? el.value : ''; }
+    if(!el || !text) return;
+    const m=labelTextWidth(el, text), lineH=m.fs*1.12, need=m.w+pad+(locked?6:4);
+    if(need<=o.w+0.5 && lineH+3<=o.h+0.5) return;
+    const list=[], sx=F.w*0.02, sy=Math.max(2, lineH*0.5);
+    const addW=(w,h,wrap)=>{
+      w=Math.min(w, F.w); h=Math.min(h, F.h);
+      const xs=[o.x, o.x+o.w-w, o.x+o.w/2-w/2];
+      for(let k=1;k<=16;k++) xs.push(o.x-k*sx, o.x+o.w-w+k*sx);
+      const yc=o.y+o.h/2-h/2, ys=[yc, o.y, o.y+o.h-h];
+      for(let k=1;k<=6;k++) ys.push(yc-k*sy, yc+k*sy);
+      xs.forEach(x=>ys.forEach(y=>{
+        x=Math.max(0,Math.min(F.w-w,x)); y=Math.max(0,Math.min(F.h-h,y));
+        const c={x,y,w,h,wrap};
+        // the box must still sit on its own spot (where the leader line ends): keep the original centre inside
+        const ocx=o.x+o.w/2, ocy=o.y+o.h/2;
+        if(ocx<x-0.5 || ocx>x+w+0.5 || ocy<y-lineH*0.9 || ocy>y+h+lineH*0.9) return;
+        c.ink=labelInkIn(ink, F, c, o);
+        c.move=Math.abs(c.x+c.w/2-(o.x+o.w/2))+1.6*Math.abs(c.y+c.h/2-(o.y+o.h/2));
+        c.base=c.ink*2+c.move*0.8+(wrap?20:0)+(w*h-o.w*o.h)*0.003;
+        list.push(c);
+      }));
+    };
+    const h1=Math.max(o.h, lineH+3);
+    if(need<=maxW || !locked) addW(Math.max(o.w, Math.min(need, typing?F.w*0.7:maxW)), h1, false);
+    const words=locked ? text.trim().split(/\s+/) : [];
+    if(words.length>1){
+      // two lines, broken at the space that gives the narrowest box; never inside a word
+      let best=Infinity;
+      for(let k=1;k<words.length;k++){ const a=labelTextWidth(el, words.slice(0,k).join(' ')).w, b=labelTextWidth(el, words.slice(k).join(' ')).w; best=Math.min(best, Math.max(a,b)); }
+      const w2=Math.max(o.w, best+pad+6), h2=Math.max(o.h, 2*lineH+5);
+      addW(w2, h2, true);
+    }
+    if(!list.length) addW(need, h1, false);
+    cands[id]=list;
+  });
+  // 2) choose: a few passes so each box also avoids the grown boxes chosen after it
+  const ids=Object.keys(cands);
+  for(let pass=0;pass<3;pass++){
+    ids.forEach(id=>{
+      let pick=null, ps=Infinity;
+      cands[id].forEach(c=>{
+        let ov=0;
+        slots.forEach(s2=>{ const j=s2.dataset.id; if(j!==id) ov+=labelOverlap(c, placed[j]); });
+        const sc=ov*40+c.base;
+        if(sc<ps){ ps=sc; pick=c; }
+      });
+      if(pick) placed[id]=pick;
+    });
+  }
+  slots.forEach(slot=>{
+    const id=slot.dataset.id; if(!cands[id]) return;
+    const pick=placed[id];
+    slot.style.left=(pick.x/F.w*100)+'%'; slot.style.top=(pick.y/F.h*100)+'%';
+    slot.style.width=(pick.w/F.w*100)+'%'; slot.style.height=(pick.h/F.h*100)+'%';
+    slot.classList.add('grown'); if(pick.wrap) slot.classList.add('wrapped');
+  });
+}
+function labelFitWire(fig, labels){
+  if(!fig) return;
+  fig.__labels=labels;
+  const run=()=>labelFit(fig, fig.__labels);
+  run(); requestAnimationFrame(run);
+  if(!fig.__fitRO && window.ResizeObserver){
+    let lastW=0;
+    fig.__fitRO=new ResizeObserver(()=>{ const w=fig.getBoundingClientRect().width; if(Math.abs(w-lastW)>0.5){ lastW=w; run(); } });
+    fig.__fitRO.observe(fig);
+  }
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(run).catch(()=>{});
+}
+/* capitals are not graded, so a typed label is shown in its listed form ("left atrium" → "Left Atrium") */
+function labelCanon(l, typed){
+  const t=saqNorm(typed); if(l && l.caseSensitive) return t;
+  const hit=labelCands(l).map(saqNorm).find(c=>c.toLowerCase()===t.toLowerCase());
+  return hit || t;
+}
+/* leader lines: an invisible overlay over each line drawn into the picture (from the blank's own
+   edge to its anchor point, in picture percents), lit in the accent colour while that blank is the
+   drop target. Works at any zoom because it scales with the picture. */
+function labelLeaderStart(l){
+  const a=l.anchor, x0=l.x, y0=l.y, x1=l.x+l.w, y1=l.y+l.h;
+  if(a.x>x1) return [x1,(y0+y1)/2];
+  if(a.x<x0) return [x0,(y0+y1)/2];
+  return [(x0+x1)/2, a.y>y1?y1:y0];
+}
+/* anchor: {x,y} (or a list of them for a blank with several lines); optional from:{x,y} where the
+   drawn line leaves the blank, and via:[{x,y}] for its bends. All in percent of the picture. */
+function labelAnchors(l){ const a=l && l.anchor; const list=Array.isArray(a)?a:(a?[a]:[]); return list.filter(p=>p && isFinite(p.x) && isFinite(p.y)); }
+function labelLeadersSVG(q){
+  const ls=(q.labels||[]).filter(l=>labelAnchors(l).length);
+  if(!ls.length) return '';
+  return '<svg class="label-leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'+ls.map(l=>
+    '<g class="label-leader" data-id="'+escapeHtml(l.id)+'">'+labelAnchors(l).map(a=>{
+      const st=(a.from && isFinite(a.from.x) && isFinite(a.from.y)) ? [a.from.x,a.from.y] : labelLeaderStart({x:l.x,y:l.y,w:l.w,h:l.h,anchor:a});
+      const pts=[st].concat((Array.isArray(a.via)?a.via:[]).filter(v=>v&&isFinite(v.x)&&isFinite(v.y)).map(v=>[v.x,v.y])).concat([[a.x,a.y]]);
+      return '<polyline points="'+pts.map(p=>p[0]+','+p[1]).join(' ')+'"/><line class="label-leader-dot" x1="'+a.x+'" y1="'+a.y+'" x2="'+a.x+'" y2="'+a.y+'"/>';
+    }).join('')+'</g>').join('')+'</svg>';
+}
+function labelLight(slot){
+  document.querySelectorAll('.label-leader.lit').forEach(g=>{ if(!slot || g.dataset.id!==slot.dataset.id) g.classList.remove('lit'); });
+  if(!slot) return;
+  const fig=slot.closest('.label-figure'); if(!fig) return;
+  fig.querySelectorAll('.label-leader').forEach(g=>{ if(g.dataset.id===slot.dataset.id) g.classList.add('lit'); });
+}
 function labelFigureHTML(q, a, review){
   const slots=(a&&a.slots)||{};
-  let h='<div class="label-figure'+(review?' in-review':'')+'"><img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">';
+  let h='<div class="label-figure'+(review?' in-review':'')+'"><img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+(review?'':labelLeadersSVG(q));
   (q.labels||[]).forEach(l=>{
     const done=slots[l.id]!=null;
     const style='left:'+l.x+'%;top:'+l.y+'%;width:'+l.w+'%;height:'+l.h+'%';
     if(review){
-      h+='<div class="label-slot locked'+(done?'':' missed')+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(done?slots[l.id]:l.answer)+'</span></div>';
+      h+='<div class="label-slot locked'+(done?'':' missed')+'" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(done?slots[l.id]:l.answer)+'</span></div>';
     } else if(done){
       h+='<div class="label-slot locked" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(slots[l.id])+'</span></div>';
     } else if(labelTyping){
@@ -1493,30 +1873,47 @@ function renderLabel(q, ans){
   }
   wrap.innerHTML=h;
   opts.appendChild(wrap);
+  labelFitWire(wrap.querySelector('.label-figure'), q.labels);
   const mb=wrap.querySelector('#labelModeBtn');
   if(mb) mb.addEventListener('click',()=>{ labelTyping=!labelTyping; try{ localStorage.setItem('sp_label_mode_v1', labelTyping?'type':'drag'); }catch(e){} renderQuestion(); });
   wrap.querySelectorAll('.label-chip').forEach(chip=>{
     chip.addEventListener('pointerdown',e=>labelPointerDown(e,chip));
     chip.addEventListener('click',()=>{ if(chip.__suppressClick) return; labelSelect(labelSelectedChip===chip?null:chip); });
   });
+  const figEl=wrap.querySelector('.label-figure');
+  if(figEl) wrap.addEventListener('click',e=>{
+    // tap-to-place uses the same enlarged zones as dragging (a zone can reach past the picture's edge)
+    if(!labelSelectedChip || (e.target.closest && e.target.closest('.label-chip, button, .label-bank, input, a'))) return;
+    const direct=e.target.closest && e.target.closest('.label-slot.open');   // a tap on the box itself (or a click with no pointer position)
+    const slot=(direct && figEl.contains(direct)) ? direct : labelZoneTarget(figEl, [{x:e.clientX, y:e.clientY}], null);
+    if(slot) labelTryPlace(labelSelectedChip, slot, null);
+  });
+  if(figEl){
+    let hov=null;
+    const setHov=s=>{ if(s===hov) return; if(hov) hov.classList.remove('drop-over'); hov=s; if(hov) hov.classList.add('drop-over'); labelLight(hov); };
+    wrap.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse' || !labelSelectedChip || document.querySelector('.label-ghost')) { if(hov && !labelSelectedChip) setHov(null); return; } setHov(labelZoneTarget(figEl,[{x:e.clientX,y:e.clientY}],hov)); });
+    wrap.addEventListener('pointerleave',()=>setHov(null));
+    wrap.addEventListener('click',()=>{ setTimeout(()=>{ if(!labelSelectedChip) setHov(null); },0); });
+  }
   wrap.querySelectorAll('.label-slot.open').forEach(slot=>{
+    slot.addEventListener('focus',()=>labelLight(slot)); slot.addEventListener('blur',()=>labelLight(null));
     const go=()=>{ if(labelSelectedChip) labelTryPlace(labelSelectedChip, slot, null); };
-    slot.addEventListener('click',go);
     slot.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); e.stopPropagation(); go(); } });
   });
   wrap.querySelectorAll('.label-slot.typing').forEach(slot=>{
     const input=slot.querySelector('input'), echo=slot.querySelector('.label-echo');
     const l=q.labels.find(x=>x.id===slot.dataset.id);
     input.addEventListener('input',()=>{
+      labelFit(slot.closest('.label-figure'), q.labels);
       echo.innerHTML=labelEchoHTML(l, input.value);
       slot.classList.toggle('has-echo', !!echo.innerHTML);
-      if(labelMatches(l, input.value)) labelLock(l, saqNorm(input.value), slot);
+      if(labelMatches(l, input.value)) labelLock(l, labelCanon(l, input.value), slot);
     });
     input.addEventListener('keydown',e=>{
       if(e.key!=='Enter') return;
       e.preventDefault(); e.stopPropagation();
       if(!saqNorm(input.value)) return;
-      if(!labelMatches(l, input.value)) labelWrong(input, null, saqHint({answer:l.answer, accept:l.accept}, input.value));
+      if(!labelMatches(l, input.value)) labelWrong(input, null, saqHint({answer:l.answer, accept:l.accept, caseSensitive:l.caseSensitive}, input.value));
     });
   });
 }
@@ -1525,11 +1922,64 @@ function labelSelect(chip){
   labelSelectedChip=chip||null;
   if(chip) chip.classList.add('selected');
   const fig=document.querySelector('.label-figure'); if(fig) fig.classList.toggle('picking', !!chip);
+  if(!chip){ labelLight(null); document.querySelectorAll('#options .label-slot.drop-over').forEach(s=>s.classList.remove('drop-over')); }
+}
+/* —— drop targets: every open drop field gets an invisible hit zone DROP_RADIUS× its drawn size,
+   centred on the field (never under 44×44 screen px for tiny fields), measured in screen px so it
+   works at any zoom. Where zones overlap, the nearest field centre wins. While dragging, an entered
+   field is locked (hysteresis): it stays the target until the pointer leaves the DROP_EXIT× zone,
+   or clearly enters another field's zone. Tune both factors here. */
+const DROP_RADIUS=1.3, DROP_EXIT=1.6, DROP_MIN_PX=44;
+function labelZone(slot, k){
+  k=k||DROP_RADIUS;
+  const r=slot.getBoundingClientRect();
+  const min=DROP_MIN_PX*k/DROP_RADIUS;
+  const w=Math.max(min, r.width*k), h=Math.max(min, r.height*k);
+  const cx=r.left+r.width/2, cy=r.top+r.height/2;
+  return {cx, cy, w, h, left:cx-w/2, right:cx+w/2, top:cy-h/2, bottom:cy+h/2};
+}
+function labelInZone(z, p){ return p && p.x>=z.left && p.x<=z.right && p.y>=z.top && p.y<=z.bottom; }
+/* normalised distance from a point to a slot centre (1 = on the zone edge) */
+function labelZoneDist(z, p){ return Math.hypot((p.x-z.cx)/(z.w/2), (p.y-z.cy)/(z.h/2)); }
+function labelZoneTarget(root, points, current){
+  const slots=[...(root||document).querySelectorAll('.label-slot.open')];
+  const pts=(points||[]).filter(Boolean);
+  let best=null, bd=Infinity;
+  slots.forEach(s=>{
+    const z=labelZone(s);
+    const r=s.getBoundingClientRect();
+    // a point on the drawn box itself always picks that box; otherwise the nearest centre wins
+    pts.forEach(p=>{ if(!labelInZone(z,p)) return; const onBox=p.x>=r.left && p.x<=r.right && p.y>=r.top && p.y<=r.bottom; const d=labelZoneDist(z,p)-(onBox?10:0); if(d<bd){ bd=d; best=s; } });
+  });
+  if(current && current.isConnected && current.classList.contains('open')){
+    const zin=labelZone(current), zex=labelZone(current, DROP_EXIT);
+    const insideOwn=pts.some(p=>labelInZone(zin,p));
+    const insideExit=pts.some(p=>labelInZone(zex,p));
+    if(best && best!==current){
+      // clearly entered another slot's zone: outside our own entry zone, or much nearer the other centre
+      const zb=labelZone(best);
+      const dCur=Math.min(...pts.map(p=>labelZoneDist(zin,p))), dBest=Math.min(...pts.filter(p=>labelInZone(zb,p)).map(p=>labelZoneDist(zb,p)));
+      if(!insideOwn || dBest<dCur*0.7) return best;
+    }
+    if(insideOwn || insideExit) return current;            // still locked
+    return best;                                           // left the exit zone
+  }
+  return best;
 }
 function labelPointerDown(e, chip){
   if(!quizActive || locked) return;
   if(e.pointerType==='mouse' && e.button!==0) return;
   const sx=e.clientX, sy=e.clientY; let ghost=null, over=null;
+  const cr=chip.getBoundingClientRect(); const off={x:cr.left+cr.width/2-sx, y:cr.top+cr.height/2-sy};
+  const fig=document.querySelector('#options .label-figure');
+  const setOver=s=>{
+    if(s===over) return;
+    if(over) over.classList.remove('drop-over');
+    over=s;
+    if(over){ over.classList.add('drop-over'); try{ if(navigator.vibrate) navigator.vibrate(10); }catch(er){} }
+    labelLight(over);
+    if(ghost) ghost.classList.toggle('snapped', !!over);
+  };
   const move=ev=>{
     if(!ghost){
       if(Math.hypot(ev.clientX-sx, ev.clientY-sy)<6) return;
@@ -1537,20 +1987,20 @@ function labelPointerDown(e, chip){
       document.body.appendChild(ghost); chip.classList.add('dragging'); labelSelect(null);
     }
     ev.preventDefault();
-    ghost.style.left=ev.clientX+'px'; ghost.style.top=ev.clientY+'px';
+    const ptr={x:ev.clientX, y:ev.clientY}, ctr={x:ev.clientX+off.x, y:ev.clientY+off.y};
     // drag near the top/bottom edge scrolls the page so far-away slots can be reached
     if(ev.clientY<48) window.scrollBy(0,-14); else if(ev.clientY>window.innerHeight-48) window.scrollBy(0,14);
-    const el=document.elementFromPoint(ev.clientX, ev.clientY);
-    const s=el && el.closest ? el.closest('.label-slot.open') : null;
-    if(s!==over){ if(over) over.classList.remove('drop-over'); over=s; if(over) over.classList.add('drop-over'); }
+    setOver(labelZoneTarget(fig, [ptr, ctr], over));
+    if(over){ const r=over.getBoundingClientRect(); ghost.style.left=(r.left+r.width/2)+'px'; ghost.style.top=(r.top+r.height/2)+'px'; }
+    else { ghost.style.left=ctr.x+'px'; ghost.style.top=ctr.y+'px'; }
   };
   const end=ev=>{
     window.removeEventListener('pointermove',move); window.removeEventListener('pointerup',end); window.removeEventListener('pointercancel',end);
-    if(over) over.classList.remove('drop-over');
+    const target=over; if(over) over.classList.remove('drop-over'); labelLight(null);
     if(!ghost) return; // a tap: the click handler selects the chip
     chip.__suppressClick=true; setTimeout(()=>{ chip.__suppressClick=false; },60);
     chip.classList.remove('dragging');
-    if(ev.type==='pointerup' && over) labelTryPlace(chip, over, ghost);
+    if(ev.type==='pointerup' && target) labelTryPlace(chip, target, ghost);
     else labelBounce(chip, ghost);
   };
   window.addEventListener('pointermove',move,{passive:false});
@@ -1595,6 +2045,7 @@ function labelLock(l, text, slot){
   done.innerHTML='<span class="label-slot-text">'+escapeHtml(String(text))+'</span>';
   const hadFocus=slot.contains(document.activeElement);
   slot.replaceWith(done);
+  labelFit(done.closest('.label-figure'), q.labels);
   const r=done.getBoundingClientRect();
   if(typeof spawnFireworkBurst==='function') spawnFireworkBurst(r.left+r.width/2, r.top+r.height/2, 14);
   rewardCorrect();
@@ -1638,132 +2089,143 @@ function orderState(i){
 function orderStage(q,id){ return (q.stages||[]).find(s=>s.id===id); }
 const REDUCED_MOTION=()=>!!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
 
-/* Schematic heart: our own drawing. Each part has waypoints the pulse travels through. */
+/* Schematic heart: our own drawing (right heart on the viewer's left, as in textbook diagrams).
+   Each part has waypoints the pulse travels through, drawn in the direction blood flows.
+   No vessel crosses another and no path cuts diagonally through the heart:
+   vena cava → RA → tricuspid → RV → pulmonary valve → pulmonary trunk (between the atria) → lungs →
+   pulmonary veins → LA → mitral → LV → aortic valve → aorta → body tissues → vena cava; the coronary
+   arteries branch off the aorta and run along the heart wall to the myocardium. */
 const FLOW_PARTS={
-  body:{pts:[[360,272],[300,272],[230,272],[170,272],[140,272]], oxyIn:true, oxyOut:false},
-  vc:{pts:[[140,272],[40,272],[40,120],[100,120]], oxy:false},
-  ra:{pts:[[100,120],[145,120]], oxy:false},
-  tv:{pts:[[145,145],[145,160]], oxy:false},
-  rv:{pts:[[145,170],[145,192]], oxy:false},
-  psv:{pts:[[120,192],[100,192]], oxy:false},
-  pa:{pts:[[100,192],[70,192],[70,30],[140,30]], oxy:false},
-  lungs:{pts:[[140,30],[175,30],[225,30],[260,30]], oxyIn:false, oxyOut:true},
-  pvn:{pts:[[260,30],[330,30],[330,120],[300,120]], oxy:true},
-  la:{pts:[[300,120],[255,120]], oxy:true},
-  mv:{pts:[[255,145],[255,160]], oxy:true},
-  lv:{pts:[[255,170],[255,192]], oxy:true},
-  av:{pts:[[280,192],[300,192]], oxy:true},
-  aorta:{pts:[[300,192],[340,192],[360,192],[360,272]], oxy:true},
-  cor:{pts:[[340,192],[340,246],[300,246],[250,246]], oxy:true},
-  myo:{pts:[[250,246],[200,240],[150,240]], oxyIn:true, oxyOut:false}
+  body:{pts:[[280,300],[230,300],[170,300],[120,300]], oxyIn:true, oxyOut:false},
+  vc:{pts:[[120,300],[30,300],[30,128],[92,128]], oxy:false},
+  ra:{pts:[[92,128],[112,128],[112,142]], oxy:false},
+  tv:{pts:[[112,142],[112,186]], oxy:false},
+  rv:{pts:[[112,186],[112,218],[186,218],[186,190]], oxy:false},
+  psv:{pts:[[186,190],[186,176]], oxy:false},
+  pa:{pts:[[186,176],[186,46]], oxy:false},
+  lungs:{pts:[[186,46],[186,30],[230,30],[280,30]], oxyIn:false, oxyOut:true},
+  pvn:{pts:[[280,30],[345,30],[345,128],[308,128]], oxy:true},
+  la:{pts:[[308,128],[288,128],[288,142]], oxy:true},
+  mv:{pts:[[288,142],[288,186]], oxy:true},
+  lv:{pts:[[288,186],[288,218],[302,218]], oxy:true},
+  av:{pts:[[302,218],[316,218]], oxy:true},
+  aorta:{pts:[[316,218],[340,218],[372,218],[372,300],[280,300]], oxy:true},
+  cor:{pts:[[340,218],[340,258],[290,258],[240,258]], oxy:true},
+  myo:{pts:[[240,258],[190,258],[140,258]], oxyIn:true, oxyOut:false}
 };
-function flowSVG(){
-  const L=(x,y,t,cls)=>'<text x="'+x+'" y="'+y+'" class="flow-label'+(cls?' '+cls:'')+'">'+t+'</text>';
-  return '<svg class="flow-svg" viewBox="0 0 400 300" role="img" aria-label="Schematic heart showing the path of blood">'
-   +'<rect data-part="myo" class="flow-part flow-wall" x="88" y="86" width="224" height="160" rx="26"/>'
-   +'<rect data-part="lungs" class="flow-part flow-box" x="140" y="10" width="120" height="40" rx="10"/>'+L(200,25,'Lungs')
-   +'<rect data-part="body" class="flow-part flow-box" x="140" y="255" width="120" height="36" rx="10"/>'+L(200,287,'Body Tissues')
-   +'<rect data-part="ra" class="flow-part flow-chamber" x="100" y="95" width="90" height="50" rx="10"/>'+L(145,124,'RA')
-   +'<rect data-part="rv" class="flow-part flow-chamber" x="100" y="160" width="90" height="66" rx="12"/>'+L(145,200,'RV')
-   +'<rect data-part="la" class="flow-part flow-chamber" x="210" y="95" width="90" height="50" rx="10"/>'+L(255,124,'LA')
-   +'<rect data-part="lv" class="flow-part flow-chamber" x="210" y="160" width="90" height="66" rx="12"/>'+L(255,200,'LV')
-   +'<rect data-part="tv" class="flow-part flow-valve" x="125" y="147" width="40" height="10" rx="5"/>'
-   +'<rect data-part="mv" class="flow-part flow-valve" x="235" y="147" width="40" height="10" rx="5"/>'
-   +'<rect data-part="psv" class="flow-part flow-valve" x="93" y="182" width="10" height="20" rx="5"/>'
-   +'<rect data-part="av" class="flow-part flow-valve" x="297" y="182" width="10" height="20" rx="5"/>'
-   +'<path data-part="vc" class="flow-part flow-vessel deoxy" d="M140 272 H40 V120 H100"/>'+L(28,200,'Vena Cava','vert')
-   +'<path data-part="pa" class="flow-part flow-vessel deoxy" d="M100 192 H70 V30 H140"/>'+L(102,22,'Pulmonary Arteries','small')
-   +'<path data-part="pvn" class="flow-part flow-vessel oxy" d="M260 30 H330 V120 H300"/>'+L(298,22,'Pulmonary Veins','small')
-   +'<path data-part="aorta" class="flow-part flow-vessel oxy" d="M307 192 H360 V272"/>'+L(373,235,'Aorta','vert')
-   +'<path data-part="cor" class="flow-part flow-vessel oxy thin" d="M340 192 V246 H250"/>'
-   +L(295,262,'Coronary','small')+L(200,238,'Myocardium','small')
-   +L(145,141,'Tricuspid','tiny')+L(255,141,'Bicuspid (mitral)','tiny')
-   +'<path class="flow-trail deoxy-trail" d=""/><path class="flow-trail oxy-trail" d=""/>'
-   +'<circle class="flow-dot" r="7" cx="-20" cy="-20"/>'
+/* the whole circulation, always animated; the coronary branch joins it where a question asks about it */
+const FLOW_LOOP=['body','vc','ra','tv','rv','psv','pa','lungs','pvn','la','mv','lv','av','aorta'];
+const FLOW_BRANCH=['cor','myo'];
+function flowPathD(part){ const P=FLOW_PARTS[part]; return 'M'+P.pts.map(p=>p[0]+' '+p[1]).join(' L'); }
+function flowParts(q){ return new Set((q.stages||[]).map(s=>s.part).filter(p=>FLOW_PARTS[p])); }
+function flowSVG(q){
+  const on=flowParts(q||{});
+  const hi=p=>on.has(p)?' flow-focus':'';
+  const L=(x,y,t,cls,anchor)=>'<text x="'+x+'" y="'+y+'" class="flow-label'+(cls?' '+cls:'')+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+t+'</text>';
+  const L2=(x,y,a,b)=>'<text x="'+x+'" y="'+y+'" class="flow-label chamber-label"><tspan x="'+x+'">'+a+'</tspan><tspan x="'+x+'" dy="12">'+b+'</tspan></text>';
+  const run=(p,cls)=>'<path data-part="'+p+'" class="flow-part flow-vessel '+cls+hi(p)+'" d="'+flowPathD(p)+'"/>'
+    +'<path class="flow-run '+cls+hi(p)+'" data-run="'+p+'" d="'+flowPathD(p)+'"/>';
+  const branch=on.has('cor')||on.has('myo');
+  return '<svg class="flow-svg" viewBox="0 0 400 330" role="img" aria-label="Schematic heart showing the whole path of blood through the heart, lungs and body">'
+   +'<defs><linearGradient id="flowLungGrad" gradientUnits="userSpaceOnUse" x1="183" y1="0" x2="280" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#ef4444"/></linearGradient>'
+   +'<linearGradient id="flowBodyGrad" gradientUnits="userSpaceOnUse" x1="280" y1="0" x2="120" y2="0"><stop offset="0" stop-color="#ef4444"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>'
+   +'<rect data-part="myo" class="flow-part flow-wall'+hi('myo')+'" x="80" y="88" width="240" height="176" rx="24"/>'
+   +'<rect data-part="lungs" class="flow-part flow-box'+hi('lungs')+'" x="120" y="8" width="160" height="38" rx="10"/>'+L(150,32,'Lungs')
+   +'<rect data-part="body" class="flow-part flow-box'+hi('body')+'" x="120" y="288" width="160" height="36" rx="10"/>'+L(200,318,'Body Tissues')
+   +'<rect data-part="ra" class="flow-part flow-chamber'+hi('ra')+'" x="92" y="98" width="78" height="44" rx="10"/>'+L2(145,114,'Right','Atrium')
+   +'<rect data-part="rv" class="flow-part flow-chamber'+hi('rv')+'" x="92" y="186" width="104" height="66" rx="12"/>'+L2(149,235,'Right','Ventricle')
+   +'<rect data-part="la" class="flow-part flow-chamber'+hi('la')+'" x="230" y="98" width="78" height="44" rx="10"/>'+L2(255,114,'Left','Atrium')
+   +'<rect data-part="lv" class="flow-part flow-chamber'+hi('lv')+'" x="204" y="186" width="104" height="66" rx="12"/>'+L2(252,235,'Left','Ventricle')
+   +run('vc','deoxy')+run('ra','deoxy')+run('tv','deoxy')+run('rv','deoxy')+run('psv','deoxy')+run('pa','deoxy')
+   +run('lungs','mixed')+run('pvn','oxy')+run('la','oxy')+run('mv','oxy')+run('lv','oxy')+run('av','oxy')+run('aorta','oxy')+run('body','mixed-back')
+   +(branch?run('cor','oxy thin')+run('myo','oxy thin'):'<path data-part="cor" class="flow-part flow-vessel oxy thin" d="'+flowPathD('cor')+'"/>')
+   +'<rect data-part="tv" class="flow-part flow-valve'+hi('tv')+'" x="100" y="161" width="24" height="6" rx="3"/>'
+   +'<rect data-part="mv" class="flow-part flow-valve'+hi('mv')+'" x="276" y="161" width="24" height="6" rx="3"/>'
+   +'<rect data-part="psv" class="flow-part flow-valve'+hi('psv')+'" x="176" y="180" width="20" height="6" rx="3"/>'
+   +'<rect data-part="av" class="flow-part flow-valve'+hi('av')+'" x="305" y="209" width="6" height="18" rx="3"/>'
+   +L(128,158,'Tricuspid','valve-label','start')+L(173,178,'Pulmonary','valve-label','end')
+   +L(272,158,'Mitral','valve-label','end')+L(272,171,'(Bicuspid)','valve-label','end')+L(319,207,'Aortic','valve-label','start')
+   +L(16,214,'Vena Cava','vert')+L(203,94,'Pulmonary Artery','vert')+L(358,80,'Pulmonary Veins','vert')+L(386,258,'Aorta','vert')
+   +L(300,281,'Coronary Arteries','small')+L(180,281,'Myocardium','small')
+   +'<circle class="flow-dot deoxy" r="6.5" cx="-20" cy="-20"/>'+(branch?'<circle class="flow-dot flow-dot-branch oxy" r="5" cx="-20" cy="-20"/>':'')
    +'</svg>';
 }
-/* waypoint list for a question's stages, each point tagged with stage + oxygenation */
-function flowRoute(q){
+/* waypoint list for a run of parts, each point tagged with its part + oxygenation */
+function flowRouteOf(parts){
   const out=[];
-  (q.stages||[]).forEach(st=>{
-    const P=FLOW_PARTS[st.part]; if(!P) return;
+  parts.forEach(part=>{
+    const P=FLOW_PARTS[part]; if(!P) return;
     P.pts.forEach((pt,k)=>{
+      if(out.length && k===0){ const l=out[out.length-1]; if(l.x===pt[0] && l.y===pt[1]) return; }
       const oxy=('oxy' in P)?P.oxy:(k<P.pts.length-1?P.oxyIn:P.oxyOut);
-      out.push({x:pt[0],y:pt[1],stage:st.id,part:st.part,oxy});
+      out.push({x:pt[0],y:pt[1],part,oxy});
     });
   });
   return out;
 }
+function flowSegs(route){ const segs=[]; let total=0; for(let k=1;k<route.length;k++){ const a=route[k-1], b=route[k]; const len=Math.hypot(b.x-a.x,b.y-a.y); segs.push({a,b,len,start:total}); total+=len; } return {segs,total}; }
+/* the question's own stages, kept for the order cards (the route itself is always the whole loop) */
+function flowRoute(q){ return flowRouteOf((q.stages||[]).map(s=>s.part)); }
 let flowAnim=null;
-function flowHighlight(box, q, stageId){
+function flowStageOfPart(q, part){ const st=(q.stages||[]).find(s=>s.part===part); return st?st.id:null; }
+function flowHighlight(box, q, part){
   box.querySelectorAll('.flow-part.flow-on').forEach(e=>e.classList.remove('flow-on'));
   document.querySelectorAll('.order-card.flow-on').forEach(e=>e.classList.remove('flow-on'));
-  if(!stageId) return;
-  const st=orderStage(q,stageId); if(!st) return;
-  box.querySelectorAll('.flow-part[data-part="'+st.part+'"]').forEach(e=>e.classList.add('flow-on'));
-  const card=document.querySelector('.order-card[data-id="'+stageId+'"]'); if(card) card.classList.add('flow-on');
+  if(!part) return;
+  box.querySelectorAll('.flow-part[data-part="'+part+'"]').forEach(e=>e.classList.add('flow-on'));
+  const sid=flowStageOfPart(q, part);
+  const card=sid && document.querySelector('.order-card[data-id="'+sid+'"]'); if(card) card.classList.add('flow-on');
 }
 function flowStatic(box, q){
-  // reduced motion: the whole route at once, blue then red, with every part highlighted
-  const route=flowRoute(q);
-  const deoxy=[], oxy=[];
-  for(let k=1;k<route.length;k++){ const a=route[k-1], b=route[k]; (b.oxy?oxy:deoxy).push('M'+a.x+' '+a.y+'L'+b.x+' '+b.y); }
-  box.querySelector('.deoxy-trail').setAttribute('d',deoxy.join(''));
-  box.querySelector('.oxy-trail').setAttribute('d',oxy.join(''));
-  box.classList.add('is-static');
-  (q.stages||[]).forEach(st=>box.querySelectorAll('.flow-part[data-part="'+st.part+'"]').forEach(e=>e.classList.add('flow-path')));
-  const dot=box.querySelector('.flow-dot'); dot.setAttribute('cx',-20); dot.setAttribute('cy',-20);
+  // reduced motion: the whole path drawn at once, the question's part emphasised, no moving pulse
+  if(flowAnim){ cancelAnimationFrame(flowAnim.raf); flowAnim=null; }
+  box.classList.remove('is-playing'); box.classList.add('is-static');
+  box.querySelectorAll('.flow-dot').forEach(d=>{ d.setAttribute('cx',-20); d.setAttribute('cy',-20); });
+  flowHighlight(box,q,null);
 }
 function flowPlay(box, q){
   if(flowAnim){ cancelAnimationFrame(flowAnim.raf); flowAnim=null; }
-  box.classList.remove('is-static','is-done');
-  box.querySelectorAll('.flow-part.flow-path').forEach(e=>e.classList.remove('flow-path'));
-  box.querySelector('.deoxy-trail').setAttribute('d',''); box.querySelector('.oxy-trail').setAttribute('d','');
+  box.classList.remove('is-static');
   if(REDUCED_MOTION()){ flowStatic(box,q); return; }
-  const route=flowRoute(q); if(route.length<2){ flowStatic(box,q); return; }
-  const segs=[]; let total=0;
-  for(let k=1;k<route.length;k++){ const a=route[k-1], b=route[k]; const len=Math.hypot(b.x-a.x,b.y-a.y); segs.push({a,b,len,start:total}); total+=len; }
-  const speed=110; // svg units per second
-  const dur=Math.max(2.5, total/speed)*1000;
-  const dot=box.querySelector('.flow-dot');
-  const trails={deoxy:[],oxy:[]};
-  let t0=null, lastStage=null;
+  const main=flowSegs(flowRouteOf(FLOW_LOOP));
+  const hasBranch=!!box.querySelector('.flow-dot-branch');
+  // the branch pulse leaves the aorta at the coronary junction, in step with the main pulse
+  const br=hasBranch?flowSegs(flowRouteOf(FLOW_BRANCH)):null;
+  const junction=(()=>{ let s=0; const r=flowRouteOf(FLOW_LOOP); for(let k=1;k<r.length;k++){ const a=r[k-1], b=r[k]; if(a.part==='aorta' && a.x===340 && a.y===218) return s; s+=Math.hypot(b.x-a.x,b.y-a.y); } return 0; })();
+  const speed=105; // svg units per second
+  const period=main.total/speed*1000;
+  const dot=box.querySelector('.flow-dot:not(.flow-dot-branch)'), bdot=box.querySelector('.flow-dot-branch');
+  const at=(S,d)=>{ const s=S.segs.find(x=>d<=x.start+x.len) || S.segs[S.segs.length-1]; const f=s.len?Math.min(1,Math.max(0,(d-s.start)/s.len)):1; return {x:s.a.x+(s.b.x-s.a.x)*f, y:s.a.y+(s.b.y-s.a.y)*f, s}; };
+  let t0=null, lastPart=null;
   box.classList.add('is-playing');
   const frame=ts=>{
     if(!box.isConnected){ flowAnim=null; return; }
     if(t0==null) t0=ts;
-    const d=Math.min(1,(ts-t0)/dur)*total;
-    let s=segs.find(x=>d<=x.start+x.len) || segs[segs.length-1];
-    const f=s.len? Math.min(1,(d-s.start)/s.len) : 1;
-    const x=s.a.x+(s.b.x-s.a.x)*f, y=s.a.y+(s.b.y-s.a.y)*f;
+    const d=(((ts-t0)/period)%1)*main.total;
+    const p=at(main,d);
+    dot.setAttribute('cx',p.x.toFixed(1)); dot.setAttribute('cy',p.y.toFixed(1));
     // a segment takes the colour of where it ends: blue until the blood leaves the lungs, then red
-    const oxy=s.b.oxy;
-    dot.setAttribute('cx',x.toFixed(1)); dot.setAttribute('cy',y.toFixed(1));
-    dot.classList.toggle('oxy',oxy); dot.classList.toggle('deoxy',!oxy);
-    const stage=(f<1||s===segs[segs.length-1])?s.b.stage:s.b.stage;
-    if(stage!==lastStage){ lastStage=stage; flowHighlight(box,q,stage); box.dataset.stage=stage; }
-    const pts=[]; segs.forEach(g=>{ if(g.start<=d) pts.push(g); });
-    const dpts=[], opts=[];
-    pts.forEach(g=>{ const arr=g.b.oxy?opts:dpts; const end=(g===s)?{x,y}:g.b; arr.push('M'+g.a.x+' '+g.a.y+'L'+end.x.toFixed(1)+' '+end.y.toFixed(1)); });
-    box.querySelector('.deoxy-trail').setAttribute('d',dpts.join(''));
-    box.querySelector('.oxy-trail').setAttribute('d',opts.join(''));
-    if(d<total){ flowAnim={raf:requestAnimationFrame(frame)}; }
-    else { flowAnim=null; box.classList.remove('is-playing'); box.classList.add('is-done'); setTimeout(()=>{ if(box.isConnected){ flowHighlight(box,q,null); } },700); }
+    dot.classList.toggle('oxy',p.s.b.oxy); dot.classList.toggle('deoxy',!p.s.b.oxy);
+    let part=p.s.b.part;
+    if(br){
+      const bd=(d-junction+main.total)%main.total;
+      if(bd<=br.total){ const b=at(br,bd); bdot.setAttribute('cx',b.x.toFixed(1)); bdot.setAttribute('cy',b.y.toFixed(1)); bdot.style.opacity='1'; if(!flowParts(q).has(part)) part=b.s.b.part; }
+      else bdot.style.opacity='0';
+    }
+    if(part!==lastPart){ lastPart=part; flowHighlight(box,q,part); box.dataset.part=part; const sid=flowStageOfPart(q,part); if(sid) box.dataset.stage=sid; }
+    flowAnim={raf:requestAnimationFrame(frame)};
   };
   flowAnim={raf:requestAnimationFrame(frame)};
 }
 function flowPanelHTML(q){
   return '<div class="flow-panel" id="flowPanel"><div class="flow-head"><span class="flow-title">Blood flow'+(q.title?' · '+escapeHtml(q.title):'')+'</span>'
-    +'<span class="flow-legend"><i class="lg deoxy"></i>deoxygenated <i class="lg oxy"></i>oxygenated</span>'
-    +'<button type="button" class="nav-btn flow-replay" id="flowReplay">↻ replay</button></div>'+flowSVG()+'</div>';
+    +'<span class="flow-legend"><i class="lg deoxy"></i>deoxygenated <i class="lg oxy"></i>oxygenated</span></div>'+flowSVG(q)+'</div>';
 }
-function mountFlowPanel(q, play){
+function mountFlowPanel(q){
   const old=document.getElementById('flowPanel'); if(old) old.remove();
   const wrap=document.querySelector('.order-wrap'); if(!wrap) return;
   wrap.insertAdjacentHTML('beforeend', flowPanelHTML(q));
-  const box=document.getElementById('flowPanel');
-  box.querySelector('#flowReplay').addEventListener('click',()=>flowPlay(box,q));
-  if(play) flowPlay(box,q); else flowStatic(box,q);
+  flowPlay(document.getElementById('flowPanel'),q);
 }
 function renderOrder(q, ans){
   const opts=document.getElementById('options');
@@ -1791,7 +2253,7 @@ function renderOrder(q, ans){
     });
     orderUpdateButtons();
   } else {
-    mountFlowPanel(q,false);
+    mountFlowPanel(q);
   }
 }
 /* move inside the unlocked cards only: locked cards keep their place, the rest flow around them */
@@ -1882,7 +2344,7 @@ function checkOrder(){
     document.getElementById('mainPanel').classList.add('correct-pulse');
     setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
     pt1Confetti();
-    mountFlowPanel(q,true);
+    mountFlowPanel(q);
     afterAnswerProgress();
     return;
   }
@@ -3036,7 +3498,7 @@ function resultItemHTML(q,i){
     const a=answers[i], ok=!!(a&&a.correct);
     const sh=isTypedStep(q)?'<div class="rstep">Step '+(q.__stepIdx+1)+' / '+q.__stepCount+' · '+escapeHtml(q.prompt||'')+'</div>':'';
     const ex=(!isTypedStep(q) || q.__stepIdx===q.__stepCount-1)?'<div class="rex">'+escapeHtml(q.explain||'')+'</div>':'';
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div>'+sh+(isTypedStep(q)&&q.__stepIdx===0?stepFigureHTML(q,true):'')+'<div class="rline '+(ok?'rok':'rbad')+'">Your answer: '+(ok?escapeHtml(a.text):'—')+'</div><div class="rline rok">Answer: '+escapeHtml(saqAccepts(q)[0]||'')+'</div>'+ex;
+    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div>'+sh+(isTypedStep(q)&&q.__stepIdx===0?stepFigureHTML(q,true):'')+'<div class="rline '+(ok?'rok':'rbad')+'">Your answer: '+(ok?(isSaqMulti(q)?a.parts.map(escapeHtml).join(' · '):saqDoneHTML(a)):'—')+'</div><div class="rline rok">Answer: '+escapeHtml(saqAccepts(q)[0]||'')+'</div>'+ex;
   }
   const pick=answers[i], ok=pick===q.correct;
   const opts=q.options||[];
@@ -3052,6 +3514,7 @@ function fillResults(list){
     const div=document.createElement('div'); div.className='review-item';
     div.innerHTML=resultItemHTML(q,i);
     list.appendChild(div);
+    if(isLabel(q)){ const f=div.querySelector('.label-figure'); if(f) labelFitWire(f, q.labels); }
   });
 }
 function elapsedLabel(){
@@ -3330,6 +3793,6 @@ if(document.fonts&&document.fonts.ready){
 })();
 placeSettingsGear();
 
-window.StudyQuiz={ loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
+window.StudyQuiz={ labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };

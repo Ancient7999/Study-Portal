@@ -69,7 +69,7 @@
     "id": "MT12005",
     "type": "stepped",
     "cat": "MT_lec12-13",
-    "q": "Describe the pericardium and its two layers.",
+    "q": "Describe the pericardium and its layers.",
     "steps": [
      {
       "id": "1",
@@ -84,7 +84,7 @@
      },
      {
       "id": "2",
-      "prompt": "It is a two-layered sac. Which layer lies closest to the heart?",
+      "prompt": "The pericardium has two layers. Which of its layers lies directly on the heart?",
       "options": [
        "Visceral",
        "Parietal"
@@ -93,7 +93,7 @@
      },
      {
       "id": "3",
-      "prompt": "The visceral layer is inner. What does the parietal layer form?",
+      "prompt": "The visceral pericardium lies on the heart. What does the parietal pericardium form?",
       "options": [
        "The outer wall",
        "The heart muscle",
@@ -630,7 +630,15 @@
     "type": "saq",
     "cat": "MT_lec12-13",
     "q": "The term phlebotomist comes from the combining form __________________ meaning _________________.",
-    "answer": "Phleb/o, vein",
+    "answers": [
+     [
+      "Phleb/o"
+     ],
+     [
+      "Vein",
+      "Veins"
+     ]
+    ],
     "explain": "Phlebotomist is built from phleb/o, which means vein, plus tom/o (to cut) and -ist (one who specializes). Ven/o is the other combining form for vein. Artery is arteri/o, and clot is thromb/o."
    },
    {
@@ -1292,7 +1300,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the ventricle it feeds lie?",
+      "prompt": "Where does the ventricle that the Right atrium feeds lie?",
       "options": [
        "Inferior to it",
        "Superior to it",
@@ -1303,7 +1311,7 @@
      },
      {
       "id": "5",
-      "prompt": "What lies on its medial side?",
+      "prompt": "What lies on the medial side of the Right atrium?",
       "options": [
        "The inter-atrial septum",
        "The aortic valve",
@@ -1358,7 +1366,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the ventricle it feeds lie?",
+      "prompt": "Where does the ventricle that the Left atrium feeds lie?",
       "options": [
        "Inferior to it",
        "Superior to it",
@@ -1369,7 +1377,7 @@
      },
      {
       "id": "5",
-      "prompt": "What lies on its medial side?",
+      "prompt": "What lies on the medial side of the Left atrium?",
       "options": [
        "The inter-atrial septum",
        "The pulmonary valve",
@@ -1402,7 +1410,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which valve is its inlet?",
+      "prompt": "Which valve is the inlet of the Right ventricle?",
       "options": [
        "Tricuspid valve",
        "Mitral valve",
@@ -1413,7 +1421,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which valve is its outlet?",
+      "prompt": "Which valve is the outlet of the Right ventricle?",
       "options": [
        "Pulmonary semilunar valve",
        "Aortic semilunar valve",
@@ -1424,7 +1432,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the atrium that feeds it lie?",
+      "prompt": "Where does the atrium that feeds the Right ventricle lie?",
       "options": [
        "Superior to it",
        "Inferior to it",
@@ -1468,7 +1476,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which valve is its inlet?",
+      "prompt": "Which valve is the inlet of the Left ventricle?",
       "options": [
        "Mitral valve",
        "Tricuspid valve",
@@ -1479,7 +1487,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which valve is its outlet?",
+      "prompt": "Which valve is the outlet of the Left ventricle?",
       "options": [
        "Aortic valve",
        "Pulmonary semilunar valve",
@@ -1490,7 +1498,7 @@
      },
      {
       "id": "4",
-      "prompt": "Where does the atrium that feeds it lie?",
+      "prompt": "Where does the atrium that feeds the Left ventricle lie?",
       "options": [
        "Superior to it",
        "Inferior to it",
@@ -1884,7 +1892,7 @@
     "cat": "MT_lec12-13",
     "group": "vessel-drill",
     "groupOrder": 4,
-    "q": "These two large vessels, one superior and one inferior, are named for their hollow shape.",
+    "q": "This large vein, found as a superior and an inferior pair, is named for its hollow shape.",
     "steps": [
      {
       "id": "1",
@@ -1899,7 +1907,7 @@
      },
      {
       "id": "2",
-      "prompt": "Which direction does the Vena cava run?",
+      "prompt": "Which direction does the vena cava run?",
       "options": [
        "Toward the heart",
        "Away from the heart"
@@ -1908,7 +1916,7 @@
      },
      {
       "id": "3",
-      "prompt": "Which blood does the Vena cava carry?",
+      "prompt": "Which blood does the vena cava carry?",
       "options": [
        "Deoxygenated blood",
        "Oxygenated blood"
@@ -1917,7 +1925,7 @@
      },
      {
       "id": "4",
-      "prompt": "Which chamber does the Vena cava enter?",
+      "prompt": "Which chamber does the vena cava enter?",
       "options": [
        "Right atrium",
        "Left atrium",
@@ -1927,7 +1935,7 @@
       "correct": 0
      }
     ],
-    "explain": "This is the vena cava. Venae cava moves the plural onto the first word, Vena cavae moves it onto the second, and Venae cavae is the plural pair, not the singular vessel asked here. It runs toward the heart, carries deoxygenated blood, and enters the right atrium. Away from the heart is the direction of the aorta and the pulmonary artery. Oxygenated blood returning to the heart arrives by the pulmonary veins. The left atrium receives those veins, and the ventricles are the pumping chambers rather than this inlet."
+    "explain": "This is the vena cava. “Venae cava” places the plural only on the first word. “Vena cavae” places it only on the second. Neither is correct. Venae cavae is the proper plural for the pair, not the single vessel named here. It carries deoxygenated blood toward the heart and enters the right atrium. The aorta and pulmonary artery leave the heart. Oxygenated blood returns through the pulmonary veins, which enter the left atrium. The ventricles are the pumping chambers; this vessel is the inlet."
    },
    {
     "id": "MT12091",
@@ -2286,7 +2294,15 @@
       "x": 10.52,
       "y": 11.37,
       "w": 15.73,
-      "h": 3.57
+      "h": 3.57,
+      "anchor": {
+       "x": 38.1,
+       "y": 13.0,
+       "from": {
+        "x": 24.4,
+        "y": 13.0
+       }
+      }
      },
      {
       "id": "q2-L2",
@@ -2322,7 +2338,15 @@
       "x": 10.71,
       "y": 24.53,
       "w": 13.65,
-      "h": 2.68
+      "h": 2.68,
+      "anchor": {
+       "x": 43.5,
+       "y": 34.2,
+       "from": {
+        "x": 24.3,
+        "y": 26.0
+       }
+      }
      },
      {
       "id": "q2-L6",
@@ -2333,7 +2357,25 @@
       "x": 10.71,
       "y": 30.1,
       "w": 8.91,
-      "h": 4.46
+      "h": 4.46,
+      "anchor": [
+       {
+        "x": 23.4,
+        "y": 44.7,
+        "from": {
+         "x": 16.1,
+         "y": 34.6
+        }
+       },
+       {
+        "x": 25.4,
+        "y": 36.3,
+        "from": {
+         "x": 19.4,
+         "y": 34.5
+        }
+       }
+      ]
      },
      {
       "id": "q2-L7",
@@ -2341,7 +2383,21 @@
       "x": 10.71,
       "y": 54.18,
       "w": 9.86,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": {
+       "x": 33.7,
+       "y": 50.7,
+       "from": {
+        "x": 20.5,
+        "y": 55.3
+       },
+       "via": [
+        {
+         "x": 25.4,
+         "y": 55.5
+        }
+       ]
+      }
      },
      {
       "id": "q2-L8",
@@ -2354,7 +2410,21 @@
       "x": 10.71,
       "y": 63.77,
       "w": 11.75,
-      "h": 2.68
+      "h": 2.68,
+      "anchor": {
+       "x": 39.8,
+       "y": 59.9,
+       "from": {
+        "x": 22.5,
+        "y": 65.1
+       },
+       "via": [
+        {
+         "x": 26.6,
+         "y": 65.2
+        }
+       ]
+      }
      },
      {
       "id": "q2-L9",
@@ -2362,7 +2432,21 @@
       "x": 10.71,
       "y": 78.71,
       "w": 11.37,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": {
+       "x": 45.7,
+       "y": 75.8,
+       "from": {
+        "x": 22.1,
+        "y": 80.0
+       },
+       "via": [
+        {
+         "x": 27.8,
+         "y": 80.2
+        }
+       ]
+      }
      },
      {
       "id": "q2-L10",
@@ -2370,7 +2454,15 @@
       "x": 10.71,
       "y": 88.52,
       "w": 13.84,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": {
+       "x": 35.4,
+       "y": 89.7,
+       "from": {
+        "x": 25.1,
+        "y": 89.7
+       }
+      }
      },
      {
       "id": "q2-L11",
@@ -2381,7 +2473,25 @@
       "x": 85.59,
       "y": 33.11,
       "w": 13.18,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": [
+       {
+        "x": 76.4,
+        "y": 31.0,
+        "from": {
+         "x": 85.5,
+         "y": 34.3
+        }
+       },
+       {
+        "x": 76.8,
+        "y": 36.5,
+        "from": {
+         "x": 85.5,
+         "y": 34.3
+        }
+       }
+      ]
      },
      {
       "id": "q2-L12",
@@ -2389,7 +2499,15 @@
       "x": 85.59,
       "y": 41.47,
       "w": 8.91,
-      "h": 2.68
+      "h": 2.68,
+      "anchor": {
+       "x": 69.3,
+       "y": 42.6,
+       "from": {
+        "x": 85.59,
+        "y": 42.6
+       }
+      }
      },
      {
       "id": "q2-L13",
@@ -2403,7 +2521,15 @@
       "x": 85.59,
       "y": 46.71,
       "w": 9.29,
-      "h": 2.79
+      "h": 2.79,
+      "anchor": {
+       "x": 64.9,
+       "y": 48.0,
+       "from": {
+        "x": 85.59,
+        "y": 48.0
+       }
+      }
      },
      {
       "id": "q2-L14",
@@ -2414,7 +2540,21 @@
       "x": 85.59,
       "y": 52.51,
       "w": 9.57,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": {
+       "x": 53.2,
+       "y": 44.9,
+       "from": {
+        "x": 85.59,
+        "y": 53.6
+       },
+       "via": [
+        {
+         "x": 74.3,
+         "y": 53.6
+        }
+       ]
+      }
      },
      {
       "id": "q2-L15",
@@ -2426,7 +2566,21 @@
       "x": 85.59,
       "y": 56.74,
       "w": 12.51,
-      "h": 4.57
+      "h": 4.57,
+      "anchor": {
+       "x": 58.1,
+       "y": 47.7,
+       "from": {
+        "x": 85.59,
+        "y": 57.8
+       },
+       "via": [
+        {
+         "x": 73.6,
+         "y": 57.8
+        }
+       ]
+      }
      },
      {
       "id": "q2-L16",
@@ -2434,7 +2588,15 @@
       "x": 85.59,
       "y": 61.76,
       "w": 10.33,
-      "h": 2.45
+      "h": 2.45,
+      "anchor": {
+       "x": 71.0,
+       "y": 62.7,
+       "from": {
+        "x": 85.59,
+        "y": 62.7
+       }
+      }
      },
      {
       "id": "q2-L17",
@@ -2442,7 +2604,15 @@
       "x": 85.59,
       "y": 67.89,
       "w": 12.04,
-      "h": 4.57
+      "h": 4.57,
+      "anchor": {
+       "x": 59.3,
+       "y": 69.1,
+       "from": {
+        "x": 85.59,
+        "y": 69.1
+       }
+      }
      },
      {
       "id": "q2-L18",
@@ -2450,7 +2620,15 @@
       "x": 85.59,
       "y": 76.48,
       "w": 10.62,
-      "h": 2.56
+      "h": 2.56,
+      "anchor": {
+       "x": 72.7,
+       "y": 77.6,
+       "from": {
+        "x": 85.59,
+        "y": 77.6
+       }
+      }
      },
      {
       "id": "q2-L19",
@@ -2458,7 +2636,15 @@
       "x": 85.59,
       "y": 80.71,
       "w": 10.05,
-      "h": 2.45
+      "h": 2.45,
+      "anchor": {
+       "x": 77.8,
+       "y": 81.7,
+       "from": {
+        "x": 85.59,
+        "y": 81.7
+       }
+      }
      },
      {
       "id": "q2-L20",
@@ -2466,7 +2652,15 @@
       "x": 85.59,
       "y": 84.84,
       "w": 9.29,
-      "h": 2.45
+      "h": 2.45,
+      "anchor": {
+       "x": 75.6,
+       "y": 85.9,
+       "from": {
+        "x": 85.59,
+        "y": 85.9
+       }
+      }
      },
      {
       "id": "q2-L21",
@@ -2474,7 +2668,15 @@
       "x": 85.59,
       "y": 88.85,
       "w": 9.76,
-      "h": 2.45
+      "h": 2.45,
+      "anchor": {
+       "x": 74.9,
+       "y": 89.8,
+       "from": {
+        "x": 85.59,
+        "y": 89.8
+       }
+      }
      }
     ],
     "explain": "The right atrium receives blood from the superior and inferior venae cavae and sends it through the tricuspid valve to the right ventricle, which pumps it through the pulmonary semilunar valve into the pulmonary artery. The left atrium receives blood from the pulmonary veins and sends it through the mitral (bicuspid) valve to the left ventricle, which pumps it through the aortic valve into the aorta and aortic arch. The interatrial and interventricular septa separate the right and left sides. From the inside out, the wall layers are the endocardium, myocardium and epicardium, and the pericardium surrounds the heart."
@@ -2666,7 +2868,15 @@
       "x": 10.83,
       "y": 2.85,
       "w": 12.17,
-      "h": 7.64
+      "h": 7.64,
+      "anchor": {
+       "x": 34.8,
+       "y": 7.4,
+       "from": {
+        "x": 23.7,
+        "y": 7.2
+       }
+      }
      },
      {
       "id": "q4-L2",
@@ -2677,7 +2887,15 @@
       "x": 16.33,
       "y": 18.65,
       "w": 6.67,
-      "h": 3.89
+      "h": 3.89,
+      "anchor": {
+       "x": 39.7,
+       "y": 18.0,
+       "from": {
+        "x": 23.7,
+        "y": 20.7
+       }
+      }
      },
      {
       "id": "q4-L3",
@@ -2685,7 +2903,25 @@
       "x": 9.08,
       "y": 30.18,
       "w": 13.92,
-      "h": 4.79
+      "h": 4.79,
+      "anchor": {
+       "x": 31.5,
+       "y": 40.1,
+       "from": {
+        "x": 23.7,
+        "y": 32.2
+       },
+       "via": [
+        {
+         "x": 27.3,
+         "y": 34.1
+        },
+        {
+         "x": 29.3,
+         "y": 37.2
+        }
+       ]
+      }
      },
      {
       "id": "q4-L4",
@@ -2696,7 +2932,25 @@
       "x": 4.67,
       "y": 42.23,
       "w": 18.33,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": {
+       "x": 34.5,
+       "y": 51.9,
+       "from": {
+        "x": 23.7,
+        "y": 47.6
+       },
+       "via": [
+        {
+         "x": 27.3,
+         "y": 48.0
+        },
+        {
+         "x": 31.2,
+         "y": 50.0
+        }
+       ]
+      }
      },
      {
       "id": "q4-L5",
@@ -2708,7 +2962,29 @@
       "x": 8.33,
       "y": 56.22,
       "w": 14.67,
-      "h": 12.56
+      "h": 12.56,
+      "anchor": {
+       "x": 44.3,
+       "y": 70.3,
+       "from": {
+        "x": 23.7,
+        "y": 62.5
+       },
+       "via": [
+        {
+         "x": 27.3,
+         "y": 62.3
+        },
+        {
+         "x": 34.2,
+         "y": 63.3
+        },
+        {
+         "x": 40.0,
+         "y": 66.3
+        }
+       ]
+      }
      },
      {
       "id": "q4-L6",
@@ -2721,7 +2997,25 @@
       "x": 6.33,
       "y": 73.83,
       "w": 16.67,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": {
+       "x": 35.4,
+       "y": 73.4,
+       "from": {
+        "x": 23.7,
+        "y": 78.1
+       },
+       "via": [
+        {
+         "x": 29.3,
+         "y": 76.9
+        },
+        {
+         "x": 33.2,
+         "y": 75.0
+        }
+       ]
+      }
      },
      {
       "id": "q4-L7",
@@ -2729,7 +3023,29 @@
       "x": 6.67,
       "y": 88.21,
       "w": 16.33,
-      "h": 4.79
+      "h": 4.79,
+      "anchor": {
+       "x": 44.5,
+       "y": 75.8,
+       "from": {
+        "x": 23.7,
+        "y": 90.7
+       },
+       "via": [
+        {
+         "x": 31.7,
+         "y": 89.8
+        },
+        {
+         "x": 37.1,
+         "y": 87.2
+        },
+        {
+         "x": 41.0,
+         "y": 81.9
+        }
+       ]
+      }
      },
      {
       "id": "q4-L8",
@@ -2737,7 +3053,21 @@
       "x": 74.5,
       "y": 6.61,
       "w": 17.25,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": {
+       "x": 58.3,
+       "y": 11.8,
+       "from": {
+        "x": 74.1,
+        "y": 9.3
+       },
+       "via": [
+        {
+         "x": 64.6,
+         "y": 11.4
+        }
+       ]
+      }
      },
      {
       "id": "q4-L9",
@@ -2750,7 +3080,25 @@
       "x": 74.5,
       "y": 26.81,
       "w": 16.67,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": {
+       "x": 54.2,
+       "y": 31.2,
+       "from": {
+        "x": 74.1,
+        "y": 30.2
+       },
+       "via": [
+        {
+         "x": 66.1,
+         "y": 29.2
+        },
+        {
+         "x": 59.8,
+         "y": 29.6
+        }
+       ]
+      }
      },
      {
       "id": "q4-L10",
@@ -2763,7 +3111,57 @@
       "x": 74.5,
       "y": 37.95,
       "w": 21.67,
-      "h": 16.45
+      "h": 16.45,
+      "anchor": {
+       "x": 59.6,
+       "y": 77.8,
+       "from": {
+        "x": 73.6,
+        "y": 42.7
+       },
+       "via": [
+        {
+         "x": 70.9,
+         "y": 39.6
+        },
+        {
+         "x": 65.3,
+         "y": 37.6
+        },
+        {
+         "x": 61.1,
+         "y": 38.2
+        },
+        {
+         "x": 56.1,
+         "y": 41.1
+        },
+        {
+         "x": 52.7,
+         "y": 45.8
+        },
+        {
+         "x": 50.2,
+         "y": 51.8
+        },
+        {
+         "x": 49.5,
+         "y": 57.3
+        },
+        {
+         "x": 50.2,
+         "y": 63.3
+        },
+        {
+         "x": 52.0,
+         "y": 68.2
+        },
+        {
+         "x": 54.1,
+         "y": 71.5
+        }
+       ]
+      }
      },
      {
       "id": "q4-L11",
@@ -2777,7 +3175,37 @@
       "x": 74.5,
       "y": 57.12,
       "w": 18.5,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": [
+       {
+        "x": 63.2,
+        "y": 49.0,
+        "from": {
+         "x": 74.1,
+         "y": 57.4
+        },
+        "via": [
+         {
+          "x": 68.6,
+          "y": 53.0
+         }
+        ]
+       },
+       {
+        "x": 61.3,
+        "y": 40.4,
+        "from": {
+         "x": 63.2,
+         "y": 49.0
+        },
+        "via": [
+         {
+          "x": 62.0,
+          "y": 45.5
+         }
+        ]
+       }
+      ]
      },
      {
       "id": "q4-L12",
@@ -2791,7 +3219,41 @@
       "x": 74.5,
       "y": 66.84,
       "w": 19.75,
-      "h": 8.42
+      "h": 8.42,
+      "anchor": [
+       {
+        "x": 68.3,
+        "y": 59.2,
+        "from": {
+         "x": 74.1,
+         "y": 68.4
+        },
+        "via": [
+         {
+          "x": 72.5,
+          "y": 67.5
+         },
+         {
+          "x": 71.0,
+          "y": 62.9
+         }
+        ]
+       },
+       {
+        "x": 62.9,
+        "y": 63.1,
+        "from": {
+         "x": 74.1,
+         "y": 72.9
+        },
+        "via": [
+         {
+          "x": 69.5,
+          "y": 69.7
+         }
+        ]
+       }
+      ]
      },
      {
       "id": "q4-L13",
@@ -2804,7 +3266,25 @@
       "x": 74.5,
       "y": 77.85,
       "w": 15.42,
-      "h": 8.29
+      "h": 8.29,
+      "anchor": [
+       {
+        "x": 68.6,
+        "y": 71.9,
+        "from": {
+         "x": 74.1,
+         "y": 79.1
+        }
+       },
+       {
+        "x": 62.7,
+        "y": 74.4,
+        "from": {
+         "x": 74.3,
+         "y": 84.1
+        }
+       }
+      ]
      },
      {
       "id": "q4-L14",
@@ -2812,7 +3292,25 @@
       "x": 74.5,
       "y": 88.99,
       "w": 14.67,
-      "h": 4.02
+      "h": 4.02,
+      "anchor": {
+       "x": 62.2,
+       "y": 81.7,
+       "from": {
+        "x": 74.1,
+        "y": 90.7
+       },
+       "via": [
+        {
+         "x": 71.0,
+         "y": 89.6
+        },
+        {
+         "x": 66.1,
+         "y": 85.7
+        }
+       ]
+      }
      }
     ],
     "explain": "The coronary arteries branch off the aorta and supply the heart muscle itself. The right coronary artery runs along the right side and gives off the right marginal artery and, in most people, the posterior descending artery. The left coronary artery quickly divides into the left anterior descending artery (anterior interventricular artery), which gives off diagonal branches, and the circumflex artery, which gives off the left (obtuse) marginal arteries. A blockage in these vessels causes ischemia or a myocardial infarction (heart attack)."
@@ -2852,7 +3350,25 @@
       "x": 28.58,
       "y": 62.08,
       "w": 9.58,
-      "h": 3.51
+      "h": 3.51,
+      "anchor": [
+       {
+        "x": 30.7,
+        "y": 51.9,
+        "from": {
+         "x": 32.8,
+         "y": 62.4
+        }
+       },
+       {
+        "x": 34.4,
+        "y": 59.1,
+        "from": {
+         "x": 32.8,
+         "y": 62.4
+        }
+       }
+      ]
      },
      {
       "id": "q5-L4",
@@ -2864,7 +3380,25 @@
       "x": 52.5,
       "y": 24.81,
       "w": 10.0,
-      "h": 4.16
+      "h": 4.16,
+      "anchor": [
+       {
+        "x": 54.6,
+        "y": 15.2,
+        "from": {
+         "x": 57.3,
+         "y": 24.6
+        }
+       },
+       {
+        "x": 56.5,
+        "y": 33.9,
+        "from": {
+         "x": 57.7,
+         "y": 28.5
+        }
+       }
+      ]
      },
      {
       "id": "q5-L5",
@@ -2875,7 +3409,25 @@
       "x": 66.33,
       "y": 61.17,
       "w": 7.83,
-      "h": 3.51
+      "h": 3.51,
+      "anchor": [
+       {
+        "x": 66.4,
+        "y": 56.2,
+        "from": {
+         "x": 69.4,
+         "y": 61.6
+        }
+       },
+       {
+        "x": 68.7,
+        "y": 49.5,
+        "from": {
+         "x": 69.4,
+         "y": 61.6
+        }
+       }
+      ]
      },
      {
       "id": "q5-L6",
@@ -2883,7 +3435,15 @@
       "x": 24.67,
       "y": 5.45,
       "w": 6.25,
-      "h": 3.12
+      "h": 3.12,
+      "anchor": {
+       "x": 22.5,
+       "y": 11.8,
+       "from": {
+        "x": 26.1,
+        "y": 8.5
+       }
+      }
      },
      {
       "id": "q5-L7",
@@ -2895,7 +3455,15 @@
       "x": 3.67,
       "y": 8.57,
       "w": 11.5,
-      "h": 3.25
+      "h": 3.25,
+      "anchor": {
+       "x": 18.5,
+       "y": 13.7,
+       "from": {
+        "x": 15.0,
+        "y": 10.8
+       }
+      }
      },
      {
       "id": "q5-L8",
@@ -2907,7 +3475,15 @@
       "x": 4.25,
       "y": 15.45,
       "w": 7.17,
-      "h": 5.84
+      "h": 5.84,
+      "anchor": {
+       "x": 16.8,
+       "y": 23.6,
+       "from": {
+        "x": 11.4,
+        "y": 20.7
+       }
+      }
      },
      {
       "id": "q5-L9",
@@ -2919,7 +3495,15 @@
       "x": 3.0,
       "y": 29.35,
       "w": 9.58,
-      "h": 3.25
+      "h": 3.25,
+      "anchor": {
+       "x": 14.9,
+       "y": 31.2,
+       "from": {
+        "x": 12.8,
+        "y": 31.2
+       }
+      }
      },
      {
       "id": "q5-L10",
@@ -2930,7 +3514,15 @@
       "x": 26.92,
       "y": 20.0,
       "w": 9.67,
-      "h": 5.71
+      "h": 5.71,
+      "anchor": {
+       "x": 23.8,
+       "y": 22.1,
+       "from": {
+        "x": 27.0,
+        "y": 22.1
+       }
+      }
      },
      {
       "id": "q5-L11",
@@ -2941,7 +3533,15 @@
       "x": 0.42,
       "y": 22.47,
       "w": 12.0,
-      "h": 5.84
+      "h": 5.84,
+      "anchor": {
+       "x": 15.6,
+       "y": 28.5,
+       "from": {
+        "x": 12.5,
+        "y": 27.0
+       }
+      }
      },
      {
       "id": "q5-L12",
@@ -2953,7 +3553,15 @@
       "x": 86.83,
       "y": 5.58,
       "w": 5.33,
-      "h": 3.25
+      "h": 3.25,
+      "anchor": {
+       "x": 83.4,
+       "y": 12.4,
+       "from": {
+        "x": 87.0,
+        "y": 7.8
+       }
+      }
      },
      {
       "id": "q5-L13",
@@ -2967,7 +3575,15 @@
       "x": 34.42,
       "y": 3.77,
       "w": 12.58,
-      "h": 6.62
+      "h": 6.62,
+      "anchor": {
+       "x": 41.7,
+       "y": 13.7,
+       "from": {
+        "x": 40.7,
+        "y": 9.9
+       }
+      }
      }
     ],
     "explain": "Arteries carry blood away from the heart and branch into arterioles and then capillaries, where gases and nutrients are exchanged. Capillaries drain into venules, which join to form veins that carry blood back to the heart. Valves in veins prevent backflow. From the lumen outward, the artery wall is made of the endothelium (tunica intima), the internal elastic lamina, a smooth muscle layer (tunica media), the external elastic lamina, and the adventitia (tunica externa). Erythrocytes (red blood cells) pass through capillaries in single file."

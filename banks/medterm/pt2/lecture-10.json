@@ -2027,7 +2027,7 @@
       "options": [
        "Gingiva",
        "Gingeva",
-       "Gingeva",
+       "Gengiva",
        "Gingvia"
       ],
       "correct": 0
@@ -2166,7 +2166,7 @@
      },
      {
       "id": "2",
-      "prompt": "Where does the other jaw lie relative to it?",
+      "prompt": "Where does the other jaw lie relative to the maxilla?",
       "options": [
        "Inferior to it",
        "Superior to it",
@@ -2199,7 +2199,7 @@
      },
      {
       "id": "2",
-      "prompt": "Where does the other jaw lie relative to it?",
+      "prompt": "Where does the other jaw lie relative to the mandible?",
       "options": [
        "Superior to it",
        "Inferior to it",

@@ -256,8 +256,10 @@
        "Pa.s",
        "N·s/m²",
        "N·s·m⁻²",
-       "pascal-second"
-      ]
+       "pascal-second",
+       "Pascal-second"
+      ],
+      "caseSensitive": true
      }
     ],
     "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s."

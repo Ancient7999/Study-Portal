@@ -42,6 +42,12 @@
   --accent:#22d3ee;
   --accent-2:#fbbf24;
   --mood-glow:rgba(34,211,238,.22);
+  /* timer dock text: derived from each mood's palette and lifted toward white so the quote and
+     its author stay at WCAG AA (4.5:1) on the dock in every mood, skin and dimmed state */
+  --dock-bg:rgba(8,12,20,.8);
+  --dock-quote:color-mix(in srgb, var(--teal) 45%, #f8fafc);
+  --dock-author:color-mix(in srgb, var(--text-dim) 62%, #f8fafc);
+  --dock-dim-opacity:.85;
   --anim-speed:1;
   --pulse-ms:1600ms;
   --transition-ms:280ms;
@@ -488,12 +494,12 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .sets-wrap h1{font-size:2.45rem;font-weight:900;background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 35%,var(--teal) 65%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .sets-wrap .sets-kicker{color:var(--text-dim);font-family:var(--mono);font-size:.95rem;margin:6px 0 0;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
 .sets-wrap .sub{color:var(--text-dim);font-family:var(--mono);font-size:1rem;margin:10px 0 28px}
-.timer-dock{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:.65rem;background:rgba(8,12,20,.55);border:1px solid var(--border);border-radius:1.35rem;padding:.7rem .85rem;backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px var(--mood-glow);width:min(94vw,420px);max-width:min(94vw,420px);min-width:min(94vw,280px);min-height:5.6rem;height:5.6rem;box-sizing:border-box}
+.timer-dock{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:.65rem;background:var(--dock-bg);border:1px solid var(--border);border-radius:1.35rem;padding:.7rem .85rem;backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 18px var(--mood-glow);width:min(94vw,420px);max-width:min(94vw,420px);min-width:min(94vw,280px);min-height:5.6rem;height:5.6rem;box-sizing:border-box}
 .timer-dock .timer-copy{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:.12rem;overflow:hidden}
 .timer-dock .timer-display{font-size:1.55rem;font-weight:600;letter-spacing:1.5px;font-variant-numeric:tabular-nums;font-family:var(--mono);min-width:76px;color:var(--text);user-select:none;line-height:1.1}
-.timer-dock .timer-mode{font-size:.78rem;letter-spacing:.01em;font-family:var(--mono);color:var(--teal);opacity:.92;line-height:1.3;max-width:100%;width:100%;min-height:2.6em;max-height:2.6em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-transform:none}
-.timer-dock .timer-author{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.72rem;color:var(--text-dim);opacity:0;line-height:1.2;min-height:1.1em;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:translateY(4px);transition:opacity 1.6s ease,transform 1.6s ease}
-.timer-dock .timer-author.show{opacity:.78;transform:translateY(0)}
+.timer-dock .timer-mode{font-size:.78rem;letter-spacing:.01em;font-family:var(--mono);color:var(--dock-quote);opacity:1;line-height:1.3;max-width:100%;width:100%;min-height:2.6em;max-height:2.6em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-transform:none}
+.timer-dock .timer-author{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:.72rem;color:var(--dock-author);opacity:0;line-height:1.2;min-height:1.1em;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:translateY(4px);transition:opacity 1.6s ease,transform 1.6s ease}
+.timer-dock .timer-author.show{opacity:1;transform:translateY(0)}
 .timer-dock-main{position:relative;display:flex;align-items:center;gap:.65rem;min-width:0;flex:1}
 .mood-live{font-size:1.65rem;line-height:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50%;width:2.6rem;height:2.6rem;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow var(--transition-ms),border-color var(--transition-ms);padding:0}
 .mood-live:hover,.mood-wrap-live.open .mood-live{transform:scale(1.08);box-shadow:0 0 16px var(--mood-glow)}
@@ -1193,7 +1199,7 @@ body.party-nav-locked #formGrid .card{opacity:.45;filter:grayscale(.3)}
 .pane-opt-btn.wrong{border-color:var(--error);background:rgba(251,113,133,.1)}
 .pane-opt-btn.ai-hover{border-color:hsla(var(--friend-hue,180),70%,55%,.7);box-shadow:0 0 8px hsla(var(--friend-hue,180),70%,50%,.25)}
 .pane-result-msg{font-size:.75rem;margin-top:8px;color:var(--teal)}
-body.split-quiz-active .timer-dock{opacity:.35;pointer-events:none}
+body.split-quiz-active .timer-dock{opacity:var(--dock-dim-opacity);pointer-events:none}
 body.split-quiz-active #chatDock{z-index:60}
 
 

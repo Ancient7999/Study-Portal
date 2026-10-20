@@ -505,6 +505,20 @@ html.bg-edit-hide-glows body{
 .pt1q .saq-check{flex:0 0 auto;min-width:110px}
 .pt1q .q-nav-btn.saq .q-nav-icon{font-size:.8em;opacity:.85}
 @media (prefers-reduced-motion: reduce){ .pt1q .saq-input.soft-wrong{animation:none} }
+/* an answer the engine completed ("Coronary" → "Coronary Circulation"): the added word in a yellow highlight */
+.pt1q .saq-input.saq-done{display:flex;align-items:center;flex-wrap:wrap;user-select:none;-webkit-user-select:none}
+.saq-fill{background:rgba(250,204,21,.32);color:#fde68a;border-radius:6px;padding:0 4px;margin:0 1px;box-shadow:inset 0 -2px 0 rgba(250,204,21,.7)}
+/* several blanks: one numbered box per blank; the stem shows each blank as its number until it is solved */
+.pt1q .saq-multi{flex-direction:column;align-items:stretch}
+.pt1q .saq-blanks{display:flex;flex-direction:column;gap:10px}
+.pt1q .saq-blank-row{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:10px}
+.pt1q .saq-blank-num{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:800 .85rem var(--mono);background:rgba(var(--accent-0-rgb),.18);color:var(--accent-0);border:1px solid rgba(var(--accent-0-rgb),.45)}
+.pt1q .saq-blank-ctx{font-size:.85rem;color:var(--text-dim);white-space:nowrap;user-select:none;-webkit-user-select:none}
+.pt1q .saq-blank-row .saq-input{flex:none;width:100%}
+.pt1q .saq-multi .saq-check{align-self:flex-end}
+.saq-blank{display:inline-block;min-width:2.4em;padding:0 8px;margin:0 2px;border-bottom:2px solid rgba(var(--accent-0-rgb),.7);color:var(--accent-0);font-family:var(--mono);font-size:.85em;text-align:center;border-radius:4px;background:rgba(var(--accent-0-rgb),.08)}
+.saq-blank.filled{color:var(--success);border-bottom-color:var(--success);background:rgba(52,211,153,.1);font-family:inherit}
+@media (max-width:600px){ .pt1q .saq-blank-row{grid-template-columns:auto 1fr} .pt1q .saq-blank-row .saq-input{grid-column:1 / -1} }
 /* —— PORTAL: select-all-that-apply (multi) questions — PT1 options with a checkbox key —— */
 .pt1q .multi-hint{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:6px 12px;border-radius:999px;font-family:var(--font-nav,var(--mono));font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-1);background:rgba(var(--accent-0-rgb),.1);border:1px solid rgba(var(--accent-0-rgb),.32);user-select:none;-webkit-user-select:none}
 .pt1q .multi-hint-icon{font-size:1rem;line-height:1}
@@ -568,14 +582,24 @@ html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
 .label-stage{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--border);background:#fff;max-width:100%;touch-action:pan-x pan-y pinch-zoom}
 .label-figure{position:relative;width:calc(100% * var(--lz,1));min-width:0;container-type:inline-size;user-select:none;-webkit-user-select:none}
 .label-figure .label-img{display:block;width:100%;height:auto;pointer-events:none}
+.label-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.label-leader polyline,.label-leader line{fill:none;stroke:var(--accent-0);stroke-linejoin:round;stroke-width:0;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:0;transition:opacity .18s ease,stroke-width .18s ease}
+.label-leader.lit polyline,.label-leader.lit line{opacity:1;stroke-width:3px;filter:drop-shadow(0 0 3px var(--accent-0)) drop-shadow(0 0 6px rgba(var(--accent-0-rgb),.7))}
+.label-leader.lit .label-leader-dot{stroke-width:9px}
+@media (prefers-reduced-motion:reduce){.label-leader polyline,.label-leader line{transition:none}}
 .label-slot{position:absolute;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:6px;font-family:var(--body);font-size:clamp(9px,1.3cqw,15px);line-height:1.1;text-align:center;color:#1b2233}
 .label-slot.open{border:2px dashed rgba(var(--accent-0-rgb),.75);background:rgba(var(--accent-0-rgb),.10);cursor:pointer}
 .label-figure.picking .label-slot.open{background:rgba(var(--accent-0-rgb),.22);animation:labelPulse 1.2s ease-in-out infinite}
 .label-slot.open.drop-over,.label-slot.open:focus-visible{outline:3px solid var(--accent-0);outline-offset:1px;background:rgba(var(--accent-0-rgb),.28)}
+.label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55);z-index:3}
+.label-ghost.snapped{transition:left .09s ease-out,top .09s ease-out;outline:2px solid var(--accent-0);outline-offset:2px}
 .label-slot.locked{border:2px solid var(--success);background:color-mix(in srgb,var(--success) 22%,#fff);font-weight:700;color:#0f3d2c;padding:0 3px}
 .label-slot.locked.just-locked{animation:labelPop .45s ease}
 .label-slot.locked.missed{border-color:var(--error,#f87171);background:color-mix(in srgb,var(--error,#f87171) 16%,#fff);color:#5b1515}
-.label-slot-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.label-slot-text{overflow:visible;text-overflow:clip;white-space:nowrap;max-width:none}
+.label-slot.grown{z-index:2}
+.label-slot.wrapped .label-slot-text{white-space:normal;overflow-wrap:normal;word-break:keep-all;line-height:1.12;max-width:100%}
+.label-slot.typing.grown{z-index:3}
 .label-slot.typing{border:2px solid rgba(var(--accent-0-rgb),.7);background:#fff;overflow:visible}
 .label-input{width:100%;height:100%;box-sizing:border-box;border:0;outline:0;background:transparent;font:inherit;color:#1b2233;text-align:center;padding:0 3px;min-width:0}
 .label-slot.typing:focus-within{outline:3px solid var(--accent-0);outline-offset:1px;z-index:3}
@@ -627,31 +651,44 @@ html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
 .flow-legend{font-size:.75rem;color:var(--text-dim);display:flex;align-items:center;gap:6px}
 .flow-legend .lg{display:inline-block;width:10px;height:10px;border-radius:50%}
 .flow-legend .lg.deoxy{background:#3b82f6}.flow-legend .lg.oxy{background:#ef4444}
-.flow-replay{font-size:.8rem}
 .flow-svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
 .flow-part{transition:fill .25s,stroke .25s,opacity .25s}
 .flow-wall{fill:none;stroke:color-mix(in srgb,var(--text) 22%,transparent);stroke-width:7}
 .flow-box{fill:color-mix(in srgb,var(--text) 6%,transparent);stroke:color-mix(in srgb,var(--text) 40%,transparent);stroke-width:1.5}
 .flow-chamber{fill:color-mix(in srgb,var(--text) 8%,transparent);stroke:color-mix(in srgb,var(--text) 45%,transparent);stroke-width:1.5}
-.flow-valve{fill:color-mix(in srgb,var(--text) 35%,transparent);stroke:none}
-.flow-vessel{fill:none;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.35}
-.flow-vessel.thin{stroke-width:5}
+.flow-valve{fill:color-mix(in srgb,var(--text) 55%,transparent);stroke:none}
+.flow-vessel{fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;opacity:.28}
+.flow-vessel.thin,.flow-run.thin{stroke-width:4.5}
 .flow-vessel.deoxy{stroke:#3b82f6}.flow-vessel.oxy{stroke:#ef4444}
-.flow-label{fill:var(--text);font-family:var(--body);font-size:11px;text-anchor:middle;pointer-events:none}
-.flow-label.small{font-size:8px;fill:var(--text-dim)}.flow-label.tiny{font-size:7px;fill:var(--text-dim)}
-.flow-label.vert{font-size:8px;fill:var(--text-dim);writing-mode:vertical-rl;text-anchor:middle}
-.flow-part.flow-path{stroke:var(--accent-0)}
-.flow-chamber.flow-path,.flow-box.flow-path{fill:rgba(var(--accent-0-rgb),.18)}
-.flow-vessel.flow-path{opacity:.85}
-.flow-part.flow-on{stroke:var(--accent-0);filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.9))}
+.flow-vessel.mixed,.flow-run.mixed{stroke:url(#flowLungGrad)}.flow-vessel.mixed-back,.flow-run.mixed-back{stroke:url(#flowBodyGrad)}
+/* the moving blood: dashes running along every vessel in the direction of flow */
+.flow-run{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3 9;opacity:.55;animation:flowRun 1.1s linear infinite;pointer-events:none}
+.flow-run.deoxy{stroke:#60a5fa}.flow-run.oxy{stroke:#f87171}
+@keyframes flowRun{to{stroke-dashoffset:-12}}
+/* the part the question is about: brighter, thicker, glowing; the rest of the loop keeps moving, dimmer */
+.flow-vessel.flow-focus{opacity:.9;stroke-width:11;filter:drop-shadow(0 0 5px rgba(var(--accent-0-rgb),.75))}
+.flow-vessel.thin.flow-focus{stroke-width:7}
+.flow-run.flow-focus{opacity:1;stroke-width:3.4;stroke:#fff}
+.flow-chamber.flow-focus,.flow-box.flow-focus{stroke:var(--accent-0);stroke-width:2.4;fill:rgba(var(--accent-0-rgb),.16);filter:drop-shadow(0 0 5px rgba(var(--accent-0-rgb),.6))}
+.flow-valve.flow-focus{fill:var(--accent-0);filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.9))}
+.flow-wall.flow-focus{stroke:rgba(var(--accent-0-rgb),.7)}
+.flow-label{fill:var(--text);font-family:var(--body);font-size:11px;font-weight:600;text-anchor:middle;pointer-events:none}
+.flow-label.chamber-label{font-size:12px}
+.flow-label.valve-label{font-size:10px;font-weight:700;fill:color-mix(in srgb,var(--text) 85%,transparent)}
+.flow-label.small{font-size:9.5px;fill:var(--text-dim)}
+.flow-label.vert{font-size:9.5px;fill:var(--text-dim);writing-mode:vertical-rl;text-anchor:middle}
+.flow-chamber.flow-on,.flow-box.flow-on,.flow-valve.flow-on,.flow-wall.flow-on{stroke:var(--accent-0);filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.9))}
 .flow-chamber.flow-on,.flow-box.flow-on,.flow-valve.flow-on{fill:rgba(var(--accent-0-rgb),.35)}
-.flow-vessel.flow-on{opacity:1}
+.flow-vessel.flow-on{opacity:.5}
 .flow-wall.flow-on{stroke:rgba(var(--accent-0-rgb),.8)}
-.flow-trail{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:6 5}
-.flow-trail.deoxy-trail{stroke:#1d4ed8}.flow-trail.oxy-trail{stroke:#b91c1c}
 .flow-dot{fill:#3b82f6;stroke:#fff;stroke-width:2;filter:drop-shadow(0 0 5px rgba(0,0,0,.4))}
 .flow-dot.oxy{fill:#ef4444}
+.flow-dot-branch{transition:opacity .2s}
 .flow-panel.is-static .flow-dot{display:none}
+.flow-panel.is-static .flow-run{animation:none;stroke-dasharray:none;opacity:.35}
+.flow-panel.is-static .flow-run.flow-focus{opacity:.9}
+@media (max-width:520px){.flow-panel{margin:0 -20px;padding:8px 4px;border-radius:12px}.flow-head{padding:0 8px}.flow-label{font-size:12px}.flow-label.chamber-label{font-size:12.5px}.flow-label.valve-label{font-size:10.5px}.flow-label.small,.flow-label.vert{font-size:10px}}
+@media (prefers-reduced-motion:reduce){.flow-run{animation:none;stroke-dasharray:none}}
 @media (prefers-reduced-motion:reduce){.order-card.just-locked,.order-card.soft-wrong{animation:none}.flow-part{transition:none}}
 @media (max-width:480px){.order-card{gap:6px;padding:8px 6px}.order-btns button{width:36px;height:36px}.order-pos{width:22px;height:22px}}
 
