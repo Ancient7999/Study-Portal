@@ -34,8 +34,11 @@
   };
   const MODE_HINT = {
     pane: 'Everyone answers in their own pane, side by side.',
-    classic: 'One shared question view with a roster of players.'
+    host: 'Everyone plays their own page and can open the host\'s screen in a tab.'
   };
+  /* lobbies made before Host Screen stored 'classic' */
+  function modeOf(lobby) { const m = lobby && lobby.gameMode; return m === 'host' || m === 'classic' ? 'host' : 'pane'; }
+  const MODE_NAME = { pane: 'Pane', host: 'Host Screen' };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -61,6 +64,7 @@
     if (global.StudySpectate && StudySpectate.spectatorCount) return StudySpectate.spectatorCount(L);
     return Object.keys((L && L.members) || {}).filter((k) => L.members[k] && L.members[k].role === 'spectate').length;
   }
+  const EYE_SVG = '<svg class="eye-ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path d="M12 5c5 0 9 4.5 10 7-1 2.5-5 7-10 7S3 14.5 2 12c1-2.5 5-7 10-7Zm0 2.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 2.3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor"/></svg>';
   function paintEye(el, n) {
     if (!el) return;
     if (global.StudySpectate && StudySpectate.paintEye) StudySpectate.paintEye(el, n);
@@ -396,9 +400,13 @@
       '<div class="lobby-group-title" id="lobbyModeTitle">Mode</div>' +
       '<div class="lobby-mode-row lobby-segment" role="radiogroup" aria-labelledby="lobbyModeTitle">' +
       '<button type="button" class="mp-mode-pill active" role="radio" aria-checked="true" data-mode="pane" id="lobbyModePane">Pane</button>' +
-      '<button type="button" class="mp-mode-pill" role="radio" aria-checked="false" data-mode="classic" id="lobbyModeClassic">Classic</button>' +
+      '<button type="button" class="mp-mode-pill" role="radio" aria-checked="false" data-mode="host" id="lobbyModeHost">Host Screen</button>' +
       '</div>' +
       '<p class="lobby-field-hint" id="lobbyModeHint">' + MODE_HINT.pane + '</p>' +
+      '</div>' +
+      '<div class="lobby-group" id="lobbyHostGroup" hidden>' +
+      '<div class="lobby-group-title">Playing Together</div>' +
+      sw('lobbyOptHostControl', cs.hostControl, 'Let players control', 'Players can click and type on the host screen. Off keeps it view only.') +
       '</div>' +
       '<div class="lobby-group">' +
       '<div class="lobby-group-title">Spectators and Joining</div>' +
@@ -457,13 +465,13 @@
     panel.querySelector('#lobbyCreateBtn').onclick = () =>
       createLobby().catch((e) => toast(e.message || 'Create failed'));
     panel.querySelector('#lobbyModePane').onclick = () => setCreateMode('pane');
-    panel.querySelector('#lobbyModeClassic').onclick = () => setCreateMode('classic');
+    panel.querySelector('#lobbyModeHost').onclick = () => setCreateMode('host');
     // arrow keys move between the two mode radios
     panel.querySelector('.lobby-segment').addEventListener('keydown', (e) => {
       if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(e.key) < 0) return;
       e.preventDefault();
-      setCreateMode(state.createMode === 'pane' ? 'classic' : 'pane');
-      const b = document.getElementById(state.createMode === 'pane' ? 'lobbyModePane' : 'lobbyModeClassic');
+      setCreateMode(state.createMode === 'pane' ? 'host' : 'pane');
+      const b = document.getElementById(state.createMode === 'pane' ? 'lobbyModePane' : 'lobbyModeHost');
       if (b) b.focus();
     });
     const optSpec = panel.querySelector('#lobbyOptSpectate');
@@ -471,6 +479,8 @@
     optSpec.onchange = () => {
       state.createSettings.spectate = optSpec.checked;
     };
+    const optHost = panel.querySelector('#lobbyOptHostControl');
+    optHost.onchange = () => { state.createSettings.hostControl = optHost.checked; };
     optPolicy.onchange = () => {
       state.createSettings.policy = POLICY_LABEL[optPolicy.value] ? optPolicy.value : 'ask';
       panel.querySelector('#lobbyOptPolicyHint').textContent = POLICY_HINT[state.createSettings.policy];
@@ -499,18 +509,20 @@
   }
 
   function setCreateMode(mode) {
-    state.createMode = mode === 'classic' ? 'classic' : 'pane';
+    state.createMode = mode === 'host' || mode === 'classic' ? 'host' : 'pane';
     const pane = document.getElementById('lobbyModePane');
-    const classic = document.getElementById('lobbyModeClassic');
+    const classic = document.getElementById('lobbyModeHost');
+    const hg = document.getElementById('lobbyHostGroup');
+    if (hg) hg.hidden = state.createMode !== 'host';
     if (pane) {
       pane.classList.toggle('active', state.createMode === 'pane');
       pane.setAttribute('aria-checked', String(state.createMode === 'pane'));
       pane.tabIndex = state.createMode === 'pane' ? 0 : -1;
     }
     if (classic) {
-      classic.classList.toggle('active', state.createMode === 'classic');
-      classic.setAttribute('aria-checked', String(state.createMode === 'classic'));
-      classic.tabIndex = state.createMode === 'classic' ? 0 : -1;
+      classic.classList.toggle('active', state.createMode === 'host');
+      classic.setAttribute('aria-checked', String(state.createMode === 'host'));
+      classic.tabIndex = state.createMode === 'host' ? 0 : -1;
     }
     const hint = document.getElementById('lobbyModeHint');
     if (hint) hint.textContent = MODE_HINT[state.createMode];
@@ -641,7 +653,7 @@
     const setLabel = (choice && choice.setLabel) || '';
     const testLabel = choice ? choice.subjectName + ' · ' + choice.testTitle : '';
     const cs = state.createSettings;
-    const settings = { v: 1, spectate: !!cs.spectate, policy: cs.policy || 'ask' };
+    const settings = { v: 1, spectate: !!cs.spectate, policy: cs.policy || 'ask', hostControl: state.createMode === 'host' && !!cs.hostControl };
     
     const id = randomId();
     const bits = profileBits();
@@ -938,7 +950,7 @@
     const lobby = state.lobbies[lobbyId];
     if (!isLeaderOf(lobby)) throw new Error('Only leader can set mode');
     if (lobby.status === 'live') throw new Error('Mode locked after start');
-    const m = mode === 'classic' ? 'classic' : 'pane';
+    const m = mode === 'host' || mode === 'classic' ? 'host' : 'pane';
     await ensureDb().ref('lobbies/' + lobbyId + '/gameMode').set(m);
   }
 
@@ -950,7 +962,7 @@
     const n = Object.keys(seats).length;
     if (n < 1) throw new Error('Seat at least yourself');
     const db = ensureDb();
-    const gameMode = lobby.gameMode === 'classic' ? 'classic' : 'pane';
+    const gameMode = modeOf(lobby);
     const startedAt = Date.now();
     // Keep same chatSessionId for continuity; members already present keep thread
     await db.ref('lobbies/' + lobbyId).update({
@@ -992,12 +1004,7 @@
       startedAt: startedAt,
       leader: lobby.leader,
       chatSessionId: lobby.chatSessionId,
-      classic: {
-        qIndex: 0,
-        bank: sessionBank,
-        form: sessionForm,
-        card: lobby.card || null
-      },
+      hostScreen: { uid: lobby.leader, at: startedAt },
       panes: panes
     });
 
@@ -1009,7 +1016,7 @@
       })
     );
 
-    toast(gameMode === 'classic' ? 'Starting classic quiz…' : 'Starting pane quiz…');
+    toast(gameMode === 'host' ? 'Starting with the host screen…' : 'Starting pane quiz…');
     if (global.StudySplitQuiz && StudySplitQuiz.joinLobbySession) {
       StudySplitQuiz.joinLobbySession(lobbyId);
     }
@@ -1127,7 +1134,8 @@
   function settingsChips(lobby) {
     const st = settingsOf(lobby);
     return (
-      chip(lobby.gameMode === 'classic' ? 'Classic' : 'Pane') +
+      chip(MODE_NAME[modeOf(lobby)]) +
+      (modeOf(lobby) === 'host' ? chip(st.hostControl ? 'Players Control' : 'View Only') : '') +
       chip(st.spectate ? 'Spectators On' : 'Spectators Off', st.spectate) +
       chip('Requests: ' + ({ ask: 'Ask Me', restrict: 'Restricted', all: 'Allow All' }[st.policy] || 'Ask Me'), st.policy !== 'restrict')
     );
@@ -1293,7 +1301,7 @@
         .map((id) => {
           const L = state.lobbies[id];
           const n = Math.max(memberCount(L), seatCount(L));
-          const mode = L.gameMode === 'classic' ? 'Classic' : 'Pane';
+          const mode = MODE_NAME[modeOf(L)];
           const inIt = !!(L.members && me && L.members[me]);
           const st = settingsOf(L);
           const jm = joinModeOf(L);
@@ -1383,6 +1391,9 @@
         '<div class="ls-foot">' + pill +
         '<span class="ls-prog" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><span style="width:' + pct + '%"></span></span>' +
         '<span class="ls-count">' + (total ? (p.answered | 0) + '/' + total : '') + '</span>' +
+        (live && inLobby && s.uid !== me && role === 'play'
+          ? '<button type="button" class="ls-watch" data-pip="' + esc(s.uid) + '" data-pip-name="' + esc(s.displayName) + '" aria-label="Watch ' + esc(s.displayName) + ' in a floating window" title="Watch in a floating window">' + EYE_SVG + '</button>'
+          : '') +
         '</div>' +
         (leader && !live
           ? '<div class="lobby-seat-actions"><select class="lobby-seat-bank-sel chat-tool-input" data-bank-seat="' + i + '" aria-label="Set for seat ' + (i + 1) + '"></select></div>'
@@ -1414,7 +1425,7 @@
     }
     bench += '</div>';
 
-    const mode = lobby.gameMode === 'classic' ? 'classic' : 'pane';
+    const mode = modeOf(lobby);
     const jm = joinModeOf(lobby);
     const myR = inLobby ? myRole(lobby) : null;
     const block = inLobby ? (myR === 'spectate' ? playBlock(lobby) : spectateBlock(lobby)) : '';
@@ -1434,7 +1445,7 @@
       (leader && lobby.status === 'open'
         ? '<div class="lobby-mode-row lobby-detail-mode lobby-segment" role="radiogroup" aria-label="Mode">' +
           '<button type="button" role="radio" aria-checked="' + (mode === 'pane') + '" class="mp-mode-pill' + (mode === 'pane' ? ' active' : '') + '" data-set-mode="pane">Pane</button>' +
-          '<button type="button" role="radio" aria-checked="' + (mode === 'classic') + '" class="mp-mode-pill' + (mode === 'classic' ? ' active' : '') + '" data-set-mode="classic">Classic</button>' +
+          '<button type="button" role="radio" aria-checked="' + (mode === 'host') + '" class="mp-mode-pill' + (mode === 'host' ? ' active' : '') + '" data-set-mode="host">Host Screen</button>' +
           '</div>'
         : '') +
       '<div class="lobby-group-title lobby-seats-title">Seats <span class="lobby-count-chip">' + Object.keys(seats).length + '/' + SEATS + '</span></div>' +
@@ -1443,7 +1454,7 @@
       (leader ? bench : '') +
       '<div class="lobby-actions">' +
       (leader && lobby.status === 'open'
-        ? '<button type="button" class="btn-gold" id="lobbyStartBtn">Start · ' + Object.keys(seats).length + ' · ' + (mode === 'classic' ? 'Classic' : 'Pane') + '</button>'
+        ? '<button type="button" class="btn-gold" id="lobbyStartBtn">Start · ' + Object.keys(seats).length + ' · ' + MODE_NAME[mode] + '</button>'
         : lobby.status === 'live'
           ? ''
           : '<span class="chat-tool-label lobby-wait-note">Waiting for the leader to start</span>') +
@@ -1538,6 +1549,9 @@
     };
     const leaveBtn = detail.querySelector('#lobbyLeaveBtn');
     if (leaveBtn) leaveBtn.onclick = () => confirmLeave(id);
+    detail.querySelectorAll('[data-pip]').forEach((b) => {
+      b.onclick = () => { if (global.StudyPip) StudyPip.open(id, b.dataset.pip, b.dataset.pipName); };
+    });
     const joinHere = detail.querySelector('#lobbyJoinHereBtn');
     if (joinHere) joinHere.onclick = () => joinAction(id).catch((e) => toast(e.message || 'Join failed'));
     const specBtn = detail.querySelector('#lobbySpectateBtn');
@@ -1649,6 +1663,7 @@
     start: startLobby,
     setSeatRole,
     setMyRole,
+    modeOf,
     spectatorCount,
     canSpectate: (L) => spectateBlock(L || getActiveLobby()),
     canPlay: (L) => playBlock(L || getActiveLobby()),

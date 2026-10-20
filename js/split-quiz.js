@@ -5,7 +5,12 @@
    read-only mirror of that. A short summary per player feeds seats, tiles and spectate views:
    lobbies/{id}/session/panes/{uid} = { qIndex, total, answered, correct, done, bank, form, card,
    setLabel, testLabel, displayName, level, seat, role, updatedAt }.
-   Players can change their own set at any time; everybody's view follows. */
+   Players can change their own set at any time; everybody's view follows.
+   Host Screen mode: everyone still plays their own page, and a "Host Screen" tab shows a live
+   mirror of the host's page (lobbies/{id}/session/mirror/{hostUid}, host named at
+   session/hostScreen). With "Let players control" on, clicks and typing on that mirror are
+   relayed to the host (session/hostInput/{uid}) and replayed on the host's own page.
+   Only the site interface views are mirrored; profile, settings and chat never are. */
 (function (global) {
   const MAX_SLOTS = 4;
   const SUMMARY_MS = 900;
@@ -24,8 +29,14 @@
     summaryTimer: null,
     lastSummary: '',
     launching: null,
-    picker: null
+    picker: null,
+    tab: 'mine',           // Host Screen mode: 'mine' | 'host'
+    hs: null,              // host screen mirror {m, uid, ctl}
+    hsInputOff: null,      // host: relay listener
+    hsSeen: {},            // host: last relayed input per uid
+    hsSeq: 0
   };
+  const HS_VIEWS = /^(portalView|setsView|studyView|formulaView|quizView)$/;
 
   function toast(msg) { if (typeof showToast === 'function') showToast(msg, 2400); }
   function ensureDb() { if (!firebase.apps.length) firebase.initializeApp(global.FIREBASE_CONFIG); return firebase.database(); }
@@ -119,7 +130,7 @@
     if (!lobby || !lobby.session) { toast('Session not ready'); state.lobbyId = null; return; }
     state.lobby = lobby;
     state.session = lobby.session;
-    state.gameMode = 'pane';
+    state.gameMode = lobby.gameMode === 'host' || lobby.gameMode === 'classic' ? 'host' : 'pane';
     const mine = seatOf(lobby, state.myUid);
     const mem = lobby.members && lobby.members[state.myUid];
     state.role = (mine && mine.seat.role) || (mem && mem.role) || (mine ? 'play' : 'spectate');
@@ -138,8 +149,13 @@
     });
 
     document.body.classList.add('split-quiz-active', 'pane-mode');
-    document.body.classList.toggle('pane-spectating', state.role === 'spectate');
+    document.body.classList.toggle('host-mode', isHostMode());
+    document.body.classList.toggle('pane-spectating', state.role === 'spectate' && !isHostMode());
     ensureChrome();
+    if (isHostMode()) {
+      let t = null; try { t = sessionStorage.getItem('hsTab:' + lobbyId); } catch (e) {}
+      state.tab = t === 'host' || t === 'mine' ? t : (state.role === 'spectate' ? 'host' : 'mine');
+    }
     paintBar();
 
     if (state.role !== 'spectate') {
@@ -160,6 +176,7 @@
       if (!state.session) { leave({ skipSets: false }); return; }
       const p = myPane();
       if (p && p.role && p.role !== state.role) setRole(p.role);
+      if (isHostMode()) syncHostScreen();
       paintBar();
       render();
     };
@@ -184,12 +201,167 @@
   }
   function startPublishing() {
     if (state.pub || !global.StudyMirror) return;
-    state.pub = StudyMirror.publish(() => document.querySelector('.app.view.active'), base() + '/mirror/' + state.myUid, {
+    state.pub = StudyMirror.publish(publicRoot, base() + '/mirror/' + state.myUid, {
+      stamp: true,
       extra: () => {
-        const v = document.querySelector('.app.view.active');
+        const v = publicRoot();
         const r = v && v.getBoundingClientRect();
         return { offTop: r ? Math.round(r.top + (global.scrollY || 0)) : 0, view: v ? v.id : '' };
       }
+    });
+  }
+
+  /* only the site's interface views are ever mirrored; anything else shows a neutral card */
+  function publicRoot() {
+    const v = document.querySelector('.app.view.active');
+    if (v && HS_VIEWS.test(v.id)) return v;
+    let ph = document.getElementById('mirrorPrivate');
+    if (!ph) {
+      ph = document.createElement('div');
+      ph.id = 'mirrorPrivate';
+      ph.className = 'mirror-private';
+      ph.hidden = true;
+      ph.innerHTML = '<div class="mirror-empty">This screen is private.</div>';
+      document.body.appendChild(ph);
+    }
+    return ph;
+  }
+
+  /* ---------- Host Screen mode ---------- */
+  function isHostMode() { return state.gameMode === 'host'; }
+  function lobbyNow() { return (global.StudyLobby && StudyLobby.getLobbies && StudyLobby.getLobbies()[state.lobbyId]) || state.lobby; }
+  function hostUid() {
+    const h = state.session && state.session.hostScreen;
+    const L = lobbyNow();
+    return (h && h.uid) || (L && L.leader) || null;
+  }
+  function hostName() {
+    const u = hostUid();
+    const p = state.session && state.session.panes && state.session.panes[u];
+    const L = lobbyNow();
+    const m = L && L.members && L.members[u];
+    return (p && p.displayName) || (m && m.displayName) || 'the host';
+  }
+  function hostControlOn() {
+    const L = lobbyNow();
+    return !!(L && global.StudyLobby && StudyLobby.settingsOf && StudyLobby.settingsOf(L).hostControl);
+  }
+  function iAmHost() { return !!state.myUid && hostUid() === state.myUid; }
+  function syncHostScreen() {
+    if (!state.lobbyId) return;
+    const L = lobbyNow();
+    // a new leader takes over the host screen
+    if (L && L.leader === state.myUid && hostUid() !== state.myUid && !isSpectator()) {
+      ensureDb().ref(base() + '/hostScreen').set({ uid: state.myUid, at: Date.now() }).catch(() => {});
+    }
+    mountHostScreen();
+    listenHostInput();
+  }
+  function ensureHostView() {
+    let v = document.getElementById('hostScreenView');
+    if (!v) {
+      v = document.createElement('section');
+      v.id = 'hostScreenView';
+      v.className = 'host-screen';
+      v.setAttribute('role', 'tabpanel');
+      v.setAttribute('aria-labelledby', 'hsTabHost');
+      v.hidden = true;
+      v.innerHTML = '<div class="hs-head"><span class="hs-title" id="hsTitle"></span><span class="lobby-pill-tag" id="hsMode"></span></div><div class="hs-mirror" id="hsMirror"></div>';
+      document.body.appendChild(v);
+    }
+    return v;
+  }
+  function mountHostScreen() {
+    const v = ensureHostView();
+    const u = hostUid();
+    const ctl = hostControlOn() && !iAmHost() && !isSpectator();
+    v.querySelector('#hsTitle').textContent = iAmHost() ? 'Your screen, as players see it' : 'Host Screen · ' + hostName();
+    const mode = v.querySelector('#hsMode');
+    mode.textContent = ctl ? 'You Can Control' : 'View Only';
+    mode.className = 'lobby-pill-tag ' + (ctl ? 'live' : 'spec');
+    if (state.hs && state.hs.uid === u && state.hs.ctl === ctl) return;
+    if (state.hs) { state.hs.m.stop(); state.hs = null; }
+    if (!u || !global.StudyMirror) return;
+    const host = v.querySelector('#hsMirror');
+    state.hs = { uid: u, ctl, m: StudyMirror.mount(host, base() + '/mirror/' + u, { empty: 'Waiting for the host screen…', onInput: ctl ? relayInput : null }) };
+  }
+  /* viewer → host: what was clicked or typed, by the element's mirror id */
+  function relayInput(e) {
+    const t = e.target;
+    const el = t && t.closest ? t.closest('[data-mid]') : null;
+    if (e.type === 'click') { e.preventDefault(); if (el) sendInput(withAnchor({ t: 'click', mid: el.getAttribute('data-mid') }, el)); return; }
+    if (!el) return;
+    if (e.type === 'input' || e.type === 'change') { if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) && el.type !== 'password') sendInput(withAnchor({ t: 'input', mid: el.getAttribute('data-mid'), v: String(el.value || '').slice(0, 200) }, el)); return; }
+    if (e.type === 'keydown' && e.key === 'Enter') { e.preventDefault(); sendInput(withAnchor({ t: 'key', mid: el.getAttribute('data-mid'), k: 'Enter' }, el)); }
+  }
+  /* the layout anchor (question + option) is stable while the host's page changes; the mirror id is the fallback */
+  function withAnchor(v, el) { const a = el.getAttribute('data-anchor'); if (a && a.length <= 120) v.a = a; return v; }
+  function sendInput(v) {
+    if (!state.lobbyId || !state.myUid) return;
+    v.at = Date.now();
+    v.n = ++state.hsSeq;
+    ensureDb().ref(base() + '/hostInput/' + state.myUid).set(v).catch(() => {});
+  }
+  /* host: replay relayed input on the real page (interface views only, never private parts) */
+  function listenHostInput() {
+    const want = iAmHost() && hostControlOn();
+    if (!want) { if (state.hsInputOff) { state.hsInputOff(); state.hsInputOff = null; } return; }
+    if (state.hsInputOff) return;
+    const ref = ensureDb().ref(base() + '/hostInput');
+    const since = Date.now() - 5000;
+    const handler = (snap) => {
+      const all = snap.val() || {};
+      Object.keys(all).forEach((u) => {
+        const v = all[u];
+        if (!v || u === state.myUid || (v.at || 0) < since) return;
+        const key = (v.at || 0) + ':' + (v.n || 0);
+        if (state.hsSeen[u] === key) return;
+        state.hsSeen[u] = key;
+        applyInput(v);
+      });
+    };
+    ref.on('value', handler);
+    state.hsInputOff = () => ref.off('value', handler);
+  }
+  function applyInput(v) {
+    if (!hostControlOn() || !v || !v.mid) return;
+    const root = publicRoot();
+    if (!root || root.id === 'mirrorPrivate') return;
+    let el = null;
+    try {
+      if (v.a) el = root.querySelector('[data-anchor="' + String(v.a).replace(/["\\]/g, '') + '"]');
+      if (!el && !v.a) el = root.querySelector('[data-mid="' + String(v.mid).replace(/[^\w-]/g, '') + '"]');
+    } catch (e) { el = null; }
+    if (!el || el.closest('[data-private],#profileModal,#settingsModal,.mirror-skip') || el.disabled) return;
+    if (v.t === 'click') el.click();
+    else if (v.t === 'input' && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) && el.type !== 'password') {
+      el.value = String(v.v || '').slice(0, 200);
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      if (el.tagName === 'SELECT') el.dispatchEvent(new Event('change', { bubbles: true }));
+    } else if (v.t === 'key' && v.k === 'Enter') {
+      el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
+    }
+    if (state.pub) state.pub.kick();
+  }
+  function setTab(tab) {
+    state.tab = tab === 'host' ? 'host' : 'mine';
+    try { sessionStorage.setItem('hsTab:' + state.lobbyId, state.tab); } catch (e) {}
+    paintTabs();
+    if (state.tab === 'host' && state.hs) setTimeout(() => state.hs && state.hs.m.refit(), 30);
+  }
+  function paintTabs() {
+    const tabs = document.getElementById('hsTabs');
+    const v = document.getElementById('hostScreenView');
+    const on = isHostMode() && !!state.lobbyId;
+    if (tabs) tabs.hidden = !on;
+    document.body.classList.toggle('hs-host-tab', on && state.tab === 'host');
+    if (v) v.hidden = !(on && state.tab === 'host');
+    ['mine', 'host'].forEach((t) => {
+      const b = document.getElementById(t === 'host' ? 'hsTabHost' : 'hsTabMine');
+      if (!b) return;
+      b.setAttribute('aria-selected', String(state.tab === t));
+      b.tabIndex = state.tab === t ? 0 : -1;
+      b.classList.toggle('active', state.tab === t);
     });
   }
 
@@ -210,6 +382,7 @@
   function setRole(role) {
     state.role = role === 'spectate' ? 'spectate' : 'play';
     document.body.classList.toggle('pane-spectating', state.role === 'spectate');
+    if (isHostMode()) { document.body.classList.remove('pane-spectating'); if (state.role === 'spectate') setTab('host'); syncHostScreen(); }
     if (state.role === 'spectate') {
       if (state.pub) { state.pub.stop(); state.pub = null; }
       if (global.StudyQuiz && StudyQuiz.active && StudyQuiz.leaveRun) { try { StudyQuiz.leaveRun(); } catch (e) {} }
@@ -238,6 +411,9 @@
       bar.innerHTML =
         '<span class="split-mode-label" id="splitModeLabel">Pane Quiz</span>' +
         '<span class="split-mode-meta" id="splitModeMeta"></span>' +
+        '<div class="hs-tabs lobby-segment" id="hsTabs" role="tablist" aria-label="Screens" hidden>' +
+        '<button type="button" class="mp-mode-pill" role="tab" id="hsTabMine" aria-selected="true">My Page</button>' +
+        '<button type="button" class="mp-mode-pill" role="tab" id="hsTabHost" aria-selected="false" aria-controls="hostScreenView">Host Screen</button></div>' +
         '<button type="button" class="kb-mode-btn" id="splitSetBtn" aria-haspopup="dialog" title="Choose the set you play">Change Set</button>' +
         '<label class="lobby-switch split-spec-switch" for="splitSpecSw" title="Watch without a seat"><input type="checkbox" role="switch" id="splitSpecSw">' +
         '<span class="lobby-switch-track" aria-hidden="true"><span class="lobby-switch-thumb"></span></span><span class="lobby-switch-text">Spectate</span></label>' +
@@ -258,6 +434,21 @@
         sw.disabled = true;
         StudyLobby.setMyRole(state.lobbyId, want).catch((e) => toast((e && e.message) || 'Could not switch')).finally(() => paintBar());
       };
+      bar.querySelector('#hsTabMine').onclick = () => setTab('mine');
+      bar.querySelector('#hsTabHost').onclick = () => setTab('host');
+      bar.querySelector('#hsTabs').addEventListener('keydown', (e) => {
+        if (['ArrowLeft', 'ArrowRight'].indexOf(e.key) < 0) return;
+        e.preventDefault(); setTab(state.tab === 'host' ? 'mine' : 'host');
+        const b = document.getElementById(state.tab === 'host' ? 'hsTabHost' : 'hsTabMine'); if (b) b.focus();
+      });
+      // while the host screen tab is showing, keys don't drive the page underneath
+      global.addEventListener('keydown', (e) => {
+        if (!state.lobbyId || !isHostMode() || state.tab !== 'host') return;
+        const t = e.target;
+        if (t && t.closest && t.closest('#hostScreenView,#splitModeBar,#lobbyPanel,#lobbyPill,.study-confirm,.modal-overlay,.lobby-pip,input,textarea,select')) return;
+        if (e.key === 'Tab' || e.key === 'Escape') return;
+        e.stopImmediatePropagation();
+      }, true);
       bar.querySelector('#splitSetBtn').onclick = () => (bar.querySelector('#splitSetPop').hidden ? openPicker() : closePicker());
       bar.querySelector('#splitSetCancel').onclick = closePicker;
       bar.querySelector('#splitSetGo').onclick = () => { const c = state.picker && state.picker.getChoice(); if (c) changeSet(c); };
@@ -285,6 +476,9 @@
     return t && s ? t + ' · ' + s : s || t;
   }
   function paintBar() {
+    const lab = document.getElementById('splitModeLabel');
+    if (lab) lab.textContent = isHostMode() ? 'Host Screen' : 'Pane Quiz';
+    paintTabs();
     const meta = document.getElementById('splitModeMeta');
     if (meta) meta.textContent = isSpectator() ? 'Spectating' : 'Playing · ' + setText(state.choice);
     const b = document.getElementById('splitSetBtn');
@@ -311,6 +505,13 @@
   function render() {
     const el = document.getElementById('multi-quiz-container');
     if (!el || !state.lobbyId) return;
+    if (isHostMode()) {
+      Object.keys(state.mirrors).forEach((u) => state.mirrors[u].stop());
+      state.mirrors = {};
+      el.innerHTML = '';
+      document.body.classList.remove('pane-has-peers');
+      return;
+    }
     const peers = sortedPanes().filter((p) => p.uid !== state.myUid || isSpectator());
     document.body.classList.toggle('pane-has-peers', peers.length > 0);
     const keep = new Set(peers.map((p) => p.uid));
@@ -352,6 +553,11 @@
     if (state.unsub) { state.unsub(); state.unsub = null; }
     if (state.pub) { state.pub.stop(); state.pub = null; }
     clearInterval(state.summaryTimer); state.summaryTimer = null;
+    if (state.hs) { state.hs.m.stop(); state.hs = null; }
+    if (state.hsInputOff) { state.hsInputOff(); state.hsInputOff = null; }
+    state.hsSeen = {}; state.tab = 'mine'; state.gameMode = 'pane';
+    const hv = document.getElementById('hostScreenView'); if (hv) hv.remove();
+    if (global.StudyPip) { try { StudyPip.close(); } catch (e) {} }
     Object.keys(state.mirrors).forEach((u) => state.mirrors[u].stop());
     state.mirrors = {};
     closePicker();
@@ -361,7 +567,8 @@
     if (el) { el.innerHTML = ''; el.className = 'hidden'; }
     const bar = document.getElementById('splitModeBar');
     if (bar) bar.classList.add('hidden');
-    document.body.classList.remove('split-quiz-active', 'classic-quiz-active', 'pane-mode', 'pane-has-peers', 'pane-spectating');
+    document.body.classList.remove('split-quiz-active', 'classic-quiz-active', 'pane-mode', 'pane-has-peers', 'pane-spectating', 'host-mode', 'hs-host-tab');
+    const tabs = document.getElementById('hsTabs'); if (tabs) tabs.hidden = true;
     if (global.StudyCursors && StudyCursors.syncFromParty) { try { StudyCursors.syncFromParty(); } catch (e) {} }
     if (global.StudyLobby && StudyLobby.refresh) { try { StudyLobby.refresh(); } catch (e) {} }
     if (!opts.skipSets && wasIn) {
@@ -379,6 +586,12 @@
     getSession: () => state.session,
     getChoice: () => state.choice,
     isSpectator,
+    isHostMode,
+    setTab,
+    getTab: () => state.tab,
+    hostUid,
+    publicRoot,
+    _hs: () => ({ listening: !!state.hsInputOff, seen: Object.assign({}, state.hsSeen), tab: state.tab }),
     rerender: () => { if (state.session) render(); },
     setText,
     initials,

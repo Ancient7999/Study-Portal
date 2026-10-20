@@ -17,8 +17,15 @@
   function db() { return firebase.database(); }
 
   /* ---------- publishing ---------- */
+  /* stable ids on the things a viewer can press or type into (Host Screen control relays by id) */
+  const STAMP_SEL = 'button,input,select,textarea,a,label,[role=button],[role=option],[role=tab],[role=checkbox],[role=radio],.opt,[data-anchor],[tabindex]';
+  function stampIds(root) {
+    const els = root.querySelectorAll(STAMP_SEL);
+    for (let i = 0; i < els.length; i++) { const v = 'm' + i; if (els[i].getAttribute('data-mid') !== v) els[i].setAttribute('data-mid', v); }
+  }
   function serialize(root, opts) {
     opts = opts || {};
+    if (opts.stamp) stampIds(root);
     if (global.StudyCursors && StudyCursors.stampAnchors) { try { StudyCursors.stampAnchors(root); } catch (e) {} }
     const clone = root.cloneNode(true);
     // live form state → attributes
@@ -139,6 +146,7 @@
         for (const a of Array.from(n.attributes)) {
           const nm = a.name.toLowerCase();
           if (nm.startsWith('on') || nm === 'srcdoc' || nm === 'autofocus' || nm === 'contenteditable') { n.removeAttribute(a.name); continue; }
+          if (nm === 'data-mid' && !/^m\d{1,5}$/.test(a.value)) { n.removeAttribute(a.name); continue; }
           if (URL_ATTRS[nm]) {
             const v = safeUrl(a.value, nm);
             if (nm === 'href' && n.tagName === 'A') { n.removeAttribute(a.name); continue; }
@@ -150,6 +158,7 @@
           }
         }
         if (/^(INPUT|BUTTON|SELECT|TEXTAREA)$/.test(n.tagName)) n.setAttribute('tabindex', '-1');
+        if (n.tagName === 'INPUT' && /^password$/i.test(n.getAttribute('type') || '')) n.setAttribute('value', '');
         walk(n);
       }
     };
@@ -165,7 +174,9 @@
       const fa = from.attributes, ta = to.attributes;
       for (let i = fa.length - 1; i >= 0; i--) { const n = fa[i].name; if (!to.hasAttribute(n)) from.removeAttribute(n); }
       for (let i = 0; i < ta.length; i++) { const a = ta[i]; if (from.getAttribute(a.name) !== a.value) from.setAttribute(a.name, a.value); }
-      if (from.tagName === 'INPUT' && from.value !== (to.getAttribute('value') || '')) from.value = to.getAttribute('value') || '';
+      // the box a controlling viewer is typing in keeps its own text until the host catches up
+      const typing = from.getRootNode && from.getRootNode().activeElement === from;
+      if (from.tagName === 'INPUT' && !typing && from.value !== (to.getAttribute('value') || '')) from.value = to.getAttribute('value') || '';
     }
     const fk = Array.from(from.childNodes), tk = Array.from(to.childNodes);
     let i = 0;
@@ -216,7 +227,7 @@
       if (next && cur && !cur.classList.contains('mirror-empty') && sameNode(cur, next)) morph(cur, next);
       else { stage.innerHTML = ''; if (next) stage.appendChild(next); }
       const rootEl = stage.firstElementChild;
-      if (rootEl) { rootEl.classList.add('active'); rootEl.style.margin = '0'; }
+      if (rootEl) { rootEl.classList.add('active'); rootEl.removeAttribute('hidden'); rootEl.style.margin = '0'; }
       stage.querySelectorAll('[data-mscroll]').forEach((el) => { const p = el.getAttribute('data-mscroll').split(','); el.scrollLeft = +p[0] || 0; el.scrollTop = +p[1] || 0; });
       fit();
       if (opts.onData) opts.onData(v);

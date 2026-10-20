@@ -193,14 +193,29 @@
           }
         },
         "settings": {
-          ".validate": "newData.parent().child('leader').val() == auth.uid && (!newData.hasChild('spectate') || newData.child('spectate').isBoolean()) && (!newData.hasChild('policy') || newData.child('policy').val().matches(/^(ask|restrict|all)$/))"
+          ".validate": "newData.parent().child('leader').val() == auth.uid && (!newData.hasChild('spectate') || newData.child('spectate').isBoolean()) && (!newData.hasChild('hostControl') || newData.child('hostControl').isBoolean()) && (!newData.hasChild('policy') || newData.child('policy').val().matches(/^(ask|restrict|all)$/))"
         },
         "session": {
-          ".write": "auth != null",
+          ".write": "auth != null && root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid",
           "panes": {
             "$uid": {
               ".write": "auth != null && (auth.uid == $uid || root.child('lobbies').child($lobbyId).child('leader').val() == auth.uid)",
               ".validate": "!newData.exists() || (newData.hasChildren(['qIndex','updatedAt']) && newData.child('qIndex').isNumber() && newData.child('updatedAt').isNumber())"
+            }
+          },
+          "mirror": {
+            "$uid": {
+              ".write": "auth != null && auth.uid == $uid && (!newData.exists() || root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists())",
+              ".validate": "!newData.exists() || (newData.hasChildren(['w','h','at']) && newData.child('w').isNumber() && newData.child('h').isNumber() && newData.child('at').isNumber() && newData.child('at').val() <= now + 60000 && (!newData.hasChild('html') || (newData.child('html').isString() && newData.child('html').val().length <= 400000)))"
+            }
+          },
+          "hostScreen": {
+            ".validate": "newData.hasChildren(['uid','at']) && newData.child('uid').isString() && newData.child('uid').val() == root.child('lobbies').child($lobbyId).child('leader').val() && newData.child('at').isNumber()"
+          },
+          "hostInput": {
+            "$uid": {
+              ".write": "auth != null && auth.uid == $uid && (!newData.exists() || (root.child('lobbies').child($lobbyId).child('members').child(auth.uid).exists() && root.child('lobbies').child($lobbyId).child('settings').child('hostControl').val() == true))",
+              ".validate": "!newData.exists() || (newData.hasChildren(['t','mid','at']) && newData.child('t').val().matches(/^(click|input|key)$/) && newData.child('mid').isString() && newData.child('mid').val().matches(/^m[0-9]+$/) && newData.child('mid').val().length <= 6 && newData.child('at').isNumber() && newData.child('at').val() <= now + 60000 && (!newData.hasChild('v') || (newData.child('v').isString() && newData.child('v').val().length <= 200)) && (!newData.hasChild('k') || newData.child('k').val() == 'Enter') && (!newData.hasChild('a') || (newData.child('a').isString() && newData.child('a').val().length <= 120)) && (!newData.hasChild('n') || newData.child('n').isNumber()))"
             }
           }
         },
