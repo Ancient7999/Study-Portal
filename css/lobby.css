@@ -1,0 +1,83 @@
+/* Study Portal — lobby: Pane mode on the quiz engine, mirrors, peers.
+   Colours come only from the theme/mood variables (index.html :root and html.mood-*). */
+:root{
+  --lb-glass:color-mix(in srgb, var(--bg2) 78%, transparent);
+  --lb-glass-strong:color-mix(in srgb, var(--bg2) 92%, transparent);
+  --lb-line:color-mix(in srgb, var(--accent) 30%, transparent);
+  --lb-line-soft:color-mix(in srgb, var(--text) 10%, transparent);
+  --lb-accent-soft:color-mix(in srgb, var(--accent) 14%, transparent);
+  --lb-shadow:0 10px 30px color-mix(in srgb, var(--bg) 70%, transparent);
+  --peer-w:clamp(260px, 28vw, 420px);
+  --peer-gap:12px;
+}
+
+/* top bar of a live lobby quiz */
+.split-mode-bar{background:var(--lb-glass-strong);border:1px solid var(--lb-line);box-shadow:var(--lb-shadow);backdrop-filter:blur(14px)}
+.split-mode-label{font-weight:800;color:var(--accent)}
+.split-mode-meta{max-width:38vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kb-mode-btn.primary{border-color:var(--accent);color:var(--bg);background:var(--accent)}
+.kb-mode-btn.primary:hover{color:var(--bg);filter:brightness(1.08)}
+.split-set-pop{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 24px));
+  padding:12px;border-radius:16px;background:var(--lb-glass-strong);border:1px solid var(--lb-line);box-shadow:var(--lb-shadow);backdrop-filter:blur(16px);z-index:2}
+.split-set-pop[hidden]{display:none!important}
+.split-set-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
+
+/* the regular quiz is the player's own pane */
+body.pane-mode #quizView{scroll-margin-top:70px}
+body.pane-mode .app.view.active{padding-top:72px}
+
+/* other players: mirrors of their own quiz */
+#multi-quiz-container.pane-peers{display:flex;gap:var(--peer-gap);box-sizing:border-box}
+#multi-quiz-container.pane-peers:empty{display:none}
+.pane-peers .party-member-box{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;
+  border-radius:16px;background:var(--lb-glass);border:1.5px solid color-mix(in srgb, hsl(var(--friend-hue,180) 70% 60%) 45%, var(--lb-line));
+  box-shadow:var(--lb-shadow);backdrop-filter:blur(12px);transition:border-color var(--transition-ms) ease, box-shadow var(--transition-ms) ease}
+.pane-peers .party-member-box:hover{box-shadow:0 0 0 1px var(--lb-line),0 0 18px var(--mood-glow)}
+.pane-peers .pane-friend-header{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid var(--lb-line-soft);font-size:.8rem}
+.pane-avatar{flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:800 .62rem var(--mono);
+  color:var(--bg);background:color-mix(in srgb, hsl(var(--friend-hue,180) 70% 62%) 70%, var(--accent))}
+.pane-who{flex:1;min-width:0}
+.pane-peers .pane-friend-name{margin:0;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pane-peers .pane-current-bank{margin:1px 0 0;font:600 .6rem var(--mono);color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1}
+.pane-level{flex:0 0 auto;font:800 .58rem var(--mono);padding:2px 6px;border-radius:999px;color:var(--accent);border:1px solid var(--lb-line)}
+.pane-peers .pane-status{flex:0 0 auto;font:600 .62rem var(--mono);color:var(--text-dim)}
+.pane-zoom{flex:0 0 auto;width:26px;height:26px;border-radius:8px;border:1px solid var(--lb-line-soft);background:transparent;color:var(--text-dim);cursor:pointer;font-size:.8rem;line-height:1}
+.pane-zoom:hover,.pane-zoom:focus-visible{color:var(--accent);border-color:var(--accent);outline:none}
+.pane-progress{height:3px;background:var(--lb-line-soft)}
+.pane-progress span{display:block;height:100%;width:0;background:var(--accent);box-shadow:0 0 8px var(--mood-glow);transition:width .4s ease}
+.pane-mirror{position:relative;flex:1;min-height:150px;overflow:hidden;background:color-mix(in srgb, var(--bg) 88%, transparent)}
+.pane-peers .pane-done .pane-mirror{opacity:.8}
+
+/* desktop: peers in a column beside the quiz */
+@media (min-width:1000px){
+  body.pane-mode.pane-has-peers:not(.pane-spectating) .app.view.active{margin-right:calc(var(--peer-w) + 28px);margin-left:max(0px,calc((100vw - 1800px)/2))}
+  body.pane-mode:not(.pane-spectating) #multi-quiz-container.pane-peers{position:fixed;z-index:40;right:12px;top:max(116px,var(--mp-top-clear,0px));bottom:12px;width:var(--peer-w);flex-direction:column;overflow:auto;padding:0}
+  body.pane-mode:not(.pane-spectating) .pane-peers .party-member-box{flex:1 1 0;min-height:200px}
+}
+/* phones and narrow screens: a strip of small live tiles above the quiz */
+@media (max-width:999.98px){
+  body.pane-mode:not(.pane-spectating) #multi-quiz-container.pane-peers{flex-direction:row;overflow-x:auto;padding:66px 10px 0;scroll-snap-type:x mandatory}
+  body.pane-mode:not(.pane-spectating) .pane-peers .party-member-box{flex:0 0 min(70vw,260px);height:190px;scroll-snap-align:start}
+  body.pane-mode.pane-has-peers .app.view.active{padding-top:14px}
+  .pane-peers .pane-friend-header{padding:5px 8px;gap:6px}
+  .pane-avatar{width:22px;height:22px}
+}
+/* spectators: everybody's pane in a grid */
+body.pane-mode.pane-spectating #multi-quiz-container.pane-peers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));padding:74px 14px 20px;min-height:100vh}
+body.pane-mode.pane-spectating .pane-peers .party-member-box{min-height:min(70vh,560px)}
+/* one pane enlarged */
+.pane-peers .party-member-box.pane-zoomed{position:fixed!important;z-index:95;inset:max(64px,var(--mp-top-clear,0px)) 12px 12px 12px;width:auto!important;height:auto!important;max-width:1100px;margin:0 auto}
+@media (prefers-reduced-motion:reduce){.pane-peers .party-member-box,.pane-progress span{transition:none}}
+body.pane-mode .split-mode-bar{flex-wrap:nowrap;gap:8px;padding:6px 8px 6px 14px;max-width:min(760px,calc(100vw - 470px))}
+body.pane-mode .split-mode-bar .kb-mode-btn{padding:5px 11px;white-space:nowrap}
+body.pane-mode .split-mode-meta{flex:1;min-width:0;max-width:none}
+@media (max-width:999.98px){
+  body.pane-mode .split-mode-bar{left:8px;transform:none;top:8px;max-width:calc(100vw - 104px);padding:5px 6px 5px 10px}
+  body.pane-mode .split-mode-label{display:none}
+}
+.spectate-tile:not(.zoomed) .pane-mirror{min-height:0}
+.spectate-tile:not(.zoomed) .pane-peers .pane-friend-header{padding:2px 5px;gap:4px;font-size:.55rem}
+.spectate-tile:not(.zoomed) .pane-avatar,.spectate-tile:not(.zoomed) .pane-level{display:none}
+@media (max-width:999px){
+  body.mp-top-bar.pane-mode:not(.pane-spectating) #multi-quiz-container.pane-peers{padding-top:max(66px,var(--mp-top-clear,0px))}
+}

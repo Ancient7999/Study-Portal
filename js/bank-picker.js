@@ -152,7 +152,7 @@
     }
     function emit() {
       current = choiceOf(curTest(), curSet());
-      summary.textContent = summaryText(curSet());
+      summary.textContent = opts.allTypes ? (curSet() ? curSet().total + ' questions, every type, the same as Practice.' : '') : summaryText(curSet());
       if (!opts.onChange || !ready || !current) return;
       opts.onChange(current.bank, current.form, encodeValue(current.bank, current.form, current.card), current);
     }
@@ -178,10 +178,10 @@
       if (my !== token) return;
       sets = got;
       setSel.innerHTML = sets.length
-        ? sets.map((s, i) => '<option value="' + i + '"' + (s.party ? '' : ' disabled') + '>' + esc(s.label) + (s.party ? '' : ' · no multiple choice') + '</option>').join('')
+        ? sets.map((s, i) => '<option value="' + i + '"' + (s.party || opts.allTypes ? '' : ' disabled') + '>' + esc(s.label) + (s.party || opts.allTypes ? '' : ' · no multiple choice') + '</option>').join('')
         : '<option value="">No playable sets</option>';
       let idx = prefer ? sets.findIndex((s) => sameChoice(s, prefer)) : -1;
-      if (idx < 0) idx = sets.findIndex((s) => s.party > 0);
+      if (idx < 0) idx = sets.findIndex((s) => opts.allTypes || s.party > 0);
       setSel.value = idx >= 0 ? String(idx) : '';
       setSel.disabled = !sets.length;
       emit();
@@ -237,7 +237,7 @@
     for (const t of list) {
       const sets = await setsFor(t);
       const html = sets
-        .map((s) => '<option value="' + esc(encodeValue(s.bank, s.form, s.card)) + '"' + (s.party ? '' : ' disabled') + '>' + esc(opts.subjectId ? s.label : t.title + ' · ' + s.label) + '</option>')
+        .map((s) => '<option value="' + esc(encodeValue(s.bank, s.form, s.card)) + '"' + (s.party || opts.allTypes ? '' : ' disabled') + '>' + esc(opts.subjectId ? s.label : t.title + ' · ' + s.label) + '</option>')
         .join('');
       if (!html) continue;
       const label = opts.subjectId ? t.title : t.subjectName;

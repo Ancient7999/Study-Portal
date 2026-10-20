@@ -442,6 +442,7 @@
       state.bankPicker = StudyBankPicker.mount(panel.querySelector('#lobbyCreateBankMount'), {
         idPrefix: 'lobbyCreate',
         compact: true,
+        allTypes: true,
         value: { bank: state.createBank, form: state.createForm, card: state.createCard },
         onChange: (bank, form, enc, choice) => {
           state.createBank = bank;
@@ -586,7 +587,6 @@
       if (state.bankPicker.ready) await state.bankPicker.ready();
       choice = state.bankPicker.getChoice();
       if (!choice) throw new Error('Pick a test and a set first');
-      if (!choice.party) throw new Error('That set has no multiple-choice questions');
       bank = choice.bank;
       form = choice.form;
       card = choice.card || null;
@@ -1331,7 +1331,7 @@
     // per-seat set selects: the Practice sets of this lobby's subject
     if (leader && global.StudyBankPicker && detail.querySelector('[data-bank-seat]')) {
       const t = StudyBankPicker.testForBank && StudyBankPicker.testForBank(lobby.bank);
-      StudyBankPicker.optionsHtml(t ? { subjectId: t.subjectId } : {}).then((html) => {
+      StudyBankPicker.optionsHtml(t ? { subjectId: t.subjectId, allTypes: true } : { allTypes: true }).then((html) => {
         detail.querySelectorAll('[data-bank-seat]').forEach((sel) => {
           const seatIdx = Number(sel.dataset.bankSeat);
           const s = seats[String(seatIdx)];

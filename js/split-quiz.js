@@ -1,645 +1,368 @@
-/* Study Portal — Classic + Pane multiplayer quiz (ATC-inspired, portal-native) */
+/* Study Portal — lobby Pane mode on the real quiz engine.
+   Every player plays their own set in the regular quiz (js/quiz-engine.js: same screens, timing,
+   navigator, every question type, mastery bar). What the engine draws is mirrored live
+   (js/mirror.js) to lobbies/{id}/session/mirror/{uid}, and every other player's pane is a
+   read-only mirror of that. A short summary per player feeds seats, tiles and spectate views:
+   lobbies/{id}/session/panes/{uid} = { qIndex, total, answered, correct, done, bank, form, card,
+   setLabel, testLabel, displayName, level, seat, role, updatedAt }.
+   Players can change their own set at any time; everybody's view follows. */
 (function (global) {
   const MAX_SLOTS = 4;
+  const SUMMARY_MS = 900;
 
   const state = {
     lobbyId: null,
-    session: null,
     lobby: null,
-    bank: null,
-    bankPath: 'banks/medphys/pt1.json',
-    questions: [],
-    questionsByKey: {}, // bank|form -> questions
-    form: 'A',
-    card: null,
-    unsub: null,
+    session: null,
     myUid: null,
-    focused: 0,
+    role: 'play',
     gameMode: 'pane',
-    role: 'play'
+    choice: null,          // my current set {bank, form, card, setLabel, testLabel}
+    pub: null,             // mirror publisher
+    mirrors: {},           // uid -> mirror handle
+    unsub: null,
+    summaryTimer: null,
+    lastSummary: '',
+    launching: null,
+    picker: null
   };
 
-  function toast(msg) {
-    if (typeof showToast === 'function') showToast(msg, 2400);
+  function toast(msg) { if (typeof showToast === 'function') showToast(msg, 2400); }
+  function ensureDb() { if (!firebase.apps.length) firebase.initializeApp(global.FIREBASE_CONFIG); return firebase.database(); }
+  function uid() { const u = firebase.auth && firebase.auth().currentUser; return u ? u.uid : null; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+  function hueFromName(name) { let h = 0; const s = String(name || 'x'); for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h % 360; }
+  function initials(name) { const p = String(name || '?').trim().split(/\s+/).filter(Boolean); return ((p[0] || '?')[0] + (p.length > 1 ? p[p.length - 1][0] : (p[0] || '')[1] || '')).toUpperCase(); }
+  function bankKey(bank, form, card) { return String(bank || '') + '|' + String(form || 'A').toUpperCase() + (card ? '|' + card : ''); }
+  function base() { return 'lobbies/' + state.lobbyId + '/session'; }
+
+  /* ---------- the engine ---------- */
+  function sameChoice(set, v) {
+    return set.bank === v.bank && (set.card || null) === (v.card || null) && (set.card ? true : set.form === String(v.form || 'A').toUpperCase());
+  }
+  /* open a Practice set in the regular quiz, exactly as its Practice card would */
+  async function launchSet(c) {
+    const Q = global.StudyQuiz;
+    if (!Q || !global.StudySets || !global.StudyBankPicker) throw new Error('Quiz engine not ready');
+    const cat = await StudyBankPicker.loadCatalog();
+    const t = StudySets.tests(cat).find((x) => (x.lectures ? x.lectures.some((l) => l && l.bank === c.bank) : x.material.bank === c.bank));
+    if (!t) throw new Error('Set not found');
+    global.__activeMaterial = Object.assign({}, t.material, { subjectName: t.subjectName });
+    if (t.lectures) await global.loadLectureSet(global.__activeMaterial);
+    else await Q.loadBank(t.material.bank);
+    const sets = await StudySets.setsOf(t);
+    const set = sets.find((s) => sameChoice(s, c)) || sets[0];
+    const card = set && Q.cards.find((x) => x.id === set.id);
+    if (!card) throw new Error('Set not found');
+    c.setLabel = c.setLabel || set.label;
+    c.testLabel = c.testLabel || t.title;
+    if (typeof global.refreshSetsCards === 'function') { try { global.refreshSetsCards(); } catch (e) {} }
+    if (Q.resumeRun && Q.resumeRun(card)) return card;
+    // a lobby always plays the whole set, also when every question is already solved
+    const left = card.pool.filter((q) => !(global.StudyStore && StudyStore.solvedSet && StudyStore.solvedSet(Q.bankKey).has(q.__id))).length;
+    Q.startRun(card.pool, card.label, left ? { card } : { card, noSolvedFilter: true });
+    return card;
+  }
+  function engineSummary() {
+    const Q = global.StudyQuiz;
+    const out = { qIndex: 0, total: 0, answered: 0, correct: 0, done: false };
+    if (!Q || !Q.questions) return out;
+    const qs = Q.questions || [], an = Q.answers || [];
+    out.total = qs.length;
+    out.qIndex = Q.current | 0;
+    qs.forEach((q, i) => { if (Q.isAnswered ? Q.isAnswered(an[i], q) : an[i] != null) { out.answered++; out.correct++; } });
+    const qv = document.getElementById('quizView');
+    out.done = !!(out.total && out.answered >= out.total) || !!(qv && !Q.active && out.total);
+    return out;
+  }
+  function writeSummary(force) {
+    if (!state.lobbyId || !state.myUid || isSpectator()) return;
+    const s = engineSummary();
+    const c = state.choice || {};
+    const v = Object.assign(s, { bank: c.bank || '', form: c.form || 'A', card: c.card || null, setLabel: c.setLabel || '', testLabel: c.testLabel || '' });
+    const key = JSON.stringify(v);
+    if (!force && key === state.lastSummary) return;
+    state.lastSummary = key;
+    v.updatedAt = Date.now();
+    v.score = s.correct;
+    ensureDb().ref(base() + '/panes/' + state.myUid).update(v).catch(() => {});
   }
 
-  function ensureDb() {
-    if (!firebase.apps.length) firebase.initializeApp(global.FIREBASE_CONFIG);
-    return firebase.database();
+  /* ---------- session ---------- */
+  function myPane() { return (state.session && state.session.panes && state.session.panes[state.myUid]) || null; }
+  function isSpectator() { const p = myPane(); return state.role === 'spectate' || !!(p && p.role === 'spectate'); }
+  function seatOf(lobby, me) {
+    if (!lobby || !lobby.seats) return null;
+    const k = Object.keys(lobby.seats).find((x) => lobby.seats[x] && lobby.seats[x].uid === me);
+    return k == null ? null : { idx: Number(k), seat: lobby.seats[k] };
+  }
+  function choiceFor(lobby, seat) {
+    const s = lobby.session || {};
+    if (seat && seat.bank) return { bank: seat.bank, form: seat.form || 'A', card: seat.card || null, setLabel: seat.setLabel || '', testLabel: seat.testLabel || '' };
+    return { bank: s.bank || lobby.bank || 'banks/medphys/pt1.json', form: s.form || lobby.form || 'A', card: (s.bank ? s.card : lobby.card) || null, setLabel: s.setLabel || lobby.setLabel || '', testLabel: lobby.testLabel || '' };
   }
 
-  function uid() {
-    const u = firebase.auth && firebase.auth().currentUser;
-    return u ? u.uid : null;
-  }
-
-  function hueFromName(name) {
-    let h = 0;
-    const s = String(name || 'x');
-    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-    return h % 360;
-  }
-
-  /* bank + form + Practice set card (js/study-sets.js); no card = the whole form */
-  function bankKey(bank, form, card) {
-    return String(bank || '') + '|' + String(form || 'A').toUpperCase() + (card ? '|' + card : '');
-  }
-  function paneKey(p) {
-    return bankKey((p && p.bank) || state.bankPath, (p && p.form) || state.form, p && p.bank ? p.card || null : (p && p.card) || state.card);
-  }
-  function paneQuestions(p) {
-    return state.questionsByKey[paneKey(p)] || state.questions;
-  }
-
-  function ensureContainer() {
-    let el = document.getElementById('multi-quiz-container');
-    if (!el) {
-      el = document.createElement('div');
-      el.id = 'multi-quiz-container';
-      el.className = 'hidden';
-      document.body.appendChild(el);
-    }
-    let bar = document.getElementById('splitModeBar');
-    if (!bar) {
-      bar = document.createElement('div');
-      bar.id = 'splitModeBar';
-      bar.className = 'split-mode-bar hidden';
-      bar.innerHTML =
-        '<span class="split-mode-label" id="splitModeLabel">Party quiz</span>' +
-        '<span class="split-mode-meta" id="splitModeMeta"></span>' +
-        '<button type="button" class="kb-mode-btn" id="splitExitBtn">Exit</button>';
-      document.body.appendChild(bar);
-      bar.querySelector('#splitExitBtn').onclick = () => {
-        const id = state.lobbyId;
-        // leaving a lobby is an explicit, confirmed action
-        if (id && global.StudyLobby && StudyLobby.confirmLeave) { StudyLobby.confirmLeave(id); return; }
-        leave({ skipSets: false, silent: true });
-        if (id && global.StudyLobby && StudyLobby.leave) {
-          StudyLobby.leave(id).catch(() => {});
-        }
-      };
-    }
-    return el;
-  }
-
-  /* Every member builds the same list from the same bank, form and set card, in bank order
-     (no shuffle), so a lobby plays one identical question set. */
-  async function loadBank(path, form, card) {
-    const key = bankKey(path, form, card);
-    if (state.questionsByKey[key]) return state.questionsByKey[key];
-    let qs = null;
-    if (global.StudySets) {
-      const data = await StudySets.fetchData(path);
-      let material = null;
-      if (card && global.StudyBankPicker && StudyBankPicker.loadCatalog) {
-        try {
-          material = StudySets.materialForBank(await StudyBankPicker.loadCatalog(), path);
-        } catch (e) {}
-      }
-      qs = StudySets.poolFor(data, form, card, material);
-    } else {
-      const res = await fetch(path, { cache: 'no-cache' });
-      if (!res.ok) throw new Error('bank HTTP ' + res.status);
-      const data = await res.json();
-      const bank = data.bank || data.FORM_BANK || {};
-      // banks may have fewer forms than asked for; a missing form falls back to the first form
-      qs = bank[form] || bank[String(form).toUpperCase()];
-      if (!qs || !qs.length) {
-        const first = (data.forms && data.forms[0]) || Object.keys(bank)[0];
-        qs = first ? bank[first] : null;
-      }
-    }
-    if (!qs || !qs.length) throw new Error('Set ' + (card || form) + ' missing');
-    // Party/split mode shows plain multiple-choice only. Linking (matching),
-    // stepped and short-answer (saq) questions need the full quiz screen,
-    // so they are left out.
-    const copy = qs
-      .map(function (q, i) {
-        const c = Object.assign({}, q);
-        c.__id = q.id != null ? String(q.id) : 'q_' + String(q.q || '').slice(0, 48) + '_' + (q.__pos != null ? q.__pos : i);
-        return c;
-      })
-      .filter(function (q) {
-        const t = q.type;
-        return (!t || t === 'mcq') && !q.steps && !q.correct_pairs && Array.isArray(q.options) && typeof q.correct === 'number';
-      });
-    if (!copy.length) throw new Error('No multiple-choice questions in this set');
-    state.questionsByKey[key] = copy;
-    return copy;
-  }
-
-  async function questionsForPane(pane) {
-    const path = (pane && pane.bank) || state.bankPath;
-    const form = (pane && pane.form) || state.form;
-    return loadBank(path, form, pane && pane.bank ? pane.card || null : state.card);
-  }
-
-  function myPane() {
-    if (!state.session || !state.myUid) return null;
-    return (state.session.panes && state.session.panes[state.myUid]) || null;
-  }
-
-  function isSpectator() {
-    const pane = myPane();
-    if (pane && pane.role === 'spectate') return true;
-    if (state.role === 'spectate') return true;
-    return false;
-  }
-
-  /* one join at a time: lobby value events (heartbeats, pane writes) can arrive while a join is still loading banks */
   function joinLobbySession(lobbyId) {
     if (state.lobbyId === lobbyId && state.session) return Promise.resolve();
     if (state.joining === lobbyId && state.joinPromise) return state.joinPromise;
     state.joining = lobbyId;
-    state.joinPromise = joinLobbySessionInner(lobbyId).finally(() => { if (state.joining === lobbyId) { state.joining = null; state.joinPromise = null; } });
+    state.joinPromise = joinInner(lobbyId).catch((e) => { console.warn('[pane]', e); toast('Could not open the quiz · ' + ((e && e.message) || e)); })
+      .finally(() => { if (state.joining === lobbyId) { state.joining = null; state.joinPromise = null; } });
     return state.joinPromise;
   }
-  async function joinLobbySessionInner(lobbyId) {
-    if (state.lobbyId === lobbyId && state.session) return;
+  async function joinInner(lobbyId) {
     leave({ skipSets: true, silent: true });
     state.lobbyId = lobbyId;
     state.myUid = uid();
     const db = ensureDb();
-    const snap = await db.ref('lobbies/' + lobbyId).once('value');
-    const lobby = snap.val();
-    if (!lobby || !lobby.session) {
-      toast('Session not ready');
-      state.lobbyId = null;
-      return;
-    }
+    const lobby = (await db.ref('lobbies/' + lobbyId).once('value')).val();
+    if (!lobby || !lobby.session) { toast('Session not ready'); state.lobbyId = null; return; }
     state.lobby = lobby;
     state.session = lobby.session;
-    state.gameMode = lobby.session.gameMode === 'classic' || lobby.gameMode === 'classic' ? 'classic' : 'pane';
-    state.form = lobby.session.form || lobby.form || 'A';
-    state.bankPath = lobby.session.bank || lobby.bank || 'banks/medphys/pt1.json';
-    state.card = (lobby.session.bank ? lobby.session.card : lobby.card) || null;
-    state.setLabel = lobby.session.setLabel || lobby.setLabel || '';
+    state.gameMode = 'pane';
+    const mine = seatOf(lobby, state.myUid);
+    const mem = lobby.members && lobby.members[state.myUid];
+    state.role = (mine && mine.seat.role) || (mem && mem.role) || (mine ? 'play' : 'spectate');
+    state.choice = choiceFor(lobby, mine && mine.seat);
 
-    const seat =
-      lobby.seats &&
-      Object.keys(lobby.seats)
-        .map((k) => lobby.seats[k])
-        .find((s) => s && s.uid === state.myUid);
-    state.role = (seat && seat.role) || 'play';
+    const bits = (global.StudyProfiles && StudyProfiles.getProfile && StudyProfiles.getProfile()) || {};
+    const prev = (lobby.session.panes && lobby.session.panes[state.myUid]) || {};
+    await db.ref(base() + '/panes/' + state.myUid).update({
+      qIndex: prev.qIndex | 0,
+      displayName: bits.displayName || 'Scholar',
+      level: bits.level || 1,
+      seat: mine ? mine.idx : 0,
+      role: state.role,
+      bank: state.choice.bank, form: state.choice.form, card: state.choice.card, setLabel: state.choice.setLabel || '', testLabel: state.choice.testLabel || '',
+      updatedAt: Date.now()
+    });
 
-    // Prefetch default + my seat bank
-    state.questions = await loadBank(state.bankPath, state.form, state.card);
-    const seatChoice = (s) => (s && s.bank ? [s.bank, s.form || 'A', s.card || null] : [state.bankPath, (s && s.form) || state.form, state.card]);
-    if (seat && (seat.bank || seat.form)) {
-      await loadBank.apply(null, seatChoice(seat));
-    }
-    // Prefetch all seat banks for pane spectators
-    if (lobby.seats) {
-      const jobs = Object.keys(lobby.seats).map((k) => {
-        const s = lobby.seats[k];
-        return loadBank.apply(null, seatChoice(s)).catch(() => null);
-      });
-      await Promise.all(jobs);
-    }
+    document.body.classList.add('split-quiz-active', 'pane-mode');
+    document.body.classList.toggle('pane-spectating', state.role === 'spectate');
+    ensureChrome();
+    paintBar();
 
-    if (window.StudyMastery && state.role !== 'spectate') {
-      const bankKeyM = StudyMastery.bankKeyFromPath(
-        (seat && seat.bank) || state.bankPath
-      );
-      StudyMastery.beginSession(
-        bankKeyM,
-        'party:' + ((seat && seat.bank ? seat.card || seat.form : state.card || state.form) || 'A'),
-        paneQuestions(seat ? { bank: seatChoice(seat)[0], form: seatChoice(seat)[1], card: seatChoice(seat)[2] } : null).map(function (q) { return q.__id; })
-      );
+    if (state.role !== 'spectate') {
+      await relaunch();
+      startPublishing();
+    } else {
+      const qv = document.getElementById('quizView'); if (qv) qv.classList.remove('active');
     }
 
-    // Ensure my pane exists (participants + spectators)
-    if (state.myUid && (!lobby.session.panes || !lobby.session.panes[state.myUid])) {
-      const bits =
-        (StudyProfiles && StudyProfiles.getProfile && StudyProfiles.getProfile()) || {};
-      const seatIdx =
-        seat && lobby.seats
-          ? Number(
-              Object.keys(lobby.seats).find((k) => lobby.seats[k] && lobby.seats[k].uid === state.myUid)
-            )
-          : 0;
-      await db.ref('lobbies/' + lobbyId + '/session/panes/' + state.myUid).set({
-        qIndex: 0,
-        selected: null,
-        answers: [],
-        displayName: bits.displayName || 'Scholar',
-        level: bits.level || 1,
-        seat: seatIdx,
-        role: state.role || 'play',
-        bank: seatChoice(seat)[0],
-        form: seatChoice(seat)[1],
-        card: seatChoice(seat)[2],
-        setLabel: (seat && seat.bank ? seat.setLabel : state.setLabel) || '',
-        done: false,
-        score: 0,
-        updatedAt: Date.now()
-      });
-    }
-
-    const container = ensureContainer();
-    container.classList.remove('hidden');
-    container.classList.toggle('layout-stack', state.gameMode === 'pane');
-    container.classList.toggle('layout-classic', state.gameMode === 'classic');
-    document.getElementById('splitModeBar').classList.remove('hidden');
-    document.body.classList.add('split-quiz-active');
-    document.body.classList.toggle('classic-quiz-active', state.gameMode === 'classic');
-
-    const label = document.getElementById('splitModeLabel');
-    if (label) label.textContent = state.gameMode === 'classic' ? 'Classic quiz' : 'Pane quiz';
-    const meta = document.getElementById('splitModeMeta');
-    if (meta) meta.textContent = isSpectator() ? '· Spectating' : '· Playing';
-
-    const quizView = document.getElementById('quizView');
-    if (quizView) quizView.classList.remove('active');
-
-    // Lobby chat continuity into quiz
     if (global.StudyChat && StudyChat.setLobbyContext && lobby.chatSessionId) {
-      const mem = lobby.members && lobby.members[state.myUid];
-      StudyChat.setLobbyContext({
-        lobbyId: lobbyId,
-        chatSessionId: lobby.session.chatSessionId || lobby.chatSessionId,
-        joinedAt: (mem && mem.joinedAt) || Date.now()
-      });
-      StudyChat.setActivity({
-        activity: 'quiz',
-        quiz: { bank: state.bankPath.split('/').pop(), form: state.form },
-        force: true
-      });
+      StudyChat.setLobbyContext({ lobbyId, chatSessionId: lobby.session.chatSessionId || lobby.chatSessionId, joinedAt: (mem && mem.joinedAt) || Date.now() });
+      StudyChat.setActivity({ activity: 'quiz', quiz: { bank: String(state.choice.bank).split('/').pop(), form: state.choice.form }, force: true });
     }
-
-    const ref = db.ref('lobbies/' + lobbyId + '/session');
+    const ref = db.ref(base());
     const handler = (s) => {
+      if (!state.lobbyId) return;
       state.session = s.val();
-      if (!state.session) {
-        // Session wiped — others may still be in lobby; exit quiz UI
-        leave({ skipSets: false });
-        return;
-      }
-      // Sync role if changed
+      if (!state.session) { leave({ skipSets: false }); return; }
       const p = myPane();
-      if (p && p.role) state.role = p.role;
-      const metaEl = document.getElementById('splitModeMeta');
-      if (metaEl) metaEl.textContent = isSpectator() ? '· Spectating' : '· Playing';
+      if (p && p.role && p.role !== state.role) setRole(p.role);
       render();
     };
     ref.on('value', handler);
     state.unsub = () => ref.off('value', handler);
-
+    state.summaryTimer = setInterval(() => writeSummary(false), SUMMARY_MS);
     if (global.StudyCursors && StudyCursors.syncFromParty) StudyCursors.syncFromParty();
+  }
+
+  async function relaunch() {
+    const c = state.choice;
+    const my = (state.launching = {});
+    try {
+      await launchSet(c);
+    } catch (e) {
+      toast('Could not open that set · ' + ((e && e.message) || e));
+    }
+    if (state.launching !== my) return;
+    paintBar();
+    writeSummary(true);
+    if (state.pub) state.pub.flush();
+  }
+  function startPublishing() {
+    if (state.pub || !global.StudyMirror) return;
+    state.pub = StudyMirror.publish(() => document.querySelector('.app.view.active'), base() + '/mirror/' + state.myUid, {
+      extra: () => {
+        const v = document.querySelector('.app.view.active');
+        const r = v && v.getBoundingClientRect();
+        return { offTop: r ? Math.round(r.top + (global.scrollY || 0)) : 0, view: v ? v.id : '' };
+      }
+    });
+  }
+
+  /* my own set, changed from the bar (Practice-style Subject → Test → Set picker) */
+  async function changeSet(choice) {
+    if (!state.lobbyId || isSpectator() || !choice || !choice.bank) return;
+    state.choice = { bank: choice.bank, form: choice.form || 'A', card: choice.card || null, setLabel: choice.setLabel || '', testLabel: choice.testTitle || choice.testLabel || '' };
+    const db = ensureDb();
+    const mine = seatOf(state.lobby, state.myUid) || seatOf((await db.ref('lobbies/' + state.lobbyId).once('value')).val(), state.myUid);
+    const patch = { bank: state.choice.bank, form: state.choice.form, card: state.choice.card, setLabel: state.choice.setLabel, testLabel: state.choice.testLabel, updatedAt: Date.now() };
+    if (mine) db.ref('lobbies/' + state.lobbyId + '/seats/' + mine.idx).update(patch).catch(() => {});
+    await db.ref(base() + '/panes/' + state.myUid).update(Object.assign({ qIndex: 0, answered: 0, correct: 0, done: false }, patch)).catch(() => {});
+    closePicker();
+    await relaunch();
+    toast('Now playing ' + (state.choice.setLabel || 'the new set'));
+  }
+
+  function setRole(role) {
+    state.role = role === 'spectate' ? 'spectate' : 'play';
+    document.body.classList.toggle('pane-spectating', state.role === 'spectate');
+    if (state.role === 'spectate') {
+      if (state.pub) { state.pub.stop(); state.pub = null; }
+      if (global.StudyQuiz && StudyQuiz.active && StudyQuiz.leaveRun) { try { StudyQuiz.leaveRun(); } catch (e) {} }
+      const qv = document.getElementById('quizView'); if (qv) qv.classList.remove('active');
+    } else if (state.lobbyId) {
+      relaunch().then(startPublishing);
+    }
+    paintBar();
+    render();
+  }
+
+  /* ---------- chrome: top bar + peers ---------- */
+  function ensureChrome() {
+    let el = document.getElementById('multi-quiz-container');
+    if (!el) { el = document.createElement('div'); el.id = 'multi-quiz-container'; document.body.appendChild(el); }
+    el.className = 'pane-peers';
+    el.setAttribute('aria-label', 'Other players');
+    // phones: the peers strip sits above the quiz; desktops pin it beside the quiz
+    const qv = document.getElementById('quizView');
+    if (qv && el.nextElementSibling !== qv && qv.parentNode) qv.parentNode.insertBefore(el, qv);
+    let bar = document.getElementById('splitModeBar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'splitModeBar';
+      bar.className = 'split-mode-bar';
+      bar.innerHTML =
+        '<span class="split-mode-label" id="splitModeLabel">Pane Quiz</span>' +
+        '<span class="split-mode-meta" id="splitModeMeta"></span>' +
+        '<button type="button" class="kb-mode-btn" id="splitSetBtn" aria-haspopup="dialog" title="Choose the set you play">Change Set</button>' +
+        '<button type="button" class="kb-mode-btn" id="splitExitBtn">Exit</button>' +
+        '<div class="split-set-pop" id="splitSetPop" role="dialog" aria-label="Choose your set" hidden><div id="splitSetMount"></div>' +
+        '<div class="split-set-actions"><button type="button" class="kb-mode-btn" id="splitSetCancel">Cancel</button><button type="button" class="kb-mode-btn primary" id="splitSetGo">Play This Set</button></div></div>';
+      document.body.appendChild(bar);
+      bar.querySelector('#splitExitBtn').onclick = () => {
+        const id = state.lobbyId;
+        if (id && global.StudyLobby && StudyLobby.confirmLeave) { StudyLobby.confirmLeave(id); return; }
+        leave({ skipSets: false, silent: true });
+        if (id && global.StudyLobby && StudyLobby.leave) StudyLobby.leave(id).catch(() => {});
+      };
+      bar.querySelector('#splitSetBtn').onclick = () => (bar.querySelector('#splitSetPop').hidden ? openPicker() : closePicker());
+      bar.querySelector('#splitSetCancel').onclick = closePicker;
+      bar.querySelector('#splitSetGo').onclick = () => { const c = state.picker && state.picker.getChoice(); if (c) changeSet(c); };
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !bar.querySelector('#splitSetPop').hidden) closePicker(); });
+    }
+    bar.classList.remove('hidden');
+    return el;
+  }
+  function openPicker() {
+    const pop = document.getElementById('splitSetPop');
+    if (!pop || !global.StudyBankPicker) return;
+    pop.hidden = false;
+    const c = state.choice || {};
+    state.picker = StudyBankPicker.mount(document.getElementById('splitSetMount'), { idPrefix: 'paneSet', compact: true, allTypes: true, value: { bank: c.bank, form: c.form, card: c.card } });
+    const sel = pop.querySelector('select'); if (sel) setTimeout(() => sel.focus(), 0);
+  }
+  function closePicker() {
+    const pop = document.getElementById('splitSetPop');
+    if (pop) pop.hidden = true;
+    if (state.picker) { state.picker.destroy(); state.picker = null; }
+  }
+  function setText(p) {
+    const t = (p && (p.testLabel || '')) || '';
+    const s = (p && p.setLabel) || (p && p.bank ? String(p.bank).split('/').pop().replace('.json', '') + ' · ' + (p.form || 'A') : '');
+    return t && s ? t + ' · ' + s : s || t;
+  }
+  function paintBar() {
+    const meta = document.getElementById('splitModeMeta');
+    if (meta) meta.textContent = isSpectator() ? 'Spectating' : 'Playing · ' + setText(state.choice);
+    const b = document.getElementById('splitSetBtn');
+    if (b) b.hidden = isSpectator();
   }
 
   function sortedPanes() {
     const panes = (state.session && state.session.panes) || {};
     return Object.keys(panes)
       .map((id) => Object.assign({ uid: id }, panes[id]))
-      .sort((a, b) =>
-        a.seat != null && b.seat != null ? a.seat - b.seat : String(a.displayName || '').localeCompare(b.displayName || '')
-      )
+      .filter((p) => p.role !== 'spectate')
+      .sort((a, b) => (a.seat != null && b.seat != null ? a.seat - b.seat : String(a.displayName || '').localeCompare(b.displayName || '')))
       .slice(0, MAX_SLOTS);
   }
-
   function render() {
-    if (state.gameMode === 'classic') renderClassic();
-    else renderPanes();
-  }
-
-  function renderPanes() {
-    const container = ensureContainer();
-    container.classList.add('layout-stack');
-    container.classList.remove('layout-classic');
-    const panes = sortedPanes();
-    container.innerHTML = '';
-    panes.forEach((pane, idx) => {
-      const mine = pane.uid === state.myUid;
-      const hue = hueFromName(pane.displayName);
-      const qs = paneQuestions(pane);
-      const qIndex = Math.min(pane.qIndex | 0, Math.max(0, qs.length - 1));
-      const q = qs[qIndex];
-      const box = document.createElement('div');
-      box.className =
-        'party-member-box quiz-pane party-pane' +
-        (mine ? ' pane-focused active' : '') +
-        (pane.done ? ' pane-done' : '') +
-        (pane.role === 'spectate' ? ' pane-spectate' : '');
-      box.style.setProperty('--friend-hue', hue);
-      box.dataset.uid = pane.uid;
-      box.dataset.slot = idx;
-
-      const status =
-        (qs.length ? qIndex + 1 + '/' + qs.length : '—') +
-        (pane.role === 'spectate' ? ' · spec' : pane.selected != null ? ' · locked' : '');
-
-      box.innerHTML =
-        '<div class="pane-friend-header">' +
-        '<div class="pane-header-row"><span class="pane-label">' +
-        (mine ? 'You' : pane.role === 'spectate' ? 'Spec' : 'Party') +
-        '</span><span class="pane-status"></span></div>' +
-        '<div class="pane-friend-name"></div>' +
-        '<div class="pane-current-bank"></div>' +
-        '</div>' +
-        '<div class="pane-body"></div>';
-      box.querySelector('.pane-friend-name').textContent =
-        (pane.displayName || '?') + ' · LV' + (pane.level || 1);
-      box.querySelector('.pane-status').textContent = status;
-      const bankEl = box.querySelector('.pane-current-bank');
-      if (bankEl) {
-        const b = (pane.bank || state.bankPath || '').split('/').pop() || '';
-        bankEl.textContent = pane.setLabel || state.setLabel || b.replace('.json', '') + ' · ' + (pane.form || state.form);
+    const el = document.getElementById('multi-quiz-container');
+    if (!el || !state.lobbyId) return;
+    const peers = sortedPanes().filter((p) => p.uid !== state.myUid || isSpectator());
+    document.body.classList.toggle('pane-has-peers', peers.length > 0);
+    const keep = new Set(peers.map((p) => p.uid));
+    Object.keys(state.mirrors).forEach((u) => { if (!keep.has(u)) { state.mirrors[u].stop(); delete state.mirrors[u]; const b = el.querySelector('.party-member-box[data-uid="' + u + '"]'); if (b) b.remove(); } });
+    peers.forEach((p, i) => {
+      let box = el.querySelector('.party-member-box[data-uid="' + p.uid + '"]');
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'party-member-box quiz-pane party-pane';
+        box.dataset.uid = p.uid;
+        box.innerHTML =
+          '<div class="pane-friend-header" data-anchor="pane:' + esc(p.uid) + ':head">' +
+          '<span class="pane-avatar" aria-hidden="true"></span>' +
+          '<div class="pane-who"><div class="pane-friend-name"></div><div class="pane-current-bank"></div></div>' +
+          '<span class="pane-level"></span><span class="pane-status"></span>' +
+          '<button type="button" class="pane-zoom" aria-label="Enlarge this pane" title="Enlarge">⤢</button></div>' +
+          '<div class="pane-progress" aria-hidden="true"><span></span></div>' +
+          '<div class="pane-mirror" data-mirror-uid="' + esc(p.uid) + '"></div>';
+        box.querySelector('.pane-zoom').onclick = () => { box.classList.toggle('pane-zoomed'); const m = state.mirrors[p.uid]; if (m) setTimeout(m.refit, 30); };
+        el.appendChild(box);
+        state.mirrors[p.uid] = StudyMirror.mount(box.querySelector('.pane-mirror'), base() + '/mirror/' + p.uid, { empty: 'Opening ' + esc(p.displayName || 'their') + ' quiz…' });
       }
-
-      const body = box.querySelector('.pane-body');
-      const canAnswer = mine && pane.role !== 'spectate' && !isSpectator();
-      if (!q) {
-        body.innerHTML = '<div class="pane-question-text">No question</div>';
-      } else {
-        const qEl = document.createElement('div');
-        qEl.className = 'pane-question-text';
-        qEl.textContent = q.q || q.question || '';
-        body.appendChild(qEl);
-        const opts = document.createElement('div');
-        opts.className = 'pane-options';
-        (q.options || []).forEach((opt, oi) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'pane-opt-btn';
-          btn.textContent = opt;
-          if (pane.selected === oi) btn.classList.add(oi === q.correct ? 'correct' : 'wrong');
-          if (canAnswer && pane.selected == null) {
-            btn.addEventListener('click', () => answer(oi));
-          } else {
-            btn.disabled = true;
-          }
-          if (!mine && pane.selected === oi) btn.classList.add('ai-hover');
-          const lp = pane.lastPick;
-          if (!mine && lp && lp.q === qIndex && lp.i === oi && Date.now() - (lp.at || 0) < 1500) btn.classList.add(lp.ok ? 'pick-flash-ok' : 'pick-flash-bad');
-          opts.appendChild(btn);
-        });
-        body.appendChild(opts);
-        if (pane.selected != null && q.explain) {
-          const msg = document.createElement('div');
-          msg.className = 'pane-result-msg';
-          msg.textContent = (pane.selected === q.correct ? '✓ ' : '') + (q.explain || '');
-          body.appendChild(msg);
-        }
-      }
-      box.addEventListener('click', () => {
-        state.focused = idx;
-        container.querySelectorAll('.party-member-box').forEach((el, i) => {
-          el.classList.toggle('pane-focused', i === idx);
-        });
-      });
-      container.appendChild(box);
+      if (box !== el.children[i]) el.insertBefore(box, el.children[i] || null);
+      box.style.setProperty('--friend-hue', hueFromName(p.displayName));
+      box.classList.toggle('pane-done', !!p.done);
+      box.querySelector('.pane-avatar').textContent = initials(p.displayName);
+      box.querySelector('.pane-friend-name').textContent = (p.displayName || '?');
+      box.querySelector('.pane-level').textContent = 'LV ' + (p.level || 1);
+      box.querySelector('.pane-current-bank').textContent = setText(p);
+      const total = p.total | 0, at = Math.min((p.qIndex | 0) + 1, total || 1);
+      box.querySelector('.pane-status').textContent = total ? at + '/' + total + (p.done ? ' · Done' : '') : '—';
+      box.querySelector('.pane-progress span').style.width = (total ? Math.round(((p.answered | 0) / total) * 100) : 0) + '%';
     });
-  }
-
-  function renderClassic() {
-    const container = ensureContainer();
-    container.classList.remove('layout-stack');
-    container.classList.add('layout-classic');
-    const panes = sortedPanes();
-    const mine = myPane();
-    const focusPane =
-      mine ||
-      panes[state.focused] ||
-      panes[0] ||
-      null;
-    const qs = focusPane
-      ? paneQuestions(focusPane)
-      : state.questions;
-    const qIndex = focusPane ? Math.min(focusPane.qIndex | 0, Math.max(0, qs.length - 1)) : 0;
-    const q = qs[qIndex];
-    const canAnswer =
-      focusPane &&
-      focusPane.uid === state.myUid &&
-      focusPane.role !== 'spectate' &&
-      !isSpectator();
-
-    let roster =
-      '<div class="classic-roster">' +
-      panes
-        .map((p, i) => {
-          const pqs = paneQuestions(p);
-          const done = p.done ? ' done' : '';
-          const active = focusPane && p.uid === focusPane.uid ? ' active' : '';
-          return (
-            '<button type="button" class="classic-roster-chip' +
-            done +
-            active +
-            '" data-focus="' +
-            i +
-            '">' +
-            (p.displayName || '?') +
-            (p.role === 'spectate' ? ' · spec' : '') +
-            '<em>' +
-            ((p.qIndex | 0) + 1) +
-            '/' +
-            (pqs.length || '?') +
-            (p.score != null ? ' · ' + (p.score | 0) : '') +
-            '</em></button>'
-          );
-        })
-        .join('') +
-      '</div>';
-
-    let bodyHtml = '';
-    if (!q) {
-      bodyHtml = '<div class="pane-question-text">Waiting for questions…</div>';
-    } else {
-      bodyHtml =
-        '<div class="classic-q-meta">' +
-        (focusPane && focusPane.uid === state.myUid ? 'Your question' : 'Watching ' + (focusPane.displayName || '')) +
-        ' · ' +
-        (qIndex + 1) +
-        '/' +
-        qs.length +
-        '</div>' +
-        '<div class="pane-question-text classic-q-text"></div>' +
-        '<div class="pane-options classic-options" id="classicOptions"></div>';
-    }
-
-    container.innerHTML =
-      '<div class="classic-shell">' +
-      roster +
-      '<div class="classic-main quiz-pane party-pane">' +
-      bodyHtml +
-      '</div></div>';
-
-    const qText = container.querySelector('.classic-q-text');
-    if (qText && q) qText.textContent = q.q || q.question || '';
-
-    const opts = container.querySelector('#classicOptions');
-    if (opts && q) {
-      (q.options || []).forEach((opt, oi) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'pane-opt-btn';
-        btn.textContent = opt;
-        if (focusPane && focusPane.selected === oi) {
-          btn.classList.add(oi === q.correct ? 'correct' : 'wrong');
-        }
-        if (canAnswer && focusPane.selected == null) {
-          btn.addEventListener('click', () => answer(oi));
-        } else {
-          btn.disabled = true;
-        }
-        opts.appendChild(btn);
-      });
-      if (focusPane && focusPane.selected != null && q.explain) {
-        const msg = document.createElement('div');
-        msg.className = 'pane-result-msg';
-        msg.textContent = (focusPane.selected === q.correct ? '✓ ' : '') + (q.explain || '');
-        opts.parentNode.appendChild(msg);
-      }
-    }
-
-    container.querySelectorAll('[data-focus]').forEach((chip) => {
-      chip.onclick = () => {
-        state.focused = Number(chip.dataset.focus);
-        render();
-      };
-    });
-  }
-
-  function answer(optIdx) {
-    return answerInner(optIdx).catch((e) => {
-      console.warn('[split] answer not saved', e);
-      toast(/PERMISSION/i.test(String(e && (e.code || e.message))) ? 'Answer not saved · the database refused the write' : 'Answer not saved · check your connection');
-    });
-  }
-  async function answerInner(optIdx) {
-    if (!state.lobbyId || !state.myUid || !state.session) return;
-    if (isSpectator()) {
-      toast('Spectating — answers disabled');
-      return;
-    }
-    const pane = state.session.panes && state.session.panes[state.myUid];
-    if (!pane || pane.selected != null || pane.role === 'spectate') return;
-    const qs = paneQuestions(pane);
-    const qIndex = pane.qIndex | 0;
-    const q = qs[qIndex];
-    if (!q) return;
-
-    // every pick is shared (lastPick) so other members and spectators see the flash
-    ensureDb().ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid + '/lastPick')
-      .set({ q: qIndex, i: optIdx, ok: optIdx === q.correct, at: Date.now() }).catch(() => {});
-    if (optIdx !== q.correct) {
-      if (window.StudyAchievements && typeof StudyAchievements.recordWrong === 'function') {
-        StudyAchievements.recordWrong();
-      }
-      toast('not that one · try again');
-      return;
-    }
-
-    const answers = (pane.answers || []).slice();
-    answers[qIndex] = optIdx;
-    const done = qIndex >= qs.length - 1;
-    const nextIndex = done ? qIndex : qIndex + 1;
-    const score = (pane.score | 0) + 1;
-    const patch = {
-      selected: done ? optIdx : null,
-      answers: answers,
-      qIndex: done ? qIndex : nextIndex,
-      done: done,
-      score: score,
-      updatedAt: Date.now()
-    };
-
-    if (!done) {
-      await ensureDb()
-        .ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid)
-        .update({ selected: optIdx, answers: answers, score: score, updatedAt: Date.now() });
-      const lid = state.lobbyId, me = state.myUid;
-      setTimeout(() => {
-        if (!lid || state.lobbyId !== lid) return;
-        ensureDb()
-          .ref('lobbies/' + lid + '/session/panes/' + me)
-          .update({ selected: null, qIndex: nextIndex, updatedAt: Date.now() })
-          .catch((e) => { console.warn('[split] next question not saved', e); toast('Progress not saved · check your connection'); });
-      }, 450);
-    } else {
-      await ensureDb()
-        .ref('lobbies/' + state.lobbyId + '/session/panes/' + state.myUid)
-        .update(patch);
-      toast('Pane complete');
-    }
-
-    // pt1-quiz-upgrade: progress is saved by question id (same store as the
-    // normal quiz), not by form letter / position.
-    if (window.StudyMastery) {
-      const bk = StudyMastery.bankKeyFromPath(pane.bank || state.bankPath);
-      if (q && q.__id != null) {
-        StudyMastery.recordClearId(bk, q.__id);
-        if (window.StudyStore) StudyStore.markSolved(bk, q.__id);
-      }
-      if (typeof StudyMastery.updateProgressBar === 'function') StudyMastery.updateProgressBar();
-      refreshSets();
-    }
-    if (window.StudyProfiles) StudyProfiles.bumpQuestionsAnswered(1);
-    if (window.StudyAchievements && typeof StudyAchievements.recordCorrect === 'function') {
-      StudyAchievements.recordCorrect();
-    }
-  }
-
-  function refreshSets() {
-    if (typeof renderForms === 'function') renderForms();
-    else if (typeof buildFormCards === 'function') buildFormCards();
-    else if (typeof refreshSetsCards === 'function') refreshSetsCards();
+    if (global.StudyCursors && StudyCursors._place) { try { StudyCursors._place(); } catch (e) {} }
   }
 
   function leave(opts) {
     opts = opts || {};
-    const lobbyId = state.lobbyId;
-    if (state.unsub) {
-      state.unsub();
-      state.unsub = null;
-    }
-    state.lobbyId = null;
-    state.session = null;
-    state.lobby = null;
-    state.bankPath = 'banks/medphys/pt1.json';
-    state.card = null;
-    state.setLabel = '';
-    state.questionsByKey = {};
-    state.gameMode = 'pane';
-    state.role = 'play';
-
-    const container = document.getElementById('multi-quiz-container');
-    if (container) {
-      container.classList.add('hidden');
-      container.classList.remove('layout-stack', 'layout-classic');
-      container.innerHTML = '';
-    }
+    if (state.unsub) { state.unsub(); state.unsub = null; }
+    if (state.pub) { state.pub.stop(); state.pub = null; }
+    clearInterval(state.summaryTimer); state.summaryTimer = null;
+    Object.keys(state.mirrors).forEach((u) => state.mirrors[u].stop());
+    state.mirrors = {};
+    closePicker();
+    const wasIn = !!state.lobbyId;
+    state.lobbyId = null; state.session = null; state.lobby = null; state.choice = null; state.role = 'play'; state.lastSummary = ''; state.launching = null;
+    const el = document.getElementById('multi-quiz-container');
+    if (el) { el.innerHTML = ''; el.className = 'hidden'; }
     const bar = document.getElementById('splitModeBar');
     if (bar) bar.classList.add('hidden');
-    document.body.classList.remove('split-quiz-active', 'classic-quiz-active');
+    document.body.classList.remove('split-quiz-active', 'classic-quiz-active', 'pane-mode', 'pane-has-peers', 'pane-spectating');
     if (global.StudyCursors && StudyCursors.syncFromParty) { try { StudyCursors.syncFromParty(); } catch (e) {} }
     if (global.StudyLobby && StudyLobby.refresh) { try { StudyLobby.refresh(); } catch (e) {} }
-    if (global.StudyMastery && typeof StudyMastery.endSession === 'function') {
-      try {
-        StudyMastery.endSession();
-      } catch (e) {}
-    }
-    refreshSets();
-
-    if (!opts.skipSets) {
-      if (typeof goSets === 'function') goSets();
-      else if (typeof showView === 'function') showView('setsView');
-      else {
-        document.querySelectorAll('.view').forEach((v) => v.classList.remove('active'));
-        const sets = document.getElementById('setsView');
-        if (sets) sets.classList.add('active');
-      }
+    if (!opts.skipSets && wasIn) {
+      if (global.StudyQuiz && StudyQuiz.goSets) { try { StudyQuiz.goSets(); } catch (e) {} }
+      else if (typeof global.showView === 'function') global.showView('setsView');
     }
   }
 
   global.StudySplitQuiz = {
     joinLobbySession,
     leave,
+    changeSet,
+    setRole,
     getLobbyId: () => (state.session ? state.lobbyId : null),
     getSession: () => state.session,
-    paneQuestions: (p) => paneQuestions(p),
+    getChoice: () => state.choice,
+    isSpectator,
     rerender: () => { if (state.session) render(); },
-    loadBank, // read-only: the multiple-choice questions party mode would use (bank, form, card)
+    setText,
+    initials,
     bankKey,
     MAX_SLOTS
   };

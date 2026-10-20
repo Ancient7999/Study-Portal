@@ -3793,6 +3793,6 @@ if(document.fonts&&document.fonts.ready){
 })();
 placeSettingsGear();
 
-window.StudyQuiz={ labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
+window.StudyQuiz={ isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, ingestBank, startRun, resumeRun, startMasteryPlusRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };

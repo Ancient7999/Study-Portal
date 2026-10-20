@@ -117,23 +117,10 @@
     const q = curQ(), k = qKey(q);
     const cls = el.classList;
     if (el.id === 'qText') return 'q:' + k + ':stem';
-    // lobby Pane mode: every player has a pane (data-uid) on every screen, so anchor inside that pane
-    const pane = el.closest && el.closest('#multi-quiz-container .party-member-box[data-uid]');
-    if (pane) {
-      const pu = pane.dataset.uid;
-      if (el === pane) return 'pane:' + pu;
-      if (cls.contains('pane-opt-btn')) return 'pane:' + pu + ':opt:' + Array.prototype.indexOf.call(pane.querySelectorAll('.pane-opt-btn'), el);
-      if (cls.contains('pane-question-text')) return 'pane:' + pu + ':q';
-      if (cls.contains('pane-friend-header')) return 'pane:' + pu + ':head';
-    }
-    // lobby Classic mode: one shared question card
-    const cmain = el.closest && el.closest('#multi-quiz-container .classic-main');
-    if (cmain) {
-      if (el === cmain) return 'classic:main';
-      if (cls.contains('pane-opt-btn')) return 'classic:opt:' + Array.prototype.indexOf.call(cmain.querySelectorAll('.pane-opt-btn'), el);
-      if (cls.contains('pane-question-text')) return 'classic:q';
-    }
-    if (cls.contains('classic-roster-chip') && el.dataset.focus != null) return 'classic:chip:' + el.dataset.focus;
+    // lobby Pane mode: each other player's pane is a live mirror of their quiz (js/mirror.js)
+    if (cls.contains('pane-mirror') && el.dataset.mirrorUid) return 'pane:' + el.dataset.mirrorUid;
+    const pane = el.closest && el.closest('.pane-peers .party-member-box[data-uid]');
+    if (pane && el === pane) return 'pane:' + pane.dataset.uid + ':box';
     if (cls.contains('opt') && el.parentNode && el.parentNode.id === 'options') {
       const i = Array.prototype.indexOf.call(el.parentNode.querySelectorAll('.opt'), el);
       const orig = q && q.__perm && q.__perm[i] != null ? q.__perm[i] : i;
@@ -146,7 +133,7 @@
     if (el.id && !/^(app|root)$/.test(el.id)) return '#' + el.id;
     return null;
   }
-  const ANCHOR_SEL = '#qText, #options .opt, .match-item, .label-slot[data-id], .label-chip, .order-card, .party-member-box[data-uid], .party-member-box .pane-opt-btn, .party-member-box .pane-question-text, .party-member-box .pane-friend-header, .classic-main, .classic-main .pane-opt-btn, .classic-main .pane-question-text, .classic-roster-chip, [id]';
+  const ANCHOR_SEL = '#qText, #options .opt, .match-item, .label-slot[data-id], .label-chip, .order-card, .pane-mirror[data-mirror-uid], .pane-peers .party-member-box[data-uid], [id]';
   function stampAnchors(root) {
     (root || document).querySelectorAll(ANCHOR_SEL).forEach((el) => {
       if (el.closest && el.closest('.friend-cursor')) return;
@@ -160,7 +147,7 @@
     return r.width > 0 && r.height > 0;
   }
   function container() {
-    const cands = ['#shareView', '#multi-quiz-container', '.app.view.active #mainPanel', '.app.view.active', '.view.active'];
+    const cands = ['#shareView', '.app.view.active #mainPanel', '.app.view.active', '.view.active'];
     for (let i = 0; i < cands.length; i++) {
       const el = document.querySelector(cands[i]);
       if (el && usable(el) && getComputedStyle(el).display !== 'none') return el;
@@ -174,13 +161,18 @@
     return Math.round(v * 10000) / 10000;
   }
   function describe(cx, cy, target) {
-    let el = target && target.nodeType === 1 ? target : document.elementFromPoint(cx, cy);
+    let el = target && target.nodeType === 1 && !(target.shadowRoot && global.StudyMirror) ? target : (global.StudyMirror ? StudyMirror.elementAt(cx, cy) : document.elementFromPoint(cx, cy));
     let anchor = null, rx = 0, ry = 0;
-    for (let n = el; n && n !== document.body && n !== document.documentElement; n = n.parentElement) {
+    const up = (n) => n.parentElement || (n.parentNode && n.parentNode.host) || null; // cross out of a mirror's shadow root
+    for (let n = el; n && n !== document.body && n !== document.documentElement; n = up(n)) {
       if (n.closest && n.closest('.friend-cursor')) continue;
-      const a = anchorOf(n);
+      let a = anchorOf(n);
       if (a && usable(n)) {
         const r = n.getBoundingClientRect();
+        // a point inside another player's mirror names their pane; one on my own quiz names mine
+        const host = n.getRootNode && n.getRootNode().host;
+        if (host && host.dataset && host.dataset.mirrorUid) { if (!/^pane:/.test(a)) a = 'pane:' + host.dataset.mirrorUid + ':' + a; }
+        else if (document.body.classList.contains('pane-mode') && !/^pane:/.test(a) && n.closest && n.closest('.app.view.active') && uid()) a = 'pane:' + uid() + ':' + a;
         anchor = a;
         rx = clamp01((cx - r.left) / r.width);
         ry = clamp01((cy - r.top) / r.height);
@@ -207,6 +199,15 @@
   }
   function findAnchor(a) {
     if (!a) return null;
+    const pm = /^pane:([^:]+):(.+)$/.exec(a);
+    if (pm && pm[2] !== 'box') {
+      if (pm[1] === uid()) return findAnchor(pm[2]);
+      const host = document.querySelector('.pane-mirror[data-mirror-uid="' + String(pm[1]).replace(/["\\]/g, '') + '"]');
+      if (!host || !host.shadowRoot) return null;
+      let inner = null;
+      try { inner = host.shadowRoot.querySelector('[data-anchor="' + String(pm[2]).replace(/["\\]/g, '\\$&') + '"]'); } catch (e) {}
+      return inner && usable(inner) ? inner : usable(host) ? host : null;
+    }
     let el = null;
     try {
       el = document.querySelector('[data-anchor="' + String(a).replace(/["\\]/g, '\\$&') + '"]');

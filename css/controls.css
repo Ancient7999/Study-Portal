@@ -204,9 +204,7 @@ html.cursors-off .friend-cursor{display:none!important}
 .spectate-tile:not(.zoomed) .st-pane .pane-body{padding:3px 5px;font-size:.52rem;overflow:hidden}
 .spectate-tile:not(.zoomed) .st-pane .pane-question-text{min-height:0;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .spectate-tile:not(.zoomed) .st-pane .pane-options{gap:2px}
-.spectate-tile:not(.zoomed) .st-pane .pane-opt-btn{padding:1px 4px;font-size:.5rem;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .spectate-tile:not(.zoomed) .st-pane .pane-result-msg{display:none}
-.spectate-tile .pane-opt-btn:disabled{cursor:default;opacity:1}
 .spectate-tile .st-roster{display:flex;gap:4px;flex-wrap:wrap}
 .spectate-tile .classic-roster-chip{font:600 .55rem var(--mono);padding:1px 6px;border-radius:999px;border:1px solid var(--border);background:rgba(0,0,0,.3)}
 .spectate-tile .classic-roster-chip.active{border-color:var(--cyan-bright)}
@@ -228,10 +226,6 @@ html.cursors-off .friend-cursor{display:none!important}
 .st-cursor-dot{display:block;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:hsl(var(--friend-hue,180),80%,60%);box-shadow:0 0 8px hsl(var(--friend-hue,180),80%,55%);border:1.5px solid #fff}
 .st-cursor-name{position:absolute;left:8px;top:4px;white-space:nowrap;font:700 .55rem var(--mono);padding:1px 5px;border-radius:6px;background:hsla(var(--friend-hue,180),70%,30%,.9);color:#fff}
 .spectate-tile.zoomed .st-cursor-name{font-size:.72rem}
-.pane-opt-btn.pick-flash-ok{animation:pickOk 1.4s ease-out}
-.pane-opt-btn.pick-flash-bad{animation:pickBad 1.4s ease-out}
-@keyframes pickOk{0%,40%{border-color:var(--success);background:rgba(52,211,153,.32);box-shadow:0 0 14px rgba(52,211,153,.5)}100%{}}
-@keyframes pickBad{0%,40%{border-color:var(--error);background:rgba(251,113,133,.32);box-shadow:0 0 14px rgba(251,113,133,.5)}100%{}}
 .lobby-req-box[hidden]{display:none}
 .lobby-req-box .llb-requests{border-color:var(--gold,#fbbf24)}
 @media (max-width:800px){
@@ -239,7 +233,7 @@ html.cursors-off .friend-cursor{display:none!important}
   .spectate-tile.zoomed{width:100vw;height:100dvh}
   .spectate-tile.zoomed .st-panes{grid-template-columns:1fr!important;grid-auto-rows:auto}
 }
-@media (prefers-reduced-motion:reduce){ .pane-opt-btn.pick-flash-ok,.pane-opt-btn.pick-flash-bad{animation:none} .st-cursor{transition:none} }
+@media (prefers-reduced-motion:reduce){ .st-cursor{transition:none} }
 body.spectate-zoomed .spectate-dock{z-index:10000}
 @media (max-width:800px){
   /* the lobby chip owns the top-right corner on phones; the connection chip shrinks to a dot bottom-left */
