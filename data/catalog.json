@@ -49,7 +49,7 @@
             "gen": "Pt2FormulaGen",
             "key": "medphys/pt2",
             "title": "Formulas · Periodic Test 2",
-            "scope": "Bernoulli to ray optics",
+            "scope": "Bernoulli to Radiation Detection",
             "draft": true
           },
           "study": {
