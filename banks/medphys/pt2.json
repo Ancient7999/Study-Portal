@@ -4,7 +4,7 @@
  "subjectId": "medphys",
  "title": "Periodic Test 2",
  "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (56), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 169,
+ "formSize": 195,
  "forms": [
   "A"
  ],
@@ -2241,6 +2241,293 @@
     "explain": "Kelvin begins at absolute zero and has no negative values. Celsius is fixed by the freezing and boiling points of water at 0 °C and 100 °C. The remaining lines name the fixed points of the other scales."
    },
    {
+    "id": "PHY40057",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "The frequency of a sound wave is set by the:",
+    "options": [
+     "Vibrating source",
+     "Moving observer",
+     "Warm medium",
+     "Sensitive detector"
+    ],
+    "correct": 0,
+    "explain": "The vibrating source sets the emitted sound frequency. Observer motion causes Doppler shift, while medium warmth and detector sensitivity affect propagation or reception, not the emitted frequency."
+   },
+   {
+    "id": "PHY40058",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Sound waves travel much slower than which waves?",
+    "options": [
+     "Light waves, which are electromagnetic",
+     "Mechanical waves, which require a medium",
+     "Matter waves, which accompany particles",
+     "Infrasonic waves, which have low frequency"
+    ],
+    "correct": 0,
+    "explain": "Sound travels much slower than light, which is an electromagnetic wave. Mechanical waves include sound, matter waves are particle-associated, and infrasonic waves are low-frequency sound."
+   },
+   {
+    "id": "PHY40059",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "One hertz equals which vibration rate?",
+    "options": [
+     "One cycle per second",
+     "One cycle per minute",
+     "One second per cycle",
+     "One metre per second"
+    ],
+    "correct": 0,
+    "explain": "Hertz is the SI unit of frequency: 1 Hz equals one vibration or cycle per second. The other rates use the wrong time unit, invert period, or give speed."
+   },
+   {
+    "id": "PHY40060",
+    "type": "mcq",
+    "cat": "Chapter 4: Waves and Oscillations",
+    "q": "Wave velocity is also called which speed?",
+    "options": [
+     "Propagation speed of the wave",
+     "Particle speed of the medium",
+     "Source speed of the oscillator",
+     "Detector speed of the observer"
+    ],
+    "correct": 0,
+    "explain": "Wave velocity is the speed of the travelling disturbance, also called propagation speed. Particle, source, and detector speeds describe objects, not the disturbance."
+   },
+   {
+    "id": "PHY40061",
+    "type": "mcq",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "Ultrasound imaging is described as which type of technique?",
+    "options": [
+     "Non-invasive and fast technique",
+     "Invasive and slow technique",
+     "Ionizing and slow technique",
+     "Non-ionizing but invasive technique"
+    ],
+    "correct": 0,
+    "explain": "Ultrasound is non-invasive, non-ionizing, and fast to acquire. Invasive, ionizing, and slow descriptions contradict those stated features."
+   },
+   {
+    "id": "PHY40062",
+    "type": "mcq",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "Ultrasound image acquisition is described as:",
+    "options": [
+     "Easy and fast",
+     "Slow and invasive",
+     "Ionizing and delayed",
+     "Random and unsafe"
+    ],
+    "correct": 0,
+    "explain": "Acquisition is easy and fast, using non-ionizing sound. Slow, invasive, ionizing, delayed, random, and unsafe descriptions contradict the stated acquisition."
+   },
+   {
+    "id": "PHY40063",
+    "type": "mcq",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "Ultrasound imaging visualizes which features of organs and vessels?",
+    "options": [
+     "Structure, movement, and function",
+     "Pressure, movement, and function",
+     "Structure, temperature, and function",
+     "Structure, movement, and density"
+    ],
+    "correct": 0,
+    "explain": "Ultrasound shows structure, movement, and function. Pressure replaces structure, temperature replaces movement, and density replaces function; those quantities belong to shock-wave changes."
+   },
+   {
+    "id": "PHY40064",
+    "type": "matching",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "Match each ultrasound frequency to its main imaging use.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "3.5 MHz"
+     },
+     {
+      "id": "2",
+      "text": "5.0 MHz"
+     },
+     {
+      "id": "3",
+      "text": "7.5 MHz"
+     },
+     {
+      "id": "4",
+      "text": "15.0 MHz"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "General abdomen, obstetric, and gynecological imaging"
+     },
+     {
+      "id": "B",
+      "text": "Vascular, breast, and pelvic imaging"
+     },
+     {
+      "id": "C",
+      "text": "Breast and thyroid imaging"
+     },
+     {
+      "id": "D",
+      "text": "Superficial structures and musculoskeletal imaging"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "3.5 MHz is for general abdomen, obstetric, and gynecological imaging; 5.0 MHz for vascular, breast, and pelvic imaging; 7.5 MHz for breast and thyroid imaging; 15.0 MHz for superficial structures and musculoskeletal imaging."
+   },
+   {
+    "id": "PHY40065",
+    "type": "mcq",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "Clinical ultrasound imaging commonly uses which frequency range?",
+    "options": [
+     "2 MHz to 15 MHz",
+     "20 Hz to 20 kHz",
+     "20 kHz to 2 MHz",
+     "15 MHz to 2 MHz"
+    ],
+    "correct": 0,
+    "explain": "Clinical ultrasound uses 2 MHz to 15 MHz. The 20 Hz to 20 kHz range is audible sound, 20 kHz to 2 MHz is below clinical imaging, and the reversed range is false."
+   },
+   {
+    "id": "PHY40066",
+    "type": "mcq",
+    "cat": "Chapter 4: Ultrasound Imaging",
+    "q": "A scanner uses 3.8 MHz in tissue where sound speed is 1.5 km/s. Find wavelength.",
+    "options": [
+     "0.39 mm",
+     "3.9 mm",
+     "0.039 mm",
+     "39 mm"
+    ],
+    "correct": 0,
+    "explain": "Wavelength equals speed divided by frequency. Using 1500 m/s and 3.8 × 10⁶ Hz gives 3.95 × 10⁻⁴ m, or 0.39 mm. Other choices shift the decimal point."
+   },
+   {
+    "id": "PHY40067",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "Besides sound, which wave type is included in the Doppler description?",
+    "options": [
+     "Light waves",
+     "Matter waves",
+     "Shock waves",
+     "Infrasonic waves"
+    ],
+    "correct": 0,
+    "explain": "The Doppler description names sound and also light waves. Matter, shock, and infrasonic waves are wave categories in the chapter but not the named Doppler example."
+   },
+   {
+    "id": "PHY40068",
+    "type": "mcq",
+    "cat": "Chapter 4: Doppler Effect",
+    "q": "Colour Doppler echocardiography is used to show which of these?",
+    "options": [
+     "Blood flow",
+     "Kidney stones",
+     "Tissue tumors",
+     "Water vapor"
+    ],
+    "correct": 0,
+    "explain": "Colour Doppler echocardiography shows blood flow in vessels and the heart. Kidney stones relate to shock waves, tissue tumors to ultrasound scanning, and water vapor to phase changes."
+   },
+   {
+    "id": "PHY40069",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "A supersonic source leaves wave fronts in a cone with the source at the:",
+    "options": [
+     "Vertex",
+     "Base",
+     "Centre",
+     "Edge"
+    ],
+    "correct": 0,
+    "explain": "The cone-shaped shock region has the moving source at its vertex. The base, centre, and edge describe other parts of the cone, not the source position."
+   },
+   {
+    "id": "PHY40070",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "Shock waves produce a sudden change in which quantities?",
+    "options": [
+     "Pressure, temperature, and density",
+     "Frequency, temperature, and density",
+     "Pressure, wavelength, and density",
+     "Pressure, temperature, and period"
+    ],
+    "correct": 0,
+    "explain": "Shock waves abruptly change pressure, temperature, and density. Frequency replaces pressure, wavelength replaces temperature, and period replaces density; those are ordinary wave-cycle quantities."
+   },
+   {
+    "id": "PHY40071",
+    "type": "mcq",
+    "cat": "Chapter 4: Shock Waves",
+    "q": "Which statement about shock waves is correct?",
+    "options": [
+     "They break kidney stones",
+     "They travel slower than sound",
+     "They have low amplitude",
+     "They occur at Mach 0"
+    ],
+    "correct": 0,
+    "explain": "Shock waves are high-amplitude pressure waves faster than sound and can break kidney stones. Slower travel, low amplitude, and Mach 0 occurrence contradict shock-wave facts."
+   },
+   {
+    "id": "PHY40072",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "The triple point of water occurs at which temperature?",
+    "options": [
+     "273.16 K",
+     "273.15 K",
+     "0 K",
+     "-273.15 °C"
+    ],
+    "correct": 0,
+    "explain": "The triple point is 273.16 K, where ice, liquid water, and vapor coexist. 273.15 K is the usual freezing approximation, while 0 K and -273.15 °C describe absolute zero."
+   },
+   {
+    "id": "PHY40073",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "Water triple-point pressure on the phase diagram is which value?",
+    "options": [
+     "611.73 Pa",
+     "0.006 Pa",
+     "611.73 atm",
+     "0.006 kPa"
+    ],
+    "correct": 0,
+    "explain": "The triple-point pressure is 0.006 atm, which equals 611.73 Pa. The other choices keep the numbers but attach the wrong unit or decimal scale."
+   },
+   {
+    "id": "PHY40074",
+    "type": "mcq",
+    "cat": "Chapter 4: Heat and Thermal Properties",
+    "q": "A body temperature of 35 °C converts to which Fahrenheit value?",
+    "options": [
+     "95 °F",
+     "63 °F",
+     "127 °F",
+     "35 °F"
+    ],
+    "correct": 0,
+    "explain": "Using TF = 9/5 TC + 32 gives 63 + 32 = 95 °F. The other values omit the offset, add wrongly, or repeat the Celsius number."
+   },
+   {
     "id": "PHY50001",
     "type": "mcq",
     "cat": "Chapter 5: Reflection and Mirrors",
@@ -3201,6 +3488,118 @@
     ],
     "correct": 0,
     "explain": "When two lenses are separated by a distance r the combination formula is 1/f = 1/f₁ + 1/f₂ - r/(f₁ f₂). Substituting the given values yields 1/f = 1/20 + 1/30 - 10/(20 × 30). The line that adds the separation term has the wrong sign, the line that omits the separation term applies only when the lenses are in contact, and the line that subtracts the focal lengths does not follow the formula."
+   },
+   {
+    "id": "PHY50058",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "A smooth plane mirror returns light in an orderly way. This is called:",
+    "options": [
+     "Regular reflection",
+     "Total internal reflection",
+     "Refraction",
+     "Critical angle"
+    ],
+    "correct": 0,
+    "explain": "Orderly reflection from a smooth plane mirror is regular reflection. Total internal reflection, refraction, and critical angle describe other ray-optics effects."
+   },
+   {
+    "id": "PHY50059",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "Relative to the normal, the incident and reflected rays lie on:",
+    "options": [
+     "Opposite sides",
+     "The same side",
+     "Either side",
+     "Parallel sides"
+    ],
+    "correct": 0,
+    "explain": "The laws of reflection place the incident and reflected rays on opposite sides of the normal. Same-side, either-side, and parallel-side descriptions contradict the ray geometry."
+   },
+   {
+    "id": "PHY50060",
+    "type": "mcq",
+    "cat": "Chapter 5: Reflection and Mirrors",
+    "q": "An image that can be received on a screen is:",
+    "options": [
+     "A real image",
+     "A virtual image",
+     "An upright image",
+     "A magnified image"
+    ],
+    "correct": 0,
+    "explain": "A real image forms where rays converge and can be projected on a screen; it is inverted. Virtual images cannot be projected, while upright and magnified describe orientation or size."
+   },
+   {
+    "id": "PHY50061",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "At a boundary, the transmitted ray makes which angle with the normal?",
+    "options": [
+     "Angle of refraction",
+     "Angle of incidence",
+     "Angle of reflection",
+     "Critical angle"
+    ],
+    "correct": 0,
+    "explain": "The transmitted ray angle to the normal is the angle of refraction, and refraction is the direction change at a boundary. Incidence and reflection belong to other rays, while critical angle gives 90° refraction."
+   },
+   {
+    "id": "PHY50062",
+    "type": "mcq",
+    "cat": "Chapter 5: Refraction and Snell's Law",
+    "q": "Diamond has index 2.4. Find light speed in diamond if vacuum speed is 3 × 10⁸ m/s.",
+    "options": [
+     "1.25 × 10⁸ m/s",
+     "2.40 × 10⁸ m/s",
+     "3.00 × 10⁸ m/s",
+     "7.20 × 10⁸ m/s"
+    ],
+    "correct": 0,
+    "explain": "Index equals vacuum speed divided by medium speed, so v = 3 × 10⁸ / 2.4 = 1.25 × 10⁸ m/s. Other choices multiply, repeat, or misuse the index."
+   },
+   {
+    "id": "PHY50063",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "From denser to rarer medium, increasing incidence makes refraction angle:",
+    "options": [
+     "Increase",
+     "Decrease",
+     "Remain 90°",
+     "Become 0°"
+    ],
+    "correct": 0,
+    "explain": "As incidence increases at a denser-to-rarer boundary, the refraction angle also increases until it reaches 90° at the critical angle. Decrease, fixed 90°, and 0° contradict that progression."
+   },
+   {
+    "id": "PHY50064",
+    "type": "mcq",
+    "cat": "Chapter 5: Total Internal Reflection",
+    "q": "If incidence exceeds the critical angle at a denser-to-rarer boundary, the ray is:",
+    "options": [
+     "Reflected into the denser medium",
+     "Refracted away from the normal",
+     "Refracted along the boundary surface",
+     "Returned toward the normal line"
+    ],
+    "correct": 0,
+    "explain": "Beyond the critical angle, total internal reflection returns the ray to the denser medium. Refraction away occurs below critical, refraction along the boundary occurs at critical, and return toward normal is not the above-critical case."
+   },
+   {
+    "id": "PHY50065",
+    "type": "mcq",
+    "cat": "Chapter 5: Optical Fibers and Medical Applications",
+    "q": "Light rays are guided through optical fiber cables by which effect?",
+    "options": [
+     "Total internal reflection in fibers",
+     "Regular reflection from plane mirrors",
+     "Refraction at two medium boundaries",
+     "Refraction by thin convex lenses"
+    ],
+    "correct": 0,
+    "explain": "Optical fibers guide light by total internal reflection inside the fiber. Regular reflection needs mirror surfaces, boundary refraction transmits light, and lens refraction focuses rather than confines."
    }
   ]
  }
