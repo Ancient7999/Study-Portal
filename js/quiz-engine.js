@@ -3384,7 +3384,6 @@ function renderQuestion(){
   if(window.StudyMastery) StudyMastery.updateDNSAUI();
 }
 
-/* PORTAL rewards: every correct lock-in (each step too) counts as one answer. */
 function rewardCorrect(xpAmount){
   const xp = Math.max(1, xpAmount | 0);
   if(window.StudyProfiles && typeof StudyProfiles.bumpQuestionsAnswered==='function') StudyProfiles.bumpQuestionsAnswered(1, xp);
