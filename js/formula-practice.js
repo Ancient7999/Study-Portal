@@ -54,8 +54,14 @@ function appendSetsSection(host) {
   const mat = window.__activeMaterial; const c = mat && mat.formulas;
   if (!c) return;
   cfg = c; gen = window[c.gen] || null;
-  const h = document.createElement('div'); h.className = 'section-h'; h.textContent = 'Formulas'; host.appendChild(h);
-  const desc = document.createElement('div'); desc.className = 'card-desc-formula'; desc.textContent = 'Unlimited practice with formula hints'; host.appendChild(desc);
+  const header = document.createElement('div');
+  header.style.cssText = 'display:flex;align-items:baseline;gap:12px;margin-bottom:8px';
+  const h = document.createElement('div'); h.className = 'section-h'; h.textContent = 'Formulas';
+  const desc = document.createElement('div'); desc.className = 'card-desc-formula'; desc.textContent = 'Unlimited practice with formula hints';
+  desc.style.margin = '0';
+  header.appendChild(h);
+  header.appendChild(desc);
+  host.appendChild(header);
   const grid = document.createElement('div'); grid.className = 'grid';
 
   if (!gen) {
