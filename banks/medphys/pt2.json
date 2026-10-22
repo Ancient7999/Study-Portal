@@ -3,8 +3,8 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-fluids-flow-rheological-and-surface-tension (84), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 223,
+ "source": "Medical Physics question banks chapter-3-fluids-flow-rheological-and-surface-tension (84), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57), chapter-6-optical-instruments-and-medical-applications (56), chapter-7-atomic-and-nuclear-physics (61); merged in source order, ids unchanged",
+ "formSize": 340,
  "forms": [
   "A"
  ],
@@ -45,6 +45,35 @@
     "Chapter 5: Thin Lenses",
     "Chapter 5: Combination of Lenses",
     "Chapter 5: Refraction and Lenses"
+   ]
+  },
+  {
+   "id": "ch6",
+   "title": "Chapter 6: Optical Instruments and their Medical Applications",
+   "cats": [
+    "Chapter 6: Optical Instruments",
+    "Chapter 6: Vision Defects",
+    "Chapter 6: Lasers"
+   ]
+  },
+  {
+   "id": "ch7",
+   "title": "Chapter 7: Atomic and Nuclear Physics",
+   "cats": [
+    "Chapter 7: Electromagnetic Spectrum",
+    "Chapter 7: Photon",
+    "Chapter 7: Photoelectric Effect",
+    "Chapter 7: de Broglie Hypothesis",
+    "Chapter 7: Atomic Structure",
+    "Chapter 7: Nuclear Radius",
+    "Chapter 7: Radioactivity",
+    "Chapter 7: Half-Life",
+    "Chapter 7: Carbon Dating",
+    "Chapter 7: Fission and Fusion",
+    "Chapter 7: Dosimetry",
+    "Chapter 7: Radiation Detection",
+    "Chapter 7: Nuclear Reactions",
+    "Chapter 7: Photon and Nuclear Formulas"
    ]
   }
  ],
@@ -3993,6 +4022,2157 @@
     ],
     "correct": 0,
     "explain": "Optical fibers guide light by total internal reflection inside the fiber. Regular reflection needs mirror surfaces, boundary refraction transmits light, and lens refraction focuses rather than confines."
+   },
+   {
+    "id": "PHY60001",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "A simple magnifier is a convex lens of short focal length used to:",
+    "options": [
+     "Produce a real inverted image of a distant object",
+     "Form an enlarged virtual image of a nearby object",
+     "Correct myopia by diverging the incoming light rays",
+     "Measure the refractive index of a liquid sample"
+    ],
+    "correct": 1,
+    "explain": "A simple magnifier is a convex lens with a short focal length used to form an enlarged virtual image of a nearby object. It works by placing the object between the optical centre and the focal point, producing a virtual, erect, enlarged image. Producing a real inverted image of a distant object is what a camera or the unaided eye does. Correcting myopia by diverging incoming light rays is the job of a concave lens. Measuring the refractive index of a liquid sample is unrelated to the magnifier."
+   },
+   {
+    "id": "PHY60002",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "In a simple magnifier, where is the object placed to produce a magnified image?",
+    "options": [
+     "Between the optical centre and the focal point",
+     "Exactly at the focal point",
+     "Between the focal point and twice the focal length",
+     "Beyond twice the focal length"
+    ],
+    "correct": 0,
+    "explain": "The object is placed between the optical centre and the focal point. This produces a virtual, erect, magnified image on the same side of the lens. If the object were exactly at the focal point, the rays would emerge parallel and no image would form. If the object were between the focal point and twice the focal length, the image would be real and inverted. If the object were beyond twice the focal length, the image would be real, inverted, and diminished. None of those positions gives the virtual magnified image of a simple magnifier."
+   },
+   {
+    "id": "PHY60003",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The image formed by a simple magnifier is:",
+    "options": [
+     "Real, inverted, and diminished",
+     "Virtual, erect, and magnified",
+     "Real, erect, and magnified",
+     "Virtual, inverted, and diminished"
+    ],
+    "correct": 1,
+    "explain": "A simple magnifier produces a virtual, erect, and magnified image. The image is virtual because light does not actually pass through it; it is seen by the eye looking through the lens. It is erect (upright) and larger than the object. Real images are formed on the opposite side and can be projected; the magnifier does not form a real image when used as intended. The combinations with inverted or diminished do not match the magnifier."
+   },
+   {
+    "id": "PHY60004",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The least distance of distinct vision, denoted N, is:",
+    "options": [
+     "The farthest distance at which the eye can focus clearly",
+     "The closest distance at which the eye can focus clearly",
+     "The distance between the two lenses of a microscope",
+     "The distance from the cornea to the retina"
+    ],
+    "correct": 1,
+    "explain": "The least distance of distinct vision is the closest distance at which the eye can focus clearly, typically 25 cm for a normal adult eye. It increases with age. The farthest distance is the far point, normally infinity. The distance between microscope lenses is the tube length L. The distance from cornea to retina is the eyeball length."
+   },
+   {
+    "id": "PHY60005",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The angular magnification M of a simple magnifier is given by:",
+    "options": [
+     "M = f / 25 cm",
+     "M = 25 cm / f",
+     "M = 25 cm × f",
+     "M = 1 / (25 cm × f)"
+    ],
+    "correct": 1,
+    "explain": "The angular magnification is the ratio of the angle subtended by the image to the angle subtended by the object at the near point. For a relaxed eye, with the object at the focal point and the image at infinity, the formula is M = 25 cm / f, with 25 cm the near point, where f is the focal length of the lens in centimeters. A shorter focal length gives a larger magnification. The other options invert the ratio, multiply, or take a reciprocal product, none of which matches the definition."
+   },
+   {
+    "id": "PHY60006",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "A simple magnifier has a focal length of 5 cm. What is its angular magnification for a relaxed eye, with the image at infinity?",
+    "options": [
+     "5",
+     "10",
+     "25",
+     "50"
+    ],
+    "correct": 0,
+    "explain": "For a relaxed eye the object sits at the focal point and the image is at infinity, so M = 25 cm / f, where 25 cm is the near point N. With f = 5 cm, M = 25 / 5 = 5. The other values come from using a different focal length or misapplying the formula."
+   },
+   {
+    "id": "PHY60007",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "A compound microscope is used to:",
+    "options": [
+     "View distant objects with high angular resolution",
+     "View small objects with greater magnification",
+     "Correct focusing errors of the human eye",
+     "Measure the wavelength of a light source"
+    ],
+    "correct": 1,
+    "explain": "A compound microscope combines two convex lenses, an objective and an eyepiece, to view small objects at greater magnification. The objective forms a real, inverted, magnified image, and the eyepiece magnifies that image further. Viewing distant objects with high angular resolution is the job of a telescope. Correcting focusing errors of the human eye is done with eyeglasses. Measuring the wavelength of a light source is done with a spectrometer or interferometer."
+   },
+   {
+    "id": "PHY60008",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "In a compound microscope, the objective lens has a focal length that is:",
+    "options": [
+     "Very short, typically less than 1 cm",
+     "Long, typically several meters in length",
+     "Equal to the eyepiece focal length in value",
+     "Negative, acting as a diverging lens"
+    ],
+    "correct": 0,
+    "explain": "The objective lens of a compound microscope has a very short focal length, often less than 1 cm. This allows the object to be placed just outside the focal point, producing a large real image. The eyepiece has a longer focal length of a few centimeters. Both lenses are convex and have positive focal lengths."
+   },
+   {
+    "id": "PHY60009",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "In a compound microscope, the object is placed:",
+    "options": [
+     "At the focal point of the objective lens, producing parallel rays",
+     "Just outside the focal point of the objective lens",
+     "At the focal point of the eyepiece, producing parallel rays",
+     "At the centre of curvature of the objective lens"
+    ],
+    "correct": 1,
+    "explain": "The object is placed just outside the focal point of the objective lens. This produces a real, inverted, magnified image beyond twice the focal length, which then acts as the object for the eyepiece. If the object were exactly at the objective focal point, the rays would emerge parallel and no image would form. Placing it at the eyepiece focal point is not the standard arrangement. Placing it at the centre of curvature would produce a real, inverted, same-size image, not the magnified first image needed."
+   },
+   {
+    "id": "PHY60010",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The image formed by the objective lens of a compound microscope is:",
+    "options": [
+     "Virtual, erect, and diminished",
+     "Real, inverted, and magnified",
+     "Virtual, inverted, and magnified",
+     "Real, erect, and diminished"
+    ],
+    "correct": 1,
+    "explain": "The objective lens forms a real, inverted, and magnified image. This image is located at or near the focal point of the eyepiece. The eyepiece then acts as a simple magnifier on this image, producing a final virtual, enlarged, inverted image. The combinations with virtual or erect do not describe the objective's image."
+   },
+   {
+    "id": "PHY60011",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The final image produced by a compound microscope is:",
+    "options": [
+     "Virtual, enlarged, and inverted relative to the original object",
+     "Real, enlarged, and upright relative to the original object",
+     "Virtual, diminished, and upright relative to the original object",
+     "Real, diminished, and inverted relative to the original object"
+    ],
+    "correct": 0,
+    "explain": "The eyepiece acts as a simple magnifier on the real image formed by the objective. It produces a virtual, enlarged image. Because the objective's image is inverted, and the eyepiece does not invert it further, the final image remains inverted relative to the original object. The final image is virtual, not real, and enlarged, not diminished."
+   },
+   {
+    "id": "PHY60012",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "In a compound microscope, the separation L between the objective and eyepiece is:",
+    "options": [
+     "Much smaller than either focal length",
+     "Much greater than either focal length",
+     "Equal to the sum of the focal lengths",
+     "Equal to the difference of the focal lengths"
+    ],
+    "correct": 1,
+    "explain": "The two lenses are separated by a distance L that is much greater than either the objective focal length f_o or the eyepiece focal length f_e. This separation allows the real image formed by the objective to fall at or near the focal point of the eyepiece. The other options do not describe the typical arrangement of a compound microscope."
+   },
+   {
+    "id": "PHY60013",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The human eye resembles which optical instrument in its basic functioning?",
+    "options": [
+     "A telescope",
+     "A camera",
+     "A microscope",
+     "A magnifying glass"
+    ],
+    "correct": 1,
+    "explain": "The human eye resembles a camera. It has an adjustable lens, an iris that acts as an aperture, and a retina that acts as the film or sensor. Light enters through the cornea and is focused by the lens onto the retina. A telescope, microscope, or magnifying glass has different optical arrangements."
+   },
+   {
+    "id": "PHY60014",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The refractive index of the crystalline lens material in the human eye is approximately:",
+    "options": [
+     "1.00",
+     "1.33",
+     "1.437",
+     "2.42"
+    ],
+    "correct": 2,
+    "explain": "The refractive index of the lens material is about 1.437. This is higher than water (1.33) and air (1.00), allowing the lens to refract light. Diamond has a much higher index of 2.42. The lens works together with the cornea, which provides most of the eye's refractive power."
+   },
+   {
+    "id": "PHY60015",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The near point of the eye is defined as:",
+    "options": [
+     "The farthest distance at which the eye can focus clearly",
+     "The closest distance at which the eye can focus clearly",
+     "The distance between the lens and the retina",
+     "The point where the optic nerve enters the retina"
+    ],
+    "correct": 1,
+    "explain": "The near point is the closest distance at which the eye can focus clearly. For a normal adult eye, this is about 25 cm. It increases with age as the lens loses flexibility. The farthest distance is the far point, normally infinity. The distance between lens and retina is the eyeball length, and the optic nerve entry point is the blind spot."
+   },
+   {
+    "id": "PHY60016",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The far point of a normal human eye is approximately:",
+    "options": [
+     "Approximately 25 cm from the eye",
+     "Approximately 1 meter from the eye",
+     "Effectively at infinity for a relaxed eye",
+     "Approximately equal to the eyeball diameter"
+    ],
+    "correct": 2,
+    "explain": "The far point of a normal eye is at infinity, meaning the relaxed eye can focus on very distant objects. The near point is about 25 cm. The eyeball diameter is about 2.5 cm. The far point being at infinity indicates that the eye can bring parallel rays from a distant object to a focus on the retina without accommodation."
+   },
+   {
+    "id": "PHY60017",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Where does most of the refraction of light occur in the human eye?",
+    "options": [
+     "At the crystalline lens",
+     "At the cornea",
+     "At the retina",
+     "At the vitreous humor"
+    ],
+    "correct": 1,
+    "explain": "Most of the refraction occurs at the cornea, the transparent front surface of the eye. The crystalline lens makes small adjustments to fine-tune the focus for objects at different distances. The retina is the light-sensitive layer at the back, and the vitreous humor is the gel-like substance filling the eyeball, neither of which is the main refracting surface."
+   },
+   {
+    "id": "PHY60018",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The image formed by the eye lens on the retina is:",
+    "options": [
+     "Virtual, upright, and magnified",
+     "Real, inverted, and diminished",
+     "Virtual, inverted, and diminished",
+     "Real, upright, and magnified"
+    ],
+    "correct": 1,
+    "explain": "The eye lens forms a real, inverted, and diminished image on the retina. The image is real because light actually converges on the retina. It is inverted relative to the object. The brain interprets this inverted image to give us our upright perception. The other options include virtual or upright, which are incorrect for the retinal image."
+   },
+   {
+    "id": "PHY60019",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Nearsightedness, or myopia, is a condition in which a person:",
+    "options": [
+     "Can see distant objects clearly but has difficulty with near objects",
+     "Can see near objects clearly but has difficulty with distant objects",
+     "Cannot see objects in any direction clearly",
+     "Sees objects only in black and white"
+    ],
+    "correct": 1,
+    "explain": "Myopia, or nearsightedness, is a condition where a person can see near objects clearly but distant objects appear blurry. This occurs because the eye's optical power is too strong, or the eyeball is too long, causing light rays from distant objects to focus in front of the retina rather than on it. The opposite condition, where distant objects are clear and near objects are blurry, is hyperopia."
+   },
+   {
+    "id": "PHY60020",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Myopia is caused by:",
+    "options": [
+     "A decrease in the focal length of the eye lens, or an eyeball that is too long",
+     "An increase in the focal length of the eye lens, or an eyeball that is too short",
+     "A loss of transparency in the cornea, clouding the front of the eye",
+     "A separation of the retina from the back wall of the eye"
+    ],
+    "correct": 0,
+    "explain": "Myopia results from excessive optical power of the eye, which can be due to a decrease in the focal length of the eye lens or an eyeball that is too long. This causes images of distant objects to form in front of the retina. An increase in focal length or a short eyeball would cause hyperopia. A clouded cornea is not a refractive error (clouding of the lens is a cataract), and retinal detachment is a separate condition."
+   },
+   {
+    "id": "PHY60021",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Myopia is corrected using:",
+    "options": [
+     "A converging lens that adds positive optical power",
+     "A diverging lens that adds negative optical power",
+     "A cylindrical lens that corrects uneven curvature",
+     "A prism that shifts the direction of the light"
+    ],
+    "correct": 1,
+    "explain": "Myopia is corrected with a diverging lens, which has negative power. The diverging lens spreads the incoming light rays before they enter the eye, effectively reducing the eye's excessive optical power and allowing the image to focus on the retina. A converging lens is used for hyperopia. A cylindrical lens corrects astigmatism, and a prism is used for other purposes."
+   },
+   {
+    "id": "PHY60022",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Farsightedness, or hyperopia, is a condition in which a person:",
+    "options": [
+     "Can see near objects clearly but has difficulty with distant objects",
+     "Can see distant objects clearly but has difficulty with near objects",
+     "Cannot see objects in any direction clearly",
+     "Sees objects only in black and white"
+    ],
+    "correct": 1,
+    "explain": "Hyperopia, or farsightedness, is a condition where a person can see distant objects clearly but has difficulty focusing on near objects. This occurs because the eye's optical power is insufficient, or the eyeball is too short, causing light rays from near objects to focus behind the retina. The opposite condition, where near objects are clear and distant objects are blurry, is myopia."
+   },
+   {
+    "id": "PHY60023",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Hyperopia is caused by:",
+    "options": [
+     "A decrease in the focal length of the eye lens, or an eyeball that is too long",
+     "An increase in the focal length of the eye lens, or an eyeball that is too short",
+     "A loss of transparency in the cornea, clouding the front of the eye",
+     "A separation of the retina from the back wall of the eye"
+    ],
+    "correct": 1,
+    "explain": "Hyperopia results from insufficient optical power of the eye, which can be due to an increase in the focal length of the eye lens or an eyeball that is too short. This causes images of near objects to form behind the retina. A decrease in focal length or a long eyeball would cause myopia. A clouded cornea is not a refractive error (clouding of the lens is a cataract), and retinal detachment is a separate condition."
+   },
+   {
+    "id": "PHY60024",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Hyperopia is corrected using:",
+    "options": [
+     "A diverging lens that subtracts optical power",
+     "A converging lens that adds positive optical power",
+     "A cylindrical lens that corrects uneven curvature",
+     "A prism that shifts the direction of the light"
+    ],
+    "correct": 1,
+    "explain": "Hyperopia is corrected with a converging lens, which has positive power. The converging lens adds optical power to the eye, helping to bring the image of near objects forward onto the retina. A diverging lens is used for myopia. A cylindrical lens corrects astigmatism, and a prism is used for other purposes."
+   },
+   {
+    "id": "PHY60025",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "What does the acronym LASER stand for?",
+    "options": [
+     "Light Amplification by Stimulated Emission of Radiation",
+     "Light Absorption by Stimulated Emission of Radiation",
+     "Light Amplification by Spontaneous Emission of Radiation",
+     "Light Absorption by Spontaneous Emission of Radiation"
+    ],
+    "correct": 0,
+    "explain": "LASER stands for Light Amplification by Stimulated Emission of Radiation. The key process is stimulated emission, not spontaneous emission, and it produces amplification, not absorption. This acronym describes the physical mechanism by which laser light is generated."
+   },
+   {
+    "id": "PHY60026",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which property of laser light means it consists of a single wavelength?",
+    "options": [
+     "Coherence",
+     "Directionality",
+     "Monochromaticity",
+     "Intensity"
+    ],
+    "correct": 2,
+    "explain": "Monochromatic means one color or one wavelength. Laser light is highly monochromatic, meaning it contains essentially a single wavelength, unlike ordinary white light which is a mixture of many wavelengths. Coherence refers to the waves being in phase. Directionality means the beam does not spread. Intensity refers to brightness."
+   },
+   {
+    "id": "PHY60027",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "The coherence of laser light means that:",
+    "options": [
+     "The waves are in phase in space and time",
+     "The light contains only a single wavelength in the beam",
+     "The beam spreads out in every direction from the source",
+     "The light has very low brightness compared with a bulb"
+    ],
+    "correct": 0,
+    "explain": "Coherence means the light waves are in phase with each other in both space and time. This allows laser light to produce interference patterns and makes it useful for holography. Monochromaticity is about a single wavelength, directionality is about a narrow beam that does not spread, and intensity is about brightness. Low brightness is the opposite of laser light."
+   },
+   {
+    "id": "PHY60028",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which property of laser light allows it to travel long distances without spreading significantly?",
+    "options": [
+     "Monochromaticity",
+     "Coherence",
+     "Directionality",
+     "High intensity"
+    ],
+    "correct": 2,
+    "explain": "Directionality means the laser beam is highly collimated and does not spread or diverge as it propagates. This is why a laser pointer can project a small dot across a room. Ordinary light from a bulb spreads in all directions. Monochromaticity is about wavelength, coherence about phase, and intensity about brightness."
+   },
+   {
+    "id": "PHY60029",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which of the following are the three essential components of a laser?",
+    "options": [
+     "Active medium, energy source, and reflecting cavity",
+     "Active medium, lens system, and glass tube",
+     "Energy source, cathode, and vacuum tube",
+     "Reflecting cavity, prism, and photocell"
+    ],
+    "correct": 0,
+    "explain": "A laser consists of an active medium that amplifies light, an energy source that pumps energy into the medium, and a reflecting cavity, typically two mirrors, that allows light to bounce back and forth for amplification. A lens system, glass tube, cathode, vacuum tube, prism, or photocell may appear in other devices but are not the three defining components of a laser."
+   },
+   {
+    "id": "PHY60030",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which laser application is used to reshape the cornea to correct myopia and hyperopia?",
+    "options": [
+     "Photocoagulation",
+     "LASIK",
+     "Holography",
+     "Barcode reading"
+    ],
+    "correct": 1,
+    "explain": "LASIK, which stands for Laser-Assisted In Situ Keratomileusis, is a technique that uses a laser to reshape the cornea to correct myopia and hyperopia. Photocoagulation is used to seal blood vessels in the retina. Holography is for three-dimensional imaging. Barcode reading is an industrial application."
+   },
+   {
+    "id": "PHY60031",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Why is a laser sometimes called a bloodless knife in micro-surgery?",
+    "options": [
+     "It cuts and cauterizes tissue, reducing bleeding during surgery",
+     "It is made of a material that repels blood from the tissue",
+     "It works only on tissue that contains no blood vessels",
+     "It uses high-frequency sound waves to cut the tissue"
+    ],
+    "correct": 0,
+    "explain": "In micro-surgery, a laser beam can destroy harmful components without seriously affecting nearby regions. As it cuts, it seals small blood vessels through coagulation, which reduces bleeding. This is why it is called a bloodless knife. It is not made of a material that repels blood, it does not work only on tissue with no blood vessels, and it uses light rather than sound waves."
+   },
+   {
+    "id": "PHY60032",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Photocoagulation of the retina using a laser is used to:",
+    "options": [
+     "Reshape the corneal surface to correct refractive vision errors",
+     "Heat retinal vessels so blood coagulates and blocks them",
+     "Create three-dimensional holographic images of solid objects nearby",
+     "Scan and read product barcodes at supermarket checkout counters"
+    ],
+    "correct": 1,
+    "explain": "Photocoagulation uses laser light to heat blood vessels in the retina. The heat causes the blood to coagulate and block the vessel. This is used to treat conditions such as diabetic retinopathy. Reshaping the cornea is LASIK, creating three-dimensional images is holography, and reading barcodes is an industrial application."
+   },
+   {
+    "id": "PHY60033",
+    "type": "matching",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Match each vision condition to its correction.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Myopia"
+     },
+     {
+      "id": "2",
+      "text": "Hyperopia"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Diverging lens (concave, minus power)"
+     },
+     {
+      "id": "B",
+      "text": "Converging lens (convex, plus power)"
+     },
+     {
+      "id": "C",
+      "text": "Cylindrical lens (corrects astigmatism)"
+     },
+     {
+      "id": "D",
+      "text": "Prism (shifts light direction)"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B"
+    },
+    "explain": "Myopia (nearsightedness) is corrected with a diverging lens, which has negative power. Hyperopia (farsightedness) is corrected with a converging lens, which has positive power. A cylindrical lens corrects astigmatism, and a prism shifts the direction of light for other alignment problems."
+   },
+   {
+    "id": "PHY60034",
+    "type": "matching",
+    "cat": "Chapter 6: Lasers",
+    "q": "Match each laser property to its description.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Monochromatic"
+     },
+     {
+      "id": "2",
+      "text": "Directional"
+     },
+     {
+      "id": "3",
+      "text": "Coherent"
+     },
+     {
+      "id": "4",
+      "text": "Intense"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Consists of a single wavelength"
+     },
+     {
+      "id": "B",
+      "text": "Does not spread or diverge as it propagates"
+     },
+     {
+      "id": "C",
+      "text": "Waves are in phase in space and time"
+     },
+     {
+      "id": "D",
+      "text": "Has a large number of photons in a small area"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Monochromatic means one wavelength. Directional means the beam stays narrow. Coherent means the waves are in phase. Intense means high brightness due to concentration of photons."
+   },
+   {
+    "id": "PHY60035",
+    "type": "matching",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Match each part of a compound microscope to its function.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Objective lens"
+     },
+     {
+      "id": "2",
+      "text": "Eyepiece"
+     },
+     {
+      "id": "3",
+      "text": "Tube length L"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Forms a real, inverted, magnified image of the specimen"
+     },
+     {
+      "id": "B",
+      "text": "Acts as a simple magnifier to produce the final virtual image"
+     },
+     {
+      "id": "C",
+      "text": "The separation of the two lenses, much greater than fo or fe"
+     },
+     {
+      "id": "D",
+      "text": "Holds the specimen being viewed"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C"
+    },
+    "explain": "The objective lens forms the first real image. The eyepiece magnifies that image to produce the final virtual image. The tube length is the separation between the lenses. The stage holds the specimen."
+   },
+   {
+    "id": "PHY60036",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "How does the near point of the eye typically change with age?",
+    "options": [
+     "It decreases, so objects can be brought closer to the eye",
+     "It increases, so near objects must be held farther away",
+     "It remains fixed at 25 cm throughout life",
+     "It becomes equal to the far point of the eye"
+    ],
+    "correct": 1,
+    "explain": "The near point increases with age. At age 10 it is about 18 cm, while for a normal adult it is about 25 cm. As the lens loses flexibility, it becomes harder to focus on close objects, so they must be held farther away. This condition is called presbyopia. The near point does not decrease, remain fixed, or become equal to the far point."
+   },
+   {
+    "id": "PHY60037",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The near point of a typical eye at age 10 is approximately:",
+    "options": [
+     "About 18 cm from the eye",
+     "About 25 cm from the eye",
+     "About 40 cm from the eye",
+     "Effectively at optical infinity"
+    ],
+    "correct": 0,
+    "explain": "Typically at age 10 the near point of the eye is about 18 cm. For a normal adult it averages about 25 cm, and the near point increases further with age as the lens loses flexibility. Optical infinity is the far point of a normal relaxed eye, not the near point."
+   },
+   {
+    "id": "PHY60038",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "The clear liquid behind the cornea, before the pupil and lens, is the:",
+    "options": [
+     "Aqueous humor filling the anterior chamber",
+     "Vitreous humor filling the posterior chamber",
+     "Crystalline lens material of refractive index 1.437",
+     "Retinal pigment layer at the back of the eye"
+    ],
+    "correct": 0,
+    "explain": "Light entering the eye passes through the transparent cornea, behind which there exists a clear liquid called the aqueous humor, then a variable aperture (the pupil, an opening in the iris), and the crystalline lens. The vitreous humor is the gel-like substance filling the main body of the eyeball behind the lens. The crystalline lens is the adjustable focusing element, and the retina is the light-sensitive layer at the back."
+   },
+   {
+    "id": "PHY60039",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "One reason laser light can be more hazardous than ordinary light is that it can:",
+    "options": [
+     "Deposit a great deal of energy within a very small area",
+     "Spread its energy over a very wide area of surrounding tissue",
+     "Emit only infrared wavelengths that pass harmlessly through",
+     "Produce incoherent waves that cancel each other out"
+    ],
+    "correct": 0,
+    "explain": "These properties of laser light make it more hazardous than ordinary light. Laser light can deposit a great deal of energy within a very small area because it is highly directional and intense. Spreading energy over a wide area would reduce local intensity. Ordinary light is a mixture of wavelengths, and coherence is a property of laser light rather than a reason for reduced hazard."
+   },
+   {
+    "id": "PHY60040",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Which list gives the four common vision defects?",
+    "options": [
+     "Myopia, hyperopia, astigmatism, and presbyopia",
+     "Myopia, hyperopia, cataract formation, and glaucoma",
+     "Astigmatism, presbyopia, strabismus, and color blindness",
+     "Myopia, hyperopia, night blindness, and photophobia"
+    ],
+    "correct": 0,
+    "explain": "There are four types of vision defects depending on the eye lens and cornea: near sightedness (myopia), far sightedness (hyperopia), astigmatism, and presbyopia (old-age vision). Cataract, glaucoma, strabismus, color blindness, night blindness, and photophobia are other eye conditions not listed among these four refractive vision defects."
+   },
+   {
+    "id": "PHY60041",
+    "type": "stepped",
+    "cat": "Chapter 6: Optical Instruments",
+    "group": "near-point",
+    "groupOrder": 1,
+    "q": "The closest distance of clear focus is named. Choose the matching term at each step.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "The closest distance at which the eye can focus clearly is called the:",
+      "options": [
+       "Near point",
+       "Far point",
+       "Focal length of the cornea",
+       "Tube length of a microscope"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "That same closest distance is also denoted N and called the:",
+      "options": [
+       "Least distance of distinct vision",
+       "Greatest distance of distinct vision",
+       "Distance from cornea to retina",
+       "Separation between objective and eyepiece"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "The near point is the closest distance of clear focus (normally ~25 cm). The same quantity is called the least distance of distinct vision and is denoted N. The far point is the greatest distance (infinity for a normal eye). Cornea-to-retina distance and microscope tube length are different lengths."
+   },
+   {
+    "id": "PHY60042",
+    "type": "stepped",
+    "cat": "Chapter 6: Vision Defects",
+    "group": "vision-defects",
+    "groupOrder": 1,
+    "q": "Each refractive error is named. Choose its defining feature, then its correction.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Myopia is the condition in which a person:",
+      "options": [
+       "Can see near objects clearly but distant objects are blurry",
+       "Can see distant objects clearly but near objects are blurry",
+       "Cannot see objects clearly at any distance",
+       "Sees objects only in black and white"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Myopia is corrected with:",
+      "options": [
+       "A diverging lens that adds negative power",
+       "A converging lens that adds positive power",
+       "A cylindrical lens that corrects uneven curvature",
+       "A prism that shifts the direction of light"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Hyperopia is the defect in which a person:",
+      "options": [
+       "Can see distant objects clearly but near objects are blurry",
+       "Can see near objects clearly but distant objects are blurry",
+       "Cannot see objects clearly at any distance",
+       "Sees objects only in black and white"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "4",
+      "prompt": "Hyperopia is corrected with:",
+      "options": [
+       "A converging lens that adds positive power",
+       "A diverging lens that adds negative power",
+       "A cylindrical lens that corrects uneven curvature",
+       "A prism that shifts the direction of light"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Myopia (nearsightedness) focuses distant images in front of the retina and is corrected with a diverging (minus) lens. Hyperopia (farsightedness) focuses near images behind the retina and is corrected with a converging (plus) lens. Cylindrical lenses correct astigmatism; prisms are used for other alignment problems."
+   },
+   {
+    "id": "PHY60043",
+    "type": "stepped",
+    "cat": "Chapter 6: Lasers",
+    "group": "laser-properties",
+    "groupOrder": 1,
+    "q": "Each laser property is named. Choose the description that belongs to it.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Monochromatic means the light:",
+      "options": [
+       "Consists of essentially a single wavelength",
+       "Has waves that are in phase in space and time",
+       "Does not spread or diverge as it travels",
+       "Concentrates many photons into a small area"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "Directional means the beam:",
+      "options": [
+       "Does not spread or diverge as it propagates",
+       "Consists of essentially a single wavelength",
+       "Has waves that are in phase in space and time",
+       "Concentrates many photons into a small area"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "Coherent means the waves:",
+      "options": [
+       "Are in phase in both space and time",
+       "Consist of essentially a single wavelength",
+       "Do not spread or diverge as they travel",
+       "Concentrate many photons into a small area"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "Monochromatic means one wavelength. Directional means the beam stays narrow. Coherent means the waves stay in phase. Intensity is the concentration of energy that makes even a moderate-power laser extremely bright."
+   },
+   {
+    "id": "PHY60044",
+    "type": "stepped",
+    "cat": "Chapter 6: Lasers",
+    "group": "laser-components",
+    "groupOrder": 1,
+    "q": "Each essential part of a laser is named. Choose the correct part at each step.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "The part that amplifies light by stimulated emission is the:",
+      "options": [
+       "Active medium",
+       "Energy source",
+       "Reflecting cavity",
+       "Focusing lens"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "2",
+      "prompt": "The part that pumps energy into the medium is the:",
+      "options": [
+       "Energy source",
+       "Active medium",
+       "Reflecting cavity",
+       "Photocell"
+      ],
+      "correct": 0
+     },
+     {
+      "id": "3",
+      "prompt": "The part that lets light bounce back and forth for amplification is the:",
+      "options": [
+       "Reflecting cavity",
+       "Energy source",
+       "Glass tube",
+       "Active medium"
+      ],
+      "correct": 0
+     }
+    ],
+    "explain": "A laser has three essential parts. The active medium is the material that amplifies light by stimulated emission. The energy source pumps energy into that medium. The reflecting cavity (usually two mirrors) lets the light bounce back and forth so amplification can build. A focusing lens, a photocell or a glass tube is not one of the three defining components."
+   },
+   {
+    "id": "PHY60045",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "For a spherical mirror, how is the focal length f related to the radius of curvature r?",
+    "options": [
+     "f = 2r",
+     "f = r / 2",
+     "f = r",
+     "f = r / 4"
+    ],
+    "correct": 1,
+    "explain": "The focal length is half the radius of curvature, f = r / 2, so r = 2f. The forms f = 2r, f = r and f = r / 4 give the wrong ratio."
+   },
+   {
+    "id": "PHY60046",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "A concave mirror has a focal length of 25 cm. What is its radius of curvature?",
+    "options": [
+     "12.5 cm",
+     "25 cm",
+     "50 cm",
+     "100 cm"
+    ],
+    "correct": 2,
+    "explain": "The radius of curvature is twice the focal length: r = 2f = 2 × 25 = 50 cm. 12.5 cm halves f instead of doubling it, 25 cm is f itself, and 100 cm doubles it twice."
+   },
+   {
+    "id": "PHY60047",
+    "type": "matching",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Match each part of the human eye to its main function.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Cornea"
+     },
+     {
+      "id": "2",
+      "text": "Iris"
+     },
+     {
+      "id": "3",
+      "text": "Pupil"
+     },
+     {
+      "id": "4",
+      "text": "Lens"
+     },
+     {
+      "id": "5",
+      "text": "Retina"
+     },
+     {
+      "id": "6",
+      "text": "Optic nerve"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Provides most of the eye's refraction"
+     },
+     {
+      "id": "B",
+      "text": "Controls the amount of light entering the eye"
+     },
+     {
+      "id": "C",
+      "text": "Opening that allows light to enter the eye"
+     },
+     {
+      "id": "D",
+      "text": "Makes fine adjustments to focus light"
+     },
+     {
+      "id": "E",
+      "text": "Layer where the image is formed"
+     },
+     {
+      "id": "F",
+      "text": "Transmits visual signals to the brain"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "The cornea provides most refraction, the iris controls light entry, the pupil is the opening, the lens fine-focuses, the retina forms the image, and the optic nerve carries signals to the brain."
+   },
+   {
+    "id": "PHY60048",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Which simplified sequence correctly follows the path of light into the human eye?",
+    "options": [
+     "Cornea → pupil → lens → retina",
+     "Pupil → cornea → lens → retina",
+     "Cornea → lens → pupil → retina",
+     "Cornea → pupil → retina → lens"
+    ],
+    "correct": 0,
+    "explain": "Light is refracted first at the cornea, passes through the pupil, is fine-focused by the lens and forms an image on the retina. The other orders swap one structure out of place."
+   },
+   {
+    "id": "PHY60049",
+    "type": "stepped",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "An older adult gradually has difficulty reading small print at a normal reading distance.",
+    "steps": [
+     {
+      "id": "1",
+      "prompt": "Which vision defect is most likely?",
+      "options": [
+       "Myopia",
+       "Presbyopia",
+       "Astigmatism",
+       "Hyperopia"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "2",
+      "prompt": "What causes presbyopia?",
+      "options": [
+       "Irregular curvature of the cornea",
+       "Reduced ability of the lens to change shape",
+       "Distant light focused in front of the retina",
+       "Weakened signal transmission in the optic nerve"
+      ],
+      "correct": 1
+     },
+     {
+      "id": "3",
+      "prompt": "Which lens improves near vision in presbyopia?",
+      "options": [
+       "Concave lens",
+       "Convex lens",
+       "Cylindrical lens"
+      ],
+      "correct": 1
+     }
+    ],
+    "explain": "Poor near focusing with age is presbyopia. The eye lens can no longer change its shape enough for near vision, and a convex reading lens (+) helps. Myopia blurs distant objects, hyperopia affects young people too, and astigmatism comes from irregular corneal curvature and uses cylindrical lenses."
+   },
+   {
+    "id": "PHY60050",
+    "type": "mcq",
+    "cat": "Chapter 6: Vision Defects",
+    "q": "Which cause and correction belong to astigmatism?",
+    "options": [
+     "Irregular corneal curvature – cylindrical lenses",
+     "Light focused in front of the retina – concave lenses",
+     "Light focused behind the retina – convex lenses",
+     "Lens unable to change shape – convex lenses"
+    ],
+    "correct": 0,
+    "explain": "Astigmatism is irregular curvature of the cornea, giving blurred, distorted images and eye strain; cylindrical lenses correct it. Light focused in front of the retina is myopia, light focused behind it is hyperopia, and a lens unable to change shape is presbyopia."
+   },
+   {
+    "id": "PHY60051",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "When light meets biological tissue, which set of interactions can occur?",
+    "options": [
+     "Reflected, absorbed, transmitted, or scattered",
+     "Amplified, absorbed, transmitted, or scattered",
+     "Reflected, absorbed, magnified, or scattered",
+     "Reflected, absorbed, transmitted, or ionized"
+    ],
+    "correct": 0,
+    "explain": "Light reaching tissue can be reflected, absorbed, transmitted, or scattered, which lets it be used in diagnosis, imaging and treatment. Amplification happens inside a laser, magnification in lenses, and ionization is not one of the listed interactions."
+   },
+   {
+    "id": "PHY60052",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "In a laser's optical cavity, what does the output mirror allow?",
+    "options": [
+     "All light to stay trapped inside the cavity",
+     "The active medium to cool during operation",
+     "The pump energy to enter the cavity",
+     "Some amplified light to leave as the beam"
+    ],
+    "correct": 3,
+    "explain": "Two mirrors reflect light back and forth through the active medium, and one of them lets the amplified light out as the laser beam. The pump, not the mirror, supplies energy, and the cavity does not trap all light or cool the medium."
+   },
+   {
+    "id": "PHY60053",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which sequence best describes the production of a laser beam?",
+    "options": [
+     "Energy → excitation → amplification → laser beam",
+     "Excitation → energy → amplification → laser beam",
+     "Energy → amplification → excitation → laser beam",
+     "Energy → excitation → laser beam → amplification"
+    ],
+    "correct": 0,
+    "explain": "The pump supplies energy, which excites the atoms of the active medium; stimulated emission between the mirrors amplifies the light, and the laser beam comes out. Each other order puts one stage out of place."
+   },
+   {
+    "id": "PHY60054",
+    "type": "mcq",
+    "cat": "Chapter 6: Lasers",
+    "q": "Which of the following is NOT a medical application of lasers?",
+    "options": [
+     "Dermatology",
+     "Retinal photocoagulation",
+     "Barcode scanning",
+     "Microsurgery"
+    ],
+    "correct": 2,
+    "explain": "Barcode scanning is one of the other, non-medical laser uses, with optical devices, holography and isotope separation. Dermatology, retinal photocoagulation and microsurgery are medical applications."
+   },
+   {
+    "id": "PHY60055",
+    "type": "matching",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Match each optical instrument to its medical use.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Ophthalmoscope"
+     },
+     {
+      "id": "2",
+      "text": "Endoscope"
+     },
+     {
+      "id": "3",
+      "text": "Compound microscope"
+     },
+     {
+      "id": "4",
+      "text": "Simple magnifier"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Examine the interior of the eye"
+     },
+     {
+      "id": "B",
+      "text": "View internal organs"
+     },
+     {
+      "id": "C",
+      "text": "Examine blood cells and tissue samples"
+     },
+     {
+      "id": "D",
+      "text": "Inspect skin lesions or dental surfaces"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D"
+    },
+    "explain": "Ophthalmoscopes examine the eye, endoscopes view internal organs, compound microscopes examine blood cells, tissue and microorganisms, and simple magnifiers help with skin lesions, dental inspection and reading medical scales."
+   },
+   {
+    "id": "PHY60056",
+    "type": "mcq",
+    "cat": "Chapter 6: Optical Instruments",
+    "q": "Which of the following is NOT an optical instrument used in medicine?",
+    "options": [
+     "Endoscope",
+     "Ophthalmoscope",
+     "Stethoscope",
+     "Microscope"
+    ],
+    "correct": 2,
+    "explain": "A stethoscope is used for listening, not for optics. Endoscopes, ophthalmoscopes and microscopes are optical instruments used in medicine."
+   },
+   {
+    "id": "PHY70001",
+    "type": "mcq",
+    "cat": "Chapter 7: Electromagnetic Spectrum",
+    "q": "Which of the following correctly lists the regions of the electromagnetic spectrum in order of increasing wavelength?",
+    "options": [
+     "Gamma rays, X-rays, Ultraviolet, Visible, Infrared, Radio waves",
+     "Radio waves, Infrared, Visible, Ultraviolet, X-rays, Gamma rays",
+     "Gamma rays, X-rays, Infrared, Visible, Ultraviolet, Radio waves",
+     "Radio waves, Ultraviolet, Visible, Infrared, X-rays, Gamma rays"
+    ],
+    "correct": 0,
+    "explain": "Increasing wavelength means going from the shortest wavelengths to the longest. Gamma rays have the shortest wavelengths, followed by X-rays, ultraviolet, visible, infrared, and finally radio waves with the longest wavelengths. The line Radio waves, Infrared, Visible, Ultraviolet, X-rays, Gamma rays reverses the order, listing from longest to shortest. The line Gamma rays, X-rays, Infrared, Visible, Ultraviolet, Radio waves places infrared before visible and ultraviolet, which is incorrect. The line Radio waves, Ultraviolet, Visible, Infrared, X-rays, Gamma rays mixes the order throughout."
+   },
+   {
+    "id": "PHY70002",
+    "type": "mcq",
+    "cat": "Chapter 7: Electromagnetic Spectrum",
+    "q": "The visible portion of the electromagnetic spectrum spans which wavelength range?",
+    "options": [
+     "Approximately 300 nm to 600 nm",
+     "Approximately 400 nm to 700 nm",
+     "Approximately 500 nm to 800 nm",
+     "Approximately 200 nm to 500 nm"
+    ],
+    "correct": 1,
+    "explain": "The visible spectrum ranges from about 400 nm at the violet end to about 700 nm at the red end. Violet light has the shortest wavelength in the visible range, and red light has the longest. The other ranges either shift the entire window or place the boundaries at the wrong values."
+   },
+   {
+    "id": "PHY70003",
+    "type": "mcq",
+    "cat": "Chapter 7: Electromagnetic Spectrum",
+    "q": "Which statement correctly describes the relationship between the electric and magnetic fields in an electromagnetic wave?",
+    "options": [
+     "They are parallel to each other and to the direction of propagation",
+     "They are perpendicular to each other and to the direction of propagation",
+     "They are perpendicular to each other but parallel to the direction of propagation",
+     "They are parallel to each other but perpendicular to the direction of propagation"
+    ],
+    "correct": 1,
+    "explain": "An electromagnetic wave consists of oscillating electric and magnetic fields that are perpendicular to each other and also perpendicular to the direction in which the wave travels. This transverse configuration is a defining property of all electromagnetic waves. The options that place either field parallel to the propagation direction or parallel to each other contradict this geometry."
+   },
+   {
+    "id": "PHY70004",
+    "type": "mcq",
+    "cat": "Chapter 7: Photon",
+    "q": "A photon is best defined as:",
+    "options": [
+     "A negatively charged particle emitted by metals",
+     "A quantum of electromagnetic radiation",
+     "A neutral particle with negligible mass",
+     "A positively charged particle in the nucleus"
+    ],
+    "correct": 1,
+    "explain": "A photon is the elementary amount, or quantum, of electromagnetic radiation. Einstein proposed in 1905 that light is quantized and exists in these discrete packets. A negatively charged particle emitted by metals describes an electron in the photoelectric effect. A neutral particle with negligible mass describes a neutrino. A positively charged particle in the nucleus describes a proton."
+   },
+   {
+    "id": "PHY70005",
+    "type": "mcq",
+    "cat": "Chapter 7: Photon",
+    "q": "The energy E of a photon with frequency f is given by which expression?",
+    "options": [
+     "E = h / f",
+     "E = f / h",
+     "E = h × f",
+     "E = h + f"
+    ],
+    "correct": 2,
+    "explain": "The energy of a photon is directly proportional to its frequency, with the constant of proportionality being Planck's constant h. The relation is E = h × f, where h = 6.63 × 10⁻³⁴ J·s. A higher frequency photon carries more energy. The other options either divide by frequency, divide by Planck's constant, or add the two quantities."
+   },
+   {
+    "id": "PHY70006",
+    "type": "mcq",
+    "cat": "Chapter 7: Photon",
+    "q": "An x-ray photon has a frequency of 1.8 × 10¹⁸ s⁻¹. What is its energy? Take h = 6.63 × 10⁻³⁴ J·s.",
+    "options": [
+     "1.19 × 10⁻¹⁶ J",
+     "1.19 × 10⁻¹⁵ J",
+     "1.19 × 10⁻¹⁷ J",
+     "1.19 × 10⁻¹⁴ J"
+    ],
+    "correct": 1,
+    "explain": "Using E = h × f, substitute h = 6.63 × 10⁻³⁴ J·s and f = 1.8 × 10¹⁸ s⁻¹. Then E = 6.63 × 10⁻³⁴ × 1.8 × 10¹⁸ = 11.93 × 10⁻¹⁶ J, which is 1.193 × 10⁻¹⁵ J (11.93 × 10⁻¹⁶ J and 1.193 × 10⁻¹⁵ J are the same value). The option 1.19 × 10⁻¹⁶ J is one power of ten too small, 1.19 × 10⁻¹⁷ J is two powers too small, and 1.19 × 10⁻¹⁴ J is one power too big."
+   },
+   {
+    "id": "PHY70007",
+    "type": "mcq",
+    "cat": "Chapter 7: Photon",
+    "q": "The relationship between the frequency f, wavelength λ, and speed c of an electromagnetic wave is:",
+    "options": [
+     "f = λ / c",
+     "f = c × λ",
+     "f = c / λ",
+     "f = c + λ"
+    ],
+    "correct": 2,
+    "explain": "For an electromagnetic wave traveling at the speed of light c, the frequency equals the speed divided by the wavelength: f = c / λ. This follows from the general wave equation v = f × λ with v replaced by c. The line f = λ / c inverts the ratio, the line f = c × λ multiplies the two quantities, and the line f = c + λ adds them."
+   },
+   {
+    "id": "PHY70008",
+    "type": "mcq",
+    "cat": "Chapter 7: Photoelectric Effect",
+    "q": "The photoelectric effect occurs when:",
+    "options": [
+     "Photons eject electrons from a metal surface",
+     "Electrons emit photons while dropping a level",
+     "A heavy nucleus splits into two lighter ones",
+     "Two light nuclei combine into a heavier one"
+    ],
+    "correct": 0,
+    "explain": "The photoelectric effect is the phenomenon in which photons of sufficient frequency strike a metal surface, collide with valence electrons, and give them enough energy to be liberated from the metal. The line Electrons emit photons while dropping a level describes photon emission by atoms, which is the reverse process. The line A heavy nucleus splits into two lighter ones describes nuclear fission, and the line Two light nuclei combine into a heavier one describes nuclear fusion."
+   },
+   {
+    "id": "PHY70009",
+    "type": "mcq",
+    "cat": "Chapter 7: Photoelectric Effect",
+    "q": "The photoelectric equation relating the incident photon energy, the work function, and the maximum kinetic energy of the emitted electron is:",
+    "options": [
+     "h f = K_max - φ",
+     "h f = K_max + φ",
+     "h f = φ - K_max",
+     "h f = K_max × φ"
+    ],
+    "correct": 1,
+    "explain": "The total energy of the incident photon hf is divided between the minimum energy needed to eject the electron from the metal, called the work function φ, and the maximum kinetic energy K_max that the ejected electron can carry away. This gives the photoelectric equation hf = K_max + φ. The line hf = K_max - φ subtracts the work function, the line hf = φ - K_max reverses the subtraction, and the line hf = K_max × φ multiplies the two terms."
+   },
+   {
+    "id": "PHY70010",
+    "type": "mcq",
+    "cat": "Chapter 7: Photoelectric Effect",
+    "q": "The work function φ of a metal is:",
+    "options": [
+     "The maximum kinetic energy of the emitted electron",
+     "The minimum energy required to eject an electron",
+     "The total energy of the incident photon",
+     "The number of electrons emitted per second"
+    ],
+    "correct": 1,
+    "explain": "The work function is the minimum amount of energy required to remove an electron from the surface of a particular metal. It is a property of the metal itself. In the photoelectric equation hf = K_max + φ, the work function is the threshold energy that must be overcome. The maximum kinetic energy is K_max, the total photon energy is hf, and the number of emitted electrons per second is the photocurrent."
+   },
+   {
+    "id": "PHY70011",
+    "type": "mcq",
+    "cat": "Chapter 7: Photoelectric Effect",
+    "q": "In the photoelectric equation h f = K_max + φ, the quantity K_max represents:",
+    "options": [
+     "The minimum energy needed to eject an electron",
+     "The maximum kinetic energy of the emitted electron",
+     "The total energy carried by the incident photon",
+     "The energy lost as heat during the collision"
+    ],
+    "correct": 1,
+    "explain": "K_max is the maximum kinetic energy that an emitted electron can have after the photon gives up the work function energy to free it from the metal. Some electrons lose additional energy in collisions before escaping, so they emerge with less than K_max, but none can exceed it. The work function φ is the minimum ejection energy, and hf is the total photon energy."
+   },
+   {
+    "id": "PHY70012",
+    "type": "mcq",
+    "cat": "Chapter 7: de Broglie Hypothesis",
+    "q": "According to the de Broglie hypothesis, a moving particle:",
+    "options": [
+     "Has only particle nature, with no wave properties",
+     "Has both particle nature and wave nature",
+     "Has only wave nature, with no particle properties",
+     "Has neither particle nor wave properties"
+    ],
+    "correct": 1,
+    "explain": "De Broglie proposed that any moving object or particle has dual nature, possessing both particle and wave characteristics. The wave associated with a moving particle is called a matter wave. This hypothesis extends the wave-particle duality that was already established for light to all material particles. The line Has only particle nature, with no wave properties denies the wave aspect. The line Has only wave nature, with no particle properties denies the particle aspect. The line Has neither particle nor wave properties denies both."
+   },
+   {
+    "id": "PHY70013",
+    "type": "mcq",
+    "cat": "Chapter 7: de Broglie Hypothesis",
+    "q": "The de Broglie wavelength λ of a particle of mass m moving with velocity v is given by:",
+    "options": [
+     "λ = m v / h",
+     "λ = h / (m v)",
+     "λ = h × m × v",
+     "λ = h / (m + v)"
+    ],
+    "correct": 1,
+    "explain": "The de Broglie wavelength is inversely proportional to the momentum p = mv of the particle, with the Planck constant as the constant of proportionality. The relation is λ = h / (m v), which can also be written as λ = h / p. A heavier or faster particle has a shorter de Broglie wavelength. The line λ = m v / h inverts the ratio, the line λ = h × m × v multiplies all three quantities, and the line λ = h / (m + v) adds mass and velocity in the denominator."
+   },
+   {
+    "id": "PHY70014",
+    "type": "mcq",
+    "cat": "Chapter 7: de Broglie Hypothesis",
+    "q": "Matter waves are:",
+    "options": [
+     "Electromagnetic waves that carry energy but no rest mass",
+     "Moving-particle waves, not electromagnetic in nature",
+     "Longitudinal mechanical waves in a material medium",
+     "Standing waves that form inside the nucleus"
+    ],
+    "correct": 1,
+    "explain": "Matter waves are the waves associated with moving particles, as proposed by de Broglie. They are explicitly not electromagnetic waves. They do not require a material medium and are not the same as the electromagnetic radiation described by Maxwell. The other options incorrectly classify matter waves as electromagnetic, mechanical, or nuclear standing waves."
+   },
+   {
+    "id": "PHY70015",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "Which statement correctly describes the structure of an atom?",
+    "options": [
+     "Mostly empty space with a small dense central nucleus",
+     "A solid sphere with electrons embedded throughout its volume",
+     "A large nucleus that fills nearly all of the atomic volume",
+     "A bare nucleus with no surrounding space or electrons"
+    ],
+    "correct": 0,
+    "explain": "The atom consists mostly of empty space, with a very small and dense nucleus at the center where all of the positive charge and most of the mass are concentrated. Electrons occupy the empty space and revolve around the nucleus. The other options either fill the atom with solid material, make the nucleus too large, or deny the existence of the electron cloud."
+   },
+   {
+    "id": "PHY70016",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "Protons and neutrons are collectively called:",
+    "options": [
+     "Electrons",
+     "Nucleons",
+     "Nuclides",
+     "Isotopes"
+    ],
+    "correct": 1,
+    "explain": "Nucleons is the collective term for the protons and neutrons that make up the nucleus. A nuclide refers to a specific type of nucleus characterized by its atomic number and mass number. Isotopes are nuclei with the same atomic number but different neutron numbers. Electrons are not part of the nucleus at all."
+   },
+   {
+    "id": "PHY70017",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "The atomic number Z of a nuclide represents:",
+    "options": [
+     "The total number of nucleons in the nucleus",
+     "The number of protons in the nucleus",
+     "The number of neutrons in the nucleus",
+     "The sum of protons and neutrons in the nucleus"
+    ],
+    "correct": 1,
+    "explain": "The atomic number Z is defined as the number of protons in the nucleus. This number determines the chemical element. The total number of nucleons, which is the sum of protons and neutrons, is the mass number A. The number of neutrons is found by subtracting Z from A, giving N = A - Z."
+   },
+   {
+    "id": "PHY70018",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "The mass number A of a nuclide represents:",
+    "options": [
+     "The number of protons in the nucleus",
+     "The number of neutrons in the nucleus",
+     "The total number of nucleons in the nucleus",
+     "The number of electrons orbiting the nucleus"
+    ],
+    "correct": 2,
+    "explain": "The mass number A is the total number of nucleons, which means the sum of protons and neutrons in the nucleus. It is not the same as the atomic number Z, which counts only protons. The number of neutrons is found from N = A - Z. The number of electrons in a neutral atom equals Z, not A."
+   },
+   {
+    "id": "PHY70019",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "The neutron number N of a nuclide is calculated as:",
+    "options": [
+     "N = A + Z",
+     "N = A - Z",
+     "N = Z - A",
+     "N = A × Z"
+    ],
+    "correct": 1,
+    "explain": "The neutron number is the difference between the mass number and the atomic number: N = A - Z. Since the mass number counts all nucleons and the atomic number counts only protons, subtracting the two gives the number of neutrons. The line N = A + Z adds the two quantities, the line N = Z - A reverses the subtraction, and the line N = A × Z multiplies them."
+   },
+   {
+    "id": "PHY70020",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "Isotopes are nuclei that have:",
+    "options": [
+     "The same number of neutrons but different numbers of protons",
+     "The same number of protons but different numbers of neutrons",
+     "The same total number of nucleons but different elements",
+     "The same mass number but different atomic numbers"
+    ],
+    "correct": 1,
+    "explain": "Isotopes are nuclei with the same atomic number Z, meaning the same number of protons, but different neutron numbers N. Because they have the same number of protons, they are the same chemical element. The line The same number of neutrons but different numbers of protons describes isotones. The line The same total number of nucleons but different elements describes isobars. The line The same mass number but different atomic numbers also describes isobars."
+   },
+   {
+    "id": "PHY70021",
+    "type": "mcq",
+    "cat": "Chapter 7: Atomic Structure",
+    "q": "For light nuclides, which condition generally leads to stability?",
+    "options": [
+     "The neutron number is much larger than the proton number",
+     "The neutron number equals the proton number",
+     "The proton number is much larger than the neutron number",
+     "The neutron number is zero"
+    ],
+    "correct": 1,
+    "explain": "For light nuclides, the stable configuration is N = Z, meaning the neutron number equals the proton number. A ratio of N/Z = 1 corresponds to stability in lighter elements. Deuterium, with one proton and one neutron, is stable under this rule, while tritium, with one proton and two neutrons, has an N/Z ratio of 2 and is radioactive. The other options describe configurations that lead to instability."
+   },
+   {
+    "id": "PHY70022",
+    "type": "mcq",
+    "cat": "Chapter 7: Nuclear Radius",
+    "q": "The radius r of a nucleus with mass number A is given by which expression?",
+    "options": [
+     "r = (1.2 × 10⁻¹⁵ m) × A",
+     "r = (1.2 × 10⁻¹⁵ m) × A^(1/3)",
+     "r = (1.2 × 10⁻¹⁵ m) × A^(1/2)",
+     "r = (1.2 × 10⁻¹⁵ m) × A²"
+    ],
+    "correct": 1,
+    "explain": "Measurements from high-energy electron scattering show that the nuclear radius varies with the cube root of the mass number: r = (1.2 × 10⁻¹⁵ m) × A^(1/3). The constant 1.2 × 10⁻¹⁵ m is an empirical value. The line r = (1.2 × 10⁻¹⁵ m) × A makes the radius proportional to A directly, the line r = (1.2 × 10⁻¹⁵ m) × A^(1/2) uses a square root, and the line r = (1.2 × 10⁻¹⁵ m) × A² uses a square."
+   },
+   {
+    "id": "PHY70023",
+    "type": "mcq",
+    "cat": "Chapter 7: Nuclear Radius",
+    "q": "What is the approximate radius of a ⁶⁴Cu₂₉ nucleus? Take R₀ = 1.2 × 10⁻¹⁵ m.",
+    "options": [
+     "4.8 × 10⁻¹⁵ m",
+     "3.0 × 10⁻¹⁵ m",
+     "7.7 × 10⁻¹⁵ m",
+     "1.2 × 10⁻¹⁵ m"
+    ],
+    "correct": 0,
+    "explain": "Using r = R₀ × A^(1/3) with A = 64, the cube root of 64 is 4. Substituting gives r = 1.2 × 10⁻¹⁵ × 4 = 4.8 × 10⁻¹⁵ m. The option 3.0 × 10⁻¹⁵ m uses A = 16, 7.7 × 10⁻¹⁵ m uses A = 256, and 1.2 × 10⁻¹⁵ m uses A = 1."
+   },
+   {
+    "id": "PHY70024",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Radioactivity is best defined as:",
+    "options": [
+     "The spontaneous decay of unstable atomic nuclei",
+     "The absorption of neutrons by stable nuclei",
+     "The emission of light from excited atoms",
+     "The collision of two nuclei at high speed"
+    ],
+    "correct": 0,
+    "explain": "Radioactivity is the spontaneous process in which unstable atomic nuclei disintegrate into more stable nuclei, emitting energy and/or ionizing radiation such as alpha, beta, and gamma rays. The process is random and is not influenced by external conditions. The other options describe neutron capture, atomic emission spectra, and nuclear collisions, which are different phenomena."
+   },
+   {
+    "id": "PHY70025",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "An alpha particle consists of:",
+    "options": [
+     "Two protons and one neutron",
+     "One proton and two neutrons",
+     "Two protons and two neutrons",
+     "One proton and one neutron"
+    ],
+    "correct": 2,
+    "explain": "An alpha particle consists of two protons and two neutrons, which makes it identical to a helium-4 nucleus. It carries a positive charge of +2e and has a relatively large mass. The other options describe combinations that do not correspond to an alpha particle or to any common emitted particle."
+   },
+   {
+    "id": "PHY70026",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "When a nucleus emits an alpha particle, what happens to its atomic number Z and mass number A?",
+    "options": [
+     "Z decreases by 2, and A decreases by 4",
+     "Z increases by 2, and A increases by 4",
+     "Z decreases by 4, and A decreases by 2",
+     "Z remains the same, and A decreases by 4"
+    ],
+    "correct": 0,
+    "explain": "An alpha particle carries away two protons and two neutrons from the nucleus. Because the atomic number counts protons, Z decreases by 2. Because the mass number counts all nucleons, A decreases by 4. Charge and nucleon number are conserved overall when the alpha particle is included on the product side. The line Z increases by 2, and A increases by 4 would require the nucleus to gain nucleons rather than lose them. The line Z decreases by 4, and A decreases by 2 swaps the changes. The line Z remains the same, and A decreases by 4 does not remove the protons."
+   },
+   {
+    "id": "PHY70027",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "When a nucleus undergoes beta minus decay, what happens to its atomic number Z and mass number A?",
+    "options": [
+     "Z decreases by 1, and A remains the same",
+     "Z increases by 1, and A remains the same",
+     "Z remains the same, and A increases by 1",
+     "Z decreases by 2, and A decreases by 4"
+    ],
+    "correct": 1,
+    "explain": "In beta minus decay, a neutron converts into a proton while emitting an electron and an antineutrino. Because a proton is created, the atomic number Z increases by 1. The total number of nucleons does not change, so A remains the same. The line Z decreases by 1, and A remains the same describes beta plus decay. The line Z remains the same, and A increases by 1 does not match. The line Z decreases by 2, and A decreases by 4 describes alpha decay."
+   },
+   {
+    "id": "PHY70028",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "When a nucleus undergoes beta plus decay, what happens to its atomic number Z and mass number A?",
+    "options": [
+     "Z increases by 1, and A remains the same",
+     "Z decreases by 1, and A remains the same",
+     "Z remains the same, and A decreases by 1",
+     "Z decreases by 2, and A decreases by 4"
+    ],
+    "correct": 1,
+    "explain": "In beta plus decay, a proton converts into a neutron while emitting a positron and a neutrino. Because a proton is lost, the atomic number Z decreases by 1. The total number of nucleons does not change, so A remains the same. The line Z increases by 1, and A remains the same describes beta minus decay. The line Z decreases by 2, and A decreases by 4 describes alpha decay. The remaining line does not match beta plus."
+   },
+   {
+    "id": "PHY70029",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "In beta decay, one type of nucleon converts into the other type. What is the consequence for the nucleon number?",
+    "options": [
+     "The nucleon number increases by 1",
+     "The nucleon number decreases by 1",
+     "The nucleon number remains unchanged",
+     "The nucleon number doubles"
+    ],
+    "correct": 2,
+    "explain": "In beta decay, a neutron becomes a proton in beta minus decay, or a proton becomes a neutron in beta plus decay. In both cases, the total count of nucleons stays the same because one nucleon is simply changing type. The mass number A therefore remains unchanged. Only the atomic number Z changes, by plus one for beta minus or minus one for beta plus."
+   },
+   {
+    "id": "PHY70030",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Which statement correctly describes gamma radiation?",
+    "options": [
+     "A stream of helium nuclei with a positive charge",
+     "A stream of fast electrons with a negative charge",
+     "High-energy photons with no mass and no charge",
+     "A stream of neutral particles with a small mass"
+    ],
+    "correct": 2,
+    "explain": "Gamma rays are high-energy photons (electromagnetic radiation). They have no rest mass and no electric charge, so they are not bent by electric or magnetic fields. A stream of helium nuclei with a positive charge describes alpha particles. A stream of fast electrons with a negative charge describes beta minus particles. A stream of neutral particles with a small mass describes neutrinos or neutrons, not gamma rays."
+   },
+   {
+    "id": "PHY70031",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Which comparison of the three types of nuclear radiation is correct?",
+    "options": [
+     "Alpha particles have the highest penetration and lowest ionizing power",
+     "Beta particles have the lowest penetration and highest ionizing power",
+     "Gamma rays have the highest penetration and lowest ionizing power",
+     "Gamma rays have the lowest penetration and highest ionizing power"
+    ],
+    "correct": 2,
+    "explain": "Alpha particles are massive and carry a double positive charge, which gives them a very short range and the highest ionizing power. Beta particles are lighter and have intermediate range and ionizing power. Gamma rays are electromagnetic radiation with no charge and no rest mass, so they interact weakly and have the greatest penetrating power but the lowest ionizing power. The other options reverse these relationships."
+   },
+   {
+    "id": "PHY70032",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "In a magnetic field, how do alpha, beta, and gamma radiations behave?",
+    "options": [
+     "All three are bent in the same direction",
+     "Alpha and beta bend in opposite directions, and gamma is not bent",
+     "Alpha and gamma bend in opposite directions, and beta is not bent",
+     "Beta and gamma bend in opposite directions, and alpha is not bent"
+    ],
+    "correct": 1,
+    "explain": "Alpha particles carry a positive charge, and beta particles carry a negative charge, so they are deflected in opposite directions when passing through a magnetic field. Gamma rays are electrically neutral, so they pass through without being deflected at all. This difference in deflection is a standard way to distinguish the three types of radiation."
+   },
+   {
+    "id": "PHY70033",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "The activity R of a radioactive sample is related to the number of radioactive nuclei N by which expression?",
+    "options": [
+     "R = N / λ",
+     "R = λ / N",
+     "R = λ × N",
+     "R = λ + N"
+    ],
+    "correct": 2,
+    "explain": "The activity is the rate at which nuclei decay. Since each nucleus has a fixed probability per unit time of decaying, the total decay rate is the decay constant multiplied by the number of radioactive nuclei present: R = λ × N. This means a sample with more nuclei or a larger decay constant will have higher activity."
+   },
+   {
+    "id": "PHY70034",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "The half-life of a radioactive material is:",
+    "options": [
+     "The time required for the activity to double",
+     "The time required for half the nuclei to decay",
+     "The time required for all the nuclei to decay",
+     "The time required for a quarter of the nuclei to decay"
+    ],
+    "correct": 1,
+    "explain": "The half-life T₁/₂ is the time it takes for half of the radioactive nuclei in a sample to decay, so the amount (and the activity) falls to one half. After two half-lives one quarter is left, after three one eighth. Activity doubling never happens in decay, all the nuclei never decay in one half-life, and a quarter decaying is not the definition."
+   },
+   {
+    "id": "PHY70035",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "The relationship between the half-life T₁/₂ and the decay constant λ is:",
+    "options": [
+     "T₁/₂ = λ / 0.693",
+     "T₁/₂ = 0.693 / λ",
+     "T₁/₂ = 0.693 × λ",
+     "T₁/₂ = λ + 0.693"
+    ],
+    "correct": 1,
+    "explain": "The half-life and the decay constant are inversely related: T₁/₂ = ln 2 / λ = 0.693 / λ. A larger decay constant means the nuclei decay faster, so the half-life is shorter. The line T₁/₂ = λ / 0.693 inverts the ratio, T₁/₂ = 0.693 × λ multiplies instead of dividing, and T₁/₂ = λ + 0.693 adds the two."
+   },
+   {
+    "id": "PHY70036",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "The half-life of a radioactive material is 30 years. What is its decay constant?",
+    "options": [
+     "7.32 × 10⁻¹⁰ s⁻¹",
+     "7.32 × 10⁻⁹ s⁻¹",
+     "7.32 × 10⁻¹¹ s⁻¹",
+     "7.32 × 10⁻⁸ s⁻¹"
+    ],
+    "correct": 0,
+    "explain": "First convert the half-life to seconds: 30 years × 3.156 × 10⁷ s/year = 9.467 × 10⁸ s. Then λ = 0.693 / T₁/₂ = 0.693 / (9.467 × 10⁸) = 7.32 × 10⁻¹⁰ s⁻¹. The other options place the decimal in the wrong position relative to this value."
+   },
+   {
+    "id": "PHY70037",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "A radioactive material has a half-life of 15 days. If you start with 1 g of the material, how much is left after two half-lives?",
+    "options": [
+     "0.50 g",
+     "0.25 g",
+     "0.125 g",
+     "0.0625 g"
+    ],
+    "correct": 1,
+    "explain": "After one half-life, half of the original 1 g remains, which is 0.50 g. After a second half-life, half of that remaining amount decays, leaving 0.25 g. The line 0.50 g is the amount after one half-life, the line 0.125 g is after three, and the line 0.0625 g is after four half-lives."
+   },
+   {
+    "id": "PHY70038",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "The SI unit of activity is the becquerel, defined as:",
+    "options": [
+     "One joule per kilogram",
+     "One decay event per second",
+     "One gray multiplied by RBE",
+     "One curie divided by 3.70 × 10¹⁰"
+    ],
+    "correct": 1,
+    "explain": "The becquerel is the SI unit of activity. One becquerel equals one nuclear decay event per second. The line One joule per kilogram defines the gray, the unit of absorbed dose. The line One gray multiplied by RBE defines the sievert, the unit of dose equivalent. The line One curie divided by 3.70 × 10¹⁰ expresses the inverse of the curie-to-becquerel conversion."
+   },
+   {
+    "id": "PHY70039",
+    "type": "mcq",
+    "cat": "Chapter 7: Half-Life",
+    "q": "One curie is equal to how many becquerels?",
+    "options": [
+     "3.70 × 10⁸ Bq",
+     "3.70 × 10⁹ Bq",
+     "3.70 × 10¹⁰ Bq",
+     "3.70 × 10¹¹ Bq"
+    ],
+    "correct": 2,
+    "explain": "The curie is an older unit of activity that equals 3.70 × 10¹⁰ decay events per second. Since one becquerel is one decay per second, the conversion is 1 Ci = 3.70 × 10¹⁰ Bq. The other options place the decimal one or two positions away from this value."
+   },
+   {
+    "id": "PHY70040",
+    "type": "mcq",
+    "cat": "Chapter 7: Carbon Dating",
+    "q": "Carbon dating uses the radioactive isotope C-14, which has a half-life of approximately:",
+    "options": [
+     "5,730 years",
+     "573 years",
+     "57,300 years",
+     "57 years"
+    ],
+    "correct": 0,
+    "explain": "Carbon-14 has a half-life of 5,730 years, which makes it suitable for dating historical and archaeological materials up to about 60,000 years old. The other values are either ten times shorter, ten times longer, or one hundred times shorter than the correct half-life."
+   },
+   {
+    "id": "PHY70041",
+    "type": "mcq",
+    "cat": "Chapter 7: Carbon Dating",
+    "q": "While an organism is alive, the ratio of carbon-14 to carbon-12 in its tissues remains constant because:",
+    "options": [
+     "The tissue continually exchanges carbon with its surroundings",
+     "The half-life of carbon-14 slows down inside living tissue",
+     "The body produces carbon-14 by internal nuclear reactions",
+     "Carbon-12 decays into carbon-14 at the same rate"
+    ],
+    "correct": 0,
+    "explain": "Living organisms constantly exchange carbon with their environment through processes such as respiration and feeding. This keeps the ratio of C-14 to C-12 at the atmospheric value of about 1 to 10¹². Once the organism dies, the exchange stops, and the C-14 begins to decay without replacement. The other options describe mechanisms that do not occur."
+   },
+   {
+    "id": "PHY70042",
+    "type": "mcq",
+    "cat": "Chapter 7: Fission and Fusion",
+    "q": "Nuclear fission is best described as:",
+    "options": [
+     "Two light nuclei joining into a single heavier nucleus",
+     "A heavy nucleus splitting and releasing energy",
+     "An electron jumping between atomic energy levels",
+     "A photon ejecting an electron from a metal surface"
+    ],
+    "correct": 1,
+    "explain": "Nuclear fission occurs when a heavy nucleus, such as uranium or plutonium, absorbs a neutron and splits into two lighter nuclei. The process releases free neutrons, gamma rays, and a large amount of energy. The line Two light nuclei joining into a single heavier nucleus describes nuclear fusion. The line An electron jumping between atomic energy levels describes an atomic process. The line A photon ejecting an electron from a metal surface describes the photoelectric effect."
+   },
+   {
+    "id": "PHY70043",
+    "type": "mcq",
+    "cat": "Chapter 7: Fission and Fusion",
+    "q": "Nuclear fusion is best described as:",
+    "options": [
+     "A heavy nucleus splitting apart into lighter nuclei",
+     "Two light nuclei joining into a heavier nucleus",
+     "A neutron converting into a proton plus electron",
+     "An atom absorbing a photon and losing an electron"
+    ],
+    "correct": 1,
+    "explain": "Nuclear fusion occurs when two or more light nuclei combine to form a single heavier nucleus with a higher atomic number. This process releases energy and occurs naturally in stars and the sun. The line A heavy nucleus splitting apart into lighter nuclei describes nuclear fission. The line A neutron converting into a proton plus electron describes beta decay. The line An atom absorbing a photon and losing an electron describes the photoelectric effect."
+   },
+   {
+    "id": "PHY70044",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "Absorbed dose is defined as:",
+    "options": [
+     "The rate at which nuclear transformations occur",
+     "The energy deposited by ionizing radiation per unit mass",
+     "The product of absorbed dose and a radiation weighting factor",
+     "The number of ion pairs produced in a detector per second"
+    ],
+    "correct": 1,
+    "explain": "Absorbed dose is the energy given by ionizing radiation to a unit mass of absorbing material. It depends on the properties of the absorbing material. The SI unit is the gray, where 1 Gy equals 1 joule per kilogram. The line The rate at which nuclear transformations occur defines activity. The line The product of absorbed dose and a radiation weighting factor defines dose equivalent. The line The number of ion pairs produced in a detector per second describes a detector response rather than a dose."
+   },
+   {
+    "id": "PHY70045",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "One gray of absorbed dose is equivalent to:",
+    "options": [
+     "One joule of energy absorbed per kilogram of material",
+     "One hundred joules of energy absorbed per kilogram of material",
+     "One joule of energy absorbed per gram of material",
+     "One thousand joules of energy absorbed per kilogram of material"
+    ],
+    "correct": 0,
+    "explain": "The gray is defined as one joule of radiation energy absorbed per kilogram of absorbing material: 1 Gy = 1 J/kg. It is also equal to 100 rad, where one rad is 0.01 J/kg. The line One hundred joules of energy absorbed per kilogram of material describes 100 Gy. The line One joule of energy absorbed per gram of material describes a dose in J/g which is 1000 Gy. The line One thousand joules of energy absorbed per kilogram of material describes 1000 Gy."
+   },
+   {
+    "id": "PHY70046",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "The dose equivalent is calculated as:",
+    "options": [
+     "Absorbed dose divided by the radiation weighting factor",
+     "Absorbed dose multiplied by the radiation weighting factor",
+     "Absorbed dose added to the radiation weighting factor",
+     "Absorbed dose minus the radiation weighting factor"
+    ],
+    "correct": 1,
+    "explain": "The dose equivalent accounts for the biological effectiveness of different types of radiation. It is the product of the absorbed dose and a dimensionless radiation weighting factor, also called the quality factor or RBE. If the absorbed dose is in gray, the result is in sieverts. If the absorbed dose is in rad, the result is in rem."
+   },
+   {
+    "id": "PHY70047",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "One sievert of dose equivalent is equal to how many rem?",
+    "options": [
+     "1 rem",
+     "10 rem",
+     "100 rem",
+     "1000 rem"
+    ],
+    "correct": 2,
+    "explain": "The sievert is the SI unit of dose equivalent, and the rem is the older unit. The conversion is 1 Sv = 100 rem. This mirrors the relationship between the gray and the rad, where 1 Gy = 100 rad. Because the weighting factor is dimensionless, the conversion factor between Sv and rem is the same as that between Gy and rad."
+   },
+   {
+    "id": "PHY70048",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "For X-rays and gamma rays, the radiation weighting factor QF is:",
+    "options": [
+     "1",
+     "3",
+     "10",
+     "20"
+    ],
+    "correct": 0,
+    "explain": "The quality factor for X-rays and gamma rays is 1. This means that for these radiations, the absorbed dose in gray is numerically equal to the dose equivalent in sieverts. Beta particles also have a quality factor of approximately 1. Slow neutrons have a factor of about 3, fast neutrons up to 10, and alpha particles and heavy ions up to 20."
+   },
+   {
+    "id": "PHY70049",
+    "type": "mcq",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "A patient receives an absorbed dose of 0.02 Gy from X-rays. What is the equivalent dose in sieverts? Take QF = 1.",
+    "options": [
+     "0.002 Sv",
+     "0.02 Sv",
+     "0.2 Sv",
+     "2.0 Sv"
+    ],
+    "correct": 1,
+    "explain": "The equivalent dose is the absorbed dose multiplied by the quality factor. For X-rays, QF equals 1, so the equivalent dose is 0.02 Gy × 1 = 0.02 Sv, which is 20 mSv. The other options place the decimal in the wrong position."
+   },
+   {
+    "id": "PHY70050",
+    "type": "mcq",
+    "cat": "Chapter 7: Radiation Detection",
+    "q": "A Geiger-Muller counter operates by:",
+    "options": [
+     "Collecting ions formed when radiation ionizes gas",
+     "Measuring the temperature rise from absorbed radiation",
+     "Recording the light given off by a struck crystal",
+     "Detecting the deflection of particles by a magnet"
+    ],
+    "correct": 0,
+    "explain": "The Geiger-Muller counter is a gas ionization counter. It consists of a metallic tube filled with a gas such as helium or argon, with a wire anode at the center and the tube wall as cathode. When radiation enters through a thin window, it ionizes the gas, and the resulting electrons and positive ions move toward the electrodes, producing a current pulse that is registered as a click or a count."
+   },
+   {
+    "id": "PHY70051",
+    "type": "mcq",
+    "cat": "Chapter 7: Radiation Detection",
+    "q": "A drawback of the Geiger-Muller counter is that:",
+    "options": [
+     "It cannot detect alpha particles when they are present",
+     "It cannot identify the type or energy of the radiation",
+     "It requires liquid nitrogen to keep the gas cooled",
+     "It can only operate inside a perfect vacuum tube"
+    ],
+    "correct": 1,
+    "explain": "Although the Geiger-Muller counter is sensitive and can detect alpha, beta, and gamma radiation, it does not provide information about the energy of the radiation or its type. All interactions produce the same type of output pulse. More sophisticated detectors are needed when energy discrimination or particle identification is required."
+   },
+   {
+    "id": "PHY70052",
+    "type": "mcq",
+    "cat": "Chapter 7: Nuclear Reactions",
+    "q": "In a fission reaction, a uranium-235 nucleus absorbs a neutron and splits. Which of the following is a possible pair of daughter nuclei?",
+    "options": [
+     "Xenon-140 and Strontium-94",
+     "Helium-4 and Radon-222",
+     "Deuterium and Tritium",
+     "Carbon-14 and Nitrogen-14"
+    ],
+    "correct": 0,
+    "explain": "One common fission pathway for uranium-235 is the production of xenon-140 and strontium-94, along with two or three free neutrons and gamma rays. The line Helium-4 and Radon-222 describes an alpha decay product pair, not fission fragments. The line Deuterium and Tritium lists hydrogen isotopes involved in fusion. The line Carbon-14 and Nitrogen-14 lists carbon and nitrogen isotopes associated with beta decay and carbon dating."
+   },
+   {
+    "id": "PHY70053",
+    "type": "mcq",
+    "cat": "Chapter 7: Nuclear Reactions",
+    "q": "Which of the following is a fusion reaction?",
+    "options": [
+     "²³⁵U₉₂ + n → ¹⁴⁰Xe₅₄ + ⁹⁴Sr₃₈ + 2n",
+     "²H₁ + ²H₁ → ³H₁ + ¹H₁ + 4.0 MeV",
+     "²³⁸U₉₂ → ²³⁴Th₉₀ + ⁴He₂",
+     "¹⁴C₆ → ¹⁴N₇ + e⁻ + ν"
+    ],
+    "correct": 1,
+    "explain": "Fusion is the combination of two light nuclei into a heavier nucleus. The reaction ²H₁ + ²H₁ → ³H₁ + ¹H₁ is a fusion reaction between two deuterium nuclei. The line ²³⁵U₉₂ + n → ¹⁴⁰Xe₅₄ + ⁹⁴Sr₃₈ + 2n is a fission reaction. The line ²³⁸U₉₂ → ²³⁴Th₉₀ + ⁴He₂ is alpha decay, and the line ¹⁴C₆ → ¹⁴N₇ + e⁻ + ν is beta decay. These are all nuclear processes, but only the deuterium reaction is fusion."
+   },
+   {
+    "id": "PHY70054",
+    "type": "matching",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Match each property to the type of nuclear radiation it describes.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Two protons and two neutrons bound together"
+     },
+     {
+      "id": "2",
+      "text": "A fast-moving electron or positron"
+     },
+     {
+      "id": "3",
+      "text": "High-energy electromagnetic radiation"
+     },
+     {
+      "id": "4",
+      "text": "Carries a positive charge of plus two"
+     },
+     {
+      "id": "5",
+      "text": "Carries a negative charge of minus one"
+     },
+     {
+      "id": "6",
+      "text": "Carries no electric charge"
+     },
+     {
+      "id": "7",
+      "text": "Greatest ionizing power and shortest range"
+     },
+     {
+      "id": "8",
+      "text": "Intermediate ionizing power and intermediate range"
+     },
+     {
+      "id": "9",
+      "text": "Lowest ionizing power and greatest penetrating power"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Alpha particle"
+     },
+     {
+      "id": "B",
+      "text": "Beta particle"
+     },
+     {
+      "id": "C",
+      "text": "Gamma ray"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "A",
+     "5": "B",
+     "6": "C",
+     "7": "A",
+     "8": "B",
+     "9": "C"
+    },
+    "explain": "Alpha particles are helium-4 nuclei, carrying two protons and two neutrons and a charge of plus two. Their large mass and double charge make them strongly ionizing but easily stopped, so they have the shortest range. Beta particles are fast electrons or positrons, carrying a single negative or positive charge, with intermediate mass, intermediate ionizing power, and intermediate range. Gamma rays are high-energy photons with no mass and no charge, so they interact weakly and have the lowest ionizing power but the greatest penetrating power."
+   },
+   {
+    "id": "PHY70055",
+    "type": "matching",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Match each type of nuclear decay to its effect on the atomic number Z and the mass number A.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Alpha decay"
+     },
+     {
+      "id": "2",
+      "text": "Beta minus decay"
+     },
+     {
+      "id": "3",
+      "text": "Beta plus decay"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Z falls by two, A falls by four"
+     },
+     {
+      "id": "B",
+      "text": "Z rises by one, A unchanged"
+     },
+     {
+      "id": "C",
+      "text": "Z falls by one, A unchanged"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C"
+    },
+    "explain": "In alpha decay, the nucleus emits two protons and two neutrons, so the atomic number decreases by two and the mass number decreases by four. In beta minus decay, a neutron becomes a proton, so the atomic number increases by one while the mass number stays the same because the total count of nucleons is unchanged. In beta plus decay, a proton becomes a neutron, so the atomic number decreases by one while the mass number again stays the same."
+   },
+   {
+    "id": "PHY70056",
+    "type": "matching",
+    "cat": "Chapter 7: Dosimetry",
+    "q": "Match each unit of radiation measurement to its correct definition.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "Becquerel"
+     },
+     {
+      "id": "2",
+      "text": "Gray"
+     },
+     {
+      "id": "3",
+      "text": "Sievert"
+     },
+     {
+      "id": "4",
+      "text": "Curie"
+     },
+     {
+      "id": "5",
+      "text": "Rad"
+     },
+     {
+      "id": "6",
+      "text": "Rem"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "One decay event per second"
+     },
+     {
+      "id": "B",
+      "text": "One joule absorbed per kilogram of material"
+     },
+     {
+      "id": "C",
+      "text": "Absorbed dose multiplied by the quality factor, in SI"
+     },
+     {
+      "id": "D",
+      "text": "Three point seven times ten to the tenth decays per second"
+     },
+     {
+      "id": "E",
+      "text": "One hundredth of a joule absorbed per kilogram"
+     },
+     {
+      "id": "F",
+      "text": "The older unit equal to one hundredth of a sievert"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "The becquerel is the SI unit of activity and equals one decay event per second. The gray is the SI unit of absorbed dose and equals one joule per kilogram. The sievert is the SI unit of dose equivalent and equals the absorbed dose multiplied by the radiation weighting factor. The curie is the older unit of activity, equal to three point seven times ten to the tenth decays per second. The rad is the older unit of absorbed dose, equal to one hundredth of a joule per kilogram. The rem is the older unit of dose equivalent and equals one hundredth of a sievert."
+   },
+   {
+    "id": "PHY70057",
+    "type": "matching",
+    "cat": "Chapter 7: Photon and Nuclear Formulas",
+    "q": "Match each formula to the quantity it defines or the relationship it expresses.",
+    "leftItems": [
+     {
+      "id": "1",
+      "text": "E = h × f"
+     },
+     {
+      "id": "2",
+      "text": "f = c / λ"
+     },
+     {
+      "id": "3",
+      "text": "λ = h / (m v)"
+     },
+     {
+      "id": "4",
+      "text": "h f = K_max + φ"
+     },
+     {
+      "id": "5",
+      "text": "r = R₀ A^(1/3)"
+     },
+     {
+      "id": "6",
+      "text": "T₁/₂ = 0.693 / λ"
+     }
+    ],
+    "rightItems": [
+     {
+      "id": "A",
+      "text": "Relates the energy of a photon to its frequency"
+     },
+     {
+      "id": "B",
+      "text": "Relates the frequency of light to its wavelength and speed"
+     },
+     {
+      "id": "C",
+      "text": "Gives the de Broglie wavelength of a moving particle"
+     },
+     {
+      "id": "D",
+      "text": "Relates incident photon energy, work function, and maximum kinetic energy"
+     },
+     {
+      "id": "E",
+      "text": "Gives the radius of a nucleus from its mass number"
+     },
+     {
+      "id": "F",
+      "text": "Relates the half-life of a radionuclide to its decay constant"
+     }
+    ],
+    "correct_pairs": {
+     "1": "A",
+     "2": "B",
+     "3": "C",
+     "4": "D",
+     "5": "E",
+     "6": "F"
+    },
+    "explain": "The relation E = h × f gives the energy of a single photon from its frequency. The relation f = c / λ connects the frequency of an electromagnetic wave to its wavelength and to the speed of light. The relation λ = h / (m v) gives the de Broglie wavelength of a particle of mass m moving with velocity v. The photoelectric equation h f = K_max + φ relates the incident photon energy to the work function of the metal and the maximum kinetic energy of the emitted electron. The relation r = R₀ A^(1/3) gives the radius of a nucleus from its mass number. The relation T₁/₂ = 0.693 / λ links the half-life of a radionuclide to its decay constant."
+   },
+   {
+    "id": "PHY70058",
+    "type": "mcq",
+    "cat": "Chapter 7: de Broglie Hypothesis",
+    "q": "A proton of mass 1.67 × 10⁻²⁷ kg moves at 1.3 × 10⁶ m/s. With h = 6.63 × 10⁻³⁴ J·s, what is its de Broglie wavelength?",
+    "options": [
+     "3.05 × 10⁻¹³ m",
+     "3.05 × 10⁻⁷ m",
+     "2.17 × 10⁻²¹ m",
+     "5.16 × 10⁻¹³ m"
+    ],
+    "correct": 0,
+    "explain": "The de Broglie wavelength is λ = h / (m v). The momentum is (1.67 × 10⁻²⁷) × (1.3 × 10⁶) = 2.17 × 10⁻²¹ kg·m/s. Dividing h by that momentum gives 3.05 × 10⁻¹³ m. The line 3.05 × 10⁻⁷ m drops the 10⁶ in the speed. The line 2.17 × 10⁻²¹ m is the momentum itself, not the wavelength. The line 5.16 × 10⁻¹³ m does not come from h / (m v) with these values."
+   },
+   {
+    "id": "PHY70059",
+    "type": "mcq",
+    "cat": "Chapter 7: de Broglie Hypothesis",
+    "q": "A 20 gram steel ball moves at 20 m/s. Why is its de Broglie wavelength of no practical size?",
+    "options": [
+     "λ = h / (m v) is about 1.7 × 10⁻³³ m, far below nuclear sizes.",
+     "λ = h m v is about 1.7 × 10⁻³ m, comparable to visible light.",
+     "λ = h / (m v) is about 1.7 × 10⁻¹⁰ m, comparable to an atom.",
+     "A macroscopic object has no de Broglie wavelength, because the relation applies only to electrons."
+    ],
+    "correct": 0,
+    "explain": "With m = 0.020 kg and v = 20 m/s, m v = 0.40, so λ = h / (m v) is about 1.66 × 10⁻³³ m. That is far smaller than a nucleus, so the wave character is not seen. The line λ = h m v is about 1.7 × 10⁻³ m multiplies by momentum instead of dividing. The line λ = h / (m v) is about 1.7 × 10⁻¹⁰ m would require a much smaller momentum. The line A macroscopic object has no de Broglie wavelength denies the general relation."
+   },
+   {
+    "id": "PHY70060",
+    "type": "mcq",
+    "cat": "Chapter 7: Radioactivity",
+    "q": "Uranium-238 emits one alpha particle and then one beta minus particle. What is the daughter?",
+    "options": [
+     "Protactinium-234",
+     "Thorium-234",
+     "Uranium-234",
+     "Radium-230"
+    ],
+    "correct": 0,
+    "explain": "The alpha particle takes A from 238 to 234 and Z from 92 to 90, giving thorium-234. The following beta minus decay leaves A at 234 and raises Z from 90 to 91, giving protactinium-234. The line Thorium-234 stops after the alpha particle. The line Uranium-234 would require beta minus to restore Z to 92, which it does not. The line Radium-230 would require two alpha particles."
+   },
+   {
+    "id": "PHY70061",
+    "type": "mcq",
+    "cat": "Chapter 7: Nuclear Radius",
+    "q": "What is the ratio of the radii (R1:R2) of two nuclei whose mass numbers are 27 and 64?",
+    "options": [
+     "3:4",
+     "2:3",
+     "4:3",
+     "1:2"
+    ],
+    "correct": 0,
+    "explain": "The nuclear radius is r = R0 × A^(1/3). The ratio R1/R2 = (A1/A2)^(1/3) = (27/64)^(1/3) = 3/4, so R1:R2 = 3:4. The line 2:3 uses an incorrect cube root. The line 4:3 reverses the ratio. The line 1:2 uses a different mass ratio."
    }
   ]
  }
