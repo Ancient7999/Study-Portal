@@ -41,7 +41,7 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "3 sets by chapter · 169 questions · choice, select-all, linking, stepped & short answer · study notes",
+          "subtitle": "5 sets by chapter · 340 questions · choice, select-all, linking, stepped & short answer · study notes",
           "bank": "banks/medphys/pt2.json",
           "locked": false,
           "draft": true,
@@ -56,31 +56,43 @@
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",
             "chapters": [
-              {
-                "id": "ch3",
-                "src": "content/medphys/pt2/chapter-3.md",
-                "title": "Chapter 3 continued · Bernoulli to surface tension",
-                "meta": "Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
-              },
-              {
-                "id": "ch4",
-                "src": "content/medphys/pt2/chapter-4.md",
-                "title": "Chapter 4 · Waves, sound & temperature",
-                "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
-              },
-              {
-                "id": "ch5",
-                "src": "content/medphys/pt2/chapter-5.md",
-                "title": "Chapter 5 · Ray optics",
-                "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
-              }
-            ]
+        {
+            "id": "ch3",
+            "src": "content/medphys/pt2/chapter-3.md",
+            "title": "Chapter 3 continued · Bernoulli to surface tension",
+            "meta": "Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
+        },
+        {
+            "id": "ch4",
+            "src": "content/medphys/pt2/chapter-4.md",
+            "title": "Chapter 4 · Waves, sound & temperature",
+            "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
+        },
+        {
+            "id": "ch5",
+            "src": "content/medphys/pt2/chapter-5.md",
+            "title": "Chapter 5 · Ray optics",
+            "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
+        },
+        {
+            "id": "ch6",
+            "src": "content/medphys/oif/chapter-6.md",
+            "title": "Chapter 6 · Optical instruments",
+            "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
+        },
+        {
+            "id": "ch7",
+            "src": "content/medphys/oif/chapter-7.md",
+            "title": "Chapter 7 · Atomic & nuclear physics",
+            "meta": "Photons · photoelectric effect · de Broglie · nucleus · decay · half-life · dosimetry"
+            }
+        ]
           }
         },
         {
           "id": "medphys-oif",
           "title": "Only In Finals",
-          "subtitle": "3 sets by chapter · 175 questions · choice, linking & stepped · study notes",
+          "subtitle": "1 set · 58 questions · choice, linking & stepped · study notes",
           "bank": "banks/medphys/oif.json",
           "locked": false,
           "draft": true,
@@ -88,25 +100,13 @@
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",
             "chapters": [
-              {
-                "id": "ch6",
-                "src": "content/medphys/oif/chapter-6.md",
-                "title": "Chapter 6 · Optical instruments",
-                "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
-              },
-              {
-                "id": "ch7",
-                "src": "content/medphys/oif/chapter-7.md",
-                "title": "Chapter 7 · Atomic & nuclear physics",
-                "meta": "Photons · photoelectric effect · de Broglie · nucleus · decay · half-life · dosimetry"
-              },
-              {
-                "id": "ch8",
-                "src": "content/medphys/oif/chapter-8.md",
-                "title": "Chapter 8 · Electricity & magnetism",
-                "meta": "Charge · Coulomb · field · potential · Ohm · resistivity · nerves · MRI"
-              }
-            ]
+        {
+            "id": "ch8",
+            "src": "content/medphys/oif/chapter-8.md",
+            "title": "Chapter 8 · Electricity & magnetism",
+            "meta": "Charge · Coulomb · field · potential · Ohm · resistivity · nerves · MRI"
+        }
+        ]
           }
         },
         {
