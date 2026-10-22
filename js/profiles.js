@@ -675,7 +675,7 @@ async function afterAuthUser(user) {
         '<div class="profile-hero-av" id="profileHeroAv"><span class="pc-av-aura"></span><span class="pc-av-core" id="profileHeroInit">S</span></div>' +
         '<div class="profile-hero-text">' +
         '<h3 id="profileTitle">Commander profile</h3>' +
-        '<p class="profile-help">Callsign, rank, and sortie count. Level rises every 10 correct lock-ins.</p>' +
+        '<p class="profile-help">Callsign, rank, and sortie count.</p>' +
         '</div></div>' +
         '<form class="profile-name-form" id="profileNameForm" autocomplete="off" novalidate>' +
         '<label class="profile-label" for="profileNameInput">Callsign</label>' +
