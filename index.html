@@ -2919,10 +2919,9 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
     const lb = matBadges(m).filter(b => b.text !== 'Locked'); // ignore any hard-coded Locked badges
     const lockTip = (lb.find(b=>b.tip)||{}).tip || 'Finals version, coming soon.';
     if(lockTip) card.title = lockTip;
-    const lockedBadge = '<span class="note-badge grey" title="' + esc(lockTip) + '" data-tip="' + esc(lockTip) + '">Locked</span>';
     card.innerHTML =
     '<span class="lock-badge" title="' + esc(lockTip) + '">Locked</span>' +
-    '<h3>' + esc(m.title) + lockedBadge + lb.map(b=>'<span class="note-badge ' + b.tone + (b.cls ? ' ' + b.cls : '') + '" title="' + esc(b.tip) + '" data-tip="' + esc(b.tip) + '">' + esc(b.text) + '</span>').join('') + '</h3>' +
+    '<h3>' + esc(m.title) + lb.map(b=>'<span class="note-badge ' + b.tone + (b.cls ? ' ' + b.cls : '') + '" title="' + esc(b.tip) + '" data-tip="' + esc(b.tip) + '">' + esc(b.text) + '</span>').join('') + '</h3>' +
     '<p class="sub">' + esc(m.subtitle || 'Locked') + '</p>' +
     '<span class="go">Unavailable</span>';
         card.addEventListener('click', e=>{ e.preventDefault(); portalToast(lockTip ? 'Locked · ' + lockTip : 'This material is locked'); });
