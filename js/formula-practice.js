@@ -73,7 +73,13 @@ function appendSetsSection(host) {
     PT2_CHAPTERS.forEach(ch => {
       const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card';
       btn.dataset.card = 'formulas-' + ch.id;
-      btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badges +
+      const extraBadge = (ch.id === 'ch3')
+        ? '<span class="card-badge note-badge amber" title="Told not to be on the exam — practice only">Off-exam</span>'
+        : '';
+      const badgeHtml = badges
+        ? badges.replace('</div>', extraBadge + '</div>')
+        : (extraBadge ? '<div class="card-badges">' + extraBadge + '</div>' : '');
+      btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badgeHtml +
         '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
         '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
       btn.addEventListener('click', () => start(ch.keys));
