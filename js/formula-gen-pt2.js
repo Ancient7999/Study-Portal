@@ -13,6 +13,8 @@
   const C_LIGHT = 3e8;
 
   const FORMULA_METADATA = {
+    continuity:       { name: 'Continuity',            description: 'A₁ v₁ = A₂ v₂', variants: ['v₂', 'A₂', 'v₁'] },
+    massFlow:         { name: 'Mass & volume flow',    description: 'ṁ = ρ A v · Q = A v', variants: ['ṁ', 'Q', 'v'] },
     bernoulli:        { name: "Bernoulli's equation",  description: 'P + ½ρv² + ρgh = constant', variants: ['ΔP from speeds', 'ΔP from height', 'v₂ from ΔP'] },
     viscosity:        { name: 'Viscous force',         description: 'F = η A v / y', variants: ['F', 'η', 'v', 'y'] },
     poiseuille:       { name: "Poiseuille's law",      description: 'Q = π r⁴ ΔP / (8 η L)', variants: ['Q', 'ΔP', 'radius ratio', 'η'] },
@@ -105,7 +107,55 @@
   }
 
   /* —— Chapter 3 —— */
-  function genBernoulli() {
+  function genContinuity() {
+  const v = randInt(0, 2);
+  const A1 = pick([0.04, 0.08, 0.1, 0.12]);
+  const factor = pick([2, 4, 5, 10]);
+  const A2 = A1 / factor;
+  const v1 = pick([0.25, 0.4, 0.5, 0.8, 1.0]);
+  const v2 = v1 * (A1 / A2);
+  if (v === 0) return done('continuity', v,
+    'Blood flows through a vessel of area ' + fmtSci(A1) + ' m² at ' + fmtSci(v1) + ' m/s. The vessel narrows to ' + fmtSci(A2) + ' m². What is the speed after the narrowing?',
+    'v₂ = v₁ (A₁ / A₂)',
+    [mapLine(fmtSci(A1) + ' m²', 'A₁'), mapLine(fmtSci(v1) + ' m/s', 'v₁'), mapLine(fmtSci(A2) + ' m²', 'A₂')],
+    fmtSci(v1) + ' · (' + fmtSci(A1) + ' / ' + fmtSci(A2) + ')', v2, 'm/s', 3);
+  if (v === 1) return done('continuity', v,
+    'A fluid flows at ' + fmtSci(v1) + ' m/s in a section of area ' + fmtSci(A1) + ' m² and at ' + fmtSci(v2) + ' m/s downstream. What is the downstream cross-sectional area?',
+    'A₂ = A₁ (v₁ / v₂)',
+    [mapLine(fmtSci(v1) + ' m/s', 'v₁'), mapLine(fmtSci(A1) + ' m²', 'A₁'), mapLine(fmtSci(v2) + ' m/s', 'v₂')],
+    fmtSci(A1) + ' · (' + fmtSci(v1) + ' / ' + fmtSci(v2) + ')', A2, 'm²', 3);
+  return done('continuity', v,
+    'A vessel narrows from ' + fmtSci(A1) + ' m² to ' + fmtSci(A2) + ' m². If the downstream speed is ' + fmtSci(v2) + ' m/s, what was the velocity before the narrowing?',
+    'v₁ = v₂ (A₂ / A₁)',
+    [mapLine(fmtSci(A1) + ' m²', 'A₁'), mapLine(fmtSci(A2) + ' m²', 'A₂'), mapLine(fmtSci(v2) + ' m/s', 'v₂')],
+    fmtSci(v2) + ' · (' + fmtSci(A2) + ' / ' + fmtSci(A1) + ')', v1, 'm/s', 3);
+}
+
+function genMassFlow() {
+  const v = randInt(0, 2);
+  const rho = pick([1000, 1050, 1060]);
+  const A = pick([0.01, 0.02, 0.04, 0.05]);
+  const sp = pick([0.2, 0.4, 0.5, 0.8]);
+  const Q = A * sp;
+  const mdot = rho * Q;
+  if (v === 0) return done('massFlow', v,
+    'Blood of density ' + rho + ' kg/m³ flows at ' + fmtSci(sp) + ' m/s through a vessel of area ' + fmtSci(A) + ' m². What is the mass flow rate?',
+    'ṁ = ρ A v',
+    [mapLine(rho + ' kg/m³', 'ρ'), mapLine(fmtSci(sp) + ' m/s', 'v'), mapLine(fmtSci(A) + ' m²', 'A')],
+    rho + ' · ' + fmtSci(A) + ' · ' + fmtSci(sp), mdot, 'kg/s', 3);
+  if (v === 1) return done('massFlow', v,
+    'A fluid flows at ' + fmtSci(sp) + ' m/s through an area of ' + fmtSci(A) + ' m². What is the volume flow rate?',
+    'Q = A v',
+    [mapLine(fmtSci(sp) + ' m/s', 'v'), mapLine(fmtSci(A) + ' m²', 'A')],
+    fmtSci(A) + ' · ' + fmtSci(sp), Q, 'm³/s', 3);
+  return done('massFlow', v,
+    'The volume flow rate through a vessel is ' + fmtSci(Q) + ' m³/s and the cross-sectional area is ' + fmtSci(A) + ' m². What is the flow speed?',
+    'v = Q / A',
+    [mapLine(fmtSci(Q) + ' m³/s', 'Q'), mapLine(fmtSci(A) + ' m²', 'A')],
+    fmtSci(Q) + ' / ' + fmtSci(A), sp, 'm/s', 3);
+}
+
+function genBernoulli() {
     const v = randInt(0, 2), rho = pick([1000, 1050, 1060]);
     if (v === 0) {
       const v1 = pick([0.5, 1, 1.5, 2, 3]), v2 = v1 * pick([2, 3, 4]);
@@ -328,7 +378,7 @@
   }
 
   const QUESTION_GENERATORS = {
-    bernoulli: genBernoulli, viscosity: genViscosity, poiseuille: genPoiseuille, laplaceCylinder: genLaplaceCylinder,
+    continuity: genContinuity, massFlow: genMassFlow, bernoulli: genBernoulli, viscosity: genViscosity, poiseuille: genPoiseuille, laplaceCylinder: genLaplaceCylinder,
     wallStress: genWallStress, reynolds: genReynolds, surfaceTension: genSurfaceTension, alveolus: genAlveolus,
     waveSpeed: genWaveSpeed, periodFreq: genPeriodFreq, soundSpeed: genSoundSpeed, dopplerSource: genDopplerSource,
     mach: genMach, tempConvert: genTempConvert, refractiveIndex: genRefractiveIndex, snell: genSnell,
