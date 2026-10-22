@@ -110,17 +110,27 @@
     return profile;
   }
 
-  async function afterAuthUser(user) {
-    state.user = user;
-    await ensureProfile(user.uid);
-    if (global.StudyProgress && typeof StudyProgress.onAuthReady === 'function') {
-      await StudyProgress.onAuthReady(user);
-    }
-    state.ready = true;
-    state.error = null;
-    renderChip();
-    fillModal();
+  function updatePortalFoot() {
+  const foot = document.getElementById('portalFoot');
+  if (!foot) return;
+  const guest = isAnonymousUser(state.user);
+  foot.textContent = guest
+    ? 'Study Portal · progress saved on this device'
+    : 'Study Portal';
+}
+
+async function afterAuthUser(user) {
+  state.user = user;
+  await ensureProfile(user.uid);
+  if (global.StudyProgress && typeof StudyProgress.onAuthReady === 'function') {
+    await StudyProgress.onAuthReady(user);
   }
+  state.ready = true;
+  state.error = null;
+  renderChip();
+  fillModal();
+  updatePortalFoot();
+}
 
   async function start() {
     try {
