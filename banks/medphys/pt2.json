@@ -3,16 +3,17 @@
  "subject": "Medical Physics",
  "subjectId": "medphys",
  "title": "Periodic Test 2",
- "source": "Medical Physics question banks chapter-3-bernoulli-to-surface-tension (56), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
- "formSize": 195,
+ "source": "Medical Physics question banks chapter-3-fluids-flow-rheological-and-surface-tension (84), chapter-4-waves-and-thermal-properties (56), chapter-5-ray-optics (57); merged in source order, ids unchanged",
+ "formSize": 223,
  "forms": [
   "A"
  ],
  "cards": [
   {
    "id": "ch3",
-   "title": "Chapter 3: Bernoulli's Equation to Surface Tension",
+   "title": "Chapter 3: Fluids Flow Rheological and Surface Tension",
    "cats": [
+    "Chapter 3: Mass Flow Rate and Equation of Continuity",
     "Chapter 3: Bernoulli's Equation",
     "Chapter 3: Viscosity",
     "Chapter 3: Poiseuille's Law",
@@ -49,6 +50,398 @@
  ],
  "bank": {
   "A": [
+   {
+    "id": "PHY00099",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "What are the two types of fluid flow?",
+    "options": [
+     "Rotational and irrotational",
+     "Steady and unsteady",
+     "Compressible and incompressible",
+     "Streamline and turbulent"
+    ],
+    "correct": 3,
+    "explain": "The two types of fluid flow taught here are streamline (also called laminar) and turbulent. Laminar flow is smooth and orderly in parallel layers; turbulent flow is disordered and swirling. Rotational/irrotational, steady/unsteady, and compressible/incompressible are other fluid classifications, not the pair asked for."
+   },
+   {
+    "id": "PHY00100",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which statement best describes laminar blood flow?",
+    "options": [
+     "Flow that always produces an audible murmur",
+     "Irregular swirling, with layers mixing freely",
+     "Smooth, orderly flow in parallel layers",
+     "Flow that occurs in veins and nowhere else"
+    ],
+    "correct": 2,
+    "explain": "Laminar flow is smooth and orderly, with blood moving in parallel layers. Swirls and murmurs belong to turbulence, and laminar flow is not limited to veins."
+   },
+   {
+    "id": "PHY00101",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which statement best describes turbulent blood flow?",
+    "options": [
+     "Smooth, orderly flow in parallel layers",
+     "Irregular swirling once speed is very high",
+     "Flow that is confined to the aorta",
+     "Flow with no energy loss or added resistance"
+    ],
+    "correct": 1,
+    "explain": "Turbulent flow is irregular swirling, and it appears when speed becomes very high. Parallel layers are laminar, the aorta is not the only site, and turbulence dissipates energy and raises resistance."
+   },
+   {
+    "id": "PHY00102",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Normal blood flow in a healthy artery is:",
+    "options": [
+     "Laminar",
+     "A mix of laminar and turbulent",
+     "Always stationary",
+     "Turbulent"
+    ],
+    "correct": 0,
+    "explain": "Normal blood flow in a healthy artery is laminar: smooth and orderly. Turbulence appears when the vessel is narrowed or when velocity becomes very high. A healthy artery with normal flow maintains laminar conditions."
+   },
+   {
+    "id": "PHY00103",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Blood flow through a narrowed artery is expected to be:",
+    "options": [
+     "Always laminar",
+     "More likely turbulent",
+     "Always stationary",
+     "Identical to flow in a wide artery"
+    ],
+    "correct": 1,
+    "explain": "A narrowed artery raises speed by continuity and can push the flow into turbulence. It is not forced to stay laminar or stationary, and the narrower geometry does change the flow."
+   },
+   {
+    "id": "PHY00104",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Mass flow rate is defined as: (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
+    "options": [
+     "Mass of fluid passing a point per unit time",
+     "Volume of fluid passing a point per unit time",
+     "Force of fluid on a wall per unit time",
+     "Pressure of fluid at a point per unit time"
+    ],
+    "correct": 0,
+    "explain": "Mass flow rate is the mass of fluid that passes a fixed point in unit time. Volume flow rate is the volume version of the same idea. Force and pressure are not flow rates."
+   },
+   {
+    "id": "PHY00105",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which of the following is the correct final formula for mass flow rate? (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
+    "options": [
+     "ṁ = ρ A v",
+     "ṁ = ρ / (A v)",
+     "ṁ = A v / ρ",
+     "ṁ = ρ A / v"
+    ],
+    "correct": 0,
+    "explain": "Mass flow rate equals density times area times speed. The other three expressions invert or rearrange the product and do not give mass per time."
+   },
+   {
+    "id": "PHY00106",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Volume flow rate is calculated as:",
+    "options": [
+     "A × v",
+     "ρ × A × v",
+     "A / v",
+     "ρ / (A v)"
+    ],
+    "correct": 0,
+    "explain": "Volume flow rate is the product of cross-sectional area and speed. Density times that product is mass flow rate. The inverted forms do not give volume per time."
+   },
+   {
+    "id": "PHY00107",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "The equation of continuity in its general form is:",
+    "options": [
+     "ρ₁ A₁ v₁ = ρ₂ A₂ v₂",
+     "ρ₁ A₁ / v₁ = ρ₂ A₂ / v₂",
+     "A₁ v₁ = A₂ v₂",
+     "ρ₁ v₁ = ρ₂ v₂"
+    ],
+    "correct": 0,
+    "explain": "The general continuity equation equates mass flow rate at two points: density times area times speed is constant. The pure area-speed form holds only when density is the same at both points."
+   },
+   {
+    "id": "PHY00108",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "For an incompressible fluid, the equation of continuity simplifies to:",
+    "options": [
+     "A₁ v₁ = A₂ v₂",
+     "ρ₁ A₁ v₁ = ρ₂ A₂ v₂",
+     "A₁ / v₁ = A₂ / v₂",
+     "v₁ / A₁ = v₂ / A₂"
+    ],
+    "correct": 0,
+    "explain": "When density is constant, it cancels and continuity reduces to area times speed. The general form still contains density, and the inverted ratios do not conserve volume flow."
+   },
+   {
+    "id": "PHY00109",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "A blood vessel narrows from A₁ = 2.0×10⁻⁴ m² (v₁ = 0.40 m/s) to A₂ = 1.0×10⁻⁴ m². What is the new speed if the blood is incompressible?",
+    "options": [
+     "0.20 m/s",
+     "0.40 m/s",
+     "0.80 m/s",
+     "1.60 m/s"
+    ],
+    "correct": 2,
+    "explain": "Area times speed is constant, so 2.0×10⁻⁴ × 0.40 = 1.0×10⁻⁴ × v₂. That gives v₂ = 0.80 m/s. Halving the area doubles the speed."
+   },
+   {
+    "id": "PHY00117",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "In laminar flow, where is the velocity of the blood highest?",
+    "options": [
+     "At the vessel wall",
+     "In the centre of the vessel",
+     "Equally high everywhere",
+     "Only in the veins"
+    ],
+    "correct": 1,
+    "explain": "In laminar flow the speed is highest in the centre and falls to zero at the wall. It is not uniform, and the pattern is not limited to veins."
+   },
+   {
+    "id": "PHY00118",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "What is the velocity profile of laminar blood flow described as?",
+    "options": [
+     "Flat across the vessel",
+     "Parabolic, highest in the centre",
+     "Random and swirling",
+     "Highest at the wall"
+    ],
+    "correct": 1,
+    "explain": "Laminar flow has a parabolic profile: fastest in the centre, zero at the wall. A flat profile, random swirls, or a wall maximum describe other regimes."
+   },
+   {
+    "id": "PHY00119",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "In turbulent blood flow, how do the layers move?",
+    "options": [
+     "In smooth parallel layers",
+     "Irregularly, with mixing and eddies",
+     "Only along the vessel wall",
+     "With zero relative speed"
+    ],
+    "correct": 1,
+    "explain": "Turbulent layers mix and form eddies. Smooth parallel layers are laminar, wall-only motion and zero relative speed are not turbulence."
+   },
+   {
+    "id": "PHY00120",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which of the following is not a cause of turbulent blood flow?",
+    "options": [
+     "High speed",
+     "Narrowing of the vessel",
+     "Irregular vessel wall or valve",
+     "Very low speed in a wide uniform vessel"
+    ],
+    "correct": 3,
+    "explain": "High speed, narrowing, and irregular walls favour turbulence. Very low speed in a wide uniform vessel keeps the flow laminar."
+   },
+   {
+    "id": "PHY00121",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which of the following is a consequence of turbulent blood flow?",
+    "options": [
+     "Silent flow with no energy loss",
+     "Audible murmurs and extra energy loss",
+     "Lower resistance than laminar flow",
+     "A perfectly flat velocity profile"
+    ],
+    "correct": 1,
+    "explain": "Turbulence produces murmurs and dissipates extra energy. It raises resistance rather than lowering it, and the profile is not flat or silent."
+   },
+   {
+    "id": "PHY00130",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "What is the difference between mass flow rate and volume flow rate?",
+    "options": [
+     "Mass flow rate includes density; volume flow rate does not",
+     "Volume flow rate includes density; mass flow rate does not",
+     "They are identical quantities",
+     "Mass flow rate is measured in m³/s"
+    ],
+    "correct": 0,
+    "explain": "Mass flow rate is ρAv; volume flow rate is Av. Density appears only in the mass version. They are not the same, and mass flow is in kg/s."
+   },
+   {
+    "id": "PHY00192",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Blood flows through a vessel of cross-sectional area 3.0×10⁻⁴ m² at 0.30 m/s. The vessel narrows to 1.0×10⁻⁴ m². What is the new speed, if the fluid is incompressible?",
+    "options": [
+     "2.7 m/s",
+     "0.10 m/s",
+     "0.30 m/s",
+     "0.90 m/s"
+    ],
+    "correct": 3,
+    "explain": "Continuity for an incompressible fluid gives A1 v1 = A2 v2, so v2 = 3.0×10⁻⁴ × 0.30 / 1.0×10⁻⁴ = 0.90 m/s. 0.10 m/s inverts the area ratio, 0.30 m/s assumes speed is unchanged, and 2.7 m/s uses a ratio of 9."
+   },
+   {
+    "id": "PHY00193",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which pair of conditions can raise blood speed or otherwise favour turbulent flow?",
+    "options": [
+     "A narrowed vessel, and a damaged or irregular valve",
+     "No blood movement, and a perfectly uniform vessel",
+     "A narrowed vessel, and a perfectly uniform vessel of unchanged area",
+     "A damaged valve, and a complete absence of blood movement"
+    ],
+    "correct": 0,
+    "explain": "A narrowed vessel raises speed by continuity, and a damaged or irregular valve disturbs the layers. Both favour turbulence. Absence of movement cannot raise speed, and a uniform vessel of unchanged area does not add the geometric trigger."
+   },
+   {
+    "id": "PHY00197",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which feature most clearly marks turbulent flow rather than laminar flow?",
+    "options": [
+     "It appears when the speed is very low",
+     "It contains irregular swirls and eddies",
+     "It dissipates no energy as the fluid moves",
+     "It keeps every layer moving in a straight path"
+    ],
+    "correct": 1,
+    "explain": "Turbulent flow is irregular, with swirls and eddies and mixing between layers. Low speed, no energy loss, and straight layers belong to laminar flow, not turbulence."
+   },
+   {
+    "id": "PHY00198",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Under ordinary resting conditions in a healthy person, blood flow is usually:",
+    "options": [
+     "Vapor flow, with no liquid motion",
+     "No flow at all in the arteries",
+     "Laminar flow in parallel layers",
+     "Turbulent flow in every vessel"
+    ],
+    "correct": 2,
+    "explain": "At rest in a healthy artery, blood moves in smooth parallel layers, which is laminar flow. It is not vapor, not stationary, and not turbulent in every vessel."
+   },
+   {
+    "id": "PHY00199",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "In steady flow, with no fluid added or removed, what stays the same between two points?",
+    "options": [
+     "The fluid temperature at both points",
+     "The vessel diameter at both points",
+     "The fluid speed at both points",
+     "The flow rate at both points"
+    ],
+    "correct": 3,
+    "explain": "If nothing is added or removed, the flow rate into one section equals the flow rate out of the next. Temperature, diameter, and speed can all change along the path."
+   },
+   {
+    "id": "PHY00200",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "The cross-section of an incompressible vessel falls by a factor of 5. By what factor does the speed rise, in steady flow?",
+    "options": [
+     "By a factor of 2",
+     "By a factor of 5",
+     "By a factor of 10",
+     "By a factor of 25"
+    ],
+    "correct": 1,
+    "explain": "For an incompressible fluid, area times speed is constant, so speed rises by the same factor that area falls. A drop by 5 raises speed by 5, not by 2, 10, or 25."
+   },
+   {
+    "id": "PHY00202",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Which body fluids are liquids, and which are gases, in the circulation and the airway?",
+    "options": [
+     "Blood, lymph, and plasma as liquids; oxygen, carbon dioxide, and air as gases",
+     "Blood, lymph, and plasma as gases; oxygen, carbon dioxide, and air as liquids",
+     "Blood and airway air as liquids; lymph, plasma, and oxygen as gases",
+     "Plasma and carbon dioxide as liquids; blood, lymph, and oxygen as gases"
+    ],
+    "correct": 0,
+    "explain": "Blood, lymph, and plasma are liquids. Oxygen, carbon dioxide, and air in the airway are gases. Swapping the two groups, or splitting one group across both states, breaks that pairing."
+   },
+   {
+    "id": "PHY00203",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Blood is treated as which kind of fluid in the continuity relation used for vessels?",
+    "options": [
+     "A gas whose density falls as it speeds up",
+     "A solid that keeps a fixed vessel shape",
+     "An incompressible liquid of steady density",
+     "A fluid whose density doubles in a narrow segment"
+    ],
+    "correct": 2,
+    "explain": "Blood is treated as incompressible, so density stays the same and continuity reduces to area times speed. A gas that thins, a solid, or a density that doubles would not give that reduction."
+   },
+   {
+    "id": "PHY00204",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "In carotid stenosis, why does blood speed rise in the narrowed segment?",
+    "options": [
+     "Hooke's relation stretches the wall, and speed follows the stretch",
+     "The continuity relation keeps area times speed constant",
+     "Pascal's relation sends the same pressure to every point",
+     "Archimedes' relation equals the upward force to displaced weight"
+    ],
+    "correct": 1,
+    "explain": "Speed rises because the narrower area must carry the same flow, so area times speed stays constant. Hooke, Pascal and Archimedes do not set that speed."
+   },
+   {
+    "id": "PHY00211",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Blood flows at 0.20 m/s through a vessel of area 0.030 m². The vessel narrows to 0.010 m². What is the new speed, if the blood is incompressible?",
+    "options": [
+     "0.30 m/s",
+     "0.60 m/s",
+     "1.2 m/s",
+     "2.4 m/s"
+    ],
+    "correct": 1,
+    "explain": "Area times speed is constant, so 0.030 × 0.20 = 0.010 × v₂. That gives v₂ = 0.60 m/s."
+   },
+   {
+    "id": "PHY00237",
+    "type": "mcq",
+    "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
+    "q": "Mass flow rate is written Q = m/Δt, with m the mass. Which unit does that expression give? (Note: mass flow rate ṁ may also be written as Q: Q = ρAv.)",
+    "options": [
+     "kg/s",
+     "m³/s",
+     "kg·m/s",
+     "N·s"
+    ],
+    "correct": 0,
+    "explain": "Mass divided by time is the kilogram per second. Cubic metre per second is volume flow rate. Kilogram metre per second is momentum, and the newton-second is impulse (not mass flow rate)."
+   },
    {
     "id": "PHY30001",
     "type": "mcq",
