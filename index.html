@@ -2891,8 +2891,14 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
         const k = remakeNo(m) ? partnerCol(m) : row1.indexOf(m);
         if(remakeNo(m)){
           const col = k>=0 ? k : (spare++ % Math.max(1,row1.length));
-          el.style.setProperty('--pc', String(col+1)); el.style.setProperty('--pr', '2'); el.style.setProperty('--po', String(k>=0 ? k*2+1 : 999));
-        } else { el.style.setProperty('--pc', String(k+1)); el.style.setProperty('--pr', '1'); el.style.setProperty('--po', String(k*2)); }
+          el.style.setProperty('--pc', String(col+1)); el.style.setProperty('--pr', '2');
+          // mobile stack: remakes after the main PT cards, before Only In Finals
+          el.style.setProperty('--po', String(k>=0 ? 3 + k : 999));
+        } else {
+          el.style.setProperty('--pc', String(k+1)); el.style.setProperty('--pr', '1');
+          // mobile stack: PT1=1, PT2=2, Only In Finals=5 (after both remakes)
+          el.style.setProperty('--po', String(k < 2 ? k + 1 : 5));
+        }
       }
       cardsEl.appendChild(el);
     };
