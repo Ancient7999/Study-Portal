@@ -114,16 +114,22 @@
     return out;
   }
   function stripWires(run) {
-    if (!run || typeof run !== 'object') return run;
-    var c = JSON.parse(JSON.stringify(run));
-    if (c.ans && typeof c.ans === 'object') {
-      Object.keys(c.ans).forEach(function (k) {
-        var v = c.ans[k];
-        if (v && typeof v === 'object' && v.wires) delete v.wires;
-      });
-    }
-    return c;
+  if (!run || typeof run !== 'object') return run;
+  var c = JSON.parse(JSON.stringify(run));
+  if (c.ans && typeof c.ans === 'object') {
+    Object.keys(c.ans).forEach(function (k) {
+      var v = c.ans[k];
+      if (v && typeof v === 'object' && v.wires) delete v.wires;
+    });
   }
+  // Flatten any nested arrays that may appear in deck or ans
+  if (Array.isArray(c.deck)) {
+    c.deck = c.deck.map(function (item) {
+      return (item && typeof item === 'object' && !Array.isArray(item)) ? item : { value: item };
+    });
+  }
+  return c;
+}
   /** forms-map entries for Firestore (rules only allow the existing top-level keys). */
   function collectForCloud() {
     var out = {};
