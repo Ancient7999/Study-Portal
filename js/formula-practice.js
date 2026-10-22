@@ -55,6 +55,7 @@ function appendSetsSection(host) {
   if (!c) return;
   cfg = c; gen = window[c.gen] || null;
   const h = document.createElement('div'); h.className = 'section-h'; h.textContent = 'Formulas'; host.appendChild(h);
+  const desc = document.createElement('div'); desc.className = 'card-desc-formula'; desc.textContent = 'Unlimited practice with formula hints'; host.appendChild(desc);
   const grid = document.createElement('div'); grid.className = 'grid';
 
   if (!gen) {
@@ -68,7 +69,6 @@ function appendSetsSection(host) {
       btn.dataset.card = 'formulas-' + ch.id;
       btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badges +
         '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
-        '<div class="card-desc-formula">Unlimited practice with formula hints</div>' +
         '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
       btn.addEventListener('click', () => start(ch.keys));
       grid.appendChild(btn);
