@@ -253,12 +253,37 @@
           ]
         },
         {
-          "id": "english-pt2",
-          "title": "Periodic Test 2",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true
-        },
+        "id": "english-pt2",
+        "title": "Periodic Test 2",
+        "subtitle": "4 unit sets · 364 questions · choice & matching",
+        "locked": false,
+        "lectures": [
+    {
+      "id": "unit3-efm",
+      "title": "Unit 3: Basic Principles + Digestive, Respiratory & Circulatory Systems",
+      "bank": "banks/english/pt2/unit3-efm.json",
+      "status": "ready"
+    },
+    {
+      "id": "unit3-imperatives",
+      "title": "Unit 3: Imperatives and Let’s",
+      "bank": "banks/english/pt2/unit3-imperatives.json",
+      "status": "ready"
+    },
+    {
+      "id": "unit4-past-simple",
+      "title": "Unit 4: Past Simple and Time Clauses",
+      "bank": "banks/english/pt2/unit4-past-simple.json",
+      "status": "ready"
+    },
+    {
+      "id": "unit5-used-to",
+      "title": "Unit 5: Used to",
+      "bank": "banks/english/pt2/unit5-used-to.json",
+      "status": "ready"
+    }
+  ]
+},
         {
         "id": "english-pt1-remake",
         "title": "PT1 Remake",
