@@ -1,21 +1,20 @@
-/* Study Portal — Profiles (Anonymous Auth + claim/register + Firestore) — ATC-inspired HUD */
+/* Study Portal — Profiles (Anonymous Auth + claim/register + Firestore)*/
 (function (global) {
   const LEVEL_EVERY = 10;
-
-  function levelFromAnswered(n) {
+  function levelFromXp(n) {
     return 1 + Math.floor(Math.max(0, n | 0) / LEVEL_EVERY);
   }
   function asInt(n) {
     return Math.floor(Number(n) || 0);
   }
-  function expProgress(questionsAnswered) {
-    const q = asInt(questionsAnswered);
+  function expProgress(xp) {
+    const q = asInt(xp);
     const into = q % LEVEL_EVERY;
     return {
       into,
       need: LEVEL_EVERY,
       pct: Math.min(100, (into / LEVEL_EVERY) * 100),
-      level: levelFromAnswered(q)
+      level: levelFromXp(q)
     };
   }
   function initials(name) {
@@ -30,7 +29,6 @@
     for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
     return h % 360;
   }
-
   const state = {
     ready: false,
     user: null,
@@ -40,32 +38,30 @@
     authBusy: false,
     authTab: 'register'
   };
-
   function toast(msg) {
     if (typeof showToast === 'function') showToast(msg, 2800);
     else if (typeof portalToast === 'function') portalToast(msg);
   }
-
   function ensureFirebase() {
     if (!global.firebase) throw new Error('Firebase SDK missing');
     if (!global.FIREBASE_CONFIG) throw new Error('FIREBASE_CONFIG missing');
     if (!firebase.apps.length) firebase.initializeApp(global.FIREBASE_CONFIG);
     return { auth: firebase.auth(), db: firebase.firestore() };
   }
-
   function defaultName() {
     return 'Scholar ' + Math.floor(1000 + Math.random() * 9000);
   }
-
   function normalizeProfile(data) {
     const questionsAnswered = asInt(data && data.questionsAnswered);
-    const level = asInt((data && data.level) || levelFromAnswered(questionsAnswered)) || 1;
+    const xp = asInt(data && data.xp) || questionsAnswered; // migration
+    const level = asInt((data && data.level) || levelFromXp(xp)) || 1;
     return {
       displayName: String((data && data.displayName) || defaultName()).slice(0, 16),
       photoURL: (data && data.photoURL) || '',
       bio: (data && data.bio) || '',
       mood: (data && data.mood) || '',
       questionsAnswered,
+      xp,
       level,
       createdAt: (data && data.createdAt) || Date.now(),
       updatedAt: (data && data.updatedAt) || Date.now()
@@ -230,39 +226,42 @@ async function afterAuthUser(user) {
     toast('Level ' + newLevel + ' — nice');
   }
 
-  async function bumpQuestionsAnswered(by) {
-    const add = Math.max(1, by | 0);
-    try {
-      if (!state.user) await start();
-      const { db } = ensureFirebase();
-      const uid = state.user.uid;
-      const ref = db.collection('profiles').doc(uid);
-      let leveled = null;
-      await db.runTransaction(async function (tx) {
-        const snap = await tx.get(ref);
-        const cur = snap.exists ? normalizeProfile(snap.data()) : normalizeProfile({});
-        const questionsAnswered = asInt(cur.questionsAnswered) + add;
-        const level = levelFromAnswered(questionsAnswered);
-        const payload = normalizeProfile(
-          Object.assign({}, cur, {
-            questionsAnswered,
-            level,
-            updatedAt: Date.now()
-          })
-        );
-        tx.set(ref, payload);
-        if (state.lastLevel != null && level > state.lastLevel) leveled = level;
-        state.lastLevel = level;
-        state.profile = payload;
-      });
-      renderChip();
-      fillModal();
-      emitProfile();
-      if (leveled != null) celebrateLevelUp(leveled);
-    } catch (e) {
-      console.warn('profile bump failed', e);
-    }
+  async function bumpQuestionsAnswered(questionsAdd, xpAdd) {
+  const qAdd = Math.max(0, questionsAdd | 0) || 1;
+  const xAdd = Math.max(1, xpAdd | 0);
+  try {
+    if (!state.user) await start();
+    const { db } = ensureFirebase();
+    const uid = state.user.uid;
+    const ref = db.collection('profiles').doc(uid);
+    let leveled = null;
+    await db.runTransaction(async function (tx) {
+      const snap = await tx.get(ref);
+      const cur = snap.exists ? normalizeProfile(snap.data()) : normalizeProfile({});
+      const questionsAnswered = asInt(cur.questionsAnswered) + qAdd;
+      const xp = asInt(cur.xp) + xAdd;
+      const level = levelFromXp(xp);
+      const payload = normalizeProfile(
+        Object.assign({}, cur, {
+          questionsAnswered,
+          xp,
+          level,
+          updatedAt: Date.now()
+        })
+      );
+      tx.set(ref, payload);
+      if (state.lastLevel != null && level > state.lastLevel) leveled = level;
+      state.lastLevel = level;
+      state.profile = payload;
+    });
+    renderChip();
+    fillModal();
+    emitProfile();
+    if (leveled != null) celebrateLevelUp(leveled);
+  } catch (e) {
+    console.warn('profile bump failed', e);
   }
+}
 
   function renderChip() {
     let chip = document.getElementById('profileChip');
@@ -284,7 +283,7 @@ async function afterAuthUser(user) {
       chip.innerHTML = '<span class="pc-name">Profile</span>';
       return;
     }
-    const prog = expProgress(p.questionsAnswered);
+    const prog = expProgress(p.xp || p.questionsAnswered);
     const hue = hueFromName(p.displayName);
     const guest = isAnonymousUser(state.user);
     chip.innerHTML =
