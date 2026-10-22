@@ -225,7 +225,7 @@
         {
           "id": "en1",
           "title": "Periodic Test 1",
-          "subtitle": "14 forms + 2 video sets · 1,712 questions · choice & linking",
+          "subtitle": "16 forms · 1,712 questions · choice & linking",
           "bank": "banks/english/pt1.json",
           "locked": false,
           "badges": [
