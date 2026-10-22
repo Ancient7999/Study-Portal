@@ -76,13 +76,13 @@
         },
         {
             "id": "ch6",
-            "src": "content/medphys/oif/chapter-6.md",
+            "src": "content/medphys/pt2/chapter-6.md",
             "title": "Chapter 6 · Optical instruments",
             "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
         },
         {
             "id": "ch7",
-            "src": "content/medphys/oif/chapter-7.md",
+            "src": "content/medphys/pt2/chapter-7.md",
             "title": "Chapter 7 · Atomic & nuclear physics",
             "meta": "Photons · photoelectric effect · de Broglie · nucleus · decay · half-life · dosimetry"
             }
