@@ -69,16 +69,13 @@ function appendSetsSection(host) {
     btn.innerHTML = '<div class="card-top"><span class="form-letter">Formulas</span></div><div class="card-desc-formula">Generator failed to load</div>';
     grid.appendChild(btn);
   } else {
-    const badges = (c.draft && typeof cardBadgesHTML === 'function') ? cardBadgesHTML({ draft: true }) : '';
     PT2_CHAPTERS.forEach(ch => {
       const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card';
       btn.dataset.card = 'formulas-' + ch.id;
       const extraBadge = (ch.id === 'ch3')
         ? '<span class="card-badge note-badge amber" title="Told not to be on the exam — practice only">Off-exam</span>'
         : '';
-      const badgeHtml = badges
-        ? badges.replace('</div>', extraBadge + '</div>')
-        : (extraBadge ? '<div class="card-badges">' + extraBadge + '</div>' : '');
+      const badgeHtml = extraBadge ? '<div class="card-badges">' + extraBadge + '</div>' : '';
       btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badgeHtml +
         '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
         '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
