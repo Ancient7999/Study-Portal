@@ -182,16 +182,18 @@ async function afterAuthUser(user) {
     if (!state.user) await start();
     const { db } = ensureFirebase();
     const q = asInt(state.profile && state.profile.questionsAnswered);
+    const xp = asInt(state.profile && state.profile.xp) || q;
     const payload = normalizeProfile({
-      displayName: cleaned,
-      photoURL: (state.profile && state.profile.photoURL) || '',
-      bio: (state.profile && state.profile.bio) || '',
-      mood: (state.profile && state.profile.mood) || '',
-      questionsAnswered: q,
-      level: levelFromAnswered(q),
-      createdAt: (state.profile && state.profile.createdAt) || Date.now(),
-      updatedAt: Date.now()
-    });
+    displayName: cleaned,
+    photoURL: (state.profile && state.profile.photoURL) || '',
+    bio: (state.profile && state.profile.bio) || '',
+    mood: (state.profile && state.profile.mood) || '',
+    questionsAnswered: q,
+    xp,
+    level: levelFromXp(xp),
+    createdAt: (state.profile && state.profile.createdAt) || Date.now(),
+    updatedAt: Date.now()
+});
     await db.collection('profiles').doc(state.user.uid).set(payload);
     state.profile = payload;
     renderChip();
@@ -757,7 +759,7 @@ async function afterAuthUser(user) {
   }
   function fillModal() {
     const p = state.profile || normalizeProfile({});
-    const prog = expProgress(p.questionsAnswered);
+    const prog = expProgress(p.xp || p.questionsAnswered);
     const input = document.getElementById('profileNameInput');
     const lv = document.getElementById('profileLevelVal');
     const qs = document.getElementById('profileQsVal');
