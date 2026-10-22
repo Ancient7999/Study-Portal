@@ -1,0 +1,560 @@
+{
+  "id": "engl101-unit4-pastsimple",
+  "subject": "English L1",
+  "subjectId": "engl101",
+  "title": "Unit 4: Past Simple and Time Clauses",
+  "formSize": 39,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "ENG1PT20143",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "When I blank a kid, I blank football.",
+        "options": [
+          "was / played",
+          "were / played often",
+          "were / play daily",
+          "was / didn't played regularly"
+        ],
+        "correct": 0,
+        "explain": "Correct is was / played. Were is plural. Play is present. Didn't played is double past."
+      },
+      {
+        "id": "ENG1PT20144",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "My high-school friends always blank parties.",
+        "options": [
+          "had",
+          "has often",
+          "are having daily",
+          "did not had regularly"
+        ],
+        "correct": 0,
+        "explain": "Past simple is had. Has is present. Are having is continuous. Did not had is incorrect."
+      },
+      {
+        "id": "ENG1PT20145",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "My brothers and I blank in Dubai in 2000.",
+        "options": [
+          "were",
+          "was often",
+          "there were daily",
+          "there was regularly"
+        ],
+        "correct": 0,
+        "explain": "Plural subject needs were. Was is singular. There were and there was are existential."
+      },
+      {
+        "id": "ENG1PT20146",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Kate blank her leg when she fell down.",
+        "options": [
+          "broke",
+          "break often",
+          "broken daily",
+          "breaking regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is broke. Break is present. Broken is participle. Breaking is continuous."
+      },
+      {
+        "id": "ENG1PT20147",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "I blank the news after I heard about that terrible earthquake.",
+        "options": [
+          "watched",
+          "watch often",
+          "watching daily",
+          "watches regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is watched. Watch is present. Watching is continuous. Watches is third-person present."
+      },
+      {
+        "id": "ENG1PT20148",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "When the teacher blank to class, all the students stopped talking.",
+        "options": [
+          "came",
+          "come often",
+          "comes daily",
+          "coming regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past in time clause is came. Come is present. Comes is third person. Coming is continuous."
+      },
+      {
+        "id": "ENG1PT20149",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "The fans blank angry when their favorite star canceled the concert.",
+        "options": [
+          "got",
+          "get often",
+          "gets daily",
+          "getting regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is got. Get is present. Gets is third person. Getting is continuous."
+      },
+      {
+        "id": "ENG1PT20150",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "We blank when a dog suddenly ran in front of us.",
+        "options": [
+          "screamed",
+          "scream often",
+          "screaming daily",
+          "screams regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is screamed. Scream is present. Screaming is continuous. Screams is third person."
+      },
+      {
+        "id": "ENG1PT20151",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "I blank on the project for hours before I got a message that it was canceled.",
+        "options": [
+          "worked",
+          "work often",
+          "working daily",
+          "works regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is worked. Work is present. Working is continuous. Works is third person."
+      },
+      {
+        "id": "ENG1PT20152",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "The mother blank lunch before her kids came back from school.",
+        "options": [
+          "cooked",
+          "cook often",
+          "cooking daily",
+          "cooks regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is cooked. Cook is present. Cooking is continuous. Cooks is third person."
+      },
+      {
+        "id": "ENG1PT20153",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "When the police blank the thief, he confessed to all his crimes.",
+        "options": [
+          "arrested",
+          "arrest often",
+          "arresting daily",
+          "arrests regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is arrested. Arrest is present. Arresting is continuous. Arrests is third person."
+      },
+      {
+        "id": "ENG1PT20154",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: When you start working as a nurse?",
+        "options": [
+          "When did you start working as a nurse?",
+          "When you start working as a nurse often?",
+          "When did you started working as a nurse daily?",
+          "When you started working as a nurse regularly?"
+        ],
+        "correct": 0,
+        "explain": "Questions need Did + base verb. Missing Did, Did + started, and no auxiliary are wrong."
+      },
+      {
+        "id": "ENG1PT20155",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: Did you visited your grandmother in the hospital last weekend?",
+        "options": [
+          "Did you visit your grandmother in the hospital?",
+          "Did you visited your grandmother in the hospital often?",
+          "Did you visit your grandmother in the hospital daily?",
+          "You visited your grandmother in the hospital regularly?"
+        ],
+        "correct": 0,
+        "explain": "Did + base verb is correct. Did + visited is double past. Other forms miss the structure."
+      },
+      {
+        "id": "ENG1PT20156",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: The doctor check my blood pressure yesterday.",
+        "options": [
+          "The doctor checked my blood pressure yesterday",
+          "The doctor check my blood pressure yesterday often",
+          "The doctor checks my blood pressure yesterday daily",
+          "The doctor checking my blood pressure yesterday regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is checked. Check is present. Checks is third-person present. Checking is continuous."
+      },
+      {
+        "id": "ENG1PT20157",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: Last week the nurse take care of ten patients in one day.",
+        "options": [
+          "Last week the nurse took care of ten patients",
+          "Last week the nurse take care of ten patients often",
+          "Last week the nurse takes care of ten patients daily",
+          "Last week the nurse taking care of ten patients regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is took. Take is present. Takes is third person. Taking is continuous."
+      },
+      {
+        "id": "ENG1PT20158",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: The hospital open a new emergency room last year.",
+        "options": [
+          "The hospital opened a new emergency room last year",
+          "The hospital open a new emergency room last year often",
+          "The hospital opens a new emergency room last year daily",
+          "The hospital opening a new emergency room last year regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is opened. Open is present. Opens is third person. Opening is continuous."
+      },
+      {
+        "id": "ENG1PT20159",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: We don't needed an appointment for the flu vaccine last winter.",
+        "options": [
+          "We didn't need an appointment for the flu vaccine",
+          "We don't needed an appointment for the flu vaccine often",
+          "We didn't needed an appointment for the flu vaccine daily",
+          "We don't need an appointment for the flu vaccine regularly"
+        ],
+        "correct": 0,
+        "explain": "Negative past is didn't need. Don't needed, didn't needed, and don't need (present) are wrong for past."
+      },
+      {
+        "id": "ENG1PT20160",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: The patient didn't went to the pharmacy after the appointment.",
+        "options": [
+          "The patient didn't go to the pharmacy",
+          "The patient didn't went to the pharmacy often",
+          "The patient don't go to the pharmacy daily",
+          "The patient wasn't go to the pharmacy regularly"
+        ],
+        "correct": 0,
+        "explain": "Didn't + base verb is correct. Didn't went is double past. Don't go is present. Wasn't go is incorrect."
+      },
+      {
+        "id": "ENG1PT20161",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Correct: We wasn't ready when the ambulance arrived.",
+        "options": [
+          "We weren't ready when the ambulance arrived",
+          "We wasn't ready when the ambulance arrived often",
+          "We aren't ready when the ambulance arrived daily",
+          "We didn't ready when the ambulance arrived regularly"
+        ],
+        "correct": 0,
+        "explain": "Plural needs weren't. Wasn't is singular. Aren't is present. Didn't ready is incorrect."
+      },
+      {
+        "id": "ENG1PT20162",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which time-clause pair is both in simple past?",
+        "options": [
+          "Kate broke her leg when she fell down",
+          "Kate break her leg when she fell down often",
+          "Kate broke her leg when she fall down daily",
+          "Kate breaking her leg when she fell down regularly"
+        ],
+        "correct": 0,
+        "explain": "Both verbs need simple past: broke and fell. Break, fall, and breaking are wrong forms."
+      },
+      {
+        "id": "ENG1PT20163",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which practice item is correct for plural past?",
+        "options": [
+          "My brothers and I were in Dubai in 2000",
+          "My brothers and I was in Dubai in 2000 often",
+          "My brothers and I there were in Dubai in 2000 daily",
+          "My brothers and I there was in Dubai in 2000 regularly"
+        ],
+        "correct": 0,
+        "explain": "Plural subject needs were. Was is singular. There were and there was are existential forms."
+      },
+      {
+        "id": "ENG1PT20164",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which time-clause verb is simple past after before?",
+        "options": [
+          "The mother cooked lunch before her kids came",
+          "The mother cook lunch before her kids came often",
+          "The mother cooked lunch before her kids come daily",
+          "The mother cooking lunch before her kids came regularly"
+        ],
+        "correct": 0,
+        "explain": "Both verbs need simple past: cooked and came. Cook, come, and cooking are wrong forms."
+      },
+      {
+        "id": "ENG1PT20165",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which question form avoids double past?",
+        "options": [
+          "Did you visit your grandmother last weekend?",
+          "Did you visited your grandmother last weekend often?",
+          "Did you visit your grandmother last weekend daily?",
+          "You visited your grandmother last weekend regularly?"
+        ],
+        "correct": 0,
+        "explain": "Did + base verb is correct. Did + visited is double past. Other forms miss the auxiliary."
+      },
+      {
+        "id": "ENG1PT20166",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which negative past avoids double marking?",
+        "options": [
+          "The patient didn't go to the pharmacy",
+          "The patient didn't went to the pharmacy often",
+          "The patient don't go to the pharmacy daily",
+          "The patient wasn't go to the pharmacy regularly"
+        ],
+        "correct": 0,
+        "explain": "Didn't + base verb is correct. Didn't went is double past. Don't go is present. Wasn't go is incorrect."
+      },
+      {
+        "id": "ENG1PT20167",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which plural form is correct with past be?",
+        "options": [
+          "We weren't ready when the ambulance arrived",
+          "We wasn't ready when the ambulance arrived often",
+          "We aren't ready when the ambulance arrived daily",
+          "We didn't ready when the ambulance arrived regularly"
+        ],
+        "correct": 0,
+        "explain": "Plural needs weren't. Wasn't is singular. Aren't is present. Didn't ready is incorrect."
+      },
+      {
+        "id": "ENG1PT20168",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which simple-past form fits the time clause when?",
+        "options": [
+          "We screamed when a dog suddenly ran in front of us",
+          "We scream when a dog suddenly ran in front of us often",
+          "We screaming when a dog suddenly ran in front of us daily",
+          "We screams when a dog suddenly ran in front of us regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is screamed. Scream is present. Screaming is continuous. Screams is third person."
+      },
+      {
+        "id": "ENG1PT20169",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which error item needs the past of open?",
+        "options": [
+          "The hospital opened a new emergency room last year",
+          "The hospital open a new emergency room last year often",
+          "The hospital opens a new emergency room last year daily",
+          "The hospital opening a new emergency room last year regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is opened. Open is present. Opens is third person. Opening is continuous."
+      },
+      {
+        "id": "ENG1PT20170",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which time-clause verb after after is simple past?",
+        "options": [
+          "I watched the news after I heard about the earthquake",
+          "I watch the news after I heard about the earthquake often",
+          "I watching the news after I heard about the earthquake daily",
+          "I watches the news after I heard about the earthquake regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is watched. Watch is present. Watching is continuous. Watches is third person."
+      },
+      {
+        "id": "ENG1PT20171",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which error needs the past of take?",
+        "options": [
+          "Last week the nurse took care of ten patients",
+          "Last week the nurse take care of ten patients often",
+          "Last week the nurse takes care of ten patients daily",
+          "Last week the nurse taking care of ten patients regularly"
+        ],
+        "correct": 0,
+        "explain": "Simple past is took. Take is present. Takes is third person. Taking is continuous."
+      },
+      {
+        "id": "ENG1PT20172",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Yesterday, ___ a huge accident on the highway.",
+        "options": [
+          "there was",
+          "there were",
+          "was there",
+          "were there"
+        ],
+        "correct": 0,
+        "explain": "The subject is singular: a huge accident. The correct past form is there was."
+      },
+      {
+        "id": "ENG1PT20173",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "___ many students in the class?",
+        "options": [
+          "Were there",
+          "There were",
+          "Was there",
+          "There was"
+        ],
+        "correct": 0,
+        "explain": "The question form is Were there + plural noun. Students is plural, so the correct question is Were there many students in the class?"
+      },
+      {
+        "id": "ENG1PT20174",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Were there many students in the class? Yes, ___.",
+        "options": [
+          "there were",
+          "there was",
+          "they were",
+          "they was"
+        ],
+        "correct": 0,
+        "explain": "The short answer repeats the structure: Yes, there were. There was is singular, and they were does not match the there construction."
+      },
+      {
+        "id": "ENG1PT20175",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "My friends ___ at my house last weekend.",
+        "options": [
+          "were all",
+          "was all",
+          "are all",
+          "been all"
+        ],
+        "correct": 0,
+        "explain": "Friends is plural and the time is last weekend, so the correct past form is were all."
+      },
+      {
+        "id": "ENG1PT20176",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "I ___ dinner yesterday.",
+        "options": [
+          "didn't have",
+          "don't have",
+          "haven't had",
+          "didn't had"
+        ],
+        "correct": 0,
+        "explain": "Past simple negative uses didn't + base verb. The correct form is didn't have."
+      },
+      {
+        "id": "ENG1PT20177",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "What ___ you ___ yesterday?",
+        "options": [
+          "did / have",
+          "do / have",
+          "did / had",
+          "are / having"
+        ],
+        "correct": 0,
+        "explain": "Past simple Wh-questions use: Wh-word + did + subject + base verb. The correct form is What did you have yesterday?"
+      },
+      {
+        "id": "ENG1PT20178",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "Which question matches: My friends were at the party yesterday.",
+        "options": [
+          "Where were your friends yesterday?",
+          "Where was your friends yesterday?",
+          "Where are your friends yesterday?",
+          "Where did your friends yesterday?"
+        ],
+        "correct": 0,
+        "explain": "Friends is plural, so the past be verb is were. The correct question is Where were your friends yesterday?"
+      },
+      {
+        "id": "ENG1PT20179",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "I waited for you ___ the shop closed, so I went home.",
+        "options": [
+          "until",
+          "before",
+          "after",
+          "while"
+        ],
+        "correct": 0,
+        "explain": "Until shows that the waiting continued up to the moment the shop closed. The correct sentence is I waited for you until the shop closed."
+      },
+      {
+        "id": "ENG1PT20180",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "When I ___ a bad grade in the exam, I decided to study harder.",
+        "options": [
+          "got",
+          "get",
+          "getting",
+          "was get"
+        ],
+        "correct": 0,
+        "explain": "The sentence is past simple, so the correct form is got. Get is present, getting is continuous, and was get is incorrect."
+      },
+      {
+        "id": "ENG1PT20181",
+        "type": "mcq",
+        "cat": "Unit 4 – Past Simple & Time Clauses",
+        "q": "In 1928, Alexander Fleming ___ penicillin.",
+        "options": [
+          "discovered",
+          "uses to",
+          "discovering",
+          "used to"
+        ],
+        "correct": 0,
+        "explain": "This is a single completed past event, so simple past is correct: discovered. Used to is for repeated past habits or states, not one-time events."
+      }
+    ]
+  }
+}
