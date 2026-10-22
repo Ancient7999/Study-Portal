@@ -122,14 +122,6 @@
         "subtitle": "Finals version · coming soon",
         "bank": null,
         "locked": true
-        },
-        {
-          "id": "medphys-finals",
-          "title": "Finals",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true,
-          "hidden": true
         }
       ]
     },
@@ -172,17 +164,7 @@
           "title": "Only In Finals",
           "subtitle": "Coming soon",
           "bank": null,
-          "locked": true,
-          "hidden": true
-        },
-        {
-          "id": "studyskills-finals",
-          "title": "Finals",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true,
-          "hidden": true
-        }
+          "locked": true        }
       ]
     },
     {
@@ -296,17 +278,7 @@
           "title": "Only In Finals",
           "subtitle": "Coming soon",
           "bank": null,
-          "locked": true,
-          "hidden": true
-        },
-        {
-          "id": "english-finals",
-          "title": "Finals",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true,
-          "hidden": true
-        }
+          "locked": true        }
       ]
     },
     {
@@ -506,14 +478,6 @@
         "subtitle": "Finals version · coming soon",
         "bank": null,
         "locked": true
-        },
-        {
-          "id": "medterm-finals",
-          "title": "Finals",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true,
-          "hidden": true
         }
       ]
     },
@@ -561,17 +525,8 @@
           "title": "Only In Finals",
           "subtitle": "Coming soon",
           "bank": null,
-          "locked": true,
-          "hidden": true
-        },
-        {
-          "id": "iths-finals",
-          "title": "Finals",
-          "subtitle": "Coming soon",
-          "bank": null,
-          "locked": true,
-          "hidden": true
-        }
+          "locked": true
+          }
       ],
       "subtitle": "Information Technology for Health Sciences"
     }
