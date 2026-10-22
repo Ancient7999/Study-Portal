@@ -76,9 +76,9 @@ function appendSetsSection(host) {
         ? '<span class="card-badge note-badge amber" title="Told not to be on the exam — practice only">Off-exam</span>'
         : '';
       const badgeHtml = extraBadge ? '<div class="card-badges">' + extraBadge + '</div>' : '';
-      btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badgeHtml +
-        '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
-        '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
+      btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span>' + badgeHtml + '</div>' +
+  '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
+  '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
       btn.addEventListener('click', () => start(ch.keys));
       grid.appendChild(btn);
     });
