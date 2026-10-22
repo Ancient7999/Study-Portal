@@ -307,14 +307,7 @@ async function afterAuthUser(user) {
       '<span class="pc-meta"></span>' +
       '</span>';
     chip.querySelector('.pc-name').textContent = p.displayName;
-    chip.querySelector('.pc-meta').textContent =
-      (guest ? 'Guest · ' : '') +
-      prog.into +
-      '/' +
-      prog.need +
-      ' to next · ' +
-      asInt(p.questionsAnswered) +
-      ' Qs';
+    chip.querySelector('.pc-meta').textContent = guest ? 'Guest' : '';
   }
 
   function setAuthStatus(msg, isError) {
