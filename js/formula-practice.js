@@ -36,28 +36,46 @@
   }
   function configFor(mat) { return mat && mat.formulas && window[mat.formulas.gen] ? mat.formulas : null; }
 
-  /* —— set card (PT1 appendFormulaCard) —— */
-  function appendSetsSection(host) {
-    const mat = window.__activeMaterial; const c = mat && mat.formulas;
-    if (!c) return;
-    cfg = c; gen = window[c.gen] || null;
-    const h = document.createElement('div'); h.className = 'section-h'; h.textContent = 'Formulas'; host.appendChild(h);
-    const grid = document.createElement('div'); grid.className = 'grid';
-    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card'; btn.dataset.card = 'formulas';
-    if (!gen) {
-      btn.disabled = true;
-      btn.innerHTML = '<div class="card-top"><span class="form-letter">Formulas</span></div><div class="card-desc-formula">Generator failed to load</div>';
-    } else {
-      const n = gen.allKeys().length;
-      const badges = (c.draft && typeof cardBadgesHTML === 'function') ? cardBadgesHTML({ draft: true }) : '';
-      btn.innerHTML = '<div class="card-top"><span class="form-letter">Formulas</span></div>' + badges +
-        '<div class="card-sub">' + n + ' formulas · ' + esc(c.scope || '') + '</div>' +
+  /* —— set cards — one per PT2 chapter —— */
+const PT2_CHAPTERS = [
+  { id: 'ch3', title: 'Chapter 3', subtitle: 'Fluids · rheology · surface tension',
+    keys: ['continuity','massFlow','bernoulli','viscosity','poiseuille','laplaceCylinder','wallStress','reynolds','surfaceTension','alveolus'] },
+  { id: 'ch4', title: 'Chapter 4', subtitle: 'Waves · sound · temperature',
+    keys: ['waveSpeed','periodFreq','soundSpeed','dopplerSource','mach','tempConvert'] },
+  { id: 'ch5', title: 'Chapter 5', subtitle: 'Ray optics',
+    keys: ['refractiveIndex','snell','criticalAngle'] },
+  { id: 'ch6', title: 'Chapter 6', subtitle: 'Optical instruments',
+    keys: ['mirrorFocal','thinLens','magnification','lensPower','powerSum','separatedLenses','simpleMagnifier'] },
+  { id: 'ch7', title: 'Chapter 7', subtitle: 'Atomic & nuclear',
+    keys: ['photonEnergy','deBroglie','nuclearRadius','halfLife','activity','absorbedDose','doseEquivalent'] }
+];
+
+function appendSetsSection(host) {
+  const mat = window.__activeMaterial; const c = mat && mat.formulas;
+  if (!c) return;
+  cfg = c; gen = window[c.gen] || null;
+  const h = document.createElement('div'); h.className = 'section-h'; h.textContent = 'Formulas'; host.appendChild(h);
+  const grid = document.createElement('div'); grid.className = 'grid';
+
+  if (!gen) {
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card'; btn.disabled = true;
+    btn.innerHTML = '<div class="card-top"><span class="form-letter">Formulas</span></div><div class="card-desc-formula">Generator failed to load</div>';
+    grid.appendChild(btn);
+  } else {
+    const badges = (c.draft && typeof cardBadgesHTML === 'function') ? cardBadgesHTML({ draft: true }) : '';
+    PT2_CHAPTERS.forEach(ch => {
+      const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card';
+      btn.dataset.card = 'formulas-' + ch.id;
+      btn.innerHTML = '<div class="card-top"><span class="form-letter">' + ch.title + '</span></div>' + badges +
+        '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
         '<div class="card-desc-formula">Unlimited practice with formula hints</div>' +
         '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
-      btn.addEventListener('click', () => start(gen.allKeys()));
-    }
-    grid.appendChild(btn); host.appendChild(grid);
+      btn.addEventListener('click', () => start(ch.keys));
+      grid.appendChild(btn);
+    });
   }
+  host.appendChild(grid);
+}
 
   /* —— run —— */
   function start(ks) {
