@@ -471,21 +471,44 @@
     return snap.data() || null;
   }
 
-  async function writeCloud(uid, bundle) {
-    const { db } = ensureFirebase();
-    const payload = {
-      mastery: bundle.mastery || {},
-      dnsa: bundle.dnsa || {},
-      achievements: bundle.achievements || {},
-      forms: bundle.forms || {},
-      pomodoroEnabled:
-        typeof bundle.pomodoroEnabled === 'boolean' ? bundle.pomodoroEnabled : getPomodoroEnabledLocal(),
-      friends: Array.isArray(bundle.friends) ? bundle.friends : getFriendsLocal(),
-      updatedAt: Date.now()
-    };
-    await db.collection('progress').doc(uid).set(payload, { merge: true });
-    return payload;
+  function sanitizeForFirestore(value) {
+  if (Array.isArray(value)) {
+    // Convert any array that contains an array into an object so Firestore accepts it
+    var hasNestedArray = value.some(function (item) { return Array.isArray(item); });
+    if (hasNestedArray) {
+      var obj = {};
+      value.forEach(function (item, i) {
+        obj[String(i)] = sanitizeForFirestore(item);
+      });
+      return obj;
+    }
+    return value.map(sanitizeForFirestore);
   }
+  if (value && typeof value === 'object') {
+    var out = {};
+    Object.keys(value).forEach(function (k) {
+      out[k] = sanitizeForFirestore(value[k]);
+    });
+    return out;
+  }
+  return value;
+}
+
+async function writeCloud(uid, bundle) {
+  const { db } = ensureFirebase();
+  const payload = sanitizeForFirestore({
+    mastery: bundle.mastery || {},
+    dnsa: bundle.dnsa || {},
+    achievements: bundle.achievements || {},
+    forms: bundle.forms || {},
+    pomodoroEnabled:
+      typeof bundle.pomodoroEnabled === 'boolean' ? bundle.pomodoroEnabled : getPomodoroEnabledLocal(),
+    friends: Array.isArray(bundle.friends) ? bundle.friends : getFriendsLocal(),
+    updatedAt: Date.now()
+  });
+  await db.collection('progress').doc(uid).set(payload, { merge: true });
+  return payload;
+}
 
   async function pushAll() {
     const uid = currentUid();
