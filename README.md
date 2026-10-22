@@ -1,14 +1,13 @@
-*Note: The following instructions are AI generated to host your own version, to use the already hosted version use the direct link: https://sonicunligmated.github.io/Study-Portal/ *
+Live site: https://sonicunligmated.github.io/Study-Portal/
 
 # Study Portal
 
-Static practice site for GitHub Pages. Question banks are JSON files in this repo and load with relative `fetch` (not the GitHub API).
+Static practice site for GitHub Pages. Question banks are JSON files loaded with relative fetch.
 
 ## What’s included
 
-- **Unified SPA** (`index.html`) — rich glass UI (moods, timer, skins, Forms A–H) with portal home in the same page
-- **Unlocked** — Medical Physics → Periodic Test 1 (loads `banks/…` via fetch; no separate exam HTML)
-- **Online** — Profiles, Chat (channels/party), Lobby (4-seat party quiz). Scores still locked.
+- **Unified SPA** (`index.html`) — rich glass UI with moods, timer, and skins
+- **Online** — Profiles and party lobbies
 - **Locked** — other subjects
 
 ## Publish on GitHub Pages (new repo)
@@ -31,7 +30,7 @@ Static practice site for GitHub Pages. Question banks are JSON files in this rep
    - Branch: **main** / folder **/(root)** → Save
 5. Wait 1–2 minutes, then open:
    - `https://YOUR_USER.github.io/YOUR_REPO/`
-6. Click **Medical Physics** → **Periodic Test 1**.
+6. Open the site and start practicing.
 
 If the page 404s, wait a bit longer or confirm `index.html` is at the repo root.
 
@@ -53,11 +52,10 @@ Open `http://localhost:8080/`.
 
 ## Online features
 
-Profiles (anonymous auth), Chat dock, Party (max 4), Lobbies + 1–4 split quiz, live party cursors, and local Mastery/Mastery+/DNSA. Scores still locked. Banks stay static JSON.
+Profiles (anonymous auth), Party (max 4), Lobbies + 1–4 split quiz, live party cursors.
 
 ## Firebase (rules shipped)
 
-Security rules for profiles, scores, chat, and live cursors live under `firebase/`.  
-Online UI tiles stay locked until you wire the SDK.
+Security rules for profiles, scores, and live cursors live under `firebase/`.  
 
 Follow **[FIREBASE_SETUP.md](FIREBASE_SETUP.md)** to create the project in your account and deploy the rules.
