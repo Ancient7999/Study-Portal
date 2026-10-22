@@ -1516,7 +1516,7 @@ function saqSolvedFx(q, o){
   document.getElementById('mainPanel').classList.add('correct-pulse');
   setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
   pt1Confetti();
-  rewardCorrect();
+  rewardCorrect(2);
   afterAnswerProgress();
   if(o && o.kb && !allQuestionsAnswered()) startKbAdvance();
 }
@@ -2070,13 +2070,13 @@ function labelLock(l, text, slot){
   labelFit(done.closest('.label-figure'), q.labels);
   const r=done.getBoundingClientRect();
   if(typeof spawnFireworkBurst==='function') spawnFireworkBurst(r.left+r.width/2, r.top+r.height/2, 14);
-  rewardCorrect();
   const n=q.labels.length, k=labelDoneCount(q,a);
   const pr=document.getElementById('labelProgress'); if(pr) pr.textContent=k+' / '+n+' labels';
   const fb=document.getElementById('feedback');
   if(k>=n){
-    a.correct=true; locked=true; onQuestionSolved(q);
-    fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  a.correct=true; locked=true; onQuestionSolved(q);
+  rewardCorrect(2);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
     const mb=document.getElementById('labelModeBtn'); if(mb) mb.remove();
     const bank=document.getElementById('labelBank'); if(bank) bank.remove();
     document.getElementById('mainPanel').classList.add('correct-pulse');
@@ -2348,10 +2348,9 @@ function checkOrder(){
     if(a.locked[id]) return;
     const li=document.querySelector('.order-card[data-id="'+id+'"]');
     if(id===ids[k]){
-      a.locked[id]=true; newly++;
-      if(li){ li.classList.add('locked','just-locked'); li.querySelector('.order-grip').textContent='🔒'; li.querySelectorAll('button').forEach(b=>b.disabled=true);
-        const r=li.getBoundingClientRect(); if(typeof spawnFireworkBurst==='function') spawnFireworkBurst(r.left+r.width/2, r.top+r.height/2, 12); }
-      rewardCorrect();
+    a.locked[id]=true; newly++;
+    if(li){ li.classList.add('locked','just-locked'); li.querySelector('.order-grip').textContent='🔒'; li.querySelectorAll('button').forEach(b=>b.disabled=true);
+    const r=li.getBoundingClientRect(); if(typeof spawnFireworkBurst==='function') spawnFireworkBurst(r.left+r.width/2, r.top+r.height/2, 12); }
     } else {
       wrong++;
       if(li){ li.classList.remove('soft-wrong'); void li.offsetWidth; li.classList.add('soft-wrong'); setTimeout(()=>li.classList.remove('soft-wrong'),480); }
@@ -2360,8 +2359,9 @@ function checkOrder(){
   const n=ids.length, k=Object.keys(a.locked).length;
   const pr=document.getElementById('orderProgress'); if(pr) pr.textContent=k+' / '+n+' locked';
   if(k>=n){
-    a.correct=true; locked=true; onQuestionSolved(q);
-    fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  a.correct=true; locked=true; onQuestionSolved(q);
+  rewardCorrect(2);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
     const act=document.querySelector('.order-actions'); if(act) act.remove();
     document.getElementById('mainPanel').classList.add('correct-pulse');
     setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
@@ -3385,8 +3385,9 @@ function renderQuestion(){
 }
 
 /* PORTAL rewards: every correct lock-in (each step too) counts as one answer. */
-function rewardCorrect(){
-  if(window.StudyProfiles && typeof StudyProfiles.bumpQuestionsAnswered==='function') StudyProfiles.bumpQuestionsAnswered(1);
+function rewardCorrect(xpAmount){
+  const xp = Math.max(1, xpAmount | 0);
+  if(window.StudyProfiles && typeof StudyProfiles.bumpQuestionsAnswered==='function') StudyProfiles.bumpQuestionsAnswered(1, xp);
   if(window.StudyAchievements && typeof StudyAchievements.recordCorrect==='function') StudyAchievements.recordCorrect();
 }
 /* Whole question solved (a stepped question only after its last step). */
