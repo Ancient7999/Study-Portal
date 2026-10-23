@@ -21,7 +21,7 @@ service cloud.firestore {
       allow create, update: if isSelf(uid)
         && request.resource.data.keys().hasOnly([
           'displayName', 'photoURL', 'bio', 'createdAt', 'updatedAt', 'mood',
-          'level', 'questionsAnswered'
+          'level', 'questionsAnswered', 'xp'
         ])
         && isString(request.resource.data.displayName, 1, 16)
         && request.resource.data.level is number
@@ -30,6 +30,9 @@ service cloud.firestore {
         && request.resource.data.questionsAnswered is number
         && request.resource.data.questionsAnswered >= 0
         && request.resource.data.questionsAnswered <= 1000000
+        && request.resource.data.xp is number
+        && request.resource.data.xp >= 0
+        && request.resource.data.xp <= 10000000
         && (!('bio' in request.resource.data) || isString(request.resource.data.bio, 0, 160));
       allow delete: if isSelf(uid);
     }
