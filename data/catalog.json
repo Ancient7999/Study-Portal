@@ -257,6 +257,7 @@
         "title": "Periodic Test 2",
         "subtitle": "4 unit sets · 364 questions · choice & matching",
         "locked": false,
+        "draft": true,
         "lectures": [
     {
       "id": "unit3-efm",
