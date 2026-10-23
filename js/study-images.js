@@ -363,13 +363,13 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
         slot.style.left = l.x + '%'; slot.style.width = l.w + '%'; slot.style.top = l.y + '%'; slot.style.height = l.h + '%'; slot.classList.remove('grown', 'wrapped');
         const need = span.scrollWidth + 10, have = slot.getBoundingClientRect().width;
         if (need <= have + 1) return;
-        const maxW = Math.max(have, F.width * 0.42);
+        const maxW = Math.max(have, F.width * 0.28);
         let w = Math.min(need, maxW) / F.width * 100;
         const a = anchorsOf(l)[0], right = l.x + l.w;
         let x = a && a.x > right ? right - w : a && a.x < l.x ? l.x : l.x + l.w / 2 - w / 2;
         x = Math.max(0, Math.min(100 - w, x));
         slot.style.left = x + '%'; slot.style.width = w + '%'; slot.classList.add('grown');
-        if (need > maxW) {
+        if (need > have * 1.15) {
           slot.classList.add('wrapped');
           const h2 = Math.max(l.h, (span.scrollHeight + 6) / F.height * 100);
           slot.style.height = h2 + '%'; slot.style.top = Math.max(0, Math.min(100 - h2, l.y + l.h / 2 - h2 / 2)) + '%';
