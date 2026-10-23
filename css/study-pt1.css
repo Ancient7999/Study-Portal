@@ -242,7 +242,11 @@
 #studyView .simg-reg.hl .simg-reg-poly{fill:rgba(var(--accent-0-rgb),.42);stroke:var(--accent-0);stroke-width:3px;vector-effect:non-scaling-stroke}
 #studyView .simg-reg.hl .simg-leader-hit{stroke:rgba(var(--accent-0-rgb),.35);stroke-width:6px}
 #studyView .simg-leader-hit{transition:stroke .18s ease,stroke-width .18s ease}
-#studyView .simg-reg.drop-lit .simg-leader-hit{stroke:var(--accent-0);stroke-width:3px;filter:drop-shadow(0 0 3px var(--accent-0)) drop-shadow(0 0 6px rgba(var(--accent-0-rgb),.7))}
+#studyView .simg-reg.drop-lit .simg-leader-hit,#studyView .simg-reg.focus-lit .simg-leader-hit{stroke:var(--accent-0);stroke-width:3px;filter:drop-shadow(0 0 3px var(--accent-0)) drop-shadow(0 0 6px rgba(var(--accent-0-rgb),.7))}
+/* the glowing line ends in a dot on the spot it points at */
+#studyView .simg-leader-dot{fill:none;stroke:transparent;stroke-width:0;stroke-linecap:round;vector-effect:non-scaling-stroke;pointer-events:none;transition:stroke .18s ease,stroke-width .18s ease}
+#studyView .simg-reg.drop-lit .simg-leader-dot,#studyView .simg-reg.focus-lit .simg-leader-dot{stroke:var(--accent-0);stroke-width:9px;filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.8))}
+@media (prefers-reduced-motion:reduce){#studyView .simg-leader-hit,#studyView .simg-leader-dot{transition:none}}
 #studyView .label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55);z-index:3}
 #studyView .label-slot.hl,#studyView .simg-hot.hl{outline:3px solid var(--accent-0);outline-offset:1px}
 #studyView .simg-hot{position:absolute;z-index:2;border-radius:6px;cursor:help}
@@ -368,3 +372,4 @@
 #studyView .sym-tip .tip-m{font-weight:600;margin-bottom:4px}
 #studyView .sym-tip .tip-syms{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:2px;font-size:.84rem;color:var(--text-dim,var(--text))}
 @media (max-width:480px){#studyView .md .fx-box{padding:10px;border-radius:12px}#studyView .md .fx-row{padding:10px 8px}#studyView .md .fx-formula{font-size:1.15em}}
+.simg-figure .label-slot.typing:focus-within{z-index:6}

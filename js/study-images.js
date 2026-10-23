@@ -139,7 +139,7 @@
       const polys = (l.region || []).map(p => '<polygon class="simg-reg-poly" points="' + p.map(pt).join(' ') + '"/>').join('');
       const line = anchorsOf(l).map(a => {
         const pts = [a.from && isFinite(a.from.x) ? [a.from.x, a.from.y] : leaderStart(l, a)].concat((a.via || []).map(v => [v.x, v.y]), [[a.x, a.y]]);
-        return '<polyline class="simg-leader-hit" points="' + pts.map(pt).join(' ') + '"/>';
+        return '<polyline class="simg-leader-hit" points="' + pts.map(pt).join(' ') + '"/><line class="simg-leader-dot" x1="' + a.x + '" y1="' + a.y + '" x2="' + a.x + '" y2="' + a.y + '"/>';
       }).join('');
       return (polys || line) ? '<g class="simg-reg" data-id="' + esc(l.id) + '">' + polys + line + '</g>' : '';
     }).join('');
@@ -188,7 +188,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
       else if (t != null && matches(l, t)) h += '<div class="simg-name done"><span class="simg-name-label">' + q + '</span><span class="simg-name-locked">✓ ' + esc(t) + '</span></div>';
       else if (mode === 'bank') h += '<div class="simg-name"><span class="simg-name-label">' + q + '</span><div class="label-slot open simg-name-slot" data-id="name" tabindex="0" role="button" aria-label="Drop the name here">drop the name here</div></div>';
-      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" name="simg-name-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><button type="button" class="nav-btn primary simg-name-check">Check</button><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
+      else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" name="simg-name-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
     }
     if (mode === 'bank') {
       const open = labels.filter(l => !(slots[l.id] != null && matches(l, slots[l.id])));
@@ -250,7 +250,9 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       if (k >= n) { sec.classList.add('correct-pulse'); setTimeout(() => sec.classList.remove('correct-pulse'), 650); if (typeof pt1Confetti === 'function') pt1Confetti(); }
       updateSummary();
       if (pager && single && pager.i < pager.n - 1) startAdvance();
-      if (hadFocus) { const nx = sec.querySelector('.label-slot.typing input'); if (nx) try { nx.focus({ preventScroll: true }); } catch (e) {} }
+      const back = sec._refocus && sec.querySelector('.label-slot.typing[data-id="' + CSS.escape(sec._refocus) + '"] input');
+      if (back) { try { back.focus({ preventScroll: true }); } catch (e) {} }
+      else if (hadFocus) { const nx = sec.querySelector('.label-slot.typing input'); if (nx) try { nx.focus({ preventScroll: true }); } catch (e) {} }
     };
     /* bone pages: auto-advance countdown after a correct answer (same bar as formula practice), pausable / cancellable */
     const ADVANCE_MS = 3200;
@@ -290,33 +292,51 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       input._al = setTimeout(() => { if (input.isConnected && matches(l, input.value)) doLock(); }, 700);
     };
     /* typed slots */
+    /* a focused typing box lights its leader line (the overlay traced over the line drawn in the picture) */
+    const focusLeader = id => sec.querySelectorAll('.simg-reg[data-id]').forEach(g => g.classList.toggle('focus-lit', !!id && g.dataset.id === id));
+    /* typed answers are checked on Enter or when the box loses focus (never when empty); the same text is not graded twice */
+    const typedCheck = (l, input, el, onWrong) => {
+      clearTimeout(input._al);
+      const v = norm(input.value); if (!v || input._checked === v) return;
+      input._checked = v;
+      if (matches(l, input.value)) lock(l, input.value, el, 'type');
+      else { shake(input); say('soft', hint(l, input.value), 1400); if (onWrong) onWrong(); }
+    };
+    /* leaving a box grades it; a right answer redraws the picture, so focus returns to the box the user moved to,
+       and a press on a button waits for its click first */
+    const blurCheck = (e, run) => {
+      const to = e.relatedTarget, slotTo = to && to.closest && to.closest('.label-slot[data-id]');
+      const go = () => { if (!e.target.isConnected) return; sec._refocus = slotTo && sec.contains(slotTo) ? slotTo.dataset.id : null; run(); sec._refocus = null; };
+      if (to && to.closest && to.closest('button, a')) setTimeout(go, 200); else go();
+    };
+    // keep the typed-text echo inside the picture when its box sits at an edge
+    const echoClamp = echo => { echo.style.marginLeft = ''; if (!fig || !echo.innerHTML) return; const f = fig.getBoundingClientRect(), r = echo.getBoundingClientRect(); const d = r.left < f.left + 2 ? f.left + 2 - r.left : r.right > f.right - 2 ? f.right - 2 - r.right : 0; if (d) echo.style.marginLeft = d + 'px'; };
+    const figFit = () => { if (fig && !single && window.StudyQuiz && typeof StudyQuiz.labelFit === 'function') StudyQuiz.labelFit(fig, labelsOf(img)); };
     sec.querySelectorAll('.label-slot.typing').forEach(slot => {
       const input = slot.querySelector('input'), echo = slot.querySelector('.label-echo');
       const l = labelById(slot.dataset.id);
       input.addEventListener('input', () => {
+        input._checked = null;
         echo.innerHTML = echoHTML(l, input.value);
         slot.classList.toggle('has-echo', !!echo.innerHTML);
+        figFit();
+        echoClamp(echo);
         autoLock(l, input, () => lock(l, input.value, slot, 'type'));
       });
+      input.addEventListener('focus', () => focusLeader(slot.dataset.id));
+      input.addEventListener('blur', e => { focusLeader(null); blurCheck(e, () => typedCheck(l, input, slot)); });
       input.addEventListener('keydown', e => {
         if (e.key !== 'Enter') return;
         e.preventDefault(); e.stopPropagation();
-        if (!norm(input.value)) return;
-        if (matches(l, input.value)) lock(l, input.value, slot, 'type');
-        else { shake(input); say('soft', hint(l, input.value), 1400); }
+        typedCheck(l, input, slot);
       });
     });
     const ni = sec.querySelector('.simg-name-input');
     if (ni) {
       const l = labelsOf(img)[0], echo = sec.querySelector('.simg-name-echo');
-      const check = () => {
-        if (!norm(ni.value)) { ni.focus(); return; }
-        if (matches(l, ni.value)) lock(l, ni.value, ni.closest('.simg-name'), 'type');
-        else { shake(ni); say('soft', hint(l, ni.value), 1400); ni.select(); }
-      };
-      ni.addEventListener('input', () => { echo.innerHTML = echoHTML(l, ni.value); autoLock(l, ni, () => lock(l, ni.value, ni.closest('.simg-name'), 'type')); });
-      ni.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); check(); } });
-      sec.querySelector('.simg-name-check').addEventListener('click', check);
+      ni.addEventListener('input', () => { ni._checked = null; echo.innerHTML = echoHTML(l, ni.value); autoLock(l, ni, () => lock(l, ni.value, ni.closest('.simg-name'), 'type')); });
+      ni.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); typedCheck(l, ni, ni.closest('.simg-name'), () => ni.select()); } });
+      ni.addEventListener('blur', e => blurCheck(e, () => typedCheck(l, ni, ni.closest('.simg-name'))));
     }
 
     /* word bank: drag a chip onto a slot, or tap a chip then a slot (or a slot then a chip) */
@@ -512,7 +532,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       card.className = 'chapter-card simg-chapter-card'; card.dataset.id = ch.lecture;
       const btn = document.createElement('button');
       btn.type = 'button'; btn.className = 'chapter-toggle'; btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<span class="chev" aria-hidden="true">›</span><span class="title">' + esc(lec.title || ch.lecture)
+      btn.innerHTML = '<span class="chev" aria-hidden="true">›</span><span class="title">' + esc(lec.title || ch.title || ch.lecture)
         + (lec.draft ? '<span class="draft-badge study-draft" title="Unfinished · still being written">Draft</span>' : '') + '</span><span class="meta">' + esc(chapterMeta(ch)) + '</span>';
       const prog = document.createElement('div'); prog.className = 'chapter-progress'; prog.innerHTML = '<span class="cp-fill"></span>';
       const body = document.createElement('div'); body.className = 'chapter-body';

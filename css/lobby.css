@@ -442,6 +442,11 @@ body.hs-host-tab #multi-quiz-container{display:none}
   .lobby-pill .lp-text,.lobby-pill .lp-chev{display:none}
   .lobby-pill .lp-short{display:inline}
   .lobby-pill .lp-spec{padding-left:6px}
+  /* the top bar sits left of the lobby chip instead of under it; it scrolls sideways if it is still too wide */
+  html.has-lobby-pill .split-mode-bar,html.has-lobby-pill body.host-mode .split-mode-bar,html.has-lobby-pill body.pane-mode .split-mode-bar{left:8px;transform:none;flex-wrap:nowrap;
+    max-width:calc(100vw - var(--lobby-pill-w,0px) - 16px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
+  html.has-lobby-pill .split-mode-bar::-webkit-scrollbar{display:none}
+  html.has-lobby-pill .split-mode-bar>*{flex:0 0 auto}
   .lobby-notes{top:56px}
   .lobby-note{font-size:.78rem;padding:8px 10px;flex-wrap:wrap}
   .lobby-note-btns{width:100%;justify-content:flex-end}

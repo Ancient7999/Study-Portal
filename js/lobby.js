@@ -450,6 +450,16 @@
       '<span class="lp-badge" id="lobbyPillBadge" hidden></span><span class="lp-chev" aria-hidden="true">' + CHEV_SVG + '</span>';
     pill.onclick = () => setCollapsed(false);
     document.body.appendChild(pill);
+    // the top bar keeps clear of the pill: its width (0 while hidden) is published as --lobby-pill-w
+    const pillSpace = () => {
+      const r = pill.hidden ? null : pill.getBoundingClientRect();
+      const w = r && r.width ? Math.ceil(global.innerWidth - r.left) : 0;
+      document.documentElement.style.setProperty('--lobby-pill-w', w + 'px');
+      document.documentElement.classList.toggle('has-lobby-pill', w > 0);
+    };
+    if (global.ResizeObserver) new ResizeObserver(pillSpace).observe(pill);
+    if (global.MutationObserver) new MutationObserver(pillSpace).observe(pill, { attributes: true, attributeFilter: ['hidden', 'class'] });
+    global.addEventListener('resize', pillSpace);
     const notes = document.createElement('div');
     notes.id = 'lobbyNotes';
     notes.className = 'lobby-notes';

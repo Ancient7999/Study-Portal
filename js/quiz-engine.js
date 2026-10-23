@@ -1774,7 +1774,9 @@ function labelFit(fig, labels){
         if(ocx<x-0.5 || ocx>x+w+0.5 || ocy<y-lineH*0.9 || ocy>y+h+lineH*0.9) return;
         c.ink=labelInkIn(ink, F, c, o);
         c.move=Math.abs(c.x+c.w/2-(o.x+o.w/2))+1.6*Math.abs(c.y+c.h/2-(o.y+o.h/2));
-        c.base=c.ink*2+c.move*0.8+(wrap?20:0)+(w*h-o.w*o.h)*0.003;
+        // a box with a leader line keeps the edge the line leaves from, so the line still meets it
+        const an=labelAnchors(l)[0], ex=!an ? 0 : an.x>l.x+l.w ? Math.abs(c.x+c.w-(o.x+o.w)) : an.x<l.x ? Math.abs(c.x-o.x) : 0;
+        c.base=c.ink*2+c.move*0.8+(wrap?20:0)+(w*h-o.w*o.h)*0.003+ex*6;
         list.push(c);
       }));
     };
