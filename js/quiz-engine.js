@@ -2417,28 +2417,47 @@ function renderMulti(q, ans){
     btn.onclick=()=>toggleMulti(i);
     opts.appendChild(btn);
   });
-  if(!done){
-    const act=document.createElement('div'); act.className='multi-actions';
-    const cb=document.createElement('button'); cb.type='button'; cb.className='nav-btn primary multi-check'; cb.id='multiCheck';
-    cb.innerHTML='Check<span class="multi-check-key" aria-hidden="true"> · Enter</span>';
-    cb.disabled=!sel.size;
-    cb.addEventListener('click',()=>submitMulti());
-    act.appendChild(cb); opts.appendChild(act);
-  }
 }
-function toggleMulti(idx){
+function toggleMulti(idx, fromKb){
   if(!quizActive||locked) return;
   const q=questions[current]; if(!isMulti(q) || !(idx>=0 && idx<q.options.length)) return;
   const a=multiState(current);
-  const k=a.sel.indexOf(idx);
-  if(k>=0) a.sel.splice(k,1); else a.sel.push(idx);
-  a.sel.sort((x,y)=>x-y);
-  if(Array.isArray(a.wrong)) a.wrong=a.wrong.filter(x=>x!==idx);
   const btn=document.querySelector('#options .multi-opt[data-idx="'+idx+'"]');
-  if(btn){ const on=a.sel.includes(idx); btn.classList.toggle('selected',on); btn.setAttribute('aria-checked',on?'true':'false'); btn.classList.remove('multi-wrong'); }
-  const cb=document.getElementById('multiCheck'); if(cb) cb.disabled=!a.sel.length;
-  const fb=document.getElementById('feedback');
-  if(fb && fb.classList.contains('soft')){ clearTimeout(selectAnswer._t); fb.className='feedback idle'; fb.textContent=''; }
+  const isCorrect=q.correct.includes(idx);
+  const already=a.sel.includes(idx);
+
+  if(already && isCorrect && btn && btn.disabled) return;
+
+  if(already){
+    a.sel.splice(a.sel.indexOf(idx),1);
+    if(btn){ btn.classList.remove('selected','multi-wrong'); btn.setAttribute('aria-checked','false'); }
+  } else {
+    a.sel.push(idx);
+    a.sel.sort((x,y)=>x-y);
+    if(btn){ btn.classList.add('selected'); btn.setAttribute('aria-checked','true'); }
+    if(isCorrect){
+      if(btn){ btn.disabled=true; btn.classList.add('correct'); btn.classList.remove('multi-wrong'); }
+    } else {
+      if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
+      if(btn){ btn.classList.add('multi-wrong'); btn.classList.remove('soft-wrong'); void btn.offsetWidth; btn.classList.add('soft-wrong'); setTimeout(()=>btn.classList.remove('soft-wrong'),480); }
+      const fb=document.getElementById('feedback');
+      fb.className='feedback soft'; fb.textContent='not that one · try again';
+      clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400);
+    }
+  }
+
+  const lockedCorrects=a.sel.filter(k=>q.correct.includes(k));
+  const stillWrong=a.sel.filter(k=>!q.correct.includes(k));
+  if(lockedCorrects.length===q.correct.length && !stillWrong.length){
+    locked=true; a.correct=true; delete a.wrong; onQuestionSolved(q);
+    document.querySelectorAll('#options .multi-opt').forEach(o=>{ const k=+o.dataset.idx; o.disabled=true; o.classList.remove('multi-wrong'); o.classList.add(q.correct.includes(k)?'correct':'multi-not'); });
+    const fb=document.getElementById('feedback');
+    fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+    document.getElementById('mainPanel').classList.add('correct-pulse');
+    setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
+    pt1Confetti(); rewardCorrect(); afterAnswerProgress();
+    if(fromKb && !allQuestionsAnswered()) startKbAdvance();
+  }
 }
 function multiFeedbackText(right, wrong, missed){
   const parts=[];
@@ -3710,11 +3729,11 @@ document.addEventListener('keydown', e=>{
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && !locked && isMulti(questions[current])){
     const opts=kbOptions();
     if(e.key==='Enter'){ e.preventDefault(); kbHighlight(null); submitMulti._kb=true; try{ submitMulti(); } finally { submitMulti._kb=false; } return; }
-    if(/^[1-9]$/.test(e.key)){ const k=+e.key-1; if(k>=opts.length) return; e.preventDefault(); kbHighlight(opts[k]); toggleMulti(+opts[k].dataset.idx); return; }
+    if(/^[1-9]$/.test(e.key)){ const k=+e.key-1; if(k>=opts.length) return; e.preventDefault(); kbHighlight(opts[k]); toggleMulti(+opts[k].dataset.idx, true); return; }
     if(e.key===' ' || e.code==='Space'){
       const onBtn=e.target && e.target.closest && e.target.closest('button');
       const hl=opts.find(b=>b.classList.contains('kb-hl'));
-      if(hl && !onBtn){ e.preventDefault(); toggleMulti(+hl.dataset.idx); return; }
+      if(hl && !onBtn){ e.preventDefault(); toggleMulti(+hl.dataset.idx, true); return; }
     }
   }
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey){
