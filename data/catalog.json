@@ -10,7 +10,7 @@
         {
           "id": "pt1",
           "title": "Periodic Test 1",
-          "subtitle": "4 sets by chapter · 185 questions · choice & linking · study notes",
+          "subtitle": "Chapters 1-3.1.",
           "bank": "banks/medphys/pt1.json",
           "locked": false,
           "study": {
@@ -41,7 +41,7 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "5 sets by chapter · 340 questions · choice, select-all, linking, stepped & short answer · study notes",
+          "subtitle": "Chapters 3-7.",
           "bank": "banks/medphys/pt2.json",
           "locked": false,
           "draft": true,
@@ -56,43 +56,43 @@
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",
             "chapters": [
-        {
-            "id": "ch3",
-            "src": "content/medphys/pt2/chapter-3.md",
-            "title": "Chapter 3 continued · Bernoulli to surface tension",
-            "meta": "Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
-        },
-        {
-            "id": "ch4",
-            "src": "content/medphys/pt2/chapter-4.md",
-            "title": "Chapter 4 · Waves, sound & temperature",
-            "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
-        },
-        {
-            "id": "ch5",
-            "src": "content/medphys/pt2/chapter-5.md",
-            "title": "Chapter 5 · Ray optics",
-            "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
-        },
-        {
-            "id": "ch6",
-            "src": "content/medphys/pt2/chapter-6.md",
-            "title": "Chapter 6 · Optical instruments",
-            "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
-        },
-        {
-            "id": "ch7",
-            "src": "content/medphys/pt2/chapter-7.md",
-            "title": "Chapter 7 · Atomic & nuclear physics",
-            "meta": "Photons · photoelectric effect · de Broglie · nucleus · decay · half-life · dosimetry"
-            }
-        ]
+              {
+                "id": "ch3",
+                "src": "content/medphys/pt2/chapter-3.md",
+                "title": "Chapter 3 continued · Bernoulli to surface tension",
+                "meta": "Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
+              },
+              {
+                "id": "ch4",
+                "src": "content/medphys/pt2/chapter-4.md",
+                "title": "Chapter 4 · Waves, sound & temperature",
+                "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
+              },
+              {
+                "id": "ch5",
+                "src": "content/medphys/pt2/chapter-5.md",
+                "title": "Chapter 5 · Ray optics",
+                "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
+              },
+              {
+                "id": "ch6",
+                "src": "content/medphys/pt2/chapter-6.md",
+                "title": "Chapter 6 · Optical instruments",
+                "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
+              },
+              {
+                "id": "ch7",
+                "src": "content/medphys/pt2/chapter-7.md",
+                "title": "Chapter 7 · Atomic & nuclear physics",
+                "meta": "Photons · photoelectric effect · de Broglie · nucleus · decay · half-life · dosimetry"
+              }
+            ]
           }
         },
         {
           "id": "medphys-oif",
           "title": "Only In Finals",
-          "subtitle": "1 set · 58 questions · choice, linking & stepped · study notes",
+          "subtitle": "Chapter 8.",
           "bank": "banks/medphys/oif.json",
           "locked": false,
           "draft": true,
@@ -100,28 +100,28 @@
             "title": "Study Interface",
             "symbols": "data/symbols-medphys.json",
             "chapters": [
-        {
-            "id": "ch8",
-            "src": "content/medphys/oif/chapter-8.md",
-            "title": "Chapter 8 · Electricity & magnetism",
-            "meta": "Charge · Coulomb · field · potential · Ohm · resistivity · nerves · MRI"
-        }
-        ]
+              {
+                "id": "ch8",
+                "src": "content/medphys/oif/chapter-8.md",
+                "title": "Chapter 8 · Electricity & magnetism",
+                "meta": "Charge · Coulomb · field · potential · Ohm · resistivity · nerves · MRI"
+              }
+            ]
           }
         },
         {
-        "id": "medphys-pt1-remake",
-        "title": "PT1 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "medphys-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
-        "id": "medphys-pt2-remake",
-        "title": "PT2 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "medphys-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         }
       ]
     },
@@ -133,7 +133,7 @@
         {
           "id": "ss1",
           "title": "Periodic Test 1",
-          "subtitle": "4 sets by topic · 168 questions",
+          "subtitle": "Lectures 1-4",
           "bank": "banks/studyskills/ss1.json",
           "locked": false,
           "examDiffers": true
@@ -141,30 +141,31 @@
         {
           "id": "ss2",
           "title": "Periodic Test 2",
-          "subtitle": "Coming soon",
+          "subtitle": "Lectures 5-10",
           "bank": null,
           "locked": true
         },
         {
-        "id": "studyskills-pt1-remake",
-        "title": "PT1 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "studyskills-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
-        "id": "studyskills-pt2-remake",
-        "title": "PT2 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "studyskills-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
           "id": "studyskills-oif",
           "title": "Only In Finals",
-          "subtitle": "Coming soon",
+          "subtitle": "Pending.",
           "bank": null,
-          "locked": true        }
+          "locked": true
+        }
       ]
     },
     {
@@ -175,7 +176,7 @@
         {
           "id": "en1",
           "title": "Periodic Test 1",
-          "subtitle": "16 forms · 1,712 questions · choice & linking",
+          "subtitle": "Grammar Units 1-2 & 9, English for Medicine Unit 1.",
           "bank": "banks/english/pt1.json",
           "locked": false,
           "badges": [
@@ -253,58 +254,59 @@
           ]
         },
         {
-        "id": "english-pt2",
-        "title": "Periodic Test 2",
-        "subtitle": "4 unit sets · 364 questions · choice & matching",
-        "locked": false,
-        "draft": true,
-        "lectures": [
-    {
-      "id": "unit3-efm",
-      "title": "Unit 3: Basic Principles + Digestive, Respiratory & Circulatory Systems",
-      "bank": "banks/english/pt2/unit3-efm.json",
-      "status": "ready"
-    },
-    {
-      "id": "unit3-imperatives",
-      "title": "Unit 3: Imperatives and Let’s",
-      "bank": "banks/english/pt2/unit3-imperatives.json",
-      "status": "ready"
-    },
-    {
-      "id": "unit4-past-simple",
-      "title": "Unit 4: Past Simple and Time Clauses",
-      "bank": "banks/english/pt2/unit4-past-simple.json",
-      "status": "ready"
-    },
-    {
-      "id": "unit5-used-to",
-      "title": "Unit 5: Used to",
-      "bank": "banks/english/pt2/unit5-used-to.json",
-      "status": "ready"
-    }
-  ]
-},
-        {
-        "id": "english-pt1-remake",
-        "title": "PT1 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "english-pt2",
+          "title": "Periodic Test 2",
+          "subtitle": "Grammar Units 3-5, English for Medicine Unit 3.",
+          "locked": false,
+          "draft": true,
+          "lectures": [
+            {
+              "id": "unit3-efm",
+              "title": "Unit 3: Basic Principles + Digestive, Respiratory & Circulatory Systems",
+              "bank": "banks/english/pt2/unit3-efm.json",
+              "status": "ready"
+            },
+            {
+              "id": "unit3-imperatives",
+              "title": "Unit 3: Imperatives and Let’s",
+              "bank": "banks/english/pt2/unit3-imperatives.json",
+              "status": "ready"
+            },
+            {
+              "id": "unit4-past-simple",
+              "title": "Unit 4: Past Simple and Time Clauses",
+              "bank": "banks/english/pt2/unit4-past-simple.json",
+              "status": "ready"
+            },
+            {
+              "id": "unit5-used-to",
+              "title": "Unit 5: Used to",
+              "bank": "banks/english/pt2/unit5-used-to.json",
+              "status": "ready"
+            }
+          ]
         },
         {
-        "id": "english-pt2-remake",
-        "title": "PT2 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "english-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
+        },
+        {
+          "id": "english-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
           "id": "english-oif",
           "title": "Only In Finals",
-          "subtitle": "Coming soon",
+          "subtitle": "Grammar Units 7-8 & 13, English for Medicine Units 5-6.",
           "bank": null,
-          "locked": true        }
+          "locked": true
+        }
       ]
     },
     {
@@ -315,10 +317,16 @@
         {
           "id": "pt1",
           "title": "Periodic Test 1",
-          "subtitle": "8 lecture sets · 532 questions · choice & linking",
+          "subtitle": "Lectures 1-9",
           "locked": false,
           "badges": [
-            { "text": "Reliable", "tip": "A reliable contender for the exam's difficulty.", "tone": "green", "note": false, "where": ["card"] }
+            {
+              "text": "Reliable",
+              "tip": "A reliable contender for the exam's difficulty.",
+              "tone": "green",
+              "note": false,
+              "where": ["card"]
+            }
           ],
           "lectures": [
             {
@@ -382,7 +390,7 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "7 lecture sets · 670 questions · choice, linking, stepped, short answer, labeling & ordering · picture study",
+          "subtitle": "Lectures 10-20",
           "draft": true,
           "locked": false,
           "study": {
@@ -453,7 +461,7 @@
         {
           "id": "medterm-oif",
           "title": "Only In Finals",
-          "subtitle": "4 lecture sets · 232 questions · choice, linking & stepped · picture study",
+          "subtitle": "Lectures 21-28",
           "draft": true,
           "locked": false,
           "lectures": [
@@ -492,18 +500,18 @@
           }
         },
         {
-        "id": "medterm-pt1-remake",
-        "title": "PT1 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "medterm-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
-        "id": "medterm-pt2-remake",
-        "title": "PT2 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "medterm-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         }
       ]
     },
@@ -515,7 +523,7 @@
         {
           "id": "iths1",
           "title": "Periodic Test 1",
-          "subtitle": "Lectures 1–4 · 64 questions · choice & linking",
+          "subtitle": "Lectures 1-4",
           "bank": "banks/iths/pt1.json",
           "locked": false,
           "forms": [
@@ -528,31 +536,31 @@
         {
           "id": "iths-pt2",
           "title": "Periodic Test 2",
-          "subtitle": "Coming soon",
+          "subtitle": "Lectures 5-10",
           "bank": null,
           "locked": true
         },
         {
-        "id": "iths-pt1-remake",
-        "title": "PT1 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "iths-pt1-remake",
+          "title": "PT1 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
-        "id": "iths-pt2-remake",
-        "title": "PT2 Remake",
-        "subtitle": "Finals version · coming soon",
-        "bank": null,
-        "locked": true
+          "id": "iths-pt2-remake",
+          "title": "PT2 Remake",
+          "subtitle": "Finals version · coming soon",
+          "bank": null,
+          "locked": true
         },
         {
           "id": "iths-oif",
           "title": "Only In Finals",
-          "subtitle": "Coming soon",
+          "subtitle": "Pending.",
           "bank": null,
           "locked": true
-          }
+        }
       ],
       "subtitle": "Information Technology for Health Sciences"
     }
