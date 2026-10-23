@@ -181,7 +181,8 @@
         else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
-    h += '</div></div><button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button></div>';
+    h += '</div></div></div>';
+h += '<button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button>';
     if (single) {
       const l = labels[0], t = slots.name, q = img.plural ? 'What are these bones called?' : 'What is this bone called?';
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
