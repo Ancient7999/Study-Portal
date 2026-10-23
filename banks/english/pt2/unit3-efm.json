@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 215,
+  "formSize": 216,
   "forms": [
     "A"
   ],
@@ -3175,7 +3175,53 @@
       ],
       "correct": 0,
       "explain": "Food typically remains in the stomach for about 5 hours during digestion before passing into the small intestine. About 2 hours and about 3 hours are shorter than usual for a typical mixed meal. About 8 hours is longer than normal gastric processing time."
-    }
+          },
+          {
+        "id": "ENG1PT20667",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each body system to its main function.",
+        "leftItems": [
+          { "id": "1", "text": "Integumentary" },
+          { "id": "2", "text": "Skeletal" },
+          { "id": "3", "text": "Muscular" },
+          { "id": "4", "text": "Nervous" },
+          { "id": "5", "text": "Endocrine" },
+          { "id": "6", "text": "Cardiovascular" },
+          { "id": "7", "text": "Lymphatic" },
+          { "id": "8", "text": "Respiratory" },
+          { "id": "9", "text": "Digestive" },
+          { "id": "10", "text": "Urinary" },
+          { "id": "11", "text": "Reproductive" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Covers and protects the body surface" },
+          { "id": "B", "text": "Supports the body and protects organs" },
+          { "id": "C", "text": "Controls movement and posture" },
+          { "id": "D", "text": "Sends signals and processes information" },
+          { "id": "E", "text": "Releases hormones for balance" },
+          { "id": "F", "text": "Pumps and circulates blood" },
+          { "id": "G", "text": "Returns fluid and supports immunity" },
+          { "id": "H", "text": "Brings in oxygen and removes carbon dioxide" },
+          { "id": "I", "text": "Breaks down food and absorbs nutrients" },
+          { "id": "J", "text": "Filters waste and balances fluids" },
+          { "id": "K", "text": "Produces offspring" }
+          ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I",
+          "10": "J",
+          "11": "K"
+        },
+        "explain": "Integumentary covers and protects. Skeletal supports and protects organs. Muscular controls movement and posture. Nervous sends signals. Endocrine releases hormones. Cardiovascular pumps blood. Lymphatic returns fluid and supports immunity. Respiratory handles oxygen and carbon dioxide. Digestive breaks down food. Urinary filters waste. Reproductive produces offspring."
+      }
     ]
   }
 }
