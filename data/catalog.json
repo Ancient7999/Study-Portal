@@ -283,6 +283,11 @@
               "title": "Unit 5: Used to",
               "bank": "banks/english/pt2/unit5-used-to.json",
               "status": "ready"
+            },
+              "id": "writing-skills-sentence-structure-present-simple",
+              "title": "Writing Skills & Sentence Structure",
+              "bank": "banks/english/pt2/writing-skills-sentence-structure-present-simple.json",
+              "status": "ready"
             }
           ]
         },
