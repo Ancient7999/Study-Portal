@@ -70,7 +70,6 @@ function isTypedStepDef(st){ return !!(st && (st.type==='saq' || (st.answer!=nul
 function isTypedStep(q){ return isStep(q) && isSaq(q); }
 function isOrder(q){ return !!(q && q.type==='order' && Array.isArray(q.stages)); }
 function isLabel(q){ return !!(q && q.type==='label' && Array.isArray(q.labels)); }
-   Graded all-or-nothing: solved only when the picked set equals the correct set. */
 function isMulti(q){ return !!(q && q.type==='multi' && Array.isArray(q.options) && Array.isArray(q.correct)); }
 function multiSetEq(a,b){ if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length) return false; const s=new Set(a); return b.every(x=>s.has(x)); }
 const MULTI_HINT_RE=/\s*\(?\s*select all that apply\s*[.:!]?\s*\)?\s*$/i;
