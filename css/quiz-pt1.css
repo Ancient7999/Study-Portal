@@ -111,6 +111,13 @@ html[data-custom-cursor="off"] .mood-cursor-hint,html[data-pointer-input="touch"
 .pt1q .q-count{font-family:var(--mono);font-size:.88rem;color:var(--text-dim);letter-spacing:.02em}
 .pt1q .cat-tag{font-family:var(--mono);font-size:.68rem;padding:4px 10px;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.28);color:var(--accent-1);background:rgba(var(--accent-0-rgb),.1);letter-spacing:.03em}
 .pt1q .question{font-family:var(--font-question,var(--head));font-style:italic;font-weight:400;font-size:1.55rem;line-height:1.4;margin-bottom:20px;color:var(--text);letter-spacing:.01em}
+.pt1q .question u,
+.pt1q .question-link-copy u,
+.pt1q .step-stem u{
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1.5px;
+}
 .pt1q .question.is-linking-question{display:flex;align-items:flex-start;gap:.62em}
 .pt1q .question-link-icon{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:1.18em;height:1.18em;margin-top:.12em;color:var(--accent-0);filter:drop-shadow(0 0 7px rgba(var(--accent-0-rgb),.42))}
 .pt1q .question-link-icon svg{display:block;width:100%;height:100%;overflow:visible;transform:rotate(28deg) scaleX(-1);transform-origin:center}
