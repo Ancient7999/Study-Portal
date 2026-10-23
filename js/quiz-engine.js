@@ -74,6 +74,7 @@ function isLabel(q){ return !!(q && q.type==='label' && Array.isArray(q.labels))
 function isMulti(q){ return !!(q && q.type==='multi' && Array.isArray(q.options) && Array.isArray(q.correct)); }
 function multiSetEq(a,b){ if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length) return false; const s=new Set(a); return b.every(x=>s.has(x)); }
 const MULTI_HINT_RE=/\s*\(?\s*select all that apply\s*[.:!]?\s*\)?\s*$/i;
+function multiStem(s){ const t=String(s==null?'':s).replace(MULTI_HINT_RE,'').trim(); return t||String(s==null?'':s); }
 function applyUnderline(el, raw){
   const s = String(raw == null ? '' : raw);
   el.replaceChildren();
@@ -87,6 +88,10 @@ function applyUnderline(el, raw){
     last = re.lastIndex;
   }
   if (last < s.length) el.appendChild(document.createTextNode(s.slice(last)));
+}
+function underlineHTML(raw){
+  const s = escapeHtml(String(raw == null ? '' : raw));
+  return s.replace(/\[\[([^\]]+)\]\]/g, '<u>$1</u>');
 }
 function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && !isMulti(q) && (q.type==='saq' || Array.isArray(q.answers) || (q.answer!=null && !Array.isArray(q.options)))); }
 function isSaqMulti(q){ return isSaq(q) && Array.isArray(q.answers) && q.answers.length>1; }
@@ -3520,33 +3525,33 @@ function score(){ let c=0; answers.forEach((a,i)=>{ const q=questions[i]; if(isM
 function resultItemHTML(q,i){
   if(isMatching(q)){
     const ok=answers[i]&&answers[i].correct;
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div><div class="rline '+(ok?'rok':'rbad')+'">'+(ok?'All links locked':'Incomplete')+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rline '+(ok?'rok':'rbad')+'">'+(ok?'All links locked':'Incomplete')+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isOrder(q)){
     const a=answers[i], ok=!!(a&&a.correct);
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div><div class="rline '+(ok?'rok':'rbad')+'">'+(ok?'Put in order':'Not finished')+'</div><div class="rline rok">Correct order:</div><ol class="order-review">'+(q.stages||[]).map(s=>'<li>'+escapeHtml(s.text)+'</li>').join('')+'</ol><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rline '+(ok?'rok':'rbad')+'">'+(ok?'Put in order':'Not finished')+'</div><div class="rline rok">Correct order:</div><ol class="order-review">'+(q.stages||[]).map(s=>'<li>'+escapeHtml(s.text)+'</li>').join('')+'</ol><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isLabel(q)){
     const a=answers[i], n=(q.labels||[]).length, k=labelDoneCount(q,a);
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div><div class="rline '+(k===n?'rok':'rbad')+'">Labels placed: '+k+' / '+n+'</div><div class="label-review">'+labelFigureHTML(q,a,true)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rline '+(k===n?'rok':'rbad')+'">Labels placed: '+k+' / '+n+'</div><div class="label-review">'+labelFigureHTML(q,a,true)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isMulti(q)){
     const a=answers[i], ok=!!(a&&a.correct), opts=q.options||[];
     const picks=(a&&Array.isArray(a.sel))?a.sel:[];
     const list=(ks)=>ks.length?ks.map(k=>escapeHtml(opts[k]==null?'':opts[k])).join(' · '):'—';
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(multiStem(q.q))+'</div><div class="rline rmulti-tag">Select all that apply</div><div class="rline '+(ok?'rok':'rbad')+'">Your picks: '+list(ok?picks:[])+'</div><div class="rline rok">Correct: '+list(q.correct)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(multiStem(q.q))+'</div><div class="rline rmulti-tag">Select all that apply</div><div class="rline '+(ok?'rok':'rbad')+'">Your picks: '+list(ok?picks:[])+'</div><div class="rline rok">Correct: '+list(q.correct)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isSaq(q)){
     const a=answers[i], ok=!!(a&&a.correct);
     const sh=isTypedStep(q)?'<div class="rstep">Step '+(q.__stepIdx+1)+' / '+q.__stepCount+' · '+escapeHtml(q.prompt||'')+'</div>':'';
     const ex=(!isTypedStep(q) || q.__stepIdx===q.__stepCount-1)?'<div class="rex">'+escapeHtml(q.explain||'')+'</div>':'';
-    return '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div>'+sh+(isTypedStep(q)&&q.__stepIdx===0?stepFigureHTML(q,true):'')+'<div class="rline '+(ok?'rok':'rbad')+'">Your answer: '+(ok?(isSaqMulti(q)?a.parts.map(escapeHtml).join(' · '):saqDoneHTML(a)):'—')+'</div><div class="rline rok">Answer: '+escapeHtml(saqAccepts(q)[0]||'')+'</div>'+ex;
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div>'+sh+(isTypedStep(q)&&q.__stepIdx===0?stepFigureHTML(q,true):'')+'<div class="rline '+(ok?'rok':'rbad')+'">Your answer: '+(ok?(isSaqMulti(q)?a.parts.map(escapeHtml).join(' · '):saqDoneHTML(a)):'—')+'</div><div class="rline rok">Answer: '+escapeHtml(saqAccepts(q)[0]||'')+'</div>'+ex;
   }
   const pick=answers[i], ok=pick===q.correct;
   const opts=q.options||[];
   const head=(isStep(q) && !isSingleStep(q))
-    ? '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div><div class="rstep">Step '+(q.__stepIdx+1)+' / '+q.__stepCount+' · '+escapeHtml(q.prompt||'')+'</div>'
-    : '<div class="rq">'+(i+1)+'. '+escapeHtml(q.q)+'</div>';
+    ? '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rstep">Step '+(q.__stepIdx+1)+' / '+q.__stepCount+' · '+escapeHtml(q.prompt||'')+'</div>'
+    : '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div>';
   const showEx=!isStep(q) || q.__stepIdx===q.__stepCount-1;
   return head+'<div class="rline '+(ok?'rok':'rbad')+'">Your pick: '+(pick==null?'—':escapeHtml(opts[pick]))+'</div><div class="rline rok">Correct: '+escapeHtml(opts[q.correct]==null?'':opts[q.correct])+'</div>'+(showEx?'<div class="rex">'+escapeHtml(q.explain||'')+'</div>':'')+((isStep(q) && q.__stepIdx===q.__stepCount-1)?stepRecapHTML(i,true):'');
 }
