@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 214,
+  "formSize": 215,
   "forms": [
     "A"
   ],
@@ -486,18 +486,18 @@
         "explain": "Bones weaken because minerals start to disappear from the bones. Muscle size, red cell production, and activity level are not the stated reason."
       },
       {
-        "id": "ENG1PT20485",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What is the primary purpose of ligaments?",
-        "options": [
-          "Link bones together at the joints",
-          "Form blood cells",
-          "Protect the brain",
-          "Store minerals"
+      "id": "ENG1PT20485",
+      "type": "mcq",
+      "cat": "Unit 3: Basic Principles in Medicine",
+      "q": "What is the primary purpose of ligaments?",
+      "options": [
+        "Connect bones at joints",
+        "Produce new blood cells",
+        "Shield the brain",
+        "Store body minerals"
         ],
         "correct": 0,
-        "explain": "Ligaments link bones together at the joints. They are strong and can stretch. Forming blood cells, protecting the brain, and storing minerals are other functions."
+        "explain": "Ligaments connect bones together at the joints. They are strong and can stretch. Producing blood cells, shielding the brain, and storing minerals are other bone functions."
       },
       {
         "id": "ENG1PT20486",
@@ -514,18 +514,18 @@
         "explain": "Tendons link muscles to bones. Ligaments link bones together. Stretching is a property of ligaments. Protection is not the stated function."
       },
       {
-        "id": "ENG1PT20487",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "How many bones does an adult have approximately?",
-        "options": [
-          "206 bones",
-          "300 bones",
-          "150 bones",
-          "400 bones"
-        ],
-        "correct": 0,
-        "explain": "A person is born with three hundred bones. By adulthood they have approximately 206 bones as some join together."
+      "id": "ENG1PT20487",
+      "type": "mcq",
+      "cat": "Unit 3: Basic Principles in Medicine",
+      "q": "How many bones does an adult have approximately?",
+      "options": [
+        "206 bones",
+        "211 bones",
+        "312 bones",
+        "300 bones"
+      ],
+      "correct": 0,
+      "explain": "An adult has approximately 206 bones. A newborn has about 270–300 bones that fuse during growth. 211 is close but not the standard count, and 312 is not a recognized total."
       },
       {
         "id": "ENG1PT20488",
@@ -1062,15 +1062,15 @@
         "explain": "The breastbone is the sternum. The pelvis is the large bony frame near the base of the spine. Ribs protect the heart and lungs, and vertebrae form the spine."
       },
       {
-        "id": "ENG1PT20524",
-        "type": "mcq",
-        "cat": "Unit 3 – Anatomy Vocabulary",
-        "q": "Which flat bone is located on the back of the shoulder?",
-        "options": [
-          "shoulder blade",
-          "breastbone",
-          "pelvis",
-          "collarbone"
+      "id": "ENG1PT20524",
+      "type": "mcq",
+      "cat": "Unit 3 – Anatomy Vocabulary",
+      "q": "Which flat bone is located on the back of the shoulder?",
+      "options": [
+        "Shoulder blade",
+        "Breastbone",
+        "Pelvis",
+        "Collarbone"
         ],
         "correct": 0,
         "explain": "The shoulder blade is the flat bone on the back of the shoulder. The breastbone is the sternum, the pelvis is near the base of the spine, and the collarbone is at the front of the shoulder area."
@@ -1118,29 +1118,15 @@
         "explain": "Bone is described as a living, growing tissue made of water, collagen, and minerals. It is not an organ system, vessel, or heart chamber."
       },
       {
-        "id": "ENG1PT20528",
-        "type": "mcq",
-        "cat": "Unit 3 – Medical Word Building",
-        "q": "Which prefix means going inside?",
-        "options": [
-          "in-",
-          "hyper-",
-          "re-",
-          "cardio-"
-        ],
-        "correct": 0,
-        "explain": "In- means going in or inside, as in ingest, intake, and internal. Hyper- means excess, re- means again, and cardio- relates to the heart."
-      },
-      {
         "id": "ENG1PT20529",
         "type": "mcq",
         "cat": "Unit 3 – Medical Word Building",
         "q": "What does ingest mean?",
         "options": [
-          "take food or drink into the body",
-          "remove waste from the body",
-          "pump blood around the body",
-          "examine the stomach with an instrument"
+          "Take food or drink into the body",
+          "Remove waste from the body",
+          "Pump blood around the body",
+          "Examine the stomach with an instrument"
         ],
         "correct": 0,
         "explain": "Ingest means to take food or drink into the body by swallowing or absorbing. Removing waste is elimination, pumping blood is circulation, and examining the stomach relates to gastroscope."
@@ -1165,27 +1151,27 @@
         "cat": "Unit 3 – Medical Word Building",
         "q": "What does internal mean?",
         "options": [
-          "on the inside",
-          "toward the back",
-          "related to the heart",
-          "again"
+          "On the inside",
+          "Toward the back",
+          "Related to the heart",
+          "Again"
         ],
         "correct": 0,
         "explain": "Internal means on the inside. Toward the back is posterior, related to the heart is cardio-, and again is re-."
       },
       {
-        "id": "ENG1PT20532",
-        "type": "mcq",
-        "cat": "Unit 3 – Medical Word Building",
-        "q": "Which prefix means related to the body?",
-        "options": [
-          "physi-",
-          "gastro-",
-          "hyper-",
-          "in-"
-        ],
-        "correct": 0,
-        "explain": "Physi- means related to the body, as in physical, physiology, and physiotherapy. Gastro- relates to the stomach, hyper- means excess, and in- means inside."
+      "id": "ENG1PT20532",
+      "type": "mcq",
+      "cat": "Unit 3 – Medical Word Building",
+      "q": "Which prefix means related to the body?",
+      "options": [
+        "physi-",
+        "-ic",
+        "-ous",
+        "in-"
+      ],
+      "correct": 0,
+      "explain": "Physi- means related to the body, as in physical, physiology, and physiotherapy. -ic and -ous both mean pertaining to, and in- means inside."
       },
       {
         "id": "ENG1PT20533",
@@ -1202,18 +1188,18 @@
         "explain": "Physiotherapy uses physical methods such as massage and exercise to treat disease or injury. Drugs, surgery, and diagnostic tools belong to other areas of medical treatment or examination."
       },
       {
-        "id": "ENG1PT20534",
-        "type": "mcq",
-        "cat": "Unit 3 – Medical Word Building",
-        "q": "Which prefix means again?",
-        "options": [
-          "re-",
-          "in-",
-          "cardio-",
-          "gastro-"
-        ],
-        "correct": 0,
-        "explain": "Re- means again, as in renew, reproductive, and reshape. In- means inside, cardio- relates to the heart, and gastro- relates to the stomach."
+      "id": "ENG1PT20534",
+      "type": "mcq",
+      "cat": "Unit 3 – Medical Word Building",
+      "q": "Which prefix means again?",
+      "options": [
+        "re-",
+        "in-",
+        "un-",
+        "pre-"
+      ],
+      "correct": 0,
+      "explain": "Re- means again, as in renew, reproductive, and reshape. In- means inside or not, un- means not, and pre- means before."
       },
       {
         "id": "ENG1PT20535",
@@ -1221,10 +1207,10 @@
         "cat": "Unit 3 – Medical Word Building",
         "q": "What does renew mean?",
         "options": [
-          "restart or make new again",
-          "breathe at an abnormally fast rate",
-          "related to the stomach",
-          "protect the body from infection"
+          "Restart or make new again",
+          "Breathe at an abnormally fast rate",
+          "Related to the stomach",
+          "Protect the body from infection"
         ],
         "correct": 0,
         "explain": "Renew means to restart or make new again. Hyperventilate means to breathe abnormally fast, gastro- relates to the stomach, and the immune system protects from infection."
@@ -1235,10 +1221,10 @@
         "cat": "Unit 3 – Medical Word Building",
         "q": "What does reshape mean?",
         "options": [
-          "form again",
-          "move blood around the body",
-          "filter waste from the blood",
-          "examine the interior of the stomach"
+          "Form again",
+          "Move blood around the body",
+          "Filter waste from the blood",
+          "Examine the interior of the stomach"
         ],
         "correct": 0,
         "explain": "Reshape means to form again. Moving blood is pumping, filtering waste relates to the urinary system, and examining the stomach relates to a gastroscope."
@@ -1249,10 +1235,10 @@
         "cat": "Unit 3 – Medical Word Building",
         "q": "What does cardiopathy mean?",
         "options": [
-          "heart disease",
-          "stomach inflammation",
-          "blood vessel",
-          "physical treatment"
+          "Heart disease",
+          "Stomach inflammation",
+          "Blood vessel",
+          "Physical treatment"
         ],
         "correct": 0,
         "explain": "Cardiopathy means heart disease or a disorder of the heart. Stomach inflammation is gastroenteritis, a blood vessel carries blood, and physiotherapy is physical treatment."
@@ -1328,18 +1314,18 @@
         "explain": "Hyperventilate means to breathe at an abnormally fast rate. Hyper- suggests excess or high, and ventilate relates to breathing. With high volume, at high pressure, and too high and deep do not match the meaning."
       },
       {
-        "id": "ENG1PT20543",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "The female reproductive organs include the ovaries, the uterus, the vagina, and the ___.",
-        "options": [
-          "fallopian tubes",
-          "urinary bladder",
-          "urethral opening",
-          "scrotum"
-        ],
-        "correct": 0,
-        "explain": "The female reproductive organs include the ovaries, uterus, vagina, and fallopian tubes. The urinary bladder and urethral opening are urinary structures. The epoophoron is an embryonic remnant near the ovary and is not one of the main reproductive organs."
+      "id": "ENG1PT20543",
+      "type": "mcq",
+      "cat": "Unit 3 – Body Systems Overview",
+      "q": "The female reproductive organs include the ovaries, the uterus, the vagina, and the ___.",
+      "options": [
+        "fallopian tubes",
+        "urinary bladder",
+        "urethral opening",
+        "scrotum"
+      ],
+      "correct": 0,
+      "explain": "The female reproductive organs include the ovaries, uterus, vagina, and fallopian tubes. The urinary bladder and urethral opening are urinary structures. The scrotum is a male reproductive structure."
       },
       {
         "id": "ENG1PT20544",
@@ -1361,10 +1347,10 @@
         "cat": "Unit 3: Basic Principles in Medicine",
         "q": "The lateral or sagittal plane divides the body into which parts?",
         "options": [
-          "left and right",
-          "front and back",
-          "top and bottom",
-          "center and side"
+          "Left and right",
+          "Front and back",
+          "Top and bottom",
+          "Center and side"
         ],
         "correct": 0,
         "explain": "The lateral or sagittal plane divides the body vertically into left and right parts. The frontal plane divides front and back, and the transverse plane divides top and bottom."
@@ -1403,10 +1389,10 @@
         "cat": "Unit 3: Basic Principles in Medicine",
         "q": "Which structure protects the brain?",
         "options": [
-          "skull",
-          "ribs",
-          "pelvis",
-          "sternum"
+          "The skull",
+          "The ribs",
+          "The pelvis",
+          "The sternum"
         ],
         "correct": 0,
         "explain": "The skull protects the brain. The ribs protect the heart and lungs, the pelvis supports the lower trunk, and the sternum is the breastbone."
@@ -1459,10 +1445,10 @@
         "cat": "Unit 3: Basic Principles in Medicine",
         "q": "Which is the biggest and strongest joint in the body?",
         "options": [
-          "knee joint",
-          "elbow joint",
-          "shoulder joint",
-          "hip joint"
+          "Knee joint",
+          "Elbow joint",
+          "Shoulder joint",
+          "Hip joint"
         ],
         "correct": 0,
         "explain": "The knee joint is described as the biggest and strongest joint in the body."
@@ -1479,7 +1465,7 @@
           "sac"
         ],
         "correct": 0,
-        "explain": "Between each vertebra is a small cushion called a disk. Ducts carry fluids, lobes are parts of organs, and sacs are general containers."
+        "explain": "Between each vertebra is a small cushion called a disk/disc. Ducts carry fluids, lobes are parts of organs, and sacs are general containers."
       },
       {
         "id": "ENG1PT20554",
@@ -1849,12 +1835,12 @@
         "q": "The liver secretes bile, which is necessary for digestion and what?",
         "options": [
           "Fat absorption",
-          "Only water storage",
-          "Only breathing",
-          "Only pulse control"
+          "Water reabsorption",
+          "Protein breakdown",
+          "Carbohydrate storage"
         ],
         "correct": 0,
-        "explain": "The liver secretes bile, which is necessary for digestion and fat absorption. Water storage, breathing, and pulse control are not the stated roles of bile."
+        "explain": "The liver secretes bile, which is necessary for digestion and fat absorption. Water reabsorption, protein breakdown, and carbohydrate storage are not the stated roles of bile."
       },
       {
         "id": "ENG1PT20578",
@@ -1876,13 +1862,13 @@
         "cat": "Unit 3 – Digestive System",
         "q": "The small intestine absorbs nutrients from what?",
         "options": [
-          "Already digested food",
-          "Undigested solids only",
-          "Only inhaled air",
-          "Only plasma"
+          "Digested food",
+          "Undigested solids",
+          "Inhaled air",
+          "Blood plasma"
         ],
         "correct": 0,
-        "explain": "The small intestine absorbs nutrients from already digested food. Undigested solids, inhaled air, and plasma are not the source of nutrients absorbed there."
+        "explain": "The small intestine absorbs nutrients from already digested food. Undigested solids, inhaled air, and blood plasma are not the source of nutrients absorbed there."
       },
       {
         "id": "ENG1PT20580",
@@ -1905,12 +1891,12 @@
         "q": "The rectum is the final section of the large intestine. It collects the feces and retains them until what?",
         "options": [
           "The moment of expulsion",
-          "The start of digestion",
-          "Only inhalation",
-          "Only heart pumping"
+          "The start of absorption",
+          "The completion of digestion",
+          "The release of bile"
         ],
         "correct": 0,
-        "explain": "The rectum is the final section of the large intestine. It collects the feces and retains them until the moment of expulsion. Digestion starts earlier. Inhalation and heart pumping are not related to this retention."
+        "explain": "The rectum collects the feces and retains them until the moment of expulsion. Absorption, digestion, and bile release occur earlier and are not related to this retention."
       },
       {
         "id": "ENG1PT20582",
@@ -1933,12 +1919,12 @@
         "q": "The respiratory system’s main function is to supply oxygen to all parts of the body through breathing: inhaling oxygen-rich air and exhaling air filled with what?",
         "options": [
           "Carbon dioxide",
-          "Only oxygen",
-          "Only nitrogen",
-          "Only nutrients"
+          "Nitrogen gas",
+          "Water vapor",
+          "Fresh oxygen"
         ],
         "correct": 0,
-        "explain": "The respiratory system’s main function is to supply oxygen to all parts of the body. It does this through breathing: inhaling oxygen-rich air and exhaling air filled with carbon dioxide, which is a waste gas. Only oxygen, nitrogen, or nutrients do not describe the exhaled waste."
+        "explain": "The respiratory system supplies oxygen and exhales air filled with carbon dioxide, a waste gas. Nitrogen gas, water vapor, and fresh oxygen do not describe the primary exhaled waste."
       },
       {
         "id": "ENG1PT20584",
@@ -1961,12 +1947,12 @@
         "q": "In the lungs, oxygen passes from the air into the blood through which structures?",
         "options": [
           "Alveoli",
-          "Bronchi only",
-          "Trachea only",
-          "Diaphragm only"
+          "Bronchi",
+          "Trachea",
+          "Diaphragm"
         ],
         "correct": 0,
-        "explain": "In the lungs, oxygen passes from the air into the blood through the alveoli. Bronchi, trachea, and diaphragm are other parts but not the site of gas exchange described."
+        "explain": "In the lungs, oxygen passes from the air into the blood through the alveoli. Bronchi, trachea, and diaphragm are other respiratory structures but not the site of gas exchange."
       },
       {
         "id": "ENG1PT20586",
@@ -2066,11 +2052,11 @@
         "options": [
           "Waste gas",
           "Nutrient gas",
-          "Only oxygen",
-          "Only bile"
+          "Carrier gas",
+          "Inert gas"
         ],
         "correct": 0,
-        "explain": "Carbon dioxide is the waste gas. Nutrient gas, only oxygen, and only bile do not match the description."
+        "explain": "Carbon dioxide is the waste gas exhaled by the body. Nutrient gas, carrier gas, and inert gas do not match the description."
       },
       {
         "id": "ENG1PT20590",
@@ -2079,12 +2065,12 @@
         "q": "Bronchi and bronchioles are tubes that take air into the lungs and remove which gas?",
         "options": [
           "Carbon dioxide",
-          "Only oxygen",
-          "Only nitrogen",
-          "Only nutrients"
+          "Oxygen",
+          "Nitrogen",
+          "Water vapor"
         ],
         "correct": 0,
-        "explain": "Bronchi and bronchioles are tubes that take air into the lungs and remove carbon dioxide. Only oxygen, nitrogen, or nutrients do not match the removal described."
+        "explain": "Bronchi and bronchioles take air into the lungs and remove carbon dioxide. Oxygen, nitrogen, and water vapor do not match the removal described."
       },
       {
         "id": "ENG1PT20591",
@@ -2092,13 +2078,13 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "Capillaries are fine tubes that carry blood to and from what?",
         "options": [
-          "Cells",
-          "Only the heart",
-          "Only the stomach",
-          "Only the anus"
+          "The cells",
+          "The heart",
+          "The lungs",
+          "The stomach"
         ],
         "correct": 0,
-        "explain": "Capillaries are fine tubes that carry blood to and from cells. Only the heart, only the stomach, and only the anus do not match the description."
+        "explain": "Capillaries are fine tubes that carry blood to and from cells. The heart, the lungs, and the stomach are not the exchange sites described."
       },
       {
         "id": "ENG1PT20592",
@@ -2107,12 +2093,12 @@
         "q": "The primary purpose of the heart is to pump life-giving blood throughout the body so it can supply the needs of the cells. It works with blood and blood vessels. Which statement aligns?",
         "options": [
           "It pumps blood to supply cell needs",
-          "It only keeps the body warm",
-          "It only produces plasma",
-          "It only stores food"
+          "It filters blood to remove waste",
+          "It produces plasma for circulation",
+          "It stores oxygen for the cells"
         ],
         "correct": 0,
-        "explain": "The heart is an organ that pumps life-giving blood throughout the body. It works together with blood and blood vessels to supply all the needs of the cells. Keeping warm only, producing plasma only, and storing food do not describe the primary purpose."
+        "explain": "The heart pumps blood throughout the body to supply the needs of the cells. Filtering blood, producing plasma, and storing oxygen are not its primary purpose."
       },
       {
         "id": "ENG1PT20593",
@@ -2121,12 +2107,12 @@
         "q": "An artery is a blood vessel that carries blood in which direction?",
         "options": [
           "Away from the heart",
-          "Only to the heart",
-          "Only within the lungs",
-          "Only to the stomach"
+          "Toward the heart",
+          "Between the lungs",
+          "Into the stomach"
         ],
         "correct": 0,
-        "explain": "An artery is a blood vessel that carries blood away from the heart. Veins carry blood back to the heart. Only within the lungs or only to the stomach do not match the general direction of arteries."
+        "explain": "An artery carries blood away from the heart. Veins carry blood toward the heart. Between the lungs or into the stomach do not match the general direction of arteries."
       },
       {
         "id": "ENG1PT20594",
@@ -2135,9 +2121,9 @@
         "q": "A valve in each ventricle stops blood from flowing where?",
         "options": [
           "Backwards",
-          "Only forwards",
-          "Only sideways",
-          "Only upward"
+          "Forwards",
+          "Sideways",
+          "Upward"
         ],
         "correct": 0,
         "explain": "A valve in each ventricle stops the blood from flowing backwards. Forwards, sideways, and upward do not describe the prevention stated."
@@ -2149,26 +2135,26 @@
         "q": "Plasma makes up over half of the blood and helps regulate what?",
         "options": [
           "Body temperature",
-          "Only pulse rate",
-          "Only digestion",
-          "Only breathing"
+          "Blood pressure",
+          "Heart rate",
+          "Oxygen levels"
         ],
         "correct": 0,
-        "explain": "Plasma is a liquid that can easily pass through small blood vessels into cells and makes up over half of the blood. The plasma carries nutrients from the stomach to be used as fuel for energy. Plasma also helps regulate body temperature. Pulse rate, digestion, and breathing alone are not the regulation stated."
-      },
+        "explain": "Plasma makes up over half of the blood and helps regulate body temperature. Blood pressure, heart rate, and oxygen levels are not the regulation stated for plasma."
+        },
       {
-        "id": "ENG1PT20596",
-        "type": "mcq",
-        "cat": "Unit 3 – Circulatory System",
-        "q": "Veins carry blood back to the heart. The walls of a vein are much thinner than those of an artery. Veins on the skin may look blue. Which statement aligns?",
-        "options": [
-          "Veins carry blood back to the heart",
-          "Veins carry blood away from the heart",
-          "Veins have thicker walls than arteries",
-          "Veins only carry oxygen"
-        ],
-        "correct": 0,
-        "explain": "The blood returns to the heart through blood vessels called veins. The walls of a vein are much thinner than those of an artery. Arteries carry blood away from the heart. Thicker walls and only oxygen do not match veins."
+      "id": "ENG1PT20596",
+      "type": "mcq",
+      "cat": "Unit 3 – Circulatory System",
+      "q": "Veins carry blood back to the heart. The walls of a vein are much thinner than those of an artery. Veins on the skin may look blue. Which statement aligns?",
+      "options": [
+        "Veins carry blood back to the heart",
+        "Veins carry blood away from the heart",
+        "Veins have thicker walls than arteries",
+        "Veins carry only oxygenated blood"
+      ],
+      "correct": 0,
+      "explain": "Veins carry blood back to the heart and have thinner walls than arteries. Carrying blood away, having thicker walls, or carrying only oxygenated blood do not match veins."
       },
       {
         "id": "ENG1PT20597",
@@ -2227,32 +2213,32 @@
         "explain": "The veins on the skin may look blue, especially on the hands and arms. Slightly pink, big and bulgy, and gray do not match the description."
       },
       {
-        "id": "ENG1PT20601",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The body uses nutrients for energy, growth, and what?",
-        "options": [
-          "Tissue repair",
-          "Only storage",
-          "Only breathing",
-          "Only pulse"
-        ],
-        "correct": 0,
-        "explain": "The body uses nutrients for energy, growth, and tissue repair. Only storage, only breathing, and only pulse do not match the uses stated."
+      "id": "ENG1PT20601",
+      "type": "mcq",
+      "cat": "Unit 3 – Digestive System",
+      "q": "The body uses nutrients for energy, growth, and what?",
+      "options": [
+        "Tissue repair",
+        "Mineral storage",
+        "Hormone production",
+        "Waste filtration"
+      ],
+      "correct": 0,
+      "explain": "The body uses nutrients for energy, growth, and tissue repair. Mineral storage, hormone production, and waste filtration are not the primary uses stated for nutrients."
       },
       {
-        "id": "ENG1PT20602",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "In the stomach, food is churned with digestive juices to make what?",
-        "options": [
-          "Chyme",
-          "Bolus only",
-          "Feces only",
-          "Plasma only"
-        ],
-        "correct": 0,
-        "explain": "In the stomach, food is churned with digestive juices to make chyme, a semi-liquid mixture. Bolus is earlier. Feces are later waste. Plasma is blood fluid."
+      "id": "ENG1PT20602",
+      "type": "mcq",
+      "cat": "Unit 3 – Digestive System",
+      "q": "In the stomach, food is churned with digestive juices to make what?",
+      "options": [
+        "Chyme",
+        "Bolus",
+        "Feces",
+        "Bile"
+      ],
+      "correct": 0,
+      "explain": "In the stomach, food is churned with digestive juices to make chyme, a semi-liquid mixture. Bolus forms in the mouth, feces form later, and bile is produced by the liver."
       },
       {
         "id": "ENG1PT20603",
@@ -2286,15 +2272,15 @@
         "id": "ENG1PT20605",
         "type": "mcq",
         "cat": "Unit 3 – Respiratory System",
-        "q": "During inhalation the nose cleans, warms, and moistens the air. Which statement aligns?",
+        "q": "During inhalation, what does the nose do to the air?",
         "options": [
-          "The nose cleans, warms, and moistens air",
-          "The nose only stores food",
-          "The nose only expels feces",
-          "The nose only pumps blood"
+          "Cleans, warms, and moistens it",
+          "Filters, cools, and stores it",
+          "Heats, blocks, and dries it",
+          "Moistens, cools, and filters it"
         ],
         "correct": 0,
-        "explain": "During inhalation the nose cleans, warms, and moistens the air. Storing food, expelling feces, and pumping blood are not functions of the nose."
+        "explain": "During inhalation the nose cleans, warms, and moistens the air. Filtering and cooling, heating and blocking, or moistening and cooling do not match the described function."
       },
       {
         "id": "ENG1PT20606",
@@ -2748,10 +2734,10 @@
         "cat": "Unit 3 – Digestive System",
         "q": "In 'the digestive tract extends from the mouth to the anus', what does 'extends' mean?",
         "options": [
-          "spreads",
-          "shortens",
-          "decreases",
-          "contracts"
+          "Spreads",
+          "Shortens",
+          "Decreases",
+          "Contracts"
         ],
         "correct": 0,
         "explain": "'extends' means spreads over a distance. 'shortens' and 'decreases' express reduction. 'contracts' expresses drawing inward."
@@ -2760,12 +2746,12 @@
         "id": "ENG1PT20636",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "In 'the system extracts nutrients and disposes of waste', what do the underlined words mean?",
+        "q": "In 'the system [[extracts]] nutrients and [[disposes]] of waste', what do the underlined words mean?",
         "options": [
-          "takes out / gets rid of",
-          "removes / retains within",
-          "utilizes / remains upon",
-          "inserts / discards away"
+          "Takes out / Gets rid of",
+          "Removes / Retains within",
+          "Utilizes / Remains upon",
+          "Inserts / Discards away"
         ],
         "correct": 0,
         "explain": "'extracts' means takes out and 'disposes' means gets rid of. 'removes / retains within' is right on the first word but wrong on the second, since retaining opposes disposing. 'utilizes / remains upon' mismatches both. 'inserts / discards away' reverses the first word."
@@ -2774,12 +2760,12 @@
         "id": "ENG1PT20637",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "In 'enzymes convert large molecules into absorbable units', what do the underlined words mean?",
+        "q": "In 'enzymes [[convert]] large molecules into [[absorbable]] units', what do the underlined words mean?",
         "options": [
-          "alter / able to be taken in",
-          "change / capable of replacement",
-          "alter / having resistance power",
-          "retain / capable of being taken"
+          "Alter / Able to be taken in",
+          "Change / Capable of replacement",
+          "Alter / Having resistance power",
+          "Retain / Capable of being taken"
         ],
         "correct": 0,
         "explain": "'convert' means alter and 'absorbable' means able to be taken in. 'change / capable of replacement' is close on the first but wrong on the second. 'alter / having resistance power' mismatches the second. 'retain / capable of being taken' mismatches the first."
@@ -2790,13 +2776,13 @@
         "cat": "Unit 3 – Digestive System",
         "q": "In 'chewing breaks food into particles', what does 'particles' mean?",
         "options": [
-          "small bits or pieces",
-          "large units or blocks",
-          "huge parts or wholes",
-          "whole objects or masses"
+          "Small bits or pieces",
+          "Large units or blocks",
+          "Huge parts or wholes",
+          "Whole objects or masses"
         ],
         "correct": 0,
-        "explain": "'particles' means small bits or pieces. 'large units or blocks' and 'huge parts or wholes' state the opposite size. 'whole objects or masses' denies the broken-up sense."
+        "explain": "'Particles' means small bits or pieces. 'large units or blocks' and 'huge parts or wholes' state the opposite size. 'whole objects or masses' denies the broken-up sense."
       },
       {
         "id": "ENG1PT20639",
@@ -2804,13 +2790,13 @@
         "cat": "Unit 3 – Digestive System",
         "q": "In 'organs secrete juices that aid digestion', what does 'secrete' mean?",
         "options": [
-          "produce or discharge",
-          "absorb or take in fully",
-          "expose openly to view",
-          "destroy or break down"
+          "Produce or discharge",
+          "Absorb or take in fully",
+          "Expose openly to view",
+          "Destroy or break down"
         ],
         "correct": 0,
-        "explain": "'secrete' means produce or discharge. 'absorb or take in fully' is the opposite uptake. 'expose openly to view' means revealing, not releasing fluid. 'destroy or break down' describes enzymatic action, not glandular release."
+        "explain": "'Secrete' means produce or discharge. 'absorb or take in fully' is the opposite uptake. 'expose openly to view' means revealing, not releasing fluid. 'destroy or break down' describes enzymatic action, not glandular release."
       },
       {
         "id": "ENG1PT20640",
@@ -2846,10 +2832,10 @@
         "cat": "Unit 3 – Digestive System",
         "q": "Which folded membrane covers and secures the digestive organs?",
         "options": [
-          "Peritoneum",
-          "Mesentery",
-          "Pleura",
-          "Omentum"
+          "The peritoneum",
+          "The mesentery",
+          "The pleura",
+          "The omentum"
         ],
         "correct": 0,
         "explain": "The peritoneum is the folded membrane that covers and secures the digestive organs. The mesentery is a peritoneal fold that attaches the intestines, the pleura covers the lungs, and the omentum is a specific fold of the peritoneum rather than the broad covering membrane itself."
@@ -2874,10 +2860,10 @@
         "cat": "Unit 3 – Digestive System",
         "q": "Which structure helps mold food into a bolus?",
         "options": [
-          "tongue",
-          "liver",
-          "pancreas",
-          "rectum"
+          "The tongue",
+          "The liver",
+          "The pancreas",
+          "The rectum"
         ],
         "correct": 0,
         "explain": "The tongue helps mix and mold food into a bolus. The liver produces bile, the pancreas produces pancreatic juice, and the rectum stores feces."
@@ -2916,14 +2902,14 @@
         "cat": "Unit 3 – Digestive System",
         "q": "The digestive system can process a variety of diets, such as meat-based diets and diets mainly of ___.",
         "options": [
-          "rice and fish",
-          "bread and salt",
-          "sugar and fat",
-          "water and air"
+          "Rice and fish",
+          "Bread and salt",
+          "Sugar and fat",
+          "Water and air"
         ],
         "correct": 0,
-        "explain": "The passage gives a Japanese diet consisting mainly of rice and fish as an example of a diet the digestive system can process."
-      },
+        "explain": "The digestive system processes both meat-based diets and plant-based diets such as rice and fish. Bread and salt is too limited, sugar and fat is unbalanced, and water and air are not food."
+        },
       {
         "id": "ENG1PT20648",
         "type": "mcq",
@@ -3056,10 +3042,10 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "Which two main tubes branch from the trachea and lead into the lungs?",
         "options": [
-          "bronchi",
-          "alveoli",
-          "capillaries",
-          "ventricles"
+          "Bronchi",
+          "Alveoli",
+          "Capillaries",
+          "Ventricles"
         ],
         "correct": 0,
         "explain": "The bronchi are the two main tubes that branch from the trachea and lead into the lungs. Alveoli are air sacs, capillaries are tiny blood vessels, and ventricles are heart chambers."
@@ -3070,10 +3056,10 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "What are bronchioles?",
         "options": [
-          "small tubes leading to alveoli",
-          "tiny sacs for gas exchange",
-          "flat muscle below the lungs",
-          "bones around the chest cavity"
+          "Small tubes leading to alveoli",
+          "Tiny sacs for gas exchange",
+          "Flat muscle below the lungs",
+          "Bones around the chest cavity"
         ],
         "correct": 0,
         "explain": "Bronchioles are small branches of the bronchial tubes that lead to the alveoli. The alveoli are the tiny sacs where gas exchange happens, the diaphragm is the muscle below the lungs, and the ribs are bones around the chest."
@@ -3084,10 +3070,10 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "Which organs remove oxygen from the air and pass it into the blood?",
         "options": [
-          "lungs",
-          "liver",
-          "kidneys",
-          "stomach"
+          "Lungs",
+          "Liver",
+          "Kidneys",
+          "Stomach"
         ],
         "correct": 0,
         "explain": "The lungs are the two organs that remove oxygen from inhaled air and pass it into the blood. The liver processes substances, the kidneys filter blood, and the stomach digests food."
@@ -3126,10 +3112,10 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "Which body system includes the nose, trachea, lungs, and diaphragm?",
         "options": [
-          "respiratory",
-          "digestive",
-          "circulatory",
-          "skeletal"
+          "Respiratory",
+          "Digestive",
+          "Circulatory",
+          "Skeletal"
         ],
         "correct": 0,
         "explain": "The respiratory system includes structures used for breathing, such as the nose, trachea, lungs, and diaphragm. The digestive system breaks down food, the circulatory system moves blood, and the skeletal system supports the body."
@@ -3140,10 +3126,10 @@
         "cat": "Unit 3 – Respiratory System",
         "q": "Which bones surround and protect the lungs and heart?",
         "options": [
-          "ribs",
-          "vertebrae",
-          "pelvis",
-          "clavicles"
+          "Ribs",
+          "Vertebrae",
+          "Pelvis",
+          "Clavicles"
         ],
         "correct": 0,
         "explain": "The ribs form the rib cage around the chest and help protect the lungs and heart. Vertebrae form the spine, the pelvis is at the base of the trunk, and the clavicles are collarbones."
@@ -3161,7 +3147,35 @@
         ],
         "correct": 0,
         "explain": "The nasal cavity is the space inside the nose. The throat is the pharynx, the voice box is the larynx, and the windpipe is the trachea."
-      }
+      },
+      {
+      "id": "ENG1PT20665",
+      "type": "mcq",
+      "cat": "Unit 3 – Digestive System",
+      "q": "How many hours does it take to churn food into a pulp?",
+      "options": [
+        "About 6 hours",
+        "About 4 hours",
+        "About 3 hours",
+        "About 5 hours"
+      ],
+      "correct": 1,
+      "explain": "Food is typically churned in the stomach for about 2–4 hours and turned into semi-liquid chyme before gradual release into the small intestine. About 4 hours is the standard figure for a typical mixed meal. About 5 hours fits larger or high-fat meals. About 6 hours is long for most meals, and about 3 hours is on the shorter side for complete processing of solid food."
+    },
+    {
+      "id": "ENG1PT20666",
+      "type": "mcq",
+      "cat": "Unit 3 – Digestive System",
+      "q": "About how long does food typically remain in the stomach during digestion?",
+      "options": [
+        "About 5 hours",
+        "About 2 hours",
+        "About 8 hours",
+        "About 3 hours"
+      ],
+      "correct": 0,
+      "explain": "Food typically remains in the stomach for about 5 hours during digestion before passing into the small intestine. About 2 hours and about 3 hours are shorter than usual for a typical mixed meal. About 8 hours is longer than normal gastric processing time."
+    }
     ]
   }
 }
