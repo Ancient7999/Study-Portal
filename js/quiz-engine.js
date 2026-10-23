@@ -64,38 +64,40 @@ function normalizeBankMatching(data){
   return data;
 }
 function qid(q,i){ return String(q && (q.id!=null?q.id:('q_'+(q.q||'').slice(0,48)+'_'+i))); }
-/* STEPPED: question-type layer */
 function isStepped(q){ return !!(q && !isMatching(q) && (q.type==='stepped' || Array.isArray(q.steps))); }
 function isStep(q){ return !!(q && q.__step); }
-/* a typed (short-answer) step inside a stepped question */
 function isTypedStepDef(st){ return !!(st && (st.type==='saq' || (st.answer!=null && !Array.isArray(st.options)))); }
 function isTypedStep(q){ return isStep(q) && isSaq(q); }
-/* SAQ (short answer): {q, answer, explain} — typed answer, lenient match. */
 function isOrder(q){ return !!(q && q.type==='order' && Array.isArray(q.stages)); }
 function isLabel(q){ return !!(q && q.type==='label' && Array.isArray(q.labels)); }
-/* MULTI (select all that apply): {id, type:'multi', cat, q, options:[...], correct:[0-based indexes], explain}.
    Graded all-or-nothing: solved only when the picked set equals the correct set. */
 function isMulti(q){ return !!(q && q.type==='multi' && Array.isArray(q.options) && Array.isArray(q.correct)); }
 function multiSetEq(a,b){ if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length) return false; const s=new Set(a); return b.every(x=>s.has(x)); }
-/* the engine shows its own "Select all that apply" hint, so a trailing copy in the stem is not repeated */
 const MULTI_HINT_RE=/\s*\(?\s*select all that apply\s*[.:!]?\s*\)?\s*$/i;
-function multiStem(s){ const t=String(s==null?'':s).replace(MULTI_HINT_RE,'').trim(); return t||String(s==null?'':s); }
+function applyUnderline(el, raw){
+  const s = String(raw == null ? '' : raw);
+  el.replaceChildren();
+  const re = /\[\[([^\]]+)\]\]/g;
+  let last = 0, m;
+  while ((m = re.exec(s))) {
+    if (m.index > last) el.appendChild(document.createTextNode(s.slice(last, m.index)));
+    const u = document.createElement('u');
+    u.textContent = m[1];
+    el.appendChild(u);
+    last = re.lastIndex;
+  }
+  if (last < s.length) el.appendChild(document.createTextNode(s.slice(last)));
+}
 function isSaq(q){ return !!(q && !isMatching(q) && !isStepped(q) && !isLabel(q) && !isOrder(q) && !isMulti(q) && (q.type==='saq' || Array.isArray(q.answers) || (q.answer!=null && !Array.isArray(q.options)))); }
-/* several blanks in one stem: {type:'saq', q:'… ____ meaning ____.', answers:[[alts for blank 1],[alts for blank 2]]} */
 function isSaqMulti(q){ return isSaq(q) && Array.isArray(q.answers) && q.answers.length>1; }
 const SAQ_BLANK_RE=/_{3,}/g;
 function saqBlankAlts(q,k){ const a=q.answers[k]; return (Array.isArray(a)?a:[a]).filter(x=>x!=null&&String(x).trim()!==''); }
-/* saq grading: spelling, punctuation and slashes count; capitals do NOT (a question can opt back in
-   with "caseSensitive": true, e.g. a unit symbol). Leading/trailing whitespace is trimmed and runs of
-   internal whitespace collapse to one space. */
 function saqNorm(s){ return String(s==null?'':s).trim().replace(/\s+/g,' '); }
 function saqKey(s, cs){ const t=saqNorm(s); return cs?t:t.toLowerCase(); }
 function saqAccepts(q){
   if(q && Array.isArray(q.answers)) return [q.answers.map((a,k)=>saqBlankAlts(q,k)[0]||'').join(', ')];
   const a=q&&q.answer; return (Array.isArray(a)?a:[a]).concat(Array.isArray(q&&q.accept)?q.accept:[]).filter(x=>x!=null&&String(x).trim()!=='');
 }
-/* implied-word completion: "Coronary" for "Coronary circulation" when the stem itself already names the
-   circulation. The added word is shown highlighted. The generic word alone never counts. */
 const SAQ_GENERIC=new Set(['circulation','system','systems','muscle','muscles','gland','glands','valve','valves','artery','arteries','vein','veins','bone','bones','node','nodes','cell','cells','tissue','tissues','membrane','membranes','layer','layers','nerve','nerves','vessel','vessels','duct','ducts','cavity','cavities','chamber','chambers','sac','organ','organs','circuit','fluid','disease','disorder','condition','procedure']);
 function saqStem(q){ return String((q&&q.q)||'')+' '+String((q&&q.prompt)||''); }
 function saqWordBase(w){ w=String(w).toLowerCase(); return w.replace(/(ies)$/,'y').replace(/(es|s)$/,''); }
@@ -3356,11 +3358,11 @@ function renderQuestion(){
     icon.innerHTML=LINK_PENCIL_SVG;
     const copy=document.createElement('span');
     copy.className='question-link-copy';
-    copy.textContent=q.q;
+    applyUnderline(copy, q.q);
     qText.append(icon,copy);
   }else if(isStep(q)){
     if(q.image) qText.insertAdjacentHTML('beforeend', stepFigureHTML(q,false));
-    const stem=document.createElement('div'); stem.className='step-stem'; stem.textContent=q.q||'';
+    const stem=document.createElement('div'); stem.className='step-stem'; applyUnderline(stem, q.q||'');
     const pr=document.createElement('div'); pr.className='step-prompt';
     const txt=document.createElement('span'); txt.textContent=q.prompt||'';
     // a one-step question reads like a normal question: no "Step 1 / 1" badge
@@ -3368,9 +3370,8 @@ function renderQuestion(){
     pr.append(txt);
     qText.append(stem,pr);
   }else{
-    qText.textContent=isMulti(q)?multiStem(q.q):q.q;
+    applyUnderline(qText, isMulti(q)?multiStem(q.q):q.q);
   }
-  // per-question badges (bank field q.badges = [{text, tone?, tip?}]), same component as the card badges
   if(Array.isArray(q.badges) && q.badges.length){
     const qb=document.createElement('div'); qb.className='q-badges card-badges';
     qb.innerHTML=q.badges.map(b=>noteBadgeHTML(b)).join('');
