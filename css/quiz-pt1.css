@@ -705,6 +705,8 @@ html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
 .pt1q .saq-echo{position:static;transform:none;display:block;flex-basis:100%;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;padding:4px 8px;min-height:0}
 .pt1q .saq-echo:empty{display:none}
 @media (max-width:480px){.step-img{max-height:220px}}
+.step-figure.large:not(.in-review) .step-img{max-height:min(460px,52vh)}
+@media (max-width:480px){.step-figure.large:not(.in-review) .step-img{max-height:300px}}
 html[data-pointer-input="touch"] .kbd-hint{display:none}
 .label-zoom{display:flex;justify-content:flex-end;align-items:center;gap:6px;margin:0 0 6px}
 .label-zoom button{font-family:var(--mono);font-size:.78rem;line-height:1;min-width:34px;height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border);background:rgba(var(--accent-0-rgb),.08);color:var(--accent-0);cursor:pointer}

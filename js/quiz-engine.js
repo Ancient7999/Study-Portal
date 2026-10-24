@@ -441,7 +441,7 @@ function expandDeck(deck){
         cat:q.cat, explain:q.explain
       };
       if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete; delete e.options; delete e.correct; delete e.__perm; }
-      if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; }
+      if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; }
       out.push(e);
     });
   });
@@ -802,7 +802,12 @@ function cardCounts(pool){
   const label=pool.filter(isLabel).length;
   const order=pool.filter(isOrder).length;
   const multi=pool.filter(isMulti).length;
-  return {linking, stepped, saq, label, order, multi, choice:pool.length-linking-stepped-saq-label-order-multi};
+  const out={linking, stepped, saq, label, order, multi, choice:pool.length-linking-stepped-saq-label-order-multi};
+  if(BANK && BANK.compactCounts){
+    // a one-step question reads as its step: typed → short answer, otherwise choice
+    pool.filter(q=>isStepped(q)&&Array.isArray(q.steps)&&q.steps.length===1).forEach(q=>{ out.stepped--; if(isTypedStepDef(q.steps[0])) out.saq++; else out.choice++; });
+  }
+  return out;
 }
 /* Badges are data-driven: card.draft / card.soon, material flags (examDiffers) and
    badge lists [{text, tip, tone:'amber'|'grey'}] on the catalog material (every card)
@@ -856,7 +861,7 @@ function appendPoolCard(grid, label, pool, card){
   const btn=document.createElement('button'); btn.type='button'; btn.className='card';
   btn.dataset.card=card.id;
   // PT1 line "N linking · M choice" + STEPPED count when the card has any
-  const sub=(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.multi?(' · '+c.multi+' select-all'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
+  const sub=(BANK && BANK.compactCounts)?[[c.linking,'linking'],[c.choice,'choice'],[c.stepped,'stepped'],[c.multi,'select-all'],[c.saq,'short answer'],[c.label,'labeling'],[c.order,'ordering']].filter(x=>x[0]).map(x=>x[0]+' '+x[1]).join(' · '):(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.multi?(' · '+c.multi+' select-all'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
   btn.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(label)}</span><span class="mood-stamp">${escapeHtml(meta.mood||'')}</span></div>${cardBadgesHTML(card)}
     <div class="card-sub">${sub}</div>
     <div class="card-stats"><div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}${inProgress?' · in progress':''}</div></div>`;
@@ -1456,7 +1461,7 @@ function saqAutoGrade(input, grade){
 function stepFigureHTML(q, review){
   if(!q || !q.image) return '';
   const cr=q.credit?('<figcaption class="label-credit step-credit">'+(q.creditUrl?'<a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">'+escapeHtml(q.credit)+'</a>':escapeHtml(q.credit))+'</figcaption>'):'';
-  return '<figure class="step-figure'+(review?' in-review':'')+'"><img class="step-img" src="'+escapeHtml(q.image)+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+cr+'</figure>';
+  return '<figure class="step-figure'+(review?' in-review':'')+(q.imageSize==='large'?' large':'')+'"><img class="step-img" src="'+escapeHtml(q.image)+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+cr+'</figure>';
 }
 /* a solved answer that the engine completed: the added word is highlighted */
 function saqDoneHTML(ans){
@@ -1516,6 +1521,7 @@ function saqSoftWrong(input, msg, o){
   if(!(o && o.blur)) input.select(); // a blur grade never pulls the focus back
 }
 function saqSolvedFx(q, o){
+  const ec=document.getElementById('saqEcho'); if(ec) ec.remove();
   const fb=document.getElementById('feedback');
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
   renderStepRecap(); // a typed last step shows the series recap at once, like a choice step

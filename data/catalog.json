@@ -522,6 +522,33 @@
       ]
     },
     {
+      "id": "anatomy",
+      "name": "Anatomy",
+      "locked": false,
+      "materials": [
+        {
+          "id": "anatomy-bones",
+          "title": "Bone Identification",
+          "subtitle": "Name the bone from 3D views · 4 sets of 10",
+          "bank": "banks/anatomy/bone-identification.json",
+          "locked": false
+        }
+      ],
+      "intro": [
+        "The 3D pictures in this section are adapted from ",
+        {
+          "text": "Human Atlas by ashemag",
+          "href": "https://github.com/ashemag/human-atlas"
+        },
+        ", which is built on BodyParts3D © DBCLS and licensed under ",
+        {
+          "text": "CC BY 4.0",
+          "href": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "."
+      ]
+    },
+    {
       "id": "iths",
       "name": "ITHS",
       "locked": false,

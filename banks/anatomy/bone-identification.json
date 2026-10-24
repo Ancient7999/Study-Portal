@@ -1,0 +1,1073 @@
+{
+  "id": "anatomy-bone-identification",
+  "subject": "Anatomy",
+  "subjectId": "anatomy",
+  "title": "Bone Identification",
+  "formSize": 10,
+  "forms": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "compactCounts": true,
+  "cards": [
+    {
+      "id": "set1",
+      "title": "Set 1",
+      "forms": [
+        "A"
+      ]
+    },
+    {
+      "id": "set2",
+      "title": "Set 2",
+      "forms": [
+        "B"
+      ]
+    },
+    {
+      "id": "set3",
+      "title": "Set 3",
+      "forms": [
+        "C"
+      ]
+    },
+    {
+      "id": "set4",
+      "title": "Set 4",
+      "forms": [
+        "D"
+      ]
+    }
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "AN001",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Name the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Femur",
+            "accept": [
+              "Thigh bone",
+              "Thighbone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/femur-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the hips and legs with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the femur, also called the thigh bone. It runs from the hip to the knee and is the longest bone in the body. This front view shows its rounded head at the hip."
+      },
+      {
+        "id": "AN005",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Pick the name of the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Humerus",
+              "Scapula",
+              "Ulna",
+              "Clavicle"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/humerus-1.webp",
+        "imageSize": "large",
+        "alt": "A side and front view of the chest and arm with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the humerus, the long bone of the upper arm. It meets the scapula at the shoulder and the radius and ulna at the elbow. This side view shows it running from the shoulder to the elbow."
+      },
+      {
+        "id": "AN009",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Tibia",
+            "accept": [
+              "Shinbone",
+              "Shin bone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which type of bone is this?",
+            "options": [
+              "Long bone",
+              "Short bone",
+              "Flat bone",
+              "Irregular bone"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/tibia-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the lower leg with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the tibia, also called the shinbone. It is the larger, medial bone of the lower leg, and the thin fibula lies beside it. It is a long bone. This front view shows it as the thicker of the two leg bones."
+      },
+      {
+        "id": "AN013",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Type the name of the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Radius",
+            "accept": [],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/radius-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the forearm and hand with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the radius. It is the forearm bone on the thumb side, and the ulna lies on the little finger side. This front view shows it ending above the thumb."
+      },
+      {
+        "id": "AN017",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "This view highlights one bone. Which is it?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Ulna",
+              "Radius",
+              "Tibia",
+              "Humerus"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/ulna-1.webp",
+        "imageSize": "large",
+        "alt": "A back view of the forearm and hand with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the ulna. It is the medial forearm bone on the little finger side, and its upper end forms the point of the elbow. This back view shows it ending above the little finger."
+      },
+      {
+        "id": "AN021",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Identify the highlighted bone by name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Scapula",
+            "accept": [
+              "Shoulder blade",
+              "Shoulderblade"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/scapula-1.webp",
+        "imageSize": "large",
+        "alt": "A back view of the upper trunk with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the scapula, also called the shoulder blade. It is a flat, triangular bone of the upper back that joins the humerus and the clavicle. This back view shows its triangular shape over the ribs."
+      },
+      {
+        "id": "AN025",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Pick the name of the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Patella",
+              "Tarsals",
+              "Carpals",
+              "Fibula"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/patella-1.webp",
+        "imageSize": "large",
+        "alt": "A front and side view of the knee with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the patella, also called the kneecap. It is a sesamoid bone in the quadriceps tendon at the front of the knee. This view shows it in front of the joint between the femur and the tibia."
+      },
+      {
+        "id": "AN029",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Sternum",
+            "accept": [
+              "Breastbone",
+              "Breast bone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which part of the skeleton does this bone belong to?",
+            "options": [
+              "Axial skeleton",
+              "Appendicular skeleton"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/sternum-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the rib cage with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the sternum, also called the breastbone. It is a flat bone in the middle of the chest, and its three parts are the manubrium, the body and the xiphoid process. It belongs to the axial skeleton. This front view shows the ribs joining it through cartilage."
+      },
+      {
+        "id": "AN033",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Name the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Clavicle",
+            "accept": [
+              "Collarbone",
+              "Collar bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/clavicle-1.webp",
+        "imageSize": "large",
+        "alt": "A view of the shoulder from above and in front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the clavicle, also called the collarbone. It is the S-shaped bone that links the sternum to the scapula. This view shows its S-shaped curve."
+      },
+      {
+        "id": "AN037",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Pick the name of the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Mandible",
+              "Maxilla",
+              "Hyoid",
+              "Clavicle"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/mandible-1.webp",
+        "imageSize": "large",
+        "alt": "A view of the skull from the side and front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the mandible, the bone of the lower jaw. It is the only skull bone that moves, and it holds the lower teeth. This angled view shows it joining the skull in front of the ear."
+      }
+    ],
+    "B": [
+      {
+        "id": "AN002",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Femur",
+              "Tibia",
+              "Humerus",
+              "Fibula"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/femur-2.webp",
+        "imageSize": "large",
+        "alt": "A back view of the hips and legs with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the femur, also called the thigh bone. It runs from the hip to the knee and is the longest bone in the body. This back view shows the bone from behind."
+      },
+      {
+        "id": "AN006",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Humerus",
+            "accept": [
+              "Upper arm bone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which region does this bone occupy?",
+            "options": [
+              "The upper arm",
+              "The thigh",
+              "The forearm",
+              "The lower leg"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/humerus-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the shoulder and arm with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the humerus, the long bone of the upper arm. It meets the scapula at the shoulder and the radius and ulna at the elbow. It occupies the upper arm. This front view shows its head under the shoulder."
+      },
+      {
+        "id": "AN010",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Identify the highlighted bone by name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Tibia",
+            "accept": [
+              "Shinbone",
+              "Shin bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/tibia-2.webp",
+        "imageSize": "large",
+        "alt": "A back view of the lower leg with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the tibia, also called the shinbone. It is the larger, medial bone of the lower leg, and the thin fibula lies beside it. This back view shows it from behind the knee to the ankle."
+      },
+      {
+        "id": "AN014",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Radius",
+              "Ulna",
+              "Humerus",
+              "Fibula"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/radius-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the forearm from the inner side with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the radius. It is the forearm bone on the thumb side, and the ulna lies on the little finger side. This view shows it beside the ulna, toward the thumb."
+      },
+      {
+        "id": "AN018",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted? Type its name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Ulna",
+            "accept": [],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/ulna-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the forearm and hand with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the ulna. It is the medial forearm bone on the little finger side, and its upper end forms the point of the elbow. This front view shows it beside the radius, toward the little finger."
+      },
+      {
+        "id": "AN022",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Scapula",
+            "accept": [
+              "Shoulder blade",
+              "Shoulderblade"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which type of bone is this?",
+            "options": [
+              "Flat bone",
+              "Long bone",
+              "Short bone",
+              "Sesamoid bone"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/scapula-2.webp",
+        "imageSize": "large",
+        "alt": "A back view of the trunk from above with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the scapula, also called the shoulder blade. It is a flat, triangular bone of the upper back that joins the humerus and the clavicle. It is a flat bone. This view from above shows its ridge reaching the top of the shoulder."
+      },
+      {
+        "id": "AN026",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Type the name of the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Patella",
+            "accept": [
+              "Kneecap",
+              "Knee cap"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/patella-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the knee with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the patella, also called the kneecap. It is a sesamoid bone in the quadriceps tendon at the front of the knee. This front view shows its rounded outline."
+      },
+      {
+        "id": "AN030",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Choose the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Sternum",
+              "Vertebra",
+              "Clavicle",
+              "Hyoid"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/sternum-2.webp",
+        "imageSize": "large",
+        "alt": "A view of the rib cage from the left front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the sternum, also called the breastbone. It is a flat bone in the middle of the chest, and its three parts are the manubrium, the body and the xiphoid process. This angled view shows it at the front of the chest."
+      },
+      {
+        "id": "AN034",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Clavicle",
+              "Scapula",
+              "Sternum",
+              "Humerus"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/clavicle-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the shoulder with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the clavicle, also called the collarbone. It is the S-shaped bone that links the sternum to the scapula. This front view shows it across the top of the chest."
+      },
+      {
+        "id": "AN038",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted? Type its name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Mandible",
+            "accept": [
+              "Lower jaw",
+              "Lower jawbone",
+              "Lower jaw bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/mandible-2.webp",
+        "imageSize": "large",
+        "alt": "A front view of the skull with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the mandible, the bone of the lower jaw. It is the only skull bone that moves, and it holds the lower teeth. This front view shows its U shape under the upper teeth."
+      }
+    ],
+    "C": [
+      {
+        "id": "AN003",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Femur",
+            "accept": [
+              "Thigh bone",
+              "Thighbone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which region does this bone occupy?",
+            "options": [
+              "The thigh",
+              "The upper arm",
+              "The shin",
+              "The forearm"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/femur-3.webp",
+        "imageSize": "large",
+        "alt": "A side view of the leg between hip and knee with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the femur, also called the thigh bone. It runs from the hip to the knee and is the longest bone in the body. It occupies the thigh. This side view shows the gentle forward curve of its shaft."
+      },
+      {
+        "id": "AN007",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted? Type its name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Humerus",
+            "accept": [
+              "Upper arm bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/humerus-3.webp",
+        "imageSize": "large",
+        "alt": "A back view of the shoulder and arm with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the humerus, the long bone of the upper arm. It meets the scapula at the shoulder and the radius and ulna at the elbow. This back view shows it beside the scapula."
+      },
+      {
+        "id": "AN011",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Choose the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Tibia",
+              "Fibula",
+              "Ulna",
+              "Patella"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/tibia-3.webp",
+        "imageSize": "large",
+        "alt": "A side view of the lower leg with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the tibia, also called the shinbone. It is the larger, medial bone of the lower leg, and the thin fibula lies beside it. This side view shows its front edge."
+      },
+      {
+        "id": "AN015",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Radius",
+            "accept": [],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which side of the forearm is this bone on?",
+            "options": [
+              "The thumb side",
+              "The little finger side"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/radius-3.webp",
+        "imageSize": "large",
+        "alt": "A back view of the forearm and hand with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the radius. It is the forearm bone on the thumb side, and the ulna lies on the little finger side. It lies on the thumb side. This back view shows its wide lower end at the wrist."
+      },
+      {
+        "id": "AN019",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Choose the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Ulna",
+              "Radius",
+              "Fibula",
+              "Carpals"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/ulna-3.webp",
+        "imageSize": "large",
+        "alt": "A side view of the forearm from behind with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the ulna. It is the medial forearm bone on the little finger side, and its upper end forms the point of the elbow. This view from behind shows its upper end at the elbow."
+      },
+      {
+        "id": "AN023",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Scapula",
+              "Clavicle",
+              "Sternum",
+              "Pelvis"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/scapula-3.webp",
+        "imageSize": "large",
+        "alt": "A side view of the trunk from behind with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the scapula, also called the shoulder blade. It is a flat, triangular bone of the upper back that joins the humerus and the clavicle. This side view shows its socket meeting the humerus."
+      },
+      {
+        "id": "AN027",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Patella",
+            "accept": [
+              "Kneecap",
+              "Knee cap"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which type of bone is this?",
+            "options": [
+              "Sesamoid bone",
+              "Short bone",
+              "Flat bone",
+              "Irregular bone"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/patella-3.webp",
+        "imageSize": "large",
+        "alt": "A side view of the knee with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the patella, also called the kneecap. It is a sesamoid bone in the quadriceps tendon at the front of the knee. It is a sesamoid bone. This side view shows it sitting in front of the joint."
+      },
+      {
+        "id": "AN031",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Which bone is highlighted? Type its name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Sternum",
+            "accept": [
+              "Breastbone",
+              "Breast bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/sternum-3.webp",
+        "imageSize": "large",
+        "alt": "A view of the rib cage from below with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the sternum, also called the breastbone. It is a flat bone in the middle of the chest, and its three parts are the manubrium, the body and the xiphoid process. This view from below shows its pointed lower tip."
+      },
+      {
+        "id": "AN035",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Type the name of the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Clavicle",
+            "accept": [
+              "Collarbone",
+              "Collar bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/clavicle-3.webp",
+        "imageSize": "large",
+        "alt": "A view of the shoulder from above with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the clavicle, also called the collarbone. It is the S-shaped bone that links the sternum to the scapula. This view from above shows it reaching from the sternum to the shoulder."
+      },
+      {
+        "id": "AN039",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Mandible",
+            "accept": [
+              "Lower jaw",
+              "Lower jawbone",
+              "Lower jaw bone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which part of the skeleton does this bone belong to?",
+            "options": [
+              "Axial skeleton",
+              "Appendicular skeleton"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/mandible-3.webp",
+        "imageSize": "large",
+        "alt": "A view of the skull from below and in front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the mandible, the bone of the lower jaw. It is the only skull bone that moves, and it holds the lower teeth. It belongs to the axial skeleton. This view from below shows its curved body."
+      }
+    ],
+    "D": [
+      {
+        "id": "AN004",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Type the name of the bone shown in orange.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Femur",
+            "accept": [
+              "Thigh bone",
+              "Thighbone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/femur-4.webp",
+        "imageSize": "large",
+        "alt": "A view from behind and above the hip with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the femur, also called the thigh bone. It runs from the hip to the knee and is the longest bone in the body. This view from behind and above shows its neck and head angled toward the hip."
+      },
+      {
+        "id": "AN008",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "This view highlights one bone. Which is it?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Humerus",
+              "Scapula",
+              "Clavicle",
+              "Femur"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/humerus-4.webp",
+        "imageSize": "large",
+        "alt": "A view from above and to the side of the shoulder with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the humerus, the long bone of the upper arm. It meets the scapula at the shoulder and the radius and ulna at the elbow. This view from above shows its head meeting the scapula."
+      },
+      {
+        "id": "AN012",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Name the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Tibia",
+            "accept": [
+              "Shinbone",
+              "Shin bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/tibia-4.webp",
+        "imageSize": "large",
+        "alt": "A front view of the leg from above with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the tibia, also called the shinbone. It is the larger, medial bone of the lower leg, and the thin fibula lies beside it. This view from above shows its wide upper end under the knee."
+      },
+      {
+        "id": "AN016",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Pick the name of the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Radius",
+              "Ulna",
+              "Tibia",
+              "Carpals"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/radius-4.webp",
+        "imageSize": "large",
+        "alt": "A view of the forearm from above and in front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the radius. It is the forearm bone on the thumb side, and the ulna lies on the little finger side. This view from above shows its small head at the elbow."
+      },
+      {
+        "id": "AN020",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Ulna",
+            "accept": [],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which side of the forearm is this bone on?",
+            "options": [
+              "The little finger side",
+              "The thumb side"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/ulna-4.webp",
+        "imageSize": "large",
+        "alt": "A back view of the forearm from above with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the ulna. It is the medial forearm bone on the little finger side, and its upper end forms the point of the elbow. It lies on the little finger side. This view from above shows its hooked upper end at the elbow."
+      },
+      {
+        "id": "AN024",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Name the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Scapula",
+            "accept": [
+              "Shoulder blade",
+              "Shoulderblade"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/scapula-4.webp",
+        "imageSize": "large",
+        "alt": "A back view of the trunk from below with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the scapula, also called the shoulder blade. It is a flat, triangular bone of the upper back that joins the humerus and the clavicle. This view from below shows its lower tip over the ribs."
+      },
+      {
+        "id": "AN028",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "This view highlights one bone. Which is it?",
+        "steps": [
+          {
+            "id": "name",
+            "prompt": "Choose one.",
+            "options": [
+              "Patella",
+              "Tibia",
+              "Fibula",
+              "Femur"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/patella-4.webp",
+        "imageSize": "large",
+        "alt": "A view of the knee from above with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the patella, also called the kneecap. It is a sesamoid bone in the quadriceps tendon at the front of the knee. This view from above shows it resting on the lower end of the femur."
+      },
+      {
+        "id": "AN032",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Identify the highlighted bone by name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Sternum",
+            "accept": [
+              "Breastbone",
+              "Breast bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/sternum-4.webp",
+        "imageSize": "large",
+        "alt": "A view of the rib cage from the right front with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the sternum, also called the breastbone. It is a flat bone in the middle of the chest, and its three parts are the manubrium, the body and the xiphoid process. This angled view shows its upper part between the clavicles."
+      },
+      {
+        "id": "AN036",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Answer both parts about the highlighted bone.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Clavicle",
+            "accept": [
+              "Collarbone",
+              "Collar bone"
+            ],
+            "complete": false,
+            "prompt": "Name the bone.",
+            "showFirst": true
+          },
+          {
+            "id": "2",
+            "prompt": "Which part of the skeleton does this bone belong to?",
+            "options": [
+              "Appendicular skeleton",
+              "Axial skeleton"
+            ],
+            "correct": 0
+          }
+        ],
+        "image": "banks/anatomy/img/clavicle-4.webp",
+        "imageSize": "large",
+        "alt": "A view of the shoulder from above and behind with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the clavicle, also called the collarbone. It is the S-shaped bone that links the sternum to the scapula. It belongs to the appendicular skeleton, as part of the pectoral girdle. This view from behind shows it in front of the scapula."
+      },
+      {
+        "id": "AN040",
+        "type": "stepped",
+        "cat": "Bones",
+        "q": "Identify the highlighted bone by name.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Mandible",
+            "accept": [
+              "Lower jaw",
+              "Lower jawbone",
+              "Lower jaw bone"
+            ],
+            "complete": false,
+            "prompt": "Type its name."
+          }
+        ],
+        "image": "banks/anatomy/img/mandible-4.webp",
+        "imageSize": "large",
+        "alt": "A side view of the skull with one bone highlighted in orange.",
+        "explain": "The highlighted bone is the mandible, the bone of the lower jaw. It is the only skull bone that moves, and it holds the lower teeth. This side view shows its upright back part reaching toward the ear."
+      }
+    ]
+  }
+}
