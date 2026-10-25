@@ -529,7 +529,7 @@
         {
           "id": "anatomy-bones",
           "title": "Bone Identification",
-          "subtitle": "Name the bone from 3D views · 4 sets of 10",
+          "subtitle": "10 bones in 40 questions · pick a region, division or bone type",
           "bank": "banks/anatomy/bone-identification.json",
           "locked": false
         }

@@ -270,7 +270,8 @@ function updateCounters(){
   syncResetSolvedBtn();
   if(quizActive){
     const answeredCount=answers.filter((a,i)=>isAnswered(a,questions[i])).length;
-    document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+(questions.length-answeredCount)+' remaining this run';
+    const left=isSimpleRun()?wholeGroups().length-wholeSolved():questions.length-answeredCount;
+    document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+left+' remaining this run';
   }
 }
 function markSolved(q){
@@ -325,17 +326,34 @@ function cardGroupsFor(data){
   const g=(m && Array.isArray(m.cards) && m.cards.length)?m.cards:(data && Array.isArray(data.cards) && data.cards.length?data.cards:null);
   return g;
 }
+/* Category cards (bank "cardsOverlap": true): a card may also pick questions by tag
+   (card tags:[...] ↔ question tags:[...]), so one question can sit in several cards.
+   hideTags:[...] drops the steps whose tag the card itself gives away; a question
+   with pickOne keeps only its first remaining tagged step. */
+function cardCopyOf(q, hide){
+  if(!isStepped(q) || !Array.isArray(q.steps)) return q;
+  const hidden=new Set(hide||[]);
+  let steps=q.steps.filter(st=>!(st && st.tag && hidden.has(st.tag)));
+  if(q.pickOne){ let kept=false; steps=steps.filter(st=>{ if(!st||!st.tag) return true; if(kept) return false; kept=true; return true; }); }
+  if(!steps.length) return null;
+  if(steps.length===q.steps.length) return q;
+  const c=Object.assign({}, q); c.steps=steps; return c;
+}
 function buildGroupedCards(all, groups){
   const norm=c=>catLabelOf(c==null||c===''?'general':c);
-  const cards=[], taken=new Set();
+  const cards=[], taken=new Set(), overlap=!!(BANK && BANK.cardsOverlap);
   groups.forEach((g,i)=>{
     const set=new Set((g.cats||[]).map(norm));
     // a group may also name whole bank forms (forms:["A"]) — used when one category spans several cards
     const fset=new Set((g.forms||[]).map(String));
-    const pool=all.filter(q=>!taken.has(q.__id) && (set.has(norm(q.cat)) || fset.has(String(q.__form))));
+    const tset=new Set((g.tags||[]).map(String));
+    let pool=all.filter(q=>(overlap || !taken.has(q.__id)) && (set.has(norm(q.cat)) || fset.has(String(q.__form)) || (Array.isArray(q.tags) && q.tags.some(t=>tset.has(String(t))))));
     pool.forEach(q=>taken.add(q.__id));
-    cards.push({id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null});
+    const filtered=overlap;
+    if(filtered) pool=pool.map(q=>cardCopyOf(q, g.hideTags)).filter(Boolean);
+    cards.push({id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null, group:g.group||'', hideTags:Array.isArray(g.hideTags)?g.hideTags.slice():[], __filtered:filtered});
   });
+  if(overlap) return cards;
   const rest=all.filter(q=>!taken.has(q.__id));
   if(rest.length) buildCards(rest, true).forEach(c=>cards.push(c));
   return cards;
@@ -371,6 +389,22 @@ function cardById(id){ return CARDS.find(c=>c.id===id)||null; }
    STEPPED: bones shuffle like any other question; each step's choices are
    shuffled with `correct` remapped. ADAPT: every permutation is recorded
    (__perm) so a run can be resumed by id. */
+/* keep the shuffled order but never put two questions with the same key (e.g. the same
+   bone) next to each other: take the key with the most questions left that differs
+   from the last one, earliest in the shuffled order on ties */
+function spreadDeck(deck, key){
+  const k=q=>String(q && q[key]!=null ? q[key] : q.__id);
+  const left=deck.slice(), out=[];
+  while(left.length){
+    const cnt={}; left.forEach(q=>{ cnt[k(q)]=(cnt[k(q)]||0)+1; });
+    const last=out.length?k(out[out.length-1]):null;
+    let best=-1;
+    left.forEach((q,i)=>{ const kk=k(q); if(kk===last) return; if(best<0 || cnt[kk]>cnt[k(left[best])]) best=i; });
+    if(best<0) best=0; // only one key left
+    out.push(left.splice(best,1)[0]);
+  }
+  return out;
+}
 function prepareDeck(pool, opts){
   opts=opts||{};
   let deck=(opts.noSolvedFilter?pool:remainingOf(pool)).map(q=>JSON.parse(JSON.stringify(q)));
@@ -390,6 +424,7 @@ function prepareDeck(pool, opts){
   } else if(shQ){
     deck=shuffle(deck);
   }
+  if(BANK && BANK.spreadBy) deck=spreadDeck(deck, BANK.spreadBy);
   deck=deck.map(q=>{
     if(isMatching(q)){
       if(shC) shuffleMatchingSides(q);
@@ -705,6 +740,7 @@ function loadRunState(cardId){
    restored when every earlier step of its question is restored too. */
 function restoreRun(run){
   const byId={}; ALLQ.forEach(q=>{ byId[q.__id]=q; });
+  if(runCard && runCard.__filtered && Array.isArray(runCard.pool)) runCard.pool.forEach(q=>{ byId[q.__id]=q; });
   const deck=[];
   run.deck.forEach(d=>{
     const base=byId[d.id];
@@ -857,24 +893,29 @@ function appendPoolCard(grid, label, pool, card){
   const st=window.StudyStore?StudyStore.load(bankId()):{cards:{},runs:{}};
   const meta=st.cards[card.id]||{};
   const run=st.runs[card.id];
-  const inProgress=!!(run && run.v===2 && !run.finished && left>0);
+  const simple=isSimpleRun();
+  const inProgress=!!(run && run.v===2 && !run.finished && (simple || left>0));
   const btn=document.createElement('button'); btn.type='button'; btn.className='card';
   btn.dataset.card=card.id;
   // PT1 line "N linking · M choice" + STEPPED count when the card has any
   const sub=(BANK && BANK.compactCounts)?[[c.linking,'linking'],[c.choice,'choice'],[c.stepped,'stepped'],[c.multi,'select-all'],[c.saq,'short answer'],[c.label,'labeling'],[c.order,'ordering']].filter(x=>x[0]).map(x=>x[0]+' '+x[1]).join(' · '):(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.multi?(' · '+c.multi+' select-all'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
+  const bones=simple?new Set(pool.map(q=>q[BANK.spreadBy||'__id'])).size:0;
+  const sub2=simple?(bones+' '+(bones===1?(BANK.unitOne||'item'):(BANK.unitMany||'items'))+' · '+pool.length+' question'+(pool.length===1?'':'s')):sub;
+  const stats=simple?`<div class="card-pct">${meta.done?escapeHtml(meta.score+' / '+meta.total):'Ready'}</div><div class="card-meta">${inProgress?'in progress':(meta.done?'last score':'not started')}</div>`
+    :`<div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}${inProgress?' · in progress':''}</div>`;
   btn.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(label)}</span><span class="mood-stamp">${escapeHtml(meta.mood||'')}</span></div>${cardBadgesHTML(card)}
-    <div class="card-sub">${sub}</div>
-    <div class="card-stats"><div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}${inProgress?' · in progress':''}</div></div>`;
+    <div class="card-sub">${sub2}</div>
+    <div class="card-stats">${stats}</div>`;
   // PORTAL: Mastery badge
   if(window.StudyMastery){
     const html=StudyMastery.badgeHTML(bankMasteryKey(), card.id);
     if(html) btn.querySelector('.card-sub').insertAdjacentHTML('afterend', html);
   }
-  if(left===0) btn.style.opacity='.55';
+  if(left===0 && !simple) btn.style.opacity='.55';
   btn.addEventListener('click',()=>{
     if(typeof unlockAudio==='function') unlockAudio();
     cardCtx(card);
-    if(left===0){ handleLockedCardClick(label,pool,card); return; }
+    if(left===0 && !simple){ handleLockedCardClick(label,pool,card); return; }
     if(inProgress && resumeRun(card)) return;
     startRun(pool, label, {card});
   });
@@ -901,14 +942,18 @@ function renderSets(){
     return;
   }
   // ADAPT: PT1 had hardcoded QUIZ_FORMS; cards now come from the bank (decision 2).
-  const h=document.createElement('div'); h.className='section-h'; h.textContent=LECTURE_SET?'Lectures':(CARDS.length>1?'Sets':'Set'); host.appendChild(h);
-  const grid=document.createElement('div'); grid.className='grid';
-  CARDS.forEach(card=>{
-    if(card.soon){ appendSoonCard(grid, card); return; }
-    if(!card.pool.length) return;
-    appendPoolCard(grid, card.label, card.pool, card);
+  const groups=[]; CARDS.forEach(card=>{ const g=card.group||''; let e=groups.find(x=>x.g===g); if(!e){ e={g,cards:[]}; groups.push(e); } e.cards.push(card); });
+  const named=groups.some(x=>x.g);
+  groups.forEach(({g,cards})=>{
+    const h=document.createElement('div'); h.className='section-h'; h.textContent=named?(g||'Sets'):(LECTURE_SET?'Lectures':(CARDS.length>1?'Sets':'Set')); host.appendChild(h);
+    const grid=document.createElement('div'); grid.className='grid';
+    cards.forEach(card=>{
+      if(card.soon){ appendSoonCard(grid, card); return; }
+      if(!card.pool.length) return;
+      appendPoolCard(grid, card.label, card.pool, card);
+    });
+    host.appendChild(grid);
   });
-  host.appendChild(grid);
   // Formula practice card (material opts in with "formulas" in the catalog; js/formula-practice.js)
   if(window.FormulaPractice) FormulaPractice.appendSetsSection(host);
   if(runCard) cardCtx(runCard); // keep the open run's bank active
@@ -1137,10 +1182,11 @@ function stopElapsedClock(){
 }
 function enterRunChrome(label){
   setTitleText('quizTitle', label);
-  document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+questions.length+' remaining this run';
+  document.body.classList.toggle('simple-run', isSimpleRun());
+  document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+(isSimpleRun()?wholeGroups().length:questions.length)+' remaining this run';
   document.getElementById('statusText').textContent=label;
   { const esc=document.getElementById('quizEscLabel'); if(esc) esc.textContent=LECTURE_SET?'back to lectures':'back to sets'; }
-  document.getElementById('qTotal').textContent=questions.length;
+  document.getElementById('qTotal').textContent=isSimpleRun()?wholeGroups().length:questions.length;
   document.getElementById('quizScreen').style.display='block';
   document.getElementById('finalScreen').style.display='none';
   document.getElementById('reviewScreen').style.display='none';
@@ -1155,6 +1201,7 @@ function beginMasterySession(){
 function startRun(pool, label, opts){
   opts=opts||{};
   cardCtx(opts.card);
+  if(isSimpleRun()) opts=Object.assign({noSolvedFilter:true}, opts);
   const deck=prepareDeck(pool, opts);
   if(!deck.length){ pt1Toast('Nothing left in this set · reset solved to replay'); return; }
   runCard=opts.card||{id:'adhoc', label, pool};
@@ -1200,7 +1247,7 @@ function resumeRun(card){
   enterRunChrome(card.label);
   if(allQuestionsAnswered()){ finishQuiz(); return true; }
   renderQuestion();
-  pt1Toast('Resumed · '+questions.filter((q,i)=>!isAnswered(answers[i],q)).length+' left in this run');
+  pt1Toast('Resumed · '+(isSimpleRun()?wholeGroups().length-wholeSolved():questions.filter((q,i)=>!isAnswered(answers[i],q)).length)+' left in this run');
   return true;
 }
 /* PORTAL: Mastery+ "Unlock" on the results screen starts a progressive run. */
@@ -1250,15 +1297,17 @@ function hideNextBtn(){
 /* Counter on the timer line and the progress bar both show solved / total. */
 function updateSolvedProgress(){
   if(!questions.length) return;
-  const solved=answers.filter((a,i)=>isAnswered(a,questions[i])).length;
+  const simple=isSimpleRun();
+  const solved=simple?wholeSolved():answers.filter((a,i)=>isAnswered(a,questions[i])).length;
+  const total=simple?wholeGroups().length:questions.length;
   const num=document.getElementById('qNum'), tot=document.getElementById('qTotal');
   if(num) num.textContent=solved;
-  if(tot) tot.textContent=questions.length;
+  if(tot) tot.textContent=total;
   if(runMastery>=1 && window.StudyMastery){
     StudyMastery.updateProgressBar(); // PORTAL: Mastery+ layer bar
   } else {
     const bar=document.getElementById('progressBar');
-    if(bar) bar.style.width=Math.round(solved/questions.length*100)+'%';
+    if(bar) bar.style.width=Math.round(solved/total*100)+'%';
   }
 }
 function afterAnswerProgress(){
@@ -3526,7 +3575,13 @@ function jumpToQuestion(i, dir){
   }
   stepTo(i);
 }
-function score(){ let c=0; answers.forEach((a,i)=>{ const q=questions[i]; if(isMatching(q)||isSaq(q)||isLabel(q)||isOrder(q)||isMulti(q)){ if(a&&a.correct)c++; } else if(a===q.correct)c++; }); return c; }
+function entryCorrect(i){ const q=questions[i], a=answers[i]; if(!q) return false; if(isMatching(q)||isSaq(q)||isLabel(q)||isOrder(q)||isMulti(q)) return !!(a&&a.correct); return a===q.correct; }
+function score(){ let c=0; answers.forEach((a,i)=>{ if(entryCorrect(i)) c++; }); return c; }
+/* simple runs (bank "simpleRun": true): a stepped question counts once */
+function isSimpleRun(){ return !!(BANK && BANK.simpleRun); }
+function wholeGroups(){ const g=[]; questions.forEach((q,i)=>{ if(isStep(q) && q.__stepIdx>0 && g.length) g[g.length-1].push(i); else g.push([i]); }); return g; }
+function wholeSolved(){ return wholeGroups().filter(g=>g.every(i=>isAnswered(answers[i],questions[i]))).length; }
+function wholeScore(){ return wholeGroups().filter(g=>g.every(entryCorrect)).length; }
 
 /* —— PT1 3928–3949 finishQuiz + portal extras (elapsed, mood stamp, Mastery box, review) —— */
 function resultItemHTML(q,i){
@@ -3585,9 +3640,11 @@ function finishQuiz(){
   document.getElementById('quizScreen').style.display='none';
   document.getElementById('reviewScreen').style.display='none';
   document.getElementById('finalScreen').style.display='block';
-  const s=score();
-  document.getElementById('scoreBig').textContent=s+' / '+questions.length;
-  document.getElementById('finalStats').textContent=Math.round(s/questions.length*100)+'% · '+runLabel+' · elapsed '+el;
+  const simple=isSimpleRun();
+  const s=simple?wholeScore():score(), n=simple?wholeGroups().length:questions.length;
+  document.getElementById('finalScreen').classList.toggle('simple-final', simple);
+  document.getElementById('scoreBig').textContent=s+' / '+n;
+  document.getElementById('finalStats').textContent=Math.round(s/n*100)+'% · '+runLabel+' · elapsed '+el;
   document.getElementById('statusText').textContent='results';
   document.getElementById('progressBar').style.width='100%';
   const list=document.getElementById('resultsScroll');
@@ -3596,13 +3653,13 @@ function finishQuiz(){
   if(runCard && window.StudyStore){
     saveRunState({finished:true});
     const st=StudyStore.load(bankId());
-    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:questions.length,done:true,at:Date.now()});
+    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now()});
     StudyStore.save(bankId(), st);
   }
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
   if(window.StudyMastery && runCard){
     StudyMastery.endSession();
-    StudyMastery.injectResultsMasteryUI(BANK_KEY, runCard.id, document.getElementById('finalScreen'), runCard.label);
+    if(!simple) StudyMastery.injectResultsMasteryUI(BANK_KEY, runCard.id, document.getElementById('finalScreen'), runCard.label);
   }
   restoreMoodUI();
   try{ list.scrollTop=0; }catch(e){}

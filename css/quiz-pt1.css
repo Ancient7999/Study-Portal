@@ -744,3 +744,8 @@ html[data-pointer-input="touch"] .fs-key{display:none}
 .pt1q .kb-advance,.pt1q #mainPanel .kb-advance{display:block;margin:12px 0 4px;width:100%}
 .pt1q .kb-advance .formula-advance-track{position:relative;height:8px;border-radius:999px;overflow:hidden;background:rgba(var(--accent-0-rgb),.12);border:1px solid rgba(var(--accent-0-rgb),.28)}
 .pt1q .kb-advance .formula-advance-fill{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent-0),var(--accent-1));transform-origin:left center;transform:scaleX(1);will-change:transform;box-shadow:0 0 12px rgba(var(--accent-0-rgb),.35)}
+
+/* simple runs (category cards): no question navigator, no answer list or review at the end */
+body.simple-run #qNav{display:none}
+#finalScreen.simple-final .results-heading,#finalScreen.simple-final #resultsScroll,#finalScreen.simple-final #reviewBtn{display:none}
+@media (max-width:600px){body.simple-run #quizView{padding-bottom:150px}}
