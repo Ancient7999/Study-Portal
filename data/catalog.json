@@ -567,22 +567,8 @@
           ]
         },
         {
-          "id": "iths-pt2",
-          "title": "Periodic Test 2",
-          "subtitle": "Lectures 5-10",
-          "bank": null,
-          "locked": true
-        },
-        {
           "id": "iths-pt1-remake",
           "title": "PT1 Remake",
-          "subtitle": "Finals version · coming soon",
-          "bank": null,
-          "locked": true
-        },
-        {
-          "id": "iths-pt2-remake",
-          "title": "PT2 Remake",
           "subtitle": "Finals version · coming soon",
           "bank": null,
           "locked": true
