@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 216,
+  "formSize": 164,
   "forms": [
     "A"
   ],
@@ -39,31 +39,136 @@
       },
       {
         "id": "ENG1PT20453",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Which system maintains blood flow to all body parts?",
-        "options": [
-          "The cardiovascular circulatory system",
-          "The respiratory breathing system",
-          "The digestive gastrointestinal system",
-          "The skeletal musculoskeletal system"
+        "q": "Match each body system to its main job.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cardiovascular"
+          },
+          {
+            "id": "2",
+            "text": "Respiratory"
+          },
+          {
+            "id": "3",
+            "text": "Digestive"
+          },
+          {
+            "id": "4",
+            "text": "Skeletal"
+          },
+          {
+            "id": "5",
+            "text": "Muscular"
+          },
+          {
+            "id": "6",
+            "text": "Nervous"
+          }
         ],
-        "correct": 0,
-        "explain": "The cardiovascular system maintains blood flow to all parts of the body. Respiratory handles breathing. Digestive breaks down food. Skeletal supports shape and movement."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Pumps and circulates blood"
+          },
+          {
+            "id": "B",
+            "text": "Brings in oxygen and removes carbon dioxide"
+          },
+          {
+            "id": "C",
+            "text": "Breaks down food and absorbs nutrients"
+          },
+          {
+            "id": "D",
+            "text": "Supports the body and protects organs"
+          },
+          {
+            "id": "E",
+            "text": "Controls movement and posture"
+          },
+          {
+            "id": "F",
+            "text": "Sends signals and processes information"
+          },
+          {
+            "id": "G",
+            "text": "Stores bile and secretes insulin"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Cardiovascular pumps blood to all parts. Respiratory inhales and exhales using the nose, trachea, lungs, and diaphragm. Digestive breaks down food; the colon reabsorbs water and forms feces. Skeletal supports, protects, and aids movement. Muscular moves by contracting and relaxing. Nervous sends electrical signals."
       },
       {
         "id": "ENG1PT20454",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does the skeletal system do?",
-        "options": [
-          "Support the body shape and protect the organs",
-          "Pump the blood to all of the human body parts",
-          "Break down food for the whole body absorption",
-          "Help the human body to inhale and also exhale"
+        "q": "Match each body system to its main job.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Endocrine"
+          },
+          {
+            "id": "2",
+            "text": "Lymphatic"
+          },
+          {
+            "id": "3",
+            "text": "Integumentary"
+          },
+          {
+            "id": "4",
+            "text": "Urinary"
+          },
+          {
+            "id": "5",
+            "text": "Reproductive"
+          }
         ],
-        "correct": 0,
-        "explain": "The skeletal system supports body shape, facilitates movement, and protects internal organs. Pumping blood is cardiovascular. Breaking down food is digestive. Inhaling and exhaling is respiratory."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Releases hormones for balance"
+          },
+          {
+            "id": "B",
+            "text": "Returns fluid and supports immunity"
+          },
+          {
+            "id": "C",
+            "text": "Covers and protects the body surface"
+          },
+          {
+            "id": "D",
+            "text": "Filters waste and balances fluids"
+          },
+          {
+            "id": "E",
+            "text": "Produces offspring"
+          },
+          {
+            "id": "F",
+            "text": "Filters bile and stores oxygen"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "Endocrine releases hormones and controls metabolism. Lymphatic returns fluid, rids toxins, and fights infection. Integumentary is the skin and hair that protect the surface. Urinary filters waste and excess water. Reproductive produces offspring."
       },
       {
         "id": "ENG1PT20455",
@@ -122,20 +227,6 @@
         "explain": "Platelets are a small disc-shaped cell found in large numbers in blood and involved in clotting. Red blood cells carry oxygen. White blood cells fight infection. Bone cells form tissue."
       },
       {
-        "id": "ENG1PT20459",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does the digestive system do?",
-        "options": [
-          "Break down food so nutrients are absorbed",
-          "Maintain blood flow to all body parts",
-          "Support body shape and protect the organs",
-          "Help the body to inhale and exhale air"
-        ],
-        "correct": 0,
-        "explain": "The digestive system breaks down food into small parts so nutrients can be absorbed. Blood flow is cardiovascular. Support and protection is skeletal. Breathing is respiratory."
-      },
-      {
         "id": "ENG1PT20460",
         "type": "mcq",
         "cat": "Unit 3: Basic Principles in Medicine",
@@ -148,20 +239,6 @@
         ],
         "correct": 0,
         "explain": "A nutrient is a substance used by an organism to survive, grow, and reproduce. Collagen is the protein in skin and bone. Capillary is the exchange vessel. Cell is the smallest unit of life."
-      },
-      {
-        "id": "ENG1PT20461",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does the respiratory system do?",
-        "options": [
-          "Help you breathe by inhaling and exhaling",
-          "Break down food for the nutrient absorption",
-          "Pump blood all around the entire human body",
-          "Support body shape and protect the organs"
-        ],
-        "correct": 0,
-        "explain": "The respiratory system helps you breathe (inhale vs. exhale). Breaking down food is digestive. Pumping blood is cardiovascular. Support and protection is skeletal."
       },
       {
         "id": "ENG1PT20462",
@@ -184,12 +261,12 @@
         "q": "How many chambers does the heart have?",
         "options": [
           "Two atria and two ventricles",
-          "One atrium and one ventricle",
-          "Three atria and one ventricle",
-          "Four ventricles and no atria"
+          "Two atria and one ventricle",
+          "Two atria and three ventricles",
+          "One atrium and three ventricles"
         ],
         "correct": 0,
-        "explain": "The heart has two atria and two ventricles. Other counts do not match the structure."
+        "explain": "The heart has two atria and two ventricles. The other counts are wrong: it never has one atrium with three ventricles, nor two atria with one or three ventricles."
       },
       {
         "id": "ENG1PT20464",
@@ -361,31 +438,75 @@
       },
       {
         "id": "ENG1PT20476",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The sternum is what to the lungs?",
-        "options": [
-          "Anterior",
-          "Posterior",
-          "Inferior",
-          "Lateral"
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Sternum relative to the lungs"
+          },
+          {
+            "id": "2",
+            "text": "Heart relative to the stomach"
+          },
+          {
+            "id": "3",
+            "text": "Heart relative to the vertebral column"
+          },
+          {
+            "id": "4",
+            "text": "Neck relative to the chest"
+          },
+          {
+            "id": "5",
+            "text": "Abdomen relative to the chest"
+          },
+          {
+            "id": "6",
+            "text": "Lungs relative to the breastbone"
+          },
+          {
+            "id": "7",
+            "text": "Ventricles relative to the atria"
+          }
         ],
-        "correct": 0,
-        "explain": "The sternum is anterior to the lungs. Posterior would be behind. Inferior would be below. Lateral would be to the side."
-      },
-      {
-        "id": "ENG1PT20477",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The heart is what to the stomach?",
-        "options": [
-          "Superior",
-          "Inferior",
-          "Posterior",
-          "Distal"
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Anterior"
+          },
+          {
+            "id": "B",
+            "text": "Posterior"
+          },
+          {
+            "id": "C",
+            "text": "Superior"
+          },
+          {
+            "id": "D",
+            "text": "Inferior"
+          },
+          {
+            "id": "E",
+            "text": "Medial"
+          },
+          {
+            "id": "F",
+            "text": "Lateral"
+          }
         ],
-        "correct": 0,
-        "explain": "The heart is superior to the stomach. Inferior would be below. Posterior is behind. Distal is farther from attachment."
+        "correct_pairs": {
+          "1": "A",
+          "2": "C",
+          "3": "A",
+          "4": "C",
+          "5": "D",
+          "6": "B",
+          "7": "D"
+        },
+        "explain": "The sternum is anterior to the lungs and the heart is anterior to the spine, which runs down the back. The heart is superior to the stomach and the neck superior to the chest. The abdomen and the ventricles are inferior, and the lungs are posterior to the breastbone. Medial and lateral fit none."
       },
       {
         "id": "ENG1PT20478",
@@ -458,20 +579,6 @@
         "explain": "To collapse is to fall down or give way. To get larger is to expand, the opposite of coming down. To stand upright is to stay erect, what a structure does before it collapses. To move around is to change place, not to come down."
       },
       {
-        "id": "ENG1PT20483",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What is the spine?",
-        "options": [
-          "The backbone",
-          "A group of nerves",
-          "Bones in the skull",
-          "Bones that protect the brain"
-        ],
-        "correct": 0,
-        "explain": "The spine is the backbone. It is not a group of nerves, bones in the skull, or only the bones that protect the brain."
-      },
-      {
         "id": "ENG1PT20484",
         "type": "mcq",
         "cat": "Unit 3: Basic Principles in Medicine",
@@ -486,15 +593,15 @@
         "explain": "Bones weaken because minerals start to disappear from the bones. Muscle size, red cell production, and activity level are not the stated reason."
       },
       {
-      "id": "ENG1PT20485",
-      "type": "mcq",
-      "cat": "Unit 3: Basic Principles in Medicine",
-      "q": "What is the primary purpose of ligaments?",
-      "options": [
-        "Connect bones at joints",
-        "Produce new blood cells",
-        "Shield the brain",
-        "Store body minerals"
+        "id": "ENG1PT20485",
+        "type": "mcq",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "What is the primary purpose of ligaments?",
+        "options": [
+          "Connect bones at joints",
+          "Produce new blood cells",
+          "Shield the brain",
+          "Store body minerals"
         ],
         "correct": 0,
         "explain": "Ligaments connect bones together at the joints. They are strong and can stretch. Producing blood cells, shielding the brain, and storing minerals are other bone functions."
@@ -514,60 +621,114 @@
         "explain": "Tendons link muscles to bones. Ligaments link bones together. Stretching is a property of ligaments. Protection is not the stated function."
       },
       {
-      "id": "ENG1PT20487",
-      "type": "mcq",
-      "cat": "Unit 3: Basic Principles in Medicine",
-      "q": "How many bones does an adult have approximately?",
-      "options": [
-        "206 bones",
-        "211 bones",
-        "312 bones",
-        "300 bones"
-      ],
-      "correct": 0,
-      "explain": "An adult has approximately 206 bones. A newborn has about 270–300 bones that fuse during growth. 211 is close but not the standard count, and 312 is not a recognized total."
+        "id": "ENG1PT20487",
+        "type": "saq",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Approximately how many bones does an adult human have?",
+        "answer": "206",
+        "accept": [
+          "206 bones"
+        ],
+        "explain": "An adult has about 206 bones. A newborn has roughly 270 to 300 bones that fuse during growth."
       },
       {
         "id": "ENG1PT20488",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does cardio- mean?",
-        "options": [
-          "Related to the heart",
-          "Related to the stomach",
-          "Related to the body",
-          "Excess or too much"
+        "q": "Match each combining form to what it means.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "cardio-"
+          },
+          {
+            "id": "2",
+            "text": "gastro-"
+          }
         ],
-        "correct": 0,
-        "explain": "Cardio- means related to the heart, as in cardiovascular or cardiologist. Gastro- is stomach. Physi- is body. Hyper- is excess."
-      },
-      {
-        "id": "ENG1PT20489",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does gastro- mean?",
-        "options": [
-          "Related to the stomach",
-          "Related to the heart",
-          "Related to the body",
-          "Again or restart"
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Heart"
+          },
+          {
+            "id": "B",
+            "text": "Stomach"
+          },
+          {
+            "id": "C",
+            "text": "Body"
+          },
+          {
+            "id": "D",
+            "text": "Excess"
+          },
+          {
+            "id": "E",
+            "text": "Again"
+          }
         ],
-        "correct": 0,
-        "explain": "Gastro- means related to the stomach, as in gastrointestinal or gastroenteritis. Cardio- is heart. Physi- is body. Re- is again."
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        },
+        "explain": "Cardio- means heart and gastro- means stomach, as in cardiovascular, cardiologist, and gastroenteritis. Body is physi-, excess is hyper-, and again is re-."
       },
       {
         "id": "ENG1PT20490",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does hyper- mean?",
-        "options": [
-          "Excess or too much",
-          "Going in or inside",
-          "Related to the body",
-          "Again or restart"
+        "q": "Match each prefix to what it means.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "hyper-"
+          },
+          {
+            "id": "2",
+            "text": "physi-"
+          },
+          {
+            "id": "3",
+            "text": "re-"
+          }
         ],
-        "correct": 0,
-        "explain": "Hyper- means excess or too much, as in hypertension or hyperglycemic. In- means going in. Physi- is body. Re- is again."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Excess"
+          },
+          {
+            "id": "B",
+            "text": "Body"
+          },
+          {
+            "id": "C",
+            "text": "Again"
+          },
+          {
+            "id": "D",
+            "text": "Inside"
+          },
+          {
+            "id": "E",
+            "text": "Before"
+          },
+          {
+            "id": "F",
+            "text": "Not"
+          },
+          {
+            "id": "G",
+            "text": "Pertaining to"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Hyper- means excess, physi- means body, and re- means again. Inside is in-, before is pre-, not is un-, and pertaining to is -ic or -ous."
       },
       {
         "id": "ENG1PT20491",
@@ -584,20 +745,6 @@
         "explain": "The opposite of protect is to hurt. To guard, to shield, and to defend all mean to keep something safe, the same idea as protect, so none of them is the opposite."
       },
       {
-        "id": "ENG1PT20492",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What is the name of the total structure of bones?",
-        "options": [
-          "The skeleton",
-          "The vertebra",
-          "The disk",
-          "The jaw"
-        ],
-        "correct": 0,
-        "explain": "The entire skeletal structure is the skeleton. Vertebra is a single bone. Disk is the cushion. Jaw is one part."
-      },
-      {
         "id": "ENG1PT20493",
         "type": "mcq",
         "cat": "Unit 3: Basic Principles in Medicine",
@@ -610,20 +757,6 @@
         ],
         "correct": 0,
         "explain": "The upper part of the leg is the thigh bone. It forms part of the knee. Collarbone and shoulder are in the arm. Pelvis connects the leg to the spine."
-      },
-      {
-        "id": "ENG1PT20494",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What is the abdomen?",
-        "options": [
-          "The belly",
-          "The chest",
-          "The back",
-          "The head"
-        ],
-        "correct": 0,
-        "explain": "The abdomen is the belly. The chest is the thorax. The back is posterior. The head is superior."
       },
       {
         "id": "ENG1PT20495",
@@ -738,48 +871,6 @@
         "explain": "Lateral is a location on one side of the body or an organ. Medial is nearer the center. Anterior is front. Posterior is back."
       },
       {
-        "id": "ENG1PT20503",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Which of the following best describes the lymphatic system?",
-        "options": [
-          "A network of tissues that helps rid the body of toxins",
-          "A framework of bones that supports the shape of the body",
-          "A group of organs that breaks down the food we eat",
-          "A system of vessels that pumps blood throughout the body"
-        ],
-        "correct": 0,
-        "explain": "The lymphatic system is a network of tissues and organs that help rid the body of toxins. The skeletal system provides the framework of bones. The digestive system breaks down food. The cardiovascular system pumps blood."
-      },
-      {
-        "id": "ENG1PT20504",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What does the endocrine system involve?",
-        "options": [
-          "Hormones and the body metabolism",
-          "Blood flow and the circulation",
-          "Food breakdown and the digestion",
-          "Breathing air and the respiration"
-        ],
-        "correct": 0,
-        "explain": "The endocrine system involves hormones and metabolism. Blood circulation is cardiovascular. Food breakdown is digestive. Breathing is respiratory."
-      },
-      {
-        "id": "ENG1PT20505",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "What is the integumentary system?",
-        "options": [
-          "Layers of skin and hair that protect",
-          "Network of vessels that carry the blood",
-          "Framework of bones that support the body",
-          "Organs that break down the eaten food"
-        ],
-        "correct": 0,
-        "explain": "The integumentary system is layers (skin, hair) that protect the body from the outside. Blood vessels are cardiovascular. Bones are skeletal. Food organs are digestive."
-      },
-      {
         "id": "ENG1PT20506",
         "type": "mcq",
         "cat": "Unit 3: Basic Principles in Medicine",
@@ -823,17 +914,55 @@
       },
       {
         "id": "ENG1PT20509",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Which region attaches the head to the trunk?",
-        "options": [
-          "The neck",
-          "The trunk",
-          "The groin",
-          "The back"
+        "q": "Match each limb or region to the point where it attaches to the trunk.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Head to the trunk"
+          },
+          {
+            "id": "2",
+            "text": "Upper limbs to the trunk"
+          },
+          {
+            "id": "3",
+            "text": "Lower limbs to the trunk"
+          }
         ],
-        "correct": 0,
-        "explain": "The neck attaches the head to the trunk. 'The trunk' is the part being joined, not the connector. 'The groin' joins the lower limbs to the trunk. 'The back' is a surface of the trunk."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Neck"
+          },
+          {
+            "id": "B",
+            "text": "Shoulder"
+          },
+          {
+            "id": "C",
+            "text": "Groin"
+          },
+          {
+            "id": "D",
+            "text": "Waist"
+          },
+          {
+            "id": "E",
+            "text": "Trunk"
+          },
+          {
+            "id": "F",
+            "text": "Back"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "The neck joins the head to the trunk, the shoulder joins the upper limbs, and the groin joins the lower limbs. The waist is a trunk band, while the trunk and back are not join points."
       },
       {
         "id": "ENG1PT20510",
@@ -877,217 +1006,140 @@
           "2": "B",
           "3": "C"
         },
-        "explain": "The upper limbs are the shoulders, arms, forearms, wrists, and hands. The lower limbs are the buttocks, legs, ankles, and feet. The trunk is the chest, abdomen, and pelvis. The line 'Shoulders, arms, and buttocks' mixes upper‑ and lower‑limb parts, so it matches no single region."
-      },
-      {
-        "id": "ENG1PT20511",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The lower limbs attach to the trunk at which region?",
-        "options": [
-          "At the groin",
-          "At the neck",
-          "At the shoulder",
-          "At the waist"
-        ],
-        "correct": 0,
-        "explain": "The lower limbs meet the trunk at the groin. The neck is where the head meets the trunk. The shoulder is where the upper limbs meet the trunk. The waist is the narrow band of the trunk above the hips, not a point of limb attachment."
-      },
-      {
-        "id": "ENG1PT20512",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "In the anatomical position, the heart lies ______ to the vertebral column.",
-        "options": [
-          "anterior",
-          "posterior",
-          "superior",
-          "inferior"
-        ],
-        "correct": 0,
-        "explain": "The heart sits at the front of the torso while the vertebral column runs down the back, so the heart is anterior to it. 'posterior' places the heart at the back, which is where the spine already is. 'superior' and 'inferior' describe the head-to-feet axis and say nothing about the front-to-back placement of these two structures."
-      },
-      {
-        "id": "ENG1PT20513",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The neck is ______ to the chest.",
-        "options": [
-          "superior",
-          "posterior",
-          "anterior",
-          "inferior"
-        ],
-        "correct": 0,
-        "explain": "The neck is above the chest, toward the head, so it is superior to it. 'inferior' reverses the order and would put the neck below the chest. 'anterior' and 'posterior' belong to the front-to-back axis, which does not separate the neck from the chest."
-      },
-      {
-        "id": "ENG1PT20514",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The abdomen is ______ to the chest.",
-        "options": [
-          "inferior",
-          "posterior",
-          "anterior",
-          "superior"
-        ],
-        "correct": 0,
-        "explain": "The abdomen lies below the chest, toward the feet, so it is inferior to it. 'superior' would place the abdomen above the chest, the opposite of the real order. 'anterior' and 'posterior' describe front and back, not the vertical stacking of these two trunk regions."
+        "explain": "The upper limbs are the shoulders, arms, forearms, wrists, and hands. The lower limbs are the buttocks, legs, ankles, and feet. The trunk is the chest, abdomen, and pelvis. The line 'Shoulders, arms, and buttocks' mixes upper- and lower-limb parts, so it matches no single region."
       },
       {
         "id": "ENG1PT20515",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The windpipe (trachea) runs down the middle of the neck, so it is ______ to the lungs.",
-        "options": [
-          "medial",
-          "lateral",
-          "anterior",
-          "posterior"
+        "q": "Match each structure pair to how the first sits relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Trachea relative to the lungs"
+          },
+          {
+            "id": "2",
+            "text": "Arms relative to the trunk"
+          },
+          {
+            "id": "3",
+            "text": "Elbow relative to the hand"
+          },
+          {
+            "id": "4",
+            "text": "Elbow relative to the shoulder"
+          }
         ],
-        "correct": 0,
-        "explain": "The trachea is on the midline while the lungs sit to either side of it, so the trachea is medial to the lungs. 'lateral' states the reverse relation, which is how the lungs stand to the trachea, not how the trachea stands to the lungs. 'anterior' and 'posterior' are front-and-back terms and do not capture this center-to-side arrangement."
-      },
-      {
-        "id": "ENG1PT20516",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The arms join the body at the shoulders and hang at its sides, so they are ______ to the trunk.",
-        "options": [
-          "lateral",
-          "anterior",
-          "posterior",
-          "superior"
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Medial"
+          },
+          {
+            "id": "B",
+            "text": "Lateral"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          },
+          {
+            "id": "E",
+            "text": "Superior"
+          },
+          {
+            "id": "F",
+            "text": "Inferior"
+          }
         ],
-        "correct": 0,
-        "explain": "The arms are at the sides of the trunk, so they are lateral to it. 'medial' would put the arms at the center line, which is where the trunk itself is. 'anterior' and 'posterior' describe front and back, and 'superior' describes the head direction, none of which express the side placement of the arms."
-      },
-      {
-        "id": "ENG1PT20517",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Water is reabsorbed and feces are formed in the colon, which is a segment of which body system?",
-        "options": [
-          "Digestive",
-          "Respiratory",
-          "Circulatory",
-          "Endocrine"
-        ],
-        "correct": 0,
-        "explain": "The colon is the final stretch of the gut, where residue is dried into feces, so it belongs to the digestive system. The respiratory system covers the airway and lungs that exchange gases. The circulatory system covers the heart and vessels that move blood. The endocrine system covers the glands that release hormones."
-      },
-      {
-        "id": "ENG1PT20518",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "Which body system filters waste and excess water from the blood?",
-        "options": [
-          "The urinary system",
-          "The nervous system",
-          "The muscular system",
-          "The integumentary system"
-        ],
-        "correct": 0,
-        "explain": "The urinary system filters waste and excess water from the blood. The nervous system controls messages, the muscular system produces movement, and the integumentary system protects the body."
-      },
-      {
-        "id": "ENG1PT20519",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "Which body system sends electrical messages and helps control body activities?",
-        "options": [
-          "The nervous system",
-          "The urinary system",
-          "The skeletal system",
-          "The digestive system"
-        ],
-        "correct": 0,
-        "explain": "The nervous system sends electrical messages and helps control body activities. The urinary system removes waste, the skeletal system supports the body, and the digestive system breaks down food."
-      },
-      {
-        "id": "ENG1PT20520",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "Which body system allows movement by contracting and relaxing?",
-        "options": [
-          "The muscular system",
-          "The respiratory system",
-          "The endocrine system",
-          "The lymphatic system"
-        ],
-        "correct": 0,
-        "explain": "The muscular system allows movement through contraction and relaxation. The respiratory system handles breathing, the endocrine system involves hormones, and the lymphatic system helps remove toxins."
-      },
-      {
-        "id": "ENG1PT20521",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "Which body system is involved in producing offspring?",
-        "options": [
-          "The reproductive system",
-          "The urinary system",
-          "The muscular system",
-          "The integumentary system"
-        ],
-        "correct": 0,
-        "explain": "The reproductive system is involved in producing offspring. The urinary system removes waste, the muscular system produces movement, and the integumentary system protects the body."
-      },
-      {
-        "id": "ENG1PT20522",
-        "type": "mcq",
-        "cat": "Unit 3 – Body Systems Overview",
-        "q": "Which system consists of organs and processes that protect the body from infection?",
-        "options": [
-          "The immune system",
-          "The skeletal system",
-          "The digestive system",
-          "The respiratory system"
-        ],
-        "correct": 0,
-        "explain": "The immune system consists of organs and processes that protect the body from infection. The skeletal system supports the body, the digestive system breaks down food, and the respiratory system handles gas exchange."
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "The trachea is on the neck midline, so it is medial to the lungs; the arms hang at the sides, so they are lateral to the trunk. The elbow is nearer the attachment than the hand (proximal) and farther from the torso than the shoulder (distal). Superior and inferior fit none."
       },
       {
         "id": "ENG1PT20523",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3 – Anatomy Vocabulary",
-        "q": "The breastbone is also called the...",
-        "options": [
-          "sternum",
-          "pelvis",
-          "rib",
-          "vertebra"
+        "q": "Match each description to the correct name.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Breastbone"
+          },
+          {
+            "id": "2",
+            "text": "Spine"
+          },
+          {
+            "id": "3",
+            "text": "Thorax"
+          },
+          {
+            "id": "4",
+            "text": "Framework of bones and cartilage"
+          },
+          {
+            "id": "5",
+            "text": "Cushion between two vertebrae"
+          }
         ],
-        "correct": 0,
-        "explain": "The breastbone is the sternum. The pelvis is the large bony frame near the base of the spine. Ribs protect the heart and lungs, and vertebrae form the spine."
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Sternum"
+          },
+          {
+            "id": "B",
+            "text": "Backbone"
+          },
+          {
+            "id": "C",
+            "text": "Chest"
+          },
+          {
+            "id": "D",
+            "text": "Skeleton"
+          },
+          {
+            "id": "E",
+            "text": "Disk"
+          },
+          {
+            "id": "F",
+            "text": "Collarbone"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "The breastbone is the sternum, the spine is the backbone, and the thorax is the chest. The skeleton is the framework of bones and cartilage, and the disk is the cushion between vertebrae. Collarbone matches none of these."
       },
       {
-      "id": "ENG1PT20524",
-      "type": "mcq",
-      "cat": "Unit 3 – Anatomy Vocabulary",
-      "q": "Which flat bone is located on the back of the shoulder?",
-      "options": [
-        "Shoulder blade",
-        "Breastbone",
-        "Pelvis",
-        "Collarbone"
+        "id": "ENG1PT20524",
+        "type": "mcq",
+        "cat": "Unit 3 – Anatomy Vocabulary",
+        "q": "Which flat bone is located on the back of the shoulder?",
+        "options": [
+          "Shoulder blade",
+          "Breastbone",
+          "Pelvis",
+          "Collarbone"
         ],
         "correct": 0,
         "explain": "The shoulder blade is the flat bone on the back of the shoulder. The breastbone is the sternum, the pelvis is near the base of the spine, and the collarbone is at the front of the shoulder area."
-      },
-      {
-        "id": "ENG1PT20525",
-        "type": "mcq",
-        "cat": "Unit 3 – Anatomy Vocabulary",
-        "q": "The internal framework of bones and cartilage is called the...",
-        "options": [
-          "skeleton",
-          "tissue",
-          "organ",
-          "vessel"
-        ],
-        "correct": 0,
-        "explain": "The skeleton is the internal framework of bones and cartilage. Tissue is a group of similar cells, an organ is a structure made of tissues, and a vessel carries blood or fluids."
       },
       {
         "id": "ENG1PT20526",
@@ -1152,26 +1204,10 @@
         "q": "What does internal mean?",
         "options": [
           "On the inside",
-          "Toward the back",
-          "Related to the heart",
-          "Again"
+          "Toward the back"
         ],
         "correct": 0,
-        "explain": "Internal means on the inside. Toward the back is posterior, related to the heart is cardio-, and again is re-."
-      },
-      {
-      "id": "ENG1PT20532",
-      "type": "mcq",
-      "cat": "Unit 3 – Medical Word Building",
-      "q": "Which prefix means related to the body?",
-      "options": [
-        "physi-",
-        "-ic",
-        "-ous",
-        "in-"
-      ],
-      "correct": 0,
-      "explain": "Physi- means related to the body, as in physical, physiology, and physiotherapy. -ic and -ous both mean pertaining to, and in- means inside."
+        "explain": "Internal means on the inside. Toward the back is posterior."
       },
       {
         "id": "ENG1PT20533",
@@ -1186,20 +1222,6 @@
         ],
         "correct": 0,
         "explain": "Physiotherapy uses physical methods such as massage and exercise to treat disease or injury. Drugs, surgery, and diagnostic tools belong to other areas of medical treatment or examination."
-      },
-      {
-      "id": "ENG1PT20534",
-      "type": "mcq",
-      "cat": "Unit 3 – Medical Word Building",
-      "q": "Which prefix means again?",
-      "options": [
-        "re-",
-        "in-",
-        "un-",
-        "pre-"
-      ],
-      "correct": 0,
-      "explain": "Re- means again, as in renew, reproductive, and reshape. In- means inside or not, un- means not, and pre- means before."
       },
       {
         "id": "ENG1PT20535",
@@ -1230,32 +1252,18 @@
         "explain": "Reshape means to form again. Moving blood is pumping, filtering waste relates to the urinary system, and examining the stomach relates to a gastroscope."
       },
       {
-        "id": "ENG1PT20537",
-        "type": "mcq",
-        "cat": "Unit 3 – Medical Word Building",
-        "q": "What does cardiopathy mean?",
-        "options": [
-          "Heart disease",
-          "Stomach inflammation",
-          "Blood vessel",
-          "Physical treatment"
-        ],
-        "correct": 0,
-        "explain": "Cardiopathy means heart disease or a disorder of the heart. Stomach inflammation is gastroenteritis, a blood vessel carries blood, and physiotherapy is physical treatment."
-      },
-      {
         "id": "ENG1PT20538",
         "type": "mcq",
         "cat": "Unit 3 – Medical Word Building",
         "q": "Gastroenteritis is inflammation of the ___.",
         "options": [
           "stomach and intestines",
-          "heart and blood vessels",
-          "lungs and airways",
-          "kidneys and bladder"
+          "esophagus and stomach",
+          "liver and gallbladder",
+          "pancreas and appendix"
         ],
         "correct": 0,
-        "explain": "Gastroenteritis means inflammation of the stomach and intestines. Gastro- relates to the stomach, and enteritis refers to inflammation of the intestines."
+        "explain": "Gastroenteritis means inflammation of the stomach and intestines. The other pairs name digestive structures whose inflammation carries different terms, not gastroenteritis."
       },
       {
         "id": "ENG1PT20539",
@@ -1314,18 +1322,18 @@
         "explain": "Hyperventilate means to breathe at an abnormally fast rate. Hyper- suggests excess or high, and ventilate relates to breathing. With high volume, at high pressure, and too high and deep do not match the meaning."
       },
       {
-      "id": "ENG1PT20543",
-      "type": "mcq",
-      "cat": "Unit 3 – Body Systems Overview",
-      "q": "The female reproductive organs include the ovaries, the uterus, the vagina, and the ___.",
-      "options": [
-        "fallopian tubes",
-        "urinary bladder",
-        "urethral opening",
-        "scrotum"
-      ],
-      "correct": 0,
-      "explain": "The female reproductive organs include the ovaries, uterus, vagina, and fallopian tubes. The urinary bladder and urethral opening are urinary structures. The scrotum is a male reproductive structure."
+        "id": "ENG1PT20543",
+        "type": "mcq",
+        "cat": "Unit 3 – Body Systems Overview",
+        "q": "The female reproductive organs include the ovaries, the uterus, the vagina, and the ___.",
+        "options": [
+          "fallopian tubes",
+          "urinary bladder",
+          "urethral opening",
+          "scrotum"
+        ],
+        "correct": 0,
+        "explain": "The female reproductive organs include the ovaries, uterus, vagina, and fallopian tubes. The urinary bladder and urethral opening are urinary structures. The scrotum is a male reproductive structure."
       },
       {
         "id": "ENG1PT20544",
@@ -1354,34 +1362,6 @@
         ],
         "correct": 0,
         "explain": "The lateral or sagittal plane divides the body vertically into left and right parts. The frontal plane divides front and back, and the transverse plane divides top and bottom."
-      },
-      {
-        "id": "ENG1PT20546",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Compared with the hand, the elbow is ___.",
-        "options": [
-          "proximal",
-          "distal",
-          "medial",
-          "lateral"
-        ],
-        "correct": 0,
-        "explain": "The elbow is closer to the attachment point of the limb, so it is proximal to the hand. The hand is distal to the elbow."
-      },
-      {
-        "id": "ENG1PT20547",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Compared with the shoulder, the elbow is ___.",
-        "options": [
-          "distal",
-          "proximal",
-          "medial",
-          "superior"
-        ],
-        "correct": 0,
-        "explain": "The elbow is farther from the torso than the shoulder, so it is distal to the shoulder. The shoulder is proximal to the elbow."
       },
       {
         "id": "ENG1PT20548",
@@ -1454,20 +1434,6 @@
         "explain": "The knee joint is described as the biggest and strongest joint in the body."
       },
       {
-        "id": "ENG1PT20553",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Between each vertebra is a small cushion called a ___.",
-        "options": [
-          "disk",
-          "duct",
-          "lobe",
-          "sac"
-        ],
-        "correct": 0,
-        "explain": "Between each vertebra is a small cushion called a disk/disc. Ducts carry fluids, lobes are parts of organs, and sacs are general containers."
-      },
-      {
         "id": "ENG1PT20554",
         "type": "mcq",
         "cat": "Unit 3: Basic Principles in Medicine",
@@ -1515,13 +1481,13 @@
         "cat": "Unit 3: Basic Principles in Medicine",
         "q": "A new bone is still made until a person reaches about age ___.",
         "options": [
+          "60",
           "35",
           "25",
-          "45",
-          "55"
+          "20"
         ],
-        "correct": 0,
-        "explain": "A new bone is still made until a person reaches about the age of thirty-five. After that, bones gradually begin to weaken."
+        "correct": 1,
+        "explain": "New bone is still made until about age 35, after which bones gradually weaken. The figures 60, 25, and 20 are not the age bone formation stops."
       },
       {
         "id": "ENG1PT20558",
@@ -1552,76 +1518,6 @@
         "explain": "Necessary means needed or important. Bones are needed for movement, support, and protection."
       },
       {
-        "id": "ENG1PT20560",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The lungs are ___ to the breastbone.",
-        "options": [
-          "posterior",
-          "anterior",
-          "superior",
-          "inferior"
-        ],
-        "correct": 0,
-        "explain": "The lungs are behind the breastbone, so they are posterior to it. The breastbone is anterior to the lungs."
-      },
-      {
-        "id": "ENG1PT20561",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The ventricles are ___ to the atria.",
-        "options": [
-          "inferior",
-          "superior",
-          "lateral",
-          "medial"
-        ],
-        "correct": 0,
-        "explain": "The ventricles are the lower chambers of the heart, so they are inferior to the atria. The atria are superior to the ventricles."
-      },
-      {
-        "id": "ENG1PT20562",
-        "type": "mcq",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "The thorax is another name for the ___.",
-        "options": [
-          "chest",
-          "belly",
-          "neck",
-          "groin"
-        ],
-        "correct": 0,
-        "explain": "The thorax is the chest. The abdomen is the belly, the neck joins the head to the trunk, and the groin joins the lower limbs to the trunk."
-      },
-      {
-        "id": "ENG1PT20563",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Food turns into a bolus in which structure?",
-        "options": [
-          "Mouth",
-          "Stomach",
-          "Small intestine",
-          "Large intestine"
-        ],
-        "correct": 0,
-        "explain": "Food turns into a bolus in the mouth. The bolus then passes into the esophagus and stomach. Nutrients pass through the small intestine. Water is absorbed in the large intestine."
-      },
-      {
-        "id": "ENG1PT20564",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The bolus passes into the esophagus and then into which organ?",
-        "options": [
-          "Stomach",
-          "Mouth",
-          "Pharynx",
-          "Rectum"
-        ],
-        "correct": 0,
-        "explain": "The bolus passes into the esophagus and then into the stomach. The mouth is where the bolus forms. The pharynx connects the mouth to the esophagus. The rectum is later in the tract."
-      },
-      {
         "id": "ENG1PT20565",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
@@ -1637,45 +1533,124 @@
       },
       {
         "id": "ENG1PT20566",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Unit 3 – Digestive System",
-        "q": "Nutrients pass through which structure into the blood?",
-        "options": [
-          "Small intestine",
-          "Large intestine",
-          "Stomach",
-          "Esophagus"
+        "q": "Match each digestive organ to what it does.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Mouth"
+          },
+          {
+            "id": "2",
+            "text": "Salivary glands"
+          },
+          {
+            "id": "3",
+            "text": "Tongue"
+          },
+          {
+            "id": "4",
+            "text": "Esophagus"
+          },
+          {
+            "id": "5",
+            "text": "Stomach"
+          },
+          {
+            "id": "6",
+            "text": "Liver"
+          },
+          {
+            "id": "7",
+            "text": "Gallbladder"
+          },
+          {
+            "id": "8",
+            "text": "Pancreas"
+          },
+          {
+            "id": "9",
+            "text": "Small intestine"
+          },
+          {
+            "id": "10",
+            "text": "Large intestine"
+          },
+          {
+            "id": "11",
+            "text": "Rectum"
+          },
+          {
+            "id": "12",
+            "text": "Anus"
+          }
         ],
-        "correct": 0,
-        "explain": "Nutrients pass through the small intestine into the blood. The large intestine absorbs water from waste. The stomach stores and churns food. The esophagus moves the bolus."
-      },
-      {
-        "id": "ENG1PT20567",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Water from waste can be absorbed into the blood in which structure?",
-        "options": [
-          "Large intestine",
-          "Small intestine",
-          "Stomach",
-          "Mouth"
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Grinds food and forms the bolus"
+          },
+          {
+            "id": "B",
+            "text": "Moistens food to ease chewing and swallowing"
+          },
+          {
+            "id": "C",
+            "text": "Mixes food and molds the bolus"
+          },
+          {
+            "id": "D",
+            "text": "Moves the bolus down to the stomach"
+          },
+          {
+            "id": "E",
+            "text": "Stores food and churns it into chyme"
+          },
+          {
+            "id": "F",
+            "text": "Secretes bile for fat absorption"
+          },
+          {
+            "id": "G",
+            "text": "Stores bile until digestion needs it"
+          },
+          {
+            "id": "H",
+            "text": "Breaks food into simple soluble substances"
+          },
+          {
+            "id": "I",
+            "text": "Absorbs nutrients into the blood"
+          },
+          {
+            "id": "J",
+            "text": "Reabsorbs water and forms feces"
+          },
+          {
+            "id": "K",
+            "text": "Collects feces until expulsion"
+          },
+          {
+            "id": "L",
+            "text": "Expels feces to the outside"
+          }
         ],
-        "correct": 0,
-        "explain": "Water from waste in the large intestine can be absorbed into the blood. The small intestine absorbs nutrients. The stomach and mouth act earlier in the process."
-      },
-      {
-        "id": "ENG1PT20568",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Solid waste leaves the body through which structure?",
-        "options": [
-          "Anus",
-          "Mouth",
-          "Esophagus",
-          "Liver"
-        ],
-        "correct": 0,
-        "explain": "Solid waste leaves the body through the anus. The mouth is the entry point. The esophagus moves food downward. The liver secretes bile."
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I",
+          "10": "J",
+          "11": "K",
+          "12": "L"
+        },
+        "explain": "The mouth grinds food into a bolus; the salivary glands moisten it; the tongue mixes and molds it. The esophagus moves it to the stomach, which stores and churns it into chyme. The liver secretes bile and the gallbladder stores it; the pancreas breaks food into simple soluble substances. The small intestine absorbs nutrients, the large intestine reabsorbs water and forms feces, the rectum holds feces, and the anus expels them."
       },
       {
         "id": "ENG1PT20569",
@@ -1731,192 +1706,52 @@
         "explain": "Digestion is the process of breaking down food into nutrients. Elimination is when solid waste leaves the body. Absorption is when nutrients pass into the blood. Ingestion is when food passes from the mouth to the stomach. Storing water only fits none of these."
       },
       {
-        "id": "ENG1PT20570",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The mouth is a hollow cavity where teeth are located. Teeth are in charge of what?",
-        "options": [
-          "Grinding food",
-          "Secreting bile",
-          "Absorbing water",
-          "Storing feces"
-        ],
-        "correct": 0,
-        "explain": "The mouth is a hollow cavity where the teeth are located, which are in charge of grinding food. Bile is secreted by the liver. Water is absorbed in the large intestine. Feces are stored in the rectum."
-      },
-      {
-        "id": "ENG1PT20571",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The tongue allows us to feel flavors and helps chewing by doing what?",
-        "options": [
-          "Mixing food",
-          "Secreting saliva",
-          "Producing bile",
-          "Absorbing nutrients"
-        ],
-        "correct": 0,
-        "explain": "The tongue allows us to feel the flavors and helps chewing by mixing food. Saliva is secreted by salivary glands. Bile is produced by the liver. Nutrients are absorbed in the small intestine."
-      },
-      {
-        "id": "ENG1PT20572",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Salivary glands secrete saliva, which moistens food and facilitates what?",
-        "options": [
-          "Chewing and swallowing",
-          "Fat absorption only",
-          "Water storage",
-          "Feces expulsion"
-        ],
-        "correct": 0,
-        "explain": "The salivary glands secrete saliva, which moistens food and facilitates chewing and swallowing. Fat absorption involves bile. Water is handled later. Feces are expelled through the anus."
-      },
-      {
         "id": "ENG1PT20573",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "The pharynx is a tube that connects the mouth to the esophagus and the nose to the trachea. It is used for both eating and what?",
+        "q": "Which structure is used for both eating and breathing?",
         "options": [
-          "Breathing",
-          "Only digestion",
-          "Only storage",
-          "Only absorption"
+          "The pharynx",
+          "The esophagus",
+          "The trachea",
+          "The larynx"
         ],
         "correct": 0,
-        "explain": "The pharynx is a tube that connects the mouth to the esophagus and the nose to the trachea. This means it is used for both eating and breathing. Only digestion, storage, or absorption do not capture both functions."
+        "explain": "The pharynx connects the mouth to the esophagus and the nose to the trachea, so it serves both eating and breathing. The esophagus carries food, the trachea carries air, and the larynx is the voice box in the airway."
       },
       {
         "id": "ENG1PT20574",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "The esophagus is a muscular tube that connects the pharynx with the stomach. It helps food do what?",
+        "q": "The esophagus is a muscular tube that connects the pharynx with the ______.",
         "options": [
-          "Move toward the stomach",
-          "Turn into bile",
-          "Absorb all nutrients",
-          "Leave as waste"
+          "stomach",
+          "liver",
+          "small intestine",
+          "lung"
         ],
         "correct": 0,
-        "explain": "The esophagus is a muscular tube that connects the pharynx with the stomach. It helps food to move toward the stomach. Bile is from the liver. Nutrients are absorbed later. Waste leaves through the anus."
+        "explain": "The esophagus is a muscular tube connecting the pharynx to the stomach, and it moves food toward the stomach. The liver makes bile, the small intestine absorbs nutrients, and the lung is respiratory. Waste leaves through the anus later."
       },
       {
         "id": "ENG1PT20575",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "The stomach is a kind of bag where food is what?",
+        "q": "Which digestive structure is a bag that stores food?",
         "options": [
-          "Stored",
-          "Exhaled",
-          "Inhaled",
-          "Filtered only"
-        ],
-        "correct": 0,
-        "explain": "The stomach is a kind of bag where food is stored. Exhaled and inhaled refer to breathing. Filtered only does not describe the stomach’s role."
-      },
-      {
-        "id": "ENG1PT20576",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The pancreas produces pancreatic juice that breaks down food into what?",
-        "options": [
-          "Simple soluble substances",
-          "Solid feces only",
-          "Oxygen gas",
-          "Carbon dioxide"
-        ],
-        "correct": 0,
-        "explain": "The pancreas produces pancreatic juice that breaks down food into simple soluble substances. Solid feces, oxygen, and carbon dioxide are not the product of pancreatic juice."
-      },
-      {
-        "id": "ENG1PT20577",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The liver secretes bile, which is necessary for digestion and what?",
-        "options": [
-          "Fat absorption",
-          "Water reabsorption",
-          "Protein breakdown",
-          "Carbohydrate storage"
-        ],
-        "correct": 0,
-        "explain": "The liver secretes bile, which is necessary for digestion and fat absorption. Water reabsorption, protein breakdown, and carbohydrate storage are not the stated roles of bile."
-      },
-      {
-        "id": "ENG1PT20578",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The gallbladder stores the bile produced by the liver until it is required by what?",
-        "options": [
-          "Digestion processes",
-          "Breathing cycles",
-          "Heart contractions",
-          "Only storage forever"
-        ],
-        "correct": 0,
-        "explain": "The gallbladder function is to store the bile produced by the liver until it is required by the digestion processes. Breathing cycles, heart contractions, and permanent storage do not match."
-      },
-      {
-        "id": "ENG1PT20579",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The small intestine absorbs nutrients from what?",
-        "options": [
-          "Digested food",
-          "Undigested solids",
-          "Inhaled air",
-          "Blood plasma"
-        ],
-        "correct": 0,
-        "explain": "The small intestine absorbs nutrients from already digested food. Undigested solids, inhaled air, and blood plasma are not the source of nutrients absorbed there."
-      },
-      {
-        "id": "ENG1PT20580",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The large intestine (or colon) is the last structure to process food. It absorbs water and leaves waste products called what?",
-        "options": [
-          "Feces",
-          "Bile",
-          "Chyme",
-          "Bolus"
-        ],
-        "correct": 0,
-        "explain": "The large intestine (or colon) is the last structure to process food. It absorbs water and leaves waste products called feces. Bile, chyme, and bolus are earlier substances."
-      },
-      {
-        "id": "ENG1PT20581",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The rectum is the final section of the large intestine. It collects the feces and retains them until what?",
-        "options": [
-          "The moment of expulsion",
-          "The start of absorption",
-          "The completion of digestion",
-          "The release of bile"
-        ],
-        "correct": 0,
-        "explain": "The rectum collects the feces and retains them until the moment of expulsion. Absorption, digestion, and bile release occur earlier and are not related to this retention."
-      },
-      {
-        "id": "ENG1PT20582",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "The anus is the hole through which the feces are expelled to what?",
-        "options": [
-          "The outside",
           "The stomach",
-          "The lungs",
-          "The heart"
+          "The esophagus",
+          "The liver",
+          "The gallbladder"
         ],
         "correct": 0,
-        "explain": "The anus is the hole through which the feces are expelled to the outside. The stomach, lungs, and heart are not the destination of feces."
+        "explain": "The stomach is a bag-like organ where food is stored. The esophagus moves food, the liver secretes bile, and the gallbladder stores bile."
       },
       {
         "id": "ENG1PT20583",
         "type": "mcq",
         "cat": "Unit 3 – Respiratory System",
-        "q": "The respiratory system’s main function is to supply oxygen to all parts of the body through breathing: inhaling oxygen-rich air and exhaling air filled with what?",
+        "q": "The respiratory system's main function is to supply oxygen to all parts of the body through breathing: inhaling oxygen-rich air and exhaling air filled with what?",
         "options": [
           "Carbon dioxide",
           "Nitrogen gas",
@@ -2039,10 +1874,10 @@
           "Energy",
           "Feces",
           "Bile",
-          "Plasma only"
+          "Carbon dioxide"
         ],
         "correct": 0,
-        "explain": "Oxygen is the gas from the air we mix with nutrients to make energy. Feces, bile, and plasma only do not describe the product of that mixing."
+        "explain": "Oxygen from air mixes with nutrients to make energy. Feces and bile are waste or digestive fluids, and carbon dioxide is an exhaled waste gas; none is the energy product."
       },
       {
         "id": "ENG1PT20589",
@@ -2090,7 +1925,7 @@
         "id": "ENG1PT20592",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
-        "q": "The primary purpose of the heart is to pump life-giving blood throughout the body so it can supply the needs of the cells. It works with blood and blood vessels. Which statement aligns?",
+        "q": "What is the primary purpose of the heart?",
         "options": [
           "It pumps blood to supply cell needs",
           "It filters blood to remove waste",
@@ -2098,7 +1933,7 @@
           "It stores oxygen for the cells"
         ],
         "correct": 0,
-        "explain": "The heart pumps blood throughout the body to supply the needs of the cells. Filtering blood, producing plasma, and storing oxygen are not its primary purpose."
+        "explain": "The heart pumps life-giving blood throughout the body so cells receive their needs. It works with blood and blood vessels. Filtering waste, producing plasma, and storing oxygen are not its primary purpose."
       },
       {
         "id": "ENG1PT20593",
@@ -2107,12 +1942,10 @@
         "q": "An artery is a blood vessel that carries blood in which direction?",
         "options": [
           "Away from the heart",
-          "Toward the heart",
-          "Between the lungs",
-          "Into the stomach"
+          "Toward the heart"
         ],
         "correct": 0,
-        "explain": "An artery carries blood away from the heart. Veins carry blood toward the heart. Between the lungs or into the stomach do not match the general direction of arteries."
+        "explain": "An artery carries blood away from the heart. A vein carries blood back toward the heart."
       },
       {
         "id": "ENG1PT20594",
@@ -2141,20 +1974,20 @@
         ],
         "correct": 0,
         "explain": "Plasma makes up over half of the blood and helps regulate body temperature. Blood pressure, heart rate, and oxygen levels are not the regulation stated for plasma."
-        },
+      },
       {
-      "id": "ENG1PT20596",
-      "type": "mcq",
-      "cat": "Unit 3 – Circulatory System",
-      "q": "Veins carry blood back to the heart. The walls of a vein are much thinner than those of an artery. Veins on the skin may look blue. Which statement aligns?",
-      "options": [
-        "Veins carry blood back to the heart",
-        "Veins carry blood away from the heart",
-        "Veins have thicker walls than arteries",
-        "Veins carry only oxygenated blood"
-      ],
-      "correct": 0,
-      "explain": "Veins carry blood back to the heart and have thinner walls than arteries. Carrying blood away, having thicker walls, or carrying only oxygenated blood do not match veins."
+        "id": "ENG1PT20596",
+        "type": "mcq",
+        "cat": "Unit 3 – Circulatory System",
+        "q": "Which statement about veins is correct?",
+        "options": [
+          "Veins carry blood back to the heart",
+          "Veins carry blood away from the heart",
+          "Veins have thicker walls than arteries",
+          "Veins carry only oxygenated blood"
+        ],
+        "correct": 0,
+        "explain": "Veins carry blood back to the heart. Their walls are thinner than arteries, and skin veins may look blue. Arteries carry blood away; thicker walls and oxygen-only blood are false."
       },
       {
         "id": "ENG1PT20597",
@@ -2169,20 +2002,6 @@
         ],
         "correct": 0,
         "explain": "Blood does not flow at the same speed throughout the entire body. As it gets farther away from the heart, it slows down. The heart is located a little to the left of the center of the chest. Veins carry blood back to the heart. The heart beats continuously."
-      },
-      {
-        "id": "ENG1PT20598",
-        "type": "mcq",
-        "cat": "Unit 3 – Circulatory System",
-        "q": "Children’s pulse rates range from what?",
-        "options": [
-          "90 to 120 beats per minute",
-          "60 to 100 beats per minute",
-          "19 to 120 beats per minute",
-          "50 to 120 beats per minute"
-        ],
-        "correct": 0,
-        "explain": "Children’s pulse rates range from 90 to 120 beats per minute. Adult rates are between sixty and one hundred. The other ranges do not match the stated child range."
       },
       {
         "id": "ENG1PT20599",
@@ -2202,7 +2021,7 @@
         "id": "ENG1PT20600",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
-        "q": "Veins on the skin may look blue, especially on the hands and arms. Which description matches?",
+        "q": "Veins on the skin are especially visible on the hands and arms. Which description matches?",
         "options": [
           "They are blue",
           "They are slightly pink",
@@ -2210,35 +2029,21 @@
           "They are gray"
         ],
         "correct": 0,
-        "explain": "The veins on the skin may look blue, especially on the hands and arms. Slightly pink, big and bulgy, and gray do not match the description."
+        "explain": "Veins on the skin may look blue, especially on the hands and arms. Slightly pink, big and bulgy, and gray do not match the description."
       },
       {
-      "id": "ENG1PT20601",
-      "type": "mcq",
-      "cat": "Unit 3 – Digestive System",
-      "q": "The body uses nutrients for energy, growth, and what?",
-      "options": [
-        "Tissue repair",
-        "Mineral storage",
-        "Hormone production",
-        "Waste filtration"
-      ],
-      "correct": 0,
-      "explain": "The body uses nutrients for energy, growth, and tissue repair. Mineral storage, hormone production, and waste filtration are not the primary uses stated for nutrients."
-      },
-      {
-      "id": "ENG1PT20602",
-      "type": "mcq",
-      "cat": "Unit 3 – Digestive System",
-      "q": "In the stomach, food is churned with digestive juices to make what?",
-      "options": [
-        "Chyme",
-        "Bolus",
-        "Feces",
-        "Bile"
-      ],
-      "correct": 0,
-      "explain": "In the stomach, food is churned with digestive juices to make chyme, a semi-liquid mixture. Bolus forms in the mouth, feces form later, and bile is produced by the liver."
+        "id": "ENG1PT20601",
+        "type": "mcq",
+        "cat": "Unit 3 – Digestive System",
+        "q": "The body uses nutrients for energy, growth, and what?",
+        "options": [
+          "Tissue repair",
+          "Mineral storage",
+          "Hormone production",
+          "Waste filtration"
+        ],
+        "correct": 0,
+        "explain": "The body uses nutrients for energy, growth, and tissue repair. Mineral storage, hormone production, and waste filtration are not the primary uses stated for nutrients."
       },
       {
         "id": "ENG1PT20603",
@@ -2258,15 +2063,15 @@
         "id": "ENG1PT20604",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "Hunger pangs result from stomach contractions caused by the nervous and hormonal systems. Appetite is a pleasurable sensation caused by the production of digestive juices in the mouth and stomach. Which statement aligns?",
+        "q": "Hunger pangs occur when the body needs food or expects a routine meal; appetite is a pleasurable sensation from digestive juices in the mouth and stomach. What do hunger pangs result from?",
         "options": [
-          "Hunger pangs result from stomach contractions",
-          "Hunger pangs result only from breathing",
-          "Appetite is caused only by heartbeats",
-          "Eating is determined only by pulse rate"
+          "Stomach contractions",
+          "Breathing patterns",
+          "Heartbeat rhythms",
+          "Pulse measurements"
         ],
         "correct": 0,
-        "explain": "When the body needs food or expects a routine meal, the nervous and hormonal systems cause the stomach to contract, resulting in hunger pangs. Appetite is a pleasurable sensation caused by the production of digestive juices in the mouth and stomach. Breathing, heartbeats, and pulse rate alone do not determine hunger and appetite as described."
+        "explain": "Hunger pangs result from stomach contractions driven by the nervous and hormonal systems. Breathing patterns move air, while heartbeat rhythms and pulse measurements track the heart; none cause hunger pangs."
       },
       {
         "id": "ENG1PT20605",
@@ -2286,15 +2091,15 @@
         "id": "ENG1PT20606",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
-        "q": "The heart is located in the middle of the chest and slightly to the left. Blood enters the upper chambers called atria and is then pumped to the lower chambers called ventricles. Blood from the ventricles goes to the lungs and to every cell. Which statement aligns?",
+        "q": "The heart is located in the middle of the chest and slightly to the left. Blood from the ventricles goes to the lungs and to every cell. Which statement aligns?",
         "options": [
-          "Blood enters the atria then goes to the ventricles",
-          "Blood enters the ventricles then goes to the atria",
-          "The heart is located only on the right",
-          "Valves allow blood to flow backwards"
+          "Blood enters the upper atria first, then the lower ventricles.",
+          "Blood enters the lower ventricles first, then the upper atria.",
+          "The heart lies entirely on the right side of the chest.",
+          "The ventricles send blood only to the lungs, not cells."
         ],
         "correct": 0,
-        "explain": "The blood enters the atria, the upper chambers, and is then pumped to the ventricles, the two lower chambers. The heart is located in the middle of the chest and slightly to the left. Valves stop blood from flowing backwards."
+        "explain": "Blood enters the upper atria, then the lower ventricles. The heart is mid-chest, slightly left. Ventricles send blood to the lungs and every cell. Valves stop blood flowing backwards."
       },
       {
         "id": "ENG1PT20607",
@@ -2303,46 +2108,44 @@
         "q": "A main artery may be as thick as what?",
         "options": [
           "A thumb",
-          "A finger only",
+          "A finger",
           "A hair",
           "A capillary"
         ],
         "correct": 0,
-        "explain": "A main artery may be as thick as a thumb. A finger only, a hair, and a capillary do not match the comparison."
+        "explain": "A main artery can be as thick as a thumb. A finger, a hair, and a capillary are all narrower and do not match the comparison."
       },
       {
         "id": "ENG1PT20608",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
-        "q": "Two large veins bring the blood back to the heart. One comes from the brain and the chest. The other comes from the stomach and lower body. Which statement aligns?",
+        "q": "The Superior Vena Cava and Inferior Vena Cava return blood to the heart. Which regions do they drain?",
         "options": [
-          "Two large veins return blood to the heart",
-          "Only one vein returns blood",
-          "Arteries return blood from the brain",
-          "Veins carry blood away from the heart"
+          "Brain and chest; stomach and lower body",
+          "Brain and chest; arms and legs",
+          "Stomach and lower body; heart and lungs",
+          "Arms and legs; brain and chest"
         ],
         "correct": 0,
-        "explain": "Two large veins bring the blood back to the heart. One comes from the brain and the chest. The other comes from the stomach and lower body. Only one vein, arteries returning blood, and veins carrying blood away do not match."
+        "explain": "The Superior Vena Cava drains the brain and chest; the Inferior Vena Cava drains the stomach and lower body. These two large veins return blood to the heart. The other pairs misassign these regions."
       },
       {
         "id": "ENG1PT20609",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
-        "q": "The heart beats or pumps 100,000 times a day. The pulse can be felt on the inside of the wrist. The pulse rate in an adult is between sixty and one hundred beats per minute. Which statement aligns?",
+        "q": "The heart beats or pumps 100,000 times a day. The pulse can be felt on the inside of the wrist. What is the adult pulse rate?",
         "options": [
-          "Adult pulse is 60 to 100 beats per minute",
-          "Adult pulse is 90 to 120 beats per minute",
-          "The heart beats only 1,000 times a day",
-          "The pulse is felt only on the ankle"
+          "60 to 100 beats per minute",
+          "90 to 120 beats per minute"
         ],
         "correct": 0,
-        "explain": "The pulse rate in an adult is between sixty and one hundred beats per minute. Children’s rates are 90 to 120. The heart beats 100,000 times a day. The pulse can be felt on the inside of the wrist."
+        "explain": "Adults are 60 to 100 beats per minute; children are 90 to 120. The heart beats about 100,000 times a day, and the pulse is felt inside the wrist."
       },
       {
         "id": "ENG1PT20610",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
-        "q": "In an average person’s lifetime, the digestive system processes about how much food?",
+        "q": "In an average person's lifetime, the digestive system processes about how much food?",
         "options": [
           "30,000 kg",
           "3,000 kg",
@@ -2350,7 +2153,7 @@
           "30 kg"
         ],
         "correct": 0,
-        "explain": "In an average person’s lifetime, the digestive system processes 30,000 kg (66,000 lb) of food. The smaller amounts do not match the stated figure."
+        "explain": "In an average person's lifetime, the digestive system processes 30,000 kg (66,000 lb) of food. The smaller amounts do not match the stated figure."
       },
       {
         "id": "ENG1PT20611",
@@ -2396,7 +2199,7 @@
           1,
           2
         ],
-        "explain": "The salivary glands, the liver, and the pancreas are associated digestive organs. 'The stomach' is part of the digestive tract."
+        "explain": "The salivary glands, the liver, and the pancreas are associated digestive organs. The stomach is part of the digestive tract."
       },
       {
         "id": "ENG1PT20614",
@@ -2673,20 +2476,6 @@
         "explain": "The small intestine links the stomach to the large intestine. 'The muscular esophagus' lies above the stomach. 'The terminal rectum' and 'The distal anal canal' lie beyond the large intestine."
       },
       {
-        "id": "ENG1PT20631",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Which digestive structure has no known function?",
-        "options": [
-          "The appendix",
-          "The pancreas",
-          "The gallbladder",
-          "The salivary gland"
-        ],
-        "correct": 0,
-        "explain": "The appendix has no known function. 'The pancreas' produces pancreatic juice. 'The gallbladder' stores bile. 'The salivary gland' secretes saliva."
-      },
-      {
         "id": "ENG1PT20632",
         "type": "mcq",
         "cat": "Unit 3 – Circulatory System",
@@ -2855,20 +2644,6 @@
         "explain": "Peristalsis is the sequence of muscle contractions that propels food through the digestive tract. Absorption moves nutrients into the blood, secretion releases juices, and digestion breaks down food."
       },
       {
-        "id": "ENG1PT20644",
-        "type": "mcq",
-        "cat": "Unit 3 – Digestive System",
-        "q": "Which structure helps mold food into a bolus?",
-        "options": [
-          "The tongue",
-          "The liver",
-          "The pancreas",
-          "The rectum"
-        ],
-        "correct": 0,
-        "explain": "The tongue helps mix and mold food into a bolus. The liver produces bile, the pancreas produces pancreatic juice, and the rectum stores feces."
-      },
-      {
         "id": "ENG1PT20645",
         "type": "mcq",
         "cat": "Unit 3 – Digestive System",
@@ -2909,7 +2684,7 @@
         ],
         "correct": 0,
         "explain": "The digestive system processes both meat-based diets and plant-based diets such as rice and fish. Bread and salt is too limited, sugar and fat is unbalanced, and water and air are not food."
-        },
+      },
       {
         "id": "ENG1PT20648",
         "type": "mcq",
@@ -2923,20 +2698,6 @@
         ],
         "correct": 0,
         "explain": "The heart is located in the middle of the chest and slightly to the left."
-      },
-      {
-        "id": "ENG1PT20649",
-        "type": "mcq",
-        "cat": "Unit 3 – Circulatory System",
-        "q": "A pulse can be felt on the inside of the ___.",
-        "options": [
-          "wrist",
-          "ankle",
-          "elbow",
-          "shoulder"
-        ],
-        "correct": 0,
-        "explain": "Each heartbeat produces a pulse, and the pulse can be felt on the inside of the wrist."
       },
       {
         "id": "ENG1PT20650",
@@ -3045,10 +2806,10 @@
           "Bronchi",
           "Alveoli",
           "Capillaries",
-          "Ventricles"
+          "Bronchioles"
         ],
         "correct": 0,
-        "explain": "The bronchi are the two main tubes that branch from the trachea and lead into the lungs. Alveoli are air sacs, capillaries are tiny blood vessels, and ventricles are heart chambers."
+        "explain": "The bronchi are the two main tubes from the trachea into the lungs. Alveoli are air sacs, capillaries are blood vessels, and bronchioles are the smaller branches, not the two main tubes."
       },
       {
         "id": "ENG1PT20658",
@@ -3107,20 +2868,6 @@
         "explain": "Exhalation is the process of breathing out. Inhalation is breathing in, absorption is taking substances into the body or blood, and secretion is producing and releasing a substance."
       },
       {
-        "id": "ENG1PT20662",
-        "type": "mcq",
-        "cat": "Unit 3 – Respiratory System",
-        "q": "Which body system includes the nose, trachea, lungs, and diaphragm?",
-        "options": [
-          "Respiratory",
-          "Digestive",
-          "Circulatory",
-          "Skeletal"
-        ],
-        "correct": 0,
-        "explain": "The respiratory system includes structures used for breathing, such as the nose, trachea, lungs, and diaphragm. The digestive system breaks down food, the circulatory system moves blood, and the skeletal system supports the body."
-      },
-      {
         "id": "ENG1PT20663",
         "type": "mcq",
         "cat": "Unit 3 – Respiratory System",
@@ -3149,78 +2896,32 @@
         "explain": "The nasal cavity is the space inside the nose. The throat is the pharynx, the voice box is the larynx, and the windpipe is the trachea."
       },
       {
-      "id": "ENG1PT20665",
-      "type": "mcq",
-      "cat": "Unit 3 – Digestive System",
-      "q": "How many hours does it take to churn food into a pulp?",
-      "options": [
-        "About 6 hours",
-        "About 4 hours",
-        "About 3 hours",
-        "About 5 hours"
-      ],
-      "correct": 1,
-      "explain": "Food is typically churned in the stomach for about 2–4 hours and turned into semi-liquid chyme before gradual release into the small intestine. About 4 hours is the standard figure for a typical mixed meal. About 5 hours fits larger or high-fat meals. About 6 hours is long for most meals, and about 3 hours is on the shorter side for complete processing of solid food."
-    },
-    {
-      "id": "ENG1PT20666",
-      "type": "mcq",
-      "cat": "Unit 3 – Digestive System",
-      "q": "About how long does food typically remain in the stomach during digestion?",
-      "options": [
-        "About 5 hours",
-        "About 2 hours",
-        "About 8 hours",
-        "About 3 hours"
-      ],
-      "correct": 0,
-      "explain": "Food typically remains in the stomach for about 5 hours during digestion before passing into the small intestine. About 2 hours and about 3 hours are shorter than usual for a typical mixed meal. About 8 hours is longer than normal gastric processing time."
-          },
-          {
-        "id": "ENG1PT20667",
-        "type": "matching",
-        "cat": "Unit 3: Basic Principles in Medicine",
-        "q": "Match each body system to its main function.",
-        "leftItems": [
-          { "id": "1", "text": "Integumentary" },
-          { "id": "2", "text": "Skeletal" },
-          { "id": "3", "text": "Muscular" },
-          { "id": "4", "text": "Nervous" },
-          { "id": "5", "text": "Endocrine" },
-          { "id": "6", "text": "Cardiovascular" },
-          { "id": "7", "text": "Lymphatic" },
-          { "id": "8", "text": "Respiratory" },
-          { "id": "9", "text": "Digestive" },
-          { "id": "10", "text": "Urinary" },
-          { "id": "11", "text": "Reproductive" }
+        "id": "ENG1PT20665",
+        "type": "mcq",
+        "cat": "Unit 3 – Digestive System",
+        "q": "How many hours does it take to churn food into a pulp?",
+        "options": [
+          "About 6 hours",
+          "About 4 hours",
+          "About 3 hours",
+          "About 5 hours"
         ],
-        "rightItems": [
-          { "id": "A", "text": "Covers and protects the body surface" },
-          { "id": "B", "text": "Supports the body and protects organs" },
-          { "id": "C", "text": "Controls movement and posture" },
-          { "id": "D", "text": "Sends signals and processes information" },
-          { "id": "E", "text": "Releases hormones for balance" },
-          { "id": "F", "text": "Pumps and circulates blood" },
-          { "id": "G", "text": "Returns fluid and supports immunity" },
-          { "id": "H", "text": "Brings in oxygen and removes carbon dioxide" },
-          { "id": "I", "text": "Breaks down food and absorbs nutrients" },
-          { "id": "J", "text": "Filters waste and balances fluids" },
-          { "id": "K", "text": "Produces offspring" }
-          ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E",
-          "6": "F",
-          "7": "G",
-          "8": "H",
-          "9": "I",
-          "10": "J",
-          "11": "K"
-        },
-        "explain": "Integumentary covers and protects. Skeletal supports and protects organs. Muscular controls movement and posture. Nervous sends signals. Endocrine releases hormones. Cardiovascular pumps blood. Lymphatic returns fluid and supports immunity. Respiratory handles oxygen and carbon dioxide. Digestive breaks down food. Urinary filters waste. Reproductive produces offspring."
+        "correct": 1,
+        "explain": "Food is typically churned in the stomach for about 2–4 hours and turned into semi-liquid chyme before gradual release into the small intestine. About 4 hours is the standard figure for a typical mixed meal. About 5 hours fits larger or high-fat meals. About 6 hours is long for most meals, and about 3 hours is on the shorter side for complete processing of solid food."
+      },
+      {
+        "id": "ENG1PT20666",
+        "type": "mcq",
+        "cat": "Unit 3 – Digestive System",
+        "q": "About how long does food typically remain in the stomach during digestion?",
+        "options": [
+          "About 5 hours",
+          "About 2 hours",
+          "About 8 hours",
+          "About 3 hours"
+        ],
+        "correct": 0,
+        "explain": "Food typically remains in the stomach for about 5 hours during digestion before passing into the small intestine. About 2 hours and about 3 hours are shorter than usual for a typical mixed meal. About 8 hours is longer than normal gastric processing time."
       }
     ]
   }
