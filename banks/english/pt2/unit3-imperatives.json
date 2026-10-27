@@ -3,7 +3,7 @@
   "subject": "English L1",
   "subjectId": "engl101",
   "title": "Unit 3: Imperatives and Let's",
-  "formSize": 41,
+  "formSize": 40,
   "forms": [
     "A"
   ],
@@ -16,12 +16,12 @@
         "q": "Which verb form does an affirmative imperative use?",
         "options": [
           "Base form",
-          "Past simple form",
-          "Present continuous form",
-          "Third-person singular form"
+          "Past Simple form",
+          "Present Continuous form",
+          "Present Simple form"
         ],
         "correct": 0,
-        "explain": "Imperatives tell people to do things and can give instructions, directions, or advice. Affirmative imperatives use the base form. Past simple, present continuous, and third-person singular are not used."
+        "explain": "Imperatives give instructions, directions, or advice. Affirmative imperatives use the base form, not 'Past Simple', 'Present Continuous', or 'Present Simple'."
       },
       {
         "id": "ENG1PT20002",
@@ -29,13 +29,13 @@
         "cat": "Unit 3 – Imperatives",
         "q": "To make an imperative negative, place which words before the verb?",
         "options": [
-          "Don’t or Do not",
-          "Didn’t or Did not",
-          "Won’t or Will not",
-          "Can’t or Cannot"
+          "'Don't' or 'Do not'",
+          "'Didn't' or 'Did not'",
+          "'Won't' or 'Will not'",
+          "'Can't' or 'Cannot'"
         ],
         "correct": 0,
-        "explain": "Negative imperatives put Don’t or Do not before the base form of the verb. Didn’t, Won’t, and Can’t are not used for negative imperatives."
+        "explain": "Negative imperatives put 'Don't' or 'Do not' before the base verb. 'Didn't', 'won't', and 'can't' are not used for negative imperatives."
       },
       {
         "id": "ENG1PT20003",
@@ -43,41 +43,41 @@
         "cat": "Unit 3 – Imperatives",
         "q": "Which statement is true about the form of an imperative verb?",
         "options": [
-          "The form is the same for one or many",
-          "The form changes for a group of people",
-          "You always add a subject to the verb",
-          "You always add to before the verb"
+          "The imperative form is the same for all",
+          "The imperative form changes for groups of people",
+          "The imperative form always includes an explicit subject",
+          "The imperative form always includes 'to' before verbs"
         ],
         "correct": 0,
-        "explain": "There is no difference if you give a command to a single person or to a group of people. The form of the verb is the same. Put the verb in the infinitive form without “to,” and you don’t use a subject."
+        "explain": "The imperative form is the same for one person or many. It uses the base form without 'to' or a subject."
       },
       {
         "id": "ENG1PT20004",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is used to make an imperative sound more polite in formal settings?",
+        "q": "Which pattern makes an imperative more polite in formal settings?",
         "options": [
-          "Please or Could/Can you + the base verb",
-          "Would you mind + the base form of the verb",
-          "Could you + the -ing form of the verb",
-          "Please + the past simple form of the verb"
+          "'Please' + base verb",
+          "'Would you mind' + base verb",
+          "'Could you' + -ing form",
+          "'Please' + Past Simple"
         ],
         "correct": 0,
-        "explain": "To sound more polite, especially in formal settings, use please and/or Could you or Can you followed by the base verb. 'Would you mind' takes the -ing form, 'Could you' takes the base form (not -ing), and please does not take a past simple form."
+        "explain": "Use 'Please', 'Can you', or 'Could you' with the base verb for polite formal commands. 'Would you mind' takes the -ing form, and 'Please' does not take Past Simple."
       },
       {
         "id": "ENG1PT20005",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which form matches Never send an email without a greeting?",
+        "q": "Which form matches: 'Never send an email without a greeting'?",
         "options": [
-          "Don’t send an email without a greeting",
-          "Didn’t send an email without a greeting",
-          "Won’t send an email without a greeting",
-          "Can’t send an email without a greeting"
+          "Don't ever send an email without a greeting",
+          "Didn't ever send an email without a greeting",
+          "Won't ever send an email without a greeting",
+          "Can't ever send an email without a greeting"
         ],
         "correct": 0,
-        "explain": "Never gives emphasis and equals Don’t here. Always also gives emphasis in imperatives."
+        "explain": "'Never' gives emphasis and means 'Don't ever' here. 'Always' also gives emphasis in imperatives."
       },
       {
         "id": "ENG1PT20006",
@@ -85,13 +85,13 @@
         "cat": "Unit 3 – Imperatives",
         "q": "Which pattern expresses a suggestion or order with a time clause?",
         "options": [
-          "Time word + you + simple present, imperative",
-          "Time word + you + simple present, simple present",
-          "Time word + you + past simple, past simple",
-          "Time word + you + continuous, continuous"
+          "Time word + you + Simple Present, imperative",
+          "Time word + you + Simple Present, Simple Present",
+          "Time word + you + Past Simple, Past Simple",
+          "Time word + you + Continuous, Continuous"
         ],
         "correct": 0,
-        "explain": "Imperatives can follow time or if clauses. Use a comma when the main clause is second."
+        "explain": "An imperative can follow a time clause or an 'if' clause. Use a comma when the imperative main clause comes second."
       },
       {
         "id": "ENG1PT20007",
@@ -103,9 +103,9 @@
           "You writes the e-mail and I will check it",
           "You writing the e-mail and I will check it",
           "You wrote the e-mail and I will check it"
-          ],
+        ],
         "correct": 0,
-        "explain": "You can use You with imperatives informally to decide who does what or add emphasis."
+        "explain": "Informally, 'you' can start an imperative to assign a task or add emphasis. The verb after 'you' stays in the base form."
       },
       {
         "id": "ENG1PT20008",
@@ -119,83 +119,69 @@
           "Everyone opens your book"
         ],
         "correct": 0,
-        "explain": "Somebody and Someone refer to one person; Everybody and Everyone refer to a group. They take the base verb."
-      },
-      {
-        "id": "ENG1PT20009",
-        "type": "mcq",
-        "cat": "Unit 3 – Imperatives",
-        "q": "Let’s is a kind of imperative that makes suggestions or gives instructions to other people in a group. Let’s equals which words?",
-        "options": [
-          "Let us",
-          "Let me",
-          "Let you",
-          "Let them"
-        ],
-        "correct": 0,
-        "explain": "Let’s = let us. It is used for suggestions or instructions to other people in a group. Let me, let you, and let them do not match the contraction."
+        "explain": "'Somebody' and 'Someone' refer to one person; 'Everybody' and 'Everyone' refer to a group. In imperatives, they take the base verb."
       },
       {
         "id": "ENG1PT20010",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "The affirmative form of Let’s uses which structure?",
+        "q": "Which structure does affirmative 'Let's' use?",
         "options": [
-          "Let’s + base verb",
-          "Let’s + past simple",
-          "Let’s + continuous",
-          "Let’s + third-person singular"
+          "'Let's' + base verb",
+          "'Let's' + Past Simple",
+          "'Let's' + Present Continuous",
+          "'Let's' + Present Simple"
         ],
         "correct": 0,
-        "explain": "Affirmative Let’s takes the base verb: Let’s stop there."
+        "explain": "'Let's' means 'Let us' and is a kind of imperative for suggestions or group instructions. Affirmative 'Let's' takes the base verb, as in 'Let's stop there'."
       },
       {
         "id": "ENG1PT20011",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "The negative form of Let’s uses which structure?",
+        "q": "Which structure does negative 'Let's' use?",
         "options": [
-          "Let’s not + base verb",
-          "Let’s didn’t + base verb",
-          "Let’s won’t + base verb",
-          "Let’s can’t + base verb"
+          "'Let's not' + base verb",
+          "'Let's didn't' + base verb",
+          "'Let's won't' + base verb",
+          "'Let's can't' + base verb"
         ],
         "correct": 0,
-        "explain": "Negative Let’s uses Let’s not + base verb: Let’s not talk about that now."
+        "explain": "Negative 'Let's' uses 'Let's not' plus the base verb, as in 'Let's not talk about that now.' 'Didn't', 'won't', and 'can't' are not used after 'Let's'."
       },
       {
         "id": "ENG1PT20012",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "You can use Let’s to make suggestions to do things with other people or to give instructions, for example in class. You can soften Let’s with “just” in speaking. Which statement aligns?",
+        "q": "Which statement uses 'Let's' correctly?",
         "options": [
-          "Let’s meet after class today",
-          "Let’s met after class today",
-          "Let’s meeting after class today",
-          "Let’s meets after class today"
+          "Let's meet after class today",
+          "Let's met after class today",
+          "Let's meeting after class today",
+          "Let's meets after class today"
         ],
         "correct": 0,
-        "explain": "You can use Let’s to make suggestions (Let’s meet after class today) or give instructions (Let’s get started). Soften with just (Let’s just do this exercise). The other forms do not use the base form."
+        "explain": "'Let's' makes suggestions or gives instructions, for example in class, and can be softened with 'just' in speaking. It takes the base verb, as in 'Let's meet after class today'."
       },
       {
         "id": "ENG1PT20014",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is a correct negative imperative?",
+        "q": "Which negative imperative is correct?",
         "options": [
-          "Don’t shout at me",
-          "Don’t shouted at me",
-          "Don’t shouting at me",
-          "Don’t shouts at me"
+          "Don't shout at me",
+          "Don't shouted at me",
+          "Don't shouting at me",
+          "Don't shouts at me"
         ],
         "correct": 0,
-        "explain": "Negative imperatives use Don’t + base verb: Don’t shout at me. Past, continuous, and third-person forms are not used."
+        "explain": "Negative imperatives use 'Don't' plus the base verb, as in 'Don't shout at me.' Past Simple, Present Continuous, and Present Simple forms are not used."
       },
       {
         "id": "ENG1PT20015",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is a correct polite imperative?",
+        "q": "Which polite imperative is correct?",
         "options": [
           "Please tell me your phone number",
           "Please tells me your phone number",
@@ -203,7 +189,7 @@
           "Please telling me your phone number"
         ],
         "correct": 0,
-        "explain": "Polite imperatives use Please + base verb: Please tell me your phone number. Other verb forms are incorrect."
+        "explain": "Polite imperatives use 'Please' plus the base verb, as in 'Please tell me your phone number.' Present Simple, Past Simple, and Present Continuous forms are not used."
       },
       {
         "id": "ENG1PT20016",
@@ -217,13 +203,13 @@
           "When you feeling bored, go to the cinema"
         ],
         "correct": 0,
-        "explain": "Orders and suggestions use an imperative main clause: When you feel bored, go to the cinema. Facts use simple present in both clauses."
+        "explain": "An order or suggestion uses an imperative main clause, as in 'When you feel bored, go to the cinema.' A fact or habit uses Simple Present in both clauses."
       },
       {
         "id": "ENG1PT20017",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is correct for a group?",
+        "q": "Which sentence is correct for a group?",
         "options": [
           "Everybody open your book",
           "Everybody opens your book",
@@ -231,55 +217,55 @@
           "Everybody opening your book"
         ],
         "correct": 0,
-        "explain": "Group imperatives with Everybody or Everyone use the base verb: Everybody open your book. Singular, past, and continuous forms are not used."
+        "explain": "Group imperatives with 'Everybody' or 'Everyone' use the base verb, as in 'Everybody open your book.' Present Simple, Past Simple, and continuous forms are not used."
       },
       {
         "id": "ENG1PT20018",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which Let’s sentence is a suggestion?",
+        "q": "Which 'Let's' sentence is a suggestion?",
         "options": [
-          "Let’s meet after class today",
-          "Let’s met after class today",
-          "Let’s meeting after class today",
-          "Let’s meets after class today"
+          "Let's meet after class today",
+          "Let's met after class today",
+          "Let's meeting after class today",
+          "Let's meets after class today"
         ],
         "correct": 0,
-        "explain": "Let’s + base verb makes a suggestion: Let’s meet after class today."
+        "explain": "'Let's' plus the base verb makes a suggestion, as in 'Let's meet after class today.' Past Simple, continuous, and Present Simple forms are not used."
       },
       {
         "id": "ENG1PT20019",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which fill-in is correct for a negative imperative meaning do not be afraid?",
+        "q": "Which negative imperative is correct with 'afraid'?",
         "options": [
-          "Don’t be afraid",
-          "Don’t is afraid",
-          "Don’t being afraid",
-          "Don’t was afraid"
+          "Don't be afraid",
+          "Don't is afraid",
+          "Don't being afraid",
+          "Don't was afraid"
         ],
         "correct": 0,
-        "explain": "Don’t + base verb be."
+        "explain": "Negative imperatives use 'Don't' plus the base verb 'be', as in 'Don't be afraid.' 'Is', 'being', and 'was' are not base forms."
       },
       {
         "id": "ENG1PT20020",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is a correct Let’s suggestion for a cold room?",
+        "q": "Which 'Let's' suggestion fits a cold room?",
         "options": [
-          "Let’s close the window",
-          "Let’s closed the window",
-          "Let’s closing the window",
-          "Let’s closes the window"
+          "Let's close the window",
+          "Let's closed the window",
+          "Let's closing the window",
+          "Let's closes the window"
         ],
         "correct": 0,
-        "explain": "'Let’s' takes the base verb close."
+        "explain": "'Let's' takes the base verb for a suggestion, as in 'Let's close the window.' Past Simple, continuous, and Present Simple forms are not used."
       },
       {
         "id": "ENG1PT20021",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which sentence correctly uses always to give emphatic advice?",
+        "q": "Which sentence correctly uses 'always' to give emphatic advice?",
         "options": [
           "Always wear a mask.",
           "Always wears a mask.",
@@ -287,7 +273,7 @@
           "Always wore a mask."
         ],
         "correct": 0,
-        "explain": "Always + base verb makes an emphatic affirmative imperative. Wears, wearing, and wore are not imperative forms."
+        "explain": "'Always' plus the base verb makes an emphatic affirmative imperative, as in 'Always wear a mask.' Present Simple, continuous, and Past Simple forms are not used."
       },
       {
         "id": "ENG1PT20022",
@@ -301,7 +287,7 @@
           "never taking"
         ],
         "correct": 0,
-        "explain": "Never + base verb is used for emphatic negative imperatives. The correct form is never take."
+        "explain": "Use 'never' plus the base verb for emphatic negative imperatives. The sentence becomes 'While you are at school, never take off your mask.'"
       },
       {
         "id": "ENG1PT20023",
@@ -315,13 +301,13 @@
           "Could you opened the window?"
         ],
         "correct": 0,
-        "explain": "Polite requests use Could you + base verb. Opens, opening, and opened are incorrect after could you."
+        "explain": "Polite requests use 'Could you' plus the base verb, as in 'Could you open the window?' Present Simple, continuous, and Past Simple forms are not used."
       },
       {
         "id": "ENG1PT20024",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which is the formal negative imperative?",
+        "q": "Which formal negative imperative is correct?",
         "options": [
           "Do not stay out too late.",
           "Do not stays out too late.",
@@ -329,7 +315,7 @@
           "Do not stayed out too late."
         ],
         "correct": 0,
-        "explain": "Formal negative imperatives use Do not + base verb. The base form stay is required."
+        "explain": "Formal negative imperatives use 'Do not' plus the base verb, as in 'Do not stay out too late.' Present Simple, continuous, and Past Simple forms are not used."
       },
       {
         "id": "ENG1PT20025",
@@ -343,7 +329,7 @@
           "Please hand out to the books."
         ],
         "correct": 0,
-        "explain": "'Please' normally comes at the end of an imperative (usually after a comma). The other options have wrong word order or an unnecessary 'to'."
+        "explain": "'Please' usually comes at the end of an imperative, after a comma, as in 'Hand out the books, please.' The other patterns use wrong word order or an unnecessary 'to'."
       },
       {
         "id": "ENG1PT20026",
@@ -354,10 +340,10 @@
           "Don't check your messages when you are in a meeting.",
           "Don't checking your messages when you are in a meeting.",
           "Not check your messages when you are in a meeting.",
-          "Don't check your messages when you are in a meeting, please to."
+          "Don't check your messages in a meeting, please to."
         ],
         "correct": 0,
-        "explain": "The imperative can come before the time clause. The meaning is the same: Don't check your messages when you are in a meeting."
+        "explain": "The imperative can come before the time clause, and the meaning stays the same. Example: 'Don't check your messages when you are in a meeting.'"
       },
       {
         "id": "ENG1PT20027",
@@ -371,7 +357,7 @@
           "When we felt bored, we went to the cinema."
         ],
         "correct": 0,
-        "explain": "Suggestions and orders use an imperative in the main clause: go. The other sentences state facts, habits, or past events."
+        "explain": "An order or suggestion uses an imperative main clause, as in 'When you feel bored, go to the cinema.' The other sentences state facts, habits, or past events."
       },
       {
         "id": "ENG1PT20028",
@@ -385,21 +371,38 @@
           "Don't you scared me like that again!"
         ],
         "correct": 0,
-        "explain": "In informal emphatic imperatives, you can appear after Don't: Don't you scare me... The verb remains in base form."
+        "explain": "Informal emphatic imperatives can use 'Don't you' plus the base verb, as in 'Don't you scare me like that again!' 'Doesn't', 'didn't', and 'scared' are not correct here."
       },
       {
         "id": "ENG1PT20029",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 3 – Imperatives",
-        "q": "Choose the sentence with the same meaning: If you are expecting a call, tell the other people in the meeting.",
-        "options": [
-          "Tell the other people in the meeting if you are expecting a call.",
-          "Tell the other people in the meeting if you are expecting a call, .",
-          "Telling the other people in the meeting if you are expecting a call.",
-          "Tell the other people in the meeting if you are expecting a call to."
+        "q": "Meeting rule",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which imperative word starts the rule?",
+            "options": [
+              "Tell",
+              "Telling",
+              "Told",
+              "To tell"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which clause completes 'Tell the other people in the meeting'?",
+            "options": [
+              "if you are expecting a call",
+              "when you are expecting a call",
+              "if you were expecting a call",
+              "if you expected a call"
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "The imperative can come before the if-clause. No comma is needed before if in this structure."
+        "explain": "The rule is: 'If you are expecting a call, tell the other people in the meeting.' The imperative can come before the 'if' clause, and no comma is needed before 'if'."
       },
       {
         "id": "ENG1PT20030",
@@ -413,7 +416,7 @@
           "Let take an umbrella."
         ],
         "correct": 0,
-        "explain": "Let's + base verb makes a suggestion. The correct form is Let's take."
+        "explain": "'Let's' plus the base verb makes a suggestion, as in 'Let's take an umbrella.' 'takes', 'took', and bare 'let' are not correct here."
       },
       {
         "id": "ENG1PT20031",
@@ -427,7 +430,7 @@
           "Let drink"
         ],
         "correct": 0,
-        "explain": "The suggestion form is Let's + base verb: Let's drink some water."
+        "explain": "'Let's' plus the base verb makes a suggestion, as in 'Let's drink some water.' 'drinks', 'drank', and bare 'let' are not correct here."
       },
       {
         "id": "ENG1PT20032",
@@ -441,7 +444,7 @@
           "Not send text messages during class."
         ],
         "correct": 0,
-        "explain": "The correct negative imperative uses Don’t + base verb. Do not sending is wrong because not must be followed by the base verb, Doesn’t is not used for commands, and Not send is incomplete."
+        "explain": "The negative imperative needs 'Don't' plus the base verb, as in 'Don't send text messages during class.' 'Do not sending', 'doesn't', and bare 'not send' are not correct here."
       },
       {
         "id": "ENG1PT20033",
@@ -455,7 +458,7 @@
           "To switch off"
         ],
         "correct": 0,
-        "explain": "Imperatives use the base verb: Switch off your mobiles."
+        "explain": "Imperatives use the base verb, as in 'Switch off your mobiles before the exam.' Continuous, Present Simple, and infinitive forms are not used."
       },
       {
         "id": "ENG1PT20034",
@@ -469,7 +472,7 @@
           "Turned"
         ],
         "correct": 0,
-        "explain": "The imperative uses the base verb: Turn it down."
+        "explain": "Imperatives use the base verb, as in 'Turn it down.' Present Simple, continuous, and Past Simple forms are not used."
       },
       {
         "id": "ENG1PT20035",
@@ -483,7 +486,7 @@
           "Tidying"
         ],
         "correct": 0,
-        "explain": "The imperative uses the base verb: Tidy your room."
+        "explain": "Imperatives use the base verb, as in 'Tidy your room before you leave.' Present Simple, Past Simple, and continuous forms are not used."
       },
       {
         "id": "ENG1PT20036",
@@ -497,7 +500,7 @@
           "Shutted"
         ],
         "correct": 0,
-        "explain": "The imperative uses the base verb: Shut the door."
+        "explain": "Imperatives use the base verb, as in 'Shut the door, please.' 'shuts', 'shutting', and 'shutted' are not correct here."
       },
       {
         "id": "ENG1PT20037",
@@ -511,7 +514,7 @@
           "Elevate"
         ],
         "correct": 0,
-        "explain": "Keep the wound clean and dry to prevent infection. Wash is for hands. Apply is for ointment. Elevate is for the leg."
+        "explain": "Keep the wound clean and dry to prevent infection. 'Wash' is for hands, 'Apply' is for ointment, and 'Elevate' is for the leg."
       },
       {
         "id": "ENG1PT20038",
@@ -525,7 +528,7 @@
           "Call"
         ],
         "correct": 0,
-        "explain": "Take two tablets of Panadol every six hours for fever. Drink is for fluids. Rest is in bed. Call is for emergency services."
+        "explain": "Take two tablets of Panadol every six hours for fever. 'Drink' is for fluids, 'Rest' is in bed, and 'Call' is for emergency services."
       },
       {
         "id": "ENG1PT20039",
@@ -539,7 +542,7 @@
           "Elevate"
         ],
         "correct": 0,
-        "explain": "Wash your hands with soap and warm water before handling sterile dressings. Keep is for the wound. Apply is for ointment. Elevate is for the leg."
+        "explain": "Wash your hands with soap and warm water before handling sterile dressings. 'Keep' is for the wound, 'Apply' is for ointment, and 'Elevate' is for the leg."
       },
       {
         "id": "ENG1PT20040",
@@ -553,13 +556,13 @@
           "Verify"
         ],
         "correct": 0,
-        "explain": "Monitor the patient's blood pressure and pulse rate every two hours. Administer is for the dose. Sterilize is for equipment. Verify is for identity."
+        "explain": "Monitor the patient's blood pressure and pulse rate every two hours. 'Administer' is for the dose, 'Sterilize' is for equipment, and 'Verify' is for identity."
       },
       {
         "id": "ENG1PT20041",
         "type": "mcq",
         "cat": "Unit 3 – Imperatives",
-        "q": "Which imperative fits: _____ all surgical equipment before entering the operation room?",
+        "q": "Which imperative fits: _____ all surgical equipment before entering the operating room?",
         "options": [
           "Sterilize",
           "Monitor",
@@ -567,7 +570,7 @@
           "Discontinue"
         ],
         "correct": 0,
-        "explain": "Sterilize all surgical equipment before entering the operation room. Monitor is for vital signs. Administer is for medication. Discontinue is to stop medication."
+        "explain": "Sterilize all surgical equipment before entering the operating room. 'Monitor' is for vital signs, 'Administer' is for medication, and 'Discontinue' stops medication."
       },
       {
         "id": "ENG1PT20042",
@@ -581,7 +584,7 @@
           "Verify"
         ],
         "correct": 0,
-        "explain": "Administer the full dose of IV antibiotics. Monitor is for vital signs. Sterilize is for equipment. Verify is for identity."
+        "explain": "Administer the full dose of IV antibiotics. 'Monitor' is for vital signs, 'Sterilize' is for equipment, and 'Verify' is for identity."
       }
     ]
   }
