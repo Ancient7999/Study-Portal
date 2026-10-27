@@ -473,7 +473,7 @@ function expandDeck(deck){
         __step:true, __id:q.__id, __boneId:q.__id, __stepIdx:k, __stepCount:steps.length,
         __stepId:String(st.id!=null?st.id:('s'+(raw.indexOf(st)+1))), __bone:q, __form:q.__form,
         q:q.q, prompt:st.prompt||'', options:st.options||[], correct:st.correct, __perm:st.__perm,
-        cat:q.cat, explain:q.explain
+        cat:q.cat, explain:(st&&st.explain)||q.explain
       };
       if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete; delete e.options; delete e.correct; delete e.__perm; }
       if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; }
