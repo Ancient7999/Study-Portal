@@ -145,6 +145,21 @@
     }).join('');
     return parts ? '<svg class="simg-regions" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' + parts + '</svg>' : '';
   }
+  /* moving chyme: blobs travel a looping path drawn over the picture, no controls (slower in Basic quality) */
+  function chymeSVG(img) {
+    const c = img.chyme; if (!c || !c.path || c.path.length < 2 || !img.width || !img.height) return '';
+    const n = c.count || 5, base = c.dur || 16, dur = base * (isBasic() ? 3 : 1), r = c.r || 14;
+    const d = 'M' + c.path.map(p => p[0] + ' ' + p[1]).join(' L');
+    const pid = 'chy-' + String(img.id).replace(/[^a-z0-9]/gi, '');
+    let b = '';
+    for (let i = 0; i < n; i++) {
+      const begin = '-' + (dur * i / n).toFixed(2) + 's';
+      b += '<circle class="simg-chyme-blob" r="' + r + '" cx="0" cy="0" opacity="0">'
+        + '<animateMotion data-base="' + base + '" dur="' + dur + 's" begin="' + begin + '" repeatCount="indefinite" rotate="0"><mpath href="#' + pid + '"/></animateMotion>'
+        + '<animate data-base="' + base + '" attributeName="opacity" values="0;.95;.95;0" keyTimes="0;.05;.95;1" dur="' + dur + 's" begin="' + begin + '" repeatCount="indefinite"/></circle>';
+    }
+    return '<svg class="simg-chyme" viewBox="0 0 ' + img.width + ' ' + img.height + '" preserveAspectRatio="none" aria-hidden="true"><path id="' + pid + '" d="' + d + '" fill="none" stroke="none"/>' + b + '</svg>';
+  }
   function boneChips(ch, img) {
     const others = ch.images.filter(i => isSingle(i) && i.id !== img.id).map(i => i.answer);
     const pick = seededShuffle(others, img.id).slice(0, 5);
@@ -169,6 +184,7 @@
     const src = animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
     h += '<div class="simg-frame"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '"' + ((img.width && img.height) ? ' style="--ar:' + (img.width / img.height).toFixed(4) + '"' : '') + '>'
       + '<img class="label-img simg-img" loading="lazy" decoding="async" src="' + esc(src) + '" width="' + (img.width || '') + '" height="' + (img.height || '') + '" alt="' + esc(img.alt || img.title) + '" draggable="false">';
+    h += chymeSVG(img);
     h += regionsSVG(img);
     if (!single) {
       labels.forEach(l => {
@@ -203,7 +219,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
     const lic = img.license ? (img.licenseUrl ? '<a href="' + esc(img.licenseUrl) + '" target="_blank" rel="noopener">' + esc(img.license) + '</a>' : esc(img.license)) : '';
     // a bone's source page names it, so its link only shows with the labels shown
     const srcLink = (img.sourceUrl && !(single && mode !== 'show')) ? ' · <a href="' + esc(img.sourceUrl) + '" target="_blank" rel="noopener">source</a>' : '';
-    h += '<p class="simg-credit">' + (img.animated ? 'Animation' : 'Image') + ': ' + esc(img.credit || '') + (lic ? ' · ' + lic : '') + srcLink + '</p>';
+    if (img.credit) h += '<p class="simg-credit">' + (img.animated ? 'Animation' : 'Image') + ': ' + esc(img.credit || '') + (lic ? ' · ' + lic : '') + srcLink + '</p>';
     return h;
   }
 
@@ -554,6 +570,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }
   window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA, _matchName: (img, t) => matches(labelsOf(img)[0], t) };
   addEventListener('study-prefs-changed', () => {
+    document.querySelectorAll('#chapterList .simg-chyme [data-base]').forEach(el => { el.setAttribute('dur', (parseFloat(el.dataset.base) * (isBasic() ? 3 : 1)) + 's'); });
     document.querySelectorAll('#chapterList .simg-card img.simg-img').forEach(el => {
       const cur = el.getAttribute('src') || ''; if (!/heart-flow|\.svg$/.test(cur)) return;
       const base = cur.replace(/-slow\.svg$/, '.svg'), want = isBasic() ? base.replace(/\.svg$/, '-slow.svg') : base;

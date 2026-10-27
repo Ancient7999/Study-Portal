@@ -331,7 +331,9 @@
               "tip": "A reliable contender for the exam's difficulty.",
               "tone": "green",
               "note": false,
-              "where": ["card"]
+              "where": [
+                "card"
+              ]
             }
           ],
           "lectures": [
@@ -532,6 +534,16 @@
           "subtitle": "32 bones in 128 questions · pick a region, division or bone type",
           "bank": "banks/anatomy/bone-identification.json",
           "locked": false
+        },
+        {
+          "id": "anatomy-picture-study",
+          "title": "Picture Study",
+          "subtitle": "Heart, respiratory system, brain, digestive system, small and large intestine, urinary system",
+          "locked": false,
+          "study": {
+            "title": "Picture Study",
+            "images": "banks/anatomy/study/study-images.json"
+          }
         }
       ],
       "intro": [

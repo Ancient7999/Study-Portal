@@ -1,0 +1,1346 @@
+{
+ "title": "Picture Study",
+ "note": "Each picture is a Human Atlas render.",
+ "chapters": [
+  {
+   "lecture": "heart",
+   "title": "Heart",
+   "images": [
+    {
+     "id": "heart-chambers",
+     "title": "Heart Chambers, Front View",
+     "caption": "Only the blood-filled cavities and the great vessels are shown. The right side of the heart is on the left of the picture.",
+     "alt": "Front view of the heart showing the four chambers and the great vessels in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/heart-chambers-labeled.webp",
+     "blank": "banks/anatomy/study/img/heart-chambers-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "heart-chambers-L1",
+       "answer": "Superior Vena Cava",
+       "accept": [
+        "SVC"
+       ],
+       "x": 2.5,
+       "y": 21.08,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 39.02,
+        "y": 23.9,
+        "from": {
+         "x": 20.62,
+         "y": 23.9
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L2",
+       "answer": "Aorta",
+       "accept": [
+        "Ascending Aorta",
+        "Aortic Arch"
+       ],
+       "x": 2.5,
+       "y": 30.42,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 47.53,
+        "y": 29.58,
+        "from": {
+         "x": 20.62,
+         "y": 33.25
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L3",
+       "answer": "Pulmonary Trunk",
+       "accept": [
+        "Pulmonary Artery",
+        "Pulmonary Arteries"
+       ],
+       "x": 79.38,
+       "y": 32.6,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.94,
+        "y": 35.42,
+        "from": {
+         "x": 79.38,
+         "y": 35.42
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L4",
+       "answer": "Left Atrium",
+       "accept": [],
+       "x": 79.38,
+       "y": 43.75,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 56.05,
+        "y": 46.58,
+        "from": {
+         "x": 79.38,
+         "y": 46.58
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L5",
+       "answer": "Right Atrium",
+       "accept": [],
+       "x": 2.5,
+       "y": 55.21,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 37.73,
+        "y": 58.04,
+        "from": {
+         "x": 20.62,
+         "y": 58.04
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L6",
+       "answer": "Right Ventricle",
+       "accept": [],
+       "x": 2.5,
+       "y": 64.56,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 48.41,
+        "y": 65.75,
+        "from": {
+         "x": 20.62,
+         "y": 67.39
+        }
+       }
+      },
+      {
+       "id": "heart-chambers-L7",
+       "answer": "Left Ventricle",
+       "accept": [],
+       "x": 79.38,
+       "y": 64.53,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 57.83,
+        "y": 67.36,
+        "from": {
+         "x": 79.38,
+         "y": 67.36
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "heart-back",
+     "title": "Heart Chambers, Back View",
+     "caption": "The left atrium forms most of the back of the heart. The vena cavae bring blood back to the right atrium.",
+     "alt": "Back view of the heart showing the four chambers, the aorta, the pulmonary trunk and the vena cavae in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/heart-back-labeled.webp",
+     "blank": "banks/anatomy/study/img/heart-back-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "heart-back-L1",
+       "answer": "Aorta",
+       "accept": [
+        "Ascending Aorta",
+        "Aortic Arch"
+       ],
+       "x": 2.5,
+       "y": 12.56,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 39.91,
+        "y": 15.39,
+        "from": {
+         "x": 20.62,
+         "y": 15.39
+        }
+       }
+      },
+      {
+       "id": "heart-back-L2",
+       "answer": "Superior Vena Cava",
+       "accept": [
+        "SVC"
+       ],
+       "x": 79.38,
+       "y": 21.07,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 62.2,
+        "y": 23.9,
+        "from": {
+         "x": 79.38,
+         "y": 23.9
+        }
+       }
+      },
+      {
+       "id": "heart-back-L3",
+       "answer": "Pulmonary Trunk",
+       "accept": [
+        "Pulmonary Artery",
+        "Pulmonary Arteries"
+       ],
+       "x": 79.38,
+       "y": 32.15,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.33,
+        "y": 34.98,
+        "from": {
+         "x": 79.38,
+         "y": 34.98
+        }
+       }
+      },
+      {
+       "id": "heart-back-L4",
+       "answer": "Left Atrium",
+       "accept": [],
+       "x": 2.5,
+       "y": 52.62,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 47.27,
+        "y": 55.45,
+        "from": {
+         "x": 20.62,
+         "y": 55.45
+        }
+       }
+      },
+      {
+       "id": "heart-back-L5",
+       "answer": "Right Atrium",
+       "accept": [],
+       "x": 79.38,
+       "y": 55.5,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 62.16,
+        "y": 58.33,
+        "from": {
+         "x": 79.38,
+         "y": 58.33
+        }
+       }
+      },
+      {
+       "id": "heart-back-L6",
+       "answer": "Left Ventricle",
+       "accept": [],
+       "x": 2.5,
+       "y": 61.97,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 39.22,
+        "y": 60.08,
+        "from": {
+         "x": 20.62,
+         "y": 64.79
+        }
+       }
+      },
+      {
+       "id": "heart-back-L7",
+       "answer": "Inferior Vena Cava",
+       "accept": [
+        "IVC"
+       ],
+       "x": 79.38,
+       "y": 87.06,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 61.79,
+        "y": 89.89,
+        "from": {
+         "x": 79.38,
+         "y": 89.89
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "heart-valves",
+     "title": "Heart Valves",
+     "caption": "The four valves are seen from above with the heart shown as a faint ghost. The two semilunar valves have three cusps each. The two atrioventricular valves have cords that hold their flaps.",
+     "alt": "View from above of the four heart valves in separate colours inside a faint outline of the heart.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/heart-valves-labeled.webp",
+     "blank": "banks/anatomy/study/img/heart-valves-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "heart-valves-L1",
+       "answer": "Aortic Valve",
+       "accept": [
+        "Aortic Semilunar Valve"
+       ],
+       "x": 2.5,
+       "y": 35.08,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.24,
+        "y": 37.91,
+        "from": {
+         "x": 20.62,
+         "y": 37.91
+        }
+       }
+      },
+      {
+       "id": "heart-valves-L2",
+       "answer": "Pulmonary Valve",
+       "accept": [
+        "Pulmonary Semilunar Valve"
+       ],
+       "x": 79.38,
+       "y": 45.85,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.53,
+        "y": 48.67,
+        "from": {
+         "x": 79.38,
+         "y": 48.67
+        }
+       }
+      },
+      {
+       "id": "heart-valves-L3",
+       "answer": "Mitral Valve",
+       "accept": [
+        "Bicuspid Valve",
+        "Bicuspid AV Valve",
+        "Left AV Valve"
+       ],
+       "x": 79.38,
+       "y": 55.19,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 58.35,
+        "y": 49.4,
+        "from": {
+         "x": 79.38,
+         "y": 58.02
+        }
+       }
+      },
+      {
+       "id": "heart-valves-L4",
+       "answer": "Tricuspid Valve",
+       "accept": [
+        "Tricuspid AV Valve",
+        "Right AV Valve"
+       ],
+       "x": 2.5,
+       "y": 56.76,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 40.33,
+        "y": 59.59,
+        "from": {
+         "x": 20.62,
+         "y": 59.59
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lecture": "respiratory-system",
+   "title": "Respiratory System",
+   "images": [
+    {
+     "id": "respiratory-airway",
+     "title": "Air Passages",
+     "caption": "Air passes from the throat down to the bronchi. The atlas has no lung model, so only the air passages are shown.",
+     "alt": "Front view of the throat muscles, voice box, windpipe and bronchial tree in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/respiratory-airway-labeled.webp",
+     "blank": "banks/anatomy/study/img/respiratory-airway-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "respiratory-airway-L1",
+       "answer": "Pharynx",
+       "accept": [
+        "Throat"
+       ],
+       "x": 2.5,
+       "y": 15.85,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.5,
+        "y": 18.68,
+        "from": {
+         "x": 20.62,
+         "y": 18.68
+        }
+       }
+      },
+      {
+       "id": "respiratory-airway-L2",
+       "answer": "Epiglottis",
+       "accept": [],
+       "x": 2.5,
+       "y": 25.2,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.57,
+        "y": 23.2,
+        "from": {
+         "x": 20.62,
+         "y": 28.03
+        }
+       }
+      },
+      {
+       "id": "respiratory-airway-L3",
+       "answer": "Larynx",
+       "accept": [
+        "Voice Box"
+       ],
+       "x": 2.5,
+       "y": 34.55,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.44,
+        "y": 29.76,
+        "from": {
+         "x": 20.62,
+         "y": 37.38
+        }
+       }
+      },
+      {
+       "id": "respiratory-airway-L4",
+       "answer": "Trachea",
+       "accept": [
+        "Windpipe"
+       ],
+       "x": 79.38,
+       "y": 40.23,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.69,
+        "y": 43.05,
+        "from": {
+         "x": 79.38,
+         "y": 43.05
+        }
+       }
+      },
+      {
+       "id": "respiratory-airway-L5",
+       "answer": "Bronchi",
+       "accept": [
+        "Bronchus",
+        "Main Bronchi",
+        "Main Bronchus"
+       ],
+       "x": 79.38,
+       "y": 56.21,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 51.42,
+        "y": 59.04,
+        "from": {
+         "x": 79.38,
+         "y": 59.04
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lecture": "brain",
+   "title": "Brain",
+   "images": [
+    {
+     "id": "brain-lateral",
+     "title": "Brain, Left Side View",
+     "caption": "The cerebrum has four lobes. The cerebellum sits below and behind it. The brainstem leads down to the spinal cord.",
+     "alt": "Left side view of the brain with the four lobes, the cerebellum and the brainstem in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/brain-lateral-labeled.webp",
+     "blank": "banks/anatomy/study/img/brain-lateral-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "brain-lateral-L1",
+       "answer": "Frontal Lobe",
+       "accept": [],
+       "x": 2.5,
+       "y": 30.53,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 42.38,
+        "y": 33.36,
+        "from": {
+         "x": 20.62,
+         "y": 33.36
+        }
+       }
+      },
+      {
+       "id": "brain-lateral-L2",
+       "answer": "Parietal Lobe",
+       "accept": [],
+       "x": 79.38,
+       "y": 31.94,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 62.11,
+        "y": 34.77,
+        "from": {
+         "x": 79.38,
+         "y": 34.77
+        }
+       }
+      },
+      {
+       "id": "brain-lateral-L3",
+       "answer": "Temporal Lobe",
+       "accept": [],
+       "x": 2.5,
+       "y": 51.86,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 51.96,
+        "y": 54.69,
+        "from": {
+         "x": 20.62,
+         "y": 54.69
+        }
+       }
+      },
+      {
+       "id": "brain-lateral-L4",
+       "answer": "Occipital Lobe",
+       "accept": [],
+       "x": 79.38,
+       "y": 52.75,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 69.77,
+        "y": 55.58,
+        "from": {
+         "x": 79.38,
+         "y": 55.58
+        }
+       }
+      },
+      {
+       "id": "brain-lateral-L5",
+       "answer": "Brainstem",
+       "accept": [
+        "Brain Stem"
+       ],
+       "x": 2.5,
+       "y": 61.89,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.19,
+        "y": 64.71,
+        "from": {
+         "x": 20.62,
+         "y": 64.71
+        }
+       }
+      },
+      {
+       "id": "brain-lateral-L6",
+       "answer": "Cerebellum",
+       "accept": [
+        "Little Brain"
+       ],
+       "x": 79.38,
+       "y": 63.65,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 58.74,
+        "y": 66.48,
+        "from": {
+         "x": 79.38,
+         "y": 66.48
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lecture": "digestive-system",
+   "title": "Digestive System",
+   "images": [
+    {
+     "id": "digestive-organs",
+     "title": "Digestive Organs",
+     "caption": "Only the digestive organs are shown. The liver is left out so the other organs can be seen.",
+     "alt": "Front view of the esophagus, stomach, pancreas, gallbladder, small intestine and large intestine in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/digestive-organs-labeled.webp",
+     "blank": "banks/anatomy/study/img/digestive-organs-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "digestive-organs-L1",
+       "answer": "Esophagus",
+       "accept": [
+        "Oesophagus",
+        "Gullet"
+       ],
+       "x": 79.38,
+       "y": 23.8,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.9,
+        "y": 26.63,
+        "from": {
+         "x": 79.38,
+         "y": 26.63
+        }
+       }
+      },
+      {
+       "id": "digestive-organs-L2",
+       "answer": "Stomach",
+       "accept": [],
+       "x": 79.38,
+       "y": 44.97,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 53.32,
+        "y": 47.8,
+        "from": {
+         "x": 79.38,
+         "y": 47.8
+        }
+       }
+      },
+      {
+       "id": "digestive-organs-L3",
+       "answer": "Gallbladder",
+       "accept": [
+        "Gall Bladder"
+       ],
+       "x": 2.5,
+       "y": 48.01,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 46.45,
+        "y": 50.84,
+        "from": {
+         "x": 20.62,
+         "y": 50.84
+        }
+       }
+      },
+      {
+       "id": "digestive-organs-L4",
+       "answer": "Pancreas",
+       "accept": [],
+       "x": 79.38,
+       "y": 54.32,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.8,
+        "y": 55.25,
+        "from": {
+         "x": 79.38,
+         "y": 57.15
+        }
+       }
+      },
+      {
+       "id": "digestive-organs-L5",
+       "answer": "Large Intestine",
+       "accept": [
+        "Colon"
+       ],
+       "x": 2.5,
+       "y": 59.36,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.8,
+        "y": 62.19,
+        "from": {
+         "x": 20.62,
+         "y": 62.19
+        }
+       }
+      },
+      {
+       "id": "digestive-organs-L6",
+       "answer": "Small Intestine",
+       "accept": [],
+       "x": 2.5,
+       "y": 68.71,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 50.62,
+        "y": 71.02,
+        "from": {
+         "x": 20.62,
+         "y": 71.54
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lecture": "small-intestine",
+   "title": "Small Intestine",
+   "images": [
+    {
+     "id": "small-intestine",
+     "title": "Small Intestine Segments",
+     "caption": "The small intestine has three segments. The duodenum is the short first part. The jejunum comes next and the ileum is last.",
+     "alt": "Front view of the small intestine with the duodenum, jejunum and ileum in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/small-intestine-labeled.webp",
+     "blank": "banks/anatomy/study/img/small-intestine-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "small-intestine-L1",
+       "answer": "Duodenum",
+       "accept": [],
+       "x": 2.5,
+       "y": 24.0,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 47.74,
+        "y": 26.83,
+        "from": {
+         "x": 20.62,
+         "y": 26.83
+        }
+       }
+      },
+      {
+       "id": "small-intestine-L2",
+       "answer": "Jejunum",
+       "accept": [],
+       "x": 79.38,
+       "y": 39.25,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 52.16,
+        "y": 42.08,
+        "from": {
+         "x": 79.38,
+         "y": 42.08
+        }
+       }
+      },
+      {
+       "id": "small-intestine-L3",
+       "answer": "Ileum",
+       "accept": [],
+       "x": 2.5,
+       "y": 67.3,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 47.62,
+        "y": 70.13,
+        "from": {
+         "x": 20.62,
+         "y": 70.13
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lecture": "large-intestine",
+   "title": "Large Intestine",
+   "images": [
+    {
+     "id": "large-intestine",
+     "title": "Large Intestine Segments",
+     "caption": "Watch the chyme travel through the segments in order. It starts at the cecum and ends at the rectum.",
+     "alt": "Front view of the large intestine with each segment in its own colour and a moving blob of chyme travelling through it.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/large-intestine-labeled.webp",
+     "blank": "banks/anatomy/study/img/large-intestine-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "large-intestine-L1",
+       "answer": "Transverse Colon",
+       "accept": [],
+       "x": 79.38,
+       "y": 13.58,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 52.1,
+        "y": 16.4,
+        "from": {
+         "x": 79.38,
+         "y": 16.4
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L2",
+       "answer": "Ascending Colon",
+       "accept": [],
+       "x": 2.5,
+       "y": 26.2,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 35.91,
+        "y": 29.03,
+        "from": {
+         "x": 20.62,
+         "y": 29.03
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L3",
+       "answer": "Descending Colon",
+       "accept": [],
+       "x": 79.38,
+       "y": 28.84,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 65.55,
+        "y": 31.67,
+        "from": {
+         "x": 79.38,
+         "y": 31.67
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L4",
+       "answer": "Ileocecal Valve",
+       "accept": [
+        "Ileocecal Junction"
+       ],
+       "x": 2.5,
+       "y": 51.93,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 39.95,
+        "y": 54.76,
+        "from": {
+         "x": 20.62,
+         "y": 54.76
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L5",
+       "answer": "Cecum",
+       "accept": [
+        "Caecum"
+       ],
+       "x": 2.5,
+       "y": 61.28,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 35.1,
+        "y": 55.68,
+        "from": {
+         "x": 20.62,
+         "y": 64.11
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L6",
+       "answer": "Appendix",
+       "accept": [],
+       "x": 2.5,
+       "y": 70.63,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 42.13,
+        "y": 60.26,
+        "from": {
+         "x": 20.62,
+         "y": 73.45
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L7",
+       "answer": "Sigmoid Colon",
+       "accept": [],
+       "x": 79.38,
+       "y": 60.51,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 56.78,
+        "y": 63.33,
+        "from": {
+         "x": 79.38,
+         "y": 63.33
+        }
+       }
+      },
+      {
+       "id": "large-intestine-L8",
+       "answer": "Rectum",
+       "accept": [],
+       "x": 79.38,
+       "y": 73.33,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 53.17,
+        "y": 76.15,
+        "from": {
+         "x": 79.38,
+         "y": 76.15
+        }
+       }
+      }
+     ],
+     "chyme": {
+      "path": [
+       [
+        569,
+        517
+       ],
+       [
+        564,
+        445
+       ],
+       [
+        559,
+        397
+       ],
+       [
+        562,
+        368
+       ],
+       [
+        567,
+        345
+       ],
+       [
+        570,
+        322
+       ],
+       [
+        573,
+        298
+       ],
+       [
+        577,
+        273
+       ],
+       [
+        580,
+        249
+       ],
+       [
+        584,
+        225
+       ],
+       [
+        588,
+        201
+       ],
+       [
+        590,
+        177
+       ],
+       [
+        595,
+        153
+       ],
+       [
+        601,
+        133
+       ],
+       [
+        605,
+        127
+       ],
+       [
+        613,
+        137
+       ],
+       [
+        633,
+        148
+       ],
+       [
+        665,
+        154
+       ],
+       [
+        699,
+        161
+       ],
+       [
+        734,
+        169
+       ],
+       [
+        769,
+        175
+       ],
+       [
+        804,
+        178
+       ],
+       [
+        838,
+        179
+       ],
+       [
+        874,
+        176
+       ],
+       [
+        909,
+        167
+       ],
+       [
+        945,
+        153
+       ],
+       [
+        979,
+        141
+       ],
+       [
+        1009,
+        134
+       ],
+       [
+        1027,
+        126
+       ],
+       [
+        1032,
+        120
+       ],
+       [
+        1032,
+        131
+       ],
+       [
+        1031,
+        157
+       ],
+       [
+        1031,
+        188
+       ],
+       [
+        1032,
+        218
+       ],
+       [
+        1033,
+        248
+       ],
+       [
+        1035,
+        279
+       ],
+       [
+        1040,
+        309
+       ],
+       [
+        1045,
+        339
+       ],
+       [
+        1048,
+        370
+       ],
+       [
+        1049,
+        400
+       ],
+       [
+        1048,
+        429
+       ],
+       [
+        1047,
+        463
+       ],
+       [
+        1046,
+        504
+       ],
+       [
+        1035,
+        548
+       ],
+       [
+        1004,
+        579
+       ],
+       [
+        955,
+        595
+       ],
+       [
+        902,
+        605
+       ],
+       [
+        853,
+        607
+       ],
+       [
+        820,
+        595
+       ],
+       [
+        809,
+        585
+       ],
+       [
+        811,
+        595
+       ],
+       [
+        816,
+        622
+       ],
+       [
+        818,
+        653
+       ],
+       [
+        814,
+        685
+       ],
+       [
+        810,
+        718
+       ],
+       [
+        809,
+        751
+       ],
+       [
+        809,
+        783
+       ]
+      ],
+      "dur": 18,
+      "count": 6,
+      "r": 15
+     }
+    }
+   ]
+  },
+  {
+   "lecture": "urinary-system",
+   "title": "Urinary System",
+   "images": [
+    {
+     "id": "urinary-system",
+     "title": "Urinary Organs",
+     "caption": "Urine is made in the kidneys and carried by the ureters to the bladder. The urethra carries it out of the body. The atlas has no kidney interior, so the cortex, medulla and pelvis are not shown.",
+     "alt": "Front view of the kidneys, ureters, urinary bladder and urethra in separate colours.",
+     "kind": "labeled-diagram",
+     "credit": "",
+     "license": "",
+     "licenseUrl": "",
+     "sourceUrl": "",
+     "labeled": "banks/anatomy/study/img/urinary-system-labeled.webp",
+     "blank": "banks/anatomy/study/img/urinary-system-blank.webp",
+     "width": 1600,
+     "height": 920,
+     "labels": [
+      {
+       "id": "urinary-system-L1",
+       "answer": "Kidney",
+       "accept": [
+        "Kidneys"
+       ],
+       "x": 79.38,
+       "y": 21.87,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 54.65,
+        "y": 24.69,
+        "from": {
+         "x": 79.38,
+         "y": 24.69
+        }
+       }
+      },
+      {
+       "id": "urinary-system-L2",
+       "answer": "Ureter",
+       "accept": [
+        "Ureters"
+       ],
+       "x": 2.5,
+       "y": 28.6,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 46.62,
+        "y": 31.43,
+        "from": {
+         "x": 20.62,
+         "y": 31.43
+        }
+       }
+      },
+      {
+       "id": "urinary-system-L3",
+       "answer": "Urinary Bladder",
+       "accept": [
+        "Bladder"
+       ],
+       "x": 79.38,
+       "y": 64.63,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.92,
+        "y": 67.46,
+        "from": {
+         "x": 79.38,
+         "y": 67.46
+        }
+       }
+      },
+      {
+       "id": "urinary-system-L4",
+       "answer": "Urethra",
+       "accept": [],
+       "x": 2.5,
+       "y": 77.84,
+       "w": 18.12,
+       "h": 5.65,
+       "anchor": {
+        "x": 49.75,
+        "y": 80.67,
+        "from": {
+         "x": 20.62,
+         "y": 80.67
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
