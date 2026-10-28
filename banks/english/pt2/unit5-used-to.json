@@ -3,7 +3,7 @@
   "subject": "English L1",
   "subjectId": "engl101",
   "title": "Unit 5: Used to",
-  "formSize": 70,
+  "formSize": 14,
   "forms": [
     "A"
   ],
@@ -13,7 +13,7 @@
         "id": "ENG1PT20282",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Used to describes repeated past actions, habits, and situations. It is followed by which verb form?",
+        "q": "'Used to' describes repeated past actions, habits, and situations. It is followed by which verb form?",
         "options": [
           "Base form of the verb",
           "Past simple form",
@@ -21,41 +21,264 @@
           "Third person singular form"
         ],
         "correct": 0,
-        "explain": "Used to is followed by the base form of the verb. It describes repeated past actions, habits, and situations. Past simple, continuous, and third person singular are not the form after used to."
+        "explain": "'Used to' is followed by the base form of the verb. It describes repeated past actions, habits, and situations; past simple, continuous, and third person singular are not the form after 'used to'."
       },
       {
         "id": "ENG1PT20283",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly describes a repeated past action that no longer happens?",
-        "options": [
-          "My grandmother used to wash clothes by hand",
-          "My grandmother used to washed clothes by hand",
-          "My grandmother used to washing clothes by hand",
-          "My grandmother used to washes clothes by hand"
+        "q": "Which used to sentence is correct?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "(1/22)",
+            "options": [
+              "My aunt used to sew her own dresses.",
+              "My aunt used to sewed her own dresses.",
+              "My aunt used to sewing her own dresses.",
+              "My aunt used to sews her own dresses."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "(2/22)",
+            "options": [
+              "The seaside town used to be very peaceful.",
+              "The seaside town used to was very peaceful.",
+              "The seaside town used to being very peaceful.",
+              "The seaside town used to is very peaceful."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "(3/22)",
+            "options": [
+              "Students used to write their essays with a pen.",
+              "Students used to wrote their essays with a pen.",
+              "Students used to writing their essays with a pen.",
+              "Students used to writes their essays with a pen."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "(4/22)",
+            "options": [
+              "My father used to drive an old truck to work.",
+              "My father use to drive an old truck to work.",
+              "My father used to driving an old truck to work.",
+              "My father was used to drive an old truck to work."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "(5/22)",
+            "options": [
+              "My uncle used to play the guitar at family parties.",
+              "My uncle use to play the guitar at family parties.",
+              "My uncle used to playing the guitar at family parties.",
+              "My uncle was used to play the guitar at family parties."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "(6/22)",
+            "options": [
+              "Our dog used to be very friendly with strangers.",
+              "Our dog use to be very friendly with strangers.",
+              "Our dog used to was very friendly with strangers.",
+              "Our dog was used to be very friendly with strangers."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "7",
+            "prompt": "(7/22)",
+            "options": [
+              "The waiting room used to be very crowded.",
+              "The waiting room use to be very crowded.",
+              "The waiting room used to was very crowded.",
+              "The waiting room was used to be very crowded."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "8",
+            "prompt": "(8/22)",
+            "options": [
+              "He used to fix bicycles in his father's shop.",
+              "He uses to fix bicycles in his father's shop.",
+              "He used to fixing bicycles in his father's shop.",
+              "He use to fixed bicycles in his father's shop."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "9",
+            "prompt": "(9/22)",
+            "options": [
+              "I used to collect stamps when I was a child.",
+              "I use to collect stamps when I was a child.",
+              "I used to collecting stamps when I was a child.",
+              "I was used to collect stamps when I was a child."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "10",
+            "prompt": "(10/22)",
+            "options": [
+              "There used to be a bakery at the corner.",
+              "There use to be a bakery at the corner.",
+              "There used to was a bakery at the corner.",
+              "There was used to be a bakery at the corner."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "11",
+            "prompt": "(11/22)",
+            "options": [
+              "The mechanic repaired the car last Tuesday.",
+              "The mechanic used to repair the car last Tuesday.",
+              "The mechanic used to repaired the car last Tuesday.",
+              "The mechanic used to repairing the car last Tuesday."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "12",
+            "prompt": "(12/22)",
+            "options": [
+              "A local artist painted the mural in 2020.",
+              "A local artist paint the mural in 2020.",
+              "A local artist used to paint the mural in 2020.",
+              "A local artist used to painted the mural in 2020."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "13",
+            "prompt": "(13/22)",
+            "options": [
+              "In the 1920s, most households used to cook on a coal stove.",
+              "In the 1920s, most households uses to cook on a coal stove.",
+              "In the 1920s, most households was cooked on a coal stove.",
+              "In the 1920s, most households used to cooked on a coal stove."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "14",
+            "prompt": "(14/22)",
+            "options": [
+              "When we lived by the sea, we used to fish from the harbour.",
+              "When we lived by the sea, we use to fish from the harbour.",
+              "When we lived by the sea, we was fishing from the harbour.",
+              "When we lived by the sea, we used to fished from the harbour."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "15",
+            "prompt": "(15/22)",
+            "options": [
+              "She used to manage a small hotel before she retired. Now she is so busy.",
+              "She uses to manage a small hotel before she retired. Now she is so busy.",
+              "She used to managing a small hotel before she retired. Now she is so busy.",
+              "She use to managed a small hotel before she retired. Now she is so busy."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "16",
+            "prompt": "(16/22)",
+            "options": [
+              "He used to believe in ghosts when he was younger.",
+              "He use to believe in ghosts when he was younger.",
+              "He used to believed in ghosts when he was younger.",
+              "He was believing in ghosts when he was younger."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "17",
+            "prompt": "(17/22)",
+            "options": [
+              "Long ago, farmers used to harvest their crops with simple tools.",
+              "Long ago, farmers use to harvest their crops with simple tools.",
+              "Long ago, farmers used to harvested their crops with simple tools.",
+              "Long ago, farmers were harvest their crops with simple tools."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "18",
+            "prompt": "(18/22)",
+            "options": [
+              "There used to be a small lake behind the house.",
+              "There use to be a small lake behind the house.",
+              "There used to been a small lake behind the house.",
+              "There was used to be a small lake behind the house."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "19",
+            "prompt": "(19/22)",
+            "options": [
+              "The library used to open only three days a week.",
+              "The library use to open only three days a week.",
+              "The library used to opened only three days a week.",
+              "The library uses to open only three days a week."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "20",
+            "prompt": "(20/22)",
+            "options": [
+              "Nurses used to keep all patient records by hand.",
+              "Nurses use to keep all patient records by hand.",
+              "Nurses used to kept all patient records by hand.",
+              "Nurses uses to keep all patient records by hand."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "21",
+            "prompt": "(21/22)",
+            "options": [
+              "My mother used to make fresh bread every Sunday.",
+              "My mother use to make fresh bread every Sunday.",
+              "My mother used to made fresh bread every Sunday.",
+              "My mother uses to make fresh bread every Sunday."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "22",
+            "prompt": "(22/22)",
+            "options": [
+              "The children used to build sandcastles at the beach.",
+              "The children use to built sandcastles at the beach.",
+              "The children used to built sandcastles at the beach.",
+              "The children use to building sandcastles at the beach."
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "Used to + base verb describes repeated past actions. Wash is the base verb. Washed, washing and washes are wrong forms after used to."
-      },
-      {
-        "id": "ENG1PT20284",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly describes a past state that is no longer true?",
-        "options": [
-          "Air travel used to be very expensive",
-          "Air travel used to was very expensive",
-          "Air travel used to being very expensive",
-          "Air travel used to is very expensive"
-        ],
-        "correct": 0,
-        "explain": "Used to + base verb describes past states. Be is the base verb. Was, being and is are wrong forms after used to."
+        "explain": "Each step uses 'used to' plus the base verb for a repeated past habit or state, or simple past for a single event. Forms with 'use to', 'used to + -ed', 'used to + -ing' or 'was used to' are incorrect."
       },
       {
         "id": "ENG1PT20285",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Which form is used instead of used to for single events?",
+        "q": "Which form is used instead of 'used to' for single events?",
         "options": [
           "Simple past form",
           "Used to form",
@@ -63,27 +286,27 @@
           "Future form"
         ],
         "correct": 0,
-        "explain": "Single events use the simple past form. Used to is for repeated actions or past states that are no longer true. Present continuous and future are not past forms."
+        "explain": "Single events use the simple past form. 'Used to' is for repeated actions or past states that are no longer true; present continuous and future are not past forms."
       },
       {
         "id": "ENG1PT20286",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "The negative form of used to is which structure?",
+        "q": "The negative form of 'used to' is which structure?",
         "options": [
           "Didn't use to + base form",
-          "Didn't used to + base form",
+          "Didn't used to + past form",
           "Don't use to + base form",
           "Won't use to + base form"
         ],
         "correct": 0,
-        "explain": "Negative: didn't use to (without -ed) + base form. Didn't used to, don't use to, and won't use to are incorrect."
+        "explain": "The negative is 'didn't use to' plus the base form; 'use to' has no -ed. 'Didn't used to' plus a past form, 'don't use to' and 'won't use to' are incorrect."
       },
       {
         "id": "ENG1PT20287",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Yes/No questions with used to begin with which word?",
+        "q": "Yes/No questions with 'used to' begin with which word?",
         "options": [
           "Did",
           "Do",
@@ -91,559 +314,359 @@
           "Will"
         ],
         "correct": 0,
-        "explain": "Yes/No questions: Did + subject + use to + base form. Short answers use did or didn't. Do, does, and will are not the question form."
-      },
-      {
-        "id": "ENG1PT20288",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which correction is needed for 'I use to play'?",
-        "options": [
-          "I used to play",
-          "I use to played",
-          "I used to played",
-          "I use to playing"
-        ],
-        "correct": 0,
-        "explain": "Affirmative used to is spelled with -ed: I used to play. Use to, used to played and use to playing are incorrect forms."
-      },
-      {
-        "id": "ENG1PT20289",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which correction is needed for 'How did you used to heat your home'?",
-        "options": [
-          "How did you use to heat your home",
-          "How did you used to heated your home",
-          "How do you used to heat your home",
-          "How did you use to heated your home"
-        ],
-        "correct": 0,
-        "explain": "Questions with did use use to without -ed: How did you use to heat your home. Used to, do you used to and use to heated are incorrect."
-      },
-      {
-        "id": "ENG1PT20290",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly describes a past habit that no longer happens?",
-        "options": [
-          "Women used to wear long dresses in the past",
-          "Women used to wore long dresses in the past",
-          "Women used to wearing long dresses in the past",
-          "Women used to wears long dresses in the past"
-        ],
-        "correct": 0,
-        "explain": "Women used to wear long dresses in the past describes a repeated past action. The base form follows used to."
-      },
-      {
-        "id": "ENG1PT20291",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly uses simple past for a single event?",
-        "options": [
-          "The nurse checked the patient's blood pressure yesterday",
-          "The nurse used to check the patient's blood pressure yesterday",
-          "The nurse used to checked the patient's blood pressure yesterday",
-          "The nurse used to checking the patient's blood pressure yesterday"
-        ],
-        "correct": 0,
-        "explain": "The event happened once, so simple past is used: checked. Used to is not for single events. Used to checked and used to checking are wrong forms."
+        "explain": "Yes/No questions use 'Did' + subject + 'use to' + base form. Short answers use 'did' or 'didn't'; 'do', 'does' and 'will' are not the question form."
       },
       {
         "id": "ENG1PT20292",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 5 – Used to",
-        "q": "Which is the correct negative?",
-        "options": [
-          "I didn't use to watch TV",
-          "I didn't used to watch TV",
-          "I don't use to watch TV",
-          "I didn't use to watched TV"
+        "q": "Which negative used to sentence is correct?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "(1/13)",
+            "options": [
+              "I didn't use to enjoy classical music.",
+              "I didn't used to enjoyed classical music.",
+              "I don't use to enjoy classical music.",
+              "I didn't use to enjoyed classical music."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "(2/13)",
+            "options": [
+              "My sister didn't use to eat vegetables.",
+              "My sister didn't used to eating vegetables.",
+              "My sister don't use to eat vegetables.",
+              "My sister wasn't use to eat vegetables."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "(3/13)",
+            "options": [
+              "We didn't use to carry umbrellas at school.",
+              "We didn't used to carrying umbrellas at school.",
+              "We don't use to carry umbrellas at school.",
+              "We wasn't use to carry umbrellas at school."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "(4/13)",
+            "options": [
+              "My friend didn't use to like spicy food.",
+              "My friend didn't used to liked spicy food.",
+              "My friend don't use to like spicy food.",
+              "My friend wasn't use to like spicy food."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "(5/13)",
+            "options": [
+              "Most families didn't use to have a telephone.",
+              "Most families didn't used to having a telephone.",
+              "Most families don't use to have a telephone.",
+              "Most families wasn't use to have a telephone."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "(6/13)",
+            "options": [
+              "The village didn't use to get many visitors.",
+              "The village didn't used to getting many visitors.",
+              "The village don't use to get many visitors.",
+              "The village wasn't use to get many visitors."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "7",
+            "prompt": "(7/13)",
+            "options": [
+              "The old factory didn't use to follow safety rules.",
+              "The old factory didn't used to following safety rules.",
+              "The old factory don't use to follow safety rules.",
+              "The old factory wasn't use to follow safety rules."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "8",
+            "prompt": "(8/13)",
+            "options": [
+              "My parents didn't use to go on holiday every year.",
+              "My parents didn't used to going on holiday every year.",
+              "My parents don't use to go on holiday every year.",
+              "My parents wasn't use to go on holiday every year."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "9",
+            "prompt": "(9/13)",
+            "options": [
+              "The hospital didn't use to allow pets inside.",
+              "The hospital didn't used to allowing pets inside.",
+              "The hospital don't use to allow pets inside.",
+              "The hospital wasn't use to allow pets inside."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "10",
+            "prompt": "(10/13)",
+            "options": [
+              "My grandfather didn't use to talk about the war.",
+              "My grandfather didn't used to talking about the war.",
+              "My grandfather don't use to talk about the war.",
+              "My grandfather wasn't use to talk about the war."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "11",
+            "prompt": "(11/13)",
+            "options": [
+              "They used not to lock their doors at night.",
+              "They used to not locking their doors at night.",
+              "They use not to lock their doors at night.",
+              "They used not to locked their doors at night."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "12",
+            "prompt": "(12/13)",
+            "options": [
+              "The old shopkeeper used not to open on Mondays.",
+              "The old shopkeeper used to not opened on Mondays.",
+              "The old shopkeeper use not to open on Mondays.",
+              "The old shopkeeper used not to opening on Mondays."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "13",
+            "prompt": "(13/13)",
+            "options": [
+              "My cousin didn't use to speak English before she moved abroad.",
+              "My cousin didn't used to speaking English before she moved abroad.",
+              "My cousin don't use to speak English before she moved abroad.",
+              "My cousin didn't use to speaking English before she moved abroad."
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "Negative is didn't use to (no -ed) + base form. Didn't used to, don't use to, and past form after use to are incorrect."
+        "explain": "The negative is 'didn't use to' plus the base verb, or the formal 'used not to' plus the base verb. Forms with 'used to' after 'didn't', or with an -ing/-ed form after 'not to', are incorrect."
       },
       {
         "id": "ENG1PT20293",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 5 – Used to",
-        "q": "Which is a correct yes/no question?",
-        "options": [
-          "Did you use to watch TV",
-          "Did you used to watch TV",
-          "Do you use to watch TV",
-          "Did you use to watched TV"
+        "q": "Which used to question is correct?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "(1/13)",
+            "options": [
+              "Did your parents use to own a bicycle?",
+              "Did your parents used to owning a bicycle?",
+              "Do your parents use to own a bicycle?",
+              "Did your parents use to owned a bicycle?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "(2/13)",
+            "options": [
+              "Did they use to visit their grandparents often?",
+              "Did they used to visiting their grandparents often?",
+              "Do they use to visit their grandparents often?",
+              "Were they use to visit their grandparents often?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "(3/13)",
+            "options": [
+              "Did you use to go camping as a child?",
+              "Did you used to going camping as a child?",
+              "Did you use to went camping as a child?",
+              "Do you use to go camping as a child?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "(4/13)",
+            "options": [
+              "Did the neighbours use to own a small boat?",
+              "Did the neighbours used to owning a small boat?",
+              "Did the neighbours use to owned a small boat?",
+              "Do the neighbours use to own a small boat?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "(5/13)",
+            "options": [
+              "Where did your family use to spend the summer?",
+              "Where your family used to spend the summer?",
+              "Where did your family used to spending the summer?",
+              "Where do your family use to spend the summer?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "(6/13)",
+            "options": [
+              "Who used to run the village post office?",
+              "Who did use to run the village post office?",
+              "Who used to ran the village post office?",
+              "Who use to run the village post office?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "7",
+            "prompt": "(7/13)",
+            "options": [
+              "What did the builders use to build in the shipyard?",
+              "What the builders used to build in the shipyard?",
+              "What did the builders used to building in the shipyard?",
+              "What do the builders use to build in the shipyard?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "8",
+            "prompt": "(8/13)",
+            "options": [
+              "Who used to look after the garden at the weekends?",
+              "Who did use to look after the garden at the weekends?",
+              "Who used to looked after the garden at the weekends?",
+              "Who use to look after the garden at the weekends?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "9",
+            "prompt": "(9/13)",
+            "options": [
+              "Did he use to travel a lot for work?",
+              "Does he use to travel a lot for work?",
+              "Was he use to travel a lot for work?",
+              "Did he using to travel a lot for work?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "10",
+            "prompt": "(10/13)",
+            "options": [
+              "What songs did the children use to sing at school?",
+              "What songs do the children use to sing at school?",
+              "What songs did the children using to sing at school?",
+              "What songs are the children using to sing at school?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "11",
+            "prompt": "(11/13)",
+            "options": [
+              "Who used to deliver milk to the houses?",
+              "Who use to deliver milk to the houses?",
+              "Who did use to deliver milk to the houses?",
+              "Who used to delivered milk to the houses?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "12",
+            "prompt": "(12/13)",
+            "options": [
+              "What did couples use to do on long winter evenings?",
+              "What do couples use to do on long winter evenings?",
+              "What did couples using to do on long winter evenings?",
+              "What are couples using to do on long winter evenings?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "13",
+            "prompt": "(13/13)",
+            "options": [
+              "How did people use to keep meat fresh before fridges?",
+              "How did people used to kept meat fresh before fridges?",
+              "How do people used to keep meat fresh before fridges?",
+              "How did people use to kept meat fresh before fridges?"
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "Yes/No questions: Did + subject + use to + base form. Used to, do, and past form are incorrect in the question."
-      },
-      {
-        "id": "ENG1PT20294",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "In the early 1900s, factory workers ___ long hours.",
-        "options": [
-          "used to work",
-          "uses to work",
-          "was worked",
-          "used to worked"
-        ],
-        "correct": 0,
-        "explain": "Used to work describes a repeated past action. Uses to work, was worked and used to worked are incorrect forms after used to."
-      },
-      {
-        "id": "ENG1PT20295",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Two engineers ___ a new app in 2018.",
-        "options": [
-          "designed",
-          "design",
-          "used to design",
-          "used to designed"
-        ],
-        "correct": 0,
-        "explain": "The action happened once, so simple past is used: designed. Used to is not for single events. Used to designed is a wrong form."
-      },
-      {
-        "id": "ENG1PT20296",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "When we worked on the space station, we ___ the Earth from the observation window.",
-        "options": [
-          "used to watch",
-          "use to watch",
-          "was watching",
-          "used to watched"
-        ],
-        "correct": 0,
-        "explain": "Used to watch describes a repeated past habit. Use to watch, was watching and used to watched are incorrect forms."
+        "explain": "Yes/No and object questions use 'Did' + subject + 'use to' + base verb. When 'who' is the subject, use 'used to' without 'did'. Forms with 'using to' or with 'used to + -ed' are incorrect."
       },
       {
         "id": "ENG1PT20297",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 5 – Used to",
-        "q": "Which correction fixes the missing subject: 'Before invented electricity, people used candles'?",
-        "options": [
-          "Before they invented electricity, people used candles",
-          "Before invent electricity, people used candles",
-          "Before invented electricity, people used to candles",
-          "Before they invent electricity, people used candles"
+        "q": "Which time clause is correct?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "(1/3)",
+            "options": [
+              "Before they built the railway, people travelled by horse.",
+              "Before build the railway, people travelled by horse.",
+              "Before built the railway, people travelled by horse.",
+              "Before they build the railway, people travelled by horse."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "(2/3)",
+            "options": [
+              "When the engineer finally solved the problem, the company gave him a bonus.",
+              "When finally solved the problem, the company gave him a bonus.",
+              "When the engineer finally solve the problem, the company gave him a bonus.",
+              "When finally the engineer solved the problem, the company gave him a bonus."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "(3/3)",
+            "options": [
+              "When the team finished the project, they celebrated at a restaurant.",
+              "When completed the project, they celebrated at a restaurant.",
+              "When the team complete the project, they celebrated at a restaurant.",
+              "When completed the team project, they celebrated at a restaurant."
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "Time clauses need a subject: Before they invented electricity. Invent, used to candles and they invent are incorrect forms."
-      },
-      {
-        "id": "ENG1PT20298",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which affirmative form is correct?",
-        "options": [
-          "I used to swim",
-          "I use to swim",
-          "I used to swimming",
-          "I was used to swim"
-        ],
-        "correct": 0,
-        "explain": "Affirmative is used to + base verb. Use to, used to swimming and was used to swim are incorrect."
-      },
-      {
-        "id": "ENG1PT20299",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which negative form is correct?",
-        "options": [
-          "I didn't use to swim",
-          "I didn't used to swim",
-          "I don't use to swim",
-          "I wasn't use to swim"
-        ],
-        "correct": 0,
-        "explain": "Negative is didn't use to + base verb. Didn't used to, don't use to, and wasn't use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20300",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which question form is correct?",
-        "options": [
-          "Did you use to swim?",
-          "Did you used to swim?",
-          "Do you use to swim?",
-          "Were you use to swim?"
-        ],
-        "correct": 0,
-        "explain": "Questions use Did + subject + use to + base verb. Did used to, Do you use to and Were you use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20301",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: Last month I took the bus to work. Now I don't.",
-        "options": [
-          "I used to take the bus to work",
-          "I use to take the bus to work",
-          "I used to taking the bus to work",
-          "I was used to take the bus to work"
-        ],
-        "correct": 0,
-        "explain": "A past habit that stopped uses used to + base form. The other options contain form errors."
-      },
-      {
-        "id": "ENG1PT20302",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: Ten years ago I lived near the hospital. Now I don't.",
-        "options": [
-          "I used to live near the hospital",
-          "I use to live near the hospital",
-          "I used to living near the hospital",
-          "I was used to live near the hospital"
-        ],
-        "correct": 0,
-        "explain": "A past habit that no longer happens uses used to + base form."
-      },
-      {
-        "id": "ENG1PT20303",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: Before I didn't wear a watch. Now I do.",
-        "options": [
-          "I didn't use to wear a watch",
-          "I didn't used to wear a watch",
-          "I don't use to wear a watch",
-          "I wasn't use to wear a watch"
-        ],
-        "correct": 0,
-        "explain": "The negative form for a past habit that changed is didn't use to + base form."
-      },
-      {
-        "id": "ENG1PT20304",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: Last year my brother didn't read books. Now he reads books.",
-        "options": [
-          "He didn't use to read books",
-          "He didn't used to read books",
-          "He don't use to read books",
-          "He wasn't use to read books"
-        ],
-        "correct": 0,
-        "explain": "Correct form is He didn't use to read books. Didn't used to, don't use to and wasn't use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20305",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: A long time ago people didn't have smartphones. Now people have smartphones.",
-        "options": [
-          "People didn't use to have smartphones",
-          "People didn't used to have smartphones",
-          "People don't use to have smartphones",
-          "People wasn't use to have smartphones"
-        ],
-        "correct": 0,
-        "explain": "A past state that no longer exists uses didn't use to + base form."
-      },
-      {
-        "id": "ENG1PT20306",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: When I was young I was afraid of heights. Now I'm not.",
-        "options": [
-          "I used to be afraid of heights",
-          "I use to be afraid of heights",
-          "I used to was afraid of heights",
-          "I was used to be afraid of heights"
-        ],
-        "correct": 0,
-        "explain": "Used to be works for past states. Use to, used to was and was used to be are incorrect."
-      },
-      {
-        "id": "ENG1PT20307",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: A long time ago people didn't have computers. Now people have computers.",
-        "options": [
-          "People didn't use to have computers",
-          "People didn't used to have computers",
-          "People don't use to have computers",
-          "People wasn't use to have computers"
-        ],
-        "correct": 0,
-        "explain": "Correct form is People didn't use to have computers. Didn't used to, don't use to and wasn't use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20308",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: When Tom was younger he was thin. Now Tom is strong.",
-        "options": [
-          "Tom used to be thin",
-          "Tom use to be thin",
-          "Tom used to was thin",
-          "Tom was used to be thin"
-        ],
-        "correct": 0,
-        "explain": "Correct rewrite is Tom used to be thin. Use to, used to was and was used to be are incorrect."
-      },
-      {
-        "id": "ENG1PT20309",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "She ___ at the hospital before she retired. Now she is so busy.",
-        "options": [
-          "used to work",
-          "uses to work",
-          "used to working",
-          "use to worked"
-        ],
-        "correct": 0,
-        "explain": "Used to work is the correct past habit. Uses to work is present. Used to working and use to worked are wrong."
-      },
-      {
-        "id": "ENG1PT20310",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: Before the hospital use to have a single entrance, visitors went through the main gate.",
-        "options": [
-          "Before the hospital used to have a single entrance",
-          "Before the hospital use to have a single entrance",
-          "Before the hospital used to had a single entrance",
-          "Before the hospital use to had a single entrance"
-        ],
-        "correct": 0,
-        "explain": "The affirmative form is used to + base verb. The other options contain spelling or form errors."
-      },
-      {
-        "id": "ENG1PT20311",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: The hospital use to have only one ambulance for emergencies.",
-        "options": [
-          "The hospital used to have only one ambulance",
-          "The hospital use to have only one ambulance",
-          "The hospital used to had only one ambulance",
-          "The hospital uses to have only one ambulance"
-        ],
-        "correct": 0,
-        "explain": "Correct is used to have. Use to, used to had, and uses to are incorrect."
-      },
-      {
-        "id": "ENG1PT20312",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: Many nurses didn't used to believe in mental health treatment.",
-        "options": [
-          "Many nurses didn't use to believe",
-          "Many nurses didn't used to believe",
-          "Many nurses don't use to believe",
-          "Many nurses wasn't use to believe"
-        ],
-        "correct": 0,
-        "explain": "Negative is didn't use to. Didn't used to, don't use to and wasn't use to are incorrect forms."
-      },
-      {
-        "id": "ENG1PT20313",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: Nurses use to write all patient records by hand.",
-        "options": [
-          "Nurses used to write all patient records by hand",
-          "Nurses use to write all patient records by hand",
-          "Nurses used to wrote all patient records by hand",
-          "Nurses uses to write all patient records by hand"
-        ],
-        "correct": 0,
-        "explain": "Correct is used to write. Use to, used to wrote, and uses to are incorrect."
-      },
-      {
-        "id": "ENG1PT20314",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: My grandmother use to visit the same doctor for more than 20 years.",
-        "options": [
-          "My grandmother used to visit the same doctor",
-          "My grandmother use to visit the same doctor",
-          "My grandmother used to visited the same doctor",
-          "My grandmother uses to visit the same doctor"
-        ],
-        "correct": 0,
-        "explain": "Correct is used to visit. Use to, used to visited, and uses to are incorrect."
-      },
-      {
-        "id": "ENG1PT20315",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: Before discovered antibiotics, what did people use to do?",
-        "options": [
-          "Before antibiotics were discovered, what did people use to do?",
-          "Before antibiotics discovered, what did people use to do?",
-          "Before antibiotics were discovered, what did people used to do?",
-          "Before antibiotics were discovered, what people use to do?"
-        ],
-        "correct": 0,
-        "explain": "The time clause needs a subject and passive form: Before antibiotics were discovered. Questions also use Did + use to (not used to)."
-      },
-      {
-        "id": "ENG1PT20316",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Correct: Did you used to work night shifts at the clinic?",
-        "options": [
-          "Did you use to work night shifts at the clinic?",
-          "Did you used to work night shifts at the clinic?",
-          "Did you use to worked night shifts at the clinic?",
-          "Do you use to work night shifts at the clinic?"
-        ],
-        "correct": 0,
-        "explain": "Yes/No questions use Did + subject + use to + base form."
-      },
-      {
-        "id": "ENG1PT20317",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly shows a stopped past habit?",
-        "options": [
-          "I used to play tennis",
-          "I use to play tennis",
-          "I used to playing tennis",
-          "I was used to play tennis"
-        ],
-        "correct": 0,
-        "explain": "Used to + base verb shows a past habit that stopped. Use to, used to playing and was used to play are incorrect."
-      },
-      {
-        "id": "ENG1PT20318",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which negative used-to form is correct for a changed habit?",
-        "options": [
-          "I didn't use to drink coffee",
-          "I didn't used to drink coffee",
-          "I don't use to drink coffee",
-          "I wasn't use to drink coffee"
-        ],
-        "correct": 0,
-        "explain": "Didn't use to is the correct negative. Didn't used to, don't use to and wasn't use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20319",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which past-state form with be is correct?",
-        "options": [
-          "I used to be afraid of the dark",
-          "I use to be afraid of the dark",
-          "I used to was afraid of the dark",
-          "I was used to be afraid of the dark"
-        ],
-        "correct": 0,
-        "explain": "Used to be is correct for past states. Use to, used to was and was used to be are incorrect."
-      },
-      {
-        "id": "ENG1PT20320",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which error-correction item needs used to?",
-        "options": [
-          "Nurses used to write all patient records by hand",
-          "Nurses use to write all patient records by hand",
-          "Nurses used to wrote all patient records by hand",
-          "Nurses uses to write all patient records by hand"
-        ],
-        "correct": 0,
-        "explain": "Correct form is used to write. Use to, used to wrote, and uses to are incorrect."
-      },
-      {
-        "id": "ENG1PT20321",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which used-to question form is correct?",
-        "options": [
-          "Did she use to teach at the school?",
-          "Did she used to teach at the school?",
-          "Did she use to taught at the school?",
-          "Do she use to teach at the school?"
-        ],
-        "correct": 0,
-        "explain": "Did + use to + base verb is correct. Did used to, did use to taught and Do she use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20322",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which rewrite shows a past state that changed?",
-        "options": [
-          "Sarah used to be short",
-          "Sarah use to be short",
-          "Sarah used to was short",
-          "Sarah was used to be short"
-        ],
-        "correct": 0,
-        "explain": "Used to be is correct for past states. Use to, used to was, and was used to be are incorrect."
-      },
-      {
-        "id": "ENG1PT20323",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which form correctly uses didn't use to?",
-        "options": [
-          "Many doctors didn't use to prescribe antibiotics",
-          "Many doctors didn't used to prescribe antibiotics",
-          "Many doctors don't use to prescribe antibiotics",
-          "Many doctors wasn't use to prescribe antibiotics"
-        ],
-        "correct": 0,
-        "explain": "Negative is didn't use to. Didn't used to, don't use to and wasn't use to are incorrect forms."
-      },
-      {
-        "id": "ENG1PT20324",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence is correct for a past habit?",
-        "options": [
-          "He used to work in a factory when he was young",
-          "He uses to work in a factory when he was young",
-          "He used to working in a factory when he was young",
-          "He use to worked in a factory when he was young"
-        ],
-        "correct": 0,
-        "explain": "Used to work is correct. Uses to work, used to working and use to worked are incorrect forms."
-      },
-      {
-        "id": "ENG1PT20325",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which rewrite correctly uses didn't use to?",
-        "options": [
-          "People didn't use to travel by plane",
-          "People didn't used to travel by plane",
-          "People don't use to travel by plane",
-          "People wasn't use to travel by plane"
-        ],
-        "correct": 0,
-        "explain": "Didn't use to is correct. Didn't used to, don't use to and wasn't use to are incorrect."
-      },
-      {
-        "id": "ENG1PT20326",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which affirmative used-to form is correct for a past habit?",
-        "options": [
-          "I used to watch cartoons on Saturday",
-          "I use to watch cartoons on Saturday",
-          "I used to watching cartoons on Saturday",
-          "I was used to watch cartoons on Saturday"
-        ],
-        "correct": 0,
-        "explain": "Used to + base verb is correct. Use to, used to watching and was used to watch are incorrect."
+        "explain": "Time clauses need an explicit subject, so 'they built', 'the engineer solved', and 'the team finished' are correct. Clauses without a subject, or with the wrong verb form, are incorrect."
       },
       {
         "id": "ENG1PT20327",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Did you use to swim? Yes, I ___.",
+        "q": "Did you use to paint landscapes? Yes, I ___.",
         "options": [
           "did",
           "do",
@@ -651,13 +674,13 @@
           "use to"
         ],
         "correct": 0,
-        "explain": "Short answers with used-to questions use did or didn't. The correct short answer is: Yes, I did."
+        "explain": "Short answers with 'used to' questions use 'did' or 'didn't'. The correct short answer is 'Yes, I did.'"
       },
       {
         "id": "ENG1PT20328",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Did they use to live here? No, they ___.",
+        "q": "Did they use to sell fresh fruit? No, they ___.",
         "options": [
           "didn't",
           "don't",
@@ -665,83 +688,13 @@
           "use not"
         ],
         "correct": 0,
-        "explain": "The negative short answer is: No, they didn't. Don't is present tense, and used not/use not are not short answers."
-      },
-      {
-        "id": "ENG1PT20329",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which question is correct?",
-        "options": [
-          "What did you use to watch?",
-          "What you used to watch?",
-          "What did you used to watch?",
-          "What do you use to watch?"
-        ],
-        "correct": 0,
-        "explain": "Object questions use: Wh-word + did + subject + use to + base verb. The correct form is: What did you use to watch?"
-      },
-      {
-        "id": "ENG1PT20330",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which question asks about the subject?",
-        "options": [
-          "Who used to watch Japanese films?",
-          "Who did use to watch Japanese films?",
-          "Who used to watched Japanese films?",
-          "Who use to watch Japanese films?"
-        ],
-        "correct": 0,
-        "explain": "When who is the subject, we do not use did. The correct form is: Who used to watch Japanese films?"
-      },
-      {
-        "id": "ENG1PT20331",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which is a formal negative form of 'She used to think that'?",
-        "options": [
-          "She used not to think that.",
-          "She used to not thinking that.",
-          "She use not to think that.",
-          "She used not to thought that."
-        ],
-        "correct": 0,
-        "explain": "A formal negative form is used not to + base verb: She used not to think that. The common negative is: She didn't use to think that."
-      },
-      {
-        "id": "ENG1PT20332",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Rewrite: Before we had the internet, we went to the library a lot.",
-        "options": [
-          "Before we had the internet, we used to go to the library a lot.",
-          "Before we had the internet, we use to go to the library a lot.",
-          "Before we had the internet, we used to went to the library a lot.",
-          "Before we had the internet, we used to going to the library a lot."
-        ],
-        "correct": 0,
-        "explain": "The past habitual action can be rewritten with used to + base verb: we used to go. The time clause remains in simple past: Before we had the internet."
-      },
-      {
-        "id": "ENG1PT20333",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which correction fixes the missing subject: 'When finally found the cure, the scientist received an award'?",
-        "options": [
-          "When he finally found the cure, the scientist received an award.",
-          "When finally found the cure, the scientist received an award.",
-          "When he finally find the cure, the scientist received an award.",
-          "When finally he found the cure, the scientist received an award."
-        ],
-        "correct": 0,
-        "explain": "Time clauses need a subject. The corrected sentence is: When he finally found the cure, the scientist received an award."
+        "explain": "The negative short answer is 'No, they didn't.' 'Don't' is present tense, and 'used not' and 'use not' are not short answers."
       },
       {
         "id": "ENG1PT20334",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Did the pharmacist use to prepare the mixtures in the old lab? Yes, he ___.",
+        "q": "Did the tailor use to make suits for the whole town? Yes, he ___.",
         "options": [
           "did",
           "do",
@@ -749,13 +702,13 @@
           "use to"
         ],
         "correct": 0,
-        "explain": "Short answers to Did + subject + use to questions use did or didn't. The correct short answer is: Yes, he did."
+        "explain": "Short answers to 'Did' + subject + 'use to' questions use 'did' or 'didn't'. The correct short answer is 'Yes, he did.'"
       },
       {
         "id": "ENG1PT20335",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Did the students use to memorize every drug name? No, they ___.",
+        "q": "Did the pupils use to walk to the market every day? No, they ___.",
         "options": [
           "didn't",
           "don't",
@@ -763,125 +716,77 @@
           "use not"
         ],
         "correct": 0,
-        "explain": "The negative short answer is didn't. Don't is present tense, and used not / use not are not short answers."
-      },
-      {
-        "id": "ENG1PT20336",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which question correctly asks about the thing people did in the past?",
-        "options": [
-          "What did patients use to take for fever?",
-          "What patients used to take for fever?",
-          "What did patients used to take for fever?",
-          "What do patients use to take for fever?"
-        ],
-        "correct": 0,
-        "explain": "Object questions with used to use: Wh-word + did + subject + use to + base verb. The correct form is: What did patients use to take for fever?"
-      },
-      {
-        "id": "ENG1PT20337",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which question correctly asks about the person who had the past habit?",
-        "options": [
-          "Who used to check the ward before rounds?",
-          "Who did use to check the ward before rounds?",
-          "Who used to checked the ward before rounds?",
-          "Who use to check the ward before rounds?"
-        ],
-        "correct": 0,
-        "explain": "When who is the subject, we do not use did. The correct form is: Who used to check the ward before rounds?"
-      },
-      {
-        "id": "ENG1PT20338",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence uses the formal negative pattern with used to?",
-        "options": [
-          "The consultant used not to answer calls after midnight.",
-          "The consultant used to not answered calls after midnight.",
-          "The consultant use not to answer calls after midnight.",
-          "The consultant used not to answering calls after midnight."
-        ],
-        "correct": 0,
-        "explain": "A formal negative form is used not to + base verb: The consultant used not to answer calls after midnight. The common negative is: The consultant didn't use to answer calls after midnight."
-      },
-      {
-        "id": "ENG1PT20339",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Complete: Before hospitals adopted electronic charts, nurses ___ patient notes by hand.",
-        "options": [
-          "used to write",
-          "use to write",
-          "used to wrote",
-          "used to writing"
-        ],
-        "correct": 0,
-        "explain": "The time clause is in simple past: Before hospitals adopted electronic charts. The main clause uses used to + base verb: nurses used to write."
-      },
-      {
-        "id": "ENG1PT20340",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which correction fixes the missing subject in: When completed the training, they updated the safety log?",
-        "options": [
-          "When the technicians completed the training, they updated the safety log.",
-          "When completed the training, they updated the safety log.",
-          "When the technicians complete the training, they updated the safety log.",
-          "When completed the technicians training, they updated the safety log."
-        ],
-        "correct": 0,
-        "explain": "Time clauses need an explicit subject. The corrected sentence is: When the technicians completed the training, they updated the safety log."
-      },
-      {
-        "id": "ENG1PT20341",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "My brother ___ when he was younger, but now he runs every morning.",
-        "options": [
-          "didn't use to exercise",
-          "didn't used to exercise",
-          "don't use to exercise",
-          "didn't use to exercising"
-        ],
-        "correct": 0,
-        "explain": "The negative form is didn't use to + base verb. Didn't used to, don't use to, and didn't use to exercising are incorrect."
+        "explain": "The negative short answer is 'didn't'. 'Don't' is present tense, and 'used not' and 'use not' are not short answers."
       },
       {
         "id": "ENG1PT20342",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Unit 5 – Used to",
-        "q": "Which pair correctly shows a repeated past habit, with the second form emphasizing it is no longer true?",
-        "options": [
-          "In the 1990s, nurses filed reports manually. / In the 1990s, nurses used to file reports manually.",
-          "In the 1990s, nurses filed reports manually. / In the 1990s, nurses used to filed reports manually.",
-          "In the 1990s, nurses use to file reports manually. / In the 1990s, nurses filed reports manually.",
-          "In the 1990s, nurses used to filing reports manually. / In the 1990s, nurses file reports manually."
+        "q": "Which pair of sentences is correct?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "(1/5)",
+            "options": [
+              "In the 1980s, office workers typed letters on typewriters. / In the 1980s, office workers used to type letters on typewriters.",
+              "In the 1980s, office workers typed letters on typewriters. / In the 1980s, office workers used to typed letters on typewriters.",
+              "In the 1980s, office workers use to type letters on typewriters. / In the 1980s, office workers typed letters on typewriters.",
+              "In the 1980s, office workers used to typing letters on typewriters. / In the 1980s, office workers type letters on typewriters."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "(2/5)",
+            "options": [
+              "Before we had electric lights, we used to read by candlelight.",
+              "Before we had electric lights, we use to read by candlelight.",
+              "Before we had electric lights, we used to reading by candlelight.",
+              "Before we had electric lights, we were used to read by candlelight."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "(3/5)",
+            "options": [
+              "Before computers were common, teachers used to write reports by hand.",
+              "Before computers were common, teachers use to write reports by hand.",
+              "Before computers were common, teachers used to wrote reports by hand.",
+              "Before computers were common, teachers used to writing reports by hand."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "(4/5)",
+            "options": [
+              "In the days before painkillers were invented, what did doctors use to treat patients?",
+              "In the days before painkillers invented, what did doctors use to treat patients?",
+              "In the days before painkillers were invented, what did doctors used to treating patients?",
+              "In the days before painkillers were invented, what doctors use to treat patients?"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "(5/5)",
+            "options": [
+              "Before the clinic used to have a pharmacy inside, customers went to the town centre.",
+              "Before the clinic use to have a pharmacy inside, customers went to the town centre.",
+              "Before the clinic used to had a pharmacy inside, customers went to the town centre.",
+              "Before the clinic use to had a pharmacy inside, customers went to the town centre."
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "Simple past can describe a repeated past action. Used to + base verb emphasizes the habit is finished. Used to filed, use to file and used to filing are wrong forms."
-      },
-      {
-        "id": "ENG1PT20343",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "___ he ___ play tennis when he was young?",
-        "options": [
-          "Did / use to",
-          "Does / use to",
-          "Was / use to",
-          "Did / used to"
-        ],
-        "correct": 0,
-        "explain": "Used-to questions use Did + subject + use to + base verb. The correct form is Did he use to play tennis?"
+        "explain": "These steps combine 'used to' with a time clause. The correct answers use 'used to' plus the base verb, and a time clause with a proper subject and verb form. Forms with 'use to', 'used to + -ed' or a missing subject are incorrect."
       },
       {
         "id": "ENG1PT20344",
         "type": "mcq",
         "cat": "Unit 5 – Used to",
-        "q": "Did he use to play tennis when he was young? Yes, ___.",
+        "q": "Did he use to ride a bike to school? Yes, ___.",
         "options": [
           "he did",
           "he used to",
@@ -889,105 +794,7 @@
           "he was"
         ],
         "correct": 0,
-        "explain": "Short answers to Did...? questions use did or didn't. The correct short answer is Yes, he did."
-      },
-      {
-        "id": "ENG1PT20345",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "What ___ you ___ watch as a child?",
-        "options": [
-          "did / use to",
-          "do / use to",
-          "did / used to",
-          "are / using to"
-        ],
-        "correct": 0,
-        "explain": "Object Wh-questions with used to use: Wh-word + did + subject + use to + base verb. The correct form is What did you use to watch?"
-      },
-      {
-        "id": "ENG1PT20346",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Who ___ Japanese films as a child?",
-        "options": [
-          "used to watch",
-          "use to watch",
-          "did use to watch",
-          "used to watched"
-        ],
-        "correct": 0,
-        "explain": "When who is the subject, we do not use did. The correct form is Who used to watch Japanese films?"
-      },
-      {
-        "id": "ENG1PT20347",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "She ___ the answer when she was younger, but now she does not.",
-        "options": [
-          "used to know",
-          "use to know",
-          "used to knew",
-          "was knowing"
-        ],
-        "correct": 0,
-        "explain": "Used to can be followed by a stative verb in the base form. The correct sentence is She used to know the answer."
-      },
-      {
-        "id": "ENG1PT20348",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "In old times, people ___ to the radio for news.",
-        "options": [
-          "used to listen",
-          "use to listen",
-          "used to listened",
-          "were listen"
-        ],
-        "correct": 0,
-        "explain": "A repeated past habit uses used to + base verb. The correct form is people used to listen to the radio."
-      },
-      {
-        "id": "ENG1PT20349",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "There ___ many students in the class in the past, but now there are few.",
-        "options": [
-          "used to be",
-          "use to be",
-          "used to been",
-          "was used to be"
-        ],
-        "correct": 0,
-        "explain": "The structure for a past state that no longer exists is There used to be + noun. The correct form is There used to be many students."
-      },
-      {
-        "id": "ENG1PT20350",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "What ___ people ___ do before television existed?",
-        "options": [
-          "did / use to",
-          "do / use to",
-          "did / used to",
-          "are / using to"
-        ],
-        "correct": 0,
-        "explain": "Wh-questions with used to use: Wh-word + did + subject + use to + base verb. The correct form is What did people use to do?"
-      },
-      {
-        "id": "ENG1PT20351",
-        "type": "mcq",
-        "cat": "Unit 5 – Used to",
-        "q": "Which sentence correctly describes a past situation that no longer exists?",
-        "options": [
-          "There used to be a small clinic on this street",
-          "There use to be a small clinic on this street",
-          "There used to was a small clinic on this street",
-          "There was used to be a small clinic on this street"
-        ],
-        "correct": 0,
-        "explain": "There used to be + noun describes a past situation that no longer exists."
+        "explain": "Short answers to 'Did...?' questions use 'did' or 'didn't'. The correct short answer is 'Yes, he did.'"
       }
     ]
   }
