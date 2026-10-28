@@ -551,6 +551,16 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
   color:var(--muted);opacity:.85;text-align:center;line-height:1.2;
   user-select:none;pointer-events:none;
 }
+.mood-cursor-auto{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;line-height:1.2;
+  padding:.18rem .5rem;border-radius:999px;cursor:pointer;
+  background:transparent;border:1px solid var(--border);color:var(--cyan-bright);
+  transition:background .18s,border-color .18s;
+}
+.mood-cursor-auto[hidden]{display:none}
+.mood-cursor-auto:hover{background:var(--mood-glow);border-color:var(--cyan)}
+.mood-cursor-auto:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
+.preview-auto{font-size:18px;line-height:1;color:var(--accent-0,var(--cyan));font-weight:700}
 .modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 .modal-actions .btn-ghost,.modal-actions .btn-gold{min-width:120px}
 .online-tile[hidden],.online-tile.is-hidden-tile{display:none!important}
@@ -1258,6 +1268,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
         </svg>
       </button>
       <span class="mood-cursor-hint">Change cursor</span>
+      <button type="button" class="mood-cursor-auto" id="cursorAutoBtn" hidden title="Let the timer and moods choose the cursor again" aria-label="Automatic cursor: let the timer and moods choose it again">Auto cursor</button>
     </div>
     <div class="mood-tray-sep" aria-hidden="true"></div>
     <button type="button" class="mood-reset-item" id="timerResetBtn" title="Reset timer">↺ Reset timer</button>
@@ -1731,6 +1742,7 @@ fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke
 <button type="button" class="cursor-skin-opt" data-cursor-skin="diamond" title="Diamond"><span class="cursor-skin-preview preview-diamond"></span><span class="cursor-skin-name">Diamond</span></button>
 <button type="button" class="cursor-skin-opt" data-cursor-skin="comma" title="Comma"><span class="cursor-skin-preview preview-comma"></span><span class="cursor-skin-name">Comma</span></button>
 <button type="button" class="cursor-skin-opt" data-cursor-skin="system" title="System-style pointer"><span class="cursor-skin-preview preview-system"></span><span class="cursor-skin-name">System</span></button>
+<button type="button" class="cursor-skin-opt cursor-skin-auto" data-cursor-skin="auto" title="Automatic: the timer and moods choose the cursor"><span class="cursor-skin-preview preview-auto" aria-hidden="true">↻</span><span class="cursor-skin-name">Automatic</span></button>
 </div>
 </div>
 <div class="setting-item" style="display: none;">
@@ -2306,9 +2318,44 @@ function applySkin(){
   const skin = list[Math.abs(pomodoroCycle|0) % list.length];
   document.documentElement.setAttribute('data-skin', skin);
 }
-function applyCursorSkin(forceNew){
+/* Cursor lock: a cursor picked by hand (Settings, or Change cursor in the emoji box) stays; the timer and
+   the moods no longer change it. 'Automatic' (Settings) or 'Auto cursor' (emoji box) clears the lock. */
+const CURSOR_LOCK_LS = 'sp_cursor_lock';
+function cursorLocked(){ try{ return localStorage.getItem(CURSOR_LOCK_LS) === '1'; }catch(e){ return false; } }
+function syncCursorLockUI(){
+  const on = cursorLocked();
+  document.documentElement.classList.toggle('cursor-locked', on);
+  const grid = document.getElementById('cursor-skin-grid');
+  if(grid){
+    const auto = grid.querySelector('.cursor-skin-opt[data-cursor-skin="auto"]');
+    if(!on) grid.querySelectorAll('.cursor-skin-opt').forEach(b=>{ const a = b === auto; b.classList.toggle('active', a); b.setAttribute('aria-selected', a ? 'true' : 'false'); });
+    else if(auto){ auto.classList.remove('active'); auto.setAttribute('aria-selected','false'); }
+  }
+  const ab = document.getElementById('cursorAutoBtn'); if(ab) ab.hidden = !on;
+}
+function setCursorLock(on){
+  try{ localStorage.setItem(CURSOR_LOCK_LS, on ? '1' : '0'); }catch(e){}
+  syncCursorLockUI();
+}
+window.setCursorLock = setCursorLock; window.cursorLocked = cursorLocked;
+document.addEventListener('click', e=>{
+  const b = e.target && e.target.closest && e.target.closest('#cursor-skin-grid .cursor-skin-opt');
+  if(b){
+    if(b.dataset.cursorSkin === 'auto'){
+      e.preventDefault(); e.stopPropagation();
+      setCursorLock(false); applyCursorSkin(false);
+    } else if(!b.closest('.cursor-skins-disabled')) setCursorLock(true);
+  }
+  setTimeout(syncCursorLockUI, 0);
+}, true);
+function applyCursorSkin(forceNew, manual){
   if(!window.__skinsReady) return;
   const cur = document.documentElement.getAttribute('data-cursor');
+  if(cursorLocked() && !manual){
+    let s = null; try{ s = localStorage.getItem('pt1_cursor_skin'); }catch(e){}
+    if(s && s !== 'off') document.documentElement.setAttribute('data-cursor', s);
+    return;
+  }
   let next;
   if(forceNew){
     next = pickRandomFrom(CURSOR_SKINS, cur);
@@ -2316,6 +2363,7 @@ function applyCursorSkin(forceNew){
     next = CURSOR_SKINS[Math.abs(pomodoroCycle|0) % CURSOR_SKINS.length];
   }
   document.documentElement.setAttribute('data-cursor', next);
+  if(manual){ try{ localStorage.setItem('pt1_cursor_skin', next); }catch(e){} setCursorLock(true); }
 }
 function pickRandomFrom(pool, avoid){
   const opts = pool.filter(x => x !== avoid);
@@ -2618,13 +2666,27 @@ function openResetConfirm(show){
   if(!resetModal) return;
   resetModal.classList.toggle('show', !!show);
 }
+const cursorAutoBtn = document.getElementById('cursorAutoBtn');
+if(cursorAutoBtn){
+  cursorAutoBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    setCursorLock(false);
+    if(typeof applyCursorSkin==='function') applyCursorSkin(false);
+  });
+}
+syncCursorLockUI();
+// The theme script re-applies the saved cursor when it starts or when custom cursors are switched on;
+// while the cursor is not locked, hand it back to the timer and moods.
+function cursorAutoReapply(){ if(!cursorLocked() && typeof applyCursorSkin==='function') applyCursorSkin(false); syncCursorLockUI(); }
+window.addEventListener('load', ()=>setTimeout(cursorAutoReapply, 0));
+document.addEventListener('change', e=>{ if(e.target && e.target.id==='custom-cursor-toggle') setTimeout(cursorAutoReapply, 0); }, true);
 const cursorRandomBtn = document.getElementById('cursorRandomBtn');
 if(cursorRandomBtn){
   cursorRandomBtn.addEventListener('click', (e)=>{
     e.stopPropagation();
     window.__audioGesture = true;
     unlockAudio();
-    if(typeof applyCursorSkin==='function') applyCursorSkin(true);
+    if(typeof applyCursorSkin==='function') applyCursorSkin(true, true);
     cancelMoodClose();
     openMoodTray(true);
   });

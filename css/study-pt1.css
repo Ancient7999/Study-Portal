@@ -688,3 +688,29 @@
 #studyView .nav-btn.simg-finished{background:var(--success,#22c55e);border-color:var(--success,#22c55e);color:#05210f;-webkit-text-fill-color:#05210f;font-weight:800}
 #studyView .nav-btn.simg-finished:hover{filter:brightness(1.08);box-shadow:0 0 14px color-mix(in srgb,var(--success,#22c55e) 55%,transparent)}
 #studyView .nav-btn.simg-finished:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--success,#22c55e) 45%,transparent),0 0 16px color-mix(in srgb,var(--success,#22c55e) 55%,transparent)}
+
+/* Drop on the object: the structure under a dragged word glows in the accent / mood colour */
+#studyView .simg-objglow{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible;opacity:0;transition:opacity .14s ease}
+#studyView .simg-objglow.on{opacity:1}
+#studyView .simg-objglow polygon{fill:rgba(var(--accent-0-rgb),.30);stroke:var(--accent-0);stroke-width:2.5px;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 4px var(--accent-0)) drop-shadow(0 0 10px rgba(var(--accent-0-rgb),.75))}
+@media (prefers-reduced-motion:reduce){#studyView .simg-objglow{transition:none}}
+
+/* Empty label boxes stand out on light and dark parts of a picture: a mostly opaque light fill tinted
+   by the accent / mood colour, a clear dashed accent border and a soft shadow */
+#studyView .simg-figure .label-slot.open{background:color-mix(in srgb,color-mix(in srgb,#fff 84%,var(--accent-0)) 88%,transparent);border:2px dashed var(--accent-0);box-shadow:0 1px 3px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.45)}
+#studyView .simg-figure.picking .label-slot.open{background:color-mix(in srgb,color-mix(in srgb,#fff 74%,var(--accent-0)) 90%,transparent)}
+#studyView .simg-figure .label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55)}
+
+/* ↺ Reset in the picture header, next to Word bank / Type / Labels, in the same segmented style */
+#studyView .simg-head .simg-head-reset{align-self:center;margin:0;font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:0;padding:6px 12px;border-radius:999px;border:1px solid var(--border-strong,var(--border));background:rgba(var(--accent-0-rgb),.05);color:var(--col-text-main);cursor:pointer;white-space:nowrap;box-shadow:none}
+#studyView .simg-head .simg-head-reset:hover{background:rgba(var(--accent-0-rgb),.14);border-color:var(--accent-0)}
+#studyView .simg-head .simg-head-reset:focus-visible{outline:2px solid var(--accent-0);outline-offset:-2px;box-shadow:none}
+#studyView .simg-head .simg-head-reset[hidden]{display:none}
+@media (max-width:480px){#studyView .simg-head .simg-head-reset{padding:6px 10px;font-size:.7rem}}
+
+/* Boxes placed over names printed on the picture hide that text completely, in every state */
+#studyView .simg-figure .label-slot.open.covers{background:color-mix(in srgb,#fff 86%,var(--accent-0))}
+#studyView .simg-figure.picking .label-slot.open.covers{background:color-mix(in srgb,#fff 76%,var(--accent-0))}
+#studyView .simg-figure .label-slot.covers.given{background:#fff;color:#1b2233}
+/* Labels mode: names that are not printed on the labelled picture are shown in their boxes */
+#studyView .simg-hot.simg-hot-drawn{background:#fff;border:1.5px solid #334155;color:#111827;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2px;overflow:hidden;border-radius:4px}

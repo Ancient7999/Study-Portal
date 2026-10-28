@@ -1718,7 +1718,7 @@ function submitSaqBlank(k, o){
    A slot locks the moment it is right (drag or typing) and never unlocks. */
 let labelTyping=(function(){ try{ return localStorage.getItem('sp_label_mode_v1')==='type'; }catch(e){ return false; } })();
 let labelSelectedChip=null;
-function labelCands(l){ return [l.answer].concat(Array.isArray(l.accept)?l.accept:[]).filter(x=>x!=null&&String(x).trim()!==''); }
+function labelCands(l){ return [l.answer].concat(Array.isArray(l.accept)?l.accept:[], Array.isArray(l.alias)?l.alias:[]).filter(x=>x!=null&&String(x).trim()!==''); }
 function labelMatches(l, text){ const cs=!!(l&&l.caseSensitive), t=saqKey(text,cs); return !!t && labelCands(l).some(c=>saqKey(c,cs)===t); }
 function labelState(i){
   const a=answers[i];
@@ -1885,6 +1885,8 @@ function labelFitWire(fig, labels){
 /* capitals are not graded, so a typed label is shown in its listed form ("left atrium" → "Left Atrium") */
 function labelCanon(l, typed){
   const t=saqNorm(typed); if(l && l.caseSensitive) return t;
+  /* alias: a bare name ("Kidney") is accepted for a side-specific label and shown in full ("Right Kidney") */
+  if(l && Array.isArray(l.alias) && l.alias.some(a=>saqNorm(a).toLowerCase()===t.toLowerCase())) return l.answer;
   const hit=labelCands(l).map(saqNorm).find(c=>c.toLowerCase()===t.toLowerCase());
   return hit || t;
 }

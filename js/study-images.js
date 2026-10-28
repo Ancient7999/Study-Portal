@@ -21,7 +21,7 @@
   const XP_PER_DROP = 2;
   const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const norm = s => (typeof saqNorm === 'function') ? saqNorm(s) : String(s == null ? '' : s).trim().replace(/\s+/g, ' ');
-  const cands = l => [l.answer].concat(Array.isArray(l.accept) ? l.accept : []).filter(x => x != null && String(x).trim() !== '');
+  const cands = l => [l.answer].concat(Array.isArray(l.accept) ? l.accept : [], Array.isArray(l.alias) ? l.alias : []).filter(x => x != null && String(x).trim() !== '');
   const matches = (l, t) => (typeof labelMatches === 'function') ? labelMatches(l, t) : (!!norm(t) && cands(l).some(c => norm(c) === norm(t)));
   const echoHTML = (l, t) => (typeof labelEchoHTML === 'function') ? labelEchoHTML(l, t) : esc(t);
   /* hint category -> colour family (direction / muscle / bone-structure / division / other) */
@@ -65,13 +65,14 @@
     saveJSON(STORE, all);
   }
   const isSingle = img => img.kind === 'single-structure' || !(img.labels && img.labels.length);
-  /* —— blanks: a picture with more than MIN_BLANKS labels asks a random set of MIN_BLANKS (the others show filled in);
-     ⤮ Shuffle picks a new set and clears the answers. Pictures with fewer labels ask all of them (↺ Reset). —— */
+  /* —— blanks: every label on a picture is asked; ↺ Reset clears the answers. (The old random-subset
+     Shuffle helpers stay below unused.) —— */
   const PICK_STORE = 'sp_study_images_pick_v1', MIN_BLANKS = 7;
   const activeLabels = img => isSingle(img) ? labelsOf(img) : img.labels.filter(l => !l._off);
   const pickKey = (key, img) => setKey() + '|' + key + '|' + ((img.variants && img.variants[varOf[key] | 0]) ? img.variants[varOf[key] | 0].id : '');
   function randomPick(ids, n) { const a = ids.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a.slice(0, n); }
-  const canShuffle = img => !isSingle(img) && activeLabels(img).length > MIN_BLANKS;
+  /* every label is a blank, always (no random subset, no Shuffle); only ↺ Reset */
+  const canShuffle = img => false;
   function blankIds(key, img) {
     const act = activeLabels(img).map(l => l.id);
     if (!canShuffle(img)) return new Set(act);
@@ -220,7 +221,7 @@
     img.labels.forEach(l => {
       const q = v.pos[l.id];
       if (!q) { l._off = true; if (l.x == null) { l.x = 0; l.y = 0; l.w = 17; l.h = 5.6; } return; }
-      l._off = false; l.x = q.x; l.y = q.y; l.w = q.w; l.h = q.h; l.anchor = q.anchor || null;
+      l._off = false; l.x = q.x; l.y = q.y; l.w = q.w; l.h = q.h; l.anchor = q.anchor || null; l.cover = !!(q.cover || l.coverAll);
     });
   }
   function sliderHTML(view, i) {
@@ -286,7 +287,10 @@
       + '<span class="simg-count" title="Solved labels">' + k + ' / ' + (mode === 'show' ? labels.length : n) + '</span>'
       + '<div class="simg-modes" role="group" aria-label="Study mode">'
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
-      + '</div></header>';
+      + '</div>'
+      /* ↺ Reset sits in the header, beside the mode buttons and styled like them */
+      + (mode !== 'show' ? '<button type="button" class="simg-restart simg-reset simg-head-reset" data-act="reset" title="Clear the answers for this picture"><span aria-hidden="true">↺</span> Reset</button>' : '')
+      + '</header>';
     if (stk && img.views.length > 1) h += '<div class="simg-views" role="group" aria-label="View">' + img.views.map((v, vi) => '<button type="button" class="simg-view" data-v="' + vi + '" aria-pressed="' + (vi === stk.st.v ? 'true' : 'false') + '">' + esc(v.name) + '</button>').join('') + '</div>';
     if (vst && img.variants.length > 1) h += '<div class="simg-views simg-vars" role="group" aria-label="Picture">' + img.variants.map((v, vi) => '<button type="button" class="simg-view simg-var" data-var="' + vi + '" aria-pressed="' + (vi === vst.i ? 'true' : 'false') + '">' + esc(v.name || ('Picture ' + (vi + 1))) + '</button>').join('') + '</div>';
     const src = stk ? stk.frame.src : animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
@@ -299,18 +303,15 @@
       labels.forEach(l => {
         const style = 'left:' + l.x + '%;top:' + l.y + '%;width:' + l.w + '%;height:' + l.h + '%' + (l._off ? '" data-off="1' : '');
         const hintHTML = l.hint ? '<span class="simg-slot-hint">' + esc(l.hint) + '</span>' : '';
-        if (mode === 'show') { h += '<div class="simg-hot" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '">' + (stk ? '<span class="simg-hot-text">' + esc(l.answer) + '</span>' : '') + '</div>'; return; }
+        if (mode === 'show') { h += '<div class="simg-hot' + (l.showText ? ' simg-hot-drawn' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '">' + ((stk || l.showText) ? '<span class="simg-hot-text">' + esc(l.answer) + '</span>' : '') + '</div>'; return; }
         const t = slots[l.id];
-        if (t != null && matches(l, t)) h += '<div class="label-slot locked" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
-        else if (!blanks.has(l.id)) h += '<div class="label-slot locked given" data-id="' + esc(l.id) + '" style="' + style + '" title="Shown · not asked in this set"><span class="label-slot-text">' + esc(l.answer) + '</span></div>';
-        else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
-        else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
+        if (t != null && matches(l, t)) h += '<div class="label-slot locked' + (l.cover ? ' covers' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
+        else if (!blanks.has(l.id)) h += '<div class="label-slot locked given' + (l.cover ? ' covers' : '') + '" data-id="' + esc(l.id) + '" style="' + style + '" title="Shown · not asked in this set"><span class="label-slot-text">' + esc(l.answer) + '</span></div>';
+        else if (mode === 'bank') h += '<div class="label-slot open' + (l.cover ? ' covers' : '') + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
+        else h += '<div class="label-slot typing' + (l.cover ? ' covers' : '') + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
     h += '</div></div>' + (slid ? sliderHTML(stk.view, stk.i) : '') + '</div>';
-    if (mode !== 'show') h += canShuffle(img)
-      ? '<button type="button" class="simg-restart simg-shuffle" data-act="shuffle" title="Ask a new random set of ' + MIN_BLANKS + ' labels (clears the answers)">⤮ Shuffle</button>'
-      : '<button type="button" class="simg-restart simg-reset" data-act="reset" title="Clear the answers for this picture">↺ Reset</button>';
     if (single) {
       const l = labels[0], t = slots.name, q = img.plural ? 'What are these bones called?' : 'What is this bone called?';
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
@@ -485,6 +486,48 @@
     /* the drop target's leader line glows with it */
     const litLeader = slot => sec.querySelectorAll('.simg-reg[data-id]').forEach(g => g.classList.toggle('drop-lit', !!slot && g.dataset.id === slot.dataset.id));
     { const bk = sec.querySelector('.simg-bank'); const setBH = () => sec.style.setProperty('--simg-bank-h', (bk ? Math.ceil(bk.getBoundingClientRect().height) + 10 : 0) + 'px'); setBH(); if (bk) requestAnimationFrame(setBH); }
+    /* drop on the object: every labelled structure has an outline in picture percent, so a word can be
+       dropped on the structure itself as well as on its box. Inside an outline wins (a hand-drawn one first,
+       the smallest of those; else the nearest leader-line end among the traced ones); off every outline the
+       nearest leader-line end close to the pointer. Only what is under the pointer lights up. */
+    const hitSrc = () => (img.views ? stackState(key, img).frame.src : (img.blank || '')).replace(/-slow\.svg$/, '.svg');
+    const objRegions = () => {
+      if (single || !fig) return [];
+      const H = HITS[hitSrc()] || {};
+      return labelsOf(img).filter(l => !l._off).map(l => {
+        const h = H[l.id];
+        let polys = h && Array.isArray(h.p) ? h.p : [], exact = !!(h && h.e), area = h ? +h.a || 0 : 0;
+        if (Array.isArray(l.region) && l.region.length) { polys = l.region.map(r => r.reduce((a, q) => a.concat(q), [])); exact = true; area = 0; }
+        let pts = anchorsOf(l).map(a => [a.x, a.y]);
+        if (!pts.length && h && Array.isArray(h.c)) pts = [h.c];  // the end of the leader line drawn in the picture
+        if (!pts.length && polys.length) { const p = polys[0]; let sx = 0, sy = 0; for (let i = 0; i < p.length; i += 2) { sx += p[i]; sy += p[i + 1]; } pts = [[sx / (p.length / 2), sy / (p.length / 2)]]; }
+        if (exact && !area) polys.forEach(p => { let s = 0; for (let i = 0, j = p.length - 2; i < p.length; j = i, i += 2) s += p[j] * p[i + 1] - p[i] * p[j + 1]; area += Math.abs(s) / 2 / 100; });
+        return { l, polys, exact, area, pts };
+      }).filter(r => r.polys.length || r.pts.length);
+    };
+    const objectAt = (cx, cy) => {
+      if (!fig) return null;
+      const F = fig.getBoundingClientRect(); if (!F.width || !F.height) return null;
+      const x = (cx - F.left) / F.width * 100, y = (cy - F.top) / F.height * 100;
+      if (x < 0 || y < 0 || x > 100 || y > 100) return null;
+      const R = objRegions(), asp = F.width / F.height;
+      const dist = r => Math.min.apply(null, r.pts.length ? r.pts.map(p => Math.hypot(p[0] - x, (p[1] - y) / asp)) : [1e9]);
+      const inside = R.filter(r => r.polys.some(p => inPoly(p, x, y)));
+      const ex = inside.filter(r => r.exact);
+      if (ex.length) return ex.sort((a, b) => a.area - b.area)[0];
+      if (inside.length) return inside.sort((a, b) => dist(a) - dist(b))[0];
+      const near = R.filter(r => r.pts.length).sort((a, b) => dist(a) - dist(b))[0];
+      return near && dist(near) <= 4.5 ? near : null;
+    };
+    let glowSvg = null;
+    const objGlow = r => {
+      if (!fig) return;
+      if (!r) { if (glowSvg) glowSvg.classList.remove('on'); return; }
+      if (!glowSvg || !glowSvg.isConnected) { glowSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); glowSvg.setAttribute('class', 'simg-objglow'); glowSvg.setAttribute('viewBox', '0 0 100 100'); glowSvg.setAttribute('preserveAspectRatio', 'none'); glowSvg.setAttribute('aria-hidden', 'true'); fig.appendChild(glowSvg); }
+      glowSvg.innerHTML = r.polys.map(p => '<polygon points="' + p.join(' ') + '"/>').join('');
+      glowSvg.dataset.id = r.l.id; glowSvg.classList.add('on');
+    };
+    const slotOfObj = r => r ? sec.querySelector('.label-slot.open[data-id="' + CSS.escape(r.l.id) + '"]') : null;
     const select = chip => {
       sec.querySelectorAll('.label-chip.selected').forEach(c => c.classList.remove('selected'));
       selChip = chip || null; if (chip) chip.classList.add('selected');
@@ -546,7 +589,7 @@
       chip.addEventListener('pointerdown', e => {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
         try { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); } catch (er) {}
-        const sx = e.clientX, sy = e.clientY; let ghost = null, over = null;
+        const sx = e.clientX, sy = e.clientY; let ghost = null, over = null, viaObj = false;
         const cr = chip.getBoundingClientRect(), off = { x: cr.left + cr.width / 2 - sx, y: cr.top + cr.height / 2 - sy };
         const zoneT = (window.StudyQuiz && typeof StudyQuiz.labelZoneTarget === 'function') ? StudyQuiz.labelZoneTarget : null;
         const move = ev => {
@@ -560,22 +603,26 @@
           if (ev.clientY < 48) window.scrollBy(0, -14); else if (ev.clientY > window.innerHeight - 48) window.scrollBy(0, 14);
           const ptr = { x: ev.clientX, y: ev.clientY }, ctr = { x: ev.clientX + off.x, y: ev.clientY + off.y };
           /* enlarged hit zones with hysteresis (shared with the quiz): nearest slot wins, a locked slot holds until the exit zone */
-          let s = (zoneT && fig) ? zoneT(fig, [ptr, ctr], over) : null;
+          let s = (zoneT && fig) ? zoneT(fig, [ptr, ctr], over) : null, viaReg = null;
           const el = s ? null : document.elementFromPoint(ev.clientX, ev.clientY);
           if (!s && el && el.closest) s = el.closest('.label-slot.open');
           if (!s && el && el.closest) {
             /* released over a structure/region: drop into its linked label box */
             const r = el.closest('.simg-reg[data-id], .simg-hot[data-id]');
-            if (r && sec.contains(r)) s = sec.querySelector('.label-slot[data-id="' + CSS.escape(r.dataset.id) + '"]');
+            if (r && sec.contains(r)) { s = sec.querySelector('.label-slot[data-id="' + CSS.escape(r.dataset.id) + '"]'); if (s) viaReg = r.dataset.id; }
           }
+          let obj = null;
+          if (!s) { obj = objectAt(ev.clientX, ev.clientY); s = slotOfObj(obj); if (!s) obj = null; }
+          else if (viaReg) obj = objRegions().find(o => o.l.id === viaReg && o.polys.length) || null;
           const s2 = (s && sec.contains(s)) ? s : null;
-          if (s2 !== over) { if (over) over.classList.remove('drop-over'); over = s2; if (over) { over.classList.add('drop-over'); try { if (navigator.vibrate) navigator.vibrate(10); } catch (er) {} } ghost.classList.toggle('snapped', !!over); litLeader(over); }
-          if (over) { const r = over.getBoundingClientRect(); ghost.style.left = (r.left + r.width / 2) + 'px'; ghost.style.top = (r.top + r.height / 2) + 'px'; }
+          objGlow(obj); viaObj = !!obj;
+          if (s2 !== over) { if (over) over.classList.remove('drop-over'); over = s2; if (over) { over.classList.add('drop-over'); try { if (navigator.vibrate) navigator.vibrate(10); } catch (er) {} } ghost.classList.toggle('snapped', !!over && !viaObj); litLeader(over); }
+          if (over && !viaObj) { const r = over.getBoundingClientRect(); ghost.style.left = (r.left + r.width / 2) + 'px'; ghost.style.top = (r.top + r.height / 2) + 'px'; }
           else { ghost.style.left = ctr.x + 'px'; ghost.style.top = ctr.y + 'px'; }
         };
         const end = ev => {
           window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', end); window.removeEventListener('pointercancel', end);
-          if (over) over.classList.remove('drop-over'); litLeader(null);
+          if (over) over.classList.remove('drop-over'); litLeader(null); objGlow(null);
           if (!ghost) return; // a tap: the click handler selects the chip
           chip.__suppressClick = true; setTimeout(() => { chip.__suppressClick = false; }, 60);
           chip.classList.remove('dragging');
@@ -596,9 +643,10 @@
       slot.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); go(); } });
     });
     /* tap-to-place: a tap near (not only on) a blank uses the same enlarged zones */
-    if (fig && window.StudyQuiz && typeof StudyQuiz.labelZoneTarget === 'function') fig.addEventListener('click', e => {
+    if (fig) fig.addEventListener('click', e => {
       if (!selChip || (e.target.closest && e.target.closest('.label-slot.open'))) return;
-      const slot = StudyQuiz.labelZoneTarget(fig, [{ x: e.clientX, y: e.clientY }], null);
+      const zt = (window.StudyQuiz && typeof StudyQuiz.labelZoneTarget === 'function') ? StudyQuiz.labelZoneTarget(fig, [{ x: e.clientX, y: e.clientY }], null) : null;
+      const slot = zt || slotOfObj(objectAt(e.clientX, e.clientY));
       if (slot) { const c = selChip; select(null); tryPlace(c, slot, null); }
     });
 
@@ -801,6 +849,9 @@
       const res = await fetch(src, { cache: 'no-store' });
       if (!res.ok) throw new Error(src + ' → ' + res.status);
       DATA = await res.json(); dataSrc = src;
+      /* drop-on-the-object outlines (tools/gen-hit-regions.py): optional, keyed by picture src */
+      HITS = {};
+      try { const hr = await fetch(src.replace(/[^/]*$/, 'hit-regions.json'), { cache: 'no-store' }); if (hr.ok) HITS = await hr.json(); } catch (e) { HITS = {}; }
       DATA.chapters.forEach(c => (c.images || []).forEach(i => { if (!isSingle(i) || !i.answer) return; const tc = t => /\s/.test(String(t).trim()) ? titleCase(t) : t; i.answer = tc(i.answer); const acc = (Array.isArray(i.accept) ? i.accept : []).map(tc); [i.answer].concat(acc.slice()).forEach(t => caseVariants(t).forEach(v => { if (v !== i.answer && !acc.includes(v)) acc.push(v); })); i.accept = acc; }));
     }
     listEl.innerHTML = '';
@@ -829,6 +880,16 @@
       const card = listEl.querySelector('.chapter-card[data-id="' + CSS.escape(opts.focus) + '"]');
       if (card) { card._quiet = true; card.querySelector('.chapter-toggle').click(); card._quiet = false; setTimeout(() => card.scrollIntoView({ block: 'start' }), 30); }
     }
+  }
+  let HITS = {};
+  /* point in polygon (flat [x,y,x,y…] in picture percent) */
+  function inPoly(p, x, y) {
+    let c = false;
+    for (let i = 0, j = p.length - 2; i < p.length; j = i, i += 2) {
+      const xi = p[i], yi = p[i + 1], xj = p[j], yj = p[j + 1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+    }
+    return c;
   }
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }
   window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA, _matchName: (img, t) => matches(labelsOf(img)[0], t) };

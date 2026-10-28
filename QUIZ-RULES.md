@@ -354,6 +354,18 @@ A material can have a picture study instead of Markdown notes:
   bounces back with "not that one · try again"; a right one locks for good with the PT1
   celebration and the chip leaves the bank. Duplicate answers (e.g. two "Molars") get one
   chip each. A picture can limit its modes with `modes` (Blood Cells: `["bank","show"]`).
+- **Every label is a blank.** Names printed in a picture are covered by a box (`cover: true`) and
+  their words are in the bank in Title Case. There is no limit on blanks and no shuffle; the
+  **↺ Reset** button in the picture header (beside the mode buttons) clears the picture and starts
+  it again. It hides while the bar to the next picture runs.
+- **Drop on the object:** a chip can also be dropped on the structure itself. Each picture has hit
+  regions (`hit-regions.json` beside the study file, made by `tools/gen-hit-regions.py`; hand-drawn
+  shapes in `hit-overrides.json` win). While dragging, only the structure under the pointer glows in
+  the accent colour and its box lights up; dropping there counts like dropping on the box. Where
+  regions overlap, the nearest leader-line end decides.
+- **Side-specific names:** paired labels carry their side ("Right Kidney" is on the viewer's left).
+  `alias` lists bare names ("Kidney") that are accepted when typed and rewritten to the full name;
+  the other side's name is wrong.
 - **Type**: the same blank picture with a typing slot at every hotspot. Typing uses the
   quiz engine's labeling logic (section 14): exact capitals and spelling, `accept`
   alternatives, spaces trimmed/collapsed, the live highlighter marking wrong letters or

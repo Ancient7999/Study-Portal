@@ -10633,6 +10633,16 @@
        "w": 10.58,
        "h": 3.42,
        "hint": "direction term"
+      },
+      {
+       "id": "synovial-joint-flexion",
+       "answer": "Flexion",
+       "accept": [],
+       "cover": true,
+       "x": 58.55,
+       "y": 86.76,
+       "w": 9.73,
+       "h": 6.1
       }
      ],
      "extra": true
@@ -10905,6 +10915,32 @@
        "accept": [
         "Wormian Bone"
        ]
+      },
+      {
+       "id": "skeleton-vertebrae",
+       "answer": "Vertebrae",
+       "accept": [
+        "Vertebra",
+        "Vertebral Column"
+       ],
+       "cover": true
+      },
+      {
+       "id": "skeleton-mandible",
+       "answer": "Mandible",
+       "accept": [
+        "Jaw",
+        "Lower Jaw"
+       ],
+       "cover": true
+      },
+      {
+       "id": "skeleton-facial-portion",
+       "answer": "Facial Portion",
+       "accept": [
+        "Facial Bones"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -11201,6 +11237,20 @@
            "y": 44.16
           }
          }
+        },
+        "skeleton-vertebrae": {
+         "x": 4.05,
+         "y": 11.78,
+         "w": 16.73,
+         "h": 2.49,
+         "cover": true
+        },
+        "skeleton-mandible": {
+         "x": 58.55,
+         "y": 12.21,
+         "w": 11.98,
+         "h": 2.49,
+         "cover": true
         }
        }
       },
@@ -11567,6 +11617,13 @@
          "y": 56.81,
          "w": 14.0,
          "h": 3.5
+        },
+        "skeleton-facial-portion": {
+         "x": 43.38,
+         "y": 6.12,
+         "w": 12.48,
+         "h": 3.08,
+         "cover": true
         }
        }
       },
@@ -12370,6 +12427,33 @@
         "Transverse Horizontal",
         "Horizantal"
        ]
+      },
+      {
+       "id": "body-planes-sections-craniocaudal-axis",
+       "answer": "Craniocaudal Axis",
+       "accept": [
+        "Longitudinal Axis",
+        "Superior-Inferior Axis"
+       ],
+       "cover": true
+      },
+      {
+       "id": "body-planes-sections-anteroposterior-axis",
+       "answer": "Anteroposterior Axis",
+       "accept": [
+        "Dorsoventral Axis",
+        "Anteroposterior (Dorsoventral) Axis"
+       ],
+       "cover": true
+      },
+      {
+       "id": "body-planes-sections-left-right-axis",
+       "answer": "Left-Right Axis",
+       "accept": [
+        "Left Right Axis",
+        "Transverse Axis"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -12446,6 +12530,27 @@
            "y": 50.45
           }
          }
+        },
+        "body-planes-sections-craniocaudal-axis": {
+         "x": 44.63,
+         "y": 2.1,
+         "w": 21.23,
+         "h": 3.81,
+         "cover": true
+        },
+        "body-planes-sections-anteroposterior-axis": {
+         "x": 68.13,
+         "y": 55.26,
+         "w": 19.15,
+         "h": 13.99,
+         "cover": true
+        },
+        "body-planes-sections-left-right-axis": {
+         "x": 0.97,
+         "y": 57.33,
+         "w": 18.73,
+         "h": 10.11,
+         "cover": true
         }
        }
       }
@@ -13399,8 +13504,10 @@
       },
       {
        "id": "heart-q2-pulmonary-veins-2",
-       "answer": "Pulmonary Veins",
-       "accept": [
+       "answer": "Left Pulmonary Veins",
+       "accept": [],
+       "alias": [
+        "Pulmonary Veins",
         "Pulmonary Vein"
        ]
       },
@@ -13516,6 +13623,47 @@
        "id": "heart-q2-conus-arteriosus",
        "answer": "Conus Arteriosus",
        "accept": []
+      },
+      {
+       "id": "heart-q2-left-pulmonary-artery",
+       "answer": "Left Pulmonary Artery",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-q2-right-pulmonary-artery",
+       "answer": "Right Pulmonary Artery",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-q2-fossa-ovalis",
+       "answer": "Fossa Ovalis",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-q2-moderator-band",
+       "answer": "Moderator Band",
+       "accept": [
+        "Septomarginal Trabecula"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-q2-ascending-aorta",
+       "answer": "Ascending Aorta",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-q2-right-pulmonary-veins",
+       "answer": "Right Pulmonary Veins",
+       "accept": [],
+       "alias": [
+        "Pulmonary Veins",
+        "Pulmonary Vein"
+       ]
       }
      ],
      "variants": [
@@ -13580,20 +13728,6 @@
           "from": {
            "x": 18.33,
            "y": 26.07
-          }
-         }
-        },
-        "heart-q2-pulmonary-veins": {
-         "x": 0.0,
-         "y": 29.88,
-         "w": 17.83,
-         "h": 7.62,
-         "anchor": {
-          "x": 27.5,
-          "y": 32.61,
-          "from": {
-           "x": 17.58,
-           "y": 31.79
           }
          }
         },
@@ -13742,6 +13876,48 @@
           "from": {
            "x": 20.92,
            "y": 69.17
+          }
+         }
+        },
+        "heart-q2-left-pulmonary-artery": {
+         "x": 75.13,
+         "y": 10.95,
+         "w": 23.48,
+         "h": 4.77,
+         "cover": true
+        },
+        "heart-q2-right-pulmonary-artery": {
+         "x": 0,
+         "y": 16.66,
+         "w": 24.4,
+         "h": 4.89,
+         "cover": true
+        },
+        "heart-q2-fossa-ovalis": {
+         "x": 0,
+         "y": 45.35,
+         "w": 14.32,
+         "h": 4.65,
+         "cover": true
+        },
+        "heart-q2-moderator-band": {
+         "x": 0,
+         "y": 74.04,
+         "w": 17.98,
+         "h": 3.94,
+         "cover": true
+        },
+        "heart-q2-right-pulmonary-veins": {
+         "x": 0.0,
+         "y": 29.88,
+         "w": 17.83,
+         "h": 7.62,
+         "anchor": {
+          "x": 27.5,
+          "y": 32.61,
+          "from": {
+           "x": 17.58,
+           "y": 31.79
           }
          }
         }
@@ -14014,6 +14190,20 @@
            "y": 39.58
           }
          }
+        },
+        "heart-q2-left-pulmonary-artery": {
+         "x": 78.63,
+         "y": 17.15,
+         "w": 19.82,
+         "h": 7.7,
+         "cover": true
+        },
+        "heart-q2-ascending-aorta": {
+         "x": 2.63,
+         "y": 19.48,
+         "w": 20.98,
+         "h": 3.62,
+         "cover": true
         }
        }
       },
@@ -14748,6 +14938,22 @@
        "accept": [
         "Pericardium"
        ]
+      },
+      {
+       "id": "heart-wall-atria",
+       "answer": "Atria",
+       "accept": [
+        "Atrium"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-wall-ventricles",
+       "answer": "Ventricles",
+       "accept": [
+        "Ventricle"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -14976,6 +15182,20 @@
          "y": 93.25,
          "w": 35.5,
          "h": 4.83
+        },
+        "heart-wall-atria": {
+         "x": 2.05,
+         "y": 14.57,
+         "w": 10.07,
+         "h": 4.95,
+         "cover": true
+        },
+        "heart-wall-ventricles": {
+         "x": 0.72,
+         "y": 68.32,
+         "w": 18.73,
+         "h": 4.7,
+         "cover": true
         }
        }
       }
@@ -15075,6 +15295,38 @@
        "accept": [
         "Left Posterior Bundle"
        ]
+      },
+      {
+       "id": "heart-conduction-pathway-arch-of-aorta",
+       "answer": "Arch of Aorta",
+       "accept": [
+        "Aortic Arch"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-conduction-pathway-left-atrium",
+       "answer": "Left Atrium",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-conduction-pathway-left-ventricle",
+       "answer": "Left Ventricle",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-conduction-pathway-right-atrium",
+       "answer": "Right Atrium",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-conduction-pathway-right-ventricle",
+       "answer": "Right Ventricle",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -15197,6 +15449,41 @@
            "y": 62.81
           }
          }
+        },
+        "heart-conduction-pathway-arch-of-aorta": {
+         "x": 80.05,
+         "y": 19.3,
+         "w": 12.57,
+         "h": 4.06,
+         "cover": true
+        },
+        "heart-conduction-pathway-left-atrium": {
+         "x": 79.05,
+         "y": 42.81,
+         "w": 11.73,
+         "h": 4.06,
+         "cover": true
+        },
+        "heart-conduction-pathway-left-ventricle": {
+         "x": 79.22,
+         "y": 67.31,
+         "w": 13.23,
+         "h": 4.06,
+         "cover": true
+        },
+        "heart-conduction-pathway-right-atrium": {
+         "x": 5.38,
+         "y": 67.56,
+         "w": 11.73,
+         "h": 4.19,
+         "cover": true
+        },
+        "heart-conduction-pathway-right-ventricle": {
+         "x": 5.38,
+         "y": 72.53,
+         "w": 13.57,
+         "h": 4.06,
+         "cover": true
         }
        }
       },
@@ -15420,6 +15707,70 @@
        "id": "heart-in-thorax-parietal-pleura",
        "answer": "Parietal Pleura",
        "accept": []
+      },
+      {
+       "id": "heart-in-thorax-aortic-arch",
+       "answer": "Aortic Arch",
+       "accept": [
+        "Arch of Aorta"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-inferior-vena-cava",
+       "answer": "Inferior Vena Cava",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-arch-of-aorta",
+       "answer": "Arch of Aorta",
+       "accept": [
+        "Aortic Arch"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-superior-vena-cava",
+       "answer": "Superior Vena Cava",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-pulmonary-trunk",
+       "answer": "Pulmonary Trunk",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-left-auricle",
+       "answer": "Left Auricle",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-right-auricle",
+       "answer": "Right Auricle",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-right-atrium",
+       "answer": "Right Atrium",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-right-ventricle",
+       "answer": "Right Ventricle",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "heart-in-thorax-left-ventricle",
+       "answer": "Left Ventricle",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -15620,6 +15971,76 @@
            "y": 94.67
           }
          }
+        },
+        "heart-in-thorax-aortic-arch": {
+         "x": 92.47,
+         "y": 12.64,
+         "w": 6.15,
+         "h": 5.33,
+         "cover": true
+        },
+        "heart-in-thorax-inferior-vena-cava": {
+         "x": 61.47,
+         "y": 30.19,
+         "w": 15.57,
+         "h": 3.13,
+         "cover": true
+        },
+        "heart-in-thorax-arch-of-aorta": {
+         "x": 66.72,
+         "y": 49.86,
+         "w": 11.82,
+         "h": 3.5,
+         "cover": true
+        },
+        "heart-in-thorax-superior-vena-cava": {
+         "x": 0,
+         "y": 51.51,
+         "w": 16.4,
+         "h": 3.04,
+         "cover": true
+        },
+        "heart-in-thorax-pulmonary-trunk": {
+         "x": 66.8,
+         "y": 55.65,
+         "w": 14.32,
+         "h": 3.5,
+         "cover": true
+        },
+        "heart-in-thorax-left-auricle": {
+         "x": 66.3,
+         "y": 60.71,
+         "w": 10.73,
+         "h": 3.04,
+         "cover": true
+        },
+        "heart-in-thorax-right-auricle": {
+         "x": 0,
+         "y": 60.89,
+         "w": 10.98,
+         "h": 3.41,
+         "cover": true
+        },
+        "heart-in-thorax-right-atrium": {
+         "x": 0,
+         "y": 65.67,
+         "w": 10.73,
+         "h": 3.31,
+         "cover": true
+        },
+        "heart-in-thorax-right-ventricle": {
+         "x": 0,
+         "y": 70.45,
+         "w": 12.4,
+         "h": 3.31,
+         "cover": true
+        },
+        "heart-in-thorax-left-ventricle": {
+         "x": 66.63,
+         "y": 70.91,
+         "w": 11.73,
+         "h": 3.04,
+         "cover": true
         }
        }
       },
@@ -16419,7 +16840,8 @@
        "accept": [
         "Left Anterior Descending Artery",
         "LAD"
-       ]
+       ],
+       "cover": true
       },
       {
        "id": "heart-external-great-cardiac-vein-2",
@@ -16435,6 +16857,30 @@
        "id": "heart-external-small-cardiac-vein-2",
        "answer": "Small Cardiac Vein",
        "accept": []
+      },
+      {
+       "id": "heart-external-fat-and-vessels-in-coronary-sulcus",
+       "answer": "Fat and Vessels in Coronary Sulcus",
+       "accept": [
+        "Coronary Sulcus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-external-fat-and-vessels-in-anterior-interventricular-sulcus",
+       "answer": "Fat and Vessels in Anterior Interventricular Sulcus",
+       "accept": [
+        "Anterior Interventricular Sulcus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "heart-external-fat-and-vessels-in-posterior-interventricular-sulcus",
+       "answer": "Fat and Vessels in Posterior Interventricular Sulcus",
+       "accept": [
+        "Posterior Interventricular Sulcus"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -16581,6 +17027,20 @@
            "y": 83.23
           }
          }
+        },
+        "heart-external-fat-and-vessels-in-coronary-sulcus": {
+         "x": 1.63,
+         "y": 55.04,
+         "w": 20.73,
+         "h": 11.37,
+         "cover": true
+        },
+        "heart-external-fat-and-vessels-in-anterior-interventricular-sulcus": {
+         "x": 79.3,
+         "y": 56.96,
+         "w": 20.57,
+         "h": 14.68,
+         "cover": true
         }
        }
       },
@@ -16719,6 +17179,20 @@
            "y": 61.23
           }
          }
+        },
+        "heart-external-fat-and-vessels-in-coronary-sulcus": {
+         "x": 0.97,
+         "y": 47.98,
+         "w": 20.82,
+         "h": 11.29,
+         "cover": true
+        },
+        "heart-external-fat-and-vessels-in-posterior-interventricular-sulcus": {
+         "x": 76.38,
+         "y": 66.59,
+         "w": 20.98,
+         "h": 14.94,
+         "cover": true
         }
        }
       },
@@ -16907,6 +17381,13 @@
            "y": 61.59
           }
          }
+        },
+        "heart-external-anterior-interventricular-artery": {
+         "x": 78.8,
+         "y": 63.65,
+         "w": 19.65,
+         "h": 11.66,
+         "cover": true
         }
        }
       },
@@ -21185,23 +21666,97 @@
       },
       {
        "id": "respiratory-system-lungs",
-       "answer": "Lungs",
-       "accept": [
-        "Lung"
+       "answer": "Right Lung",
+       "accept": [],
+       "alias": [
+        "Lung",
+        "Lungs"
        ]
       },
       {
        "id": "respiratory-system-lungs-2",
-       "answer": "Lungs",
-       "accept": [
-        "Lung"
+       "answer": "Left Lung",
+       "accept": [],
+       "alias": [
+        "Lung",
+        "Lungs"
        ]
       },
       {
        "id": "respiratory-system-bronchi-2",
-       "answer": "Bronchi",
+       "answer": "Left Bronchus",
+       "accept": [],
+       "alias": [
+        "Bronchus",
+        "Bronchi"
+       ]
+      },
+      {
+       "id": "respiratory-system-frontal-sinus",
+       "answer": "Frontal Sinus",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-sphenoidal-sinus",
+       "answer": "Sphenoidal Sinus",
        "accept": [
-        "Bronchus"
+        "Sphenoid Sinus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-nasal-conchae",
+       "answer": "Nasal Conchae",
+       "accept": [
+        "Nasal Concha",
+        "Turbinates"
+       ],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-nose",
+       "answer": "Nose",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-alveoli",
+       "answer": "Alveoli",
+       "accept": [
+        "Alveolus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-diaphragm",
+       "answer": "Diaphragm",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-nostril",
+       "answer": "Nostril",
+       "accept": [
+        "Nostrils"
+       ],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-oral-cavity",
+       "answer": "Oral Cavity",
+       "accept": [
+        "Mouth"
+       ],
+       "cover": true
+      },
+      {
+       "id": "respiratory-system-right-bronchus",
+       "answer": "Right Bronchus",
+       "accept": [],
+       "alias": [
+        "Bronchus",
+        "Bronchi"
        ]
       }
      ],
@@ -21335,6 +21890,48 @@
            "y": 71.77
           }
          }
+        },
+        "respiratory-system-frontal-sinus": {
+         "x": 78.3,
+         "y": 3.36,
+         "w": 18.48,
+         "h": 4.53,
+         "cover": true
+        },
+        "respiratory-system-sphenoidal-sinus": {
+         "x": 3.38,
+         "y": 7.52,
+         "w": 23.15,
+         "h": 4.32,
+         "cover": true
+        },
+        "respiratory-system-nasal-conchae": {
+         "x": 76.22,
+         "y": 12.21,
+         "w": 20.65,
+         "h": 4.53,
+         "cover": true
+        },
+        "respiratory-system-nose": {
+         "x": 88.22,
+         "y": 20.23,
+         "w": 8.98,
+         "h": 5.47,
+         "cover": true
+        },
+        "respiratory-system-alveoli": {
+         "x": 3.13,
+         "y": 47.11,
+         "w": 10.57,
+         "h": 4.74,
+         "cover": true
+        },
+        "respiratory-system-diaphragm": {
+         "x": 2.97,
+         "y": 71.38,
+         "w": 16.15,
+         "h": 5.26,
+         "cover": true
         }
        }
       },
@@ -21374,12 +21971,6 @@
          "w": 14.0,
          "h": 3.96
         },
-        "respiratory-system-bronchi": {
-         "x": 0.0,
-         "y": 59.17,
-         "w": 14.0,
-         "h": 6.44
-        },
         "respiratory-system-bronchi-2": {
          "x": 86.0,
          "y": 59.17,
@@ -21397,6 +21988,33 @@
          "y": 73.44,
          "w": 14.0,
          "h": 3.96
+        },
+        "respiratory-system-nostril": {
+         "x": 0.22,
+         "y": 22.69,
+         "w": 7.98,
+         "h": 3.78,
+         "cover": true
+        },
+        "respiratory-system-oral-cavity": {
+         "x": 0.3,
+         "y": 26.36,
+         "w": 12.15,
+         "h": 4.17,
+         "cover": true
+        },
+        "respiratory-system-diaphragm": {
+         "x": 87.88,
+         "y": 85.82,
+         "w": 12.12,
+         "h": 4.37,
+         "cover": true
+        },
+        "respiratory-system-right-bronchus": {
+         "x": 0.0,
+         "y": 59.17,
+         "w": 14.0,
+         "h": 6.44
         }
        }
       }
@@ -21444,6 +22062,127 @@
        "accept": [
         "Alveolus"
        ]
+      },
+      {
+       "id": "bronchioles-alveoli-larynx",
+       "answer": "Larynx",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-pulmonary-vein",
+       "answer": "Pulmonary Vein",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-pulmonary-artery",
+       "answer": "Pulmonary Artery",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-primary-bronchi",
+       "answer": "Primary Bronchi",
+       "accept": [
+        "Primary Bronchus",
+        "Main Bronchi"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-trachea",
+       "answer": "Trachea",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-secondary-bronchi",
+       "answer": "Secondary Bronchi",
+       "accept": [
+        "Secondary Bronchus",
+        "Lobar Bronchi"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-tertiary-bronchi",
+       "answer": "Tertiary Bronchi",
+       "accept": [
+        "Tertiary Bronchus",
+        "Segmental Bronchi"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-alveolar-duct",
+       "answer": "Alveolar Duct",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-cardiac-notch",
+       "answer": "Cardiac Notch",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-blood-vessels",
+       "answer": "Blood Vessels",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-alveolar-pores",
+       "answer": "Alveolar Pores",
+       "accept": [
+        "Alveolar Pore"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-capillary",
+       "answer": "Capillary",
+       "accept": [
+        "Capillaries"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-respiratory-membrane",
+       "answer": "Respiratory Membrane",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-type-i-alveolar-cell",
+       "answer": "Type I Alveolar Cell",
+       "accept": [
+        "Type 1 Alveolar Cell"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-macrophage",
+       "answer": "Macrophage",
+       "accept": [
+        "Alveolar Macrophage"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-type-ii-alveolar-cell",
+       "answer": "Type II Alveolar Cell",
+       "accept": [
+        "Type 2 Alveolar Cell"
+       ],
+       "cover": true
+      },
+      {
+       "id": "bronchioles-alveoli-alveolar-sac",
+       "answer": "Alveolar Sac",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -21486,6 +22225,69 @@
            "y": 79.66
           }
          }
+        },
+        "bronchioles-alveoli-larynx": {
+         "x": 22.63,
+         "y": 8.85,
+         "w": 10.23,
+         "h": 6.06,
+         "cover": true
+        },
+        "bronchioles-alveoli-pulmonary-vein": {
+         "x": 78.72,
+         "y": 4.65,
+         "w": 18.9,
+         "h": 5.79,
+         "cover": true
+        },
+        "bronchioles-alveoli-pulmonary-artery": {
+         "x": 48.55,
+         "y": 19.87,
+         "w": 20.57,
+         "h": 5.79,
+         "cover": true
+        },
+        "bronchioles-alveoli-primary-bronchi": {
+         "x": 13.05,
+         "y": 27.22,
+         "w": 19.07,
+         "h": 5.92,
+         "cover": true
+        },
+        "bronchioles-alveoli-trachea": {
+         "x": 51.22,
+         "y": 30.9,
+         "w": 11.98,
+         "h": 5.66,
+         "cover": true
+        },
+        "bronchioles-alveoli-secondary-bronchi": {
+         "x": 1.38,
+         "y": 41.26,
+         "w": 22.48,
+         "h": 5.92,
+         "cover": true
+        },
+        "bronchioles-alveoli-tertiary-bronchi": {
+         "x": 1.38,
+         "y": 53.6,
+         "w": 18.73,
+         "h": 5.53,
+         "cover": true
+        },
+        "bronchioles-alveoli-alveolar-duct": {
+         "x": 67.88,
+         "y": 79.58,
+         "w": 16.15,
+         "h": 4.74,
+         "cover": true
+        },
+        "bronchioles-alveoli-cardiac-notch": {
+         "x": 1.88,
+         "y": 87.46,
+         "w": 18.4,
+         "h": 5.4,
+         "cover": true
         }
        }
       },
@@ -21548,6 +22350,69 @@
            "y": 77.12
           }
          }
+        },
+        "bronchioles-alveoli-alveolar-duct": {
+         "x": 53.63,
+         "y": 33.72,
+         "w": 12.82,
+         "h": 4.45,
+         "cover": true
+        },
+        "bronchioles-alveoli-blood-vessels": {
+         "x": 67.05,
+         "y": 33.72,
+         "w": 13.48,
+         "h": 4.45,
+         "cover": true
+        },
+        "bronchioles-alveoli-alveolar-pores": {
+         "x": 25.22,
+         "y": 52.37,
+         "w": 13.98,
+         "h": 4.87,
+         "cover": true
+        },
+        "bronchioles-alveoli-capillary": {
+         "x": 24.63,
+         "y": 59.43,
+         "w": 9.73,
+         "h": 5.44,
+         "cover": true
+        },
+        "bronchioles-alveoli-respiratory-membrane": {
+         "x": 24.38,
+         "y": 63.95,
+         "w": 21.98,
+         "h": 5.01,
+         "cover": true
+        },
+        "bronchioles-alveoli-type-i-alveolar-cell": {
+         "x": 24.72,
+         "y": 69.32,
+         "w": 18.23,
+         "h": 5.15,
+         "cover": true
+        },
+        "bronchioles-alveoli-macrophage": {
+         "x": 25.05,
+         "y": 75.25,
+         "w": 12.32,
+         "h": 4.87,
+         "cover": true
+        },
+        "bronchioles-alveoli-type-ii-alveolar-cell": {
+         "x": 3.8,
+         "y": 90.5,
+         "w": 17.98,
+         "h": 4.73,
+         "cover": true
+        },
+        "bronchioles-alveoli-alveolar-sac": {
+         "x": 87.38,
+         "y": 90.5,
+         "w": 12.07,
+         "h": 4.73,
+         "cover": true
         }
        }
       }
@@ -21571,7 +22436,8 @@
       {
        "id": "pharynx-trachea-esophagus-nasopharynx",
        "answer": "Nasopharynx",
-       "accept": []
+       "accept": [],
+       "cover": true
       },
       {
        "id": "pharynx-trachea-esophagus-oropharynx",
@@ -21616,12 +22482,165 @@
       {
        "id": "pharynx-trachea-esophagus-tongue",
        "answer": "Tongue",
-       "accept": []
+       "accept": [],
+       "cover": true
       },
       {
        "id": "pharynx-trachea-esophagus-pharynx",
        "answer": "Pharynx",
        "accept": []
+      },
+      {
+       "id": "pharynx-trachea-esophagus-sphenoidal-sinus",
+       "answer": "Sphenoidal Sinus",
+       "accept": [
+        "Sphenoid Sinus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-frontal-sinus",
+       "answer": "Frontal Sinus",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-ethmoid-bone",
+       "answer": "Ethmoid Bone",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-olfactory-epithelium",
+       "answer": "Olfactory Epithelium",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-nasal-meatuses",
+       "answer": "Nasal Meatuses",
+       "accept": [
+        "Nasal Meatus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-pharyngeal-tonsil",
+       "answer": "Pharyngeal Tonsil",
+       "accept": [
+        "Adenoid",
+        "Adenoids"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-opening-of-auditory-tube",
+       "answer": "Opening of Auditory Tube",
+       "accept": [
+        "Auditory Tube Opening"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-nasal-conchae",
+       "answer": "Nasal Conchae",
+       "accept": [
+        "Nasal Concha"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-nasal-vestibule",
+       "answer": "Nasal Vestibule",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-nostril",
+       "answer": "Nostril",
+       "accept": [
+        "Nostrils"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-soft-palate",
+       "answer": "Soft Palate",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-lingual-tonsil",
+       "answer": "Lingual Tonsil",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-epiglottis",
+       "answer": "Epiglottis",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-hyoid-bone",
+       "answer": "Hyoid Bone",
+       "accept": [
+        "Hyoid"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-uvula",
+       "answer": "Uvula",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-palatine-tonsil",
+       "answer": "Palatine Tonsil",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-fauces",
+       "answer": "Fauces",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-vestibular-fold",
+       "answer": "Vestibular Fold",
+       "accept": [
+        "False Vocal Cord"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-vocal-fold",
+       "answer": "Vocal Fold",
+       "accept": [
+        "Vocal Cord",
+        "True Vocal Cord"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-thyroid-cartilage",
+       "answer": "Thyroid Cartilage",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-cricoid-cartilage",
+       "answer": "Cricoid Cartilage",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pharynx-trachea-esophagus-thyroid-gland",
+       "answer": "Thyroid Gland",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -21688,6 +22707,167 @@
            "y": 35.73
           }
          }
+        },
+        "pharynx-trachea-esophagus-sphenoidal-sinus": {
+         "x": 0.47,
+         "y": 2.79,
+         "w": 18.07,
+         "h": 3.89,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-frontal-sinus": {
+         "x": 78.55,
+         "y": 4.89,
+         "w": 14.32,
+         "h": 3.6,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-ethmoid-bone": {
+         "x": 78.72,
+         "y": 8.58,
+         "w": 15.15,
+         "h": 3.79,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-olfactory-epithelium": {
+         "x": 78.72,
+         "y": 12.37,
+         "w": 20.82,
+         "h": 4.19,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-nasal-meatuses": {
+         "x": 0.38,
+         "y": 12.37,
+         "w": 18.16,
+         "h": 10.38,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-pharyngeal-tonsil": {
+         "x": 0.22,
+         "y": 23.35,
+         "w": 18.48,
+         "h": 4.49,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-opening-of-auditory-tube": {
+         "x": 4.3,
+         "y": 28.14,
+         "w": 14.15,
+         "h": 7.29,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-nasal-conchae": {
+         "x": 78.8,
+         "y": 18.56,
+         "w": 16.07,
+         "h": 3.79,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-nasal-vestibule": {
+         "x": 78.72,
+         "y": 24.65,
+         "w": 16.48,
+         "h": 3.79,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-nostril": {
+         "x": 78.63,
+         "y": 29.54,
+         "w": 8.23,
+         "h": 3.89,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-soft-palate": {
+         "x": 78.72,
+         "y": 38.82,
+         "w": 12.23,
+         "h": 3.89,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-tongue": {
+         "x": 77.72,
+         "y": 42.61,
+         "w": 10.07,
+         "h": 4.79,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-lingual-tonsil": {
+         "x": 77.55,
+         "y": 47.1,
+         "w": 15.82,
+         "h": 4.29,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-epiglottis": {
+         "x": 77.8,
+         "y": 52.19,
+         "w": 11.57,
+         "h": 4.29,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-hyoid-bone": {
+         "x": 78.72,
+         "y": 58.98,
+         "w": 12.82,
+         "h": 3.89,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-uvula": {
+         "x": 11.22,
+         "y": 40.42,
+         "w": 7.48,
+         "h": 3.99,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-palatine-tonsil": {
+         "x": 3.38,
+         "y": 45.31,
+         "w": 15.23,
+         "h": 3.79,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-fauces": {
+         "x": 9.55,
+         "y": 50.3,
+         "w": 9.07,
+         "h": 4.19,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-vestibular-fold": {
+         "x": 3.22,
+         "y": 66.67,
+         "w": 15.32,
+         "h": 3.5,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-vocal-fold": {
+         "x": 7.38,
+         "y": 70.86,
+         "w": 11.23,
+         "h": 3.89,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-thyroid-cartilage": {
+         "x": 77.97,
+         "y": 66.77,
+         "w": 18.57,
+         "h": 4.39,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-cricoid-cartilage": {
+         "x": 78.63,
+         "y": 73.65,
+         "w": 17.32,
+         "h": 4.29,
+         "cover": true
+        },
+        "pharynx-trachea-esophagus-thyroid-gland": {
+         "x": 77.88,
+         "y": 84.33,
+         "w": 15.73,
+         "h": 3.99,
+         "cover": true
         }
        }
       },
@@ -21800,6 +22980,13 @@
          "y": 66.54,
          "w": 31.08,
          "h": 8.09
+        },
+        "pharynx-trachea-esophagus-nasopharynx": {
+         "x": 61.72,
+         "y": 38.98,
+         "w": 26.07,
+         "h": 8.06,
+         "cover": true
         }
        }
       }
@@ -24572,6 +25759,16 @@
          "y": 91.04
         }
        }
+      },
+      {
+       "id": "meninges-meninges",
+       "answer": "Meninges",
+       "accept": [],
+       "cover": true,
+       "x": 69.39,
+       "y": 30.82,
+       "w": 20.88,
+       "h": 7.88
       }
      ]
     },
@@ -25065,6 +26262,12 @@
        "id": "cerebrum-right-hemisphere",
        "answer": "Right Hemisphere",
        "accept": []
+      },
+      {
+       "id": "cerebrum-olfactory-bulb",
+       "answer": "Olfactory Bulb",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -25253,6 +26456,13 @@
          "y": 53.75,
          "w": 19.67,
          "h": 5.56
+        },
+        "cerebrum-olfactory-bulb": {
+         "x": 2.3,
+         "y": 61.62,
+         "w": 13.82,
+         "h": 9.82,
+         "cover": true
         }
        }
       }
@@ -25307,6 +26517,162 @@
        "id": "oral-cavity-tongue",
        "answer": "Tongue",
        "accept": []
+      },
+      {
+       "id": "oral-cavity-vestibule-of-mouth",
+       "answer": "Vestibule of Mouth",
+       "accept": [
+        "Oral Vestibule",
+        "Vestibule"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-gingiva",
+       "answer": "Gingiva",
+       "accept": [
+        "Gingivae",
+        "Gums",
+        "Gum"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-superior-lip",
+       "answer": "Superior Lip",
+       "accept": [
+        "Upper Lip"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-superior-labial-frenulum",
+       "answer": "Superior Labial Frenulum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-upper-gingivae",
+       "answer": "Upper Gingivae",
+       "accept": [
+        "Upper Gums"
+       ],
+       "cover": true,
+       "alias": [
+        "Gingivae",
+        "Gingiva",
+        "Gums",
+        "Gingivae (Gums)"
+       ]
+      },
+      {
+       "id": "oral-cavity-palatoglossal-arch",
+       "answer": "Palatoglossal Arch",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-fauces",
+       "answer": "Fauces",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-palatopharyngeal-arch",
+       "answer": "Palatopharyngeal Arch",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-cheek",
+       "answer": "Cheek",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-molars",
+       "answer": "Molars",
+       "accept": [
+        "Molar"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-lingual-frenulum",
+       "answer": "Lingual Frenulum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-opening-of-submandibular-gland-duct",
+       "answer": "Opening of Submandibular Gland Duct",
+       "accept": [
+        "Opening Duct of Submandibular Gland",
+        "Submandibular Duct Opening"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-premolars",
+       "answer": "Premolars",
+       "accept": [
+        "Premolar"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-cuspid",
+       "answer": "Cuspid",
+       "accept": [
+        "Canine",
+        "Cuspid (Canine)"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-lower-gingivae",
+       "answer": "Lower Gingivae",
+       "accept": [
+        "Lower Gums"
+       ],
+       "cover": true,
+       "alias": [
+        "Gingivae",
+        "Gingiva",
+        "Gums",
+        "Gingivae (Gums)"
+       ]
+      },
+      {
+       "id": "oral-cavity-incisors",
+       "answer": "Incisors",
+       "accept": [
+        "Incisor"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-inferior-labial-frenulum",
+       "answer": "Inferior Labial Frenulum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-oral-vestibule",
+       "answer": "Oral Vestibule",
+       "accept": [
+        "Vestibule of Mouth",
+        "Vestibule"
+       ],
+       "cover": true
+      },
+      {
+       "id": "oral-cavity-inferior-lip",
+       "answer": "Inferior Lip",
+       "accept": [
+        "Lower Lip"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -25391,6 +26757,20 @@
            "y": 62.89
           }
          }
+        },
+        "oral-cavity-vestibule-of-mouth": {
+         "x": 3.05,
+         "y": 66.51,
+         "w": 21.23,
+         "h": 12.65,
+         "cover": true
+        },
+        "oral-cavity-gingiva": {
+         "x": 69.05,
+         "y": 74.73,
+         "w": 18.82,
+         "h": 7.31,
+         "cover": true
         }
        }
       },
@@ -25451,6 +26831,125 @@
            "y": 56.79
           }
          }
+        },
+        "oral-cavity-superior-lip": {
+         "x": 77.47,
+         "y": 0,
+         "w": 12.57,
+         "h": 4.07,
+         "cover": true
+        },
+        "oral-cavity-superior-labial-frenulum": {
+         "x": 78.13,
+         "y": 5.76,
+         "w": 21.87,
+         "h": 3.46,
+         "cover": true
+        },
+        "oral-cavity-upper-gingivae": {
+         "x": 78.3,
+         "y": 10.72,
+         "w": 15.98,
+         "h": 3.73,
+         "cover": true
+        },
+        "oral-cavity-palatoglossal-arch": {
+         "x": 77.55,
+         "y": 18.91,
+         "w": 18.32,
+         "h": 3.46,
+         "cover": true
+        },
+        "oral-cavity-fauces": {
+         "x": 78.05,
+         "y": 25.71,
+         "w": 8.4,
+         "h": 3.55,
+         "cover": true
+        },
+        "oral-cavity-palatopharyngeal-arch": {
+         "x": 77.63,
+         "y": 33.02,
+         "w": 21.73,
+         "h": 3.46,
+         "cover": true
+        },
+        "oral-cavity-cheek": {
+         "x": 0,
+         "y": 48.35,
+         "w": 7.4,
+         "h": 3.38,
+         "cover": true
+        },
+        "oral-cavity-molars": {
+         "x": 0,
+         "y": 58.2,
+         "w": 7.73,
+         "h": 3.38,
+         "cover": true
+        },
+        "oral-cavity-lingual-frenulum": {
+         "x": 77.72,
+         "y": 58.63,
+         "w": 16.65,
+         "h": 3.55,
+         "cover": true
+        },
+        "oral-cavity-opening-of-submandibular-gland-duct": {
+         "x": 78.3,
+         "y": 65.78,
+         "w": 19.57,
+         "h": 5.81,
+         "cover": true
+        },
+        "oral-cavity-premolars": {
+         "x": 0,
+         "y": 69.61,
+         "w": 10.73,
+         "h": 3.29,
+         "cover": true
+        },
+        "oral-cavity-cuspid": {
+         "x": 0,
+         "y": 75.45,
+         "w": 15.07,
+         "h": 3.99,
+         "cover": true
+        },
+        "oral-cavity-lower-gingivae": {
+         "x": 78.3,
+         "y": 10.72,
+         "w": 15.98,
+         "h": 3.73,
+         "cover": true
+        },
+        "oral-cavity-incisors": {
+         "x": 0,
+         "y": 80.85,
+         "w": 8.65,
+         "h": 3.55,
+         "cover": true
+        },
+        "oral-cavity-inferior-labial-frenulum": {
+         "x": 78.05,
+         "y": 83.98,
+         "w": 20.98,
+         "h": 3.2,
+         "cover": true
+        },
+        "oral-cavity-oral-vestibule": {
+         "x": 0,
+         "y": 85.72,
+         "w": 13.32,
+         "h": 3.2,
+         "cover": true
+        },
+        "oral-cavity-inferior-lip": {
+         "x": 77.72,
+         "y": 91.12,
+         "w": 10.82,
+         "h": 3.81,
+         "cover": true
         }
        }
       }
@@ -25520,6 +27019,106 @@
        "id": "digestive-system-small-intestine",
        "answer": "Small Intestine",
        "accept": []
+      },
+      {
+       "id": "digestive-system-pharynx",
+       "answer": "Pharynx",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-liver",
+       "answer": "Liver",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-anus",
+       "answer": "Anus",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-sublingual-gland",
+       "answer": "Sublingual Gland",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-submandibular-gland",
+       "answer": "Submandibular Gland",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-spleen",
+       "answer": "Spleen",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-jejunum",
+       "answer": "Jejunum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-ileum",
+       "answer": "Ileum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-transverse-colon",
+       "answer": "Transverse Colon",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-ascending-colon",
+       "answer": "Ascending Colon",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-descending-colon",
+       "answer": "Descending Colon",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-cecum",
+       "answer": "Cecum",
+       "accept": [
+        "Caecum"
+       ],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-sigmoid-colon",
+       "answer": "Sigmoid Colon",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-appendix",
+       "answer": "Appendix",
+       "accept": [
+        "Vermiform Appendix"
+       ],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-rectum",
+       "answer": "Rectum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "digestive-system-anal-canal",
+       "answer": "Anal Canal",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -25656,6 +27255,27 @@
            "y": 48.58
           }
          }
+        },
+        "digestive-system-pharynx": {
+         "x": 1.22,
+         "y": 7.23,
+         "w": 14.32,
+         "h": 4.78,
+         "cover": true
+        },
+        "digestive-system-liver": {
+         "x": 1.3,
+         "y": 26.82,
+         "w": 9.15,
+         "h": 4.03,
+         "cover": true
+        },
+        "digestive-system-anus": {
+         "x": 89.38,
+         "y": 60.65,
+         "w": 9.57,
+         "h": 4.37,
+         "cover": true
         }
        }
       },
@@ -25750,6 +27370,118 @@
          "y": 62.37,
          "w": 17.0,
          "h": 2.98
+        },
+        "digestive-system-sublingual-gland": {
+         "x": 77.8,
+         "y": 21.52,
+         "w": 18.23,
+         "h": 3.04,
+         "cover": true
+        },
+        "digestive-system-submandibular-gland": {
+         "x": 77.88,
+         "y": 23.56,
+         "w": 22.12,
+         "h": 3.11,
+         "cover": true
+        },
+        "digestive-system-pharynx": {
+         "x": 76.38,
+         "y": 31.33,
+         "w": 10.15,
+         "h": 3.37,
+         "cover": true
+        },
+        "digestive-system-liver": {
+         "x": 0,
+         "y": 52.07,
+         "w": 7.65,
+         "h": 3.11,
+         "cover": true
+        },
+        "digestive-system-spleen": {
+         "x": 76.72,
+         "y": 60.89,
+         "w": 8.4,
+         "h": 3.11,
+         "cover": true
+        },
+        "digestive-system-jejunum": {
+         "x": 0.97,
+         "y": 66.48,
+         "w": 11.48,
+         "h": 3.5,
+         "cover": true
+        },
+        "digestive-system-ileum": {
+         "x": 0.97,
+         "y": 68.72,
+         "w": 7.4,
+         "h": 3.04,
+         "cover": true
+        },
+        "digestive-system-transverse-colon": {
+         "x": 77.55,
+         "y": 68.59,
+         "w": 18.48,
+         "h": 2.98,
+         "cover": true
+        },
+        "digestive-system-ascending-colon": {
+         "x": 77.63,
+         "y": 74.71,
+         "w": 17.98,
+         "h": 3.04,
+         "cover": true
+        },
+        "digestive-system-descending-colon": {
+         "x": 76.47,
+         "y": 83.8,
+         "w": 19.32,
+         "h": 2.98,
+         "cover": true
+        },
+        "digestive-system-cecum": {
+         "x": 76.47,
+         "y": 86.43,
+         "w": 8.9,
+         "h": 2.98,
+         "cover": true
+        },
+        "digestive-system-sigmoid-colon": {
+         "x": 76.55,
+         "y": 89.46,
+         "w": 15.65,
+         "h": 2.98,
+         "cover": true
+        },
+        "digestive-system-appendix": {
+         "x": 76.38,
+         "y": 91.9,
+         "w": 11.23,
+         "h": 3.17,
+         "cover": true
+        },
+        "digestive-system-rectum": {
+         "x": 76.22,
+         "y": 93.94,
+         "w": 9.82,
+         "h": 3.17,
+         "cover": true
+        },
+        "digestive-system-anal-canal": {
+         "x": 76.13,
+         "y": 95.71,
+         "w": 12.57,
+         "h": 3.17,
+         "cover": true
+        },
+        "digestive-system-anus": {
+         "x": 0,
+         "y": 96.7,
+         "w": 6.82,
+         "h": 2.85,
+         "cover": true
         }
        }
       }
@@ -25784,6 +27516,33 @@
        "id": "small-intestine-ileum",
        "answer": "Ileum",
        "accept": []
+      },
+      {
+       "id": "small-intestine-large-intestine",
+       "answer": "Large Intestine",
+       "accept": [
+        "Colon",
+        "Large Intestine (Colon)"
+       ],
+       "cover": true
+      },
+      {
+       "id": "small-intestine-stomach",
+       "answer": "Stomach",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "small-intestine-small-intestine",
+       "answer": "Small Intestine",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "small-intestine-rectum",
+       "answer": "Rectum",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -25850,6 +27609,27 @@
            "y": 71.08
           }
          }
+        },
+        "small-intestine-large-intestine": {
+         "x": 71.05,
+         "y": 3.73,
+         "w": 27.9,
+         "h": 9.54,
+         "cover": true
+        },
+        "small-intestine-stomach": {
+         "x": 23.97,
+         "y": 4.65,
+         "w": 17.07,
+         "h": 4.53,
+         "cover": true
+        },
+        "small-intestine-small-intestine": {
+         "x": 0.38,
+         "y": 15.73,
+         "w": 27.15,
+         "h": 4.53,
+         "cover": true
         }
        }
       },
@@ -25890,6 +27670,20 @@
            "y": 52.66
           }
          }
+        },
+        "small-intestine-large-intestine": {
+         "x": 0,
+         "y": 65.6,
+         "w": 18.23,
+         "h": 5.63,
+         "cover": true
+        },
+        "small-intestine-rectum": {
+         "x": 0,
+         "y": 81.05,
+         "w": 10.4,
+         "h": 5.0,
+         "cover": true
         }
        }
       }
@@ -25950,6 +27744,73 @@
        "accept": [
         "Vermiform Appendix"
        ]
+      },
+      {
+       "id": "large-intestine-right-colic-flexure",
+       "answer": "Right Colic Flexure",
+       "accept": [
+        "Hepatic Flexure",
+        "Right Colic (Hepatic) Flexure"
+       ],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-left-colic-flexure",
+       "answer": "Left Colic Flexure",
+       "accept": [
+        "Splenic Flexure",
+        "Left Colic (Splenic) Flexure"
+       ],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-haustra",
+       "answer": "Haustra",
+       "accept": [
+        "Haustrum"
+       ],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-taenia-coli",
+       "answer": "Taenia Coli",
+       "accept": [
+        "Teniae Coli",
+        "Taeniae Coli"
+       ],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-ileum",
+       "answer": "Ileum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-sigmoid-flexure",
+       "answer": "Sigmoid Flexure",
+       "accept": [
+        "Sigmoid Colon"
+       ],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-rectum",
+       "answer": "Rectum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-anus",
+       "answer": "Anus",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "large-intestine-anal-canal",
+       "answer": "Anal Canal",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -26054,6 +27915,62 @@
            "y": 71.98
           }
          }
+        },
+        "large-intestine-right-colic-flexure": {
+         "x": 27.97,
+         "y": 5.44,
+         "w": 18.81,
+         "h": 7.76,
+         "cover": true
+        },
+        "large-intestine-left-colic-flexure": {
+         "x": 80.38,
+         "y": 5.44,
+         "w": 18.48,
+         "h": 7.87,
+         "cover": true
+        },
+        "large-intestine-haustra": {
+         "x": 88.8,
+         "y": 23.25,
+         "w": 10.98,
+         "h": 4.01,
+         "cover": true
+        },
+        "large-intestine-taenia-coli": {
+         "x": 26.88,
+         "y": 23.46,
+         "w": 13.15,
+         "h": 4.01,
+         "cover": true
+        },
+        "large-intestine-ileum": {
+         "x": 26.63,
+         "y": 48.05,
+         "w": 8.07,
+         "h": 4.32,
+         "cover": true
+        },
+        "large-intestine-sigmoid-flexure": {
+         "x": 89.3,
+         "y": 57.0,
+         "w": 10.65,
+         "h": 7.76,
+         "cover": true
+        },
+        "large-intestine-rectum": {
+         "x": 81.13,
+         "y": 78.88,
+         "w": 10.9,
+         "h": 4.32,
+         "cover": true
+        },
+        "large-intestine-anus": {
+         "x": 75.05,
+         "y": 86.17,
+         "w": 7.4,
+         "h": 4.12,
+         "cover": true
         }
        }
       },
@@ -26128,6 +28045,41 @@
          "y": 74.66,
          "w": 16.0,
          "h": 11.99
+        },
+        "large-intestine-right-colic-flexure": {
+         "x": 0,
+         "y": 0,
+         "w": 24.9,
+         "h": 11.95,
+         "cover": true
+        },
+        "large-intestine-left-colic-flexure": {
+         "x": 83.8,
+         "y": 5.95,
+         "w": 15.9,
+         "h": 17.64,
+         "cover": true
+        },
+        "large-intestine-ileum": {
+         "x": 0,
+         "y": 54.16,
+         "w": 9.9,
+         "h": 6.02,
+         "cover": true
+        },
+        "large-intestine-rectum": {
+         "x": 83.88,
+         "y": 89.88,
+         "w": 14.23,
+         "h": 5.9,
+         "cover": true
+        },
+        "large-intestine-anal-canal": {
+         "x": 17.72,
+         "y": 90.38,
+         "w": 17.48,
+         "h": 5.4,
+         "cover": true
         }
        }
       }
@@ -26183,6 +28135,48 @@
        "id": "pancreas-pancreas-2",
        "answer": "Pancreas",
        "accept": []
+      },
+      {
+       "id": "pancreas-tail-of-pancreas",
+       "answer": "Tail of Pancreas",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "pancreas-accessory-duct",
+       "answer": "Accessory Duct",
+       "accept": [
+        "Accessory Pancreatic Duct"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pancreas-lobules",
+       "answer": "Lobules",
+       "accept": [
+        "Lobule"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pancreas-acinar-cells",
+       "answer": "Acinar Cells",
+       "accept": [
+        "Acinar Cell",
+        "Acini"
+       ],
+       "cover": true
+      },
+      {
+       "id": "pancreas-pancreatic-islet-cells",
+       "answer": "Pancreatic Islet Cells",
+       "accept": [
+        "Pancreatic Islet",
+        "Pancreatic Islets",
+        "Islet Cells",
+        "Islets of Langerhans"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -26253,6 +28247,20 @@
            "y": 91.58
           }
          }
+        },
+        "pancreas-tail-of-pancreas": {
+         "x": 77.13,
+         "y": 74.98,
+         "w": 22.48,
+         "h": 4.28,
+         "cover": true
+        },
+        "pancreas-accessory-duct": {
+         "x": 5.88,
+         "y": 95.32,
+         "w": 22.15,
+         "h": 3.87,
+         "cover": true
         }
        }
       },
@@ -26297,6 +28305,34 @@
          "y": 37.21,
          "w": 27.08,
          "h": 3.5
+        },
+        "pancreas-tail-of-pancreas": {
+         "x": 81.3,
+         "y": 8.39,
+         "w": 10.65,
+         "h": 3.45,
+         "cover": true
+        },
+        "pancreas-lobules": {
+         "x": 61.13,
+         "y": 21.8,
+         "w": 13.32,
+         "h": 3.7,
+         "cover": true
+        },
+        "pancreas-acinar-cells": {
+         "x": 66.47,
+         "y": 33.42,
+         "w": 29.65,
+         "h": 6.52,
+         "cover": true
+        },
+        "pancreas-pancreatic-islet-cells": {
+         "x": 0,
+         "y": 55.11,
+         "w": 24.15,
+         "h": 9.61,
+         "cover": true
         }
        }
       }
@@ -26355,6 +28391,72 @@
        "accept": [
         "Main Pancreatic Duct"
        ]
+      },
+      {
+       "id": "duodenum-quadrate-lobe",
+       "answer": "Quadrate Lobe",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-left-lobe",
+       "answer": "Left Lobe",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-caudate-lobe",
+       "answer": "Caudate Lobe",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-spleen",
+       "answer": "Spleen",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-right-hepatic-duct",
+       "answer": "Right Hepatic Duct",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-cystic-duct",
+       "answer": "Cystic Duct",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-common-hepatic-duct",
+       "answer": "Common Hepatic Duct",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-left-hepatic-duct",
+       "answer": "Left Hepatic Duct",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "duodenum-head-of-pancreas",
+       "answer": "Head of Pancreas",
+       "accept": [],
+       "showText": true
+      },
+      {
+       "id": "duodenum-body-of-pancreas",
+       "answer": "Body of Pancreas",
+       "accept": [],
+       "showText": true
+      },
+      {
+       "id": "duodenum-tail-of-pancreas",
+       "answer": "Tail of Pancreas",
+       "accept": [],
+       "showText": true
       }
      ],
      "variants": [
@@ -26400,7 +28502,7 @@
          "w": 17.83,
          "h": 4.95,
          "anchor": {
-          "x": 58.08,
+          "x": 59.3,
           "y": 77.65,
           "from": {
            "x": 26.17,
@@ -26413,6 +28515,48 @@
          "y": 67.04,
          "w": 21.58,
          "h": 4.65
+        },
+        "duodenum-head-of-pancreas": {
+         "x": 56.0,
+         "y": 90.0,
+         "w": 20.0,
+         "h": 4.6,
+         "anchor": {
+          "x": 60.8,
+          "y": 74.0,
+          "from": {
+           "x": 66.0,
+           "y": 90.0
+          }
+         }
+        },
+        "duodenum-body-of-pancreas": {
+         "x": 78.0,
+         "y": 82.0,
+         "w": 20.0,
+         "h": 4.6,
+         "anchor": {
+          "x": 65.4,
+          "y": 55.7,
+          "from": {
+           "x": 78.0,
+           "y": 84.3
+          }
+         }
+        },
+        "duodenum-tail-of-pancreas": {
+         "x": 80.0,
+         "y": 70.0,
+         "w": 18.0,
+         "h": 4.6,
+         "anchor": {
+          "x": 92.0,
+          "y": 61.9,
+          "from": {
+           "x": 89.0,
+           "y": 70.0
+          }
+         }
         }
        }
       },
@@ -26493,6 +28637,62 @@
            }
           ]
          }
+        },
+        "duodenum-quadrate-lobe": {
+         "x": 81.3,
+         "y": 46.86,
+         "w": 18.07,
+         "h": 3.34,
+         "cover": true
+        },
+        "duodenum-left-lobe": {
+         "x": 80.97,
+         "y": 49.33,
+         "w": 12.07,
+         "h": 3.34,
+         "cover": true
+        },
+        "duodenum-caudate-lobe": {
+         "x": 81.3,
+         "y": 51.88,
+         "w": 17.23,
+         "h": 3.34,
+         "cover": true
+        },
+        "duodenum-spleen": {
+         "x": 81.22,
+         "y": 59.77,
+         "w": 10.07,
+         "h": 3.48,
+         "cover": true
+        },
+        "duodenum-right-hepatic-duct": {
+         "x": 0,
+         "y": 65.4,
+         "w": 22.15,
+         "h": 3.21,
+         "cover": true
+        },
+        "duodenum-cystic-duct": {
+         "x": 0,
+         "y": 69.21,
+         "w": 14.82,
+         "h": 3.41,
+         "cover": true
+        },
+        "duodenum-common-hepatic-duct": {
+         "x": 0,
+         "y": 73.09,
+         "w": 26.82,
+         "h": 2.94,
+         "cover": true
+        },
+        "duodenum-left-hepatic-duct": {
+         "x": 0,
+         "y": 79.99,
+         "w": 20.73,
+         "h": 3.21,
+         "cover": true
         }
        }
       }
@@ -26515,22 +28715,37 @@
      "labels": [
       {
        "id": "urinary-system-kidney",
-       "answer": "Kidney",
-       "accept": [
+       "answer": "Left Kidney",
+       "accept": [],
+       "alias": [
+        "Kidney",
         "Kidneys"
        ]
       },
       {
        "id": "urinary-system-kidney-2",
-       "answer": "Kidney",
-       "accept": [
+       "answer": "Right Kidney",
+       "accept": [],
+       "alias": [
+        "Kidney",
         "Kidneys"
        ]
       },
       {
        "id": "urinary-system-ureter",
-       "answer": "Ureter",
-       "accept": [
+       "answer": "Right Ureter",
+       "accept": [],
+       "alias": [
+        "Ureter",
+        "Ureters"
+       ]
+      },
+      {
+       "id": "urinary-system-left-ureter",
+       "answer": "Left Ureter",
+       "accept": [],
+       "alias": [
+        "Ureter",
         "Ureters"
        ]
       },
@@ -26634,20 +28849,6 @@
           }
          }
         },
-        "urinary-system-ureter": {
-         "x": 67.33,
-         "y": 48.49,
-         "w": 14.0,
-         "h": 4.88,
-         "anchor": {
-          "x": 41.5,
-          "y": 50.68,
-          "from": {
-           "x": 67.5,
-           "y": 50.73
-          }
-         }
-        },
         "urinary-system-bladder": {
          "x": 68.33,
          "y": 62.44,
@@ -26665,6 +28866,20 @@
           "from": {
            "x": 67.17,
            "y": 91.12
+          }
+         }
+        },
+        "urinary-system-left-ureter": {
+         "x": 67.33,
+         "y": 48.49,
+         "w": 14.0,
+         "h": 4.88,
+         "anchor": {
+          "x": 41.5,
+          "y": 50.68,
+          "from": {
+           "x": 67.5,
+           "y": 50.73
           }
          }
         }
@@ -26705,6 +28920,107 @@
        "accept": [
         "Renal Cortex"
        ]
+      },
+      {
+       "id": "inside-kidney-hilum",
+       "answer": "Hilum",
+       "accept": [
+        "Renal Hilum"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-papilla",
+       "answer": "Renal Papilla",
+       "accept": [
+        "Papilla"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-artery",
+       "answer": "Renal Artery",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-vein",
+       "answer": "Renal Vein",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-pyramids",
+       "answer": "Renal Pyramids",
+       "accept": [
+        "Renal Pyramid",
+        "Pyramids",
+        "Pyramid"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-columns",
+       "answer": "Renal Columns",
+       "accept": [
+        "Renal Column"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-ureter",
+       "answer": "Ureter",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-fibrous-capsule",
+       "answer": "Fibrous Capsule",
+       "accept": [
+        "Renal Capsule",
+        "Capsule"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-major-calyx",
+       "answer": "Major Calyx",
+       "accept": [
+        "Major Calyces"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-minor-calyx",
+       "answer": "Minor Calyx",
+       "accept": [
+        "Minor Calyces"
+       ],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-cortical-blood-vessels",
+       "answer": "Cortical Blood Vessels",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-arcuate-blood-vessels",
+       "answer": "Arcuate Blood Vessels",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-interlobar-blood-vessels",
+       "answer": "Interlobar Blood Vessels",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "inside-kidney-renal-nerve",
+       "answer": "Renal Nerve",
+       "accept": [],
+       "cover": true
       }
      ],
      "variants": [
@@ -26761,6 +29077,76 @@
            "y": 5.0
           }
          }
+        },
+        "inside-kidney-hilum": {
+         "x": 32.63,
+         "y": 10.18,
+         "w": 9.73,
+         "h": 5.42,
+         "cover": true
+        },
+        "inside-kidney-renal-papilla": {
+         "x": 80.3,
+         "y": 22.18,
+         "w": 19.4,
+         "h": 4.98,
+         "cover": true
+        },
+        "inside-kidney-renal-artery": {
+         "x": 25.55,
+         "y": 23.62,
+         "w": 17.73,
+         "h": 5.53,
+         "cover": true
+        },
+        "inside-kidney-renal-vein": {
+         "x": 26.88,
+         "y": 31.07,
+         "w": 15.73,
+         "h": 5.31,
+         "cover": true
+        },
+        "inside-kidney-renal-pyramids": {
+         "x": 84.63,
+         "y": 32.84,
+         "w": 13.82,
+         "h": 9.65,
+         "cover": true
+        },
+        "inside-kidney-renal-columns": {
+         "x": 84.72,
+         "y": 32.84,
+         "w": 14.56,
+         "h": 31.32,
+         "cover": true
+        },
+        "inside-kidney-ureter": {
+         "x": 29.38,
+         "y": 63.73,
+         "w": 10.65,
+         "h": 5.09,
+         "cover": true
+        },
+        "inside-kidney-fibrous-capsule": {
+         "x": 83.38,
+         "y": 74.96,
+         "w": 12.07,
+         "h": 9.64,
+         "cover": true
+        },
+        "inside-kidney-major-calyx": {
+         "x": 33.3,
+         "y": 75.18,
+         "w": 17.07,
+         "h": 5.53,
+         "cover": true
+        },
+        "inside-kidney-minor-calyx": {
+         "x": 39.55,
+         "y": 81.73,
+         "w": 17.32,
+         "h": 5.42,
+         "cover": true
         }
        }
       },
@@ -26809,6 +29195,104 @@
            "y": 78.43
           }
          }
+        },
+        "inside-kidney-cortical-blood-vessels": {
+         "x": 28.88,
+         "y": 4.36,
+         "w": 13.15,
+         "h": 8.19,
+         "cover": true
+        },
+        "inside-kidney-arcuate-blood-vessels": {
+         "x": 86.8,
+         "y": 7.56,
+         "w": 13.15,
+         "h": 8.49,
+         "cover": true
+        },
+        "inside-kidney-interlobar-blood-vessels": {
+         "x": 28.88,
+         "y": 18.2,
+         "w": 13.15,
+         "h": 8.2,
+         "cover": true
+        },
+        "inside-kidney-minor-calyx": {
+         "x": 86.72,
+         "y": 20.54,
+         "w": 11.4,
+         "h": 5.28,
+         "cover": true
+        },
+        "inside-kidney-major-calyx": {
+         "x": 86.55,
+         "y": 29.87,
+         "w": 11.57,
+         "h": 5.57,
+         "cover": true
+        },
+        "inside-kidney-renal-vein": {
+         "x": 28.72,
+         "y": 31.32,
+         "w": 11.07,
+         "h": 4.41,
+         "cover": true
+        },
+        "inside-kidney-renal-nerve": {
+         "x": 28.8,
+         "y": 42.69,
+         "w": 6.9,
+         "h": 8.35,
+         "cover": true
+        },
+        "inside-kidney-hilum": {
+         "x": 19.22,
+         "y": 44.01,
+         "w": 8.23,
+         "h": 8.19,
+         "cover": true
+        },
+        "inside-kidney-renal-pyramids": {
+         "x": 86.8,
+         "y": 48.53,
+         "w": 8.73,
+         "h": 5.43,
+         "cover": true
+        },
+        "inside-kidney-renal-artery": {
+         "x": 28.63,
+         "y": 54.36,
+         "w": 12.48,
+         "h": 5.57,
+         "cover": true
+        },
+        "inside-kidney-renal-papilla": {
+         "x": 86.55,
+         "y": 58.0,
+         "w": 7.65,
+         "h": 4.99,
+         "cover": true
+        },
+        "inside-kidney-renal-columns": {
+         "x": 86.72,
+         "y": 67.33,
+         "w": 13.28,
+         "h": 4.7,
+         "cover": true
+        },
+        "inside-kidney-ureter": {
+         "x": 28.72,
+         "y": 70.83,
+         "w": 7.32,
+         "h": 4.99,
+         "cover": true
+        },
+        "inside-kidney-fibrous-capsule": {
+         "x": 28.88,
+         "y": 78.26,
+         "w": 8.73,
+         "h": 4.99,
+         "cover": true
         }
        }
       }
@@ -26879,11 +29363,6 @@
        "accept": []
       },
       {
-       "id": "male-reproductive-urethra-2",
-       "answer": "Urethra",
-       "accept": []
-      },
-      {
        "id": "male-reproductive-ejaculatory-duct",
        "answer": "Ejaculatory Duct",
        "accept": []
@@ -26897,6 +29376,108 @@
        "id": "male-reproductive-penis",
        "answer": "Penis",
        "accept": []
+      },
+      {
+       "id": "male-reproductive-suspensory-ligament-of-penis",
+       "answer": "Suspensory Ligament of Penis",
+       "accept": [
+        "Suspensory Ligament"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-urinary-bladder",
+       "answer": "Urinary Bladder",
+       "accept": [
+        "Bladder"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-pubic-symphysis",
+       "answer": "Pubic Symphysis",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-ampulla-of-ductus-deferens",
+       "answer": "Ampulla of Ductus Deferens",
+       "accept": [
+        "Ampulla of Vas Deferens",
+        "Ampulla"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-deep-muscles-of-perineum",
+       "answer": "Deep Muscles of Perineum",
+       "accept": [
+        "Deep Perineal Muscles"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-muscles-of-perineum-surrounding-anus",
+       "answer": "Muscles of Perineum Surrounding Anus",
+       "accept": [
+        "Muscles of Perineum"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-corpus-cavernosum",
+       "answer": "Corpus Cavernosum",
+       "accept": [
+        "Corpora Cavernosa"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-corpus-spongiosum",
+       "answer": "Corpus Spongiosum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-scrotum",
+       "answer": "Scrotum",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-external-urethral-opening",
+       "answer": "External Urethral Opening",
+       "accept": [
+        "External Urethral Orifice",
+        "Urethral Opening"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-pubic-bone",
+       "answer": "Pubic Bone",
+       "accept": [
+        "Pubis"
+       ],
+       "cover": true
+      },
+      {
+       "id": "male-reproductive-membranous-urethra",
+       "answer": "Membranous Urethra",
+       "accept": [],
+       "alias": [
+        "Urethra"
+       ]
+      },
+      {
+       "id": "male-reproductive-spongy-urethra",
+       "answer": "Spongy Urethra",
+       "accept": [
+        "Penile Urethra"
+       ],
+       "alias": [
+        "Urethra"
+       ]
       }
      ],
      "variants": [
@@ -26916,7 +29497,7 @@
          "x": 0.5,
          "y": 15.93,
          "w": 17.83,
-         "h": 5.67,
+         "h": 5.0,
          "anchor": {
           "x": 41.25,
           "y": 18.84,
@@ -26956,9 +29537,9 @@
         },
         "male-reproductive-bulbourethral-gland": {
          "x": 78.33,
-         "y": 48.16,
+         "y": 49.0,
          "w": 16.33,
-         "h": 5.67,
+         "h": 3.9,
          "anchor": {
           "x": 53.17,
           "y": 50.92,
@@ -26996,34 +29577,6 @@
           }
          }
         },
-        "male-reproductive-urethra": {
-         "x": 78.5,
-         "y": 59.42,
-         "w": 17.08,
-         "h": 5.67,
-         "anchor": {
-          "x": 50.09,
-          "y": 60.04,
-          "from": {
-           "x": 78.08,
-           "y": 62.18
-          }
-         }
-        },
-        "male-reproductive-urethra-2": {
-         "x": 57.67,
-         "y": 64.59,
-         "w": 12.5,
-         "h": 4.82,
-         "anchor": {
-          "x": 40.25,
-          "y": 49.55,
-          "from": {
-           "x": 57.42,
-           "y": 66.15
-          }
-         }
-        },
         "male-reproductive-ejaculatory-duct": {
          "x": 78.5,
          "y": 35.84,
@@ -27049,6 +29602,104 @@
           "from": {
            "x": 78.25,
            "y": 42.21
+          }
+         }
+        },
+        "male-reproductive-suspensory-ligament-of-penis": {
+         "x": 0.63,
+         "y": 21.07,
+         "w": 24.07,
+         "h": 4.32,
+         "cover": true
+        },
+        "male-reproductive-urinary-bladder": {
+         "x": 0.55,
+         "y": 25.75,
+         "w": 13.73,
+         "h": 4.46,
+         "cover": true
+        },
+        "male-reproductive-pubic-symphysis": {
+         "x": 0.3,
+         "y": 30.56,
+         "w": 14.65,
+         "h": 5.17,
+         "cover": true
+        },
+        "male-reproductive-ampulla-of-ductus-deferens": {
+         "x": 78.13,
+         "y": 21.07,
+         "w": 21.87,
+         "h": 4.46,
+         "cover": true
+        },
+        "male-reproductive-deep-muscles-of-perineum": {
+         "x": 78.05,
+         "y": 44.44,
+         "w": 21.82,
+         "h": 4.46,
+         "cover": true
+        },
+        "male-reproductive-muscles-of-perineum-surrounding-anus": {
+         "x": 77.8,
+         "y": 52.94,
+         "w": 17.82,
+         "h": 7.9,
+         "cover": true
+        },
+        "male-reproductive-corpus-cavernosum": {
+         "x": 0.63,
+         "y": 58.04,
+         "w": 17.15,
+         "h": 4.32,
+         "cover": true
+        },
+        "male-reproductive-corpus-spongiosum": {
+         "x": 0.55,
+         "y": 79.71,
+         "w": 18.48,
+         "h": 5.02,
+         "cover": true
+        },
+        "male-reproductive-scrotum": {
+         "x": 57.22,
+         "y": 79.71,
+         "w": 7.98,
+         "h": 4.03,
+         "cover": true
+        },
+        "male-reproductive-external-urethral-opening": {
+         "x": 10.97,
+         "y": 94.44,
+         "w": 20.73,
+         "h": 4.88,
+         "cover": true
+        },
+        "male-reproductive-membranous-urethra": {
+         "x": 78.5,
+         "y": 60.9,
+         "w": 17.08,
+         "h": 5.0,
+         "anchor": {
+          "x": 50.09,
+          "y": 60.04,
+          "from": {
+           "x": 78.08,
+           "y": 62.18
+          }
+         }
+        },
+        "male-reproductive-spongy-urethra": {
+         "x": 57.67,
+         "y": 64.59,
+         "w": 12.5,
+         "h": 4.82,
+         "anchor": {
+          "x": 40.25,
+          "y": 49.55,
+          "from": {
+           "x": 57.42,
+           "y": 66.15
           }
          }
         }
@@ -27131,6 +29782,27 @@
          "y": 72.66,
          "w": 25.92,
          "h": 6.95
+        },
+        "male-reproductive-pubic-bone": {
+         "x": 0.63,
+         "y": 9.95,
+         "w": 19.32,
+         "h": 6.6,
+         "cover": true
+        },
+        "male-reproductive-urinary-bladder": {
+         "x": 72.13,
+         "y": 10.19,
+         "w": 14.73,
+         "h": 6.72,
+         "cover": true
+        },
+        "male-reproductive-scrotum": {
+         "x": 72.3,
+         "y": 88.97,
+         "w": 17.15,
+         "h": 6.48,
+         "cover": true
         }
        }
       }
@@ -27180,6 +29852,38 @@
        "id": "female-reproductive-vulva",
        "answer": "Vulva",
        "accept": []
+      },
+      {
+       "id": "female-reproductive-cervix",
+       "answer": "Cervix",
+       "accept": [
+        "Cervix Uteri"
+       ],
+       "cover": true
+      },
+      {
+       "id": "female-reproductive-clitoris",
+       "answer": "Clitoris",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "female-reproductive-labium-minus",
+       "answer": "Labium Minus",
+       "accept": [
+        "Labia Minora",
+        "Labium Minora"
+       ],
+       "cover": true
+      },
+      {
+       "id": "female-reproductive-labium-majus",
+       "answer": "Labium Majus",
+       "accept": [
+        "Labia Majora",
+        "Labium Majora"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -27262,6 +29966,13 @@
          "y": 88.12,
          "w": 14.0,
          "h": 7.64
+        },
+        "female-reproductive-cervix": {
+         "x": 31.8,
+         "y": 50.6,
+         "w": 13.57,
+         "h": 7.56,
+         "cover": true
         }
        }
       },
@@ -27338,6 +30049,34 @@
            "y": 52.33
           }
          }
+        },
+        "female-reproductive-cervix": {
+         "x": 33.63,
+         "y": 41.23,
+         "w": 12.48,
+         "h": 4.37,
+         "cover": true
+        },
+        "female-reproductive-clitoris": {
+         "x": 32.8,
+         "y": 59.82,
+         "w": 12.9,
+         "h": 4.78,
+         "cover": true
+        },
+        "female-reproductive-labium-minus": {
+         "x": 21.63,
+         "y": 68.32,
+         "w": 23.82,
+         "h": 3.95,
+         "cover": true
+        },
+        "female-reproductive-labium-majus": {
+         "x": 21.47,
+         "y": 76.73,
+         "w": 24.07,
+         "h": 4.37,
+         "cover": true
         }
        }
       }
@@ -27372,6 +30111,106 @@
        "id": "embryo-placenta-placenta-2",
        "answer": "Placenta",
        "accept": []
+      },
+      {
+       "id": "embryo-placenta-intervillous-space",
+       "answer": "Intervillous Space",
+       "accept": [
+        "Maternal Blood Supply in Intervillous Space",
+        "Maternal Blood Supply"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-uterine-artery-and-vein",
+       "answer": "Uterine Artery and Vein",
+       "accept": [
+        "Uterine Vessels"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-chorionic-villi",
+       "answer": "Chorionic Villi",
+       "accept": [
+        "Chorionic Villus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-yolk-sac",
+       "answer": "Yolk Sac",
+       "accept": [
+        "Yolk Sack"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-amniotic-fluid",
+       "answer": "Amniotic Fluid",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-uterus",
+       "answer": "Uterus",
+       "accept": [
+        "Uterine Wall",
+        "Womb"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-uterine-wall",
+       "answer": "Uterine Wall",
+       "accept": [
+        "Uterus",
+        "Wall of Uterus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-chorion",
+       "answer": "Chorion",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-amnion",
+       "answer": "Amnion",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-umbilical-artery",
+       "answer": "Umbilical Artery",
+       "accept": [
+        "Umbilical Arteries"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-umbilical-vein",
+       "answer": "Umbilical Vein",
+       "accept": [],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-wall-of-uterus",
+       "answer": "Wall of Uterus",
+       "accept": [
+        "Uterine Wall",
+        "Uterus"
+       ],
+       "cover": true
+      },
+      {
+       "id": "embryo-placenta-cervix-uteri",
+       "answer": "Cervix Uteri",
+       "accept": [
+        "Cervix"
+       ],
+       "cover": true
       }
      ],
      "variants": [
@@ -27420,6 +30259,83 @@
            "y": 92.77
           }
          }
+        },
+        "embryo-placenta-intervillous-space": {
+         "x": 81.13,
+         "y": 0,
+         "w": 14.82,
+         "h": 12.94,
+         "cover": true
+        },
+        "embryo-placenta-uterine-artery-and-vein": {
+         "x": 68.22,
+         "y": 3.1,
+         "w": 13.07,
+         "h": 8.92,
+         "cover": true
+        },
+        "embryo-placenta-chorionic-villi": {
+         "x": 55.63,
+         "y": 7.6,
+         "w": 12.4,
+         "h": 4.42,
+         "cover": true
+        },
+        "embryo-placenta-yolk-sac": {
+         "x": 40.8,
+         "y": 25.61,
+         "w": 9.65,
+         "h": 5.22,
+         "cover": true
+        },
+        "embryo-placenta-amniotic-fluid": {
+         "x": 39.55,
+         "y": 34.13,
+         "w": 12.4,
+         "h": 4.25,
+         "cover": true
+        },
+        "embryo-placenta-uterus": {
+         "x": 41.88,
+         "y": 56.8,
+         "w": 7.4,
+         "h": 5.06,
+         "cover": true
+        },
+        "embryo-placenta-uterine-wall": {
+         "x": 92.88,
+         "y": 56.96,
+         "w": 7.12,
+         "h": 4.9,
+         "cover": true
+        },
+        "embryo-placenta-chorion": {
+         "x": 41.55,
+         "y": 65.96,
+         "w": 8.48,
+         "h": 4.74,
+         "cover": true
+        },
+        "embryo-placenta-amnion": {
+         "x": 41.8,
+         "y": 83.97,
+         "w": 7.98,
+         "h": 4.42,
+         "cover": true
+        },
+        "embryo-placenta-umbilical-artery": {
+         "x": 64.05,
+         "y": 90.72,
+         "w": 9.23,
+         "h": 9.28,
+         "cover": true
+        },
+        "embryo-placenta-umbilical-vein": {
+         "x": 46.63,
+         "y": 91.04,
+         "w": 9.07,
+         "h": 8.76,
+         "cover": true
         }
        }
       },
@@ -27454,6 +30370,20 @@
            }
           ]
          }
+        },
+        "embryo-placenta-wall-of-uterus": {
+         "x": 1.05,
+         "y": 2.23,
+         "w": 24.15,
+         "h": 4.41,
+         "cover": true
+        },
+        "embryo-placenta-cervix-uteri": {
+         "x": 64.55,
+         "y": 88.67,
+         "w": 20.82,
+         "h": 3.96,
+         "cover": true
         }
        }
       }

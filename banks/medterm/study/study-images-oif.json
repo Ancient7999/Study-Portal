@@ -3544,6 +3544,67 @@
        "y": 86.56,
        "w": 6.0,
        "h": 3.12
+      },
+      {
+       "id": "large-intestine-right-colic-flexure",
+       "answer": "Right Colic Flexure",
+       "accept": [
+        "Hepatic Flexure"
+       ],
+       "cover": true,
+       "x": 28.05,
+       "y": 5.55,
+       "w": 18.73,
+       "h": 7.65
+      },
+      {
+       "id": "large-intestine-left-colic-flexure",
+       "answer": "Left Colic Flexure",
+       "accept": [
+        "Splenic Flexure"
+       ],
+       "cover": true,
+       "x": 80.38,
+       "y": 5.44,
+       "w": 18.48,
+       "h": 7.87
+      },
+      {
+       "id": "large-intestine-haustra",
+       "answer": "Haustra",
+       "accept": [
+        "Haustrum"
+       ],
+       "cover": true,
+       "x": 88.72,
+       "y": 23.25,
+       "w": 11.07,
+       "h": 4.01
+      },
+      {
+       "id": "large-intestine-taenia-coli",
+       "answer": "Taenia Coli",
+       "accept": [
+        "Teniae Coli",
+        "Taeniae Coli"
+       ],
+       "cover": true,
+       "x": 26.88,
+       "y": 23.46,
+       "w": 13.15,
+       "h": 4.01
+      },
+      {
+       "id": "large-intestine-sigmoid-flexure",
+       "answer": "Sigmoid Flexure",
+       "accept": [
+        "Sigmoid Colon"
+       ],
+       "cover": true,
+       "x": 89.3,
+       "y": 57.0,
+       "w": 10.65,
+       "h": 7.76
       }
      ]
     },
@@ -3754,6 +3815,67 @@
        "y": 63.56,
        "w": 8.92,
        "h": 4.78
+      },
+      {
+       "id": "kidney-anatomy-renal-papilla",
+       "answer": "Renal Papilla",
+       "accept": [
+        "Papilla"
+       ],
+       "cover": true,
+       "x": 80.3,
+       "y": 22.18,
+       "w": 19.4,
+       "h": 4.98
+      },
+      {
+       "id": "kidney-anatomy-renal-columns",
+       "answer": "Renal Columns",
+       "accept": [
+        "Renal Column"
+       ],
+       "cover": true,
+       "x": 86.55,
+       "y": 55.07,
+       "w": 12.65,
+       "h": 8.86
+      },
+      {
+       "id": "kidney-anatomy-fibrous-capsule",
+       "answer": "Fibrous Capsule",
+       "accept": [
+        "Renal Capsule",
+        "Capsule"
+       ],
+       "cover": true,
+       "x": 83.38,
+       "y": 74.96,
+       "w": 12.07,
+       "h": 9.64
+      },
+      {
+       "id": "kidney-anatomy-major-calyx",
+       "answer": "Major Calyx",
+       "accept": [
+        "Major Calyces"
+       ],
+       "cover": true,
+       "x": 33.3,
+       "y": 75.18,
+       "w": 17.07,
+       "h": 5.64
+      },
+      {
+       "id": "kidney-anatomy-minor-calyx",
+       "answer": "Minor Calyx",
+       "accept": [
+        "Minor Calyces"
+       ],
+       "cover": true,
+       "x": 39.55,
+       "y": 81.73,
+       "w": 17.32,
+       "h": 5.42
       }
      ]
     }
@@ -3907,6 +4029,62 @@
        "y": 82.45,
        "w": 18.17,
        "h": 9.93
+      },
+      {
+       "id": "male-reproductive-pubic-bone",
+       "answer": "Pubic Bone",
+       "accept": [
+        "Pubis"
+       ],
+       "cover": true,
+       "x": 12.22,
+       "y": 33.01,
+       "w": 13.57,
+       "h": 6.0
+      },
+      {
+       "id": "male-reproductive-suspensory-ligament",
+       "answer": "Suspensory Ligament",
+       "accept": [
+        "Suspensory Ligament of Penis"
+       ],
+       "cover": true,
+       "x": 4.38,
+       "y": 39.96,
+       "w": 24.32,
+       "h": 6.17
+      },
+      {
+       "id": "male-reproductive-deep-perineal-pouch",
+       "answer": "Deep Perineal Pouch",
+       "accept": [],
+       "cover": true,
+       "x": 1.8,
+       "y": 47.74,
+       "w": 23.48,
+       "h": 5.67
+      },
+      {
+       "id": "male-reproductive-corpus-cavernosum",
+       "answer": "Corpus Cavernosum",
+       "accept": [
+        "Corpora Cavernosa"
+       ],
+       "cover": true,
+       "x": 2.3,
+       "y": 54.86,
+       "w": 22.65,
+       "h": 5.01
+      },
+      {
+       "id": "male-reproductive-corpus-spongiosum",
+       "answer": "Corpus Spongiosum",
+       "accept": [],
+       "cover": true,
+       "x": 2.22,
+       "y": 60.16,
+       "w": 22.65,
+       "h": 6.0
       }
      ]
     }
