@@ -19,7 +19,7 @@
           "Simple, compound, complex, imperative"
         ],
         "correct": 0,
-        "explain": "The four structure types are simple, compound, complex, and compound-complex. Imperative is a verb form used for instructions, not one of the four structure types."
+        "explain": "The four structure types are simple, compound, complex, and compound-complex. Imperative is a verb form used for instructions, not a structure type."
       },
       {
         "id": "ENG1PT21002",
@@ -29,11 +29,11 @@
         "options": [
           "One subject and one verb",
           "Two subjects or two verbs",
-          "Two clauses joined by because",
-          "Two clauses joined by but"
+          "One main clause and one dependent clause",
+          "Two independent clauses"
         ],
         "correct": 0,
-        "explain": "A simple sentence has one subject and one verb. Two subjects or verbs make a compound sentence. Joined clauses with connectors form compound or complex sentences."
+        "explain": "A simple sentence has one subject and one verb. Multiple subjects or verbs and added clauses create other sentence structures."
       },
       {
         "id": "ENG1PT21003",
@@ -41,13 +41,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence is simple?",
         "options": [
-          "The nurse checked the chart twice.",
-          "The nurse and doctor checked charts.",
-          "The nurse checked when rounds ended.",
-          "The nurse checked and updated charts."
+          "The nurse cleaned the bed three times.",
+          "The nurse and the technician cleaned the beds.",
+          "The nurse cleaned after rounds finished.",
+          "The nurse cleaned and prepared the beds."
         ],
         "correct": 0,
-        "explain": "The first sentence has one subject and one verb. The others have two subjects, a time clause, or two verbs."
+        "explain": "A simple sentence has one subject and one verb. The other options have a compound subject, a time clause, or a compound predicate."
       },
       {
         "id": "ENG1PT21004",
@@ -55,69 +55,109 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence is compound?",
         "options": [
-          "The clinic opened, and the nurse arrived.",
-          "The clinic opened, when the nurse arrived.",
-          "The clinic opened after the staff arrived.",
-          "The clinic and pharmacy opened together."
+          "The pharmacy closed, and the guard left.",
+          "The pharmacy closed, when the guard left.",
+          "The pharmacy closed before the guard left.",
+          "The pharmacy and the lab closed together."
         ],
         "correct": 0,
-        "explain": "A compound sentence joins two independent clauses with a connector such as and. The comma before when is unnecessary because the when clause is dependent. The after clause makes a complex sentence, and the last sentence has a compound subject but one verb."
+        "explain": "A compound sentence joins two independent clauses with a connector such as 'and'. The 'when' and 'before' clauses are dependent, so those sentences are not compound. A compound subject can still form a simple sentence."
       },
       {
         "id": "ENG1PT21005",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which connector joins clauses in a compound sentence?",
-        "options": [
-          "But",
-          "Because",
-          "When",
-          "If"
+        "q": "Match each connector to its function.",
+        "leftItems": [
+          { "id": "1", "text": "But" },
+          { "id": "2", "text": "Because" },
+          { "id": "3", "text": "When" },
+          { "id": "4", "text": "If" }
         ],
-        "correct": 0,
-        "explain": "But is a compound connector. Because, When, and If introduce complex clauses."
+        "rightItems": [
+          { "id": "A", "text": "Joins independent clauses" },
+          { "id": "B", "text": "Introduces a reason" },
+          { "id": "C", "text": "Introduces a time idea" },
+          { "id": "D", "text": "Introduces a condition" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "'But' joins independent clauses in a compound sentence. 'Because', 'when', and 'if' introduce dependent clauses."
       },
       {
         "id": "ENG1PT21006",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which connector introduces a complex sentence?",
-        "options": [
-          "But",
-          "Because",
-          "So",
-          "Or"
+        "q": "Match each connector to its clause family.",
+        "leftItems": [
+          { "id": "1", "text": "Because" },
+          { "id": "2", "text": "But" },
+          { "id": "3", "text": "So" },
+          { "id": "4", "text": "Or" }
         ],
-        "correct": 1,
-        "explain": "Because introduces a reason clause, making a complex sentence. But, So, and Or join compound clauses."
+        "rightItems": [
+          { "id": "A", "text": "Dependent clause" },
+          { "id": "B", "text": "Independent clause" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "B"
+        },
+        "explain": "'Because' introduces a dependent clause. 'But', 'so', and 'or' join independent clauses."
       },
       {
         "id": "ENG1PT21007",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which word is not a compound-sentence connector?",
-        "options": [
-          "Nor",
-          "Yet",
-          "While",
-          "So"
+        "q": "Match each word to its connector type.",
+        "leftItems": [
+          { "id": "1", "text": "Nor" },
+          { "id": "2", "text": "Yet" },
+          { "id": "3", "text": "While" },
+          { "id": "4", "text": "So" }
         ],
-        "correct": 2,
-        "explain": "While is a complex connector. Nor, Yet, and So are compound connectors."
+        "rightItems": [
+          { "id": "A", "text": "Compound connector" },
+          { "id": "B", "text": "Complex connector" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "A"
+        },
+        "explain": "'While' introduces a dependent clause. 'Nor', 'yet', and 'so' join independent clauses."
       },
       {
         "id": "ENG1PT21008",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses a compound connector correctly?",
-        "options": [
-          "The clinic opened, and the nurse arrived.",
-          "The clinic opened because the nurse arrived.",
-          "The clinic opened when the nurse arrived.",
-          "The clinic opened if the nurse arrives."
+        "q": "Match each sentence type to its example.",
+        "leftItems": [
+          { "id": "1", "text": "Compound sentence" },
+          { "id": "2", "text": "Complex reason sentence" },
+          { "id": "3", "text": "Complex time sentence" },
+          { "id": "4", "text": "Complex condition sentence" }
         ],
-        "correct": 0,
-        "explain": "And joins two independent clauses in a compound sentence. Because, when, and if introduce complex clauses."
+        "rightItems": [
+          { "id": "A", "text": "The ward emptied, and the cleaner came." },
+          { "id": "B", "text": "The ward emptied because the cleaner came." },
+          { "id": "C", "text": "The ward emptied when the cleaner came." },
+          { "id": "D", "text": "The ward empties if the cleaner comes." }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "The compound example uses 'and' between independent clauses. The other examples use subordinating connectors."
       },
       {
         "id": "ENG1PT21009",
@@ -125,13 +165,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence is complex?",
         "options": [
-          "The nurse washed her hands well.",
-          "The nurse washed and dried them.",
-          "The nurse washed before she ate.",
-          "The nurse and doctor washed hands."
+          "The technician wiped the tray carefully.",
+          "The technician wiped and stacked the trays.",
+          "The technician wiped the tray after lunch ended.",
+          "The technician and the cook wiped the trays."
         ],
         "correct": 2,
-        "explain": "A complex sentence joins two clauses with a connector such as before. The correct sentence has washed and she ate."
+        "explain": "A complex sentence joins an independent clause with a dependent clause. The connector 'after' links the wiping clause with the lunch clause."
       },
       {
         "id": "ENG1PT21010",
@@ -139,13 +179,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence begins with a complex connector and uses a comma?",
         "options": [
-          "We left because the shift ended.",
-          "The shift ended, and we left.",
-          "We and they all left together.",
-          "Because the shift ended, we left."
+          "They stayed because the storm passed.",
+          "The storm passed, and they stayed.",
+          "They and we stayed together.",
+          "Because the storm passed, they stayed."
         ],
         "correct": 3,
-        "explain": "A fronted complex clause begins with a connector such as because and takes a comma before the main clause."
+        "explain": "A fronted complex clause begins with a connector such as 'because'. It takes a comma before the main clause."
       },
       {
         "id": "ENG1PT21011",
@@ -153,13 +193,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence tells where the subject is?",
         "options": [
-          "The nurse is very careful today.",
-          "The nurse checks the charts daily.",
-          "The nurse is at the clinic.",
-          "The nurse and the aide rest."
+          "The doctor is very tired today.",
+          "The doctor reviews the charts hourly.",
+          "The doctor is in the ward.",
+          "The doctor and the nurse rest."
         ],
         "correct": 2,
-        "explain": "The phrase at the clinic tells where the nurse is. The others tell quality, action, or a compound subject."
+        "explain": "The phrase 'in the ward' tells where the subject is. The other sentences express a quality, an action, or a compound subject."
       },
       {
         "id": "ENG1PT21012",
@@ -167,265 +207,520 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence tells when the action happens?",
         "options": [
-          "The nurse checks the charts very carefully.",
-          "The nurse checks the charts at noon.",
-          "The nurse is at the clinic now.",
-          "The nurse and the aide rest here."
+          "The nurse cleans the instruments very thoroughly.",
+          "The nurse cleans the instruments at dawn.",
+          "The nurse is in the operating room now.",
+          "The nurse and the surgeon rest here."
         ],
         "correct": 1,
-        "explain": "The phrase at noon tells when the action happens. The others tell manner, place, or a compound subject."
+        "explain": "The phrase 'at dawn' tells when the action happens. The other sentences express manner, place, or a compound subject."
       },
       {
         "id": "ENG1PT21013",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses verb to be plus an adjective?",
+        "q": "Which sentence uses the verb 'be' plus an adjective?",
         "options": [
-          "The doctor examines the patients daily.",
-          "The doctor and the nurse rest.",
-          "The doctor left the clinic early.",
-          "The doctor is very careful now."
+          "The nurse inspects the beds daily.",
+          "The nurse and the doctor rest.",
+          "The nurse left the ward early.",
+          "The nurse is very cautious today."
         ],
         "correct": 3,
-        "explain": "The verb is links the subject to the adjective careful. The other sentences use action verbs or compound subjects."
+        "explain": "The verb 'is' links the subject to the adjective cautious. The other sentences use action verbs or compound subjects."
       },
       {
         "id": "ENG1PT21014",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses verb to be plus an adjective and a noun?",
+        "q": "Which sentence uses the verb 'be' plus an adjective and a noun?",
         "options": [
-          "Lina cares for patients daily.",
-          "Lina and Faisal work here.",
-          "Lina is a careful nurse.",
-          "Lina works at the clinic."
+          "The nurse tends to patients daily.",
+          "The nurse and the doctor work here.",
+          "The nurse is a diligent caregiver.",
+          "The nurse works at the ward."
         ],
         "correct": 2,
-        "explain": "The sentence uses is plus the adjective careful and the noun nurse. The others use action verbs or compound subjects."
+        "explain": "The sentence uses 'is' plus the adjective diligent and the noun caregiver. The others use action verbs or compound subjects."
       },
       {
         "id": "ENG1PT21015",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence has correct agreement with a singular male subject?",
-        "options": [
-          "He check the charts.",
-          "He is check the charts.",
-          "He checks the charts.",
-          "He checking the charts."
+        "q": "Which affirmative present simple sentence is correct?",
+        "steps": [
+          {
+            "id": "he",
+            "prompt": "(1/7)",
+            "options": [
+              "He review the charts.",
+              "He is review the charts.",
+              "He reviews the charts.",
+              "He reviewing the charts."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "we",
+            "prompt": "(2/7)",
+            "options": [
+              "We washes the carts.",
+              "We washing the carts.",
+              "We are wash the carts.",
+              "We wash the carts."
+            ],
+            "correct": 3
+          },
+          {
+            "id": "I",
+            "prompt": "(3/7)",
+            "options": [
+              "I record is notes daily.",
+              "I am record notes daily.",
+              "I record the notes daily.",
+              "I recording notes daily."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "nurses",
+            "prompt": "(4/7)",
+            "options": [
+              "Nurses assists patients with daily meals.",
+              "Nurses assist patients with daily meals.",
+              "Nurses assisting patients with daily meals.",
+              "Nurses assisted patients with daily meals."
+            ],
+            "correct": 1
+          },
+          {
+            "id": "measure",
+            "prompt": "(5/7)",
+            "options": [
+              "Every day, I measures the patient's pulse.",
+              "Every day, I measuring the patient's pulse.",
+              "Every day, I measure the patient's pulse.",
+              "Every day, I measured the patient's pulse."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "usually",
+            "prompt": "(6/7)",
+            "options": [
+              "Nurses clean usually tools after each shift.",
+              "Nurses usually cleaning tools after each shift.",
+              "Nurses usually clean tools after each shift.",
+              "Nurses usually cleaned tools after each shift."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "have",
+            "prompt": "(7/7)",
+            "options": [
+              "She have a light snack every morning.",
+              "She has a light snack every morning.",
+              "She having a light snack every morning.",
+              "She had a light snack every morning."
+            ],
+            "correct": 1
+          }
         ],
-        "correct": 2,
-        "explain": "A singular subject needs the verb form checks. Check is base or plural, is check is ungrammatical, and checking is not finite."
+        "explain": "Affirmative present simple uses the base form with I, we, and plural subjects. Third-person singular subjects take -s, and 'have' becomes 'has'. Adverbs such as 'usually' come before the main verb."
       },
       {
         "id": "ENG1PT21016",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence has correct agreement with a first-person plural subject?",
+        "q": "We ___ the carts.",
         "options": [
-          "We cleans the tools.",
-          "We cleaning the tools.",
-          "We are clean the tools.",
-          "We clean the tools."
+          "washes",
+          "washing",
+          "are wash",
+          "wash"
         ],
         "correct": 3,
-        "explain": "The plural subject we takes the base form clean. Cleans is singular, and cleaning or are clean are not correct present simple forms."
+        "explain": "The plural subject 'we' takes the base form 'wash'. 'Washes' is singular, and the other forms are not present simple."
       },
       {
         "id": "ENG1PT21017",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence is written correctly without an extra verb?",
+        "q": "I ___ notes daily.",
         "options": [
-          "I write is reports daily.",
-          "I am write reports daily.",
-          "I write reports daily.",
-          "I writing reports daily."
+          "record is",
+          "am record",
+          "record",
+          "recording"
         ],
         "correct": 2,
-        "explain": "The correct sentence has one main verb, write. The other options add is, am, or use a non-finite form."
+        "explain": "The subject 'I' takes the base form 'record'. The other options add an auxiliary or use a non-finite form."
       },
       {
         "id": "ENG1PT21018",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which negative present simple sentence is correct for the first person singular?",
-        "options": [
-          "I does not arrive late.",
-          "I not arrive late.",
-          "I do not arrive late.",
-          "I didn't arrive late."
+        "q": "Which negative present simple sentence is correct?",
+        "steps": [
+          {
+            "id": "I",
+            "prompt": "(1/4)",
+            "options": [
+              "I does not come early.",
+              "I not come early.",
+              "I do not come early.",
+              "I didn't come early."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "she",
+            "prompt": "(2/4)",
+            "options": [
+              "She do not miss lunch.",
+              "She does not miss lunch.",
+              "She not misses lunch.",
+              "She doesn't misses lunch."
+            ],
+            "correct": 1
+          },
+          {
+            "id": "you",
+            "prompt": "(3/4)",
+            "options": [
+              "You do not move the cart.",
+              "You are not move the cart.",
+              "You doesn't move the cart.",
+              "You didn't move the cart."
+            ],
+            "correct": 0
+          },
+          {
+            "id": "he",
+            "prompt": "(4/4)",
+            "options": [
+              "He do not rest at noon.",
+              "He not rests at noon.",
+              "He doesn't rests at noon.",
+              "He does not rest at noon."
+            ],
+            "correct": 3
+          }
         ],
-        "correct": 2,
-        "explain": "The present negative for I uses do not plus the base verb arrive. Does not is for singular third person, and didn't is past."
+        "explain": "Negative present simple uses do not with I, you, and plural subjects. It uses does not with third-person singular subjects, followed by the base verb. The emphasized command pattern is 'You do not' plus the base verb."
       },
       {
         "id": "ENG1PT21019",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which negative present simple sentence is correct for a singular female subject?",
+        "q": "She ___ lunch.",
         "options": [
-          "She do not skip breakfast.",
-          "She does not skip breakfast.",
-          "She not skips breakfast.",
-          "She doesn't skips breakfast."
+          "do not miss",
+          "does not miss",
+          "not misses",
+          "doesn't misses"
         ],
         "correct": 1,
-        "explain": "The present negative for she uses does not plus the base verb skip. Do not is plural, and doesn't skips double marks the verb."
+        "explain": "Third-person singular 'she' uses 'does not' plus the base verb. 'Do not' is plural, and 'doesn't misses' double marks the verb."
       },
       {
         "id": "ENG1PT21020",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which negative command uses you for emphasis?",
+        "q": "You ___ the cart.",
         "options": [
-          "You do not touch the equipment.",
-          "You are not touch the equipment.",
-          "You doesn't touch the equipment.",
-          "You didn't touch the equipment."
+          "do not move",
+          "are not move",
+          "doesn't move",
+          "didn't move"
         ],
         "correct": 0,
-        "explain": "For emphasis, you can appear before do not plus the base verb touch. Are not touch, doesn't, and didn't are not correct negative imperative forms."
+        "explain": "An emphasized negative command uses 'you' plus 'do not' and the base verb. The other forms use wrong auxiliaries or past tense."
       },
       {
         "id": "ENG1PT21021",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which negative present simple sentence is correct for a singular male subject?",
+        "q": "He ___ at noon.",
         "options": [
-          "He do not work at night.",
-          "He not works at night.",
-          "He doesn't works at night.",
-          "He does not work at night."
+          "do not rest",
+          "not rests",
+          "doesn't rests",
+          "does not rest"
         ],
         "correct": 3,
-        "explain": "The present negative for he uses does not plus the base verb work. Do not is plural, and doesn't works double marks the verb."
+        "explain": "Third-person singular 'he' uses 'does not' plus the base verb. 'Do not' is plural, and 'doesn't rests' double marks the verb."
       },
       {
         "id": "ENG1PT21022",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence has correct capitalization and punctuation?",
-        "options": [
-          "the nurse checks the chart.",
-          "The nurse checks the chart",
-          "The Nurse Checks the Chart.",
-          "The nurse checks the chart."
+        "q": "Which sentence mechanic or tense is correct?",
+        "steps": [
+          {
+            "id": "capitalization",
+            "prompt": "(1/2)",
+            "options": [
+              "the doctor checks the chart.",
+              "The doctor checks the chart",
+              "The Doctor Checks the Chart.",
+              "The doctor checks the chart."
+            ],
+            "correct": 3
+          },
+          {
+            "id": "past",
+            "prompt": "(2/2)",
+            "options": [
+              "The nurse eat lunch at noon.",
+              "The nurse eats lunch at noon.",
+              "The nurse eating lunch at noon.",
+              "The nurse ate lunch at noon."
+            ],
+            "correct": 3
+          }
         ],
-        "correct": 3,
-        "explain": "A written sentence starts with a capital letter and ends with a full stop. The correct option has both."
+        "explain": "A written sentence begins with a capital letter and ends with a period. The simple past of 'eat' is 'ate'."
       },
       {
         "id": "ENG1PT21023",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence connects a time clause to a main clause in the simple present?",
-        "options": [
-          "When the clinic opens the nurse greet patients.",
-          "When the clinic opened, the nurse greets patients.",
-          "When the clinic opens, the nurse greets patients.",
-          "When the clinic opening, the nurse greets patients."
+        "q": "Match each when-clause form to its issue.",
+        "leftItems": [
+          { "id": "1", "text": "When the ward opens," },
+          { "id": "2", "text": "When the ward opened," },
+          { "id": "3", "text": "When the ward opening," },
+          { "id": "4", "text": "When the ward opens" }
         ],
-        "correct": 2,
-        "explain": "The correct sentence has a when clause and a main clause in the simple present, with a comma after the fronted clause."
+        "rightItems": [
+          { "id": "A", "text": "Correct present time clause" },
+          { "id": "B", "text": "Past form in present frame" },
+          { "id": "C", "text": "Non-finite verb form" },
+          { "id": "D", "text": "Missing comma after fronted clause" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "A fronted time clause uses the present form 'opens' and takes a comma. The other forms use the wrong tense, a non-finite verb, or no comma."
       },
       {
         "id": "ENG1PT21024",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence is a correct simple past sentence about a meal?",
+        "q": "The nurse ___ breakfast at dawn.",
         "options": [
-          "The doctor eat lunch at noon.",
-          "The doctor eats lunch at noon.",
-          "The doctor eating lunch at noon.",
-          "The doctor ate lunch at noon."
+          "eat",
+          "eats",
+          "eating",
+          "ate"
         ],
         "correct": 3,
-        "explain": "The simple past of eat is ate. The sentence has one subject and one verb."
+        "explain": "The simple past of 'eat' is 'ate'. The other forms are base, present singular, or non-finite."
       },
       {
         "id": "ENG1PT21025",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which list contains only compound-sentence connectors?",
-        "options": [
-          "For, and, not, but, or, yet, so",
-          "For, and, nor, but, or, yet, so",
-          "For, and, nor, because, or, yet, so",
-          "For, and, nor, but, while, yet, so"
+        "q": "Match each connector list to its category.",
+        "leftItems": [
+          { "id": "1", "text": "For, and, nor, but, or, yet, so" },
+          { "id": "2", "text": "For, and, nor, because, or, yet, so" },
+          { "id": "3", "text": "For, and, nor, but, while, yet, so" },
+          { "id": "4", "text": "For, and, not, but, or, yet, so" }
         ],
-        "correct": 1,
-        "explain": "The compound connectors are for, and, nor, but, or, yet, and so. Not is not a coordinating conjunction, and because and while introduce dependent clauses."
+        "rightItems": [
+          { "id": "A", "text": "Coordinating set" },
+          { "id": "B", "text": "Reason connector mixed in" },
+          { "id": "C", "text": "Time connector mixed in" },
+          { "id": "D", "text": "Negative word mixed in" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "The FANBOYS set contains coordinating connectors. 'Because' and 'while' introduce dependent clauses, and 'not' is not a coordinator."
       },
       {
         "id": "ENG1PT21026",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses while correctly?",
-        "options": [
-          "While the nurse resting, the doctor wrote.",
-          "While the nurse rest, the doctor wrote.",
-          "While the nurse rested, the doctor wrote.",
-          "While rested the nurse, the doctor wrote."
+        "q": "Which sentence uses a time clause properly?",
+        "steps": [
+          {
+            "id": "when",
+            "prompt": "(1/6)",
+            "options": [
+              "When the ward opens the nurse greet visitors.",
+              "When the ward opened, the nurse greets visitors.",
+              "When the ward opens, the nurse greets visitors.",
+              "When the ward opening, the nurse greets visitors."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "while",
+            "prompt": "(2/6)",
+            "options": [
+              "While the nurse resting, the doctor wrote.",
+              "While the nurse rest, the doctor wrote.",
+              "While the nurse rested, the doctor wrote.",
+              "While rested the nurse, the doctor wrote."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "before",
+            "prompt": "(3/6)",
+            "options": [
+              "The nurse washed her hands before eating.",
+              "The nurse washed her hands before she eat.",
+              "The nurse washed her hands before ate she.",
+              "The nurse washed her hands before she ate."
+            ],
+            "correct": 3
+          },
+          {
+            "id": "after",
+            "prompt": "(4/6)",
+            "options": [
+              "After ended the round, the nurse wrote notes.",
+              "After the round ending, the nurse wrote notes.",
+              "After the round ended, the nurse wrote notes.",
+              "After the round ends, the nurse wrote notes."
+            ],
+            "correct": 2
+          },
+          {
+            "id": "as-soon-as",
+            "prompt": "(5/6)",
+            "options": [
+              "The nurse then left as soon he arrived.",
+              "The nurse left as soon as arriving him.",
+              "The nurse left as soon as arrived he.",
+              "The nurse left as soon as he arrived."
+            ],
+            "correct": 3
+          },
+          {
+            "id": "if",
+            "prompt": "(6/6)",
+            "options": [
+              "If the fever rises, the nurse call the doctor.",
+              "If the fever rises, the nurse calling the doctor.",
+              "If the fever rises, the nurse calls the doctor.",
+              "If the fever rises, called the nurse the doctor."
+            ],
+            "correct": 2
+          }
         ],
-        "correct": 2,
-        "explain": "While joins two clauses, and the verb after nurse needs a finite past form. Resting and rest are not correct here."
+        "explain": "The steps test when, while, before, after, as soon as, and if. Each needs a finite verb after the connector, and a fronted clause takes a comma. The before step also shows that 'before eating' is a phrase, not a clause."
       },
       {
         "id": "ENG1PT21027",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses before to connect two clauses?",
-        "options": [
-          "The nurse washed her hands before eating.",
-          "The nurse washed hands before she eat.",
-          "The nurse washed hands before ate she.",
-          "The nurse washed hands before she ate."
+        "q": "Match each before form to its structure.",
+        "leftItems": [
+          { "id": "1", "text": "before he left" },
+          { "id": "2", "text": "before leaving" },
+          { "id": "3", "text": "before he leave" },
+          { "id": "4", "text": "before left he" }
         ],
-        "correct": 3,
-        "explain": "Before joins two clauses when it is followed by a subject and verb: she ate. Before eating is a phrase, not a clause."
+        "rightItems": [
+          { "id": "A", "text": "Finite past clause" },
+          { "id": "B", "text": "Gerund phrase" },
+          { "id": "C", "text": "Base-form error" },
+          { "id": "D", "text": "Incorrect word order" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "'Before' joins clauses when a subject and finite verb follow it. 'Before leaving' is a gerund phrase, and the other forms misuse verb form or order."
       },
       {
         "id": "ENG1PT21028",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses after correctly?",
-        "options": [
-          "After ended the round, the nurse wrote notes.",
-          "After the round ending, the nurse wrote notes.",
-          "After the round ended, the nurse wrote notes.",
-          "After the round ends, the nurse wrote notes."
+        "q": "Match each after form to its structure.",
+        "leftItems": [
+          { "id": "1", "text": "after the shift ended" },
+          { "id": "2", "text": "after the shift ending" },
+          { "id": "3", "text": "after ended the shift" },
+          { "id": "4", "text": "after the shift ends" }
         ],
-        "correct": 2,
-        "explain": "After joins two clauses when it is followed by a subject and verb: the round ended. The other options lack a finite verb or have wrong word order."
+        "rightItems": [
+          { "id": "A", "text": "Finite past clause" },
+          { "id": "B", "text": "Non-finite form" },
+          { "id": "C", "text": "Incorrect word order" },
+          { "id": "D", "text": "Present form with past frame" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "'After' joins clauses when a subject and finite past verb follow it. The other forms use a non-finite verb, wrong order, or the present tense."
       },
       {
         "id": "ENG1PT21029",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses as soon as correctly?",
-        "options": [
-          "The nurse then called as soon he arrived.",
-          "The nurse called as soon as arriving him.",
-          "The nurse called as soon as arrived he.",
-          "The nurse called as soon as he arrived."
+        "q": "Match each as soon as form to its issue.",
+        "leftItems": [
+          { "id": "1", "text": "as soon as she called" },
+          { "id": "2", "text": "as soon she called" },
+          { "id": "3", "text": "as soon as calling her" },
+          { "id": "4", "text": "as soon as called she" }
         ],
-        "correct": 3,
-        "explain": "As soon as is a complete connector. The correct sentence uses it before a subject and verb: he arrived."
+        "rightItems": [
+          { "id": "A", "text": "Complete connector" },
+          { "id": "B", "text": "Incomplete connector" },
+          { "id": "C", "text": "Non-finite object error" },
+          { "id": "D", "text": "Incorrect word order" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "The full connector 'as soon as' comes before a subject and finite verb. The other forms omit a word, use a non-finite verb, or invert the order."
       },
       {
         "id": "ENG1PT21030",
-        "type": "mcq",
+        "type": "matching",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which sentence uses if correctly?",
-        "options": [
-          "If the fever rises, the nurse call the doctor.",
-          "If the fever rises, the nurse calling the doctor.",
-          "If the fever rises, the nurse calls the doctor.",
-          "If the fever rises, called the nurse the doctor."
+        "q": "Match each if-clause result to its issue.",
+        "leftItems": [
+          { "id": "1", "text": "the nurse calls" },
+          { "id": "2", "text": "the nurse call" },
+          { "id": "3", "text": "the nurse calling" },
+          { "id": "4", "text": "called the nurse" }
         ],
-        "correct": 2,
-        "explain": "If joins two clauses. The subject fever needs the singular verb rises, and the main clause needs the finite verb calls."
+        "rightItems": [
+          { "id": "A", "text": "Correct third-person present" },
+          { "id": "B", "text": "Base-form error" },
+          { "id": "C", "text": "Non-finite form" },
+          { "id": "D", "text": "Incorrect order" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "An if clause about present facts needs a finite verb with correct agreement. The main clause here uses 'calls' with the singular subject 'nurse'."
       },
       {
         "id": "ENG1PT21031",
@@ -433,13 +728,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which sentence uses present simple for a daily routine?",
         "options": [
-          "The nurse recorded temperatures yesterday morning.",
-          "The nurse is recording temperatures now.",
-          "The nurse records temperatures every morning.",
-          "The nurse will record temperatures later."
+          "The nurse checked pulses yesterday morning.",
+          "The nurse is checking pulses now.",
+          "The nurse checks pulses every morning.",
+          "The nurse will check pulses later."
         ],
         "correct": 2,
-        "explain": "Present simple describes routines and facts. Records is the third-person singular form used with the nurse."
+        "explain": "Present simple describes routines and facts. 'Checks' is the third-person singular form used with 'the nurse'."
       },
       {
         "id": "ENG1PT21032",
@@ -447,13 +742,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which verb form matches I in the present simple?",
         "options": [
-          "I takes breaks after rounds.",
-          "I taking breaks after rounds.",
-          "I took breaks after rounds.",
-          "I take breaks after rounds."
+          "I rests after long shifts.",
+          "I resting after long shifts.",
+          "I rested after long shifts.",
+          "I rest after long shifts."
         ],
         "correct": 3,
-        "explain": "The pronoun I takes the base form take in the present simple. Takes is third-person singular, and took is past."
+        "explain": "The pronoun 'I' takes the base form 'rest' in the present simple. 'Rests' is third-person singular, and 'rested' is past."
       },
       {
         "id": "ENG1PT21033",
@@ -461,13 +756,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence has a compound predicate?",
         "options": [
-          "The nurse checked and updated the charts.",
-          "The nurse checked the patient's vital signs.",
-          "The nurse checked after the round ended.",
-          "The nurse and the aide checked charts."
+          "The nurse cleaned and stacked the trays.",
+          "The nurse cleaned the patient's room.",
+          "The nurse cleaned after the shift ended.",
+          "The nurse and the cook cleaned trays."
         ],
         "correct": 0,
-        "explain": "A compound predicate has one subject with two verbs. Checked and updated share the subject nurse. The other sentences have one verb, a dependent clause, or a compound subject."
+        "explain": "A compound predicate has one subject with two verbs. 'Cleaned' and 'stacked' share the subject 'the nurse'."
       },
       {
         "id": "ENG1PT21034",
@@ -475,13 +770,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which verb form matches she in the present simple?",
         "options": [
-          "She record temperatures daily.",
-          "She records temperatures daily.",
-          "She recording temperatures daily.",
-          "She recorded temperatures daily."
+          "She check pulses hourly.",
+          "She checks pulses hourly.",
+          "She checking pulses hourly.",
+          "She checked pulses hourly."
         ],
         "correct": 1,
-        "explain": "The singular subject she takes the verb form records. Record is base, and recorded is past."
+        "explain": "The singular subject 'she' takes the verb form 'checks'. 'Check' is base, and 'checked' is past."
       },
       {
         "id": "ENG1PT21035",
@@ -489,13 +784,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which verb form matches they in the present simple?",
         "options": [
-          "They training students daily.",
-          "They trained students daily.",
-          "They train students daily.",
-          "They trains students daily."
+          "They coaching nurses daily.",
+          "They coached nurses daily.",
+          "They coach nurses daily.",
+          "They coaches nurses daily."
         ],
         "correct": 2,
-        "explain": "The plural subject they takes the base form train. Trains is singular, and trained is past."
+        "explain": "The plural subject 'they' takes the base form 'coach'. 'Coaches' is singular, and 'coached' is past."
       },
       {
         "id": "ENG1PT21036",
@@ -503,13 +798,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which sentence has the correct third-person singular form?",
         "options": [
-          "The doctor review the chart.",
-          "The doctor reviewing the chart.",
-          "The doctor reviewed the chart.",
-          "The doctor reviews the chart."
+          "The nurse check the tray.",
+          "The nurse checking the tray.",
+          "The nurse checked the tray.",
+          "The nurse checks the tray."
         ],
         "correct": 3,
-        "explain": "A singular subject such as the doctor takes the verb form reviews. Review is base, and reviewed is past."
+        "explain": "A singular subject such as 'the nurse' takes the verb form 'checks'. 'Check' is base, and 'checked' is past."
       },
       {
         "id": "ENG1PT21037",
@@ -517,61 +812,61 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which sentence has the correct plural verb?",
         "options": [
-          "Nurses sterilizes tools after each use.",
-          "Nurses sterilize tools after each use.",
-          "Nurses sterilizing tools after each use.",
-          "Nurses sterilized tools after each use."
+          "Nurses sanitizes carts after each shift.",
+          "Nurses sanitize carts after each shift.",
+          "Nurses sanitizing carts after each shift.",
+          "Nurses sanitized carts after each shift."
         ],
         "correct": 1,
-        "explain": "The plural subject nurses takes the base form sterilize. Sterilizes is singular, and sterilized is past."
+        "explain": "The plural subject 'nurses' takes the base form 'sanitize'. 'Sanitizes' is singular, and 'sanitized' is past."
       },
       {
         "id": "ENG1PT21038",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which pair correctly completes the sentence: The doctor ___ the case and the nurse ___ the findings.",
+        "q": "The surgeon ___ the wound and the nurse ___ the tools.",
         "options": [
-          "review / record",
-          "reviews / records",
-          "reviews / record",
-          "review / records"
+          "clean / dry",
+          "cleans / dries",
+          "cleans / dry",
+          "clean / dries"
         ],
         "correct": 1,
-        "explain": "Both subjects are singular, so both verbs take -s: reviews and records."
+        "explain": "Both subjects are singular. Therefore, both verbs take '-s': 'cleans' and 'dries'."
       },
       {
         "id": "ENG1PT21039",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which pair correctly completes the sentence: Nurses ___ and ___ the tools after each use.",
+        "q": "Nurses ___ and ___ the carts after each shift.",
         "options": [
-          "cleans / sterilizes",
-          "clean / sterilize",
-          "clean / sterilizes",
-          "cleans / sterilize"
+          "wash / dry",
+          "washes / dries",
+          "wash / dries",
+          "washes / dry"
         ],
-        "correct": 1,
-        "explain": "The subject nurses is plural, so both verbs use the base forms clean and sterilize."
+        "correct": 0,
+        "explain": "The subject 'nurses' is plural. Both verbs use the base forms 'wash' and 'dry'."
       },
       {
         "id": "ENG1PT21040",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which pair correctly completes the sentence: The nurse ___ the plan after the doctor ___ the case.",
+        "q": "The nurse ___ the tray after the cook ___ the meal.",
         "options": [
-          "explains / make",
-          "explain / makes",
-          "explains / makes",
-          "explain / make"
+          "washes / prepare",
+          "wash / prepares",
+          "washes / prepares",
+          "wash / prepare"
         ],
         "correct": 2,
-        "explain": "Both subjects are singular, so both verbs take -s: explains and makes."
+        "explain": "Both subjects are singular. Therefore, both verbs take '-s': 'washes' and 'prepares'."
       },
       {
         "id": "ENG1PT21041",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which pair correctly completes the sentence: Nurse Rima ___ at seven and ___ her shift at eight.",
+        "q": "The nurse ___ at six and ___ her shift at seven.",
         "options": [
           "arrives / start",
           "arrive / starts",
@@ -579,27 +874,27 @@
           "arrive / start"
         ],
         "correct": 2,
-        "explain": "Nurse Rima is singular, so both verbs take -s: arrives and starts."
+        "explain": "The nurse is a singular subject. Both verbs take '-s': 'arrives' and 'starts'."
       },
       {
         "id": "ENG1PT21042",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which verb correctly completes the sentence: Nurse Sam ___ medications every shift.",
+        "q": "The nurse ___ charts every shift.",
         "options": [
-          "prepare",
-          "prepares",
-          "preparing",
-          "prepared"
+          "check",
+          "checks",
+          "checking",
+          "checked"
         ],
         "correct": 1,
-        "explain": "Nurse Sam is singular, so the verb takes -s: prepares."
+        "explain": "The nurse is a singular subject. The verb takes '-s': 'checks'."
       },
       {
         "id": "ENG1PT21043",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which verb correctly completes the sentence: The nurse ___ the doctor during checks.",
+        "q": "The nurse ___ the doctor during rounds.",
         "options": [
           "assist",
           "assists",
@@ -607,7 +902,7 @@
           "assisted"
         ],
         "correct": 1,
-        "explain": "The nurse is singular, so the verb takes -s: assists."
+        "explain": "The nurse is a singular subject. The verb takes '-s': 'assists'."
       },
       {
         "id": "ENG1PT21044",
@@ -635,7 +930,7 @@
           "4": "D",
           "5": "E"
         },
-        "explain": "Vital signs are basic health measurements. A consultation is a meeting about symptoms and treatment. Sterilize means clean something to remove bacteria and germs. Medications are prescribed drugs or treatments. Equipment means healthcare tools or devices."
+        "explain": "Vital signs are basic health measurements, and a consultation is a meeting about symptoms and treatment. Sterilize means to remove bacteria and germs, while medications are prescribed drugs or treatments. Equipment means healthcare tools or devices."
       },
       {
         "id": "ENG1PT21045",
@@ -649,7 +944,7 @@
           "Meetings about symptoms"
         ],
         "correct": 2,
-        "explain": "Vital signs are basic health measurements, such as temperature, heart rate, and blood pressure."
+        "explain": "Vital signs are basic health measurements. Temperature, heart rate, and blood pressure are examples."
       },
       {
         "id": "ENG1PT21046",
@@ -657,13 +952,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which set names vital signs?",
         "options": [
-          "Bandages, medications, and referral forms",
+          "Bandages, heart rate, and blood pressure",
           "Temperature, heart rate, and blood pressure",
-          "Doctors, nurses, and laboratory technicians",
-          "Clinics, wards, and examination rooms"
+          "Temperature, medications, and blood pressure",
+          "Temperature, heart rate, and referral forms"
         ],
         "correct": 1,
-        "explain": "Vital signs are basic health measurements, such as temperature, heart rate, and blood pressure. The other lists name supplies, people, or places."
+        "explain": "Vital signs are temperature, heart rate, and blood pressure. The other lists replace one sign with a supply, drug, or form."
       },
       {
         "id": "ENG1PT21047",
@@ -677,7 +972,7 @@
           "Remove bacteria and germs"
         ],
         "correct": 3,
-        "explain": "Sterilize means clean something to remove bacteria and germs. The other options describe consultation, medications, or records."
+        "explain": "Sterilize means to remove bacteria and germs. Discussing, prescribing, and recording are different actions."
       },
       {
         "id": "ENG1PT21048",
@@ -697,7 +992,7 @@
         "id": "ENG1PT21049",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "A consultation is a meeting between a patient and whom?",
+        "q": "A consultation is a meeting between a patient and which person?",
         "options": [
           "A medical supplier",
           "A hospital administrator",
@@ -705,7 +1000,7 @@
           "A laboratory technician"
         ],
         "correct": 2,
-        "explain": "A consultation is a meeting between a patient and a healthcare professional to discuss symptoms and treatment. Suppliers, administrators, and technicians are not the stated partner."
+        "explain": "A consultation is a meeting between a patient and a healthcare professional to discuss symptoms and treatment. The other options name people who are not the professional described."
       },
       {
         "id": "ENG1PT21050",
@@ -713,41 +1008,69 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which items are equipment?",
         "options": [
-          "Prescribed medications and treatment plans",
-          "Stethoscopes and blood pressure cuffs",
+          "Medications and treatment plans",
+          "Stethoscopes and pressure cuffs",
           "Bacteria, viruses, and other germs",
-          "Symptoms, charts, and medical histories"
+          "Symptoms and medical histories"
         ],
         "correct": 1,
-        "explain": "Equipment means healthcare tools or devices, such as stethoscopes and blood pressure cuffs. Medications are treatments, germs are microorganisms, and records are information."
+        "explain": "Equipment means healthcare tools or devices, such as stethoscopes and blood pressure cuffs. Medications are treatments, bacteria and viruses are germs, and histories are records."
       },
       {
         "id": "ENG1PT21051",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which sentence uses usually correctly in the present simple?",
+        "q": "Nurses ___ carts after each shift.",
         "options": [
-          "Nurses clean usually tools after each use.",
-          "Nurses usually cleaning tools after each use.",
-          "Nurses usually clean tools after each use.",
-          "Nurses usually cleaned tools after each use."
+          "wash usually",
+          "usually washing",
+          "usually wash",
+          "usually washed"
         ],
         "correct": 2,
-        "explain": "Usually comes before the main verb in the present simple. Clean is the correct plural verb form. Cleaning is non-finite, and cleaned is past."
+        "explain": "Adverbs such as 'usually' come before the main verb. The plural subject 'nurses' takes the base form 'wash'."
       },
       {
         "id": "ENG1PT21052",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Writing Skills - Present Simple",
         "q": "Which present simple question is correct?",
-        "options": [
-          "What time you usually start work?",
-          "What time do you usually start work?",
-          "What time does you usually start work?",
-          "What time do usually you start work?"
+        "steps": [
+          {
+            "id": "you",
+            "prompt": "(1/3)",
+            "options": [
+              "What time you usually start work?",
+              "What time do you usually start work?",
+              "What time does you usually start work?",
+              "What time do usually you start work?"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "nurses",
+            "prompt": "(2/3)",
+            "options": [
+              "What nurses do usually clean after each use?",
+              "What does nurses usually clean after each use?",
+              "What do nurses usually clean after each use?",
+              "What do usually nurses clean after each use?"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "singular",
+            "prompt": "(3/3)",
+            "options": [
+              "Does the nurse records vital signs every morning?",
+              "Do the nurse record vital signs every morning?",
+              "Does the nurse record vital signs every morning?",
+              "The nurse does record vital signs every morning?"
+            ],
+            "correct": 2
+          }
         ],
-        "correct": 1,
-        "explain": "Present simple questions use do + subject + base verb. Does is not used with you, and the other options have wrong word order."
+        "explain": "Present simple questions use do or does plus the subject plus the base verb. 'Does' matches singular third-person subjects, while 'do' matches you and plural subjects. The adverb 'usually' follows the subject."
       },
       {
         "id": "ENG1PT21053",
@@ -755,13 +1078,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which sentence uses present simple for a fact or routine?",
         "options": [
-          "Nurse Rima worked in the morning.",
-          "Nurse Rima works in the morning.",
-          "Nurse Rima is working now.",
-          "Nurse Rima will work later."
+          "The nurse worked in the morning.",
+          "The nurse works in the morning.",
+          "The nurse is working now.",
+          "The nurse will work later."
         ],
         "correct": 1,
-        "explain": "Present simple states facts and routines. Works is the third-person singular form. Worked is past, is working is continuous, and will work is future."
+        "explain": "Present simple states facts and routines. 'Works' is the third-person singular form."
       },
       {
         "id": "ENG1PT21054",
@@ -795,35 +1118,35 @@
           "6": "F",
           "7": "G"
         },
-        "explain": "For gives a reason. And joins similar ideas. Nor adds a negative. But shows contrast. Or presents a choice. Yet signals surprise. So introduces a result."
+        "explain": "'For' gives a reason, and 'so' introduces a result. 'And' joins similar ideas, 'but' shows contrast, 'or' presents a choice, 'yet' signals surprise, and 'nor' adds a negative."
       },
       {
         "id": "ENG1PT21055",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which sentence is correct in the present simple?",
+        "q": "Nurses ___ patients with morning care.",
         "options": [
-          "Nurses helps patients with daily activities.",
-          "Nurses help patients with daily activities.",
-          "Nurses helping patients with daily activities.",
-          "Nurses helped patients with daily activities."
+          "assists",
+          "assist",
+          "assisting",
+          "assisted"
         ],
         "correct": 1,
-        "explain": "The plural subject nurses takes the base form help. Helps is singular, helping is non-finite, and helped is past."
+        "explain": "The plural subject 'nurses' takes the base form 'assist'. 'Assists' is singular, 'assisting' is non-finite, and 'assisted' is past."
       },
       {
         "id": "ENG1PT21056",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which sentence is correct in the present simple?",
+        "q": "Every shift, I ___ the patient's pulse.",
         "options": [
-          "Every day, I measures the patient's temperature.",
-          "Every day, I measuring the patient's temperature.",
-          "Every day, I measure the patient's temperature.",
-          "Every day, I measured the patient's temperature."
+          "checks",
+          "checking",
+          "check",
+          "checked"
         ],
         "correct": 2,
-        "explain": "The pronoun I takes the base form measure in the present simple. Measures is singular, measuring is non-finite, and measured is past."
+        "explain": "The pronoun 'I' takes the base form 'check'. 'Checks' is singular, 'checking' is non-finite, and 'checked' is past."
       },
       {
         "id": "ENG1PT21057",
@@ -837,10 +1160,10 @@
           { "id": "4", "text": "Compound-complex sentence" }
         ],
         "rightItems": [
-          { "id": "A", "text": "Has a single main clause" },
-          { "id": "B", "text": "Has two joined main clauses" },
-          { "id": "C", "text": "Has one main and one dependent clause" },
-          { "id": "D", "text": "Has two main and one dependent clause" }
+          { "id": "A", "text": "One independent clause" },
+          { "id": "B", "text": "Two independent clauses" },
+          { "id": "C", "text": "One independent clause plus one dependent clause" },
+          { "id": "D", "text": "Two independent clauses plus one dependent clause" }
         ],
         "correct_pairs": {
           "1": "A",
@@ -848,7 +1171,7 @@
           "3": "C",
           "4": "D"
         },
-        "explain": "A simple sentence has one main clause. A compound sentence has two main clauses. A complex sentence adds one dependent clause. A compound-complex sentence has two main clauses and one dependent clause."
+        "explain": "A simple sentence has one independent clause, and a compound sentence has two. A complex sentence adds one dependent clause, and a compound-complex sentence has two independent clauses plus one dependent clause."
       },
       {
         "id": "ENG1PT21058",
@@ -857,12 +1180,12 @@
         "q": "Which sentence follows the pattern subject + verb + object?",
         "options": [
           "The nurse rested after the long shift.",
-          "The team arrived early this morning.",
-          "The technician repaired the monitor.",
+          "The staff arrived early this morning.",
+          "The technician repaired the bed.",
           "The patient slept well last night."
         ],
         "correct": 2,
-        "explain": "Repaired takes the object monitor. Rested, arrived, and slept do not take objects in these sentences."
+        "explain": "A transitive verb takes a direct object. 'Repaired' takes the object 'bed'."
       },
       {
         "id": "ENG1PT21059",
@@ -870,13 +1193,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence is compound-complex?",
         "options": [
-          "The nurse rested, and the doctor arrived quickly after the long shift.",
-          "The nurse rested when the doctor arrived quickly after the long shift.",
-          "The nurse rested briefly, and the doctor arrived when rounds ended.",
-          "The nurse and the doctor rested quickly together after the long shift."
+          "The nurse napped, and the doctor arrived after lunch.",
+          "The nurse napped when the doctor arrived after lunch.",
+          "The nurse napped, and the doctor arrived when the shift ended.",
+          "The nurse and the doctor napped after the long shift."
         ],
         "correct": 2,
-        "explain": "A compound-complex sentence has two main clauses and one dependent clause. The correct sentence has rested and arrived as main clauses, plus when rounds ended."
+        "explain": "A compound-complex sentence has two main clauses and one dependent clause. It joins two main clauses with 'and' and adds a dependent 'when' clause."
       },
       {
         "id": "ENG1PT21060",
@@ -890,21 +1213,21 @@
           "One main clause with no dependent clause"
         ],
         "correct": 2,
-        "explain": "A compound-complex sentence has at least two main clauses and at least one dependent clause. The other patterns describe complex, compound, or simple sentences."
+        "explain": "A compound-complex sentence has at least two main clauses and at least one dependent clause. The other patterns describe simple, compound, or complex sentences."
       },
       {
         "id": "ENG1PT21061",
         "type": "mcq",
         "cat": "Writing Skills - Sentence Structure",
-        "q": "Which word is the direct object in the sentence? The technician repaired the monitor.",
+        "q": "Which word is the direct object in 'The technician moved the bed.'?",
         "options": [
           "Technician",
-          "Repaired",
-          "Monitor",
+          "Moved",
+          "Bed",
           "The"
         ],
         "correct": 2,
-        "explain": "The direct object receives the action of the verb. Here, the technician repaired what? The monitor. Technician is the subject, repaired is the verb, and the is an article."
+        "explain": "The direct object receives the action of the verb. The bed is what the technician moved."
       },
       {
         "id": "ENG1PT21062",
@@ -926,7 +1249,7 @@
           "2": "B",
           "3": "C"
         },
-        "explain": "A transitive verb requires a noun or pronoun after it. A non-transitive verb does not. A direct object names the entity acted upon."
+        "explain": "A transitive verb requires a noun or pronoun after it. A non-transitive verb does not, and a direct object names the entity acted upon."
       },
       {
         "id": "ENG1PT21063",
@@ -940,7 +1263,7 @@
           "Remain"
         ],
         "correct": 1,
-        "explain": "Record needs something recorded. Sleep, arrive, and remain do not take direct objects."
+        "explain": "A transitive verb requires a direct object. 'Record' needs something recorded."
       },
       {
         "id": "ENG1PT21064",
@@ -948,13 +1271,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence uses a non-transitive verb?",
         "options": [
-          "The nurse recorded temperatures.",
-          "The patient slept peacefully.",
+          "The nurse checked pulses.",
+          "The patient rested quietly.",
           "The doctor reviewed charts.",
           "The clinic posted notices."
         ],
         "correct": 1,
-        "explain": "Slept does not take an object. Recorded, reviewed, and posted each take a direct object."
+        "explain": "A non-transitive verb does not take a direct object. 'Rested' expresses an action without an object."
       },
       {
         "id": "ENG1PT21065",
@@ -962,13 +1285,13 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which sentence uses a transitive verb?",
         "options": [
-          "The patient slept very peacefully last night.",
-          "The nurse recorded the patient's temperature.",
+          "The patient dozed very peacefully last night.",
+          "The nurse checked the patient's pulse.",
           "The team arrived early this morning.",
           "The doctor remained calm during rounds."
         ],
         "correct": 1,
-        "explain": "Recorded takes the object temperature. Slept, arrived, and remained do not take direct objects."
+        "explain": "A transitive verb takes a direct object. 'Checked' takes the object 'pulse'."
       },
       {
         "id": "ENG1PT21066",
@@ -976,55 +1299,55 @@
         "cat": "Writing Skills - Sentence Structure",
         "q": "Which statement about clause patterns is correct?",
         "options": [
-          "A compound sentence joins one dependent clause to one independent clause.",
-          "A complex sentence joins two independent clauses with a FANBOYS connector.",
+          "A compound sentence joins one dependent clause.",
+          "A complex sentence joins two independent clauses.",
           "A compound sentence joins two independent clauses.",
-          "A simple sentence joins two clauses with because."
+          "A simple sentence joins two clauses with 'because'."
         ],
         "correct": 2,
-        "explain": "A compound sentence joins two independent clauses. A complex sentence joins one independent clause with one dependent clause. A simple sentence has only one clause."
+        "explain": "A compound sentence joins two independent clauses. A complex sentence joins one independent clause with one dependent clause."
       },
       {
         "id": "ENG1PT21067",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which present simple question is correct?",
+        "q": "What ___ nurses usually clean after each shift?",
         "options": [
-          "What nurses do usually clean after each use?",
-          "What does nurses usually clean after each use?",
-          "What do nurses usually clean after each use?",
-          "What do usually nurses clean after each use?"
+          "do",
+          "does",
+          "are",
+          "is"
         ],
-        "correct": 2,
-        "explain": "Present simple questions use do + subject + base verb. Does is not used with plural nurses, and the other options have wrong word order."
+        "correct": 0,
+        "explain": "Plural 'nurses' takes 'do' in a present simple question. The main verb stays as the base form 'clean'."
       },
       {
         "id": "ENG1PT21068",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which present simple question is correct for a singular subject?",
+        "q": "___ the nurse ___ pulses every morning?",
         "options": [
-          "Does the nurse records vital signs every morning?",
-          "Do the nurse record vital signs every morning?",
-          "Does the nurse record vital signs every morning?",
-          "The nurse does record vital signs every morning?"
+          "Does / checks",
+          "Do / check",
+          "Does / check",
+          "Does / checking"
         ],
         "correct": 2,
-        "explain": "Does + subject + base verb is correct for a singular subject. Records doubles the marking, do is plural, and the last option has statement order."
+        "explain": "'Does' plus a singular subject takes the base verb 'check'. The other forms double-mark the verb, use plural 'do', or use a non-finite form."
       },
       {
         "id": "ENG1PT21069",
         "type": "mcq",
         "cat": "Writing Skills - Present Simple",
-        "q": "Which sentence uses the correct present simple form of have?",
+        "q": "She ___ a short break every hour.",
         "options": [
-          "She have a light breakfast every morning.",
-          "She has a light breakfast every morning.",
-          "She having a light breakfast every morning.",
-          "She had a light breakfast every morning."
+          "have",
+          "has",
+          "having",
+          "had"
         ],
         "correct": 1,
-        "explain": "The singular subject she takes has in the present simple. Have is plural or base, having is non-finite, and had is past."
+        "explain": "The singular subject 'she' takes 'has' in the present simple. 'Have' is base or plural, and 'had' is past."
       },
       {
         "id": "ENG1PT21070",
@@ -1032,13 +1355,13 @@
         "cat": "Writing Skills - Present Simple",
         "q": "Which sentence uses present simple for a timetable or fact?",
         "options": [
-          "The clinic opened at eight.",
-          "The clinic is opening at eight.",
-          "The clinic opens at eight.",
-          "The clinic will open at eight."
+          "The ward opened at seven.",
+          "The ward is opening at seven.",
+          "The clinic opens at seven.",
+          "The clinic will open at seven."
         ],
         "correct": 2,
-        "explain": "Present simple can state facts and scheduled events. Opens is the third-person singular form. Opened is past, is opening is continuous, and will open is future."
+        "explain": "Present simple can state facts and scheduled events. 'Opens' is the third-person singular form."
       }
     ]
   }
