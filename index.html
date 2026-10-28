@@ -683,6 +683,8 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 #examTip.grey{border-color:#9ca3af;background:#f9fafb;color:#374151;-webkit-text-fill-color:#374151}
 #examTip{position:fixed;z-index:100001;max-width:min(280px,calc(100vw - 24px));padding:8px 11px;border-radius:10px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;-webkit-text-fill-color:#92400e;font-family:var(--mono);font-size:.74rem;line-height:1.45;box-shadow:0 10px 24px -12px rgba(0,0,0,.6);pointer-events:none}
 #examTip[hidden]{display:none}
+#examTip strong{font-weight:700}
+.portal-card .note-badge,.portal-card .draft-badge,.portal-card .lock-badge,.card .card-badge{cursor:help}
 .online-panel{margin-top:8px;padding:20px 22px;border-radius:18px;background:rgba(14,22,40,.42);border:1px solid var(--border);backdrop-filter:blur(14px)}
 .online-panel h2{font-size:1.05rem;font-weight:800;margin:0 0 6px;background:linear-gradient(120deg,var(--cyan-bright),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .online-panel .hint{font-family:var(--mono);font-size:.78rem;color:var(--text-dim);margin:0 0 14px}
@@ -3076,27 +3078,38 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 });
 </script>
 <script>
-/* "Real exam is trickier" badge: on touch devices a tap shows the tooltip text (desktop keeps hover/title). */
+/* Card badges: a click or tap on any badge on a subject, material or bank card shows what the badge
+   means in a small popover and does not open the card (capture phase, before the card's own handler). */
 (function(){
-  var lastPointer='mouse';
-  document.addEventListener('pointerdown',function(e){ lastPointer=e.pointerType||'mouse'; },true);
+  var SEL='.note-badge,.card-badge,.draft-badge,.lock-badge,.sets-badge,.study-draft,.pt2-soon';
+  var FALLBACK={'draft':'Unfinished · still being written.','coming soon':'Not available yet.','locked':'Not available yet.'};
   function tip(){ var t=document.getElementById('examTip'); if(!t){ t=document.createElement('div'); t.id='examTip'; t.setAttribute('role','tooltip'); t.hidden=true; document.body.appendChild(t); } return t; }
-  function hide(){ var t=document.getElementById('examTip'); if(t && !t.hidden){ t.hidden=true; return true; } return false; }
-  document.addEventListener('click',function(e){
-    var b=e.target && e.target.closest && e.target.closest('.note-badge');
-    var touch=lastPointer==='touch' || lastPointer==='pen';
-    if(!b || !touch){ hide(); return; }
-    e.preventDefault(); e.stopPropagation();
-    var t=tip(); var text=b.getAttribute('data-tip')||b.title||'';
-    if(!t.hidden && t.dataset.for===text && t.__badge===b){ hide(); return; }
-    t.textContent=text; t.dataset.for=text; t.__badge=b; t.className=b.classList.contains('green')?'green':(b.classList.contains('grey')?'grey':''); t.hidden=false;
+  function hide(){ var t=document.getElementById('examTip'); if(t && !t.hidden){ t.hidden=true; t.__badge=null; return true; } return false; }
+  function meaning(b){
+    var label=(b.textContent||'').trim(); var t=b.getAttribute('data-tip')||b.getAttribute('title')||'';
+    if(!t || t.toLowerCase()===label.toLowerCase()) t=FALLBACK[label.toLowerCase()]||t;
+    if(!label) label=b.getAttribute('aria-label')||b.getAttribute('title')||'Badge';
+    return {label:label, text:t};
+  }
+  function block(e){ var b=e.target && e.target.closest && e.target.closest(SEL); if(b){ e.stopPropagation(); if(e.type==='click') e.preventDefault(); } return b; }
+  window.addEventListener('click',function(e){
+    var b=block(e);
+    if(!b){ hide(); return; }
+    var t=tip();
+    if(!t.hidden && t.__badge===b){ hide(); return; }
+    var m=meaning(b);
+    t.textContent=''; var s=document.createElement('strong'); s.textContent=m.label; t.appendChild(s);
+    if(m.text){ t.appendChild(document.createTextNode(' · '+m.text)); }
+    t.__badge=b; t.className=b.classList.contains('green')?'green':(b.classList.contains('grey')||b.classList.contains('lock-badge')||b.classList.contains('soon')?'grey':''); t.hidden=false;
     var r=b.getBoundingClientRect(), w=t.offsetWidth, h=t.offsetHeight;
     var left=Math.max(12, Math.min(r.left, innerWidth-w-12));
     var top=r.bottom+8; if(top+h>innerHeight-8) top=Math.max(8, r.top-h-8);
     t.style.left=left+'px'; t.style.top=top+'px';
   },true);
+  ['auxclick','dblclick'].forEach(function(ev){ window.addEventListener(ev,block,true); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && hide()){ e.preventDefault(); e.stopImmediatePropagation(); } },true);
   window.addEventListener('scroll',hide,true);
+  window.addEventListener('resize',hide);
 })();
 </script>
 </body>
