@@ -65,6 +65,47 @@
     saveJSON(STORE, all);
   }
   const isSingle = img => img.kind === 'single-structure' || !(img.labels && img.labels.length);
+  /* —— blanks: a picture with more than MIN_BLANKS labels asks a random set of MIN_BLANKS (the others show filled in);
+     ⤮ Shuffle picks a new set and clears the answers. Pictures with fewer labels ask all of them (↺ Reset). —— */
+  const PICK_STORE = 'sp_study_images_pick_v1', MIN_BLANKS = 7;
+  const activeLabels = img => isSingle(img) ? labelsOf(img) : img.labels.filter(l => !l._off);
+  const pickKey = (key, img) => setKey() + '|' + key + '|' + ((img.variants && img.variants[varOf[key] | 0]) ? img.variants[varOf[key] | 0].id : '');
+  function randomPick(ids, n) { const a = ids.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a.slice(0, n); }
+  const canShuffle = img => !isSingle(img) && activeLabels(img).length > MIN_BLANKS;
+  function blankIds(key, img) {
+    const act = activeLabels(img).map(l => l.id);
+    if (!canShuffle(img)) return new Set(act);
+    const all = loadJSON(PICK_STORE), k = pickKey(key, img); let p = all[k];
+    if (!Array.isArray(p) || p.length !== MIN_BLANKS || !p.every(x => act.includes(x))) { p = randomPick(act, MIN_BLANKS); all[k] = p; saveJSON(PICK_STORE, all); }
+    return new Set(p);
+  }
+  function reshuffle(key, img) {
+    const act = activeLabels(img).map(l => l.id), all = loadJSON(PICK_STORE), k = pickKey(key, img), prev = (all[k] || []).slice().sort().join('|');
+    let p = randomPick(act, MIN_BLANKS);
+    for (let t = 0; t < 8 && p.slice().sort().join('|') === prev; t++) p = randomPick(act, MIN_BLANKS);
+    all[k] = p; saveJSON(PICK_STORE, all);
+  }
+  /* auto-focus the first empty typing box, never on touch (the keyboard would pop up) and never scrolling the page */
+  const touchInput = () => document.documentElement.getAttribute('data-pointer-input') === 'touch' || !!(window.matchMedia && matchMedia('(hover: none) and (pointer: coarse)').matches);
+  function focusFirstEmpty(sec) {
+    if (!sec || !sec.isConnected || touchInput()) return;
+    const f = sec.querySelector('.simg-name-input, .label-slot.typing input'); if (!f) return;
+    const r = (sec.querySelector('.simg-figure') || sec).getBoundingClientRect();
+    if (r.bottom <= 0 || r.top >= (window.innerHeight || document.documentElement.clientHeight)) return;
+    try { f.focus({ preventScroll: true }); } catch (e) {}
+  }
+  /* gentle scroll: only as far as needed for el to fill about 30% of the viewport; never jumps it to the top */
+  function gentleReveal(el) {
+    if (!el || !el.isConnected) return;
+    const vh = window.innerHeight || document.documentElement.clientHeight, r = el.getBoundingClientRect();
+    const need = Math.min(vh * 0.3, r.height);
+    const shown = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+    if (shown >= need - 1) return;
+    let d = r.top < 0 ? r.top - 12 : (r.top + need) - vh + 12;
+    if (r.top > 0) d = Math.min(d, r.top - 12);
+    if (Math.abs(d) < 2) return;
+    window.scrollBy({ top: d, behavior: reduced() ? 'auto' : 'smooth' });
+  }
   /* Bone Anatomy: multi-word names are stored in Title Case, e.g. "Facial Bones" */
   /* typed bone names: first word as stored, each later word either Title or lower case ("Facial Bones" / "Facial bones") */
   const caseVariants = t => { const w = String(t).split(' '); let out = [w[0]]; for (let k = 1; k < w.length; k++) { const lo = w[k].charAt(0).toLowerCase() + w[k].slice(1), up = w[k].charAt(0).toUpperCase() + w[k].slice(1); out = out.flatMap(p => lo === up ? [p + ' ' + up] : [p + ' ' + up, p + ' ' + lo]); } return out.slice(0, 32); };
@@ -234,15 +275,15 @@
     if (stk) applyFrame(img, stk.frame);
     const vst = img.variants ? variantState(key, img) : null;
     if (vst) applyVariant(img, vst.v);
-    const slots = modeSlots(key, mode), labels = labelsOf(img), n = labels.length;
+    const slots = modeSlots(key, mode), labels = labelsOf(img), blanks = blankIds(key, img), n = blanks.size;
     const solvedHere = mode === 'show' ? [] : labels.filter(l => slots[l.id] != null && matches(l, slots[l.id]));
-    const k = solvedCount(key, img);
+    const k = mode === 'show' ? solvedCount(key, img) : labels.filter(l => blanks.has(l.id) && slots[l.id] != null && matches(l, slots[l.id])).length;
     const title = single ? 'Bone Anatomy' : img.title;
     let h = '<header class="simg-head"><h3 class="simg-title">' + esc(title)
       + (single && pager ? ' <span class="simg-page-no">' + (pager.i + 1) + ' / ' + pager.n + '</span>' : '')
       + (img.extra ? ' ' + (typeof noteBadgeHTML === 'function' ? noteBadgeHTML(EXTRA_BADGE) : '<span class="note-badge grey" title="' + esc(EXTRA_BADGE.tip) + '" data-tip="' + esc(EXTRA_BADGE.tip) + '">' + esc(EXTRA_BADGE.text) + '</span>') : '')
       + '</h3>'
-      + '<span class="simg-count" title="Solved labels">' + k + ' / ' + n + '</span>'
+      + '<span class="simg-count" title="Solved labels">' + k + ' / ' + (mode === 'show' ? labels.length : n) + '</span>'
       + '<div class="simg-modes" role="group" aria-label="Study mode">'
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
       + '</div></header>';
@@ -261,12 +302,15 @@
         if (mode === 'show') { h += '<div class="simg-hot" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '">' + (stk ? '<span class="simg-hot-text">' + esc(l.answer) + '</span>' : '') + '</div>'; return; }
         const t = slots[l.id];
         if (t != null && matches(l, t)) h += '<div class="label-slot locked" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
+        else if (!blanks.has(l.id)) h += '<div class="label-slot locked given" data-id="' + esc(l.id) + '" style="' + style + '" title="Shown · not asked in this set"><span class="label-slot-text">' + esc(l.answer) + '</span></div>';
         else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
         else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
     h += '</div></div>' + (slid ? sliderHTML(stk.view, stk.i) : '') + '</div>';
-h += '<button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button>';
+    if (mode !== 'show') h += canShuffle(img)
+      ? '<button type="button" class="simg-restart simg-shuffle" data-act="shuffle" title="Ask a new random set of ' + MIN_BLANKS + ' labels (clears the answers)">⤮ Shuffle</button>'
+      : '<button type="button" class="simg-restart simg-reset" data-act="reset" title="Clear the answers for this picture">↺ Reset</button>';
     if (single) {
       const l = labels[0], t = slots.name, q = img.plural ? 'What are these bones called?' : 'What is this bone called?';
       if (mode === 'show') h += '<p class="simg-answer">' + esc(img.answer) + '</p>';
@@ -275,14 +319,14 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" name="simg-name-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
     }
     if (mode === 'bank') {
-      const open = labels.filter(l => !l._off && !(slots[l.id] != null && matches(l, slots[l.id])));
+      const open = labels.filter(l => !l._off && blanks.has(l.id) && !(slots[l.id] != null && matches(l, slots[l.id])));
       if (open.length) {
         const words = single ? boneChips(ch, img) : bankWindow(key, labels, open);
         h += '<div class="label-bank simg-bank" aria-label="Word bank">' + words.map(w => { const hl = open.find(l => l.answer === w); return '<button type="button" class="label-chip" draggable="false"' + catAttr(hl && hl.hint) + ' data-text="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>';
       }
     }
     h += '<div class="feedback idle simg-fb" aria-live="polite"></div>';
-    if (pager) h += '<nav class="simg-pager-nav" aria-label="Bone pages"><button type="button" class="nav-btn simg-prev"' + (pager.i ? '' : ' disabled') + '>‹ Previous</button><span class="simg-page">Bone ' + (pager.i + 1) + ' of ' + pager.n + '</span><button type="button" class="nav-btn simg-next"' + (pager.i < pager.n - 1 ? '' : ' disabled') + '>Next ›</button></nav>';
+    if (pager) h += '<nav class="simg-pager-nav" aria-label="Bone pages"><button type="button" class="nav-btn simg-prev"' + (pager.i ? '' : ' disabled') + '>‹ Previous</button><span class="simg-page">Bone ' + (pager.i + 1) + ' of ' + pager.n + '</span>' + (pager.i < pager.n - 1 ? '<button type="button" class="nav-btn simg-next">Next ›</button>' : '<button type="button" class="nav-btn simg-finished" title="Go to the next picture section">Finished</button>') + '</nav>';
     if (!single && img.caption) h += '<p class="simg-caption">' + esc(img.caption) + '</p>';
     const lic = img.license ? (img.licenseUrl ? '<a href="' + esc(img.licenseUrl) + '" target="_blank" rel="noopener">' + esc(img.license) + '</a>' : esc(img.license)) : '';
     // a bone's source page names it, so its link only shows with the labels shown
@@ -305,11 +349,18 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       modeOf[key] = b.dataset.mode; rerender();
       if (b.dataset.mode === 'type') { const f = sec.querySelector('.label-input, .simg-name-input'); if (f) try { f.focus({ preventScroll: true }); } catch (e) {} }
     }));
-    sec.querySelector('.simg-restart').addEventListener('click', () => { delete bankSeen[key + '|' + mode]; writeModeSlots(key, mode, {}); rerender(); updateSummary(); });
+    const rb = sec.querySelector('.simg-restart');
+    if (rb) rb.addEventListener('click', () => {
+      if (pager && pager.stopCd) pager.stopCd();
+      if (rb.dataset.act === 'shuffle') reshuffle(key, img);
+      delete bankSeen[key + '|' + mode]; writeModeSlots(key, mode, {}); rerender(); updateSummary();
+      const nb = sec.querySelector('.simg-restart'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {}
+      if (mode === 'type') focusFirstEmpty(sec);
+    });
     if (pager) {
-      const go = d => { if (pager.stopCd) pager.stopCd(); pageOf[ch.lecture] = Math.max(0, Math.min(pager.n - 1, pager.i + d)); pager.render(); };
+      const go = d => { if (pager.stopCd) pager.stopCd(); pageOf[ch.lecture] = Math.max(0, Math.min(pager.n - 1, pager.i + d)); pager.render(); if (sec.dataset.mode === 'type') focusFirstEmpty(sec); };
       sec.querySelector('.simg-prev').addEventListener('click', () => go(-1));
-      sec.querySelector('.simg-next').addEventListener('click', () => go(1));
+      const nx = sec.querySelector('.simg-next'); if (nx) nx.addEventListener('click', () => go(1));
     }
     const fb = sec.querySelector('.simg-fb');
     const say = (cls, msg, ms) => { fb.className = 'feedback ' + cls + ' simg-fb'; fb.textContent = msg; clearTimeout(fb._t); if (ms) fb._t = setTimeout(() => { fb.className = 'feedback idle simg-fb'; fb.textContent = ''; }, ms); };
@@ -326,15 +377,16 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       if (done) done.classList.add('just-locked');
       if (typeof spawnFireworkBurst === 'function') spawnFireworkBurst(r.left + r.width / 2, r.top + r.height / 2, 14);
       const fb2 = sec.querySelector('.simg-fb');
-      fb2.className = 'feedback good simg-fb';
-      fb2.textContent = (n === 1 ? '✓ correct' : k >= n ? ('✓ all ' + n + ' solved') : ('✓ ' + k + ' of ' + n + ' labels')) + (xp ? ' · +' + xp + ' XP' : '');
+      const bl = blankIds(key, img), kb = labelsOf(img).filter(x => bl.has(x.id) && slots[x.id] != null).length, nb = bl.size;
+      if (single) { fb2.className = 'feedback idle simg-fb'; fb2.textContent = ''; } // the ✓ by the name and the frame flash already say it
+      else { fb2.className = 'feedback good simg-fb'; fb2.textContent = (kb >= nb ? ('✓ all ' + nb + ' solved') : ('✓ ' + kb + ' of ' + nb + ' labels')) + (xp ? ' · +' + xp + ' XP' : ''); }
       if (single && how === 'type' && String(text).trim() !== l.answer && String(text).trim().toLowerCase() === l.answer.toLowerCase()) {
         const typed = String(text).trim();
         const proper = l.answer.split('').map((c, i) => c !== typed[i] ? '<strong class="simg-case-fix">' + esc(c) + '</strong>' : esc(c)).join('');
         const inl = sec.querySelector('.simg-name.done .simg-name-locked'); if (inl) inl.innerHTML = '✓ ' + proper;
-        fb2.textContent += ' · Written as ' + l.answer;
+        if (!single) fb2.textContent += ' · Written as ' + l.answer;
       }
-      if (k >= n) { sec.classList.add('correct-pulse'); setTimeout(() => sec.classList.remove('correct-pulse'), 650); if (typeof pt1Confetti === 'function') pt1Confetti(); }
+      if (kb >= nb) { sec.classList.add('correct-pulse'); setTimeout(() => sec.classList.remove('correct-pulse'), 650); if (typeof pt1Confetti === 'function') pt1Confetti(); }
       updateSummary();
       if (pager && single && pager.i < pager.n - 1) startAdvance();
       const back = sec._refocus && sec.querySelector('.label-slot.typing[data-id="' + CSS.escape(sec._refocus) + '"] input');
@@ -348,19 +400,20 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       const host = sec.querySelector('.simg-name.done') || sec.querySelector('.simg-pager-nav'); if (!host) return;
       const w = document.createElement('div');
       w.className = 'formula-advance-wrap simg-advance'; w.setAttribute('aria-hidden', 'false');
-      w.innerHTML = '<div class="formula-advance-track" aria-hidden="true"><div class="formula-advance-fill"></div></div>'
-        + '<div class="simg-advance-row"><span class="formula-advance-label">Next bone</span>'
+      w.innerHTML = '<div class="formula-advance-track" role="progressbar" aria-label="Next bone" aria-valuemin="0" aria-valuemax="100"><div class="formula-advance-fill"></div></div>'
+        + '<div class="simg-advance-row">'
         + '<button type="button" class="nav-btn simg-adv-pause" aria-pressed="false">Pause</button>'
         + '<button type="button" class="nav-btn simg-adv-cancel">Cancel</button></div>';
       host.insertAdjacentElement('afterend', w);
       const fill = w.querySelector('.formula-advance-fill');
       let left = ADVANCE_MS, last = performance.now(), paused = false, raf = 0, alive = true;
-      const stop = () => { alive = false; cancelAnimationFrame(raf); if (w.isConnected) w.remove(); if (pager.stopCd === stop) pager.stopCd = null; };
+      const rbtn = sec.querySelector('.simg-restart'); if (rbtn) rbtn.hidden = true; // no Shuffle / Reset while the next bone is on its way
+      const stop = () => { alive = false; cancelAnimationFrame(raf); if (w.isConnected) w.remove(); if (rbtn && rbtn.isConnected) rbtn.hidden = false; if (pager.stopCd === stop) pager.stopCd = null; };
       const tick = now => {
         if (!alive) return;
         if (!paused) left -= now - last; last = now;
         fill.style.transform = 'scaleX(' + Math.max(0, left / ADVANCE_MS) + ')';
-        if (left <= 0) { stop(); if (sec.isConnected) { pageOf[ch.lecture] = Math.min(pager.n - 1, pager.i + 1); pager.render(); } return; }
+        if (left <= 0) { stop(); if (sec.isConnected) { pageOf[ch.lecture] = Math.min(pager.n - 1, pager.i + 1); pager.render(); if (sec.dataset.mode === 'type') focusFirstEmpty(sec); } return; }
         raf = requestAnimationFrame(tick);
       };
       w.querySelector('.simg-adv-pause').addEventListener('click', e => { paused = !paused; e.currentTarget.textContent = paused ? 'Resume' : 'Pause'; e.currentTarget.setAttribute('aria-pressed', String(paused)); w.classList.toggle('paused', paused); });
@@ -689,6 +742,24 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
     }
   }
 
+  /* Finished (last item of a picture section): open the next section and bring it gently into view;
+     on the last section, close this one and show the chapter list */
+  function finishSection(fromEl) {
+    const card = fromEl && fromEl.closest('.simg-chapter-card'); if (!card) return;
+    let next = card.nextElementSibling; while (next && !next.classList.contains('simg-chapter-card')) next = next.nextElementSibling;
+    if (next) {
+      const t = next.querySelector('.chapter-toggle');
+      if (!next.classList.contains('open')) t.click(); else gentleReveal(next);
+      setTimeout(() => { try { t.focus({ preventScroll: true }); } catch (e) {} }, 0);
+    } else {
+      const t = card.querySelector('.chapter-toggle');
+      if (card.classList.contains('open')) { card.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); }
+      const list = card.parentElement; const r = list.getBoundingClientRect();
+      if (r.top < 0) window.scrollBy({ top: r.top - 12, behavior: reduced() ? 'auto' : 'smooth' });
+      try { t.focus({ preventScroll: true }); } catch (e) {}
+    }
+  }
+  document.addEventListener('click', e => { const b = e.target && e.target.closest && e.target.closest('.simg-finished'); if (b) { e.preventDefault(); finishSection(b); } });
   function renderChapterBody(body, ch) {
     const md = body.querySelector('.md') || body;
     md.className = 'md simg-chapter';
@@ -705,6 +776,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       list.appendChild(sec);
       renderSection(sec, ch, img, null);
     });
+    if (!singles.length && ordered.length) { const fr = document.createElement('div'); fr.className = 'simg-finish-row'; fr.innerHTML = '<button type="button" class="nav-btn simg-finished" title="Go to the next picture section">Finished</button>'; md.appendChild(fr); }
     if (singles.length) {
       const sec = document.createElement('section');
       sec.className = 'simg-card single simg-pager'; sec.dataset.pager = '1';
@@ -747,6 +819,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
         const open = card.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         if (open && body.dataset.loaded !== '1') { renderChapterBody(body, ch); body.dataset.loaded = '1'; }
+        if (open && !card._quiet) requestAnimationFrame(() => requestAnimationFrame(() => gentleReveal(card)));
       });
       card.append(btn, prog, body);
       listEl.appendChild(card);
@@ -754,7 +827,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
     updateSummary();
     if (opts.focus) {
       const card = listEl.querySelector('.chapter-card[data-id="' + CSS.escape(opts.focus) + '"]');
-      if (card) { card.querySelector('.chapter-toggle').click(); setTimeout(() => card.scrollIntoView({ block: 'start' }), 30); }
+      if (card) { card._quiet = true; card.querySelector('.chapter-toggle').click(); card._quiet = false; setTimeout(() => card.scrollIntoView({ block: 'start' }), 30); }
     }
   }
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }

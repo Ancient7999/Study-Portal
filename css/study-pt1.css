@@ -679,3 +679,12 @@
 /* picture variants: labels a picture does not name stay hidden on it */
 #studyView .simg-has-var [data-off]{display:none !important}
 #studyView .simg-has-var .simg-reg.simg-off{display:none}
+/* Shuffle / Reset (always shown in Word bank and Type), labels shown filled in, and the Finished button */
+#studyView .simg-restart{font-weight:700;letter-spacing:.02em;transition:background .15s,box-shadow .15s,transform .15s}
+#studyView .simg-restart:active{transform:scale(.97)}
+#studyView .simg-restart:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.45),0 0 16px rgba(var(--accent-0-rgb),.55)}
+#studyView .label-figure .label-slot.locked.given{border:1px solid #9ca3af;background:#f3f4f6;color:#374151;-webkit-text-fill-color:#374151;font-weight:600;cursor:default}
+#studyView .simg-finish-row{display:flex;justify-content:flex-end;margin:6px 0 4px}
+#studyView .nav-btn.simg-finished{background:var(--success,#22c55e);border-color:var(--success,#22c55e);color:#05210f;-webkit-text-fill-color:#05210f;font-weight:800}
+#studyView .nav-btn.simg-finished:hover{filter:brightness(1.08);box-shadow:0 0 14px color-mix(in srgb,var(--success,#22c55e) 55%,transparent)}
+#studyView .nav-btn.simg-finished:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--success,#22c55e) 45%,transparent),0 0 16px color-mix(in srgb,var(--success,#22c55e) 55%,transparent)}
