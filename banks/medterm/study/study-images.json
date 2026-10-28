@@ -22991,6 +22991,573 @@
        }
       }
      ]
+    },
+    {
+     "id": "larynx",
+     "title": "The Larynx (Laryngeal Skeleton)",
+     "caption": "The larynx is a frame of cartilages joined by membranes and ligaments. The thyroid cartilage forms the front, the cricoid cartilage is the ring below it, and the epiglottis closes over the airway when you swallow.",
+     "kind": "labeled-diagram",
+     "credit": "OpenStax College, via Wikimedia Commons",
+     "license": "CC BY 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:2306_The_Larynx.jpg",
+     "labeled": "banks/medterm/study/lec16-17/larynx-v1-labeled.webp",
+     "blank": "banks/medterm/study/lec16-17/larynx-v1-blank.webp",
+     "width": 1400,
+     "height": 1291,
+     "alt": "Diagram for labelling: the cartilages, membranes and ligaments of the larynx. Two pictures from different sources show the same structures.",
+     "labels": [
+      {
+       "id": "larynx-epiglottis",
+       "answer": "Epiglottis",
+       "accept": [
+        "Epiglottic Cartilage"
+       ]
+      },
+      {
+       "id": "larynx-hyoid-bone",
+       "answer": "Hyoid Bone",
+       "accept": [
+        "Body of Hyoid Bone",
+        "Hyoid"
+       ]
+      },
+      {
+       "id": "larynx-thyrohyoid-membrane",
+       "answer": "Thyrohyoid Membrane",
+       "accept": []
+      },
+      {
+       "id": "larynx-thyroid-cartilage",
+       "answer": "Thyroid Cartilage",
+       "accept": [
+        "Thyroid"
+       ]
+      },
+      {
+       "id": "larynx-laryngeal-prominence",
+       "answer": "Laryngeal Prominence",
+       "accept": [
+        "Adam's Apple",
+        "Adams Apple"
+       ]
+      },
+      {
+       "id": "larynx-cricothyroid-ligament",
+       "answer": "Cricothyroid Ligament",
+       "accept": [
+        "Median Cricothyroid Ligament",
+        "Cricothyroid Membrane"
+       ]
+      },
+      {
+       "id": "larynx-cricoid-cartilage",
+       "answer": "Cricoid Cartilage",
+       "accept": [
+        "Cricoid"
+       ]
+      },
+      {
+       "id": "larynx-cricotracheal-ligament",
+       "answer": "Cricotracheal Ligament",
+       "accept": []
+      },
+      {
+       "id": "larynx-tracheal-cartilages",
+       "answer": "Tracheal Cartilages",
+       "accept": [
+        "Tracheal Cartilage",
+        "Tracheal Rings"
+       ]
+      },
+      {
+       "id": "larynx-epiglottis-2",
+       "answer": "Epiglottis",
+       "accept": [
+        "Epiglottic Cartilage"
+       ]
+      },
+      {
+       "id": "larynx-thyrohyoid-membrane-2",
+       "answer": "Thyrohyoid Membrane",
+       "accept": []
+      },
+      {
+       "id": "larynx-hyoid-bone-2",
+       "answer": "Hyoid Bone",
+       "accept": [
+        "Body of Hyoid Bone",
+        "Hyoid"
+       ]
+      },
+      {
+       "id": "larynx-fatty-pad",
+       "answer": "Fatty Pad",
+       "accept": [
+        "Fat Pad"
+       ]
+      },
+      {
+       "id": "larynx-cuneiform-cartilage",
+       "answer": "Cuneiform Cartilage",
+       "accept": [
+        "Cuneiform"
+       ]
+      },
+      {
+       "id": "larynx-thyrohyoid-membrane-3",
+       "answer": "Thyrohyoid Membrane",
+       "accept": []
+      },
+      {
+       "id": "larynx-corniculate-cartilage",
+       "answer": "Corniculate Cartilage",
+       "accept": [
+        "Corniculate"
+       ]
+      },
+      {
+       "id": "larynx-vestibular-fold",
+       "answer": "Vestibular Fold",
+       "accept": [
+        "False Vocal Cord",
+        "False Vocal Fold",
+        "Ventricular Fold"
+       ]
+      },
+      {
+       "id": "larynx-arytenoid-cartilage",
+       "answer": "Arytenoid Cartilage",
+       "accept": [
+        "Arytenoid",
+        "Arytenoids"
+       ]
+      },
+      {
+       "id": "larynx-vocal-fold",
+       "answer": "Vocal Fold",
+       "accept": [
+        "True Vocal Cord",
+        "Vocal Cord",
+        "Vocal Folds"
+       ]
+      },
+      {
+       "id": "larynx-thyroid-cartilage-2",
+       "answer": "Thyroid Cartilage",
+       "accept": [
+        "Thyroid"
+       ]
+      },
+      {
+       "id": "larynx-cricoid-cartilage-2",
+       "answer": "Cricoid Cartilage",
+       "accept": [
+        "Cricoid"
+       ]
+      },
+      {
+       "id": "larynx-cricothyroid-ligament-2",
+       "answer": "Cricothyroid Ligament",
+       "accept": [
+        "Median Cricothyroid Ligament",
+        "Cricothyroid Membrane"
+       ]
+      },
+      {
+       "id": "larynx-cricotracheal-ligament-2",
+       "answer": "Cricotracheal Ligament",
+       "accept": []
+      },
+      {
+       "id": "larynx-tracheal-cartilages-2",
+       "answer": "Tracheal Cartilages",
+       "accept": [
+        "Tracheal Cartilage",
+        "Tracheal Rings"
+       ]
+      },
+      {
+       "id": "larynx-median-thyrohyoid-ligament",
+       "answer": "Median Thyrohyoid Ligament",
+       "accept": []
+      },
+      {
+       "id": "larynx-lateral-thyrohyoid-ligament",
+       "answer": "Lateral Thyrohyoid Ligament",
+       "accept": []
+      },
+      {
+       "id": "larynx-superior-cornu-of-thyroid-cartilage",
+       "answer": "Superior Cornu of Thyroid Cartilage",
+       "accept": [
+        "Superior Horn of Thyroid Cartilage",
+        "Superior Cornu"
+       ]
+      },
+      {
+       "id": "larynx-laryngeal-incisure",
+       "answer": "Laryngeal Incisure",
+       "accept": [
+        "Thyroid Notch",
+        "Superior Thyroid Notch"
+       ]
+      },
+      {
+       "id": "larynx-superior-laryngeal-nerve-and-artery",
+       "answer": "Superior Laryngeal Nerve and Artery",
+       "accept": []
+      },
+      {
+       "id": "larynx-oblique-line",
+       "answer": "Oblique Line",
+       "accept": []
+      },
+      {
+       "id": "larynx-cricothyroid-muscle",
+       "answer": "Cricothyroid Muscle",
+       "accept": [
+        "Cricothyroid"
+       ]
+      },
+      {
+       "id": "larynx-inferior-cornu-of-thyroid-cartilage",
+       "answer": "Inferior Cornu of Thyroid Cartilage",
+       "accept": [
+        "Inferior Horn of Thyroid Cartilage",
+        "Inferior Cornu"
+       ]
+      },
+      {
+       "id": "larynx-conus-elasticus",
+       "answer": "Conus Elasticus",
+       "accept": [
+        "Cricovocal Membrane"
+       ]
+      },
+      {
+       "id": "larynx-cricothyroid-joint",
+       "answer": "Cricothyroid Joint",
+       "accept": []
+      },
+      {
+       "id": "larynx-trachea",
+       "answer": "Trachea",
+       "accept": [
+        "Windpipe"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "id": "v1",
+       "name": "Picture 1",
+       "labeled": "banks/medterm/study/lec16-17/larynx-v1-labeled.webp",
+       "blank": "banks/medterm/study/lec16-17/larynx-v1-blank.webp",
+       "width": 1400,
+       "height": 1291,
+       "credit": "OpenStax College, via Wikimedia Commons",
+       "license": "CC BY 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2306_The_Larynx.jpg",
+       "pos": {
+        "larynx-epiglottis": {
+         "x": 0.19,
+         "y": 1.67,
+         "w": 11.63,
+         "h": 4.01,
+         "cover": true
+        },
+        "larynx-hyoid-bone": {
+         "x": 0.26,
+         "y": 6.01,
+         "w": 20.63,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-thyrohyoid-membrane": {
+         "x": 73.26,
+         "y": 8.34,
+         "w": 25.27,
+         "h": 4.01,
+         "cover": true
+        },
+        "larynx-thyroid-cartilage": {
+         "x": 0.19,
+         "y": 12.91,
+         "w": 19.7,
+         "h": 4.17,
+         "cover": true
+        },
+        "larynx-laryngeal-prominence": {
+         "x": 73.83,
+         "y": 17.63,
+         "w": 26.17,
+         "h": 4.09,
+         "cover": true
+        },
+        "larynx-cricothyroid-ligament": {
+         "x": 0.26,
+         "y": 25.14,
+         "w": 22.91,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-cricoid-cartilage": {
+         "x": 74.11,
+         "y": 26.69,
+         "w": 19.63,
+         "h": 4.09,
+         "cover": true
+        },
+        "larynx-cricotracheal-ligament": {
+         "x": 0.04,
+         "y": 29.17,
+         "w": 24.34,
+         "h": 4.09,
+         "cover": true
+        },
+        "larynx-tracheal-cartilages": {
+         "x": 73.83,
+         "y": 34.36,
+         "w": 20.99,
+         "h": 3.93,
+         "cover": true
+        },
+        "larynx-epiglottis-2": {
+         "x": 0.33,
+         "y": 51.48,
+         "w": 11.77,
+         "h": 3.93,
+         "cover": true
+        },
+        "larynx-thyrohyoid-membrane-2": {
+         "x": 0.47,
+         "y": 56.28,
+         "w": 24.06,
+         "h": 3.93,
+         "cover": true
+        },
+        "larynx-hyoid-bone-2": {
+         "x": 73.69,
+         "y": 58.84,
+         "w": 21.49,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-fatty-pad": {
+         "x": 73.54,
+         "y": 61.55,
+         "w": 11.91,
+         "h": 4.17,
+         "cover": true
+        },
+        "larynx-cuneiform-cartilage": {
+         "x": 0.33,
+         "y": 62.63,
+         "w": 21.2,
+         "h": 3.86,
+         "cover": true
+        },
+        "larynx-thyrohyoid-membrane-3": {
+         "x": 73.83,
+         "y": 64.96,
+         "w": 24.84,
+         "h": 3.93,
+         "cover": true
+        },
+        "larynx-corniculate-cartilage": {
+         "x": 0.33,
+         "y": 65.97,
+         "w": 22.2,
+         "h": 3.86,
+         "cover": true
+        },
+        "larynx-vestibular-fold": {
+         "x": 74.04,
+         "y": 67.82,
+         "w": 16.06,
+         "h": 3.86,
+         "cover": true
+        },
+        "larynx-arytenoid-cartilage": {
+         "x": 0.33,
+         "y": 70.15,
+         "w": 20.2,
+         "h": 3.86,
+         "cover": true
+        },
+        "larynx-vocal-fold": {
+         "x": 74.11,
+         "y": 70.38,
+         "w": 11.63,
+         "h": 3.86,
+         "cover": true
+        },
+        "larynx-thyroid-cartilage-2": {
+         "x": 74.04,
+         "y": 73.79,
+         "w": 20.06,
+         "h": 4.17,
+         "cover": true
+        },
+        "larynx-cricoid-cartilage-2": {
+         "x": 0.4,
+         "y": 77.27,
+         "w": 19.34,
+         "h": 3.93,
+         "cover": true
+        },
+        "larynx-cricothyroid-ligament-2": {
+         "x": 74.04,
+         "y": 77.27,
+         "w": 23.27,
+         "h": 4.17,
+         "cover": true
+        },
+        "larynx-cricotracheal-ligament-2": {
+         "x": 74.26,
+         "y": 81.53,
+         "w": 24.27,
+         "h": 4.01,
+         "cover": true
+        },
+        "larynx-tracheal-cartilages-2": {
+         "x": 0.33,
+         "y": 86.1,
+         "w": 20.49,
+         "h": 3.93,
+         "cover": true
+        }
+       }
+      },
+      {
+       "id": "v2",
+       "name": "Picture 2",
+       "labeled": "banks/medterm/study/lec16-17/larynx-v2-labeled.webp",
+       "blank": "banks/medterm/study/lec16-17/larynx-v2-blank.webp",
+       "width": 1400,
+       "height": 1210,
+       "credit": "Olek Remesz (Orem), via Wikimedia Commons",
+       "license": "CC BY-SA 2.5",
+       "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Larynx_external_en.svg",
+       "pos": {
+        "larynx-hyoid-bone": {
+         "x": 76.47,
+         "y": 1.87,
+         "w": 12.56,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-thyrohyoid-membrane": {
+         "x": 2.69,
+         "y": 12.37,
+         "w": 21.06,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-median-thyrohyoid-ligament": {
+         "x": 5.61,
+         "y": 18.73,
+         "w": 18.06,
+         "h": 7.01,
+         "cover": true
+        },
+        "larynx-lateral-thyrohyoid-ligament": {
+         "x": 77.26,
+         "y": 18.73,
+         "w": 17.13,
+         "h": 7.18,
+         "cover": true
+        },
+        "larynx-superior-cornu-of-thyroid-cartilage": {
+         "x": 77.83,
+         "y": 27.0,
+         "w": 14.91,
+         "h": 6.1,
+         "cover": true
+        },
+        "larynx-laryngeal-incisure": {
+         "x": 6.33,
+         "y": 33.94,
+         "w": 17.56,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-superior-laryngeal-nerve-and-artery": {
+         "x": 77.26,
+         "y": 35.59,
+         "w": 17.91,
+         "h": 7.09,
+         "cover": true
+        },
+        "larynx-thyroid-cartilage": {
+         "x": 7.76,
+         "y": 39.81,
+         "w": 15.99,
+         "h": 4.03,
+         "cover": true
+        },
+        "larynx-oblique-line": {
+         "x": 76.9,
+         "y": 42.2,
+         "w": 12.63,
+         "h": 3.87,
+         "cover": true
+        },
+        "larynx-cricothyroid-muscle": {
+         "x": 77.26,
+         "y": 49.14,
+         "w": 19.06,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-cricothyroid-ligament": {
+         "x": 4.69,
+         "y": 50.05,
+         "w": 19.06,
+         "h": 7.26,
+         "cover": true
+        },
+        "larynx-inferior-cornu-of-thyroid-cartilage": {
+         "x": 77.9,
+         "y": 55.43,
+         "w": 14.84,
+         "h": 6.02,
+         "cover": true
+        },
+        "larynx-conus-elasticus": {
+         "x": 8.19,
+         "y": 57.41,
+         "w": 15.56,
+         "h": 3.46,
+         "cover": true
+        },
+        "larynx-cricothyroid-joint": {
+         "x": 76.97,
+         "y": 69.23,
+         "w": 16.84,
+         "h": 3.62,
+         "cover": true
+        },
+        "larynx-cricoid-cartilage": {
+         "x": 8.04,
+         "y": 73.52,
+         "w": 15.34,
+         "h": 3.79,
+         "cover": true
+        },
+        "larynx-trachea": {
+         "x": 15.11,
+         "y": 79.72,
+         "w": 8.41,
+         "h": 3.87,
+         "cover": true
+        }
+       }
+      }
+     ]
     }
    ]
   },
@@ -27683,6 +28250,315 @@
          "y": 81.05,
          "w": 10.4,
          "h": 5.0,
+         "cover": true
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "villi",
+     "title": "Villi of the Small Intestine",
+     "caption": "The lining of the small intestine is folded into circular folds covered with finger-like villi. Each villus holds capillaries and a lacteal, and its cells carry microvilli, so the surface for absorption is huge.",
+     "kind": "labeled-diagram",
+     "credit": "OpenStax College, via Wikimedia Commons",
+     "license": "CC BY 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:2418_Histology_Small_IntestinesN.jpg",
+     "labeled": "banks/medterm/study/body-systems/villi-v1-labeled.webp",
+     "blank": "banks/medterm/study/body-systems/villi-v1-blank.webp",
+     "width": 1079,
+     "height": 506,
+     "alt": "Diagram for labelling: the small intestine wall with its villi. Two pictures from different sources show the same structures.",
+     "labels": [
+      {
+       "id": "villi-lacteal",
+       "answer": "Lacteal",
+       "accept": [
+        "Lacteals"
+       ]
+      },
+      {
+       "id": "villi-absorptive-cells",
+       "answer": "Absorptive Cells",
+       "accept": [
+        "Absorptive Cell",
+        "Enterocytes",
+        "Enterocyte"
+       ]
+      },
+      {
+       "id": "villi-vessel-carrying-blood",
+       "answer": "Vessel Carrying Blood",
+       "accept": []
+      },
+      {
+       "id": "villi-capillaries",
+       "answer": "Capillaries",
+       "accept": [
+        "Capillary",
+        "Blood Capillaries"
+       ]
+      },
+      {
+       "id": "villi-microvilli",
+       "answer": "Microvilli",
+       "accept": [
+        "Brush Border",
+        "Microvilli (Brush Border)"
+       ]
+      },
+      {
+       "id": "villi-artery",
+       "answer": "Artery",
+       "accept": [
+        "Arteriole"
+       ]
+      },
+      {
+       "id": "villi-goblet-cell",
+       "answer": "Goblet Cell",
+       "accept": [
+        "Goblet Cells"
+       ]
+      },
+      {
+       "id": "villi-lumen",
+       "answer": "Lumen",
+       "accept": []
+      },
+      {
+       "id": "villi-circular-folds",
+       "answer": "Circular Folds",
+       "accept": [
+        "Circular Fold",
+        "Plicae Circulares"
+       ]
+      },
+      {
+       "id": "villi-muscle-layers",
+       "answer": "Muscle Layers",
+       "accept": [
+        "Muscularis",
+        "Muscularis Externa",
+        "Muscle Layer"
+       ]
+      },
+      {
+       "id": "villi-villi",
+       "answer": "Villi",
+       "accept": [
+        "Villus",
+        "Intestinal Villi"
+       ]
+      },
+      {
+       "id": "villi-intestinal-crypt",
+       "answer": "Intestinal Crypt",
+       "accept": [
+        "Crypt",
+        "Intestinal Gland",
+        "Crypt of Lieberkuhn",
+        "Crypt of Lieberkühn"
+       ]
+      },
+      {
+       "id": "villi-lymphatic-vessel",
+       "answer": "Lymphatic Vessel",
+       "accept": [
+        "Lymphatic Vesicle",
+        "Lymph Vessel"
+       ]
+      },
+      {
+       "id": "villi-muscularis-mucosae",
+       "answer": "Muscularis Mucosae",
+       "accept": []
+      },
+      {
+       "id": "villi-duodenal-gland",
+       "answer": "Duodenal Gland",
+       "accept": [
+        "Brunner's Gland",
+        "Brunners Gland",
+        "Duodenal Glands"
+       ]
+      },
+      {
+       "id": "villi-thin-surface-layer",
+       "answer": "Thin Surface Layer",
+       "accept": [
+        "Epithelium",
+        "Surface Epithelium",
+        "Surface Layer"
+       ]
+      },
+      {
+       "id": "villi-blood-vessel",
+       "answer": "Blood Vessel",
+       "accept": [
+        "Blood Vessels"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "id": "v1",
+       "name": "Picture 1",
+       "labeled": "banks/medterm/study/body-systems/villi-v1-labeled.webp",
+       "blank": "banks/medterm/study/body-systems/villi-v1-blank.webp",
+       "width": 1079,
+       "height": 506,
+       "credit": "OpenStax College, via Wikimedia Commons",
+       "license": "CC BY 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2418_Histology_Small_IntestinesN.jpg",
+       "pos": {
+        "villi-lacteal": {
+         "x": 47.78,
+         "y": 0.1,
+         "w": 6.95,
+         "h": 5.72,
+         "cover": true
+        },
+        "villi-absorptive-cells": {
+         "x": 67.7,
+         "y": 2.67,
+         "w": 13.53,
+         "h": 6.12,
+         "cover": true
+        },
+        "villi-vessel-carrying-blood": {
+         "x": 23.03,
+         "y": 5.44,
+         "w": 13.43,
+         "h": 10.46,
+         "cover": true
+        },
+        "villi-capillaries": {
+         "x": 67.52,
+         "y": 7.42,
+         "w": 8.71,
+         "h": 7.7,
+         "cover": true
+        },
+        "villi-microvilli": {
+         "x": 87.35,
+         "y": 6.82,
+         "w": 12.33,
+         "h": 10.87,
+         "cover": true
+        },
+        "villi-artery": {
+         "x": 67.24,
+         "y": 12.95,
+         "w": 6.95,
+         "h": 7.9,
+         "cover": true
+        },
+        "villi-goblet-cell": {
+         "x": 67.8,
+         "y": 19.47,
+         "w": 9.63,
+         "h": 5.92,
+         "cover": true
+        },
+        "villi-lumen": {
+         "x": 25.07,
+         "y": 25.2,
+         "w": 6.76,
+         "h": 5.92,
+         "cover": true
+        },
+        "villi-circular-folds": {
+         "x": 25.07,
+         "y": 30.74,
+         "w": 7.51,
+         "h": 10.66,
+         "cover": true
+        },
+        "villi-muscle-layers": {
+         "x": 0.14,
+         "y": 33.7,
+         "w": 7.04,
+         "h": 10.86,
+         "cover": true
+        },
+        "villi-villi": {
+         "x": 11.36,
+         "y": 35.48,
+         "w": 4.17,
+         "h": 5.92,
+         "cover": true
+        },
+        "villi-intestinal-crypt": {
+         "x": 66.96,
+         "y": 45.95,
+         "w": 13.34,
+         "h": 6.91,
+         "cover": true
+        },
+        "villi-lymphatic-vessel": {
+         "x": 44.91,
+         "y": 85.87,
+         "w": 14.82,
+         "h": 6.31,
+         "cover": true
+        },
+        "villi-muscularis-mucosae": {
+         "x": 29.15,
+         "y": 92.79,
+         "w": 17.14,
+         "h": 6.12,
+         "cover": true
+        },
+        "villi-duodenal-gland": {
+         "x": 56.12,
+         "y": 92.59,
+         "w": 13.62,
+         "h": 6.91,
+         "cover": true
+        }
+       }
+      },
+      {
+       "id": "v2",
+       "name": "Picture 2",
+       "labeled": "banks/medterm/study/body-systems/villi-v2-labeled.webp",
+       "blank": "banks/medterm/study/body-systems/villi-v2-blank.webp",
+       "width": 800,
+       "height": 1018,
+       "credit": "Snow93, via Wikimedia Commons",
+       "license": "Public domain",
+       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Intestinal_villus_simplified.svg",
+       "pos": {
+        "villi-thin-surface-layer": {
+         "x": 51.52,
+         "y": 0,
+         "w": 35.2,
+         "h": 4.0,
+         "cover": true
+        },
+        "villi-capillaries": {
+         "x": 71.02,
+         "y": 20.75,
+         "w": 20.58,
+         "h": 3.99,
+         "cover": true
+        },
+        "villi-lacteal": {
+         "x": 78.78,
+         "y": 51.49,
+         "w": 15.95,
+         "h": 3.59,
+         "cover": true
+        },
+        "villi-blood-vessel": {
+         "x": 75.52,
+         "y": 83.81,
+         "w": 24.32,
+         "h": 3.49,
          "cover": true
         }
        }
