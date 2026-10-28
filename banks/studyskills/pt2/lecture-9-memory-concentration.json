@@ -1,0 +1,479 @@
+{
+  "id": "study-skills-lec9-memory-concentration",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Lecture 9 - Boosting Memory and Increasing Concentration",
+  "formSize": 27,
+  "forms": ["A"],
+  "bank": {
+    "A": [
+      {
+        "id": "SS09001",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which main skill do the ten tips aim to improve?",
+        "options": [
+          "Concentration",
+          "Encoding",
+          "Retrieval",
+          "Self-motivation"
+        ],
+        "correct": 0,
+        "explain": "The ten tips are mainly for concentration. Encoding and retrieval belong to memory processing, and self-motivation is mentioned with goal setting."
+      },
+      {
+        "id": "SS09002",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each information-processing model part to its role.",
+        "leftItems": [
+          { "id": "1", "text": "Sensory input" },
+          { "id": "2", "text": "Short-term memory (STM)" },
+          { "id": "3", "text": "Rehearsal pathway" },
+          { "id": "4", "text": "Feedback loop" },
+          { "id": "5", "text": "Long-term memory (LTM)" },
+          { "id": "6", "text": "Retrieval pathway" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Receives incoming stimuli" },
+          { "id": "B", "text": "Has limited capacity and a trap door" },
+          { "id": "C", "text": "Moves practice and learning along" },
+          { "id": "D", "text": "Links to self-quizzing and an inactive route" },
+          { "id": "E", "text": "Stores schemas, unlimited capacity, imprinting" },
+          { "id": "F", "text": "Calls saved material back for review" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Sensory input enters STM, which has limited capacity and a trap door. Rehearsal moves practice and learning to LTM, while retrieval calls saved material back for review. Feedback links to self-quizzing and the inactive path."
+      },
+      {
+        "id": "SS09003",
+        "type": "saq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "How many kinds of encoding transmit information to LTM?",
+        "answer": "4",
+        "accept": [
+          "Four"
+        ],
+        "explain": "Linguistic, visual, motor, and semantic encoding are the four kinds. Each kind transmits a different type of information to LTM."
+      },
+      {
+        "id": "SS09004",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each encoding type to the information it transmits.",
+        "leftItems": [
+          { "id": "1", "text": "Linguistic encoding" },
+          { "id": "2", "text": "Visual encoding" },
+          { "id": "3", "text": "Motor encoding" },
+          { "id": "4", "text": "Semantic encoding" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Verbal information" },
+          { "id": "B", "text": "Image information" },
+          { "id": "C", "text": "Muscle memory information" },
+          { "id": "D", "text": "Emotional information and experiences" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "Linguistic encoding transmits verbal information, and visual encoding transmits image information. Motor encoding transmits muscle memory, while semantic encoding transmits emotional information and episodic memory to LTM."
+      },
+      {
+        "id": "SS09005",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each encoding type to its alternate name.",
+        "leftItems": [
+          { "id": "1", "text": "Linguistic encoding" },
+          { "id": "2", "text": "Visual encoding" },
+          { "id": "3", "text": "Motor encoding" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Auditory label" },
+          { "id": "B", "text": "Imaginal label" },
+          { "id": "C", "text": "Physical or kinesthetic label" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Linguistic encoding is also called auditory coding. Visual encoding is imaginal coding, and motor encoding is physical or kinesthetic coding."
+      },
+      {
+        "id": "SS09010",
+        "type": "multi",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which resources suit visual learners?",
+        "options": [
+          "Diagrams",
+          "Taped class sessions",
+          "Colors",
+          "Printed materials"
+        ],
+        "correct": [0, 2, 3],
+        "explain": "Visual learners use diagrams, color, printed materials, charts, and images. Taped class sessions suit auditory learners."
+      },
+      {
+        "id": "SS09012",
+        "type": "multi",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which strategies help auditory learners?",
+        "options": [
+          "Listening to notes",
+          "Creating manipulatives",
+          "Reading notes aloud",
+          "Teaching a partner"
+        ],
+        "correct": [0, 2, 3],
+        "explain": "Auditory learners benefit from listening, reading notes aloud, and teaching partners. Manipulatives suit tactile or kinesthetic learners."
+      },
+      {
+        "id": "SS09013",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each learning style to its main channel.",
+        "leftItems": [
+          { "id": "1", "text": "Visual learners" },
+          { "id": "2", "text": "Auditory learners" },
+          { "id": "3", "text": "Tactile/kinesthetic learners" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Charts and images" },
+          { "id": "B", "text": "Recordings and read-aloud notes" },
+          { "id": "C", "text": "Hands-on practice" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Visual learners use charts and images. Auditory learners use recordings and read-aloud notes. Tactile/kinesthetic learners use hands-on practice."
+      },
+      {
+        "id": "SS09014",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each learning style to a suitable strategy.",
+        "leftItems": [
+          { "id": "1", "text": "Visual learners" },
+          { "id": "2", "text": "Auditory learners" },
+          { "id": "3", "text": "Tactile/kinesthetic learners" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Use charts and images" },
+          { "id": "B", "text": "Tape class sessions" },
+          { "id": "C", "text": "Create hands-on notes" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Visual learners can use charts and images. Auditory learners can tape class sessions. Tactile/kinesthetic learners can create hands-on notes."
+      },
+      {
+        "id": "SS09016",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip advises choosing a fixed amount of study time?",
+        "options": [
+          "Prepare to Concentrate",
+          "Vary Your Study Activities",
+          "Intend to Concentrate",
+          "Take Regular Study Breaks"
+        ],
+        "correct": 2,
+        "explain": "Intend to Concentrate means setting a specified study time. Knowing the duration helps maintain focus."
+      },
+      {
+        "id": "SS09017",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip says to gather texts, notes, pens, and guides first?",
+        "options": [
+          "Prepare to Concentrate",
+          "Intend to Concentrate",
+          "Use Concentration Promoting Activities",
+          "Eat Regular, Well-Balanced Meals"
+        ],
+        "correct": 0,
+        "explain": "Prepare to Concentrate means having everything needed for the task. Texts, notes, pens, and study guides should be ready."
+      },
+      {
+        "id": "SS09018",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Use Concentration Promoting Activities recommends which action?",
+        "options": [
+          "Rewriting and summarizing notes",
+          "Choosing a fixed study time",
+          "Switching subjects periodically",
+          "Taking a five-minute pause"
+        ],
+        "correct": 0,
+        "explain": "This tip includes rewriting and organizing notes. It also includes diagrams, graphs, study guides, and summaries."
+      },
+      {
+        "id": "SS09019",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip suggests changing subjects when focus fades?",
+        "options": [
+          "Use Concentration Promoting Activities",
+          "Vary Your Study Activities",
+          "Devise a Specific Study Plan for Studying and Learning",
+          "Take Regular Study Breaks"
+        ],
+        "correct": 1,
+        "explain": "Vary Your Study Activities helps when one subject is hard to sustain. Changing subjects can restore focus."
+      },
+      {
+        "id": "SS09020",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip advises using one place only for schoolwork?",
+        "options": [
+          "Vary Your Study Activities",
+          "Devise a Specific Study Plan for Studying and Learning",
+          "Study in a Non-Distracting Environment",
+          "Take Regular Study Breaks"
+        ],
+        "correct": 2,
+        "explain": "Study in a Non-Distracting Environment means choosing one place for studying. That place should be used only for schoolwork."
+      },
+      {
+        "id": "SS09021",
+        "type": "multi",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "What should a study place remove?",
+        "options": [
+          "Visual distractions",
+          "Study goals",
+          "Auditory distractions",
+          "Balanced meals"
+        ],
+        "correct": [0, 2],
+        "explain": "A non-distracting study place removes visual and auditory distractions. Goals and meals are handled by other tips."
+      },
+      {
+        "id": "SS09022",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Devise a Specific Study Plan for Studying and Learning includes which practice?",
+        "options": [
+          "Using a textbook reading strategy",
+          "Setting a fixed study time limit",
+          "Switching subjects when focus fades",
+          "Taking a five-minute study pause"
+        ],
+        "correct": 0,
+        "explain": "A step-by-step plan makes concentrating easier. It also includes a textbook reading strategy."
+      },
+      {
+        "id": "SS09023",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "What does a step-by-step study plan make easier?",
+        "options": [
+          "Concentrating",
+          "Sleeping at night",
+          "Eating meals",
+          "Taking breaks"
+        ],
+        "correct": 0,
+        "explain": "A step-by-step plan makes it easier to concentrate. It also supports using a textbook reading strategy."
+      },
+      {
+        "id": "SS09024",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip links food choices, less sugar, and no stimulants to grades?",
+        "options": [
+          "Get Plenty of Sleep at Night",
+          "Set Daily, Weekly, Monthly, and Semester Goals",
+          "Eat Regular, Well-Balanced Meals",
+          "Take Regular Study Breaks"
+        ],
+        "correct": 2,
+        "explain": "Eat Regular, Well-Balanced Meals supports concentration and grades. It advises avoiding excess sugar and caffeine and not taking stimulants."
+      },
+      {
+        "id": "SS09025",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each study-health factor to its advice.",
+        "leftItems": [
+          { "id": "1", "text": "Healthier diets" },
+          { "id": "2", "text": "Excess sugar and caffeine" },
+          { "id": "3", "text": "Stimulants" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Lead to better grades" },
+          { "id": "B", "text": "Should be limited" },
+          { "id": "C", "text": "Should not be taken" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Students with healthier diets earn higher grades. Excess sugar and caffeine should be limited, and stimulants should not be taken."
+      },
+      {
+        "id": "SS09026",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip warns that staying tired harms attention?",
+        "options": [
+          "Eat Regular, Well-Balanced Meals",
+          "Take Regular Study Breaks",
+          "Intend to Concentrate",
+          "Get Plenty of Sleep at Night"
+        ],
+        "correct": 3,
+        "explain": "Get Plenty of Sleep at Night protects concentration. Fighting off sleepiness negatively affects attention."
+      },
+      {
+        "id": "SS09027",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "What negatively affects concentration?",
+        "options": [
+          "Taking regular breaks",
+          "Setting semester goals",
+          "Fighting off sleepiness",
+          "Varying subjects"
+        ],
+        "correct": 2,
+        "explain": "Fighting off sleepiness negatively affects concentration. Adequate sleep at night supports attention."
+      },
+      {
+        "id": "SS09028",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip recommends targets across several time periods?",
+        "options": [
+          "Set Daily, Weekly, Monthly, and Semester Goals",
+          "Take Regular Study Breaks",
+          "Devise a Specific Study Plan for Studying and Learning",
+          "Prepare to Concentrate"
+        ],
+        "correct": 0,
+        "explain": "Set Daily, Weekly, Monthly, and Semester Goals gives a sense of progress. Seeing movement toward goals supports concentration and self-motivation."
+      },
+      {
+        "id": "SS09029",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip treats wandering attention as normal and suggests a short pause?",
+        "options": [
+          "Set Daily, Weekly, Monthly, and Semester Goals",
+          "Vary Your Study Activities",
+          "Take Regular Study Breaks",
+          "Intend to Concentrate"
+        ],
+        "correct": 2,
+        "explain": "Take Regular Study Breaks accepts that concentration will wander. A short planned pause helps attention return."
+      },
+      {
+        "id": "SS09030",
+        "type": "saq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "How many minutes is the suggested study break?",
+        "answer": "5",
+        "accept": [
+          "5 minutes",
+          "5.",
+          "5 minutes.",
+          "Five",
+          "Five.",
+          "Five minutes",
+          "Five minutes."
+        ],
+        "explain": "The suggested break is five minutes. It is taken when concentration normally wanders."
+      },
+      {
+        "id": "SS09031",
+        "type": "matching",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Match each concentration tip to its action.",
+        "leftItems": [
+          { "id": "1", "text": "Intend to Concentrate" },
+          { "id": "2", "text": "Prepare to Concentrate" },
+          { "id": "3", "text": "Use Concentration Promoting Activities" },
+          { "id": "4", "text": "Vary Your Study Activities" },
+          { "id": "5", "text": "Study in a Non-Distracting Environment" },
+          { "id": "6", "text": "Devise a Specific Study Plan for Studying and Learning" },
+          { "id": "7", "text": "Eat Regular, Well-Balanced Meals" },
+          { "id": "8", "text": "Get Plenty of Sleep at Night" },
+          { "id": "9", "text": "Set Daily, Weekly, Monthly, and Semester Goals" },
+          { "id": "10", "text": "Take Regular Study Breaks" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Choose time limit" },
+          { "id": "B", "text": "Gather needed supplies" },
+          { "id": "C", "text": "Rewrite, summarize notes" },
+          { "id": "D", "text": "Switch subjects periodically" },
+          { "id": "E", "text": "Pick one quiet place" },
+          { "id": "F", "text": "Follow step-by-step reading strategy" },
+          { "id": "G", "text": "Limit sugar, caffeine, stimulants" },
+          { "id": "H", "text": "Avoid tiredness" },
+          { "id": "I", "text": "Track progress steadily" },
+          { "id": "J", "text": "Pause five minutes" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I",
+          "10": "J"
+        },
+        "explain": "Each tip is paired with its main action, from setting a time limit to taking a five-minute pause. Together the pairs summarize the ten concentration tips."
+      },
+      {
+        "id": "SS09032",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which tip uses conscious self-talk about a set study time?",
+        "options": [
+          "Intend to Concentrate",
+          "Prepare to Concentrate",
+          "Take Regular Study Breaks",
+          "Vary Your Study Activities"
+        ],
+        "correct": 0,
+        "explain": "Intend to Concentrate asks you to state a fixed study period. The self-talk form is a promise to concentrate for a number of minutes."
+      },
+      {
+        "id": "SS09033",
+        "type": "mcq",
+        "cat": "Lecture 9 - Boosting Memory and Increasing Concentration",
+        "q": "Which part ends the information-processing model by supplying final results?",
+        "options": [
+          "The output",
+          "The trap door",
+          "The feedback loop",
+          "The rehearsal path"
+        ],
+        "correct": 0,
+        "explain": "The output is the model endpoint, and outcomes are its final results. The other parts are stores or pathways."
+      }
+    ]
+  }
+}

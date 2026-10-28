@@ -1,0 +1,715 @@
+{
+  "id": "ss-lec6-adult-il",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Lecture 6 – Adult and Independent Learning",
+  "formSize": 42,
+  "forms": ["A"],
+  "bank": {
+    "A": [
+      {
+        "id": "SS06001",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does pedagogy mean?",
+        "options": [
+          "Helping adults learn",
+          "Educating children",
+          "Leading adults",
+          "Supporting independence"
+        ],
+        "correct": 1,
+        "explain": "Pedagogy means educating children. The word parts give ped as child and agogos as lead. Helping adults learn and leading adults describe andragogy. Supporting independence describes independent learning."
+      },
+      {
+        "id": "SS06002",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does andragogy mean?",
+        "options": [
+          "Educating children",
+          "Helping adults learn",
+          "Leading children",
+          "Supporting independence"
+        ],
+        "correct": 1,
+        "explain": "Andragogy means helping adults learn. The word parts give andro as man or adult and agogos as lead. Educating children and leading children describe pedagogy. Supporting independence describes independent learning."
+      },
+      {
+        "id": "SS06003",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does pedagogy describe?",
+        "options": [
+          "Learner-centered education",
+          "Teacher-centered education",
+          "Independent learning",
+          "Dependent learning"
+        ],
+        "correct": 1,
+        "explain": "Pedagogy describes teacher-centered education. Learner-centered education describes andragogy. Independent learning is a process, and dependent learning contrasts with independent learning."
+      },
+      {
+        "id": "SS06004",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does andragogy describe?",
+        "options": [
+          "Teacher-centered education",
+          "Learner-centered education",
+          "Independent learning",
+          "Dependent learning"
+        ],
+        "correct": 1,
+        "explain": "Andragogy describes learner-centered education. Teacher-centered education relates to pedagogy. Independent learning is a process, and dependent learning contrasts with independent learning."
+      },
+      {
+        "id": "SS06005",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What replaces teacher-centered education in higher education?",
+        "options": [
+          "Assessment-centered education",
+          "Experience-centered education",
+          "Learner-centered education",
+          "Feedback-centered education"
+        ],
+        "correct": 2,
+        "explain": "Higher education shifts to learner-centered education. Assessment, experience, and feedback are principle-related terms, not the named educational approach."
+      },
+      {
+        "id": "SS06006",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Progress is not in age, but in psychological and what?",
+        "options": [
+          "Emotional maturity",
+          "Intellectual maturity",
+          "Social maturity",
+          "Physical maturity"
+        ],
+        "correct": 1,
+        "explain": "Progress is in psychological and intellectual maturity. Emotional, social, and physical maturity are not named."
+      },
+      {
+        "id": "SS06007",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Adults need help seeing themselves as what?",
+        "options": [
+          "Teachers",
+          "Learners",
+          "Supervisors",
+          "Evaluators"
+        ],
+        "correct": 1,
+        "explain": "Adults need assistance understanding themselves as learners. Teachers, supervisors, and evaluators describe educator roles, not the learner identity adults need to adopt."
+      },
+      {
+        "id": "SS06008",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Medical students must find, judge, and use what?",
+        "options": [
+          "Goals",
+          "Knowledge",
+          "Problems",
+          "Strengths"
+        ],
+        "correct": 1,
+        "explain": "Medical students depend on themselves in finding, judging, and using knowledge. Goals, problems, and strengths are handled by other adult-learning principles."
+      },
+      {
+        "id": "SS06009",
+        "type": "matching",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Match each adult-learning principle to its application.",
+        "leftItems": [
+          {"id": "1", "text": "Self-direction"},
+          {"id": "2", "text": "Life experience"},
+          {"id": "3", "text": "Goal focus"},
+          {"id": "4", "text": "Relevancy focus"}
+        ],
+        "rightItems": [
+          {"id": "A", "text": "Confirm intended results"},
+          {"id": "B", "text": "Link to career"},
+          {"id": "C", "text": "Manage personal time"},
+          {"id": "D", "text": "Use prior knowledge"}
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "D",
+          "3": "A",
+          "4": "B"
+        },
+        "explain": "Self-direction means managing personal time. Life experience means using prior knowledge. Goal focus means confirming intended results. Relevancy focus means linking learning to a career."
+      },
+      {
+        "id": "SS06010",
+        "type": "matching",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Match each adult-learning principle to its application.",
+        "leftItems": [
+          {"id": "1", "text": "Motivation"},
+          {"id": "2", "text": "Participation"},
+          {"id": "3", "text": "Feedback"},
+          {"id": "4", "text": "Preferences"}
+        ],
+        "rightItems": [
+          {"id": "A", "text": "Vary methods often"},
+          {"id": "B", "text": "Seek practical benefits"},
+          {"id": "C", "text": "Join group tasks"},
+          {"id": "D", "text": "Apply helpful comments"}
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "C",
+          "3": "D",
+          "4": "A"
+        },
+        "explain": "Motivation means seeking practical benefits. Participation means joining group tasks. Feedback means applying helpful comments. Preferences means varying methods often."
+      },
+      {
+        "id": "SS06011",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the autonomy principle?",
+        "options": [
+          "Use earlier learning",
+          "Set personal goals",
+          "Seek practical benefit",
+          "Vary learning methods"
+        ],
+        "correct": 1,
+        "explain": "Autonomy includes taking responsibility, setting goals, diagnosing needs, and managing time. Earlier learning, practical benefit, and varying methods belong to other adult-learning principles."
+      },
+      {
+        "id": "SS06012",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the background-knowledge principle?",
+        "options": [
+          "Set personal goals",
+          "Request timely comments",
+          "Check planned outcomes",
+          "Use earlier learning"
+        ],
+        "correct": 3,
+        "explain": "The background-knowledge principle means linking new material to earlier learning. Setting goals, requesting comments, and checking outcomes belong to other principles."
+      },
+      {
+        "id": "SS06013",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the goal-oriented principle?",
+        "options": [
+          "Use earlier learning",
+          "Check planned outcomes",
+          "Seek practical benefit",
+          "Practice skills in groups"
+        ],
+        "correct": 1,
+        "explain": "Goal-oriented adults clarify expectations and verify achievement. Earlier learning, practical benefit, and group practice belong to other principles."
+      },
+      {
+        "id": "SS06014",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the relevancy principle?",
+        "options": [
+          "Use earlier learning",
+          "Request timely comments",
+          "Connect to career",
+          "Check planned outcomes"
+        ],
+        "correct": 2,
+        "explain": "Relevancy-oriented adults connect learning to future professional roles and apply it practically. Earlier learning, comments, and outcome checks belong to other principles."
+      },
+      {
+        "id": "SS06015",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the motivation principle?",
+        "options": [
+          "Check planned outcomes",
+          "Practice skills in groups",
+          "Use earlier learning",
+          "Seek practical benefit"
+        ],
+        "correct": 3,
+        "explain": "Motivated adults seek practical benefit and challenge themselves for better outcomes. Planned outcomes, group practice, and earlier learning belong to other principles."
+      },
+      {
+        "id": "SS06016",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the active-participation principle?",
+        "options": [
+          "Seek practical benefit",
+          "Practice in groups",
+          "Check planned outcomes",
+          "Use earlier learning"
+        ],
+        "correct": 1,
+        "explain": "Active participants solve problems, question, share experiences, and practice skills in groups. Practical benefit, planned outcomes, and earlier learning belong to other principles."
+      },
+      {
+        "id": "SS06017",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the feedback principle?",
+        "options": [
+          "Practice in groups",
+          "Request timely comments",
+          "Seek practical benefit",
+          "Vary methods used"
+        ],
+        "correct": 1,
+        "explain": "Feedback principles call for seeking and using instructor and peer comments for development. Group practice, practical benefit, and varying methods belong to other principles."
+      },
+      {
+        "id": "SS06018",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which action matches the learning-styles principle?",
+        "options": [
+          "Request timely comments",
+          "Check planned outcomes",
+          "Practice in groups",
+          "Vary methods used"
+        ],
+        "correct": 3,
+        "explain": "Learning-style principles call for evaluating preferences and varying methods; medical students often use multiple styles. Comments, outcome checks, and group practice belong to other principles."
+      },
+      {
+        "id": "SS06019",
+        "type": "stepped",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learning has five responsibilities.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Students take responsibility for identifying what?",
+            "options": [
+              "Learning styles",
+              "Assessment demands",
+              "Needs-to-know",
+              "Peer feedback"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "2",
+            "prompt": "After identifying needs-to-know, students search for what?",
+            "options": [
+              "Background knowledge",
+              "Relevant information",
+              "Learning styles",
+              "Assessment demands"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "3",
+            "prompt": "After searching for relevant information, students learn with what?",
+            "options": [
+              "Maximum guidance",
+              "Minimum supervision",
+              "Fixed methods",
+              "Teacher control"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "While learning with minimum supervision, students solve what?",
+            "options": [
+              "Learning goals",
+              "Peer feedback",
+              "Assessment demands",
+              "Own problems"
+            ],
+            "correct": 3
+          },
+          {
+            "id": "5",
+            "prompt": "After solving own problems, students assess what?",
+            "options": [
+              "Needs-to-know",
+              "Learning goals",
+              "Own learning",
+              "Peer feedback"
+            ],
+            "correct": 2
+          }
+        ],
+        "explain": "Step 1: identify needs-to-know. Step 2: search relevant information. Step 3: learn with minimum supervision. Step 4: solve own problems. Step 5: assess own learning. Learning styles, goals, feedback, and assessment demands are separate concepts."
+      },
+      {
+        "id": "SS06020",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learning is not what?",
+        "options": [
+          "Facilitating learning",
+          "Abandoning support",
+          "Supporting learners",
+          "Increasing responsibility"
+        ],
+        "correct": 1,
+        "explain": "Independent learning is not abandoning support or placing all responsibility on students. It facilitates and supports learners while increasing their responsibility."
+      },
+      {
+        "id": "SS06021",
+        "type": "matching",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Match each term to its description.",
+        "leftItems": [
+          {"id": "1", "text": "Dependent learners"},
+          {"id": "2", "text": "Independent learners"},
+          {"id": "3", "text": "Pedagogy"}
+        ],
+        "rightItems": [
+          {"id": "A", "text": "Rely on teachers"},
+          {"id": "B", "text": "Plan and reflect"},
+          {"id": "C", "text": "Lead children"},
+          {"id": "D", "text": "Support adults"}
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Dependent learners rely on teachers. Independent learners plan and reflect. Pedagogy means leading children. Supporting adults describes andragogy."
+      },
+      {
+        "id": "SS06022",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Who do dependent learners think is responsible for learning?",
+        "options": [
+          "Themselves",
+          "The teacher",
+          "Their peers",
+          "Outside resources"
+        ],
+        "correct": 1,
+        "explain": "Dependent learners think the teacher is responsible for all their learning. They also rely heavily on the teacher and do not plan or reflect. Themselves, peers, and resources are not the stated belief."
+      },
+      {
+        "id": "SS06023",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learners reflect on what?",
+        "options": [
+          "Teacher demands",
+          "Their progress",
+          "Peer feedback",
+          "Background knowledge"
+        ],
+        "correct": 1,
+        "explain": "Independent learners reflect on their learning progress. Teacher demands, peer feedback, and background knowledge are separate concepts."
+      },
+      {
+        "id": "SS06024",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which is a benefit of independent learning?",
+        "options": [
+          "Dependent learning",
+          "Time management",
+          "Teacher control",
+          "Fixed methods"
+        ],
+        "correct": 1,
+        "explain": "Time management is listed as a benefit. Dependent learning, teacher control, and fixed methods conflict with independent learning and varied styles."
+      },
+      {
+        "id": "SS06025",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which student action supports independent learning?",
+        "options": [
+          "Designing tasks",
+          "Self-assessing work",
+          "Evaluating progress",
+          "Supplying expertise"
+        ],
+        "correct": 1,
+        "explain": "Students can self-assess their own work. Designing tasks, evaluating progress, and supplying expertise are teacher roles in independent learning."
+      },
+      {
+        "id": "SS06026",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does a facilitator do?",
+        "options": [
+          "Supervises learners",
+          "Motivates students",
+          "Evaluates progress",
+          "Supplies expertise"
+        ],
+        "correct": 1,
+        "explain": "Facilitators motivate students, emphasize purpose and benefits, and design meaningful tasks. Supervising, evaluating progress, and supplying expertise are other teacher roles."
+      },
+      {
+        "id": "SS06027",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Adult learning helps people learn what?",
+        "options": [
+          "What children need",
+          "What they want",
+          "What goals require",
+          "What feedback suggests"
+        ],
+        "correct": 1,
+        "explain": "Adult learning helps adults learn what they want. Children are told what to learn. Goals and feedback are separate adult-learning principles."
+      },
+      {
+        "id": "SS06028",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Applying eight principles helps adults do what?",
+        "options": [
+          "Teach children",
+          "Learn better",
+          "Depend on teachers",
+          "Attune to assessments"
+        ],
+        "correct": 1,
+        "explain": "The eight principles help adults learn better. Teaching children describes pedagogy. Depending on teachers describes dependent learners. Attuning to assessments conflicts with motivation."
+      },
+      {
+        "id": "SS06029",
+        "type": "stepped",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Learner types differ in responsibility.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Dependent learners do not know what?",
+            "options": [
+              "Their teachers",
+              "Their strengths",
+              "Their peers",
+              "Their resources"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "2",
+            "prompt": "Independent learners know their strengths and weaknesses and do what?",
+            "options": [
+              "Rely on teachers",
+              "Take responsibility",
+              "Do not plan",
+              "Do not reflect"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Dependent learners do not know their strengths. Independent learners know their strengths and weaknesses and take responsibility. Relying on teachers, not planning, and not reflecting describe dependent learners."
+      },
+      {
+        "id": "SS06030",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Dependent learners do not connect classroom learning to what?",
+        "options": [
+          "Peer feedback",
+          "Real world",
+          "Personal development",
+          "Background knowledge"
+        ],
+        "correct": 1,
+        "explain": "Dependent learners do not connect classroom learning to the real world. Peer feedback, personal development, and background knowledge are separate concepts."
+      },
+      {
+        "id": "SS06031",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "CME is pursued easily by which learners?",
+        "options": [
+          "Dependent learners",
+          "Independent learners",
+          "Goal-oriented learners",
+          "Relevancy-oriented learners"
+        ],
+        "correct": 1,
+        "explain": "Independent learners easily pursue CME after graduation. Dependent learners rely on teachers. Goal orientation and relevancy are adult-learning principles, not the stated CME learner type."
+      },
+      {
+        "id": "SS06032",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does a feedback provider do?",
+        "options": [
+          "Supervises learning",
+          "Gives comments",
+          "Designs tasks",
+          "Supplies expertise"
+        ],
+        "correct": 1,
+        "explain": "Feedback providers give comments on progress. Subject experts supply knowledge, supervisors oversee learning, and facilitators motivate and design tasks."
+      },
+      {
+        "id": "SS06033",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Adults need help seeing themselves as learners and are what?",
+        "options": [
+          "Dependent",
+          "Independent",
+          "Assessment-focused",
+          "Single-style"
+        ],
+        "correct": 1,
+        "explain": "Adults are independent learners. Dependent learners rely heavily on teachers. Assessment-focused and single-style approaches conflict with motivation and varied methods."
+      },
+      {
+        "id": "SS06034",
+        "type": "stepped",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learning involves increasing responsibility.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What do students search for?",
+            "options": [
+              "Background knowledge",
+              "Relevant information",
+              "Learning styles",
+              "Teacher demands"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "2",
+            "prompt": "After searching for relevant information, students assess what?",
+            "options": [
+              "Own learning",
+              "Teacher demands",
+              "Learning styles",
+              "Background knowledge"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Step 1: Independent learning includes searching for relevant information. Step 2: It also includes assessing own learning. Background knowledge relates to experience, learning styles to preferences, and teacher demands to motivation."
+      },
+      {
+        "id": "SS06035",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "How many adult-learning principles are listed?",
+        "options": [
+          "Six",
+          "Seven",
+          "Eight",
+          "Nine"
+        ],
+        "correct": 2,
+        "explain": "There are eight principles for adult learning. Six, seven, and nine do not match the listed number."
+      },
+      {
+        "id": "SS06036",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learning makes learning what?",
+        "options": [
+          "Difficult",
+          "Enjoyable",
+          "Passive",
+          "Fixed"
+        ],
+        "correct": 1,
+        "explain": "Independent learning makes learning enjoyable. Difficult, passive, and fixed conflict with active participation, support, and varied methods."
+      },
+      {
+        "id": "SS06037",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which type of learners make decisions about their own learning?",
+        "options": [
+          "Dependent",
+          "Independent",
+          "Assessment-focused",
+          "Single-style"
+        ],
+        "correct": 1,
+        "explain": "Independent learners make decisions about their own learning. Dependent learners rely on teachers. Assessment-focused and single-style approaches conflict with motivation and varied methods."
+      },
+      {
+        "id": "SS06038",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Which quality supports becoming an independent learner?",
+        "options": [
+          "Dependence",
+          "Enthusiasm",
+          "Teacher control",
+          "Fixed methods"
+        ],
+        "correct": 1,
+        "explain": "Enthusiasm supports becoming an independent learner. Dependence, teacher control, and fixed methods conflict with independence, facilitation, and varied learning styles."
+      },
+      {
+        "id": "SS06039",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learners ask for help from whom?",
+        "options": [
+          "Goals and resources",
+          "Peers and faculty",
+          "Strengths and weaknesses",
+          "Tasks and feedback"
+        ],
+        "correct": 1,
+        "explain": "Independent learners ask for help from peers and faculty. Goals, resources, strengths, weaknesses, tasks, and feedback are learning objects, not people."
+      },
+      {
+        "id": "SS06040",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "What does a subject area expert supply?",
+        "options": [
+          "Supervision",
+          "Knowledge",
+          "Evaluation",
+          "Facilitation"
+        ],
+        "correct": 1,
+        "explain": "Subject area experts supply knowledge. Supervision, evaluation, and facilitation are other teacher roles in independent learning."
+      },
+      {
+        "id": "SS06041",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "Independent learning moves from setting goals to achieving learning and what?",
+        "options": [
+          "Abandoning",
+          "Evaluating",
+          "Shifting",
+          "Controlling"
+        ],
+        "correct": 1,
+        "explain": "Independent learning moves from setting goals to achieving learning and evaluating it. Abandoning, shifting, and controlling conflict with facilitation and responsibility."
+      },
+      {
+        "id": "SS06042",
+        "type": "mcq",
+        "cat": "Lecture 6 – Adult and Independent Learning",
+        "q": "In independent learning, teachers must have what?",
+        "options": [
+          "Absent support",
+          "Active roles",
+          "Total independence",
+          "Passive observation"
+        ],
+        "correct": 1,
+        "explain": "Teachers must have active roles in independent learning. Absent support, total independence, and passive observation conflict with facilitation and support."
+      }
+    ]
+  }
+}

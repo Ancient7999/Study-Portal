@@ -1,0 +1,946 @@
+{
+  "id": "ss-lec8-note-taking",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Lecture 8 – Effective Note-Taking Strategies",
+  "formSize": 55,
+  "forms": ["A"],
+  "bank": {
+    "A": [
+      {
+        "id": "SS08001",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "How many note-taking options are outlined?",
+        "options": [
+          "Three",
+          "Four",
+          "Five",
+          "Seven"
+        ],
+        "correct": 2,
+        "explain": "Five note-taking options are outlined: Cornell, Index Card, Two-Column, Three-Column, and Formal Outline. Three, four, and seven do not match the listed set."
+      },
+      {
+        "id": "SS08002",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each note-taking system to one feature.",
+        "leftItems": [
+          { "id": "1", "text": "Cornell Note-Taking System" },
+          { "id": "2", "text": "Two-Column Note-Taking System" },
+          { "id": "3", "text": "Three-Column Note-Taking System" },
+          { "id": "4", "text": "Formal Outline Note-Taking System" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Main notes, cues, and summary sections" },
+          { "id": "B", "text": "Terms/questions on one side, notes/answers on the other" },
+          { "id": "C", "text": "One entry, plus paired information" },
+          { "id": "D", "text": "Main topic, subtopics, and indented details" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "Cornell uses main notes, cues, and summary. Two-Column pairs terms or questions with notes or answers. Three-Column gives one entry paired information. Formal Outline uses main topics, subtopics, and indented details."
+      },
+      {
+        "id": "SS08003",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "What is the goal of taking textbook notes?",
+        "options": [
+          "Reread, review, and summarize chapters",
+          "Record, reduce, and recite Cornell notes",
+          "Learn, rehearse, and review information",
+          "Label, date, and number lecture handouts"
+        ],
+        "correct": 2,
+        "explain": "The goal is to learn, rehearse, and review textbook information. Rereading chapters, using the Five R's, and labeling handouts are other note-taking actions."
+      },
+      {
+        "id": "SS08004",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Studying from notes is more efficient than what?",
+        "options": [
+          "Attending lectures",
+          "Rereading chapters",
+          "Using index cards",
+          "Reviewing handouts"
+        ],
+        "correct": 1,
+        "explain": "Studying from notes is more efficient than rereading chapters. Attending lectures, using index cards, and reviewing handouts are not the stated comparison."
+      },
+      {
+        "id": "SS08005",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which essential strategy for textbook note-taking comes first?",
+        "options": [
+          "Labeling notes by chapter and lecture",
+          "Understanding what you read",
+          "Experimenting with different forms",
+          "Using notes for feedback"
+        ],
+        "correct": 1,
+        "explain": "Understanding what you read is the starting point. Labeling, experimenting, and using notes for feedback are also essential strategies, but not the first."
+      },
+      {
+        "id": "SS08006",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Notes should be labeled by textbook chapter and what?",
+        "options": [
+          "Dates for pages",
+          "Numbers for handouts",
+          "The related lecture",
+          "Previous session notes"
+        ],
+        "correct": 2,
+        "explain": "Label notes according to textbook chapter and the related lecture. Dating pages, numbering handouts, and previous session notes are other note-taking actions."
+      },
+      {
+        "id": "SS08007",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which pair of actions is recommended before class?",
+        "options": [
+          "Skip assigned material and review previous notes",
+          "Read assigned material and ignore previous notes",
+          "Read assigned material and review previous notes",
+          "Review previous notes and write every word"
+        ],
+        "correct": 2,
+        "explain": "Before class includes reading assigned material and reviewing previous notes. Skipping, ignoring notes, and writing every word are not recommended."
+      },
+      {
+        "id": "SS08008",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "During class, what should students avoid writing?",
+        "options": [
+          "Key points, dates, and examples",
+          "Every word of the lecture",
+          "Definitions, formulas, and background information",
+          "Key terms, definitions, and examples"
+        ],
+        "correct": 1,
+        "explain": "Students should avoid writing every word. Supporting information includes key points, dates, key terms, definitions, examples, formulas, and background."
+      },
+      {
+        "id": "SS08009",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "After class, review notes, rewrite if needed, and do what?",
+        "options": [
+          "Read assigned material",
+          "Date each notebook page",
+          "Summarize the main points",
+          "Sit near the room front"
+        ],
+        "correct": 2,
+        "explain": "After class includes reviewing notes, rewriting if needed, and summarizing main points. Reading, dating pages, and sitting near the front are before-class actions."
+      },
+      {
+        "id": "SS08010",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which feature belongs to Cornell?",
+        "options": [
+          "Terms and answers are paired in columns",
+          "Items are compared across support columns",
+          "Cues, summary, and main points are together",
+          "Main topics use bullets and indentation"
+        ],
+        "correct": 2,
+        "explain": "Cornell keeps main points, details, study cues, and summary together. Paired columns fit Two-Column, compared columns fit Three-Column, and bullets with indentation fit Formal Outline."
+      },
+      {
+        "id": "SS08011",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In Cornell, where are headings and numbered entries written?",
+        "options": [
+          "Cues",
+          "Main notes",
+          "Summary",
+          "Recall column"
+        ],
+        "correct": 1,
+        "explain": "Headings and numbered entries are written in the main notes area during class. Cues and the recall column are used for after-class review, and the summary is written at the bottom."
+      },
+      {
+        "id": "SS08012",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In Cornell cues, after class write reminders, vocabulary, and what?",
+        "options": [
+          "Main notes",
+          "Date stamps",
+          "Study questions",
+          "Handout numbers"
+        ],
+        "correct": 2,
+        "explain": "The cues section holds reminders, vocabulary words, and study questions after class. Main notes, date stamps, and handout numbers are not cue content."
+      },
+      {
+        "id": "SS08013",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In Cornell notes, what is the bottom summary for?",
+        "options": [
+          "Writing every class detail",
+          "Highlighting the main points",
+          "Listing vocabulary words",
+          "Leaving space for dates"
+        ],
+        "correct": 1,
+        "explain": "The bottom summary is for summarizing notes and highlighting main points. Every detail, vocabulary lists, and date space are not its purpose."
+      },
+      {
+        "id": "SS08014",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each of the Five R's to its action.",
+        "leftItems": [
+          { "id": "1", "text": "Record" },
+          { "id": "2", "text": "Reduce" },
+          { "id": "3", "text": "Recite" },
+          { "id": "4", "text": "Reflect" },
+          { "id": "5", "text": "Review" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Write headings and numbered notes in the main column" },
+          { "id": "B", "text": "Write key words and questions in the recall column" },
+          { "id": "C", "text": "Cover notes and say cues from the other side" },
+          { "id": "D", "text": "Think about and work with information in new ways" },
+          { "id": "E", "text": "Use immediate and ongoing checking of the material" },
+          { "id": "F", "text": "Copy every word without shortening" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "Record writes headings and numbered notes. Reduce writes key words and questions. Recite covers notes and says cues. Reflect works with information in new ways. Review uses immediate and ongoing checking."
+      },
+      {
+        "id": "SS08015",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In the Two-Column system, what goes in the right column?",
+        "options": [
+          "Terms for definitions and questions for answers",
+          "Notes on terms and answers to questions",
+          "Dates for pages and numbers for handouts",
+          "Summaries for main points and cues for review"
+        ],
+        "correct": 1,
+        "explain": "Two-Column places terms or questions on one side and notes or answers on the other. The right column holds notes about terms and answers. Dates, handouts, summaries, and cues belong to other actions."
+      },
+      {
+        "id": "SS08016",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which content pair suits Two-Column notes?",
+        "options": [
+          "Pages and dates",
+          "Cues and summaries",
+          "Terms and definitions",
+          "Bullets and indentation"
+        ],
+        "correct": 2,
+        "explain": "Two-Column notes pair terms with definitions, questions with answers, formulas with problem-solving, categories with lists, and concepts with facts or examples. Pages/dates, cues/summaries, and bullets/indentation fit other actions."
+      },
+      {
+        "id": "SS08017",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In Three-Column notes, middle and right columns hold what?",
+        "options": [
+          "Dates for each handout",
+          "Two kinds of information",
+          "The lecture summary",
+          "Main notes from class"
+        ],
+        "correct": 1,
+        "explain": "The middle and right columns hold two kinds of information for the left-column entry. Dates, lecture summaries, and main class notes do not fit."
+      },
+      {
+        "id": "SS08018",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In Three-Column notes, a topic plus definition plus what?",
+        "options": [
+          "Facts or examples",
+          "Questions or answers",
+          "Applications or details",
+          "Cues or summaries"
+        ],
+        "correct": 2,
+        "explain": "A topic or concept can be paired with a definition or description and applications or details. Facts/examples and questions/answers fit Two-Column, while cues/summaries fit Cornell."
+      },
+      {
+        "id": "SS08019",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "When can formal outlines be used for note-taking?",
+        "options": [
+          "Before, during, or after exams",
+          "Before, after, or without notes",
+          "Before, during, or after reading",
+          "During, after, or without reading"
+        ],
+        "correct": 2,
+        "explain": "Formal outlines are highly structured and show a skeleton of printed information. They can be used before, during, or after reading. Exams, note-free use, and reading-free use do not fit."
+      },
+      {
+        "id": "SS08020",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each formal-outline lesson step to its placement.",
+        "leftItems": [
+          { "id": "1", "text": "Main topic" },
+          { "id": "2", "text": "First subtopic" },
+          { "id": "3", "text": "Details" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Starts with a single bullet point" },
+          { "id": "B", "text": "Is placed below and indented slightly right" },
+          { "id": "C", "text": "Is listed below the heading and indented" },
+          { "id": "D", "text": "Is written at the top" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "During a lesson, the main topic starts with a single bullet point. The first subtopic is placed below and indented slightly right. Details are listed below the heading and indented. Chapter number and title are written at the top when creating formal outlines."
+      },
+      {
+        "id": "SS08021",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "When studying formal outlines, what follows adding clue words?",
+        "options": [
+          "Discard the outline",
+          "Copy every line",
+          "Repeat reciting steps",
+          "Skip accuracy checks"
+        ],
+        "correct": 2,
+        "explain": "After adding clue words, repeat the reciting process. Discarding the outline, copying every line, and skipping accuracy checks are not recommended."
+      },
+      {
+        "id": "SS08022",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "What is the goal of active listening?",
+        "options": [
+          "Interpret and analyze",
+          "Understand and learn",
+          "Relate to feelings",
+          "Enjoy and acknowledge"
+        ],
+        "correct": 1,
+        "explain": "Active listening aims to understand and learn new information. Interpreting and analyzing fits critical listening, relating to feelings fits empathic listening, and enjoying and acknowledging fits appreciative listening."
+      },
+      {
+        "id": "SS08023",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each kind of listening to its goal.",
+        "leftItems": [
+          { "id": "1", "text": "Active Listening" },
+          { "id": "2", "text": "Critical Listening" },
+          { "id": "3", "text": "Empathic Listening" },
+          { "id": "4", "text": "Appreciative Listening" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Understand and learn new information" },
+          { "id": "B", "text": "Interpret, examine, and analyze a message" },
+          { "id": "C", "text": "Relate to another person's feelings" },
+          { "id": "D", "text": "Enjoy and acknowledge a speaker and message" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "Active listening learns new information. Critical listening interprets and analyzes messages. Empathic listening relates to feelings. Appreciative listening enjoys and acknowledges speakers."
+      },
+      {
+        "id": "SS08024",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Effective notes lead to what at test time?",
+        "options": [
+          "More stress",
+          "Less stress",
+          "No review",
+          "More reading"
+        ],
+        "correct": 1,
+        "explain": "Effective notes lead to less stress when test time comes. More stress, no review, and more reading do not match."
+      },
+      {
+        "id": "SS08025",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Active listening is the first important step for what?",
+        "options": [
+          "Skipping note-taking",
+          "Textbook reading",
+          "Effective class notes",
+          "Post-exam review"
+        ],
+        "correct": 2,
+        "explain": "Active listening is the first important step for effective note-taking during lectures. Skipping notes, textbook reading, and post-exam review do not match."
+      },
+      {
+        "id": "SS08026",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which phase includes sitting near the front and center?",
+        "options": [
+          "During class",
+          "Before class",
+          "After class",
+          "During or after class"
+        ],
+        "correct": 1,
+        "explain": "Sitting near the front and center is a before-class action. During class, after class, and combined phases do not match."
+      },
+      {
+        "id": "SS08027",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which phase includes listening carefully for an overview?",
+        "options": [
+          "Before class",
+          "After class",
+          "During class",
+          "Before or after class"
+        ],
+        "correct": 2,
+        "explain": "Listening carefully for an overview happens during class. Before class is preparation, after class is review, and combined phases do not match."
+      },
+      {
+        "id": "SS08028",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which phase includes summarizing main points?",
+        "options": [
+          "Before class",
+          "During class",
+          "After class",
+          "During or before class"
+        ],
+        "correct": 2,
+        "explain": "Summarizing main points happens after class. Before class is preparation, during class is note capture, and combined phases do not match."
+      },
+      {
+        "id": "SS08029",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which Cornell section is used during class?",
+        "options": [
+          "Cues section",
+          "Main notes section",
+          "Summary segment",
+          "Recall column"
+        ],
+        "correct": 1,
+        "explain": "The main notes section is used during class. Cues and the recall column are used after class, and the summary segment is written at the bottom."
+      },
+      {
+        "id": "SS08030",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In the Five R's, which action means covering notes and saying cues?",
+        "options": [
+          "Record",
+          "Reduce",
+          "Recite",
+          "Reflect"
+        ],
+        "correct": 2,
+        "explain": "Recite means covering notes and saying information from the cue side. Record writes notes, reduce writes cues, and reflect works with information."
+      },
+      {
+        "id": "SS08031",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "In the Five R's, which action writes key words and questions?",
+        "options": [
+          "Record",
+          "Recite",
+          "Review",
+          "Reduce"
+        ],
+        "correct": 3,
+        "explain": "Reduce means writing key words and questions in the recall column. Record writes main notes, recite covers notes, and review checks material."
+      },
+      {
+        "id": "SS08032",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which listening kind analyzes a speaker's message?",
+        "options": [
+          "Active Listening",
+          "Critical Listening",
+          "Empathic Listening",
+          "Appreciative Listening"
+        ],
+        "correct": 1,
+        "explain": "Critical listening aims to understand, interpret, examine, and analyze a speaker's message. Active listening learns, empathic listening relates to feelings, and appreciative listening enjoys messages."
+      },
+      {
+        "id": "SS08033",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which listening kind relates to feelings and emotions?",
+        "options": [
+          "Critical Listening",
+          "Active Listening",
+          "Appreciative Listening",
+          "Empathic Listening"
+        ],
+        "correct": 3,
+        "explain": "Empathic listening aims to understand and relate to another person's feelings and emotions. Critical listening analyzes, active listening learns, and appreciative listening enjoys messages."
+      },
+      {
+        "id": "SS08034",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which kind of listening aims at enjoyment and acknowledgment of a speaker and message?",
+        "options": [
+          "Critical Listening",
+          "Active Listening",
+          "Empathic Listening",
+          "Appreciative Listening"
+        ],
+        "correct": 3,
+        "explain": "Appreciative listening aims to enjoy, appreciate, and acknowledge a speaker and message. Critical listening analyzes, active listening learns, and empathic listening relates to feelings."
+      },
+      {
+        "id": "SS08035",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Why should you allow time in your study blocks?",
+        "options": [
+          "To ignore your notes",
+          "To copy full chapters",
+          "To work with notes",
+          "To discard the handouts"
+        ],
+        "correct": 2,
+        "explain": "Study blocks should include time to work with your notes. Ignoring your notes, copying full chapters, and discarding handouts are not recommended."
+      },
+      {
+        "id": "SS08036",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Before class, date each notebook page, and date and number what?",
+        "options": [
+          "Each textbook",
+          "Each handout",
+          "Each lecture",
+          "Each formula"
+        ],
+        "correct": 1,
+        "explain": "Before class, date each notebook page, and date and number each handout. Textbooks, lectures, and formulas do not match."
+      },
+      {
+        "id": "SS08037",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "During class, why should students maintain focus?",
+        "options": [
+          "To transcribe the full lecture",
+          "To identify important points",
+          "To date and number each handout",
+          "To recite from the recall column"
+        ],
+        "correct": 1,
+        "explain": "During class, maintain focus to identify important information. Transcribing the full lecture, dating and numbering handouts, and reciting from the recall column are not the purpose of focus."
+      },
+      {
+        "id": "SS08038",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which statement is part of the conclusion?",
+        "options": [
+          "Notes raise test stress",
+          "Listening is optional",
+          "Note-taking ends listening",
+          "Active listening comes first"
+        ],
+        "correct": 3,
+        "explain": "Active listening is the first important step for effective note-taking during lectures. Notes reduce test stress, listening is not optional, and note-taking does not end listening."
+      },
+      {
+        "id": "SS08039",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which is the correct order of the Five R's?",
+        "options": [
+          "Reduce, Record, Recite, Reflect, Review",
+          "Record, Reduce, Reflect, Recite, Review",
+          "Record, Reduce, Recite, Review, Reflect",
+          "Record, Reduce, Recite, Reflect, Review"
+        ],
+        "correct": 3,
+        "explain": "The Five R's are ordered Record, Reduce, Recite, Reflect, Review. The other choices switch adjacent steps."
+      },
+      {
+        "id": "SS08040",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which set names all five note-taking options?",
+        "options": [
+          "Cornell, Index Card, Two-Column, Four-Column, Formal Outline",
+          "Cornell, Index Card, Two-Column, Three-Column, Formal Outline",
+          "Cornell, Card File, Two-Column, Three-Column, Formal Outline",
+          "Cornell, Index Card, One-Column, Three-Column, Formal Outline"
+        ],
+        "correct": 1,
+        "explain": "The five options are Cornell, Index Card, Two-Column, Three-Column, and Formal Outline. Four-Column, Card File, and One-Column do not match."
+      },
+      {
+        "id": "SS08041",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each entry type to its usual placement.",
+        "leftItems": [
+          { "id": "1", "text": "Terms to define and questions to answer" },
+          { "id": "2", "text": "Explanations of terms and responses to questions" },
+          { "id": "3", "text": "Terms, questions, concepts, or problems" },
+          { "id": "4", "text": "Paired information types for one entry" },
+          { "id": "5", "text": "Headings and numbered entries" },
+          { "id": "6", "text": "Key words and study questions" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Left side of Two-Column" },
+          { "id": "B", "text": "Right side of Two-Column" },
+          { "id": "C", "text": "Left side of Three-Column" },
+          { "id": "D", "text": "Middle and right sides of Three-Column" },
+          { "id": "E", "text": "Main notes section of Cornell" },
+          { "id": "F", "text": "Cues section of Cornell" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Two-Column places terms or questions on one side and notes or answers on the other. Three-Column gives one entry paired information. Cornell main notes hold headings and numbered entries; cues hold key words and study questions."
+      },
+      {
+        "id": "SS08042",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each purpose to the note-taking system.",
+        "leftItems": [
+          { "id": "1", "text": "Review notes with cues and summary" },
+          { "id": "2", "text": "Pair terms or questions with answers" },
+          { "id": "3", "text": "Give one entry paired information" },
+          { "id": "4", "text": "Show a skeleton of printed information" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Cornell" },
+          { "id": "B", "text": "Two-Column" },
+          { "id": "C", "text": "Three-Column" },
+          { "id": "D", "text": "Formal Outline" },
+          { "id": "E", "text": "Index Card" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "Cornell supports review with cues and summary. Two-Column pairs terms or questions with answers. Three-Column gives one entry paired information. Formal Outline shows a skeleton of printed information."
+      },
+      {
+        "id": "SS08043",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each formal-outline creation element to its marker.",
+        "leftItems": [
+          { "id": "1", "text": "Chapter number and title" },
+          { "id": "2", "text": "Main heading" },
+          { "id": "3", "text": "Subheading" },
+          { "id": "4", "text": "Supporting detail" },
+          { "id": "5", "text": "Small detail" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Written at the top" },
+          { "id": "B", "text": "Roman numeral" },
+          { "id": "C", "text": "Capital letter" },
+          { "id": "D", "text": "Numeral and lowercase letter" },
+          { "id": "E", "text": "Numeral in parentheses" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "Chapter number and title go at the top. Main headings use Roman numerals. Subheadings use capital letters. Supporting details use numerals and lowercase letters. Small details use numerals in parentheses."
+      },
+      {
+        "id": "SS08044",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each advantage or trait to its method.",
+        "leftItems": [
+          { "id": "1", "text": "Organized, summarized, and easy to review" },
+          { "id": "2", "text": "Pull out major ideas and concepts" },
+          { "id": "3", "text": "Highly structured and logically organized" },
+          { "id": "4", "text": "Shows a skeleton of printed information" },
+          { "id": "5", "text": "Useful before, during, or after reading" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Cornell" },
+          { "id": "B", "text": "Formal Outline" },
+          { "id": "C", "text": "Two-Column" },
+          { "id": "D", "text": "Three-Column" },
+          { "id": "E", "text": "Index Card" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "B",
+          "5": "B"
+        },
+        "explain": "Cornell notes are organized, summarized, easy to review, and help pull out major ideas. Formal Outline notes are highly structured, show a skeleton of printed information, and can be used before, during, or after reading."
+      },
+      {
+        "id": "SS08045",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each textbook note-taking strategy to its role.",
+        "leftItems": [
+          { "id": "1", "text": "Understanding what you read" },
+          { "id": "2", "text": "Labeling notes by chapter and lecture" },
+          { "id": "3", "text": "Experimenting with different forms" },
+          { "id": "4", "text": "Using notes for feedback" },
+          { "id": "5", "text": "Allowing time in study blocks" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Starting point" },
+          { "id": "B", "text": "Connects text and class" },
+          { "id": "C", "text": "Tries several methods" },
+          { "id": "D", "text": "Supports improvement" },
+          { "id": "E", "text": "Creates practice opportunity" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "Understanding is the starting point. Labeling connects text and class. Experimenting tries several methods. Feedback supports improvement. Study blocks create practice opportunity."
+      },
+      {
+        "id": "SS08046",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each action to its note-taking phase.",
+        "leftItems": [
+          { "id": "1", "text": "Read assigned material" },
+          { "id": "2", "text": "Review notes from previous session" },
+          { "id": "3", "text": "Sit near the front and center" },
+          { "id": "4", "text": "Begin each lecture on a new page" },
+          { "id": "5", "text": "Listen carefully for an overview" },
+          { "id": "6", "text": "Maintain focus to identify important information" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Before Class" },
+          { "id": "B", "text": "During Class" },
+          { "id": "C", "text": "After Class" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "A",
+          "4": "A",
+          "5": "B",
+          "6": "B"
+        },
+        "explain": "Reading, reviewing previous notes, sitting near the front and center, and beginning each lecture on a new page are before class. Listening for an overview and maintaining focus are during class."
+      },
+      {
+        "id": "SS08047",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each remaining action to its phase.",
+        "leftItems": [
+          { "id": "1", "text": "Date pages and number handouts" },
+          { "id": "2", "text": "Write supporting information, not every word" },
+          { "id": "3", "text": "Review new notes as soon as possible" },
+          { "id": "4", "text": "Rewrite notes if necessary" },
+          { "id": "5", "text": "Summarize main points of the lecture" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Before Class" },
+          { "id": "B", "text": "During Class" },
+          { "id": "C", "text": "After Class" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "C",
+          "5": "C"
+        },
+        "explain": "Dating pages and numbering handouts is before class. Writing supporting information is during class. Reviewing, rewriting, and summarizing are after class."
+      },
+      {
+        "id": "SS08048",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Which note-taking method uses the Five R's?",
+        "options": [
+          "Index Card Note-Taking System",
+          "Two-Column Note-Taking System",
+          "Cornell Note-Taking System",
+          "Formal Outline Note-Taking System"
+        ],
+        "correct": 2,
+        "explain": "The Five R's belong to Cornell. Index Card, Two-Column, and Formal Outline are other note-taking options."
+      },
+      {
+        "id": "SS08049",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each listening-process step to its description.",
+        "leftItems": [
+          { "id": "1", "text": "Reception" },
+          { "id": "2", "text": "Attention" },
+          { "id": "3", "text": "Perception" },
+          { "id": "4", "text": "Assignment of Meaning" },
+          { "id": "5", "text": "Response" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Auditory and visual stimuli" },
+          { "id": "B", "text": "Concentration, selectivity, motivation, and intent" },
+          { "id": "C", "text": "Understand or do not understand" },
+          { "id": "D", "text": "Interpret accurately and associate to schemas" },
+          { "id": "E", "text": "Feedback, question, paraphrase, interpret, apply, and output" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        },
+        "explain": "Reception involves auditory and visual stimuli. Attention involves concentration, selectivity, motivation, and intent. Perception is understanding or not understanding. Assignment of meaning interprets accurately and associates to schemas. Response produces feedback, questions, paraphrases, interpretations, applications, or output."
+      },
+      {
+        "id": "SS08050",
+        "type": "matching",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Match each memory store to its listening step.",
+        "leftItems": [
+          { "id": "1", "text": "STM" },
+          { "id": "2", "text": "LTM" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Attention" },
+          { "id": "B", "text": "Assignment of Meaning" },
+          { "id": "C", "text": "Reception" },
+          { "id": "D", "text": "Response" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        },
+        "explain": "STM is entered during Attention. LTM is entered during Assignment of Meaning. Reception and Response are other listening-process steps."
+      },
+      {
+        "id": "SS08051",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Most study time is spent reading and working with what?",
+        "options": [
+          "Index card notes",
+          "Textbook information",
+          "Formal outline notes",
+          "Two-column notes"
+        ],
+        "correct": 1,
+        "explain": "Most study time is spent reading and working with textbook information. Index card notes, formal outline notes, and two-column notes are other note-taking products."
+      },
+      {
+        "id": "SS08052",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "How many sections does Cornell note-taking use?",
+        "options": [
+          "Two",
+          "Four",
+          "Three",
+          "Five"
+        ],
+        "correct": 2,
+        "explain": "Cornell notes are divided into three sections: main notes, cues, and summary. Two, four, and five do not match."
+      },
+      {
+        "id": "SS08053",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Listening holds verbal stimuli in what long enough to attach meaning?",
+        "options": [
+          "Long-term memory",
+          "Working memory",
+          "Schemas",
+          "Response output"
+        ],
+        "correct": 1,
+        "explain": "Listening involves holding verbal stimuli in working memory long enough to attach meaning and interpret the speaker. Long-term memory, schemas, and output are other listening-process elements."
+      },
+      {
+        "id": "SS08054",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "How is listening described?",
+        "options": [
+          "Passive",
+          "Random",
+          "Visual",
+          "Active"
+        ],
+        "correct": 3,
+        "explain": "Listening is an active process that engages the listener in mental processes. Passive, random, and visual do not match."
+      },
+      {
+        "id": "SS08055",
+        "type": "mcq",
+        "cat": "Lecture 8 – Effective Note-Taking Strategies",
+        "q": "Better notes help remember concepts, develop skills, and ____.",
+        "options": [
+          "increase test stress",
+          "understand the topic",
+          "copy chapter sentences",
+          "date notebook pages"
+        ],
+        "correct": 1,
+        "explain": "Better notes help remember concepts, develop meaningful learning skills, and gain a better understanding of a topic. Increasing test stress, copying chapter sentences, and dating notebook pages are not benefits."
+      }
+    ]
+  }
+}

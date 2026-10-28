@@ -142,8 +142,46 @@
           "id": "ss2",
           "title": "Periodic Test 2",
           "subtitle": "Lectures 5-10",
-          "bank": null,
-          "locked": true
+          "locked": false,
+          "draft": true,
+          "lectures": [
+            {
+              "id": "lec5",
+              "title": "Lecture 5 – Teamwork and Small Group Learning",
+              "bank": "banks/studyskills/pt2/lecture-5-teamwork-and-small-group-learning.json",
+              "status": "ready"
+            },
+            {
+              "id": "lec6",
+              "title": "Lecture 6 – Adult and Independent Learning",
+              "bank": "banks/studyskills/pt2/lecture-6-adult-independent-learning.json",
+              "status": "ready"
+            },
+            {
+              "id": "lec7",
+              "title": "Lecture 7 – Tips for Good Study Habits",
+              "bank": "banks/studyskills/pt2/lecture-7-tips-for-studying.json",
+              "status": "ready"
+            },
+            {
+              "id": "lec8",
+              "title": "Lecture 8 – Effective Note-Taking Strategies",
+              "bank": "banks/studyskills/pt2/lecture-8-note-taking-strategies.json",
+              "status": "ready"
+            },
+            {
+              "id": "lec9",
+              "title": "Lecture 9 – Boosting Memory and Increasing Concentration",
+              "bank": "banks/studyskills/pt2/lecture-9-memory-concentration.json",
+              "status": "ready"
+            },
+            {
+              "id": "lec10",
+              "title": "Lecture 10 – Strengthening Comprehension",
+              "bank": "banks/studyskills/pt2/lecture-10-comprehension.json",
+              "status": "ready"
+            }
+          ]
         },
         {
           "id": "studyskills-pt1-remake",

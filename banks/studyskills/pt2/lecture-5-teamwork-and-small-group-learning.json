@@ -1,0 +1,322 @@
+{
+  "id": "lecture-5---teamwork-and-small-group-learning-mixed",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Lecture 5 - Teamwork and Small Group Learning (Mixed Bank)",
+  "formSize": 17,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "SS5001",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which description fits a small group?",
+        "options": [
+          "Two to four; independent study.",
+          "Eight to twelve; free discussion.",
+          "Fifteen to twenty; silent note-taking.",
+          "Four to six; oral recitations."
+        ],
+        "correct": 1,
+        "explain": "A small group has eight to twelve learners, is teacher-facilitated and learner-centered, and uses free discussion."
+      },
+      {
+        "id": "SS5002",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which ability defines effective teamwork?",
+        "options": [
+          "Cooperation and communication.",
+          "Shared goals and commitment.",
+          "Problem-solving and decision-making.",
+          "Mere physical placement."
+        ],
+        "correct": 0,
+        "explain": "Teamwork is effective cooperation and communication with others toward a common goal. The other options describe a team, small-group skills, or mere placement."
+      },
+      {
+        "id": "SS5003",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which statement about teams and groups is correct?",
+        "options": [
+          "A group counts as a team.",
+          "Teams and groups are identical.",
+          "Assignment alone creates a team.",
+          "Not every group forms a team."
+        ],
+        "correct": 3,
+        "explain": "A team is a group of individuals, but a group becomes a team only when members cooperate toward a shared goal."
+      },
+      {
+        "id": "SS5004",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which sequence shows the stages of team development?",
+        "options": [
+          "Forming, Storming, Norming, Performing",
+          "Forming, Norming, Storming, Performing",
+          "Storming, Forming, Norming, Performing",
+          "Norming, Forming, Storming, Performing"
+        ],
+        "correct": 0,
+        "explain": "Team development proceeds from Forming to Storming, then Norming, then Performing."
+      },
+      {
+        "id": "SS5005",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which stage has questions, structure, roles, trust, guidelines, and a directive tutor?",
+        "options": [
+          "Storming",
+          "Forming",
+          "Norming",
+          "Performing"
+        ],
+        "correct": 1,
+        "explain": "Forming involves questions, clear structure, goals, roles, trust-building, guideline setting, and a directive tutor."
+      },
+      {
+        "id": "SS5006",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which stage has frustration, disagreements, refocusing, conflict skills, and a directive tutor?",
+        "options": [
+          "Forming",
+          "Norming",
+          "Performing",
+          "Storming"
+        ],
+        "correct": 3,
+        "explain": "Storming involves frustration, less polite disagreements, refocusing on goals, conflict-management skills, and a directive tutor."
+      },
+      {
+        "id": "SS5007",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which stage has meaningful communication, ground rules, evaluation, productivity, and a participative tutor?",
+        "options": [
+          "Norming",
+          "Forming",
+          "Storming",
+          "Performing"
+        ],
+        "correct": 0,
+        "explain": "Norming includes meaningful communication, return to ground rules, process evaluation, higher productivity, and a participative tutor."
+      },
+      {
+        "id": "SS5008",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which stage has can-do attitude, helping behaviors, fluid roles, appreciated differences, and celebrated progress?",
+        "options": [
+          "Forming",
+          "Storming",
+          "Performing",
+          "Norming"
+        ],
+        "correct": 2,
+        "explain": "Performing shows a can-do attitude, offers to help, fluid roles, appreciated differences, significant progress, and celebrated accomplishments."
+      },
+      {
+        "id": "SS5009",
+        "type": "matching",
+        "cat": "SS5_lec5",
+        "q": "Sort each example into its correct category.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Start and finish on time."
+          },
+          {
+            "id": "2",
+            "text": "More active student involvement."
+          },
+          {
+            "id": "3",
+            "text": "Clinical rounds."
+          },
+          {
+            "id": "4",
+            "text": "Mutual respect."
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Ground rule"
+          },
+          {
+            "id": "B",
+            "text": "Value of small groups"
+          },
+          {
+            "id": "C",
+            "text": "Form of small-group learning"
+          },
+          {
+            "id": "D",
+            "text": "Successful team characteristic"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        },
+        "explain": "Punctuality is a ground rule, active involvement is a value of small groups, clinical rounds are a form, and mutual respect is a team characteristic."
+      },
+      {
+        "id": "SS5010",
+        "type": "matching",
+        "cat": "SS5_lec5",
+        "q": "Match each team-development stage to its main feeling.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Forming"
+          },
+          {
+            "id": "2",
+            "text": "Storming"
+          },
+          {
+            "id": "3",
+            "text": "Norming"
+          },
+          {
+            "id": "4",
+            "text": "Performing"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Frustration or anger about progress or process."
+          },
+          {
+            "id": "B",
+            "text": "Excitement, eagerness, high expectations, and some anxiety."
+          },
+          {
+            "id": "C",
+            "text": "Satisfaction and attachment beyond the sum of parts."
+          },
+          {
+            "id": "D",
+            "text": "Acceptance of others; constructive criticism is welcome."
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "A",
+          "3": "D",
+          "4": "C"
+        },
+        "explain": "Forming brings excitement and anxiety, Storming brings frustration, Norming brings acceptance, and Performing brings satisfaction and attachment."
+      },
+      {
+        "id": "SS5011",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "What defines a team?",
+        "options": [
+          "Group cooperating toward a goal.",
+          "Collection placed in one room.",
+          "Tutor delivering content to learners.",
+          "Individual completing complex tasks alone."
+        ],
+        "correct": 0,
+        "explain": "A team is a group of people working cooperatively to achieve a common goal."
+      },
+      {
+        "id": "SS5012",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Why are teams useful for complex tasks?",
+        "options": [
+          "They exceed individual capacity.",
+          "They remove the need for shared goals.",
+          "They replace tutor guidance.",
+          "They prevent active involvement."
+        ],
+        "correct": 0,
+        "explain": "Teams share goals, commitment, and skills to complete complex tasks beyond individual capacity."
+      },
+      {
+        "id": "SS5013",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Why should students understand teamwork?",
+        "options": [
+          "Teams are part of life.",
+          "Teams remove the need for roles.",
+          "Teams prevent member conflict.",
+          "Teams replace small-group discussion."
+        ],
+        "correct": 0,
+        "explain": "Teams are part of everyone's life, so students need to function effectively as team members."
+      },
+      {
+        "id": "SS5014",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which set contains only sample ground rules?",
+        "options": [
+          "On time, prepared, listening, shared responsibility.",
+          "Common purpose, prepared, listening, shared responsibility.",
+          "On time, field training, listening, shared responsibility.",
+          "On time, prepared, listening, measurable goals."
+        ],
+        "correct": 0,
+        "explain": "Sample ground rules are punctuality, preparation, listening and understanding, and shared responsibility for group aims."
+      },
+      {
+        "id": "SS5015",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which set contains only reasons that small-group learning is valuable?",
+        "options": [
+          "Attitudes, skills, involvement.",
+          "Common purpose, skills, involvement.",
+          "Attitudes, clinical rounds, involvement.",
+          "Attitudes, skills, mutual respect."
+        ],
+        "correct": 0,
+        "explain": "Small-group learning develops positive attitudes, problem-solving and decision-making skills, and active involvement."
+      },
+      {
+        "id": "SS5016",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which set contains only forms of small-group learning?",
+        "options": [
+          "PBL, field training, rounds, projects.",
+          "Ground rules, field training, rounds, projects.",
+          "PBL, common purpose, rounds, projects.",
+          "PBL, field training, rounds, measurable goals."
+        ],
+        "correct": 0,
+        "explain": "Small groups are used in PBL classes, field training, clinical rounds, and research projects; PBL means Problem Based Learning."
+      },
+      {
+        "id": "SS5017",
+        "type": "mcq",
+        "cat": "SS5_lec5",
+        "q": "Which set contains only characteristics of a successful team?",
+        "options": [
+          "Purpose, goals, leadership, respect.",
+          "On time, goals, leadership, respect.",
+          "Purpose, rounds, leadership, respect.",
+          "Purpose, goals, leadership, preparation."
+        ],
+        "correct": 0,
+        "explain": "Successful teams have common purpose, measurable goals, effective leadership, and mutual respect."
+      }
+    ]
+  }
+}

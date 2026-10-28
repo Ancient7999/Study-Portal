@@ -1,0 +1,554 @@
+{
+  "id": "study-skills-lec10-comprehension",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Lecture 10 - Strengthening Comprehension",
+  "formSize": 30,
+  "forms": ["A"],
+  "bank": {
+    "A": [
+      {
+        "id": "SS10001",
+        "type": "stepped",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "How is comprehension defined?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Comprehension is the goal or purpose for what?",
+            "options": [
+              "Reading",
+              "Writing",
+              "Speaking",
+              "Listening"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Because comprehension is the goal of reading, it constructs meaning through interaction with what?",
+            "options": [
+              "Written language",
+              "Spoken commands",
+              "Numerical data",
+              "Visual art"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Since comprehension uses written language, it is understanding beyond what?",
+            "options": [
+              "Knowing",
+              "Reading",
+              "Writing",
+              "Speaking"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "Because comprehension is understanding beyond knowing, it results from what?",
+            "options": [
+              "Active engagement with text",
+              "A product of reading alone",
+              "Rapid word recognition",
+              "Memorized terminology lists"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Comprehension is the goal of reading and simultaneously extracts and constructs meaning from written language. It is understanding beyond knowing, produced by active involvement with text."
+      },
+      {
+        "id": "SS10002",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Why is comprehension important?",
+        "options": [
+          "It leads to better achievement",
+          "It removes need for notes",
+          "It guarantees faster reading speed",
+          "It replaces vocabulary learning"
+        ],
+        "correct": 0,
+        "explain": "Comprehension leads to better achievement. Without it, readers cannot fully understand content."
+      },
+      {
+        "id": "SS10003",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Without comprehension skills, readers cannot do what?",
+        "options": [
+          "Fully understand the content",
+          "Learn new terminology lists",
+          "Ask questions while reading",
+          "Highlight important concepts only"
+        ],
+        "correct": 0,
+        "explain": "Without comprehension skills, readers cannot fully understand content. Active engagement strategies are therefore needed."
+      },
+      {
+        "id": "SS10004",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What is the main problem with comprehension?",
+        "options": [
+          "Lacking strategies to engage with text",
+          "Reading too many chapters too quickly",
+          "Knowing too much prior background information",
+          "Using diagrams and printed study materials"
+        ],
+        "correct": 0,
+        "explain": "The main problem is lacking strategies to actively engage with text. Active engagement helps readers understand it."
+      },
+      {
+        "id": "SS10005",
+        "type": "multi",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which actions improve comprehension?",
+        "options": [
+          "Be patient with the reading process",
+          "Stay with a paragraph until understood",
+          "Learn the terminology used in text",
+          "Expand your vocabulary regularly over time",
+          "Avoid elaborative rehearsal techniques while reading"
+        ],
+        "correct": [0, 1, 2, 3],
+        "explain": "Improving comprehension includes patience, staying with material, learning terminology, and expanding vocabulary. Avoiding rehearsal contradicts active learning."
+      },
+      {
+        "id": "SS10006",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Readers should avoid hurrying during what?",
+        "options": [
+          "The reading process",
+          "The note-taking process",
+          "The summary process",
+          "The rehearsal process"
+        ],
+        "correct": 0,
+        "explain": "Be patient means do not rush the reading process. Hurrying can weaken comprehension."
+      },
+      {
+        "id": "SS10007",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Readers should stay with a paragraph until what?",
+        "options": [
+          "They fully comprehend it",
+          "The entire chapter ends",
+          "All words are memorized",
+          "The summary is written"
+        ],
+        "correct": 0,
+        "explain": "Stay with a paragraph or section until you comprehend it. This prevents superficial reading."
+      },
+      {
+        "id": "SS10008",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which strategy focuses on specialized words?",
+        "options": [
+          "Learn the field terminology",
+          "Expand the general vocabulary",
+          "Enter the writer's head",
+          "Use rehearsal techniques often"
+        ],
+        "correct": 0,
+        "explain": "Learning terminology targets field-specific words. Expanding vocabulary builds general word knowledge."
+      },
+      {
+        "id": "SS10009",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which strategy builds general word knowledge?",
+        "options": [
+          "Expand the general vocabulary",
+          "Learn the field terminology",
+          "Stay with paragraphs closely",
+          "Activate background knowledge early"
+        ],
+        "correct": 0,
+        "explain": "Expanding vocabulary builds general word knowledge. Terminology focuses on field-specific words."
+      },
+      {
+        "id": "SS10010",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which strategy asks readers to adopt the author's viewpoint?",
+        "options": [
+          "Enter the writer's head",
+          "Learn field terminology well",
+          "Expand general vocabulary widely",
+          "Use rehearsal techniques actively"
+        ],
+        "correct": 0,
+        "explain": "Getting into the writer's head means adopting the author's viewpoint. It supports deeper comprehension."
+      },
+      {
+        "id": "SS10011",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "When should readers use elaborative rehearsal and active learning?",
+        "options": [
+          "As they read",
+          "After sleeping well",
+          "Before writing notes",
+          "During study breaks"
+        ],
+        "correct": 0,
+        "explain": "Elaborative rehearsal and active learning techniques are used as you read. They help build comprehension."
+      },
+      {
+        "id": "SS10012",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Readers are encouraged to feel what about learning?",
+        "options": [
+          "Excited",
+          "Anxious",
+          "Confused",
+          "Troubled"
+        ],
+        "correct": 0,
+        "explain": "The strategy is to become excited about what you learn. Positive engagement supports comprehension."
+      },
+      {
+        "id": "SS10013",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What does a topic name?",
+        "options": [
+          "The subject of a paragraph",
+          "The point the author develops",
+          "The sentence stating main idea",
+          "The details supporting a topic"
+        ],
+        "correct": 0,
+        "explain": "The topic is the subject of a paragraph. It can be named in one word or one phrase."
+      },
+      {
+        "id": "SS10014",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What does the main idea tell?",
+        "options": [
+          "The point the author develops",
+          "The subject of a paragraph",
+          "The sentence stating topic clearly",
+          "The details supporting text claims"
+        ],
+        "correct": 0,
+        "explain": "The main idea tells the point the author intends to develop. It is expressed by the topic sentence when present."
+      },
+      {
+        "id": "SS10015",
+        "type": "matching",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Match each paragraph element to its role.",
+        "leftItems": [
+          { "id": "1", "text": "Topic" },
+          { "id": "2", "text": "Main idea" },
+          { "id": "3", "text": "Topic sentence" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Subject of paragraph" },
+          { "id": "B", "text": "Point author develops" },
+          { "id": "C", "text": "Umbrella for supporting details" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "The topic names the subject, and the main idea states the developed point. The topic sentence acts like an umbrella for supporting details."
+      },
+      {
+        "id": "SS10016",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which statement about a topic sentence is correct?",
+        "options": [
+          "It expresses the main idea",
+          "It omits the usual topic",
+          "It lists every supporting detail",
+          "It replaces the paragraph subject"
+        ],
+        "correct": 0,
+        "explain": "A topic sentence expresses the main idea and usually includes the topic. It is broad enough to include supporting details, but it does not list every detail."
+      },
+      {
+        "id": "SS10017",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Why is a topic sentence like an umbrella?",
+        "options": [
+          "It is broad enough to include supporting details",
+          "It names only the subject of a paragraph",
+          "It appears only as the final paragraph sentence",
+          "It develops the whole paragraph for the author"
+        ],
+        "correct": 0,
+        "explain": "The umbrella image means the topic sentence is broad enough to include supporting details. It expresses the main idea and usually includes the topic."
+      },
+      {
+        "id": "SS10018",
+        "type": "matching",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Match each topic-sentence location to its frequency.",
+        "leftItems": [
+          { "id": "1", "text": "Most common" },
+          { "id": "2", "text": "Next most common" },
+          { "id": "3", "text": "Least common" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "First sentence" },
+          { "id": "B", "text": "Last sentence" },
+          { "id": "C", "text": "Middle of paragraph" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        },
+        "explain": "Topic sentences most often appear first. They next often appear last, and least often appear in the middle."
+      },
+      {
+        "id": "SS10019",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "If a main idea is implied, what should a reader do?",
+        "options": [
+          "Formulate the overall big picture",
+          "Skip the paragraph entirely now",
+          "Copy the chapter title only",
+          "Choose the closing sentence instead"
+        ],
+        "correct": 0,
+        "explain": "When a main idea is implied, it is not directly stated in one sentence. The reader should formulate a sentence expressing the overall big picture or main point."
+      },
+      {
+        "id": "SS10020",
+        "type": "saq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "How many organizational patterns are named?",
+        "answer": "7",
+        "accept": [
+          "7",
+          "7.",
+          "7 patterns",
+          "7 patterns.",
+          "Seven",
+          "Seven.",
+          "Seven patterns",
+          "Seven patterns."
+        ],
+        "explain": "Seven organizational patterns are named. They include chronological, process, comparison or contrast, definition, examples, cause/effect, and whole/parts."
+      },
+      {
+        "id": "SS10021",
+        "type": "multi",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which items are organizational patterns?",
+        "options": [
+          "Chronological time order",
+          "Process step order",
+          "Comparison or contrast",
+          "Definition meaning pattern",
+          "Topic sentence pattern"
+        ],
+        "correct": [0, 1, 2, 3],
+        "explain": "Chronological, process, comparison or contrast, and definition are patterns. A topic sentence expresses a main idea."
+      },
+      {
+        "id": "SS10022",
+        "type": "multi",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which additional items are organizational patterns?",
+        "options": [
+          "Examples list pattern",
+          "Cause/effect link pattern",
+          "Whole/parts structure pattern",
+          "Background knowledge activation"
+        ],
+        "correct": [0, 1, 2],
+        "explain": "Examples, cause/effect, and whole/parts complete the seven patterns. Background knowledge is a comprehension-enhancing action."
+      },
+      {
+        "id": "SS10023",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What should readers activate to enhance comprehension?",
+        "options": [
+          "Background knowledge",
+          "Reading rate",
+          "Chapter material",
+          "Organizational patterns"
+        ],
+        "correct": 0,
+        "explain": "Readers activate background knowledge and make associations or connections with text. This engagement supports comprehension."
+      },
+      {
+        "id": "SS10024",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which reader action is called SQ4Rs?",
+        "options": [
+          "Asking questions at all stages",
+          "Highlighting important concepts while reading",
+          "Reviewing the table of contents",
+          "Summarizing after one reading session"
+        ],
+        "correct": 0,
+        "explain": "SQ4Rs means asking questions before, during, and after reading. Highlighting, reviewing contents, and summarizing once are different actions."
+      },
+      {
+        "id": "SS10025",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Awareness of purpose and text features guides what decision?",
+        "options": [
+          "Reading rate",
+          "Terminology list",
+          "Paragraph topic",
+          "Chapter summary"
+        ],
+        "correct": 0,
+        "explain": "This awareness helps readers decide their reading rate. Purpose and text features affect how fast one should read."
+      },
+      {
+        "id": "SS10026",
+        "type": "stepped",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What comes next in a pre-reading survey?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which action is done first?",
+            "options": [
+              "Read introduction, review contents",
+              "Review chapter summary first",
+              "Answer study questions first",
+              "Highlight concepts while reading"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "After reading the introduction and table of contents, what gives overall topic direction?",
+            "options": [
+              "Chapter title and subtitles",
+              "Focus questions at start",
+              "Last paragraph or summary",
+              "End-of-chapter review material"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "After chapter title and subtitles, what indicates what to look for?",
+            "options": [
+              "Focus questions at start",
+              "First chapter paragraph openings",
+              "Tables of contents lists",
+              "Final chapter summary endings"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "After focus questions, what reveals the opening subject?",
+            "options": [
+              "First chapter paragraph or introduction",
+              "Last paragraph or chapter summary",
+              "End-of-chapter study review materials items",
+              "Chapter title and subtitle lists"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "After first paragraph or introduction, what condenses key takeaway?",
+            "options": [
+              "Last paragraph or summary",
+              "Focus questions at start",
+              "Table of contents list",
+              "End-of-chapter review aids"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "After last paragraph or summary, what provides review aids?",
+            "options": [
+              "End-of-chapter study questions",
+              "Chapter title and subtitles",
+              "Introduction and table contents",
+              "Focus questions at start"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The survey gives a brief summary before reading. It moves from introduction and contents to titles, focus questions, openings, summaries, and end-of-chapter aids."
+      },
+      {
+        "id": "SS10027",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Which statement about focus questions is true?",
+        "options": [
+          "Many textbooks include them",
+          "Few textbooks include them",
+          "Textbooks often hide them",
+          "Questions often end chapters"
+        ],
+        "correct": 0,
+        "explain": "Many, but not all, textbooks include focus questions. Reviewing them shows what to look for."
+      },
+      {
+        "id": "SS10028",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What should readers do during reading review?",
+        "options": [
+          "Take notes, highlight concepts",
+          "Complete pre-reading survey first",
+          "Formulate implied main ideas",
+          "Activate background knowledge early"
+        ],
+        "correct": 0,
+        "explain": "Reading review means taking notes or highlighting important concepts. It happens while engaging with the text."
+      },
+      {
+        "id": "SS10029",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "What does post-reading review identify?",
+        "options": [
+          "Learned takeaways and unclear concepts",
+          "Topic sentence locations in texts",
+          "Chapter titles and subtitle lists",
+          "Organizational patterns per each chapter"
+        ],
+        "correct": 0,
+        "explain": "Post-reading review identifies learned concepts and important takeaways. It also reveals concepts that are not fully comprehended."
+      },
+      {
+        "id": "SS10030",
+        "type": "mcq",
+        "cat": "Lecture 10 - Strengthening Comprehension",
+        "q": "Why identify unclear concepts after reading?",
+        "options": [
+          "To spend more time reviewing them",
+          "To skip the chapter summary now",
+          "To avoid active engagement during reading",
+          "To reduce vocabulary learning over time"
+        ],
+        "correct": 0,
+        "explain": "Identifying unclear concepts lets readers spend more time reviewing them. This strengthens comprehension."
+      }
+    ]
+  }
+}
