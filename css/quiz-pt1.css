@@ -749,3 +749,22 @@ html[data-pointer-input="touch"] .fs-key{display:none}
 body.simple-run #qNav{display:none}
 #finalScreen.simple-final .results-heading,#finalScreen.simple-final #resultsScroll,#finalScreen.simple-final #reviewBtn{display:none}
 @media (max-width:600px){body.simple-run #quizView{padding-bottom:150px}}
+
+/* linking mode: while a line is being drawn the ring cursor becomes a pencil (same as Medphys PT1) */
+html.link-drawing #cursor,
+html.link-drawing #cursor.active{
+  width:12px!important;height:38px!important;border:none!important;border-radius:0!important;
+  background:linear-gradient(180deg,var(--accent-1) 0 9%,var(--accent-0) 9% 20%,var(--accent-2) 20% 66%,var(--accent-3) 66% 72%,var(--accent-1) 72% 86%,var(--text) 86% 100%)!important;
+  clip-path:polygon(30% 0,70% 0,70% 10%,78% 10%,78% 19%,70% 19%,70% 66%,50% 100%,30% 66%,30% 19%,22% 19%,22% 10%,30% 10%);
+  transform:translate(-50%,calc(-100% + 5px)) rotate(28deg) scaleX(-1)!important;
+  mix-blend-mode:normal!important;box-shadow:0 0 12px var(--mood-glow,rgba(var(--accent-0-rgb),.4));transition:none!important;filter:none!important;
+}
+html.link-drawing #cursor.core,
+html.link-drawing #cursor.core.active{
+  width:5px!important;height:5px!important;border:none!important;border-radius:50% 50% 8% 50%!important;
+  background:var(--text)!important;clip-path:none!important;box-shadow:0 0 8px var(--gold,var(--accent-1))!important;
+  transform:translate(-50%,-50%) rotate(28deg) scaleX(-1)!important;mix-blend-mode:normal!important;transition:none!important;
+}
+html.link-drawing #cursor.hidden,html.link-drawing #cursor.core.hidden{opacity:1!important;visibility:visible!important}
+/* custom cursor off: the system cursor turns into a pencil while drawing */
+html.link-drawing[data-custom-cursor="off"],html.link-drawing[data-custom-cursor="off"] *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='rotate(45 16 16)'%3E%3Cpath d='M13 2h6v4h1v4h-1v14l-3 7-3-7V10h-1V6h1z' fill='%23fbbf24' stroke='%23111' stroke-width='1.2'/%3E%3C/g%3E%3C/svg%3E") 5 27,crosshair!important}
