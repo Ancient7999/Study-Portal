@@ -327,7 +327,7 @@
       }
     }
     h += '<div class="feedback idle simg-fb" aria-live="polite"></div>';
-    if (pager) h += '<nav class="simg-pager-nav" aria-label="Bone pages"><button type="button" class="nav-btn simg-prev"' + (pager.i ? '' : ' disabled') + '>‹ Previous</button><span class="simg-page">Bone ' + (pager.i + 1) + ' of ' + pager.n + '</span>' + (pager.i < pager.n - 1 ? '<button type="button" class="nav-btn simg-next">Next ›</button>' : '<button type="button" class="nav-btn simg-finished" title="Go to the next picture section">Finished</button>') + '</nav>';
+    if (pager) h += '<nav class="simg-pager-nav" aria-label="Bone pages"><button type="button" class="nav-btn simg-prev"' + (pager.i ? '' : ' disabled') + '>‹ Previous</button><span class="simg-page">Bone ' + (pager.i + 1) + ' of ' + pager.n + '</span>' + (pager.i < pager.n - 1 ? '<button type="button" class="nav-btn simg-next">Next ›</button>' : '') + '</nav>';
     if (!single && img.caption) h += '<p class="simg-caption">' + esc(img.caption) + '</p>';
     const lic = img.license ? (img.licenseUrl ? '<a href="' + esc(img.licenseUrl) + '" target="_blank" rel="noopener">' + esc(img.license) + '</a>' : esc(img.license)) : '';
     // a bone's source page names it, so its link only shows with the labels shown
@@ -682,6 +682,24 @@
           sl.addEventListener('pointermove', mv); sl.addEventListener('pointerup', up); sl.addEventListener('pointercancel', up);
         });
         sl.addEventListener('wheel', e => { e.preventDefault(); go(cur() + (e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0)); }, { passive: false });
+        /* Axial / Sagittal / Coronal: the wheel (or a trackpad scroll) over the picture steps through the cuts, one cut per
+           notch, throttled for trackpads, clamped at the ends; the page does not scroll meanwhile. Not in the 3D view,
+           not with Ctrl (that zooms) and not while zoomed in (then the wheel moves the zoomed picture). Touch: see the handler below. */
+        const figW = sec.querySelector('.simg-figure');
+        if (figW && stackState(key, img).view.kind === 'slice') {
+          let acc = 0, lastStep = 0, lastEv = 0;
+          figW.addEventListener('wheel', e => {
+            if (e.ctrlKey || stackState(key, img).view.kind !== 'slice') return;
+            if (figW.closest('.lz-zoomed') || figW.querySelector('.lz-zoomed')) return;
+            e.preventDefault();
+            const dy = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * 800 : e.deltaY;
+            const now = performance.now();
+            if (Math.abs(dy) >= 50) { acc = 0; if (now - lastStep < 45) return; lastStep = now; go(cur() + Math.sign(dy)); return; }
+            if (now - lastEv > 250) acc = 0; lastEv = now;
+            acc += dy; if (Math.abs(acc) < 40 || now - lastStep < 90) return;
+            const d = Math.sign(acc); acc = 0; lastStep = now; go(cur() + d);
+          }, { passive: false });
+        }
         /* Axial / Sagittal / Coronal on touch screens (the pane has touch-action:none, so the page neither scrolls nor zooms there):
            - at Fit (1x) a one-finger vertical drag steps through the cuts like the wheel: finger up = wheel down = next cut,
              one cut per 10 px, accumulated so slow drags still step;
@@ -790,24 +808,6 @@
     }
   }
 
-  /* Finished (last item of a picture section): open the next section and bring it gently into view;
-     on the last section, close this one and show the chapter list */
-  function finishSection(fromEl) {
-    const card = fromEl && fromEl.closest('.simg-chapter-card'); if (!card) return;
-    let next = card.nextElementSibling; while (next && !next.classList.contains('simg-chapter-card')) next = next.nextElementSibling;
-    if (next) {
-      const t = next.querySelector('.chapter-toggle');
-      if (!next.classList.contains('open')) t.click(); else gentleReveal(next);
-      setTimeout(() => { try { t.focus({ preventScroll: true }); } catch (e) {} }, 0);
-    } else {
-      const t = card.querySelector('.chapter-toggle');
-      if (card.classList.contains('open')) { card.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); }
-      const list = card.parentElement; const r = list.getBoundingClientRect();
-      if (r.top < 0) window.scrollBy({ top: r.top - 12, behavior: reduced() ? 'auto' : 'smooth' });
-      try { t.focus({ preventScroll: true }); } catch (e) {}
-    }
-  }
-  document.addEventListener('click', e => { const b = e.target && e.target.closest && e.target.closest('.simg-finished'); if (b) { e.preventDefault(); finishSection(b); } });
   function renderChapterBody(body, ch) {
     const md = body.querySelector('.md') || body;
     md.className = 'md simg-chapter';
@@ -824,7 +824,6 @@
       list.appendChild(sec);
       renderSection(sec, ch, img, null);
     });
-    if (!singles.length && ordered.length) { const fr = document.createElement('div'); fr.className = 'simg-finish-row'; fr.innerHTML = '<button type="button" class="nav-btn simg-finished" title="Go to the next picture section">Finished</button>'; md.appendChild(fr); }
     if (singles.length) {
       const sec = document.createElement('section');
       sec.className = 'simg-card single simg-pager'; sec.dataset.pager = '1';
