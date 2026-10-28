@@ -675,3 +675,7 @@
 @media (hover:none),(pointer:coarse){#studyView .simg-stage.simg-touch-cuts.lz-zoomed{height:var(--simg-pane-h,auto)}}
 /* the picture's leader lines and outlines are not focus targets (no browser focus ring on click); their label boxes are */
 #studyView .simg-regions,#studyView .simg-regions *{outline:none}
+
+/* picture variants: labels a picture does not name stay hidden on it */
+#studyView .simg-has-var [data-off]{display:none !important}
+#studyView .simg-has-var .simg-reg.simg-off{display:none}

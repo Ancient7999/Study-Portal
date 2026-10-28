@@ -169,6 +169,19 @@
       l._off = false; l.x = q[0]; l.y = q[1]; l.w = q[2]; l.h = q[3]; l.anchor = { x: q[4], y: q[5], from: { x: q[6], y: q[7] } };
     });
   }
+  /* —— picture variants (Medical Terminology): the same structures on pictures from different sources ——
+   * img.variants[] = {id, name, labeled, blank, width, height, credit, license, licenseUrl, sourceUrl, pos:{labelId:{x,y,w,h,anchor}}}
+   * Leader lines are part of each picture; a label only shows on the pictures that name its structure. */
+  const varOf = Object.create(null);   // picture key → variant index (this visit only)
+  function variantState(key, img) { let i = varOf[key] | 0; if (!img.variants[i]) i = varOf[key] = 0; return { i, v: img.variants[i] }; }
+  function applyVariant(img, v) {
+    ['labeled', 'blank', 'width', 'height', 'credit', 'license', 'licenseUrl', 'sourceUrl'].forEach(k => { if (v[k] != null) img[k] = v[k]; });
+    img.labels.forEach(l => {
+      const q = v.pos[l.id];
+      if (!q) { l._off = true; if (l.x == null) { l.x = 0; l.y = 0; l.w = 17; l.h = 5.6; } return; }
+      l._off = false; l.x = q.x; l.y = q.y; l.w = q.w; l.h = q.h; l.anchor = q.anchor || null;
+    });
+  }
   function sliderHTML(view, i) {
     const n = view.frames.length, e = view.ends || ['', ''];
     return '<div class="simg-slider" role="slider" tabindex="0" aria-label="' + esc(view.name) + ' cut" aria-orientation="vertical" aria-valuemin="1" aria-valuemax="' + n + '" aria-valuenow="' + (i + 1) + '" aria-valuetext="Cut ' + (i + 1) + ' of ' + n + '">'
@@ -219,6 +232,8 @@
     const key = keyOf(ch, img), single = isSingle(img), mode = currentMode(key, img);
     const stk = img.views ? stackState(key, img) : null;
     if (stk) applyFrame(img, stk.frame);
+    const vst = img.variants ? variantState(key, img) : null;
+    if (vst) applyVariant(img, vst.v);
     const slots = modeSlots(key, mode), labels = labelsOf(img), n = labels.length;
     const solvedHere = mode === 'show' ? [] : labels.filter(l => slots[l.id] != null && matches(l, slots[l.id]));
     const k = solvedCount(key, img);
@@ -232,6 +247,7 @@
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
       + '</div></header>';
     if (stk && img.views.length > 1) h += '<div class="simg-views" role="group" aria-label="View">' + img.views.map((v, vi) => '<button type="button" class="simg-view" data-v="' + vi + '" aria-pressed="' + (vi === stk.st.v ? 'true' : 'false') + '">' + esc(v.name) + '</button>').join('') + '</div>';
+    if (vst && img.variants.length > 1) h += '<div class="simg-views simg-vars" role="group" aria-label="Picture">' + img.variants.map((v, vi) => '<button type="button" class="simg-view simg-var" data-var="' + vi + '" aria-pressed="' + (vi === vst.i ? 'true' : 'false') + '">' + esc(v.name || ('Picture ' + (vi + 1))) + '</button>').join('') + '</div>';
     const src = stk ? stk.frame.src : animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
     const slid = stk && stk.view.frames.length > 1;
     h += '<div class="simg-frame' + (slid ? ' has-slider' : '') + '"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '"' + ((img.width && img.height) ? ' style="--ar:' + (img.width / img.height).toFixed(4) + '"' : '') + '>'
@@ -259,7 +275,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       else h += '<div class="simg-name"><label class="simg-name-label" for="sn-' + esc(key) + '">' + q + '</label><div class="saq-wrap"><input id="sn-' + esc(key) + '" class="saq-input simg-name-input" name="simg-name-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" placeholder="Type the name"><div class="label-echo saq-echo simg-name-echo" aria-live="polite"></div></div></div>';
     }
     if (mode === 'bank') {
-      const open = labels.filter(l => !(slots[l.id] != null && matches(l, slots[l.id])));
+      const open = labels.filter(l => !l._off && !(slots[l.id] != null && matches(l, slots[l.id])));
       if (open.length) {
         const words = single ? boneChips(ch, img) : bankWindow(key, labels, open);
         h += '<div class="label-bank simg-bank" aria-label="Word bank">' + words.map(w => { const hl = open.find(l => l.answer === w); return '<button type="button" class="label-chip" draggable="false"' + catAttr(hl && hl.hint) + ' data-text="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>';
@@ -282,6 +298,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
     sec.dataset.key = key; sec.dataset.img = img.id; sec.dataset.mode = mode;
     sec.classList.toggle('is-hidden', mode !== 'show');
     sec.classList.toggle('simg-live', !!img.views);
+    sec.classList.toggle('simg-has-var', !!img.variants);
     const rerender = () => renderSection(sec, ch, img, pager);
     sec.querySelectorAll('.simg-mode').forEach(b => b.addEventListener('click', () => {
       if (b.dataset.mode === mode) return;
@@ -532,6 +549,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       if (slot) { const c = selChip; select(null); tryPlace(c, slot, null); }
     });
 
+    if (img.variants) sec.querySelectorAll('.simg-var').forEach(b => b.addEventListener('click', () => { if ((varOf[key] | 0) === +b.dataset.var) return; varOf[key] = +b.dataset.var; rerender(); const nb = sec.querySelector('.simg-var[data-var="' + b.dataset.var + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
     /* view stacks: view buttons re-render; the cut slider swaps the picture and moves the labels in place */
     if (img.views) {
       sec.querySelectorAll('.simg-view').forEach(b => b.addEventListener('click', () => { const st = viewOf[key]; if (+b.dataset.v === st.v) return; st.v = +b.dataset.v; rerender(); const nb = sec.querySelector('.simg-view[data-v="' + b.dataset.v + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
