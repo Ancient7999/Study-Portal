@@ -133,15 +133,47 @@
     if (a.x < x0) return [x0, (y0 + y1) / 2];
     return [(x0 + x1) / 2, a.y > y1 ? y1 : y0];
   }
+  /* —— view stacks (Anatomy): 3D views and Axial / Sagittal / Coronal cuts, one picture per cut ——
+   * img.views[] = {id, name, kind:'3d'|'slice', ends:[top, bottom], frames:[{src, pos:{labelId:[x,y,w,h, ax,ay, fx,fy]}}], chyme?}
+   * Labels keep their ids in every view, so an answer belongs to its structure across cuts and planes.
+   * A label only shows when its structure is cut (or seen) in the current picture. */
+  const viewOf = Object.create(null);   // picture key → {v, at:{viewId: cut}} (this visit only)
+  const SL_ABBR = { Superior: 'Sup', Inferior: 'Inf', Left: 'L', Right: 'R', Front: 'Ant', Back: 'Post' };
+  function stackState(key, img) {
+    const st = viewOf[key] = viewOf[key] || { v: 0, at: {} };
+    if (!img.views[st.v]) st.v = 0;
+    const view = img.views[st.v], n = view.frames.length;
+    let i = st.at[view.id]; if (!(i >= 0 && i < n)) i = st.at[view.id] = Math.floor((n - 1) / 2);
+    return { st, view, i, frame: view.frames[i] };
+  }
+  function applyFrame(img, frame) {
+    img.labels.forEach(l => {
+      const q = frame.pos[l.id];
+      if (!q) { l._off = true; if (l.x == null) { l.x = 0; l.y = 0; l.w = 17; l.h = 5.6; l.anchor = { x: 0, y: 0, from: { x: 0, y: 0 } }; } return; }
+      l._off = false; l.x = q[0]; l.y = q[1]; l.w = q[2]; l.h = q[3]; l.anchor = { x: q[4], y: q[5], from: { x: q[6], y: q[7] } };
+    });
+  }
+  function sliderHTML(view, i) {
+    const n = view.frames.length, e = view.ends || ['', ''];
+    return '<div class="simg-slider" role="slider" tabindex="0" aria-label="' + esc(view.name) + ' cut" aria-orientation="vertical" aria-valuemin="1" aria-valuemax="' + n + '" aria-valuenow="' + (i + 1) + '" aria-valuetext="Cut ' + (i + 1) + ' of ' + n + '">'
+      + '<span class="simg-sl-end" title="' + esc(e[0]) + '">' + esc(SL_ABBR[e[0]] || e[0]) + '</span>'
+      + '<span class="simg-sl-track"><span class="simg-sl-thumb" style="top:' + (n > 1 ? i / (n - 1) * 100 : 50) + '%"></span></span>'
+      + '<span class="simg-sl-end" title="' + esc(e[1]) + '">' + esc(SL_ABBR[e[1]] || e[1]) + '</span>'
+      + '<span class="simg-sl-pos">' + (i + 1) + '/' + n + '</span></div>';
+  }
+  function leaderParts(l, live) {
+    return anchorsOf(l).map(a => {
+      const pts = [a.from && isFinite(a.from.x) ? [a.from.x, a.from.y] : leaderStart(l, a)].concat((a.via || []).map(v => [v.x, v.y]), [[a.x, a.y]]);
+      const p = pts.map(pt).join(' ');
+      return (live ? '<polyline class="simg-leader-line" points="' + p + '"/>' : '') + '<polyline class="simg-leader-hit" points="' + p + '"/><line class="simg-leader-dot" x1="' + a.x + '" y1="' + a.y + '" x2="' + a.x + '" y2="' + a.y + '"/>';
+    }).join('');
+  }
   function regionsSVG(img) {
     if (isSingle(img)) return '';
     const parts = img.labels.map(l => {
       const polys = (l.region || []).map(p => '<polygon class="simg-reg-poly" points="' + p.map(pt).join(' ') + '"/>').join('');
-      const line = anchorsOf(l).map(a => {
-        const pts = [a.from && isFinite(a.from.x) ? [a.from.x, a.from.y] : leaderStart(l, a)].concat((a.via || []).map(v => [v.x, v.y]), [[a.x, a.y]]);
-        return '<polyline class="simg-leader-hit" points="' + pts.map(pt).join(' ') + '"/><line class="simg-leader-dot" x1="' + a.x + '" y1="' + a.y + '" x2="' + a.x + '" y2="' + a.y + '"/>';
-      }).join('');
-      return (polys || line) ? '<g class="simg-reg" data-id="' + esc(l.id) + '">' + polys + line + '</g>' : '';
+      const line = leaderParts(l, !!img.views);
+      return (polys || line) ? '<g class="simg-reg' + (l._off ? ' simg-off' : '') + '" data-id="' + esc(l.id) + '">' + polys + line + '</g>' : '';
     }).join('');
     return parts ? '<svg class="simg-regions" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">' + parts + '</svg>' : '';
   }
@@ -169,6 +201,8 @@
   /* —— one picture —— */
   function sectionHTML(ch, img, pager) {
     const key = keyOf(ch, img), single = isSingle(img), mode = currentMode(key, img);
+    const stk = img.views ? stackState(key, img) : null;
+    if (stk) applyFrame(img, stk.frame);
     const slots = modeSlots(key, mode), labels = labelsOf(img), n = labels.length;
     const solvedHere = mode === 'show' ? [] : labels.filter(l => slots[l.id] != null && matches(l, slots[l.id]));
     const k = solvedCount(key, img);
@@ -181,23 +215,25 @@
       + '<div class="simg-modes" role="group" aria-label="Study mode">'
       + modesOf(img).map(m => '<button type="button" class="simg-mode" data-mode="' + m + '" aria-pressed="' + (m === mode ? 'true' : 'false') + '" title="' + esc(MODES[m].tip) + '"><span aria-hidden="true">' + MODES[m].icon + '</span> ' + MODES[m].text + '</button>').join('')
       + '</div></header>';
-    const src = animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
-    h += '<div class="simg-frame"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '"' + ((img.width && img.height) ? ' style="--ar:' + (img.width / img.height).toFixed(4) + '"' : '') + '>'
+    if (stk && img.views.length > 1) h += '<div class="simg-views" role="group" aria-label="View">' + img.views.map((v, vi) => '<button type="button" class="simg-view" data-v="' + vi + '" aria-pressed="' + (vi === stk.st.v ? 'true' : 'false') + '">' + esc(v.name) + '</button>').join('') + '</div>';
+    const src = stk ? stk.frame.src : animSrc(img, (mode !== 'show' || !img.labeled) ? img.blank : img.labeled);
+    const slid = stk && stk.view.frames.length > 1;
+    h += '<div class="simg-frame' + (slid ? ' has-slider' : '') + '"><div class="label-stage simg-stage' + (single ? ' single' : '') + '"><div class="label-figure simg-figure' + (single ? ' single' : '') + '"' + ((img.width && img.height) ? ' style="--ar:' + (img.width / img.height).toFixed(4) + '"' : '') + '>'
       + '<img class="label-img simg-img" loading="lazy" decoding="async" src="' + esc(src) + '" width="' + (img.width || '') + '" height="' + (img.height || '') + '" alt="' + esc(img.alt || img.title) + '" draggable="false">';
-    h += chymeSVG(img);
+    h += stk ? (stk.view.chyme ? chymeSVG({ id: img.id + '-' + stk.view.id, width: img.width, height: img.height, chyme: stk.view.chyme }) : '') : chymeSVG(img);
     h += regionsSVG(img);
     if (!single) {
       labels.forEach(l => {
-        const style = 'left:' + l.x + '%;top:' + l.y + '%;width:' + l.w + '%;height:' + l.h + '%';
+        const style = 'left:' + l.x + '%;top:' + l.y + '%;width:' + l.w + '%;height:' + l.h + '%' + (l._off ? '" data-off="1' : '');
         const hintHTML = l.hint ? '<span class="simg-slot-hint">' + esc(l.hint) + '</span>' : '';
-        if (mode === 'show') { h += '<div class="simg-hot" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '"></div>'; return; }
+        if (mode === 'show') { h += '<div class="simg-hot" data-id="' + esc(l.id) + '" style="' + style + '" title="' + esc(l.answer) + '">' + (stk ? '<span class="simg-hot-text">' + esc(l.answer) + '</span>' : '') + '</div>'; return; }
         const t = slots[l.id];
         if (t != null && matches(l, t)) h += '<div class="label-slot locked" data-id="' + esc(l.id) + '" style="' + style + '"><span class="label-slot-text">' + esc(t) + '</span></div>';
         else if (mode === 'bank') h += '<div class="label-slot open' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '" tabindex="0" role="button" aria-label="Empty label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '">' + hintHTML + '</div>';
         else h += '<div class="label-slot typing' + (l.hint ? ' has-hint' : '') + '"' + catAttr(l.hint) + ' data-id="' + esc(l.id) + '" style="' + style + '"><input class="label-input" name="simg-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label' + (l.hint ? ' (' + esc(l.hint) + ')' : '') + '"' + (l.hint ? ' placeholder="' + esc(l.hint) + '"' : '') + '><div class="label-echo" aria-live="polite"></div></div>';
       });
     }
-    h += '</div></div></div>';
+    h += '</div></div>' + (slid ? sliderHTML(stk.view, stk.i) : '') + '</div>';
 h += '<button type="button" class="simg-restart" title="Clear this mode\'s progress for this picture"' + (solvedHere.length ? '' : ' hidden') + '>↺ restart</button>';
     if (single) {
       const l = labels[0], t = slots.name, q = img.plural ? 'What are these bones called?' : 'What is this bone called?';
@@ -228,6 +264,7 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
     sec.innerHTML = sectionHTML(ch, img, pager);
     sec.dataset.key = key; sec.dataset.img = img.id; sec.dataset.mode = mode;
     sec.classList.toggle('is-hidden', mode !== 'show');
+    sec.classList.toggle('simg-live', !!img.views);
     const rerender = () => renderSection(sec, ch, img, pager);
     sec.querySelectorAll('.simg-mode').forEach(b => b.addEventListener('click', () => {
       if (b.dataset.mode === mode) return;
@@ -478,6 +515,45 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       if (slot) { const c = selChip; select(null); tryPlace(c, slot, null); }
     });
 
+    /* view stacks: view buttons re-render; the cut slider swaps the picture and moves the labels in place */
+    if (img.views) {
+      sec.querySelectorAll('.simg-view').forEach(b => b.addEventListener('click', () => { const st = viewOf[key]; if (+b.dataset.v === st.v) return; st.v = +b.dataset.v; rerender(); const nb = sec.querySelector('.simg-view[data-v="' + b.dataset.v + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
+      const sl = sec.querySelector('.simg-slider');
+      if (sl) {
+        const track = sl.querySelector('.simg-sl-track'), thumb = sl.querySelector('.simg-sl-thumb'), posEl = sl.querySelector('.simg-sl-pos');
+        const pic = sec.querySelector('.simg-img');
+        const go = i => {
+          const s0 = stackState(key, img), n = s0.view.frames.length; i = Math.max(0, Math.min(n - 1, i)); if (i === s0.i) return;
+          s0.st.at[s0.view.id] = i; const fr = s0.view.frames[i]; applyFrame(img, fr);
+          pic.src = fr.src;
+          [i - 1, i + 1, i - 2, i + 2].forEach(j => { const f2 = s0.view.frames[j]; if (f2) { const im = new Image(); im.src = f2.src; } });
+          labelsOf(img).forEach(l => {
+            const sel = '[data-id="' + CSS.escape(l.id) + '"]';
+            sec.querySelectorAll('.label-slot' + sel + ', .simg-hot' + sel).forEach(el => { el.style.left = l.x + '%'; el.style.top = l.y + '%'; el.style.width = l.w + '%'; el.style.height = l.h + '%'; if (l._off) el.dataset.off = '1'; else delete el.dataset.off; });
+            const g = sec.querySelector('.simg-reg' + sel); if (g) { g.innerHTML = leaderParts(l, true); g.classList.toggle('simg-off', !!l._off); }
+          });
+          thumb.style.top = (n > 1 ? i / (n - 1) * 100 : 50) + '%'; posEl.textContent = (i + 1) + '/' + n;
+          sl.setAttribute('aria-valuenow', i + 1); sl.setAttribute('aria-valuetext', 'Cut ' + (i + 1) + ' of ' + n);
+          fitLocked();
+        };
+        const cur = () => stackState(key, img).i;
+        const fromY = y => { const r = track.getBoundingClientRect(), n = stackState(key, img).view.frames.length; return Math.round(Math.max(0, Math.min(1, (y - r.top) / (r.height || 1))) * (n - 1)); };
+        sl.addEventListener('pointerdown', e => {
+          if (e.pointerType === 'mouse' && e.button !== 0) return;
+          e.preventDefault(); try { sl.setPointerCapture(e.pointerId); } catch (er) {} sl.focus({ preventScroll: true }); sl.classList.add('dragging'); go(fromY(e.clientY));
+          const mv = ev => go(fromY(ev.clientY));
+          const up = () => { sl.classList.remove('dragging'); sl.removeEventListener('pointermove', mv); sl.removeEventListener('pointerup', up); sl.removeEventListener('pointercancel', up); };
+          sl.addEventListener('pointermove', mv); sl.addEventListener('pointerup', up); sl.addEventListener('pointercancel', up);
+        });
+        sl.addEventListener('wheel', e => { e.preventDefault(); go(cur() + (e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0)); }, { passive: false });
+        sl.addEventListener('keydown', e => {
+          const n = stackState(key, img).view.frames.length;
+          const d = { ArrowUp: -1, ArrowLeft: -1, ArrowDown: 1, ArrowRight: 1, PageUp: -3, PageDown: 3 }[e.key];
+          if (d) { e.preventDefault(); e.stopPropagation(); go(cur() + d); }
+          else if (e.key === 'Home') { e.preventDefault(); go(0); } else if (e.key === 'End') { e.preventDefault(); go(n - 1); }
+        });
+      }
+    }
     /* hover / tap highlight: term (slot or hot box), its leader line, or the region itself */
     const regs = sec.querySelector('.simg-regions');
     if (regs && !single) {

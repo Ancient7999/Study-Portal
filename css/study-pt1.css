@@ -375,3 +375,29 @@
 #studyView .sym-tip .tip-syms{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:2px;font-size:.84rem;color:var(--text-dim,var(--text))}
 @media (max-width:480px){#studyView .md .fx-box{padding:10px;border-radius:12px}#studyView .md .fx-row{padding:10px 8px}#studyView .md .fx-formula{font-size:1.15em}}
 .simg-figure .label-slot.typing:focus-within{z-index:6}
+
+/* Anatomy view stacks: view buttons, live leader lines, cut slider on the right */
+#studyView .simg-views{display:flex;flex-wrap:wrap;gap:0;margin:0 0 8px;border:1px solid var(--border);border-radius:10px;overflow:hidden;width:max-content;max-width:100%}
+#studyView .simg-view{flex:1 1 auto;border:0;border-right:1px solid var(--border);background:transparent;color:inherit;font:inherit;font-size:.85rem;padding:5px 12px;cursor:pointer;min-height:32px}
+#studyView .simg-view:last-child{border-right:0}
+#studyView .simg-view[aria-pressed="true"]{background:rgba(var(--accent-0-rgb),.26);color:var(--accent-0);font-weight:700}
+#studyView .simg-view:focus-visible{outline:2px solid var(--accent-0);outline-offset:-2px}
+#studyView .simg-live .label-stage{background:#14171d}
+#studyView .simg-live [data-off]{display:none !important}
+#studyView .simg-live .simg-reg.simg-off{display:none}
+#studyView .simg-leader-line{fill:none;stroke:rgba(241,245,249,.9);stroke-width:1.5px;vector-effect:non-scaling-stroke;pointer-events:none}
+#studyView .simg-live .simg-leader-dot{stroke:#f1f5f9;stroke-width:6px}
+#studyView .simg-live .simg-hot{background:rgba(42,48,60,.94);border:1.5px solid #f1f5f9;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2px;overflow:hidden}
+#studyView .simg-hot-text{font-size:clamp(7px,1.45cqw,14px);font-weight:700;line-height:1.05}
+#studyView .simg-frame.has-slider{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;column-gap:6px}
+#studyView .simg-frame.has-slider>:not(.label-stage):not(.simg-slider){grid-column:1/-1}
+#studyView .simg-frame.has-slider>.label-stage{grid-column:1;min-width:0}
+#studyView .simg-frame.has-slider>.simg-slider{grid-column:2}
+#studyView .simg-slider{width:34px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 0;border:1px solid var(--border);border-radius:10px;touch-action:none;cursor:ns-resize;user-select:none;-webkit-user-select:none;font-size:.68rem;line-height:1}
+#studyView .simg-slider:focus-visible{outline:2px solid var(--accent-0);outline-offset:1px}
+#studyView .simg-sl-track{position:relative;flex:1 1 auto;width:6px;min-height:80px;border-radius:3px;background:rgba(var(--accent-0-rgb),.25);margin:6px 0}
+#studyView .simg-sl-thumb{position:absolute;left:50%;width:20px;height:20px;border-radius:50%;background:var(--accent-0);transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.25)}
+#studyView .simg-slider.dragging .simg-sl-thumb{box-shadow:0 0 0 6px rgba(var(--accent-0-rgb),.3)}
+#studyView .simg-sl-end{opacity:.75}
+#studyView .simg-sl-pos{font-weight:700;font-variant-numeric:tabular-nums}
+@media (max-width:480px){#studyView .simg-slider{width:30px}#studyView .simg-view{padding:5px 8px;font-size:.8rem}}
