@@ -659,8 +659,13 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
       targets.forEach(t => {
         t.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') on(t.dataset.id); });
         t.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') off(); });
-        t.addEventListener('focusin', () => on(t.dataset.id));
-        t.addEventListener('focusout', () => off());
+        /* focus listeners only on the HTML boxes: Chrome makes an SVG element with focus listeners focusable, so a click on a
+           leader line / outline focused its <g> and drew the browser's thick black focus ring around it. Keyboard users focus
+           the label boxes (tabindex), which light the same line and outline. */
+        if (!(t instanceof SVGElement)) {
+          t.addEventListener('focusin', () => on(t.dataset.id));
+          t.addEventListener('focusout', () => off());
+        }
         t.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') { sticky = sticky === t.dataset.id ? null : t.dataset.id; on(sticky); } });
       });
     }

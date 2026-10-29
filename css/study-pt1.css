@@ -673,3 +673,5 @@
 /* Axial / Sagittal / Coronal panes: touch drags step the cuts and pinches zoom the picture (study-images.js), so the page must not pan or zoom from here */
 #studyView .simg-stage.simg-touch-cuts{touch-action:none;overscroll-behavior:contain}
 @media (hover:none),(pointer:coarse){#studyView .simg-stage.simg-touch-cuts.lz-zoomed{height:var(--simg-pane-h,auto)}}
+/* the picture's leader lines and outlines are not focus targets (no browser focus ring on click); their label boxes are */
+#studyView .simg-regions,#studyView .simg-regions *{outline:none}
