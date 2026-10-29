@@ -665,3 +665,8 @@
   #studyView .wbc-hint { display: block; }
   #studyView .wbc-scroll > svg { min-width: 600px; }
 }
+
+/* word bank: a word that comes into the 7-word window fades in */
+#studyView .simg-bank .label-chip.simg-chip-in{animation:simgChipIn .35s ease-out both}
+@keyframes simgChipIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#studyView .simg-bank .label-chip.simg-chip-in{animation:none}}
