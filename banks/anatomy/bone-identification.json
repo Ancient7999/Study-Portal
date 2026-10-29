@@ -110,30 +110,6 @@
       ]
     },
     {
-      "id": "pectoral-girdle",
-      "title": "Pectoral Girdle",
-      "tags": [
-        "pectoral-girdle"
-      ],
-      "group": "By Skeleton Division",
-      "hideTags": [
-        "division",
-        "region"
-      ]
-    },
-    {
-      "id": "pelvic-girdle",
-      "title": "Pelvic Girdle",
-      "tags": [
-        "pelvic-girdle"
-      ],
-      "group": "By Skeleton Division",
-      "hideTags": [
-        "division",
-        "region"
-      ]
-    },
-    {
       "id": "long",
       "title": "Long Bones",
       "tags": [
