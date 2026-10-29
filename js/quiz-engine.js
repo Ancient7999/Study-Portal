@@ -3768,14 +3768,17 @@ document.addEventListener('keydown', e=>{
 function runKeysActive(){
   return quizActive && document.getElementById('quizView').classList.contains('active') &&
     document.getElementById('quizScreen').style.display!=='none' &&
-    !document.getElementById('cardResetModal').classList.contains('show');
+    !document.getElementById('cardResetModal').classList.contains('show') &&
+    !leaveRunOpen();
 }
 window.addEventListener('keydown', e=>{
   if(e.key!=='Escape') return;
   if(document.getElementById('cardResetModal').classList.contains('show')) return; // the dialog closes itself
+  if(leaveRunOpen()){ e.preventDefault(); e.stopImmediatePropagation(); closeLeaveRun(); return; }
   if(!document.getElementById('quizView').classList.contains('active')) return;
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
   if(kbLink){ kbLinkClear(); return; }
+  if(kbAdv){ e.preventDefault(); e.stopImmediatePropagation(); if(kbAdvArmed()){ clearKbAdvance(); openLeaveRun(); } return; }
   goSets();
 }, true);
 /* after a keyboard correct answer: the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
@@ -3790,7 +3793,7 @@ function startKbAdvance(){
   host.insertAdjacentElement('afterend', w);
   const fill=w.querySelector('.formula-advance-fill'), t0=performance.now();
   const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
-  kbAdv={wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
+  kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
 }
 /* —— linking questions: number keys ——
    First number picks that term (1 = first, 0 = tenth), the next number links it to that
@@ -3842,11 +3845,54 @@ function kbLinkKey(e){
   onDrawUp({clientX:zx,clientY:zy,pointerId:-1,kb:true});
   return true;
 }
+/* The next-question bar: for its first 500 ms the stop inputs below are ignored (the key or tap that
+   answered may still be down). After that a digit (top row or numpad), any other numpad key, Backspace,
+   or on touch devices a touch, touch scroll or wheel stops it and stays on this question. Esc stops it
+   and asks before leaving the set. Enter and → still go straight to the next question. */
+const KB_ADV_GRACE=500;
+function kbAdvArmed(){ return !!kbAdv && performance.now()-kbAdv.t0>=KB_ADV_GRACE; }
+function kbAdvStopKey(e, typing){
+  if(e.ctrlKey||e.metaKey||e.altKey) return false;
+  const code=e.code||'';
+  const isDigit=/^Digit[0-9]$/.test(code) || (/^[0-9]$/.test(e.key) && !/^Numpad/.test(code));
+  const isPad=/^Numpad/.test(code) && code!=='NumpadEnter';
+  if(!(isDigit || isPad || e.key==='Backspace')) return false;
+  // a field outside the question (chat, search) keeps its keys
+  if(typing && !(e.target.closest && e.target.closest('#quizScreen'))) return false;
+  if(!kbAdvArmed()){ if(!typing) e.preventDefault(); return true; }
+  if(!typing || e.key!=='Backspace') e.preventDefault();
+  clearKbAdvance();
+  return true;
+}
+function kbAdvTouchStop(){ if(kbAdvArmed()) clearKbAdvance(); }
+function isTouchDevice(){ return document.documentElement.getAttribute('data-pointer-input')==='touch' || (navigator.maxTouchPoints||0)>0 || 'ontouchstart' in window; }
+document.addEventListener('touchstart', kbAdvTouchStop, {capture:true, passive:true});
+document.addEventListener('touchmove', kbAdvTouchStop, {capture:true, passive:true});
+document.addEventListener('wheel', ()=>{ if(kbAdv && isTouchDevice()) kbAdvTouchStop(); }, {capture:true, passive:true});
+/* leave-the-set confirmation: same look as the locked-card reset dialog */
+let leaveRunEl=null;
+function leaveRunModal(){
+  if(leaveRunEl) return leaveRunEl;
+  const ref=document.getElementById('cardResetModal');
+  const m=document.createElement('div'); m.className='modal-overlay'; m.id='leaveRunModal';
+  m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true'); m.setAttribute('aria-labelledby','leaveRunTitle');
+  m.innerHTML='<div class="modal-card"><h3 id="leaveRunTitle">Leave this set?</h3><p>This takes you back to the previous menu.</p>'
+    +'<div class="modal-actions"><button class="btn-ghost" type="button" id="leaveRunCancel">Stay</button><button class="btn-gold" type="button" id="leaveRunConfirm">Leave</button></div></div>';
+  (ref&&ref.parentNode ? ref.parentNode : document.body).insertBefore(m, ref?ref.nextSibling:null);
+  m.querySelector('#leaveRunCancel').addEventListener('click', closeLeaveRun);
+  m.querySelector('#leaveRunConfirm').addEventListener('click', ()=>{ closeLeaveRun(); goSets(); });
+  m.addEventListener('click', e=>{ if(e.target===m) closeLeaveRun(); });
+  leaveRunEl=m; return m;
+}
+function leaveRunOpen(){ return !!(leaveRunEl && leaveRunEl.classList.contains('show')); }
+function openLeaveRun(){ const m=leaveRunModal(); m.classList.add('show'); setTimeout(()=>{ try{ m.querySelector('#leaveRunCancel').focus(); }catch(e){} }, 30); }
+function closeLeaveRun(){ if(leaveRunEl) leaveRunEl.classList.remove('show'); try{ document.activeElement && document.activeElement.blur && document.activeElement.blur(); }catch(e){} }
 function kbOptions(){ const o=document.getElementById('options'); return o ? [...o.querySelectorAll('.opt')].filter(b=>!b.disabled && b.offsetParent!==null) : []; }
 function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
   const typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
+  if(kbAdv && kbAdvStopKey(e, typing)) return;
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && kbLinkKey(e)) return;
   if(e.key==='f'||e.key==='F'){ if(!typing && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); toggleFullscreen(); } }
   /* keyboard answering for choice questions / steps: ↑ ↓ or 1–n highlight (same look as hover), same number again or Enter chooses */
