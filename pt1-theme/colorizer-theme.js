@@ -251,11 +251,18 @@ global.resetThemeToDefaults = resetThemeToDefaults;
   var FONT_ROLES = [
     { id: 'ui', defaultName: 'Comic Neue', vars: ['--font-ui', '--body'] },
     { id: 'head', defaultName: 'Pacifico', vars: ['--font-head', '--head'] },
-    { id: 'question', defaultName: 'Space Mono', vars: ['--font-question'] },
-    { id: 'choice', defaultName: 'Space Mono', vars: ['--font-choice'] },
+    { id: 'question', defaultName: 'Outfit', vars: ['--font-question'] },
+    { id: 'choice', defaultName: 'Outfit', vars: ['--font-choice'] },
     { id: 'nav', defaultName: 'Montserrat', vars: ['--font-nav'] },
     { id: 'mono', defaultName: 'Oswald', vars: ['--font-mono', '--mono'] }
   ];
+  // question and choice text moved to Outfit: drop the old Space Mono default once
+  try {
+    if (!localStorage.getItem('pt1_font_qa_v2')) {
+      ['question', 'choice'].forEach(function (r) { if (localStorage.getItem(FONT_STORAGE_PREFIX + r) === 'Space Mono') localStorage.removeItem(FONT_STORAGE_PREFIX + r); });
+      localStorage.setItem('pt1_font_qa_v2', '1');
+    }
+  } catch (e) {}
   var FONT_ORDER = [
     'Instrument Serif', 'Fraunces', 'Playfair Display', 'Georgia', 'Times New Roman',
     'Outfit', 'Nunito', 'Montserrat', 'Roboto', 'Oswald', 'Arial', 'Verdana', 'Trebuchet MS',
