@@ -2767,6 +2767,16 @@
          "y": 91.04
         }
        }
+      },
+      {
+       "id": "meninges-meninges",
+       "answer": "Meninges",
+       "accept": [],
+       "cover": true,
+       "x": 69.39,
+       "y": 30.82,
+       "w": 20.88,
+       "h": 7.88
       }
      ]
     },
@@ -3257,173 +3267,283 @@
      "id": "cerebrum",
      "title": "The Cerebrum",
      "caption": "The cerebrum has two hemispheres, each with frontal, parietal, temporal and occipital lobes. Its folds are gyri and the grooves between them are sulci.",
-     "alt": "Side view of the brain with the four lobes coloured, and a top view showing the two hemispheres.",
+     "alt": "Diagram for labelling: the cerebrum. Two or more pictures from different sources show the same structures.",
      "kind": "labeled-diagram",
-     "credit": "Study material",
-     "license": "",
-     "licenseUrl": "",
-     "sourceUrl": "",
-     "labeled": "banks/medterm/study/lec18-20/cerebrum-labeled.webp",
-     "blank": "banks/medterm/study/lec18-20/cerebrum-blank.webp",
-     "width": 953,
-     "height": 665,
+     "credit": "OpenStax, via Wikimedia Commons",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:1306_Lobes_of_Cerebral_CortexN.jpg",
+     "labeled": "banks/medterm/study/lec18-20/cerebrum-v1-labeled.webp",
+     "blank": "banks/medterm/study/lec18-20/cerebrum-v1-blank.webp",
+     "width": 1200,
+     "height": 1017,
      "labels": [
       {
-       "id": "cerebrum-L1",
+       "id": "cerebrum-frontal-lobe",
        "answer": "Frontal Lobe",
-       "accept": [],
-       "x": 4.41,
-       "y": 9.92,
-       "w": 13.01,
-       "h": 11.13,
-       "anchor": {
-        "x": 20.88,
-        "y": 28.12,
-        "from": {
-         "x": 18.05,
-         "y": 15.04
-        },
-        "via": [
-         {
-          "x": 20.88,
-          "y": 15.19
-         }
-        ]
-       }
+       "accept": []
       },
       {
-       "id": "cerebrum-L2",
+       "id": "cerebrum-parietal-lobe",
        "answer": "Parietal Lobe",
-       "accept": [],
-       "x": 30.95,
-       "y": 6.47,
-       "w": 13.01,
-       "h": 10.98,
-       "anchor": {
-        "x": 37.15,
-        "y": 24.36,
-        "from": {
-         "x": 37.04,
-         "y": 18.2
-        }
-       }
+       "accept": []
       },
       {
-       "id": "cerebrum-L3",
-       "answer": "Left Hemisphere",
-       "accept": [],
-       "x": 50.37,
-       "y": 5.56,
-       "w": 17.84,
-       "h": 11.13,
-       "anchor": {
-        "x": 62.96,
-        "y": 36.09,
-        "from": {
-         "x": 62.96,
-         "y": 16.24
-        }
-       }
-      },
-      {
-       "id": "cerebrum-L4",
-       "answer": "Right Hemisphere",
-       "accept": [],
-       "x": 72.4,
-       "y": 5.71,
-       "w": 17.73,
-       "h": 11.13,
-       "anchor": {
-        "x": 76.08,
-        "y": 48.12,
-        "from": {
-         "x": 77.65,
-         "y": 16.24
-        }
-       }
-      },
-      {
-       "id": "cerebrum-L5",
+       "id": "cerebrum-sulcus",
        "answer": "Sulcus",
        "accept": [
         "Sulci"
-       ],
-       "x": 87.41,
-       "y": 20.6,
-       "w": 11.44,
-       "h": 5.86,
-       "anchor": {
-        "x": 79.01,
-        "y": 23.01,
-        "from": {
-         "x": 86.36,
-         "y": 23.01
-        }
-       }
+       ]
       },
       {
-       "id": "cerebrum-L6",
+       "id": "cerebrum-sulcus-2",
+       "answer": "Sulcus",
+       "accept": [
+        "Sulci"
+       ]
+      },
+      {
+       "id": "cerebrum-sulcus-3",
+       "answer": "Sulcus",
+       "accept": [
+        "Sulci"
+       ]
+      },
+      {
+       "id": "cerebrum-gyrus",
        "answer": "Gyrus",
        "accept": [
         "Gyri"
-       ],
-       "x": 88.46,
-       "y": 37.59,
-       "w": 10.39,
-       "h": 5.41,
-       "anchor": {
-        "x": 84.47,
-        "y": 40.0,
-        "from": {
-         "x": 87.93,
-         "y": 40.0
+       ]
+      },
+      {
+       "id": "cerebrum-gyrus-2",
+       "answer": "Gyrus",
+       "accept": [
+        "Gyri"
+       ]
+      },
+      {
+       "id": "cerebrum-occipital-lobe",
+       "answer": "Occipital Lobe",
+       "accept": []
+      },
+      {
+       "id": "cerebrum-temporal-lobe",
+       "answer": "Temporal Lobe",
+       "accept": []
+      },
+      {
+       "id": "cerebrum-left-hemisphere",
+       "answer": "Left Hemisphere",
+       "accept": []
+      },
+      {
+       "id": "cerebrum-right-hemisphere",
+       "answer": "Right Hemisphere",
+       "accept": []
+      },
+      {
+       "id": "cerebrum-olfactory-bulb",
+       "answer": "Olfactory Bulb",
+       "accept": [],
+       "cover": true
+      }
+     ],
+     "variants": [
+      {
+       "id": "v1",
+       "name": "Picture 1",
+       "labeled": "banks/medterm/study/lec18-20/cerebrum-v1-labeled.webp",
+       "blank": "banks/medterm/study/lec18-20/cerebrum-v1-blank.webp",
+       "width": 1200,
+       "height": 1017,
+       "credit": "OpenStax, via Wikimedia Commons",
+       "license": "CC BY 4.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1306_Lobes_of_Cerebral_CortexN.jpg",
+       "pos": {
+        "cerebrum-frontal-lobe": {
+         "x": 0.0,
+         "y": 14.85,
+         "w": 15.83,
+         "h": 3.93
+        },
+        "cerebrum-parietal-lobe": {
+         "x": 66.25,
+         "y": 15.39,
+         "w": 16.92,
+         "h": 3.93,
+         "anchor": {
+          "x": 54.31,
+          "y": 26.65,
+          "from": {
+           "x": 66.0,
+           "y": 17.21
+          }
+         }
+        },
+        "cerebrum-sulcus": {
+         "x": 78.58,
+         "y": 24.29,
+         "w": 21.42,
+         "h": 8.06
+        },
+        "cerebrum-sulcus-2": {
+         "x": 66.33,
+         "y": 0.2,
+         "w": 19.08,
+         "h": 3.93,
+         "anchor": {
+          "x": 51.72,
+          "y": 19.74,
+          "from": {
+           "x": 66.0,
+           "y": 1.97
+          }
+         }
+        },
+        "cerebrum-sulcus-3": {
+         "x": 78.75,
+         "y": 36.28,
+         "w": 18.83,
+         "h": 3.93
+        },
+        "cerebrum-gyrus": {
+         "x": 17.42,
+         "y": 7.67,
+         "w": 22.0,
+         "h": 4.42
+        },
+        "cerebrum-gyrus-2": {
+         "x": 66.17,
+         "y": 7.67,
+         "w": 23.17,
+         "h": 4.42,
+         "anchor": {
+          "x": 51.2,
+          "y": 24.82,
+          "from": {
+           "x": 66.0,
+           "y": 9.54
+          }
+         }
+        },
+        "cerebrum-occipital-lobe": {
+         "x": 77.92,
+         "y": 47.1,
+         "w": 19.5,
+         "h": 3.93,
+         "anchor": {
+          "x": 64.92,
+          "y": 48.82,
+          "from": {
+           "x": 78.08,
+           "y": 48.77
+          }
+         }
+        },
+        "cerebrum-temporal-lobe": {
+         "x": 78.75,
+         "y": 59.98,
+         "w": 19.17,
+         "h": 4.33
         }
        }
       },
       {
-       "id": "cerebrum-L7",
-       "answer": "Occipital Lobe",
-       "accept": [],
-       "x": 53.1,
-       "y": 61.8,
-       "w": 14.17,
-       "h": 11.28,
-       "anchor": {
-        "x": 50.37,
-        "y": 57.44,
-        "from": {
-         "x": 59.71,
-         "y": 60.0
-        },
-        "via": [
-         {
-          "x": 59.6,
-          "y": 57.44
+       "id": "v2",
+       "name": "Picture 2",
+       "labeled": "banks/medterm/study/lec18-20/cerebrum-v2-labeled.webp",
+       "blank": "banks/medterm/study/lec18-20/cerebrum-v2-blank.webp",
+       "width": 1200,
+       "height": 1056,
+       "credit": "BruceBlaus (Blausen Medical), via Wikimedia Commons",
+       "license": "CC BY 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blausen_0215_CerebralHemispheres.png",
+       "pos": {
+        "cerebrum-left-hemisphere": {
+         "x": 76.58,
+         "y": 11.65,
+         "w": 21.67,
+         "h": 3.98,
+         "anchor": {
+          "x": 68.44,
+          "y": 34.89,
+          "from": {
+           "x": 86.92,
+           "y": 15.34
+          }
          }
-        ]
+        },
+        "cerebrum-right-hemisphere": {
+         "x": 1.0,
+         "y": 11.65,
+         "w": 23.67,
+         "h": 4.17,
+         "anchor": {
+          "x": 29.68,
+          "y": 33.74,
+          "from": {
+           "x": 13.42,
+           "y": 15.53
+          }
+         }
+        }
        }
       },
       {
-       "id": "cerebrum-L8",
-       "answer": "Temporal Lobe",
-       "accept": [],
-       "x": 5.25,
-       "y": 68.87,
-       "w": 15.32,
-       "h": 11.13,
-       "anchor": {
-        "x": 24.76,
-        "y": 66.32,
-        "from": {
-         "x": 21.2,
-         "y": 74.14
+       "id": "v3",
+       "name": "Picture 3",
+       "labeled": "banks/medterm/study/lec18-20/cerebrum-v3-labeled.webp",
+       "blank": "banks/medterm/study/lec18-20/cerebrum-v3-blank.webp",
+       "width": 1200,
+       "height": 720,
+       "credit": "BruceBlaus (Blausen Medical), via Wikimedia Commons",
+       "license": "CC BY 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blausen_0111_BrainLobes.png",
+       "pos": {
+        "cerebrum-frontal-lobe": {
+         "x": 26.08,
+         "y": 24.24,
+         "w": 16.67,
+         "h": 5.56
         },
-        "via": [
-         {
-          "x": 24.66,
-          "y": 73.83
+        "cerebrum-parietal-lobe": {
+         "x": 53.17,
+         "y": 24.38,
+         "w": 17.08,
+         "h": 5.56
+        },
+        "cerebrum-occipital-lobe": {
+         "x": 74.25,
+         "y": 56.67,
+         "w": 14.0,
+         "h": 9.44,
+         "anchor": {
+          "x": 79.5,
+          "y": 74.3,
+          "from": {
+           "x": 83.25,
+           "y": 65.69
+          }
          }
-        ]
+        },
+        "cerebrum-temporal-lobe": {
+         "x": 39.08,
+         "y": 53.75,
+         "w": 19.67,
+         "h": 5.56
+        },
+        "cerebrum-olfactory-bulb": {
+         "x": 2.3,
+         "y": 61.62,
+         "w": 13.82,
+         "h": 9.82,
+         "cover": true
+        }
        }
       }
      ]
