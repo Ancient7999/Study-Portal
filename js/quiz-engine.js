@@ -901,11 +901,11 @@ function appendPoolCard(grid, label, pool, card){
   const sub=(BANK && BANK.compactCounts)?[[c.linking,'linking'],[c.choice,'choice'],[c.stepped,'stepped'],[c.multi,'select-all'],[c.saq,'short answer'],[c.label,'labeling'],[c.order,'ordering']].filter(x=>x[0]).map(x=>x[0]+' '+x[1]).join(' · '):(BANK && BANK.showCardCounts?pool.length+' questions · ':'')+c.linking+' linking · '+c.choice+' choice'+(c.stepped?(' · '+c.stepped+' stepped'):'')+(c.multi?(' · '+c.multi+' select-all'):'')+(c.saq?(' · '+c.saq+' short answer'):'')+(c.label?(' · '+c.label+' labeling'):'')+(c.order?(' · '+c.order+' ordering'):'');
   const bones=simple?new Set(pool.filter(q=>q.unit!==false).map(q=>q[BANK.spreadBy||'__id'])).size:0; // "unit": false = a question that is not one more bone (a girdle region)
   const sub2=simple?(bones+' '+(bones===1?(BANK.unitOne||'item'):(BANK.unitMany||'items'))+' · '+pool.length+' question'+(pool.length===1?'':'s')):sub;
-  const stats=simple?`<div class="card-pct">${meta.done?escapeHtml(meta.score+' / '+meta.total):'Ready'}</div><div class="card-meta">${inProgress?'in progress':(meta.done?'last score':'not started')}</div>`
-    :`<div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}${inProgress?' · in progress':''}</div>`;
+  const stats=simple?(meta.done?`<div class="card-pct">${escapeHtml(meta.score+' / '+meta.total)}</div><div class="card-meta">last score</div>`:'')
+    :`<div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}</div>`;
   btn.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(label)}</span><span class="mood-stamp">${escapeHtml(meta.mood||'')}</span></div>${cardBadgesHTML(card)}
     <div class="card-sub">${sub2}</div>
-    <div class="card-stats">${stats}</div>`;
+    ${stats?`<div class="card-stats">${stats}</div>`:''}`;
   // PORTAL: Mastery badge
   if(window.StudyMastery){
     const html=StudyMastery.badgeHTML(bankMasteryKey(), card.id);
