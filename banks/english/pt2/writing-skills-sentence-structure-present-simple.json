@@ -42,12 +42,12 @@
         "q": "Which sentence is simple?",
         "options": [
           "The nurse cleaned the bed three times.",
-          "The nurse and the technician cleaned the beds.",
+          "The nurse cleaned the bed, and the technician left.",
           "The nurse cleaned after rounds finished.",
-          "The nurse cleaned and prepared the beds."
+          "The nurse cleaned the bed because it was dirty."
         ],
         "correct": 0,
-        "explain": "A simple sentence has one subject and one verb. The other options have a compound subject, a time clause, or a compound predicate."
+        "explain": "A simple sentence has one subject and one verb. The other options add a second independent clause, a time clause, or a reason clause."
       },
       {
         "id": "ENG1PT21004",
@@ -209,7 +209,7 @@
         "options": [
           "The nurse cleans the instruments very thoroughly.",
           "The nurse cleans the instruments at dawn.",
-          "The nurse is in the operating room now.",
+          "The nurse is in the main operating room.",
           "The nurse and the surgeon rest here."
         ],
         "correct": 1,
@@ -433,10 +433,10 @@
           "do not move",
           "are not move",
           "doesn't move",
-          "didn't move"
+          "not move"
         ],
         "correct": 0,
-        "explain": "An emphasized negative command uses 'you' plus 'do not' and the base verb. The other forms use wrong auxiliaries or past tense."
+        "explain": "An emphasized negative command uses 'you' plus 'do not' and the base verb. The other forms use wrong auxiliaries or leave out the auxiliary."
       },
       {
         "id": "ENG1PT21021",
@@ -474,7 +474,7 @@
             "prompt": "(2/2)",
             "options": [
               "The nurse eat lunch at noon.",
-              "The nurse eats lunch at noon.",
+              "The nurse eated lunch at noon.",
               "The nurse eating lunch at noon.",
               "The nurse ate lunch at noon."
             ],
@@ -515,12 +515,12 @@
         "q": "The nurse ___ breakfast at dawn.",
         "options": [
           "eat",
-          "eats",
+          "eated",
           "eating",
           "ate"
         ],
         "correct": 3,
-        "explain": "The simple past of 'eat' is 'ate'. The other forms are base, present singular, or non-finite."
+        "explain": "The simple past of 'eat' is 'ate'. The other forms are base, a wrong regular '-ed' ending, or non-finite."
       },
       {
         "id": "ENG1PT21025",
@@ -579,7 +579,7 @@
             "id": "before",
             "prompt": "(3/6)",
             "options": [
-              "The nurse washed her hands before eating.",
+              "The nurse washed her hands before she eating.",
               "The nurse washed her hands before she eat.",
               "The nurse washed her hands before ate she.",
               "The nurse washed her hands before she ate."
@@ -620,7 +620,7 @@
             "correct": 2
           }
         ],
-        "explain": "The steps test when, while, before, after, as soon as, and if. Each needs a finite verb after the connector, and a fronted clause takes a comma. The before step also shows that 'before eating' is a phrase, not a clause."
+        "explain": "The steps test when, while, before, after, as soon as, and if. Each needs a finite verb after the connector, and a fronted clause takes a comma."
       },
       {
         "id": "ENG1PT21027",
@@ -800,11 +800,11 @@
         "options": [
           "The nurse check the tray.",
           "The nurse checking the tray.",
-          "The nurse checked the tray.",
+          "The nurse does checks the tray.",
           "The nurse checks the tray."
         ],
         "correct": 3,
-        "explain": "A singular subject such as 'the nurse' takes the verb form 'checks'. 'Check' is base, and 'checked' is past."
+        "explain": "A singular subject such as 'the nurse' takes the verb form 'checks'. 'Check' is base, and 'does checks' marks the verb twice."
       },
       {
         "id": "ENG1PT21037",
@@ -815,10 +815,10 @@
           "Nurses sanitizes carts after each shift.",
           "Nurses sanitize carts after each shift.",
           "Nurses sanitizing carts after each shift.",
-          "Nurses sanitized carts after each shift."
+          "Nurses does sanitize carts after each shift."
         ],
         "correct": 1,
-        "explain": "The plural subject 'nurses' takes the base form 'sanitize'. 'Sanitizes' is singular, and 'sanitized' is past."
+        "explain": "The plural subject 'nurses' takes the base form 'sanitize'. 'Sanitizes' and 'does sanitize' are singular forms."
       },
       {
         "id": "ENG1PT21038",
@@ -885,7 +885,7 @@
           "check",
           "checks",
           "checking",
-          "checked"
+          "do check"
         ],
         "correct": 1,
         "explain": "The nurse is a singular subject. The verb takes '-s': 'checks'."
@@ -899,7 +899,7 @@
           "assist",
           "assists",
           "assisting",
-          "assisted"
+          "do assist"
         ],
         "correct": 1,
         "explain": "The nurse is a singular subject. The verb takes '-s': 'assists'."
@@ -1025,7 +1025,7 @@
           "wash usually",
           "usually washing",
           "usually wash",
-          "usually washed"
+          "usually washes"
         ],
         "correct": 2,
         "explain": "Adverbs such as 'usually' come before the main verb. The plural subject 'nurses' takes the base form 'wash'."
@@ -1129,10 +1129,10 @@
           "assists",
           "assist",
           "assisting",
-          "assisted"
+          "does assist"
         ],
         "correct": 1,
-        "explain": "The plural subject 'nurses' takes the base form 'assist'. 'Assists' is singular, 'assisting' is non-finite, and 'assisted' is past."
+        "explain": "The plural subject 'nurses' takes the base form 'assist'. 'Assists' is singular, 'assisting' is non-finite, and 'does assist' uses a singular auxiliary."
       },
       {
         "id": "ENG1PT21056",
@@ -1143,10 +1143,10 @@
           "checks",
           "checking",
           "check",
-          "checked"
+          "does check"
         ],
         "correct": 2,
-        "explain": "The pronoun 'I' takes the base form 'check'. 'Checks' is singular, 'checking' is non-finite, and 'checked' is past."
+        "explain": "The pronoun 'I' takes the base form 'check'. 'Checks' is singular, 'checking' is non-finite, and 'does check' uses a singular auxiliary."
       },
       {
         "id": "ENG1PT21057",
@@ -1344,10 +1344,10 @@
           "have",
           "has",
           "having",
-          "had"
+          "do have"
         ],
         "correct": 1,
-        "explain": "The singular subject 'she' takes 'has' in the present simple. 'Have' is base or plural, and 'had' is past."
+        "explain": "The singular subject 'she' takes 'has' in the present simple. 'Have' is base or plural, and 'do have' uses a plural auxiliary."
       },
       {
         "id": "ENG1PT21070",

@@ -490,11 +490,11 @@
           },
           {
             "id": "E",
-            "text": "Medial"
+            "text": "Proximal"
           },
           {
             "id": "F",
-            "text": "Lateral"
+            "text": "Distal"
           }
         ],
         "correct_pairs": {
@@ -506,7 +506,7 @@
           "6": "B",
           "7": "D"
         },
-        "explain": "The sternum is anterior to the lungs and the heart is anterior to the spine, which runs down the back. The heart is superior to the stomach and the neck superior to the chest. The abdomen and the ventricles are inferior, and the lungs are posterior to the breastbone. Medial and lateral fit none."
+        "explain": "The sternum is anterior to the lungs and the heart is anterior to the spine, which runs down the back. The heart is superior to the stomach and the neck superior to the chest. The abdomen and the ventricles are inferior, and the lungs are posterior to the breastbone. Proximal and distal fit none."
       },
       {
         "id": "ENG1PT20478",
@@ -587,10 +587,10 @@
           "Bones lose minerals",
           "Muscles grow smaller",
           "Body makes too many red cells",
-          "People are not active"
+          "Bones absorb more water"
         ],
         "correct": 0,
-        "explain": "Bones weaken because minerals start to disappear from the bones. Muscle size, red cell production, and activity level are not the stated reason."
+        "explain": "Bones weaken because minerals start to disappear from the bones. Muscle size, red cell production, and water uptake are not the stated reason."
       },
       {
         "id": "ENG1PT20485",
@@ -877,12 +877,12 @@
         "q": "Which imperative fits: ______ the full dose of IV antibiotics?",
         "options": [
           "Administer",
-          "Monitor",
+          "Elevate",
           "Sterilize",
-          "Verify"
+          "Wash"
         ],
         "correct": 0,
-        "explain": "Administer the full dose of IV antibiotics. Monitor is for vital signs. Sterilize is for equipment. Verify is for identity."
+        "explain": "Administer the full dose of IV antibiotics. Elevate is for a limb. Sterilize is for equipment. Wash is for hands or wounds."
       },
       {
         "id": "ENG1PT20507",
@@ -1050,11 +1050,11 @@
           },
           {
             "id": "E",
-            "text": "Superior"
+            "text": "Superficial"
           },
           {
             "id": "F",
-            "text": "Inferior"
+            "text": "Deep"
           }
         ],
         "correct_pairs": {
@@ -1063,7 +1063,7 @@
           "3": "C",
           "4": "D"
         },
-        "explain": "The trachea is on the neck midline, so it is medial to the lungs; the arms hang at the sides, so they are lateral to the trunk. The elbow is nearer the attachment than the hand (proximal) and farther from the torso than the shoulder (distal). Superior and inferior fit none."
+        "explain": "The trachea is on the neck midline, so it is medial to the lungs; the arms hang at the sides, so they are lateral to the trunk. The elbow is nearer the attachment than the hand (proximal) and farther from the torso than the shoulder (distal). Superficial and deep fit none."
       },
       {
         "id": "ENG1PT20523",
@@ -1148,9 +1148,9 @@
         "q": "In the cardiovascular vocabulary list, pump means to move or ___ around.",
         "options": [
           "push",
-          "carry",
-          "flow",
-          "send"
+          "break",
+          "filter",
+          "protect"
         ],
         "correct": 0,
         "explain": "Pump means to move or push something around. In the cardiovascular system, the heart pumps blood by pushing it around the body. Break, filter, and protect do not match the meaning of pump."
@@ -1274,10 +1274,10 @@
           "stomach",
           "gallbladder",
           "small intestine",
-          "gut"
+          "colon"
         ],
         "correct": 0,
-        "explain": "A gastroscope is an instrument used to examine the stomach. The gallbladder is typically viewed with ultrasound, the small intestine with an enteroscope, and gut is a broad informal term rather than the specific target of a gastroscope."
+        "explain": "A gastroscope is an instrument used to examine the stomach. The gallbladder is typically viewed with ultrasound, the small intestine with an enteroscope, and the colon with a colonoscope."
       },
       {
         "id": "ENG1PT20540",
@@ -1314,12 +1314,12 @@
         "q": "Hyperventilate means to breathe ___.",
         "options": [
           "abnormally fast",
-          "with high volume",
+          "abnormally slowly",
           "at high pressure",
-          "too high and deep"
+          "through the mouth"
         ],
         "correct": 0,
-        "explain": "Hyperventilate means to breathe at an abnormally fast rate. Hyper- suggests excess or high, and ventilate relates to breathing. With high volume, at high pressure, and too high and deep do not match the meaning."
+        "explain": "Hyperventilate means to breathe at an abnormally fast rate. Hyper- suggests excess or high, and ventilate relates to breathing. Abnormally slowly, at high pressure, and through the mouth do not match the meaning."
       },
       {
         "id": "ENG1PT20543",
@@ -1428,7 +1428,7 @@
           "Knee joint",
           "Elbow joint",
           "Shoulder joint",
-          "Hip joint"
+          "Wrist joint"
         ],
         "correct": 0,
         "explain": "The knee joint is described as the biggest and strongest joint in the body."
@@ -1968,12 +1968,12 @@
         "q": "Plasma makes up over half of the blood and helps regulate what?",
         "options": [
           "Body temperature",
-          "Blood pressure",
+          "Bone density",
           "Heart rate",
           "Oxygen levels"
         ],
         "correct": 0,
-        "explain": "Plasma makes up over half of the blood and helps regulate body temperature. Blood pressure, heart rate, and oxygen levels are not the regulation stated for plasma."
+        "explain": "Plasma makes up over half of the blood and helps regulate body temperature. Bone density, heart rate, and oxygen levels are not the regulation stated for plasma."
       },
       {
         "id": "ENG1PT20596",
@@ -2038,12 +2038,12 @@
         "q": "The body uses nutrients for energy, growth, and what?",
         "options": [
           "Tissue repair",
-          "Mineral storage",
-          "Hormone production",
+          "Gas exchange",
+          "Bile storage",
           "Waste filtration"
         ],
         "correct": 0,
-        "explain": "The body uses nutrients for energy, growth, and tissue repair. Mineral storage, hormone production, and waste filtration are not the primary uses stated for nutrients."
+        "explain": "The body uses nutrients for energy, growth, and tissue repair. Gas exchange, bile storage, and waste filtration are not the primary uses stated for nutrients."
       },
       {
         "id": "ENG1PT20603",
@@ -2280,10 +2280,10 @@
           "Nervous and hormonal systems",
           "Cardiovascular and respiratory systems",
           "Skeletal and integumentary systems",
-          "Endocrine and lymphatic systems"
+          "Lymphatic and urinary systems"
         ],
         "correct": 0,
-        "explain": "Nervous and hormonal systems ensure digestive juices are secreted at the right time and control muscular walls. 'Cardiovascular and respiratory systems' move blood and air. 'Skeletal and integumentary systems' support and protect. 'Endocrine and lymphatic systems' omit the nervous control needed for this coordination."
+        "explain": "Nervous and hormonal systems ensure digestive juices are secreted at the right time and control muscular walls. 'Cardiovascular and respiratory systems' move blood and air. 'Skeletal and integumentary systems' support and protect. 'Lymphatic and urinary systems' handle tissue fluid and waste."
       },
       {
         "id": "ENG1PT20620",
@@ -2294,10 +2294,10 @@
           "Hormones that activate digestive juice production",
           "Bile that emulsifies dietary fat for absorption",
           "Saliva that moistens food for chewing and swallowing",
-          "Gastric juices that churn food into semi-liquid chyme"
+          "Lymph that returns tissue fluid to the blood"
         ],
         "correct": 0,
-        "explain": "Local glands release hormones that activate digestive juice production when food enters the stomach or intestines. 'Bile that emulsifies dietary fat for absorption' relates to fat digestion. 'Saliva that moistens food for chewing and swallowing' begins digestion in the mouth. 'Gastric juices that churn food into semi-liquid chyme' act in the stomach."
+        "explain": "Local glands release hormones that activate digestive juice production when food enters the stomach or intestines. 'Bile that emulsifies dietary fat for absorption' relates to fat digestion. 'Saliva that moistens food for chewing and swallowing' begins digestion in the mouth. 'Lymph that returns tissue fluid to the blood' is not a digestive secretion."
       },
       {
         "id": "ENG1PT20621",
@@ -2498,10 +2498,10 @@
           "composed",
           "eradicated",
           "eliminated",
-          "constructed"
+          "consisted"
         ],
         "correct": 0,
-        "explain": "The heart is composed of four chambers. 'eradicated' means wiped out. 'eliminated' means removed. 'constructed' takes 'from', not 'of', and refers to building rather than makeup."
+        "explain": "The heart is composed of four chambers. 'eradicated' means wiped out. 'eliminated' means removed. 'consisted' cannot follow 'is'; the correct form is 'consists of'."
       },
       {
         "id": "ENG1PT20634",
@@ -2622,12 +2622,12 @@
         "q": "Which folded membrane covers and secures the digestive organs?",
         "options": [
           "The peritoneum",
-          "The mesentery",
+          "The pericardium",
           "The pleura",
-          "The omentum"
+          "The meninges"
         ],
         "correct": 0,
-        "explain": "The peritoneum is the folded membrane that covers and secures the digestive organs. The mesentery is a peritoneal fold that attaches the intestines, the pleura covers the lungs, and the omentum is a specific fold of the peritoneum rather than the broad covering membrane itself."
+        "explain": "The peritoneum is the folded membrane that covers and secures the digestive organs. The pericardium surrounds the heart, the pleura covers the lungs, and the meninges cover the brain and spinal cord."
       },
       {
         "id": "ENG1PT20643",
@@ -2694,7 +2694,7 @@
           "left",
           "right",
           "back",
-          "side"
+          "top"
         ],
         "correct": 0,
         "explain": "The heart is located in the middle of the chest and slightly to the left."
@@ -2720,12 +2720,12 @@
         "q": "Plasma carries nutrients from the stomach to be used as fuel for ___.",
         "options": [
           "energy",
-          "heat",
-          "movement",
-          "growth"
+          "oxygen",
+          "waste",
+          "bile"
         ],
         "correct": 0,
-        "explain": "Plasma carries nutrients from the stomach to be used as fuel for energy. Plasma also helps regulate body temperature, but the stated fuel use is energy."
+        "explain": "Plasma carries nutrients from the stomach to be used as fuel for energy. Oxygen, waste, and bile are not what the nutrients are used as fuel for."
       },
       {
         "id": "ENG1PT20652",
@@ -2776,12 +2776,12 @@
         "q": "Which structure carries air from the mouth and nose to the trachea?",
         "options": [
           "pharynx",
-          "larynx",
+          "esophagus",
           "bronchus",
           "diaphragm"
         ],
         "correct": 0,
-        "explain": "The pharynx, or throat, delivers air from the mouth and nose to the trachea. The larynx is the voice box, the bronchus leads into the lung, and the diaphragm is the breathing muscle."
+        "explain": "The pharynx, or throat, delivers air from the mouth and nose to the trachea. The esophagus carries food to the stomach, the bronchus leads into the lung, and the diaphragm is the breathing muscle."
       },
       {
         "id": "ENG1PT20656",

@@ -201,7 +201,7 @@
               "He used to believe in ghosts when he was younger.",
               "He use to believe in ghosts when he was younger.",
               "He used to believed in ghosts when he was younger.",
-              "He was believing in ghosts when he was younger."
+              "He was believe in ghosts when he was younger."
             ],
             "correct": 0
           },
@@ -547,7 +547,7 @@
               "What did the builders use to build in the shipyard?",
               "What the builders used to build in the shipyard?",
               "What did the builders used to building in the shipyard?",
-              "What do the builders use to build in the shipyard?"
+              "What did the builders used to build in the shipyard?"
             ],
             "correct": 0
           },
@@ -578,7 +578,7 @@
             "prompt": "(10/13)",
             "options": [
               "What songs did the children use to sing at school?",
-              "What songs do the children use to sing at school?",
+              "What songs did the children used to sing at school?",
               "What songs did the children using to sing at school?",
               "What songs are the children using to sing at school?"
             ],
@@ -600,7 +600,7 @@
             "prompt": "(12/13)",
             "options": [
               "What did couples use to do on long winter evenings?",
-              "What do couples use to do on long winter evenings?",
+              "What did couples used to do on long winter evenings?",
               "What did couples using to do on long winter evenings?",
               "What are couples using to do on long winter evenings?"
             ],
@@ -618,7 +618,7 @@
             "correct": 0
           }
         ],
-        "explain": "Yes/No and object questions use 'Did' + subject + 'use to' + base verb. When 'who' is the subject, use 'used to' without 'did'. Forms with 'using to' or with 'used to + -ed' are incorrect."
+        "explain": "Yes/No and object questions use 'Did' + subject + 'use to' + base verb. When 'who' is the subject, use 'used to' without 'did'. Forms with 'did ... used to', 'using to', 'used to + -ed', or present 'do ... use to' are incorrect."
       },
       {
         "id": "ENG1PT20297",
@@ -644,7 +644,7 @@
               "When the engineer finally solved the problem, the company gave him a bonus.",
               "When finally solved the problem, the company gave him a bonus.",
               "When the engineer finally solve the problem, the company gave him a bonus.",
-              "When finally the engineer solved the problem, the company gave him a bonus."
+              "When the engineer finally solving the problem, the company gave him a bonus."
             ],
             "correct": 0
           },
@@ -670,7 +670,7 @@
         "options": [
           "did",
           "do",
-          "used to",
+          "used",
           "use to"
         ],
         "correct": 0,
@@ -684,11 +684,11 @@
         "options": [
           "didn't",
           "don't",
-          "used not",
+          "weren't",
           "use not"
         ],
         "correct": 0,
-        "explain": "The negative short answer is 'No, they didn't.' 'Don't' is present tense, and 'used not' and 'use not' are not short answers."
+        "explain": "The negative short answer is 'No, they didn't.' 'Don't' is present tense, 'weren't' does not answer a 'Did' question, and 'use not' is not a short answer."
       },
       {
         "id": "ENG1PT20334",
@@ -698,7 +698,7 @@
         "options": [
           "did",
           "do",
-          "used to",
+          "used",
           "use to"
         ],
         "correct": 0,
@@ -712,11 +712,11 @@
         "options": [
           "didn't",
           "don't",
-          "used not",
+          "weren't",
           "use not"
         ],
         "correct": 0,
-        "explain": "The negative short answer is 'didn't'. 'Don't' is present tense, and 'used not' and 'use not' are not short answers."
+        "explain": "The negative short answer is 'didn't'. 'Don't' is present tense, 'weren't' does not answer a 'Did' question, and 'use not' is not a short answer."
       },
       {
         "id": "ENG1PT20342",
@@ -789,7 +789,7 @@
         "q": "Did he use to ride a bike to school? Yes, ___.",
         "options": [
           "he did",
-          "he used to",
+          "he used",
           "he does",
           "he was"
         ],

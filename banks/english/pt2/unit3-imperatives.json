@@ -395,7 +395,7 @@
             "prompt": "Which clause completes 'Tell the other people in the meeting'?",
             "options": [
               "if you are expecting a call",
-              "when you are expecting a call",
+              "if you expecting a call",
               "if you were expecting a call",
               "if you expected a call"
             ],
@@ -553,10 +553,10 @@
           "Monitor",
           "Administer",
           "Sterilize",
-          "Verify"
+          "Discontinue"
         ],
         "correct": 0,
-        "explain": "Monitor the patient's blood pressure and pulse rate every two hours. 'Administer' is for the dose, 'Sterilize' is for equipment, and 'Verify' is for identity."
+        "explain": "Monitor the patient's blood pressure and pulse rate every two hours. 'Administer' is for the dose, 'Sterilize' is for equipment, and 'Discontinue' is for stopping a treatment."
       },
       {
         "id": "ENG1PT20041",
@@ -579,12 +579,12 @@
         "q": "Which imperative fits: ______ the full dose of IV antibiotics?",
         "options": [
           "Administer",
-          "Monitor",
+          "Elevate",
           "Sterilize",
-          "Verify"
+          "Wash"
         ],
         "correct": 0,
-        "explain": "Administer the full dose of IV antibiotics. 'Monitor' is for vital signs, 'Sterilize' is for equipment, and 'Verify' is for identity."
+        "explain": "Administer the full dose of IV antibiotics. 'Elevate' is for a limb, 'Sterilize' is for equipment, and 'Wash' is for hands or wounds."
       }
     ]
   }
