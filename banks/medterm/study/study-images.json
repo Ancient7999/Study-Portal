@@ -18277,6 +18277,272 @@
       }
      ],
      "alt": "Diagram for labelling: external heart and coronary vessels. Two or more pictures from different sources show the same structures."
+    },
+    {
+     "id": "valves-from-above",
+     "title": "Heart Valves Seen from Above",
+     "caption": "With the atria removed, the base of the heart shows all four valves. The tricuspid (right) and bicuspid or mitral (left) valves lie between the atria and ventricles; the aortic and pulmonary semilunar valves guard the two great arteries at the front (ventral side).",
+     "kind": "labeled-diagram",
+     "credit": "OpenStax College, via Wikimedia Commons",
+     "license": "CC BY 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011_Heart_Valves.jpg",
+     "labeled": "banks/medterm/study/lec12-13/valves-from-above-v1-labeled.webp",
+     "blank": "banks/medterm/study/lec12-13/valves-from-above-v1-blank.webp",
+     "width": 1200,
+     "height": 958,
+     "alt": "Diagram for labelling: the base of the heart seen from above with the atria removed, dorsal (posterior) side at the top and ventral (anterior) side at the bottom, showing the tricuspid, bicuspid (mitral), aortic and pulmonary valves.",
+     "labels": [
+      {
+       "id": "valves-from-above-dorsal-posterior-side",
+       "answer": "Dorsal (Posterior) Side",
+       "accept": [
+        "Dorsal Side",
+        "Posterior Side",
+        "Dorsal",
+        "Posterior",
+        "Dorsal (Posterior)"
+       ]
+      },
+      {
+       "id": "valves-from-above-tricuspid-valve",
+       "answer": "Tricuspid Valve",
+       "accept": [
+        "Tricuspid",
+        "Right Atrioventricular Valve"
+       ]
+      },
+      {
+       "id": "valves-from-above-bicuspid-mitral-valve",
+       "answer": "Bicuspid (Mitral) Valve",
+       "accept": [
+        "Bicuspid Valve",
+        "Mitral Valve",
+        "Bicuspid",
+        "Mitral",
+        "Left Atrioventricular Valve"
+       ]
+      },
+      {
+       "id": "valves-from-above-right-side",
+       "answer": "Right Side",
+       "accept": [
+        "Right Side of Heart",
+        "Right Side of the Heart",
+        "Right"
+       ]
+      },
+      {
+       "id": "valves-from-above-left-side",
+       "answer": "Left Side",
+       "accept": [
+        "Left Side of Heart",
+        "Left Side of the Heart",
+        "Left"
+       ]
+      },
+      {
+       "id": "valves-from-above-aortic-valve",
+       "answer": "Aortic Valve",
+       "accept": [
+        "Aortic Semilunar Valve",
+        "Aortic Semilunar",
+        "Aortic"
+       ]
+      },
+      {
+       "id": "valves-from-above-pulmonary-semilunar-valve",
+       "answer": "Pulmonary Semilunar Valve",
+       "accept": [
+        "Pulmonary Valve",
+        "Pulmonary Semilunar",
+        "Pulmonic Valve",
+        "Pulmonary"
+       ]
+      },
+      {
+       "id": "valves-from-above-ventral-anterior-side",
+       "answer": "Ventral (Anterior) Side",
+       "accept": [
+        "Ventral Side",
+        "Anterior Side",
+        "Ventral",
+        "Anterior",
+        "Ventral (Anterior)"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "id": "v1",
+       "name": "Picture 1",
+       "labeled": "banks/medterm/study/lec12-13/valves-from-above-v1-labeled.webp",
+       "blank": "banks/medterm/study/lec12-13/valves-from-above-v1-blank.webp",
+       "width": 1200,
+       "height": 958,
+       "credit": "OpenStax College, via Wikimedia Commons",
+       "license": "CC BY 3.0",
+       "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011_Heart_Valves.jpg",
+       "pos": {
+        "valves-from-above-dorsal-posterior-side": {
+         "x": 43.01,
+         "y": 0.89,
+         "w": 11.56,
+         "h": 3.72,
+         "cover": true
+        },
+        "valves-from-above-tricuspid-valve": {
+         "x": 10.15,
+         "y": 5.99,
+         "w": 17.0,
+         "h": 4.38,
+         "cover": true
+        },
+        "valves-from-above-bicuspid-mitral-valve": {
+         "x": 77.24,
+         "y": 5.99,
+         "w": 18.58,
+         "h": 7.17,
+         "cover": true
+        },
+        "valves-from-above-right-side": {
+         "x": 0.65,
+         "y": 42.47,
+         "w": 9.6,
+         "h": 10.54,
+         "cover": true
+        },
+        "valves-from-above-left-side": {
+         "x": 90.68,
+         "y": 42.47,
+         "w": 8.94,
+         "h": 10.54,
+         "cover": true
+        },
+        "valves-from-above-aortic-valve": {
+         "x": 10.22,
+         "y": 81.09,
+         "w": 13.59,
+         "h": 3.72,
+         "cover": true
+        },
+        "valves-from-above-pulmonary-semilunar-valve": {
+         "x": 77.43,
+         "y": 82.08,
+         "w": 18.9,
+         "h": 4.38,
+         "cover": true
+        },
+        "valves-from-above-ventral-anterior-side": {
+         "x": 43.47,
+         "y": 95.06,
+         "w": 10.64,
+         "h": 3.72,
+         "cover": true
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "valves-base-gray",
+     "title": "Base of the Ventricles (Atria Removed)",
+     "caption": "Gray's classic view of the heart from above after the atria are cut away. The pulmonary valve is the most ventral (front), the aortic valve sits just behind it, and the bicuspid (mitral) and tricuspid valves open into the left and right ventricles.",
+     "kind": "labeled-diagram",
+     "credit": "Henry Vandyke Carter, Gray's Anatomy (1918), via Wikimedia Commons",
+     "license": "Public domain",
+     "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gray495.png",
+     "labeled": "banks/medterm/study/lec12-13/valves-base-gray-v1-labeled.webp",
+     "blank": "banks/medterm/study/lec12-13/valves-base-gray-v1-blank.webp",
+     "width": 900,
+     "height": 796,
+     "alt": "Engraving for labelling: the base of the ventricles seen from above with the atria removed, front at the top, showing the pulmonary, aortic, bicuspid and tricuspid valves and the coronary arteries.",
+     "labels": [
+      {
+       "id": "valves-base-gray-pulmonary-semilunar-valve",
+       "answer": "Pulmonary Semilunar Valve",
+       "accept": [
+        "Pulmonary Valve",
+        "Pulmonary Semilunar",
+        "Pulmonic Valve",
+        "Pulmonary"
+       ]
+      },
+      {
+       "id": "valves-base-gray-aortic-valve",
+       "answer": "Aortic Valve",
+       "accept": [
+        "Aortic Semilunar Valve",
+        "Aortic Semilunar",
+        "Aortic"
+       ]
+      },
+      {
+       "id": "valves-base-gray-bicuspid-mitral-valve",
+       "answer": "Bicuspid (Mitral) Valve",
+       "accept": [
+        "Bicuspid Valve",
+        "Mitral Valve",
+        "Bicuspid",
+        "Mitral",
+        "Left Atrioventricular Valve"
+       ]
+      },
+      {
+       "id": "valves-base-gray-tricuspid-valve",
+       "answer": "Tricuspid Valve",
+       "accept": [
+        "Tricuspid",
+        "Right Atrioventricular Valve"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "id": "v1",
+       "name": "Picture 1",
+       "labeled": "banks/medterm/study/lec12-13/valves-base-gray-v1-labeled.webp",
+       "blank": "banks/medterm/study/lec12-13/valves-base-gray-v1-blank.webp",
+       "width": 900,
+       "height": 796,
+       "credit": "Henry Vandyke Carter, Gray's Anatomy (1918), via Wikimedia Commons",
+       "license": "Public domain",
+       "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gray495.png",
+       "pos": {
+        "valves-base-gray-pulmonary-semilunar-valve": {
+         "x": 11.6,
+         "y": 4.6,
+         "w": 19.4,
+         "h": 17.2,
+         "cover": true
+        },
+        "valves-base-gray-aortic-valve": {
+         "x": 26.2,
+         "y": 31.4,
+         "w": 17.4,
+         "h": 17.4,
+         "cover": true
+        },
+        "valves-base-gray-bicuspid-mitral-valve": {
+         "x": 13.0,
+         "y": 56.0,
+         "w": 21.0,
+         "h": 23.4,
+         "cover": true
+        },
+        "valves-base-gray-tricuspid-valve": {
+         "x": 50.4,
+         "y": 49.4,
+         "w": 24.4,
+         "h": 26.8,
+         "cover": true
+        }
+       }
+      }
+     ]
     }
    ]
   },
