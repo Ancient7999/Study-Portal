@@ -1,14 +1,16 @@
-/* Picture zoom: pictures start fitted to their box; − / Fit / + buttons (and Ctrl + wheel) zoom in and back out, never below fit. */
+/* Picture zoom: pictures start fitted to their box; − / Fit / + buttons (and Ctrl + wheel) zoom in and back out, never below fit.
+   LabelZoom.zoomAt() lets a touch pinch (study cut panes) use the same zoom state, finer-grained and up to PINCH_MAX. */
 (function () {
   'use strict';
   var LEVELS = []; for (var li = 10; li <= 30; li++) LEVELS.push(li / 10); // Fit (100%) → 300% in 10% steps
+  var PINCH_MAX = 5; // a pinch may go past the last button level
   function level(fig) { return parseFloat(fig.style.getPropertyValue('--lz')) || 1; }
-  function setLevel(stage, fig, z, bar) {
-    z = Math.max(1, Math.min(LEVELS[LEVELS.length - 1], z));
+  function setLevel(stage, fig, z, bar, fine) {
+    z = Math.max(1, Math.min(fine ? PINCH_MAX : Math.max(LEVELS[LEVELS.length - 1], level(fig)), z));
     var old = level(fig);
     var cx = (stage.scrollLeft + stage.clientWidth / 2) / (stage.scrollWidth || 1);
     var cy = (stage.scrollTop + stage.clientHeight / 2) / (stage.scrollHeight || 1);
-    z = Math.round(z * 10) / 10;
+    z = fine ? Math.round(z * 100) / 100 : Math.round(z * 10) / 10;
     stage.classList.toggle('lz-zoomed', z > 1);
     if (z === 1) fig.style.removeProperty('--lz'); else fig.style.setProperty('--lz', String(z));
     if (z !== old) {
@@ -23,7 +25,7 @@
     }
   }
   function step(z, dir) {
-    if (dir > 0) { for (var i = 0; i < LEVELS.length; i++) if (LEVELS[i] > z + 0.01) return LEVELS[i]; return LEVELS[LEVELS.length - 1]; }
+    if (dir > 0) { for (var i = 0; i < LEVELS.length; i++) if (LEVELS[i] > z + 0.01) return LEVELS[i]; return Math.max(z, LEVELS[LEVELS.length - 1]); }
     for (var k = LEVELS.length - 1; k >= 0; k--) if (LEVELS[k] < z - 0.01) return LEVELS[k]; return 1;
   }
   function wire(stage) {
@@ -40,6 +42,7 @@
       + '<button type="button" class="lz-in" title="Zoom in" aria-label="Zoom in">+</button>'
       + '<button type="button" class="lz-fit" title="Fit the whole picture" aria-label="Fit the whole picture">Fit</button>';
     stage.parentNode.insertBefore(bar, stage);
+    stage._lzBar = bar;
     bar.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
       var f = stage.querySelector('.label-figure'); if (!f) return;
@@ -63,6 +66,7 @@
     });
     window.addEventListener('pointermove', function (e) {
       if (!pan || e.pointerId !== pan.id) return;
+      if (stage.classList.contains('lz-pinching')) { stage.classList.remove('lz-panning'); pan = null; return; } // a two-finger gesture took over
       var dx = e.clientX - pan.x, dy = e.clientY - pan.y;
       if (!pan.moved) { if (Math.hypot(dx, dy) < 6) return; pan.moved = true; stage.classList.add('lz-panning'); }
       e.preventDefault();
@@ -89,5 +93,19 @@
     }).observe(document.body, { childList: true, subtree: true });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
-  window.LabelZoom = { scan: scan, levels: LEVELS };
+  /* zoom a stage to z (1..PINCH_MAX); the picture point under (fromX, fromY) ends up under (toX, toY) — a pinch centred on its midpoint */
+  function zoomAt(stage, z, fromX, fromY, toX, toY) {
+    var f = stage && stage.querySelector('.label-figure'); if (!f) return 1;
+    if (toX == null) { toX = fromX; toY = fromY; }
+    var r = f.getBoundingClientRect();
+    var px = (fromX - r.left) / (r.width || 1), py = (fromY - r.top) / (r.height || 1);
+    setLevel(stage, f, z, stage._lzBar || null, true);
+    var r2 = f.getBoundingClientRect();
+    stage.scrollLeft += (r2.left + px * r2.width) - toX;
+    stage.scrollTop += (r2.top + py * r2.height) - toY;
+    return level(f);
+  }
+  function stageLevel(stage) { var f = stage && stage.querySelector('.label-figure'); return f ? level(f) : 1; }
+  function reset(stage) { var f = stage && stage.querySelector('.label-figure'); if (f) setLevel(stage, f, 1, stage._lzBar || null); }
+  window.LabelZoom = { scan: scan, levels: LEVELS, pinchMax: PINCH_MAX, zoomAt: zoomAt, level: stageLevel, reset: reset };
 })();

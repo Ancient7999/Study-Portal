@@ -670,3 +670,6 @@
 #studyView .simg-bank .label-chip.simg-chip-in{animation:simgChipIn .35s ease-out both}
 @keyframes simgChipIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#studyView .simg-bank .label-chip.simg-chip-in{animation:none}}
+/* Axial / Sagittal / Coronal panes: touch drags step the cuts and pinches zoom the picture (study-images.js), so the page must not pan or zoom from here */
+#studyView .simg-stage.simg-touch-cuts{touch-action:none;overscroll-behavior:contain}
+@media (hover:none),(pointer:coarse){#studyView .simg-stage.simg-touch-cuts.lz-zoomed{height:var(--simg-pane-h,auto)}}

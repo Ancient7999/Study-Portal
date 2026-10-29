@@ -563,6 +563,80 @@ h += '<button type="button" class="simg-restart" title="Clear this mode\'s progr
           sl.addEventListener('pointermove', mv); sl.addEventListener('pointerup', up); sl.addEventListener('pointercancel', up);
         });
         sl.addEventListener('wheel', e => { e.preventDefault(); go(cur() + (e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0)); }, { passive: false });
+        /* Axial / Sagittal / Coronal on touch screens (the pane has touch-action:none, so the page neither scrolls nor zooms there):
+           - at Fit (1x) a one-finger vertical drag steps through the cuts like the wheel: finger up = wheel down = next cut,
+             one cut per 10 px, accumulated so slow drags still step;
+           - two fingers: spreading/pinching zooms the picture (the same zoom state as − / + / Ctrl+wheel, 1x–5x) around the
+             pinch midpoint and moving them pans; two fingers moving up/down together without pinching step the cuts;
+           - zoomed in, one finger pans the picture (label-zoom.js); a double tap returns to Fit.
+           Taps (placing a label, highlighting) are untouched: nothing happens until a finger moves 8 px. */
+        const stgT = sec.querySelector('.simg-stage');
+        if (stgT && stackState(key, img).view.kind === 'slice') {
+          stgT.classList.add('simg-touch-cuts');
+          /* on touch screens a zoomed pane keeps its fitted height (css), so the picture zooms and pans inside the pane */
+          const keepH = () => { if (!stgT.classList.contains('lz-zoomed') && stgT.clientHeight) stgT.style.setProperty('--simg-pane-h', stgT.clientHeight + 'px'); };
+          keepH(); if (window.ResizeObserver) new ResizeObserver(keepH).observe(stgT);
+          const STEP = 10, pts = new Map();
+          let g = null, lastTap = null, swallow = false;
+          const LZ = window.LabelZoom;
+          const zNow = () => (LZ && LZ.level) ? LZ.level(stgT) : 1;
+          const stepCuts = a => { const n = a > 0 ? Math.floor(a / STEP) : Math.ceil(a / STEP); if (n) { go(cur() + n); swallow = true; } return a - n * STEP; };
+          const two = () => { const a = Array.from(pts.values()); return { x: (a[0].x + a[1].x) / 2, y: (a[0].y + a[1].y) / 2, d: Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y) || 1 }; };
+          stgT.addEventListener('pointerdown', e => {
+            if (e.pointerType !== 'touch' || document.querySelector('.label-ghost:not(.returning)')) return;
+            keepH();
+            pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+            if (pts.size === 1) { swallow = false; g = { mode: null, x0: e.clientX, y0: e.clientY, y: e.clientY, acc: 0, t: performance.now(), tgt: e.target }; }
+            else if (pts.size === 2) { const m = two(); g = { mode: 'two', sub: null, m0: m, m: m, z0: zNow(), acc: 0 }; stgT.classList.add('lz-pinching'); }
+            else if (g) g.mode = 'none';
+          });
+          stgT.addEventListener('pointermove', e => {
+            const p = pts.get(e.pointerId); if (!p || !g) return;
+            p.x = e.clientX; p.y = e.clientY;
+            if (g.mode === 'two' && pts.size === 2) {
+              const m = two();
+              if (!g.sub) {
+                if (Math.abs(m.d - g.m0.d) > 14 && LZ && LZ.zoomAt) g.sub = 'zoom';
+                else if (Math.abs(m.y - g.m0.y) > 12 && Math.abs(m.y - g.m0.y) > Math.abs(m.x - g.m0.x)) { g.sub = 'cuts'; g.acc = g.m0.y - m.y; g.m = m; g.acc = stepCuts(g.acc); return; }
+                else return;
+              }
+              if (g.sub === 'zoom') { LZ.zoomAt(stgT, g.z0 * m.d / g.m0.d, g.m.x, g.m.y, m.x, m.y); swallow = true; }
+              else { g.acc = stepCuts(g.acc + (g.m.y - m.y)); }
+              g.m = m;
+              return;
+            }
+            if (pts.size !== 1 || g.mode === 'none' || g.mode === 'two') return;
+            if (g.mode === null) {
+              const dx = e.clientX - g.x0, dy = e.clientY - g.y0;
+              if (Math.hypot(dx, dy) < 8) return;
+              g.mode = zNow() > 1.001 ? 'pan' : Math.abs(dy) >= Math.abs(dx) ? 'cuts' : 'none';
+              if (g.mode !== 'cuts') return;
+              g.acc = stepCuts(g.y0 - e.clientY); g.y = e.clientY; return;
+            }
+            if (g.mode === 'cuts') { g.acc = stepCuts(g.acc + (g.y - e.clientY)); g.y = e.clientY; }
+          });
+          const endT = e => {
+            if (!pts.has(e.pointerId)) return;
+            pts.delete(e.pointerId);
+            if (!g) return;
+            if (pts.size === 1 && g.mode === 'two') { g.mode = 'none'; return; } // the last finger of a pinch does nothing more
+            if (pts.size) return;
+            stgT.classList.remove('lz-pinching');
+            const now = performance.now();
+            if (g.mode === null && e.type === 'pointerup' && now - g.t < 300) {
+              const quiet = !(g.tgt && g.tgt.closest && g.tgt.closest('input, textarea, button, select, a, .label-slot, .label-chip'));
+              if (lastTap && now - lastTap.t < 330 && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 30 && quiet && zNow() > 1.001) { LZ.reset(stgT); lastTap = null; }
+              else lastTap = { t: now, x: e.clientX, y: e.clientY };
+            } else lastTap = null;
+            if (swallow) { const stop = ev => { ev.stopPropagation(); ev.preventDefault(); }; stgT.addEventListener('click', stop, true); setTimeout(() => stgT.removeEventListener('click', stop, true), 60); }
+            g = null;
+          };
+          stgT.addEventListener('pointerup', endT); stgT.addEventListener('pointercancel', endT);
+          /* belt and braces for browsers that ignore touch-action (older iOS): no page scroll or page pinch from this pane */
+          stgT.addEventListener('touchstart', e => { if (e.touches.length > 1 && e.cancelable) e.preventDefault(); }, { passive: false });
+          stgT.addEventListener('touchmove', e => { if (e.cancelable) e.preventDefault(); }, { passive: false });
+          ['gesturestart', 'gesturechange'].forEach(t => stgT.addEventListener(t, e => e.preventDefault(), { passive: false }));
+        }
         sl.addEventListener('keydown', e => {
           const n = stackState(key, img).view.frames.length;
           const d = { ArrowUp: -1, ArrowLeft: -1, ArrowDown: 1, ArrowRight: 1, PageUp: -3, PageDown: 3 }[e.key];
