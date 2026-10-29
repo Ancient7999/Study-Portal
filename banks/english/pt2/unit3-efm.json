@@ -2108,12 +2108,12 @@
         "q": "A main artery may be as thick as what?",
         "options": [
           "A thumb",
-          "A finger",
+          "A pencil",
           "A hair",
           "A capillary"
         ],
         "correct": 0,
-        "explain": "A main artery can be as thick as a thumb. A finger, a hair, and a capillary are all narrower and do not match the comparison."
+        "explain": "A main artery can be as thick as a thumb. A pencil, a hair, and a capillary are all narrower and do not match the comparison."
       },
       {
         "id": "ENG1PT20608",
