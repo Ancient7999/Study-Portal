@@ -498,6 +498,42 @@
           ]
         },
         {
+          "id": "medterm-circulation",
+          "title": "Circulation",
+          "subtitle": "Systemic · Coronary · Pulmonary",
+          "locked": false,
+          "bank": "banks/medterm/pt2/lecture-12-13.json",
+          "study": {
+            "title": "Study Interface",
+            "chapters": [
+              {
+                "id": "overview",
+                "src": "content/medterm/circulation/overview.md",
+                "title": "Circulation Overview",
+                "meta": "3 circuits · 4 chambers · 4 valves"
+              },
+              {
+                "id": "systemic",
+                "src": "content/medterm/circulation/systemic.md",
+                "title": "Systemic Circulation",
+                "meta": "LV → aorta → body → vena cava → RA"
+              },
+              {
+                "id": "coronary",
+                "src": "content/medterm/circulation/coronary.md",
+                "title": "Coronary Circulation",
+                "meta": "Aortic root → coronary arteries → myocardium"
+              },
+              {
+                "id": "pulmonary",
+                "src": "content/medterm/circulation/pulmonary.md",
+                "title": "Pulmonary Circulation",
+                "meta": "RV → pulmonary arteries → lungs → LA"
+              }
+            ]
+          }
+        },
+        {
           "id": "medterm-oif",
           "title": "Only In Finals",
           "subtitle": "Lectures 18-28",

@@ -537,3 +537,71 @@
   #studyView .bone-table td { padding: 8px 10px; font-size: 0.88rem; }
   .bone-hover-preview { width: min(180px, 48vw); height: min(180px, 48vw); }
 }
+
+
+/* —— Circulation study notes (Medical Terminology) —— */
+#studyView .circ-steps {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 6px;
+  margin: 1rem 0 1.25rem; padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.28);
+  background: rgba(var(--accent-0-rgb), 0.05);
+}
+#studyView .circ-step {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px 7px 8px; border-radius: 999px;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.35);
+  background: rgba(var(--col-bg-card-rgb), 0.9);
+  font-family: var(--mono); font-size: 0.78rem; line-height: 1.25;
+  color: var(--col-text-main);
+}
+#studyView .circ-step .n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  font-weight: 700; font-size: 0.72rem; color: #fff;
+  background: var(--accent-0);
+}
+#studyView .circ-step.deoxy { border-color: rgba(37, 99, 235, 0.55); }
+#studyView .circ-step.deoxy .n { background: #2563eb; }
+#studyView .circ-step.oxy { border-color: rgba(220, 38, 38, 0.55); }
+#studyView .circ-step.oxy .n { background: #dc2626; }
+#studyView .circ-step.mix { border-color: rgba(219, 39, 119, 0.45); }
+#studyView .circ-step.mix .n { background: #db2777; }
+#studyView .circ-arrow {
+  font-family: var(--mono); font-weight: 700; font-size: 1rem;
+  color: var(--col-text-muted); padding: 0 2px;
+}
+#studyView .circ-arrow.deoxy { color: #60a5fa; }
+#studyView .circ-arrow.oxy { color: #f87171; }
+#studyView .circ-arrow.mix { color: #f472b6; }
+#studyView .circ-figure {
+  margin: 1rem 0 1.4rem; padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.28);
+  background: #ffffff;
+}
+#studyView .circ-figure img {
+  display: block; width: 100%; max-width: 920px; height: auto;
+  margin: 0 auto; border-radius: 8px;
+}
+#studyView .circ-figure .bone-credit { margin: 10px 8px 2px; }
+#studyView .circ-photo { background: #0a0e16; }
+#studyView .circ-extra {
+  margin: 1.2rem 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #9ca3af;
+  background: rgba(243, 244, 246, 0.08);
+}
+#studyView .circ-extra p { margin: 0.45em 0; }
+#studyView .circ-live {
+  margin: 0.8rem 0 1.4rem;
+}
+#studyView .circ-live .flow-panel {
+  max-width: 560px; margin: 0 auto;
+}
+@media (max-width: 640px) {
+  #studyView .circ-steps { padding: 10px; gap: 8px 4px; }
+  #studyView .circ-step { font-size: 0.72rem; padding: 6px 10px 6px 6px; }
+  #studyView .circ-arrow { font-size: 0.9rem; }
+}

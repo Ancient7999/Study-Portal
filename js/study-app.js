@@ -306,6 +306,9 @@
           if (window.StudyBoneTable) {
             try { await window.StudyBoneTable.init(body.querySelector('.md')); } catch (e) { /* table optional */ }
           }
+          if (window.StudyFlowDiagram) {
+            try { window.StudyFlowDiagram.init(body.querySelector('.md')); } catch (e) { /* optional */ }
+          }
           body.dataset.loaded = '1';
         } catch (err) {
           body.querySelector('.md').innerHTML =
@@ -379,4 +382,38 @@
   });
 
   window.StudyNotes = { open: open, renderMarkdown: renderMarkdown, chapters: function () { return CHAPTERS.slice(); } };
+})();
+
+/* Circulation notes: mount the quiz blood-flow SVG into [data-flow-diagram] blocks. */
+(function () {
+  'use strict';
+  function init(scope) {
+    if (typeof flowSVG !== 'function' || typeof flowPlay !== 'function') return;
+    const roots = (scope || document).querySelectorAll('[data-flow-diagram]');
+    roots.forEach(function (el) {
+      if (el.dataset.ready) return;
+      el.dataset.ready = '1';
+      const parts = String(el.getAttribute('data-parts') || '')
+        .split(',')
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+      const title = el.getAttribute('data-title') || '';
+      const stages = parts.map(function (p, i) {
+        return { id: 's' + (i + 1), text: p, part: p };
+      });
+      const q = { title: title, stages: stages };
+      el.innerHTML =
+        '<div class="flow-panel" id="flowPanel-' + Math.random().toString(36).slice(2, 8) + '">' +
+        '<div class="flow-head"><span class="flow-title">Blood flow' +
+        (title ? ' · ' + title.replace(/</g, '') : '') +
+        '</span><span class="flow-legend"><i class="lg deoxy"></i>deoxygenated <i class="lg oxy"></i>oxygenated</span></div>' +
+        flowSVG(q) +
+        '</div>';
+      const panel = el.querySelector('.flow-panel');
+      if (panel) {
+        try { flowPlay(panel, q); } catch (e) { /* static SVG still visible */ }
+      }
+    });
+  }
+  window.StudyFlowDiagram = { init: init };
 })();
