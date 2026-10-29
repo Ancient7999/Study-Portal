@@ -534,6 +534,36 @@
           }
         },
         {
+          "id": "medterm-lymphatic",
+          "title": "Lymphatic System & Blood",
+          "subtitle": "Lectures 14 & 15",
+          "locked": false,
+          "bank": "banks/medterm/pt2/lecture-14-15.json",
+          "study": {
+            "title": "Study Interface",
+            "chapters": [
+              {
+                "id": "lymphatic",
+                "src": "content/medterm/lymphatic/lymphatic-system.md",
+                "title": "Lymphatic System",
+                "meta": "Lymph · vessels · nodes · organs · functions"
+              },
+              {
+                "id": "wbc",
+                "src": "content/medterm/lymphatic/white-blood-cells.md",
+                "title": "White Blood Cells",
+                "meta": "Granulocytes · agranulocytes · lifespans"
+              },
+              {
+                "id": "plasma-serum",
+                "src": "content/medterm/lymphatic/plasma-serum.md",
+                "title": "Plasma and Serum",
+                "meta": "Definitions · properties · key difference"
+              }
+            ]
+          }
+        },
+        {
           "id": "medterm-oif",
           "title": "Only In Finals",
           "subtitle": "Lectures 18-28",

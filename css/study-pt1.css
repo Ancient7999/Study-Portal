@@ -616,3 +616,52 @@
   #studyView .circ-step { font-size: 0.72rem; padding: 6px 10px 6px 6px; }
   #studyView .circ-arrow { font-size: 0.9rem; }
 }
+
+/* —— Lymphatic System & Blood study notes (Medical Terminology) —— */
+#studyView .wbc-figure {
+  margin: 1rem 0 1.4rem; padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.28);
+  background: rgba(var(--col-bg-card-rgb), 0.55);
+}
+#studyView .wbc-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#studyView .wbc-scroll > svg { max-width: 900px; margin: 0 auto; }
+#studyView .wbc-hint { display: none; margin: 0 4px 6px; font-size: 0.78rem; color: var(--col-text-muted); }
+#studyView .wbc-figure .bone-credit { margin: 10px 4px 2px; }
+.wbc-svg text { font-family: inherit; }
+.wbc-svg .w-main, .wbc-svg .w-title, .wbc-svg .w-pilltext { fill: var(--col-text-main, #e5e7eb); }
+.wbc-svg .w-muted { fill: var(--col-text-muted, #9ca3af); }
+.wbc-svg .w-key { fill: var(--accent-0, #60a5fa); }
+.wbc-svg .w-edge { fill: none; stroke-width: 3; stroke-linejoin: round; }
+.wbc-svg .w-card { stroke-width: 2; }
+.wbc-svg .w-bar { stroke: none; }
+.wbc-svg .w-pill { stroke-width: 1.2; }
+.wbc-svg .w-root .w-card { fill: rgba(var(--accent-0-rgb, 96, 165, 250), 0.14); stroke: var(--accent-0, #60a5fa); }
+.wbc-svg .gran .w-card { fill: rgba(245, 158, 11, 0.10); stroke: #f59e0b; }
+.wbc-svg .gran .w-bar, .wbc-svg .w-dot.gran { fill: #f59e0b; }
+.wbc-svg .gran .w-pill { fill: rgba(245, 158, 11, 0.22); stroke: #f59e0b; }
+.wbc-svg .w-edge.gran { stroke: #f59e0b; }
+.wbc-svg .agran .w-card { fill: rgba(20, 184, 166, 0.10); stroke: #14b8a6; }
+.wbc-svg .agran .w-bar, .wbc-svg .w-dot.agran { fill: #14b8a6; }
+.wbc-svg .agran .w-pill { fill: rgba(20, 184, 166, 0.22); stroke: #14b8a6; }
+.wbc-svg .w-edge.agran { stroke: #14b8a6; }
+.wbc-svg .lymph .w-card { fill: rgba(139, 92, 246, 0.11); stroke: #8b5cf6; }
+.wbc-svg .lymph .w-bar, .wbc-svg .w-dot.lymph { fill: #8b5cf6; }
+.wbc-svg .lymph .w-pill { fill: rgba(139, 92, 246, 0.24); stroke: #8b5cf6; }
+.wbc-svg .w-edge.lymph { stroke: #8b5cf6; }
+.wbc-svg .w-dot.plt { fill: #e11d48; }
+.wbc-svg .w-box .w-card { fill: rgba(var(--accent-0-rgb, 96, 165, 250), 0.06); stroke: rgba(var(--accent-0-rgb, 96, 165, 250), 0.4); }
+.wbc-svg .w-cell { fill: #f6eef6; stroke: #a8a2b8; stroke-width: 1.2; }
+.wbc-svg .w-nuc { fill: #6d28d9; }
+#studyView .circ-step.lymph { border-color: rgba(139, 92, 246, 0.55); }
+#studyView .circ-step.lymph .n { background: #7c3aed; }
+#studyView .circ-arrow.lymph { color: #a78bfa; }
+#studyView .circ-step.blood { border-color: rgba(220, 38, 38, 0.55); }
+#studyView .circ-step.blood .n { background: #dc2626; }
+#studyView .circ-step.plasma { border-color: rgba(234, 179, 8, 0.6); }
+#studyView .circ-step.plasma .n { background: #ca8a04; }
+#studyView .circ-arrow.plasma { color: #facc15; }
+@media (max-width: 760px) {
+  #studyView .wbc-hint { display: block; }
+  #studyView .wbc-scroll > svg { min-width: 600px; }
+}
