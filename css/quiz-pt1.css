@@ -772,3 +772,5 @@ html.link-drawing[data-custom-cursor="off"],html.link-drawing[data-custom-cursor
 .pt1q{--qa-font:'Outfit',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
 .pt1q .question,.pt1q .step-stem{font-family:var(--font-question,var(--qa-font));font-style:normal;font-weight:500;letter-spacing:0}
 .pt1q .opt,.pt1q .match-item,.pt1q .saq-input{font-family:var(--font-choice,var(--qa-font))}
+/* keyboard focus on linking items (arrow keys) */
+.pt1q .match-item.kb-focus{outline:2px solid var(--accent-0);outline-offset:2px;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.16),0 0 14px rgba(var(--accent-0-rgb),.28)}

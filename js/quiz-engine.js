@@ -3777,7 +3777,8 @@ window.addEventListener('keydown', e=>{
   if(leaveRunOpen()) return; // the confirmation handles its own keys
   if(!document.getElementById('quizView').classList.contains('active')) return;
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
-  if(kbLink){ kbLinkClear(); return; }
+  if(kbLink && kbLink.pick){ e.preventDefault(); e.stopImmediatePropagation(); kbLinkDropPick(); if(kbLink) kbLinkPaint(); return; }
+  if(kbLink) kbLinkClear();
   if(kbAdv){ e.preventDefault(); e.stopImmediatePropagation(); if(kbAdvArmed()) clearKbAdvance(); return; }
   e.preventDefault(); e.stopImmediatePropagation();
   askLeaveRun();
@@ -3797,56 +3798,84 @@ function startKbAdvance(){
   const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
   kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
 }
-/* —— linking questions: number keys ——
-   First number picks that term (1 = first, 0 = tenth), the next number links it to that
-   meaning with the same line a mouse drag would draw. Same number or Esc cancels;
-   Shift+number always means a meaning, so term N can still go to meaning N.
-   Top-row digits and the numpad both work. */
-let kbLink=null;
-function kbLinkClear(){ if(kbLink && kbLink.btn) kbLink.btn.classList.remove('drawing'); kbLink=null; }
-function kbDigit(e){
-  const m=/^(?:Digit|Numpad)([0-9])$/.exec(e.code||'');
-  const d=m ? m[1] : (/^[0-9]$/.test(e.key) ? e.key : null);
-  if(d===null) return 0;
-  return d==='0' ? 10 : +d;
+/* —— linking questions: arrow keys ——
+   The first arrow press shows a focus ring (never on mouse or touch use). ↑ ↓ move within a side,
+   ← → jump to the terms / meanings side (no wrap, about the same row). Enter picks the focused item
+   (the same highlight as a drag start) and jumps to the other side; Enter there links the two with
+   the same code as a mouse release. Esc drops a pick. While the question is unanswered the arrows
+   belong to the board, so ← → do not change question. */
+let kbLink=null; // {qid, side:'L'|'R', idx, pick:{btn,side}|null}
+function kbLinkItems(side){ return [...document.querySelectorAll(side==='L'?'.match-col-left .match-item':'.match-col-right .match-item')]; }
+function kbLinkPaint(){
+  document.querySelectorAll('.match-item.kb-focus').forEach(b=>b.classList.remove('kb-focus'));
+  if(!kbLink) return;
+  const list=kbLinkItems(kbLink.side); if(!list.length) return;
+  kbLink.idx=Math.max(0,Math.min(list.length-1,kbLink.idx));
+  const b=list[kbLink.idx]; b.classList.add('kb-focus');
+  try{ b.scrollIntoView({block:'nearest'}); }catch(er){}
+}
+function kbLinkDropPick(){ if(kbLink && kbLink.pick){ kbLink.pick.btn.classList.remove('drawing'); kbLink.pick=null; } }
+function kbLinkClear(){ kbLinkDropPick(); kbLink=null; document.querySelectorAll('.match-item.kb-focus').forEach(b=>b.classList.remove('kb-focus')); }
+function kbLinkNextLeft(from){
+  const L=kbLinkItems('L'); if(!L.length) return 0;
+  for(let k=1;k<=L.length;k++){ const i=(from+k)%L.length; if(!L[i].disabled) return i; }
+  return Math.max(0,Math.min(L.length-1,from));
 }
 function kbLinkKey(e){
   const q=questions[current];
   if(!q || !Array.isArray(q.leftItems) || !q.leftItems.length) return false;
   if(!document.querySelector('#quizScreen .match-stage')) return false;
-  const n=kbDigit(e); if(!n) return false;
-  e.preventDefault();
-  if(locked || drawState) return true;
-  if(kbLink && !kbLink.btn.isConnected) kbLinkClear();
-  const lefts=[...document.querySelectorAll('.match-col-left .match-item')];
-  const rights=[...document.querySelectorAll('.match-col-right .match-item')];
-  if(!kbLink){
-    const btn=lefts[n-1];
-    if(!btn || btn.disabled) return true;
-    btn.classList.add('drawing');
-    kbLink={btn,n};
-    try{ btn.scrollIntoView({block:'nearest'}); }catch(er){}
-    return true;
+  const k=e.key, arrow=k==='ArrowUp'||k==='ArrowDown'||k==='ArrowLeft'||k==='ArrowRight';
+  if(kbLink && kbLink.qid!==q){ kbLinkClear(); }
+  if(kbLink && kbLink.pick && !kbLink.pick.btn.isConnected) kbLinkDropPick();
+  if(locked){ if(kbLink) kbLinkClear(); return false; } // answered: arrows go back to changing question
+  if(drawState) return arrow||k==='Enter';
+  if(arrow){
+    e.preventDefault();
+    if(!kbLink){ kbLink={qid:q, side:'L', idx:kbLinkNextLeft(-1), pick:null}; kbLinkPaint(); return true; }
+    if(k==='ArrowUp') kbLink.idx=Math.max(0,kbLink.idx-1);
+    else if(k==='ArrowDown') kbLink.idx=Math.min(kbLinkItems(kbLink.side).length-1,kbLink.idx+1);
+    else { const side=k==='ArrowLeft'?'L':'R'; if(side!==kbLink.side){ kbLink.side=side; } }
+    kbLinkPaint(); return true;
   }
-  if(kbLink.n===n && !e.shiftKey){ kbLinkClear(); return true; } // Shift+same number links term N to meaning N
-  const dst=rights[n-1];
-  if(!dst || dst.disabled) return true;
-  const src=kbLink.btn; kbLink=null;
-  const layer=document.querySelector('.match-wires');
-  if(!layer){ src.classList.remove('drawing'); return true; }
-  const lr=src.getBoundingClientRect(), rr=dst.getBoundingClientRect();
-  const ax=lr.right-10, ay=lr.top+lr.height/2, zx=rr.left+10, zy=rr.top+rr.height/2;
-  // re-linking a term replaces whatever line it had before
-  const cur=ensureMatchAns();
-  cur.wires=(cur.wires||[]).filter(w=>String(w.leftId)!==String(src.dataset.id));
-  if(cur.pairs) delete cur.pairs[src.dataset.id];
-  const pts=[];
-  for(let i=0;i<=16;i++){ pts.push(boardPoint(layer,{clientX:ax+(zx-ax)*i/16, clientY:ay+(zy-ay)*i/16})); }
-  setLinkDrawing(true);
-  drawState={q,side:'L',id:src.dataset.id,points:pts,btn:src};
-  onDrawUp({clientX:zx,clientY:zy,pointerId:-1,kb:true});
-  return true;
+  if(k==='Enter' && kbLink){
+    e.preventDefault();
+    const list=kbLinkItems(kbLink.side), b=list[kbLink.idx];
+    if(!b || b.disabled) return true;
+    const pick=kbLink.pick;
+    if(!pick || pick.side===kbLink.side){
+      kbLinkDropPick();
+      b.classList.add('drawing'); kbLink.pick={btn:b, side:kbLink.side};
+      const other=kbLink.side==='L'?'R':'L', n=kbLinkItems(other).length;
+      kbLink.side=other; kbLink.idx=Math.min(kbLink.idx, Math.max(0,n-1));
+      kbLinkPaint(); return true;
+    }
+    // link the pick to the focused item on the other side
+    const src=pick.btn, dst=b; kbLink.pick=null;
+    const layer=document.querySelector('.match-wires');
+    if(!layer){ src.classList.remove('drawing'); return true; }
+    const leftEl=pick.side==='L'?src:dst;
+    const leftIdx=kbLinkItems('L').indexOf(leftEl);
+    const sr=src.getBoundingClientRect(), dr=dst.getBoundingClientRect();
+    const fromLeft=pick.side==='L';
+    const ax=fromLeft?sr.right-10:sr.left+10, ay=sr.top+sr.height/2, zx=fromLeft?dr.left+10:dr.right-10, zy=dr.top+dr.height/2;
+    // re-linking a term replaces whatever line it had before
+    const cur=ensureMatchAns();
+    cur.wires=(cur.wires||[]).filter(w=>String(w.leftId)!==String(leftEl.dataset.id));
+    if(cur.pairs) delete cur.pairs[leftEl.dataset.id];
+    const pts=[];
+    for(let i=0;i<=16;i++){ pts.push(boardPoint(layer,{clientX:ax+(zx-ax)*i/16, clientY:ay+(zy-ay)*i/16})); }
+    setLinkDrawing(true);
+    drawState={q,side:pick.side,id:src.dataset.id,points:pts,btn:src};
+    onDrawUp({clientX:zx,clientY:zy,pointerId:-1,kb:true});
+    if(locked){ kbLinkClear(); return true; }
+    kbLink.side='L'; kbLink.idx=kbLinkNextLeft(leftIdx);
+    kbLinkPaint(); return true;
+  }
+  return false;
 }
+// mouse or touch use hides the keyboard focus ring until the next arrow press
+window.addEventListener('pointerdown', ()=>{ if(kbLink) kbLinkClear(); }, true);
 /* The next-question bar: for its first 500 ms the stop inputs below are ignored (the key or tap that
    answered may still be down). After that a digit (top row or numpad), any other numpad key, Backspace,
    or on touch devices a touch, touch scroll or wheel stops it and stays on this question (a tap that
@@ -3910,7 +3939,9 @@ document.addEventListener('keydown', e=>{
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && !locked && isMulti(questions[current])){
     const opts=kbOptions();
     if(e.key==='Enter'){ e.preventDefault(); kbHighlight(null); submitMulti._kb=true; try{ submitMulti(); } finally { submitMulti._kb=false; } return; }
-    if(/^[1-9]$/.test(e.key)){ const k=+e.key-1; if(k>=opts.length) return; e.preventDefault(); kbHighlight(opts[k]); toggleMulti(+opts[k].dataset.idx, true); return; }
+    // digit N is always choice N (top row or numpad), even when earlier choices are locked in
+    const dm=/^(?:Digit|Numpad)([1-9])$/.exec(e.code||''), dk=dm ? dm[1] : (/^[1-9]$/.test(e.key) ? e.key : null);
+    if(dk){ const all=[...document.querySelectorAll('#options .opt')].filter(b=>b.offsetParent!==null); const btn=all[+dk-1]; e.preventDefault(); if(!btn) return; kbHighlight(btn); toggleMulti(+btn.dataset.idx, true); return; }
     if(e.key===' ' || e.code==='Space'){
       const onBtn=e.target && e.target.closest && e.target.closest('button');
       const hl=opts.find(b=>b.classList.contains('kb-hl'));
