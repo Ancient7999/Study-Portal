@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "subject": "anatomy",
+  "note": "Term glossary for Anatomy skeleton study notes. 'terms' decorate clinical/anatomical words in tables and lists.",
+  "common": {},
+  "chapters": {
+    "content/anatomy/bones/overview.md": {
+      "terms": [
+        { "t": "axial skeleton", "d": "Central axis: skull, vertebral column, and thoracic cage (80 bones)" },
+        { "t": "appendicular skeleton", "d": "Girdles and limbs that attach to the axial skeleton (126 bones)" },
+        { "t": "sesamoid", "d": "Bone that forms in a tendon; the patella is the largest example" },
+        { "t": "long bone", "d": "Bone longer than it is wide, with a shaft and two ends" },
+        { "t": "short bone", "d": "Cube-like bone; carpals and tarsals" },
+        { "t": "flat bone", "d": "Thin, often curved bone; cranial vault, ribs, sternum, scapula" },
+        { "t": "irregular bone", "d": "Complex shape; vertebrae, many facial bones, hip bone" }
+      ]
+    },
+    "content/anatomy/bones/axial.md": {
+      "terms": [
+        { "t": "axial skeleton", "d": "Skull, hyoid, vertebral column, and thoracic cage — 80 bones" },
+        { "t": "cranial", "d": "Eight bones that enclose the brain" },
+        { "t": "facial", "d": "Fourteen bones that form the face" },
+        { "t": "auditory ossicles", "d": "Malleus, incus, and stapes — six tiny bones of the middle ear" },
+        { "t": "hyoid", "d": "U-shaped neck bone; does not articulate with any other bone" },
+        { "t": "vertebral column", "d": "Cervical 7 + thoracic 12 + lumbar 5 + sacrum + coccyx = 26" },
+        { "t": "thoracic cage", "d": "Ribs (24) and sternum (1); protects heart and lungs" },
+        { "t": "irregular", "d": "Complex shape; most vertebrae and many facial bones" },
+        { "t": "flat", "d": "Thin bone; many cranial bones, ribs, sternum" }
+      ]
+    },
+    "content/anatomy/bones/appendicular.md": {
+      "terms": [
+        { "t": "appendicular skeleton", "d": "Pectoral and pelvic girdles plus upper and lower limbs — 126 bones" },
+        { "t": "pectoral girdle", "d": "Clavicle and scapula (4 bones) attaching each upper limb" },
+        { "t": "pelvic girdle", "d": "Two hip bones (os coxae) attaching the lower limbs" },
+        { "t": "hip bone", "d": "Os coxae: fused ilium, ischium, and pubis in the adult" },
+        { "t": "carpals", "d": "Eight short bones of the wrist per side (16 total)" },
+        { "t": "tarsals", "d": "Seven short bones of the ankle/hindfoot per side (14 total)" },
+        { "t": "sesamoid", "d": "Bone in a tendon; patella is the main example counted in the 206" },
+        { "t": "long", "d": "Longer than wide; limb shafts, metacarpals, metatarsals, phalanges, clavicle" },
+        { "t": "short", "d": "Cube-like; carpals and tarsals" }
+      ]
+    }
+  }
+}

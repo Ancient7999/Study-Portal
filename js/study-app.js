@@ -303,6 +303,9 @@
           if (SYMBOLS && window.StudySymbols) {
             try { await window.StudySymbols.decorate(body.querySelector('.md'), SYMBOLS, ch.src); } catch (e) { /* notes still readable */ }
           }
+          if (window.StudyBoneTable) {
+            try { await window.StudyBoneTable.init(body.querySelector('.md')); } catch (e) { /* table optional */ }
+          }
           body.dataset.loaded = '1';
         } catch (err) {
           body.querySelector('.md').innerHTML =

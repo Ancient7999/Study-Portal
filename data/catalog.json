@@ -571,7 +571,31 @@
           "title": "Bone Identification",
           "subtitle": "32 bones in 128 questions · pick a region, division or bone type",
           "bank": "banks/anatomy/bone-identification.json",
-          "locked": false
+          "locked": false,
+          "study": {
+            "title": "Study Interface",
+            "symbols": "data/symbols-anatomy.json",
+            "chapters": [
+              {
+                "id": "overview",
+                "src": "content/anatomy/bones/overview.md",
+                "title": "Skeleton Overview",
+                "meta": "206 bones · axial 80 · appendicular 126"
+              },
+              {
+                "id": "axial",
+                "src": "content/anatomy/bones/axial.md",
+                "title": "Axial Skeleton",
+                "meta": "80 bones · skull · spine · thorax"
+              },
+              {
+                "id": "appendicular",
+                "src": "content/anatomy/bones/appendicular.md",
+                "title": "Appendicular Skeleton",
+                "meta": "126 bones · girdles · limbs"
+              }
+            ]
+          }
         },
         {
           "id": "anatomy-picture-study",

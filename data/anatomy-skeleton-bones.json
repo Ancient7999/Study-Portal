@@ -1,0 +1,582 @@
+{
+  "version": 1,
+  "source": "Standard adult human skeleton (OpenStax Anatomy & Physiology / common textbook inventory)",
+  "totals": {
+    "axial": 80,
+    "appendicular": 126,
+    "all": 206
+  },
+  "credit": "Bone stills adapted from Human Atlas by ashemag (https://github.com/ashemag/human-atlas), built on BodyParts3D \u00a9 DBCLS, CC BY 4.0.",
+  "shapes": [
+    "long",
+    "short",
+    "flat",
+    "irregular",
+    "sesamoid"
+  ],
+  "bones": [
+    {
+      "id": "frontal",
+      "name": "Frontal",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "flat",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/frontal-1.webp",
+        "banks/anatomy/img/frontal-2.webp",
+        "banks/anatomy/img/frontal-3.webp",
+        "banks/anatomy/img/frontal-4.webp"
+      ]
+    },
+    {
+      "id": "parietal",
+      "name": "Parietal",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "flat",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/parietal-1.webp",
+        "banks/anatomy/img/parietal-2.webp",
+        "banks/anatomy/img/parietal-3.webp",
+        "banks/anatomy/img/parietal-4.webp"
+      ]
+    },
+    {
+      "id": "temporal",
+      "name": "Temporal",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/temporal-1.webp",
+        "banks/anatomy/img/temporal-2.webp",
+        "banks/anatomy/img/temporal-3.webp",
+        "banks/anatomy/img/temporal-4.webp"
+      ]
+    },
+    {
+      "id": "occipital",
+      "name": "Occipital",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "flat",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/occipital-1.webp",
+        "banks/anatomy/img/occipital-2.webp",
+        "banks/anatomy/img/occipital-3.webp",
+        "banks/anatomy/img/occipital-4.webp"
+      ]
+    },
+    {
+      "id": "sphenoid",
+      "name": "Sphenoid",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/sphenoid-1.webp",
+        "banks/anatomy/img/sphenoid-2.webp",
+        "banks/anatomy/img/sphenoid-3.webp",
+        "banks/anatomy/img/sphenoid-4.webp"
+      ]
+    },
+    {
+      "id": "ethmoid",
+      "name": "Ethmoid",
+      "system": "axial",
+      "region": "Cranial",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/ethmoid-1.webp",
+        "banks/anatomy/img/ethmoid-2.webp",
+        "banks/anatomy/img/ethmoid-3.webp",
+        "banks/anatomy/img/ethmoid-4.webp"
+      ]
+    },
+    {
+      "id": "maxilla",
+      "name": "Maxilla",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/maxilla-1.webp",
+        "banks/anatomy/img/maxilla-2.webp",
+        "banks/anatomy/img/maxilla-3.webp",
+        "banks/anatomy/img/maxilla-4.webp"
+      ]
+    },
+    {
+      "id": "zygomatic",
+      "name": "Zygomatic",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/zygomatic-1.webp",
+        "banks/anatomy/img/zygomatic-2.webp",
+        "banks/anatomy/img/zygomatic-3.webp",
+        "banks/anatomy/img/zygomatic-4.webp"
+      ]
+    },
+    {
+      "id": "nasal",
+      "name": "Nasal",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "flat",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/nasal-1.webp",
+        "banks/anatomy/img/nasal-2.webp",
+        "banks/anatomy/img/nasal-3.webp",
+        "banks/anatomy/img/nasal-4.webp"
+      ]
+    },
+    {
+      "id": "lacrimal",
+      "name": "Lacrimal",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "flat",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/facial-1.webp",
+        "banks/anatomy/img/facial-2.webp"
+      ],
+      "imageNote": "group facial render"
+    },
+    {
+      "id": "palatine",
+      "name": "Palatine",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/facial-1.webp",
+        "banks/anatomy/img/facial-2.webp"
+      ],
+      "imageNote": "group facial render"
+    },
+    {
+      "id": "inferior-nasal-concha",
+      "name": "Inferior nasal concha",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/facial-1.webp",
+        "banks/anatomy/img/facial-2.webp"
+      ],
+      "imageNote": "group facial render"
+    },
+    {
+      "id": "vomer",
+      "name": "Vomer",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "flat",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/facial-1.webp",
+        "banks/anatomy/img/facial-2.webp"
+      ],
+      "imageNote": "group facial render"
+    },
+    {
+      "id": "mandible",
+      "name": "Mandible",
+      "system": "axial",
+      "region": "Facial",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/mandible-1.webp",
+        "banks/anatomy/img/mandible-2.webp",
+        "banks/anatomy/img/mandible-3.webp",
+        "banks/anatomy/img/mandible-4.webp"
+      ]
+    },
+    {
+      "id": "malleus",
+      "name": "Malleus",
+      "system": "axial",
+      "region": "Auditory ossicles",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/temporal-1.webp"
+      ],
+      "imageNote": "housed in temporal; no dedicated ossicle render"
+    },
+    {
+      "id": "incus",
+      "name": "Incus",
+      "system": "axial",
+      "region": "Auditory ossicles",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/temporal-1.webp"
+      ],
+      "imageNote": "housed in temporal; no dedicated ossicle render"
+    },
+    {
+      "id": "stapes",
+      "name": "Stapes",
+      "system": "axial",
+      "region": "Auditory ossicles",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/temporal-1.webp"
+      ],
+      "imageNote": "housed in temporal; no dedicated ossicle render"
+    },
+    {
+      "id": "hyoid",
+      "name": "Hyoid",
+      "system": "axial",
+      "region": "Neck",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/hyoid-1.webp",
+        "banks/anatomy/img/hyoid-2.webp",
+        "banks/anatomy/img/hyoid-3.webp",
+        "banks/anatomy/img/hyoid-4.webp"
+      ]
+    },
+    {
+      "id": "cervical-vertebrae",
+      "name": "Cervical vertebrae",
+      "system": "axial",
+      "region": "Vertebral column",
+      "shape": "irregular",
+      "count": 7,
+      "images": [
+        "banks/anatomy/img/vertebrae-1.webp",
+        "banks/anatomy/img/vertebrae-2.webp",
+        "banks/anatomy/img/vertebrae-3.webp",
+        "banks/anatomy/img/vertebrae-4.webp"
+      ]
+    },
+    {
+      "id": "thoracic-vertebrae",
+      "name": "Thoracic vertebrae",
+      "system": "axial",
+      "region": "Vertebral column",
+      "shape": "irregular",
+      "count": 12,
+      "images": [
+        "banks/anatomy/img/vertebrae-1.webp",
+        "banks/anatomy/img/vertebrae-2.webp",
+        "banks/anatomy/img/vertebrae-3.webp",
+        "banks/anatomy/img/vertebrae-4.webp"
+      ]
+    },
+    {
+      "id": "lumbar-vertebrae",
+      "name": "Lumbar vertebrae",
+      "system": "axial",
+      "region": "Vertebral column",
+      "shape": "irregular",
+      "count": 5,
+      "images": [
+        "banks/anatomy/img/vertebrae-1.webp",
+        "banks/anatomy/img/vertebrae-2.webp",
+        "banks/anatomy/img/vertebrae-3.webp",
+        "banks/anatomy/img/vertebrae-4.webp"
+      ]
+    },
+    {
+      "id": "sacrum",
+      "name": "Sacrum",
+      "system": "axial",
+      "region": "Vertebral column",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/sacrum-1.webp",
+        "banks/anatomy/img/sacrum-2.webp",
+        "banks/anatomy/img/sacrum-3.webp",
+        "banks/anatomy/img/sacrum-4.webp"
+      ]
+    },
+    {
+      "id": "coccyx",
+      "name": "Coccyx",
+      "system": "axial",
+      "region": "Vertebral column",
+      "shape": "irregular",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/sacrum-1.webp",
+        "banks/anatomy/img/sacrum-2.webp"
+      ],
+      "imageNote": "no dedicated coccyx render; sacrum group"
+    },
+    {
+      "id": "ribs",
+      "name": "Ribs",
+      "system": "axial",
+      "region": "Thoracic cage",
+      "shape": "flat",
+      "count": 24,
+      "images": [
+        "banks/anatomy/img/ribs-1.webp",
+        "banks/anatomy/img/ribs-2.webp",
+        "banks/anatomy/img/ribs-3.webp",
+        "banks/anatomy/img/ribs-4.webp"
+      ]
+    },
+    {
+      "id": "sternum",
+      "name": "Sternum",
+      "system": "axial",
+      "region": "Thoracic cage",
+      "shape": "flat",
+      "count": 1,
+      "images": [
+        "banks/anatomy/img/sternum-1.webp",
+        "banks/anatomy/img/sternum-2.webp",
+        "banks/anatomy/img/sternum-3.webp",
+        "banks/anatomy/img/sternum-4.webp"
+      ]
+    },
+    {
+      "id": "clavicle",
+      "name": "Clavicle",
+      "system": "appendicular",
+      "region": "Pectoral girdle",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/clavicle-1.webp",
+        "banks/anatomy/img/clavicle-2.webp",
+        "banks/anatomy/img/clavicle-3.webp",
+        "banks/anatomy/img/clavicle-4.webp"
+      ]
+    },
+    {
+      "id": "scapula",
+      "name": "Scapula",
+      "system": "appendicular",
+      "region": "Pectoral girdle",
+      "shape": "flat",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/scapula-1.webp",
+        "banks/anatomy/img/scapula-2.webp",
+        "banks/anatomy/img/scapula-3.webp",
+        "banks/anatomy/img/scapula-4.webp"
+      ]
+    },
+    {
+      "id": "humerus",
+      "name": "Humerus",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/humerus-1.webp",
+        "banks/anatomy/img/humerus-2.webp",
+        "banks/anatomy/img/humerus-3.webp",
+        "banks/anatomy/img/humerus-4.webp"
+      ]
+    },
+    {
+      "id": "ulna",
+      "name": "Ulna",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/ulna-1.webp",
+        "banks/anatomy/img/ulna-2.webp",
+        "banks/anatomy/img/ulna-3.webp",
+        "banks/anatomy/img/ulna-4.webp"
+      ]
+    },
+    {
+      "id": "radius",
+      "name": "Radius",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/radius-1.webp",
+        "banks/anatomy/img/radius-2.webp",
+        "banks/anatomy/img/radius-3.webp",
+        "banks/anatomy/img/radius-4.webp"
+      ]
+    },
+    {
+      "id": "carpals",
+      "name": "Carpals",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "short",
+      "count": 16,
+      "images": [
+        "banks/anatomy/img/carpals-1.webp",
+        "banks/anatomy/img/carpals-2.webp",
+        "banks/anatomy/img/carpals-3.webp",
+        "banks/anatomy/img/carpals-4.webp"
+      ]
+    },
+    {
+      "id": "metacarpals",
+      "name": "Metacarpals",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "long",
+      "count": 10,
+      "images": [
+        "banks/anatomy/img/metacarpals-1.webp",
+        "banks/anatomy/img/metacarpals-2.webp",
+        "banks/anatomy/img/metacarpals-3.webp",
+        "banks/anatomy/img/metacarpals-4.webp"
+      ]
+    },
+    {
+      "id": "hand-phalanges",
+      "name": "Phalanges (hand)",
+      "system": "appendicular",
+      "region": "Upper limb",
+      "shape": "long",
+      "count": 28,
+      "images": [
+        "banks/anatomy/img/phalanges-1.webp",
+        "banks/anatomy/img/phalanges-2.webp",
+        "banks/anatomy/img/phalanges-3.webp",
+        "banks/anatomy/img/phalanges-4.webp"
+      ]
+    },
+    {
+      "id": "hip-bone",
+      "name": "Hip bone (os coxae)",
+      "system": "appendicular",
+      "region": "Pelvic girdle",
+      "shape": "irregular",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/pelvis-1.webp",
+        "banks/anatomy/img/pelvis-2.webp",
+        "banks/anatomy/img/pelvis-3.webp",
+        "banks/anatomy/img/pelvis-4.webp"
+      ]
+    },
+    {
+      "id": "femur",
+      "name": "Femur",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/femur-1.webp",
+        "banks/anatomy/img/femur-2.webp",
+        "banks/anatomy/img/femur-3.webp",
+        "banks/anatomy/img/femur-4.webp"
+      ]
+    },
+    {
+      "id": "patella",
+      "name": "Patella",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "sesamoid",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/patella-1.webp",
+        "banks/anatomy/img/patella-2.webp",
+        "banks/anatomy/img/patella-3.webp",
+        "banks/anatomy/img/patella-4.webp"
+      ]
+    },
+    {
+      "id": "tibia",
+      "name": "Tibia",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/tibia-1.webp",
+        "banks/anatomy/img/tibia-2.webp",
+        "banks/anatomy/img/tibia-3.webp",
+        "banks/anatomy/img/tibia-4.webp"
+      ]
+    },
+    {
+      "id": "fibula",
+      "name": "Fibula",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "long",
+      "count": 2,
+      "images": [
+        "banks/anatomy/img/fibula-1.webp",
+        "banks/anatomy/img/fibula-2.webp",
+        "banks/anatomy/img/fibula-3.webp",
+        "banks/anatomy/img/fibula-4.webp"
+      ]
+    },
+    {
+      "id": "tarsals",
+      "name": "Tarsals",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "short",
+      "count": 14,
+      "images": [
+        "banks/anatomy/img/tarsals-1.webp",
+        "banks/anatomy/img/tarsals-2.webp",
+        "banks/anatomy/img/tarsals-3.webp",
+        "banks/anatomy/img/tarsals-4.webp"
+      ]
+    },
+    {
+      "id": "metatarsals",
+      "name": "Metatarsals",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "long",
+      "count": 10,
+      "images": [
+        "banks/anatomy/img/metatarsals-1.webp",
+        "banks/anatomy/img/metatarsals-2.webp",
+        "banks/anatomy/img/metatarsals-3.webp",
+        "banks/anatomy/img/metatarsals-4.webp"
+      ]
+    },
+    {
+      "id": "foot-phalanges",
+      "name": "Phalanges (foot)",
+      "system": "appendicular",
+      "region": "Lower limb",
+      "shape": "long",
+      "count": 28,
+      "images": [
+        "banks/anatomy/img/phalanges-1.webp",
+        "banks/anatomy/img/phalanges-2.webp",
+        "banks/anatomy/img/phalanges-3.webp",
+        "banks/anatomy/img/phalanges-4.webp"
+      ]
+    }
+  ]
+}
