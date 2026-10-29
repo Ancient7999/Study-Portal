@@ -3,7 +3,7 @@
   "subject": "Anatomy",
   "subjectId": "anatomy",
   "title": "Bone Identification",
-  "formSize": 128,
+  "formSize": 132,
   "forms": [
     "A"
   ],
@@ -107,6 +107,30 @@
       "group": "By Skeleton Division",
       "hideTags": [
         "division"
+      ]
+    },
+    {
+      "id": "pectoral-girdle",
+      "title": "Pectoral Girdle",
+      "tags": [
+        "pectoral-girdle"
+      ],
+      "group": "By Skeleton Division",
+      "hideTags": [
+        "division",
+        "region"
+      ]
+    },
+    {
+      "id": "pelvic-girdle",
+      "title": "Pelvic Girdle",
+      "tags": [
+        "pelvic-girdle"
+      ],
+      "group": "By Skeleton Division",
+      "hideTags": [
+        "division",
+        "region"
       ]
     },
     {
@@ -1293,7 +1317,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "flat"
+          "flat",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/scapula-1.webp",
         "imageSize": "large",
@@ -1350,7 +1375,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "flat"
+          "flat",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/scapula-2.webp",
         "imageSize": "large",
@@ -1380,7 +1406,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "flat"
+          "flat",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/scapula-3.webp",
         "imageSize": "large",
@@ -1449,7 +1476,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "flat"
+          "flat",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/scapula-4.webp",
         "imageSize": "large",
@@ -1932,7 +1960,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "long"
+          "long",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/clavicle-1.webp",
         "imageSize": "large",
@@ -1962,7 +1991,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "long"
+          "long",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/clavicle-2.webp",
         "imageSize": "large",
@@ -2031,7 +2061,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "long"
+          "long",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/clavicle-3.webp",
         "imageSize": "large",
@@ -2088,7 +2119,8 @@
           "all",
           "upper-limb",
           "appendicular",
-          "long"
+          "long",
+          "pectoral-girdle"
         ],
         "image": "banks/anatomy/img/clavicle-4.webp",
         "imageSize": "large",
@@ -3861,7 +3893,8 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat"
+          "flat",
+          "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-1.webp",
         "imageSize": "large",
@@ -3918,7 +3951,8 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat"
+          "flat",
+          "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-2.webp",
         "imageSize": "large",
@@ -3949,7 +3983,8 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat"
+          "flat",
+          "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-3.webp",
         "imageSize": "large",
@@ -4019,7 +4054,8 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat"
+          "flat",
+          "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-4.webp",
         "imageSize": "large",
@@ -6879,6 +6915,224 @@
             ],
             "complete": false,
             "prompt": "Type its name."
+          }
+        ]
+      },
+      {
+        "id": "AN129",
+        "type": "stepped",
+        "cat": "Bones",
+        "bone": "pectoral-girdle",
+        "unit": false,
+        "tags": [
+          "all",
+          "upper-limb",
+          "appendicular",
+          "pectoral-girdle"
+        ],
+        "image": "banks/anatomy/img/pectoral-girdle-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the chest and shoulders with two bones on each side highlighted in orange.",
+        "explain": "The highlighted region is the pectoral girdle, also called the shoulder girdle.",
+        "q": "Look at the highlighted bones.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Pectoral Girdle",
+            "accept": [
+              "Shoulder Girdle"
+            ],
+            "complete": false,
+            "prompt": "Name the highlighted region.",
+            "showFirst": true
+          },
+          {
+            "id": "div",
+            "tag": "division",
+            "prompt": "Is the pectoral girdle part of the axial skeleton?",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "correct": 1,
+            "explain": "This is the pectoral girdle. It belongs to the appendicular skeleton. The axial skeleton holds the skull, spine, ribs and sternum. The appendicular skeleton holds the limbs and their girdles."
+          },
+          {
+            "id": "bones",
+            "prompt": "Which bones form the pectoral girdle?",
+            "options": [
+              "Clavicles and scapulae",
+              "Clavicles and the sternum",
+              "Scapulae and the humeri",
+              "Sternum and first ribs"
+            ],
+            "correct": 0,
+            "explain": "The pectoral girdle is formed by the clavicles and scapulae: one clavicle (a long bone) and one scapula (a flat bone) on each side, 4 bones in total. The sternum and ribs belong to the axial skeleton, and the humerus belongs to the upper limb."
+          }
+        ]
+      },
+      {
+        "id": "AN130",
+        "type": "stepped",
+        "cat": "Bones",
+        "bone": "pectoral-girdle",
+        "unit": false,
+        "tags": [
+          "all",
+          "upper-limb",
+          "appendicular",
+          "pectoral-girdle"
+        ],
+        "image": "banks/anatomy/img/pectoral-girdle-2.webp",
+        "imageSize": "large",
+        "alt": "A back view of the chest and shoulders with two bones on each side highlighted in orange.",
+        "explain": "The highlighted region is the pectoral girdle, also called the shoulder girdle.",
+        "q": "Look at the highlighted bones.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Pectoral Girdle",
+            "accept": [
+              "Shoulder Girdle"
+            ],
+            "complete": false,
+            "prompt": "Name the highlighted region.",
+            "showFirst": true
+          },
+          {
+            "id": "joint",
+            "prompt": "The pectoral girdle links the upper limb to the axial skeleton. At which joint does it meet the axial skeleton?",
+            "options": [
+              "Sternoclavicular joint",
+              "Glenohumeral joint",
+              "Acromioclavicular joint",
+              "Costovertebral joint"
+            ],
+            "correct": 0,
+            "explain": "The pectoral girdle meets the axial skeleton only at the sternoclavicular joint, where the clavicle meets the sternum. The acromioclavicular joint lies within the girdle, the glenohumeral joint is the shoulder joint with the humerus, and costovertebral joints link ribs to vertebrae."
+          },
+          {
+            "id": "count",
+            "prompt": "How many bones make up the pectoral girdle in total?",
+            "options": [
+              "2",
+              "4",
+              "6",
+              "8"
+            ],
+            "correct": 1,
+            "explain": "The pectoral girdle has 4 bones: a clavicle and a scapula on each side."
+          }
+        ]
+      },
+      {
+        "id": "AN131",
+        "type": "stepped",
+        "cat": "Bones",
+        "bone": "pelvic-girdle",
+        "unit": false,
+        "tags": [
+          "all",
+          "spine-pelvis",
+          "appendicular",
+          "pelvic-girdle"
+        ],
+        "image": "banks/anatomy/img/pelvic-girdle-1.webp",
+        "imageSize": "large",
+        "alt": "A front view of the trunk and thighs with one bone on each side highlighted in orange.",
+        "explain": "The highlighted region is the pelvic girdle, also called the hip girdle.",
+        "q": "Look at the highlighted bones.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Pelvic Girdle",
+            "accept": [
+              "Hip Girdle"
+            ],
+            "complete": false,
+            "prompt": "Name the highlighted region.",
+            "showFirst": true
+          },
+          {
+            "id": "div",
+            "tag": "division",
+            "prompt": "Is the pelvic girdle part of the axial skeleton?",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "correct": 1,
+            "explain": "This is the pelvic girdle. It belongs to the appendicular skeleton. The axial skeleton holds the skull, spine, ribs and sternum. The appendicular skeleton holds the limbs and their girdles."
+          },
+          {
+            "id": "bones",
+            "prompt": "Which bones form the pelvic girdle?",
+            "options": [
+              "Two hip bones",
+              "Hip bones and sacrum",
+              "Sacrum and coccyx",
+              "Hip bones and femurs"
+            ],
+            "correct": 0,
+            "explain": "The pelvic girdle is formed by the two hip bones (os coxae), 2 bones in total. Each hip bone is an irregular bone fused from the ilium, ischium and pubis. The sacrum and coccyx belong to the axial skeleton, and the femur belongs to the lower limb."
+          }
+        ]
+      },
+      {
+        "id": "AN132",
+        "type": "stepped",
+        "cat": "Bones",
+        "bone": "pelvic-girdle",
+        "unit": false,
+        "tags": [
+          "all",
+          "spine-pelvis",
+          "appendicular",
+          "pelvic-girdle"
+        ],
+        "image": "banks/anatomy/img/pelvic-girdle-2.webp",
+        "imageSize": "large",
+        "alt": "A back view of the trunk and thighs with one bone on each side highlighted in orange.",
+        "explain": "The highlighted region is the pelvic girdle, also called the hip girdle.",
+        "q": "Look at the highlighted bones.",
+        "steps": [
+          {
+            "id": "name",
+            "type": "saq",
+            "answer": "Pelvic Girdle",
+            "accept": [
+              "Hip Girdle"
+            ],
+            "complete": false,
+            "prompt": "Name the highlighted region.",
+            "showFirst": true
+          },
+          {
+            "id": "joint",
+            "prompt": "The pelvic girdle links the lower limbs to the axial skeleton. Which bone of the axial skeleton does it join?",
+            "options": [
+              "Sacrum",
+              "Coccyx",
+              "Lumbar spine",
+              "Sternum"
+            ],
+            "correct": 0,
+            "explain": "The pelvic girdle joins the sacrum at the two sacroiliac joints, and the two hip bones meet each other at the front at the pubic symphysis."
+          },
+          {
+            "id": "role",
+            "prompt": "Compared with the pectoral girdle, what is the pelvic girdle built for?",
+            "options": [
+              "Bearing weight",
+              "Range of motion",
+              "Protecting lungs",
+              "Making blood cells"
+            ],
+            "correct": 0,
+            "explain": "The pelvic girdle is built for stability and bearing the body's weight: it is heavy and firmly joined to the sacrum. The pectoral girdle is light and loosely attached, which gives the arm a wide range of motion."
           }
         ]
       }

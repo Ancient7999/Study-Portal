@@ -506,6 +506,17 @@
 }
 #studyView .bone-credit a { color: var(--accent-0); }
 
+#studyView .bone-table-toolbar.compact { padding-top: 6px; padding-bottom: 6px; }
+#studyView .bone-girdle-figure {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 0.6rem 0 1rem;
+}
+#studyView .bone-girdle-figure img {
+  display: block; width: min(260px, 46%); height: auto;
+  border-radius: 12px; background: #0a0e16;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.28);
+}
+
 .bone-hover-preview {
   position: fixed; z-index: 9999;
   width: min(240px, 42vw); height: min(240px, 42vw);

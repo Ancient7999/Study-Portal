@@ -2,6 +2,8 @@
  * Looks for [data-bone-table] roots after a chapter's Markdown is injected.
  * data-system = axial | appendicular | all (optional filter lock)
  * data-src    = JSON inventory path (default data/anatomy-skeleton-bones.json)
+ * data-region = optional region lock (e.g. "Pectoral Girdle"): a small table of that region only
+ * [data-heading-preview="a.webp|b.webp"] after a heading: the heading text gets the same hover still
  */
 (function () {
   'use strict';
@@ -120,6 +122,10 @@
     if (lockSystem === 'axial' || lockSystem === 'appendicular') {
       bones = bones.filter(function (b) { return b.system === lockSystem; });
     }
+    var lockRegion = (root.getAttribute('data-region') || '').trim().toLowerCase();
+    if (lockRegion) {
+      bones = bones.filter(function (b) { return String(b.region || '').toLowerCase() === lockRegion; });
+    }
 
     var state = {
       sortKey: 'region',
@@ -133,9 +139,11 @@
     var regions = unique(bones.map(function (b) { return b.region; }));
     var shapes = (data.shapes || ['long', 'short', 'flat', 'irregular', 'sesamoid']).slice();
     var showSystemFilter = lockSystem === 'all';
+    var compact = !!lockRegion;
 
     root.innerHTML =
-      '<div class="bone-table-toolbar">' +
+      (compact ? '<div class="bone-table-toolbar compact">' : '<div class="bone-table-toolbar">') +
+      (compact ? '' : 
         '<label class="bone-filter">Shape' +
           '<select data-f="shape"><option value="">All shapes</option>' +
             shapes.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s.charAt(0).toUpperCase() + s.slice(1)) + '</option>'; }).join('') +
@@ -148,7 +156,7 @@
           ? '<label class="bone-filter">System<select data-f="system"><option value="">Axial + Appendicular</option><option value="axial">Axial</option><option value="appendicular">Appendicular</option></select></label>'
           : '') +
         '<label class="bone-filter bone-search">Search' +
-          '<input type="search" data-f="q" placeholder="Bone name…" autocomplete="off" /></label>' +
+          '<input type="search" data-f="q" placeholder="Bone name…" autocomplete="off" /></label>') +
         '<div class="bone-total" data-total></div>' +
       '</div>' +
       '<div class="bone-table-wrap">' +
@@ -275,7 +283,36 @@
     paint();
   }
 
+  /* heading hover still: <div data-heading-preview="a|b"> right after an h2/h3 */
+  function decorateHeadings(scope) {
+    var figs = (scope || document).querySelectorAll('[data-heading-preview]');
+    Array.prototype.forEach.call(figs, function (fig) {
+      var h = fig.previousElementSibling;
+      if (!h || !/^H[2-4]$/.test(h.tagName) || h.dataset.boneHeading === '1') return;
+      var imgs = (fig.getAttribute('data-heading-preview') || '').split('|').filter(Boolean);
+      if (!imgs.length) return;
+      h.dataset.boneHeading = '1';
+      var span = document.createElement('span');
+      span.className = 'bone-name has-preview';
+      span.tabIndex = 0;
+      span.setAttribute('data-images', imgs.join('|'));
+      while (h.firstChild) span.appendChild(h.firstChild);
+      h.appendChild(span);
+      span.addEventListener('pointerenter', function (e) { showPreview(imgs, e.clientX, e.clientY); });
+      span.addEventListener('pointermove', function (e) {
+        if (previewEl && previewEl.classList.contains('show')) placePreview(e.clientX, e.clientY);
+      });
+      span.addEventListener('pointerleave', hidePreview);
+      span.addEventListener('focus', function () {
+        var r = span.getBoundingClientRect();
+        showPreview(imgs, r.right, r.top);
+      });
+      span.addEventListener('blur', hidePreview);
+    });
+  }
+
   function init(scope) {
+    decorateHeadings(scope);
     var roots = (scope || document).querySelectorAll('[data-bone-table]');
     if (!roots.length) return Promise.resolve();
     var tasks = [];

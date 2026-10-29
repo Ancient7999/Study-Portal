@@ -358,7 +358,7 @@
       "id": "clavicle",
       "name": "Clavicle",
       "system": "appendicular",
-      "region": "Pectoral girdle",
+      "region": "Pectoral Girdle",
       "shape": "long",
       "count": 2,
       "images": [
@@ -372,7 +372,7 @@
       "id": "scapula",
       "name": "Scapula",
       "system": "appendicular",
-      "region": "Pectoral girdle",
+      "region": "Pectoral Girdle",
       "shape": "flat",
       "count": 2,
       "images": [
@@ -470,7 +470,7 @@
       "id": "hip-bone",
       "name": "Hip bone (os coxae)",
       "system": "appendicular",
-      "region": "Pelvic girdle",
+      "region": "Pelvic Girdle",
       "shape": "irregular",
       "count": 2,
       "images": [

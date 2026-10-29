@@ -608,7 +608,7 @@
         {
           "id": "anatomy-bones",
           "title": "Bone Identification",
-          "subtitle": "32 bones in 128 questions · pick a region, division or bone type",
+          "subtitle": "32 bones and 2 girdles in 132 questions · pick a region, division or bone type",
           "bank": "banks/anatomy/bone-identification.json",
           "locked": false,
           "study": {
