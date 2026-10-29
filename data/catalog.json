@@ -436,7 +436,7 @@
         {
           "id": "pt2",
           "title": "Periodic Test 2",
-          "subtitle": "Lectures 10-20",
+          "subtitle": "Lectures 10-17",
           "draft": true,
           "locked": false,
           "study": {
@@ -494,23 +494,26 @@
               "bank": "banks/medterm/pt2/lecture-16-17.json",
               "status": "ready",
               "draft": true
-            },
-            {
-              "id": "lec18-20",
-              "title": "Lectures 18, 19 & 20 – Nervous System",
-              "bank": "banks/medterm/pt2/lecture-18-20.json",
-              "status": "ready",
-              "draft": true
             }
           ]
         },
         {
           "id": "medterm-oif",
           "title": "Only In Finals",
-          "subtitle": "Lectures 21-28",
+          "subtitle": "Lectures 18-28",
           "draft": true,
           "locked": false,
           "lectures": [
+            {
+              "id": "lec18-20",
+              "title": "Lectures 18, 19 & 20 – Nervous System",
+              "bank": "banks/medterm/oif/lecture-18-20.json",
+              "status": "ready",
+              "draft": true,
+              "migrateFrom": {
+                "bankKey": "medterm/pt2/lecture-18-20"
+              }
+            },
             {
               "id": "lec21-22",
               "title": "Lectures 21 & 22 – Gastrointestinal System",
