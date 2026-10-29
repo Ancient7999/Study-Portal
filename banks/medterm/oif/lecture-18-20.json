@@ -3,7 +3,7 @@
  "subject": "Medical Terminology",
  "subjectId": "medical_terminology",
  "title": "Lecture 18, 19 and 20 - Nervous System",
- "formSize": 109,
+ "formSize": 113,
  "forms": [
   "A"
  ],
@@ -2174,6 +2174,62 @@
     ],
     "correct": 0,
     "explain": "Hemiparesis is partial weakness on half of the body, such as the limbs and facial muscles. It does not describe organs, the cord, or brain parts."
+   },
+   {
+    "id": "MT18111",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "On a midsagittal cut of the brain, which structure is the arched band of white fibres that joins the right and left cerebral hemispheres?",
+    "options": [
+     "Thalamus",
+     "Corpus callosum",
+     "Pineal gland",
+     "Hypothalamus"
+    ],
+    "correct": 1,
+    "explain": "The corpus callosum is the thick, curved band of white matter (nerve fibres) that bridges the two cerebral hemispheres, so it shows as a long arch above the centre of the brain on a midsagittal cut. The thalamus and hypothalamus are grey-matter masses below that arch, and the pineal gland is a small gland behind the thalamus, so none of them joins the hemispheres."
+   },
+   {
+    "id": "MT18112",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "On a midsagittal cut, which egg-shaped mass sits in the centre of the brain, below the corpus callosum, and relays sensory signals to the cerebral cortex?",
+    "options": [
+     "Hypothalamus",
+     "Pineal gland",
+     "Thalamus",
+     "Corpus callosum"
+    ],
+    "correct": 2,
+    "explain": "The thalamus (Thalam/o) is the large oval mass at the centre of the brain, just under the corpus callosum, and it relays almost all incoming sensory signals on to the cerebral cortex. The hypothalamus lies below and in front of it, the pineal gland is the small gland behind it, and the corpus callosum is the fibre arch above it."
+   },
+   {
+    "id": "MT18113",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which structure lies below and in front of the thalamus and controls body temperature, hunger and the pituitary gland?",
+    "options": [
+     "Hypothalamus",
+     "Pineal gland",
+     "Corpus callosum",
+     "Thalamus"
+    ],
+    "correct": 0,
+    "explain": "The hypothalamus (hypo- means below) sits below the thalamus at the front of the brainstem and links the nervous system to the endocrine system through the pituitary gland; it also controls body temperature, hunger and thirst. The thalamus above it is a sensory relay, the pineal gland behind the thalamus makes melatonin, and the corpus callosum joins the hemispheres."
+   },
+   {
+    "id": "MT18114",
+    "type": "mcq",
+    "cat": "MT_lec18-20",
+    "q": "Which small gland sits behind the thalamus, above the midbrain, and releases melatonin to help control the sleep–wake cycle?",
+    "options": [
+     "Pituitary gland",
+     "Hypothalamus",
+     "Thalamus",
+     "Pineal gland"
+    ],
+    "correct": 3,
+    "explain": "The pineal gland (pineal body) is a small, pine-cone-shaped gland on the midline behind the thalamus and above the midbrain; it releases melatonin, which helps set the sleep–wake cycle. The pituitary gland hangs below the hypothalamus at the base of the brain, the hypothalamus is in front of and below the thalamus, and the thalamus is the large sensory relay in the centre."
    }
   ]
  }

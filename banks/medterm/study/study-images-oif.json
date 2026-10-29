@@ -2930,6 +2930,78 @@
      ]
     },
     {
+     "id": "brain-deep",
+     "title": "Brain: Deep Structures (Midsagittal Cut)",
+     "caption": "Cut close to the midline, the corpus callosum arches over the thalamus, the relay centre for sensory signals (Thalam/o). The hypothalamus lies below and in front of it and controls hormones, temperature and hunger, and the small pineal gland sits behind it and releases melatonin.",
+     "alt": "Human Atlas render of the brain cut lengthways close to the midline, front to the left: the corpus callosum (blue arch), thalamus (purple), hypothalamus (yellow) and pineal gland (red), with the cerebrum, brainstem and cerebellum in muted colours.",
+     "kind": "labeled-diagram",
+     "credit": "Rendered from BodyParts3D 4.0 (DBCLS) via Human Atlas",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "sourceUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html",
+     "labeled": "banks/medterm/study/lec18-20/brain-deep-labeled.webp",
+     "blank": "banks/medterm/study/lec18-20/brain-deep-blank.webp",
+     "width": 1000,
+     "height": 640,
+     "labels": [
+      {
+       "id": "brain-deep-L1",
+       "answer": "Corpus Callosum",
+       "accept": [],
+       "x": 82.2,
+       "y": 41.41,
+       "w": 17.0,
+       "h": 5.62,
+       "anchor": {
+        "x": 59.1,
+        "y": 44.22
+       }
+      },
+      {
+       "id": "brain-deep-L2",
+       "answer": "Thalamus",
+       "accept": [],
+       "x": 0.8,
+       "y": 43.59,
+       "w": 17.0,
+       "h": 5.62,
+       "anchor": {
+        "x": 48.5,
+        "y": 46.41
+       }
+      },
+      {
+       "id": "brain-deep-L3",
+       "answer": "Hypothalamus",
+       "accept": [],
+       "x": 0.8,
+       "y": 50.78,
+       "w": 17.0,
+       "h": 5.62,
+       "anchor": {
+        "x": 42.5,
+        "y": 51.72
+       }
+      },
+      {
+       "id": "brain-deep-L4",
+       "answer": "Pineal Gland",
+       "accept": [
+        "Pineal Body",
+        "Pineal"
+       ],
+       "x": 82.2,
+       "y": 48.59,
+       "w": 17.0,
+       "h": 5.62,
+       "anchor": {
+        "x": 54.7,
+        "y": 51.41
+       }
+      }
+     ]
+    },
+    {
      "id": "neuron",
      "title": "Structure of a Neuron",
      "caption": "Neur/o means nerve. A neuron receives signals through its dendrites, and the cell body (with its nucleus) passes them along the axon to the axon terminals. Schwann cells form the myelin sheath that speeds the signal.",

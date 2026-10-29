@@ -30,6 +30,7 @@ Every new image in this folder comes from Wikimedia Commons. Each has two versio
 | MT_lec18-20 | brain-sagittal | https://commons.wikimedia.org/wiki/File:Brain_sagittal_section_stem_highlighted.svg | Patrick J. Lynch, variation by User:Hk kng | CC BY-SA 3.0 | Changed "Truncus Cerebri" to "Brainstem" and added Corpus Callosum, Thalamus, Hypothalamus and Spinal Cord. |
 | MT_lec18-20 | neuron | https://commons.wikimedia.org/wiki/File:Neuron,_LangNeutral.svg | Lokal_Profil (original: Dhp1080) | CC BY-SA 3.0 | Removed the letter keys, circles and lines and added 8 English leader lines and label boxes. |
 | MT_lec18-20 | nervous-system-divisions | https://commons.wikimedia.org/wiki/File:1201_Overview_of_Nervous_System.jpg | OpenStax | CC BY 4.0 | Scaled down and covered the 6 labels in the blank version. |
+| MT_lec18-20 | brain-deep | https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html (via Human Atlas) | BodyParts3D 4.0, © DBCLS | CC BY 4.0 | Rendered as a lengthways cut close to the midline with our Human Atlas pipeline; added leader lines and label boxes for Corpus Callosum, Thalamus, Hypothalamus and Pineal Gland. |
 
 ## Reused assets (referenced, not copied)
 
