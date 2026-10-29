@@ -3,7 +3,7 @@
   "subject": "Anatomy",
   "subjectId": "anatomy",
   "title": "Bone Identification",
-  "formSize": 132,
+  "formSize": 153,
   "forms": [
     "A"
   ],
@@ -34,6 +34,14 @@
       "hideTags": [
         "division"
       ]
+    },
+    {
+      "id": "relative-positions",
+      "title": "Relative Positions",
+      "tags": [
+        "relative"
+      ],
+      "group": "Directions And Heart Flow"
     }
   ],
   "bank": {
@@ -6982,6 +6990,1391 @@
             "explain": "The pelvic girdle is built for stability and bearing the body's weight: it is heavy and firmly joined to the sacrum. The pectoral girdle is light and loosely attached, which gives the arm a wide range of motion."
           }
         ]
+      },
+      {
+        "id": "AN201",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Sternum relative to the vertebral column"
+          },
+          {
+            "id": "2",
+            "text": "Kidneys relative to the intestines"
+          },
+          {
+            "id": "3",
+            "text": "Diaphragm relative to the liver"
+          },
+          {
+            "id": "4",
+            "text": "Bladder relative to the rectum"
+          },
+          {
+            "id": "5",
+            "text": "Larynx relative to the trachea"
+          },
+          {
+            "id": "6",
+            "text": "Esophagus relative to the trachea"
+          },
+          {
+            "id": "7",
+            "text": "Stomach relative to the diaphragm"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superior"
+          },
+          {
+            "id": "B",
+            "text": "Inferior"
+          },
+          {
+            "id": "C",
+            "text": "Anterior"
+          },
+          {
+            "id": "D",
+            "text": "Posterior"
+          },
+          {
+            "id": "E",
+            "text": "Proximal"
+          },
+          {
+            "id": "F",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "D",
+          "3": "A",
+          "4": "C",
+          "5": "A",
+          "6": "D",
+          "7": "B"
+        },
+        "explain": "The sternum lies at the front of the chest and the vertebral column at the back, and the bladder sits in front of the rectum in the pelvis. The kidneys lie against the back wall of the abdomen, behind the intestines, and the esophagus runs behind the trachea. The diaphragm domes over the liver, the larynx sits above the trachea, and the stomach lies just below the diaphragm. Proximal and distal describe the limbs, so they fit none of these pairs."
+      },
+      {
+        "id": "AN202",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cranium relative to the mandible"
+          },
+          {
+            "id": "2",
+            "text": "Cervical vertebrae relative to the thoracic vertebrae"
+          },
+          {
+            "id": "3",
+            "text": "Sacrum relative to the lumbar vertebrae"
+          },
+          {
+            "id": "4",
+            "text": "Coccyx relative to the sacrum"
+          },
+          {
+            "id": "5",
+            "text": "Hyoid bone relative to the larynx"
+          },
+          {
+            "id": "6",
+            "text": "Pelvis relative to the rib cage"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superior"
+          },
+          {
+            "id": "B",
+            "text": "Inferior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "B",
+          "5": "A",
+          "6": "B"
+        },
+        "explain": "From top to bottom the vertebral column runs cervical, thoracic, lumbar, sacrum and coccyx, so the cervical vertebrae are superior to the thoracic ones and the sacrum and coccyx are inferior to what lies above them. The cranium sits above the mandible, the hyoid bone sits just above the larynx, and the pelvis lies below the rib cage. Proximal and distal are kept for the limbs."
+      },
+      {
+        "id": "AN203",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Brain relative to the spinal cord"
+          },
+          {
+            "id": "2",
+            "text": "Lungs relative to the diaphragm"
+          },
+          {
+            "id": "3",
+            "text": "Small intestine relative to the stomach"
+          },
+          {
+            "id": "4",
+            "text": "Bladder relative to the kidneys"
+          },
+          {
+            "id": "5",
+            "text": "Esophagus relative to the stomach"
+          },
+          {
+            "id": "6",
+            "text": "Heart relative to the diaphragm"
+          },
+          {
+            "id": "7",
+            "text": "Rectum relative to the transverse colon"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superior"
+          },
+          {
+            "id": "B",
+            "text": "Inferior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "B",
+          "5": "A",
+          "6": "A",
+          "7": "B"
+        },
+        "explain": "The brain continues downward as the spinal cord, and the lungs and heart rest on the upper surface of the diaphragm. Food passes down the esophagus into the stomach and then into the small intestine below it. Urine runs down from the kidneys to the bladder in the pelvis, and the rectum lies low in the pelvis, below the transverse colon that crosses the upper abdomen. Proximal and distal fit none of these pairs."
+      },
+      {
+        "id": "AN204",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Pharynx relative to the esophagus"
+          },
+          {
+            "id": "2",
+            "text": "Kidneys relative to the bladder"
+          },
+          {
+            "id": "3",
+            "text": "Liver relative to the diaphragm"
+          },
+          {
+            "id": "4",
+            "text": "Thoracic vertebrae relative to the lumbar vertebrae"
+          },
+          {
+            "id": "5",
+            "text": "Mandible relative to the cranium"
+          },
+          {
+            "id": "6",
+            "text": "Transverse colon relative to the stomach"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superior"
+          },
+          {
+            "id": "B",
+            "text": "Inferior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "A",
+          "5": "B",
+          "6": "B"
+        },
+        "explain": "The pharynx leads down into the esophagus, and the kidneys sit high in the abdomen, above the bladder. The liver lies under the right dome of the diaphragm. The thoracic vertebrae come above the lumbar vertebrae, the mandible hangs below the cranium, and the transverse colon runs below the stomach. Proximal and distal describe the limbs, not these structures."
+      },
+      {
+        "id": "AN205",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Clavicle relative to the scapula"
+          },
+          {
+            "id": "2",
+            "text": "Scapula relative to the ribs"
+          },
+          {
+            "id": "3",
+            "text": "Pancreas relative to the stomach"
+          },
+          {
+            "id": "4",
+            "text": "Heart relative to the vertebral column"
+          },
+          {
+            "id": "5",
+            "text": "Trachea relative to the esophagus"
+          },
+          {
+            "id": "6",
+            "text": "Nose relative to the ears"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Anterior"
+          },
+          {
+            "id": "B",
+            "text": "Posterior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "A",
+          "5": "A",
+          "6": "A"
+        },
+        "explain": "The clavicle crosses the front of the shoulder while the scapula lies on the back of the rib cage. The pancreas lies behind the stomach, against the back wall of the abdomen. The heart sits in front of the vertebral column, the trachea runs in front of the esophagus, and the nose is at the front of the head with the ears further back. Proximal and distal are limb terms and fit none of these pairs."
+      },
+      {
+        "id": "AN206",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Patella relative to the femur"
+          },
+          {
+            "id": "2",
+            "text": "Rectum relative to the bladder"
+          },
+          {
+            "id": "3",
+            "text": "Spinal cord relative to the sternum"
+          },
+          {
+            "id": "4",
+            "text": "Little finger relative to the thumb"
+          },
+          {
+            "id": "5",
+            "text": "Fifth metatarsal relative to the first metatarsal"
+          },
+          {
+            "id": "6",
+            "text": "Navel relative to the vertebral column"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Anterior"
+          },
+          {
+            "id": "B",
+            "text": "Posterior"
+          },
+          {
+            "id": "C",
+            "text": "Medial"
+          },
+          {
+            "id": "D",
+            "text": "Lateral"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "C",
+          "5": "D",
+          "6": "A"
+        },
+        "explain": "The patella sits on the front of the knee over the femur, and the navel is on the front of the abdomen with the vertebral column behind it. The rectum lies behind the bladder, and the spinal cord runs at the back of the trunk, behind the sternum. In anatomical position the palms face forward with the thumbs on the outer side, so the little finger is medial to the thumb. The first metatarsal belongs to the big toe on the inner side of the foot, so the fifth metatarsal is lateral to it."
+      },
+      {
+        "id": "AN207",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Lungs relative to the heart"
+          },
+          {
+            "id": "2",
+            "text": "Heart relative to the lungs"
+          },
+          {
+            "id": "3",
+            "text": "Eyes relative to the nose"
+          },
+          {
+            "id": "4",
+            "text": "Nose relative to the eyes"
+          },
+          {
+            "id": "5",
+            "text": "Ears relative to the nose"
+          },
+          {
+            "id": "6",
+            "text": "Kidneys relative to the vertebral column"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Medial"
+          },
+          {
+            "id": "B",
+            "text": "Lateral"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "A",
+          "3": "B",
+          "4": "A",
+          "5": "B",
+          "6": "B"
+        },
+        "explain": "Medial means closer to the midline and lateral means further from it. The heart lies in the middle of the chest between the two lungs. The nose is on the midline of the face, with the eyes and ears further out on each side, and the kidneys lie on either side of the vertebral column. Proximal and distal describe positions along a limb, so they fit none of these pairs."
+      },
+      {
+        "id": "AN208",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Spleen relative to the stomach"
+          },
+          {
+            "id": "2",
+            "text": "Ascending colon relative to the small intestine"
+          },
+          {
+            "id": "3",
+            "text": "Ureters relative to the vertebral column"
+          },
+          {
+            "id": "4",
+            "text": "Sternum relative to the clavicles"
+          },
+          {
+            "id": "5",
+            "text": "Pubic symphysis relative to the hip joints"
+          },
+          {
+            "id": "6",
+            "text": "Trachea relative to the lungs"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Medial"
+          },
+          {
+            "id": "B",
+            "text": "Lateral"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "B",
+          "3": "B",
+          "4": "A",
+          "5": "A",
+          "6": "A"
+        },
+        "explain": "The spleen lies on the far left of the upper abdomen, outside the stomach, and the ascending colon runs up the right side of the abdomen, outside the coils of the small intestine. The ureters run down on either side of the vertebral column. The sternum, the pubic symphysis and the trachea are all on the midline, with the clavicles, the hip joints and the lungs out to the sides. Proximal and distal are not used for these trunk structures."
+      },
+      {
+        "id": "AN209",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Brain relative to the skull"
+          },
+          {
+            "id": "2",
+            "text": "Skull relative to the brain"
+          },
+          {
+            "id": "3",
+            "text": "Ribs relative to the lungs"
+          },
+          {
+            "id": "4",
+            "text": "Lungs relative to the ribs"
+          },
+          {
+            "id": "5",
+            "text": "Sternum relative to the heart"
+          },
+          {
+            "id": "6",
+            "text": "Heart relative to the sternum"
+          },
+          {
+            "id": "7",
+            "text": "Skin relative to the muscles"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superficial"
+          },
+          {
+            "id": "B",
+            "text": "Deep"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "A",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "B",
+          "7": "A"
+        },
+        "explain": "Superficial means closer to the body surface and deep means further from it. The skull encloses the brain, the ribs surround the lungs, and the sternum covers the front of the heart, so in each pair the protecting bone is superficial and the organ is deep. The skin lies over the muscles. Proximal and distal describe the limbs and fit none of these pairs."
+      },
+      {
+        "id": "AN210",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Scalp relative to the skull"
+          },
+          {
+            "id": "2",
+            "text": "Spinal cord relative to the vertebrae"
+          },
+          {
+            "id": "3",
+            "text": "Bone marrow relative to compact bone"
+          },
+          {
+            "id": "4",
+            "text": "Skin relative to the sternum"
+          },
+          {
+            "id": "5",
+            "text": "Kidneys relative to the back muscles"
+          },
+          {
+            "id": "6",
+            "text": "Muscles of the thigh relative to the femur"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superficial"
+          },
+          {
+            "id": "B",
+            "text": "Deep"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "A",
+          "5": "B",
+          "6": "A"
+        },
+        "explain": "The scalp covers the skull, and the skin covers the sternum. The spinal cord runs inside the vertebral canal, and the marrow fills the inside of a bone under its compact outer layer. The kidneys lie inside the abdomen, under the muscles of the back, while the thigh muscles wrap around the femur. Proximal and distal are about distance along a limb from the trunk, which none of these pairs describes."
+      },
+      {
+        "id": "AN211",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second (the person's own right and left).",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Liver relative to the stomach"
+          },
+          {
+            "id": "2",
+            "text": "Spleen relative to the liver"
+          },
+          {
+            "id": "3",
+            "text": "Appendix relative to the sigmoid colon"
+          },
+          {
+            "id": "4",
+            "text": "Descending colon relative to the ascending colon"
+          },
+          {
+            "id": "5",
+            "text": "Inferior vena cava relative to the aorta"
+          },
+          {
+            "id": "6",
+            "text": "Stomach relative to the liver"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Right"
+          },
+          {
+            "id": "B",
+            "text": "Left"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "B"
+        },
+        "explain": "Right and left are the person's own sides. The liver fills the right upper abdomen and the stomach and spleen lie on the left. The appendix hangs from the cecum in the lower right abdomen, while the sigmoid colon is in the lower left. The ascending colon runs up the right side and the descending colon down the left. In the abdomen the inferior vena cava runs to the right of the aorta. Proximal and distal fit none of these pairs."
+      },
+      {
+        "id": "AN212",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Humerus relative to the radius"
+          },
+          {
+            "id": "2",
+            "text": "Phalanges relative to the carpals"
+          },
+          {
+            "id": "3",
+            "text": "Carpals relative to the metacarpals"
+          },
+          {
+            "id": "4",
+            "text": "Wrist relative to the elbow"
+          },
+          {
+            "id": "5",
+            "text": "Elbow relative to the shoulder"
+          },
+          {
+            "id": "6",
+            "text": "Metacarpals relative to the phalanges"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Proximal"
+          },
+          {
+            "id": "B",
+            "text": "Distal"
+          },
+          {
+            "id": "C",
+            "text": "Superficial"
+          },
+          {
+            "id": "D",
+            "text": "Deep"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "B",
+          "6": "A"
+        },
+        "explain": "Proximal means closer to where the limb joins the trunk and distal means further from it. The upper limb runs shoulder, humerus, elbow, radius and ulna, wrist (carpals), metacarpals and phalanges. So the humerus is proximal to the radius, the carpals are proximal to the metacarpals, and the metacarpals are proximal to the phalanges, while the wrist is distal to the elbow and the elbow is distal to the shoulder. Superficial and deep fit none of these pairs."
+      },
+      {
+        "id": "AN213",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Femur relative to the tibia"
+          },
+          {
+            "id": "2",
+            "text": "Metatarsals relative to the tarsals"
+          },
+          {
+            "id": "3",
+            "text": "Knee relative to the ankle"
+          },
+          {
+            "id": "4",
+            "text": "Tarsals relative to the tibia"
+          },
+          {
+            "id": "5",
+            "text": "Phalanges of the foot relative to the metatarsals"
+          },
+          {
+            "id": "6",
+            "text": "Hip relative to the knee"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Proximal"
+          },
+          {
+            "id": "B",
+            "text": "Distal"
+          },
+          {
+            "id": "C",
+            "text": "Medial"
+          },
+          {
+            "id": "D",
+            "text": "Lateral"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "B",
+          "6": "A"
+        },
+        "explain": "The lower limb runs hip, femur, knee, tibia and fibula, ankle (tarsals), metatarsals and phalanges. The femur is proximal to the tibia, the knee to the ankle and the hip to the knee. The tarsals are distal to the tibia, the metatarsals distal to the tarsals and the toe bones distal to the metatarsals. None of these pairs sits side by side, so medial and lateral fit none of them."
+      },
+      {
+        "id": "AN214",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Radius relative to the ulna"
+          },
+          {
+            "id": "2",
+            "text": "Ulna relative to the radius"
+          },
+          {
+            "id": "3",
+            "text": "Tibia relative to the fibula"
+          },
+          {
+            "id": "4",
+            "text": "Fibula relative to the tibia"
+          },
+          {
+            "id": "5",
+            "text": "Thumb relative to the little finger"
+          },
+          {
+            "id": "6",
+            "text": "Big toe relative to the little toe"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Medial"
+          },
+          {
+            "id": "B",
+            "text": "Lateral"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "A",
+          "3": "A",
+          "4": "B",
+          "5": "B",
+          "6": "A"
+        },
+        "explain": "In anatomical position the palms face forward, so the thumb side of the forearm is lateral. The radius is on the thumb side and the ulna on the little-finger side, so the radius is lateral to the ulna. In the leg the tibia is on the inner side and the fibula on the outer side. The big toe is the most medial toe. Each pair lies side by side at the same level, so proximal and distal fit none of them."
+      },
+      {
+        "id": "AN215",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each structure pair to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Humerus relative to the carpals"
+          },
+          {
+            "id": "2",
+            "text": "Fingertips relative to the wrist"
+          },
+          {
+            "id": "3",
+            "text": "Ankle relative to the knee"
+          },
+          {
+            "id": "4",
+            "text": "Little toe relative to the big toe"
+          },
+          {
+            "id": "5",
+            "text": "First metacarpal relative to the fifth metacarpal"
+          },
+          {
+            "id": "6",
+            "text": "Ring finger relative to the index finger"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Proximal"
+          },
+          {
+            "id": "B",
+            "text": "Distal"
+          },
+          {
+            "id": "C",
+            "text": "Medial"
+          },
+          {
+            "id": "D",
+            "text": "Lateral"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "D",
+          "5": "D",
+          "6": "C"
+        },
+        "explain": "Along a limb, structures closer to the trunk are proximal: the humerus is proximal to the carpals, while the fingertips are distal to the wrist and the ankle is distal to the knee. Side by side, medial and lateral apply. In anatomical position the thumb, with the first metacarpal, is on the lateral side of the hand, so the first metacarpal is lateral to the fifth and the ring finger is medial to the index finger. In the foot the big toe is medial, so the little toe is lateral to it."
+      },
+      {
+        "id": "AN216",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each pair of heart parts to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Atria relative to the ventricles"
+          },
+          {
+            "id": "2",
+            "text": "Ventricles relative to the atria"
+          },
+          {
+            "id": "3",
+            "text": "Apex of the heart relative to its base"
+          },
+          {
+            "id": "4",
+            "text": "Base of the heart relative to its apex"
+          },
+          {
+            "id": "5",
+            "text": "Right atrium relative to the right ventricle"
+          },
+          {
+            "id": "6",
+            "text": "Left ventricle relative to the left atrium"
+          },
+          {
+            "id": "7",
+            "text": "Aortic arch relative to the ventricles"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Superior"
+          },
+          {
+            "id": "B",
+            "text": "Inferior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "A",
+          "5": "A",
+          "6": "B",
+          "7": "A"
+        },
+        "explain": "The atria form the upper part of the heart, at its base, and the ventricles form the lower part, ending in the apex that points down toward the diaphragm. So each atrium is superior to its ventricle and the apex is inferior to the base. The aortic arch curves above the heart after the aorta leaves the left ventricle. Proximal and distal describe the limbs, not the heart."
+      },
+      {
+        "id": "AN217",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each pair of heart parts to the direction of the first relative to the second.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Right ventricle relative to the left ventricle"
+          },
+          {
+            "id": "2",
+            "text": "Left atrium relative to the right ventricle"
+          },
+          {
+            "id": "3",
+            "text": "Left atrium relative to the right atrium"
+          },
+          {
+            "id": "4",
+            "text": "Pulmonary trunk relative to the aorta, where they leave the heart"
+          },
+          {
+            "id": "5",
+            "text": "Aorta relative to the pulmonary trunk, where they leave the heart"
+          },
+          {
+            "id": "6",
+            "text": "Sternum relative to the right ventricle"
+          },
+          {
+            "id": "7",
+            "text": "Esophagus relative to the left atrium"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Anterior"
+          },
+          {
+            "id": "B",
+            "text": "Posterior"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "A",
+          "5": "B",
+          "6": "A",
+          "7": "B"
+        },
+        "explain": "The heart sits turned in the chest so the right ventricle forms most of its front surface, just behind the sternum, and the left atrium is the most posterior chamber, with the esophagus right behind it. Where the great arteries leave the heart, the pulmonary trunk starts in front of the aorta and then crosses it. Proximal and distal are limb terms and fit none of these pairs."
+      },
+      {
+        "id": "AN218",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each pair of heart parts to the direction of the first relative to the second (the person's own right and left).",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Left ventricle relative to the right ventricle"
+          },
+          {
+            "id": "2",
+            "text": "Apex of the heart relative to the sternum"
+          },
+          {
+            "id": "3",
+            "text": "Right atrium relative to the left ventricle"
+          },
+          {
+            "id": "4",
+            "text": "Superior vena cava relative to the ascending aorta"
+          },
+          {
+            "id": "5",
+            "text": "Ascending aorta relative to the pulmonary trunk"
+          },
+          {
+            "id": "6",
+            "text": "Left atrium relative to the right atrium"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Right"
+          },
+          {
+            "id": "B",
+            "text": "Left"
+          },
+          {
+            "id": "C",
+            "text": "Proximal"
+          },
+          {
+            "id": "D",
+            "text": "Distal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "B",
+          "3": "A",
+          "4": "A",
+          "5": "A",
+          "6": "B"
+        },
+        "explain": "Right and left are the person's own sides. About two-thirds of the heart lies left of the midline and the apex points down and to the left, beyond the sternum. The right atrium forms the right border of the heart, the left ventricle forms the left border and apex, and the left atrium lies to the left of the right atrium. Above the heart the superior vena cava runs down on the right of the ascending aorta, which rises to the right of the pulmonary trunk. Proximal and distal fit none of these pairs."
+      },
+      {
+        "id": "AN219",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each chamber or vessel to the part it opens into.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Superior vena cava"
+          },
+          {
+            "id": "2",
+            "text": "Inferior vena cava"
+          },
+          {
+            "id": "3",
+            "text": "Coronary sinus"
+          },
+          {
+            "id": "4",
+            "text": "Right atrium"
+          },
+          {
+            "id": "5",
+            "text": "Right ventricle"
+          },
+          {
+            "id": "6",
+            "text": "Pulmonary veins"
+          },
+          {
+            "id": "7",
+            "text": "Left atrium"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Right atrium"
+          },
+          {
+            "id": "B",
+            "text": "Right ventricle"
+          },
+          {
+            "id": "C",
+            "text": "Pulmonary trunk"
+          },
+          {
+            "id": "D",
+            "text": "Left atrium"
+          },
+          {
+            "id": "E",
+            "text": "Left ventricle"
+          },
+          {
+            "id": "F",
+            "text": "Aorta"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "A",
+          "4": "B",
+          "5": "C",
+          "6": "D",
+          "7": "E"
+        },
+        "explain": "Deoxygenated blood returns to the right atrium through the superior and inferior venae cavae, and the coronary sinus brings the heart muscle's own venous blood there too. The right atrium opens into the right ventricle, which pumps into the pulmonary trunk toward the lungs. Oxygenated blood comes back through the pulmonary veins into the left atrium, which opens into the left ventricle. The left ventricle, not listed here, opens into the aorta."
+      },
+      {
+        "id": "AN220",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each opening to the valve that guards it.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Right atrium to right ventricle"
+          },
+          {
+            "id": "2",
+            "text": "Right ventricle to pulmonary trunk"
+          },
+          {
+            "id": "3",
+            "text": "Left atrium to left ventricle"
+          },
+          {
+            "id": "4",
+            "text": "Left ventricle to aorta"
+          },
+          {
+            "id": "5",
+            "text": "Venae cavae to right atrium"
+          },
+          {
+            "id": "6",
+            "text": "Pulmonary veins to left atrium"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Tricuspid AV Valve"
+          },
+          {
+            "id": "B",
+            "text": "Pulmonary Semilunar Valve"
+          },
+          {
+            "id": "C",
+            "text": "Bicuspid AV Valve (Mitral)"
+          },
+          {
+            "id": "D",
+            "text": "Aortic Semilunar Valve"
+          },
+          {
+            "id": "E",
+            "text": "No valve"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "E"
+        },
+        "explain": "The heart has four valves. The two atrioventricular valves sit between each atrium and its ventricle: the tricuspid AV valve on the right and the bicuspid (mitral) AV valve on the left. The two semilunar valves guard the exits of the ventricles: the pulmonary semilunar valve into the pulmonary trunk and the aortic semilunar valve into the aorta. The veins that empty into the atria, the venae cavae and the pulmonary veins, have no valve at their openings."
+      },
+      {
+        "id": "AN221",
+        "type": "matching",
+        "cat": "Relative Positions",
+        "unit": false,
+        "tags": [
+          "relative"
+        ],
+        "q": "Match each chamber or vessel to what its blood flows into next.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Left ventricle"
+          },
+          {
+            "id": "2",
+            "text": "Pulmonary trunk"
+          },
+          {
+            "id": "3",
+            "text": "Cardiac veins"
+          },
+          {
+            "id": "4",
+            "text": "Aortic root"
+          },
+          {
+            "id": "5",
+            "text": "Pulmonary arteries"
+          },
+          {
+            "id": "6",
+            "text": "Venae cavae"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Aorta"
+          },
+          {
+            "id": "B",
+            "text": "Pulmonary arteries"
+          },
+          {
+            "id": "C",
+            "text": "Coronary sinus"
+          },
+          {
+            "id": "D",
+            "text": "Coronary arteries"
+          },
+          {
+            "id": "E",
+            "text": "Lungs"
+          },
+          {
+            "id": "F",
+            "text": "Right atrium"
+          },
+          {
+            "id": "G",
+            "text": "Left atrium"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "The left ventricle pumps oxygenated blood through the aortic semilunar valve into the aorta, and the coronary arteries branch off the aortic root to feed the heart muscle. Their blood drains through the cardiac veins into the coronary sinus. On the right side, the pulmonary trunk divides into the right and left pulmonary arteries, which carry blood to the lungs, and the venae cavae return blood from the body to the right atrium. Nothing in this list opens directly into the left atrium."
       }
     ]
   }
