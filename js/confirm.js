@@ -52,7 +52,7 @@
         if (e.key === 'Enter') {
           // Enter confirms only on the confirm button; on cancel it cancels; anywhere else it does nothing
           e.preventDefault(); e.stopImmediatePropagation();
-          if (document.activeElement === yes) finish(true);
+          if (o.enterConfirms || document.activeElement === yes) finish(true);
           else if (document.activeElement === no) finish(false);
           return;
         }

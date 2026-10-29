@@ -1579,7 +1579,7 @@ function saqSolvedFx(q, o){
   pt1Confetti();
   rewardCorrect(2);
   afterAnswerProgress();
-  if(o && o.kb && !allQuestionsAnswered()) startKbAdvance();
+  if(!allQuestionsAnswered()) startKbAdvance();
 }
 function submitSaq(k, o){
   o=o||{};
@@ -2521,7 +2521,7 @@ function toggleMulti(idx, fromKb){
     document.getElementById('mainPanel').classList.add('correct-pulse');
     setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
     pt1Confetti(); rewardCorrect(); afterAnswerProgress();
-    if(fromKb && !allQuestionsAnswered()) startKbAdvance();
+    if(!allQuestionsAnswered()) startKbAdvance();
   }
 }
 function multiFeedbackText(right, wrong, missed){
@@ -2556,7 +2556,7 @@ function submitMulti(){
   pt1Confetti();
   rewardCorrect();
   afterAnswerProgress();
-  if(submitMulti._kb && !allQuestionsAnswered()) startKbAdvance();
+  if(!allQuestionsAnswered()) startKbAdvance();
 }
 
 function ensureMatchAns(){
@@ -3525,7 +3525,7 @@ function selectAnswer(idx){
   pt1Confetti();
   rewardCorrect();
   afterAnswerProgress();
-  if(selectAnswer._kb && !allQuestionsAnswered()) startKbAdvance();
+  if(!allQuestionsAnswered()) startKbAdvance();
 }
 
 /* PT1 3892–3926 + STEPPED: moves never land on a locked step. */
@@ -3739,7 +3739,7 @@ document.getElementById('resetModalCancel').addEventListener('click',()=>{ resta
 
 document.getElementById('nextBtn').addEventListener('click', goNext);
 document.getElementById('backBtn').addEventListener('click', goBack);
-document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); goSets(); });
+document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); askLeaveRun(); });
 document.getElementById('againSetsBtn').addEventListener('click', ()=>{ clearWireLayer(); goSets(); });
 document.getElementById('reviewMenuBtn').addEventListener('click', goSets);
 document.getElementById('reviewBtn').addEventListener('click', showReview);
@@ -3774,20 +3774,22 @@ function runKeysActive(){
 window.addEventListener('keydown', e=>{
   if(e.key!=='Escape') return;
   if(document.getElementById('cardResetModal').classList.contains('show')) return; // the dialog closes itself
-  if(leaveRunOpen()){ e.preventDefault(); e.stopImmediatePropagation(); closeLeaveRun(); return; }
+  if(leaveRunOpen()) return; // the confirmation handles its own keys
   if(!document.getElementById('quizView').classList.contains('active')) return;
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
   if(kbLink){ kbLinkClear(); return; }
-  if(kbAdv){ e.preventDefault(); e.stopImmediatePropagation(); if(kbAdvArmed()){ clearKbAdvance(); openLeaveRun(); } return; }
-  goSets();
+  if(kbAdv){ e.preventDefault(); e.stopImmediatePropagation(); if(kbAdvArmed()) clearKbAdvance(); return; }
+  e.preventDefault(); e.stopImmediatePropagation();
+  askLeaveRun();
 }, true);
-/* after a keyboard correct answer: the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
+/* after a correct answer (keys, click or tap): the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
 let kbAdv=null;
 function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
 function startKbAdvance(){
   clearKbAdvance();
   const host=document.getElementById('feedback'); if(!host) return;
-  const MS=3200; // formula practice's ADVANCE_MS
+  let MS=3200; // formula practice's ADVANCE_MS
+  try{ if(window.PT2Look && typeof PT2Look.advanceMs==='function') MS=PT2Look.advanceMs(MS)||MS; }catch(er){}
   const w=document.createElement('div'); w.className='formula-advance-wrap kb-advance';
   w.innerHTML='<div class="formula-advance-track" aria-hidden="true"><div class="formula-advance-fill"></div></div>';
   host.insertAdjacentElement('afterend', w);
@@ -3847,8 +3849,8 @@ function kbLinkKey(e){
 }
 /* The next-question bar: for its first 500 ms the stop inputs below are ignored (the key or tap that
    answered may still be down). After that a digit (top row or numpad), any other numpad key, Backspace,
-   or on touch devices a touch, touch scroll or wheel stops it and stays on this question. Esc stops it
-   and asks before leaving the set. Enter and → still go straight to the next question. */
+   or on touch devices a touch, touch scroll or wheel stops it and stays on this question (a tap that
+   stops it does nothing else). Esc only stops it. Enter and → still go straight to the next question. */
 const KB_ADV_GRACE=500;
 function kbAdvArmed(){ return !!kbAdv && performance.now()-kbAdv.t0>=KB_ADV_GRACE; }
 function kbAdvStopKey(e, typing){
@@ -3864,29 +3866,37 @@ function kbAdvStopKey(e, typing){
   clearKbAdvance();
   return true;
 }
-function kbAdvTouchStop(){ if(kbAdvArmed()) clearKbAdvance(); }
+let kbAdvSwallowUntil=0, kbAdvSwallowId=null;
+function kbAdvTouchStop(){ if(!kbAdvArmed()) return false; clearKbAdvance(); return true; }
 function isTouchDevice(){ return document.documentElement.getAttribute('data-pointer-input')==='touch' || (navigator.maxTouchPoints||0)>0 || 'ontouchstart' in window; }
-document.addEventListener('touchstart', kbAdvTouchStop, {capture:true, passive:true});
-document.addEventListener('touchmove', kbAdvTouchStop, {capture:true, passive:true});
+// the tap that stops the bar is used up: it does not also press what it landed on
+window.addEventListener('pointerdown', e=>{
+  if(e.pointerType==='touch' && kbAdvTouchStop()){ kbAdvSwallowId=e.pointerId; kbAdvSwallowUntil=performance.now()+1500; e.preventDefault(); e.stopImmediatePropagation(); return; }
+  if(kbAdvSwallowId!==null && e.pointerId!==kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=0; }
+}, true);
+window.addEventListener('pointercancel', e=>{ if(e.pointerId===kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=0; } }, true); // it became a scroll: no click follows
+window.addEventListener('pointerup', e=>{ if(e.pointerId===kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=performance.now()+400; e.preventDefault(); e.stopImmediatePropagation(); } }, true);
+['mousedown','mouseup','click','contextmenu'].forEach(t=>window.addEventListener(t, e=>{
+  if(performance.now()>=kbAdvSwallowUntil) return;
+  e.preventDefault(); e.stopImmediatePropagation();
+  if(t==='click') kbAdvSwallowUntil=0;
+}, true));
+document.addEventListener('touchstart', ()=>{ kbAdvTouchStop(); }, {capture:true, passive:true});
+document.addEventListener('touchmove', ()=>{ kbAdvTouchStop(); }, {capture:true, passive:true});
 document.addEventListener('wheel', ()=>{ if(kbAdv && isTouchDevice()) kbAdvTouchStop(); }, {capture:true, passive:true});
-/* leave-the-set confirmation: same look as the locked-card reset dialog */
-let leaveRunEl=null;
-function leaveRunModal(){
-  if(leaveRunEl) return leaveRunEl;
-  const ref=document.getElementById('cardResetModal');
-  const m=document.createElement('div'); m.className='modal-overlay'; m.id='leaveRunModal';
-  m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true'); m.setAttribute('aria-labelledby','leaveRunTitle');
-  m.innerHTML='<div class="modal-card"><h3 id="leaveRunTitle">Leave this set?</h3><p>This takes you back to the previous menu.</p>'
-    +'<div class="modal-actions"><button class="btn-ghost" type="button" id="leaveRunCancel">Stay</button><button class="btn-gold" type="button" id="leaveRunConfirm">Leave</button></div></div>';
-  (ref&&ref.parentNode ? ref.parentNode : document.body).insertBefore(m, ref?ref.nextSibling:null);
-  m.querySelector('#leaveRunCancel').addEventListener('click', closeLeaveRun);
-  m.querySelector('#leaveRunConfirm').addEventListener('click', ()=>{ closeLeaveRun(); goSets(); });
-  m.addEventListener('click', e=>{ if(e.target===m) closeLeaveRun(); });
-  leaveRunEl=m; return m;
+/* leaving a set mid-run (Esc with no bar, or the return button): the small confirmation from the top,
+   the same one the cards use. Enter leaves, Esc stays. Results and review screens leave straight away. */
+let leaveAsking=false;
+function leaveRunOpen(){ return leaveAsking; }
+function askLeaveRun(){
+  const midRun=quizActive && document.getElementById('quizScreen').style.display!=='none';
+  if(!midRun || !(window.StudyConfirm && StudyConfirm.ask)){ goSets(); return; }
+  if(leaveAsking) return;
+  clearKbAdvance(); kbLinkClear();
+  leaveAsking=true;
+  StudyConfirm.ask({ title:'Leave this set?', text:'This takes you back to the previous menu.', confirm:'Leave', cancel:'Stay', icon:'leave', enterConfirms:true })
+    .then(ok=>{ leaveAsking=false; if(ok && document.getElementById('quizView').classList.contains('active')) goSets(); });
 }
-function leaveRunOpen(){ return !!(leaveRunEl && leaveRunEl.classList.contains('show')); }
-function openLeaveRun(){ const m=leaveRunModal(); m.classList.add('show'); setTimeout(()=>{ try{ m.querySelector('#leaveRunCancel').focus(); }catch(e){} }, 30); }
-function closeLeaveRun(){ if(leaveRunEl) leaveRunEl.classList.remove('show'); try{ document.activeElement && document.activeElement.blur && document.activeElement.blur(); }catch(e){} }
 function kbOptions(){ const o=document.getElementById('options'); return o ? [...o.querySelectorAll('.opt')].filter(b=>!b.disabled && b.offsetParent!==null) : []; }
 function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
