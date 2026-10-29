@@ -2871,6 +2871,7 @@ function startDragAutoScroll(svg){
 function beginDraw(ev,q,btn){
   if(locked||btn.disabled||ev.button) return; ev.preventDefault();
   // Arm suppress CSS before capture/hover recalc so other choices never flash glow
+  kbLinkClear();
   setLinkDrawing(true);
   const layer=document.querySelector('.match-wires'); if(!layer){ setLinkDrawing(false); return; }
   const start=boardPoint(layer,ev);
@@ -3072,9 +3073,9 @@ function onDrawUp(ev){
   if(!drawState) return;
   stopDragAutoScroll();
   setLinkDrawing(false);
-  pinCustomCursor(ev);
+  if(!ev.kb) pinCustomCursor(ev);
   const src=drawState.btn, q=drawState.q;
-  src.releasePointerCapture?.(ev.pointerId);
+  try{ src.releasePointerCapture?.(ev.pointerId); }catch(e){}
   src.removeEventListener('pointermove', onDrawMove);
   src.removeEventListener('pointerup', onDrawUp);
   src.removeEventListener('pointercancel', onDrawUp);
@@ -3774,6 +3775,7 @@ window.addEventListener('keydown', e=>{
   if(document.getElementById('cardResetModal').classList.contains('show')) return; // the dialog closes itself
   if(!document.getElementById('quizView').classList.contains('active')) return;
   if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
+  if(kbLink){ kbLinkClear(); return; }
   goSets();
 }, true);
 /* after a keyboard correct answer: the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
@@ -3790,11 +3792,62 @@ function startKbAdvance(){
   const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
   kbAdv={wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
 }
+/* —— linking questions: number keys ——
+   First number picks that term (1 = first, 0 = tenth), the next number links it to that
+   meaning with the same line a mouse drag would draw. Same number or Esc cancels;
+   Shift+number always means a meaning, so term N can still go to meaning N.
+   Top-row digits and the numpad both work. */
+let kbLink=null;
+function kbLinkClear(){ if(kbLink && kbLink.btn) kbLink.btn.classList.remove('drawing'); kbLink=null; }
+function kbDigit(e){
+  const m=/^(?:Digit|Numpad)([0-9])$/.exec(e.code||'');
+  const d=m ? m[1] : (/^[0-9]$/.test(e.key) ? e.key : null);
+  if(d===null) return 0;
+  return d==='0' ? 10 : +d;
+}
+function kbLinkKey(e){
+  const q=questions[current];
+  if(!q || !Array.isArray(q.leftItems) || !q.leftItems.length) return false;
+  if(!document.querySelector('#quizScreen .match-stage')) return false;
+  const n=kbDigit(e); if(!n) return false;
+  e.preventDefault();
+  if(locked || drawState) return true;
+  if(kbLink && !kbLink.btn.isConnected) kbLinkClear();
+  const lefts=[...document.querySelectorAll('.match-col-left .match-item')];
+  const rights=[...document.querySelectorAll('.match-col-right .match-item')];
+  if(!kbLink){
+    const btn=lefts[n-1];
+    if(!btn || btn.disabled) return true;
+    btn.classList.add('drawing');
+    kbLink={btn,n};
+    try{ btn.scrollIntoView({block:'nearest'}); }catch(er){}
+    return true;
+  }
+  if(kbLink.n===n && !e.shiftKey){ kbLinkClear(); return true; } // Shift+same number links term N to meaning N
+  const dst=rights[n-1];
+  if(!dst || dst.disabled) return true;
+  const src=kbLink.btn; kbLink=null;
+  const layer=document.querySelector('.match-wires');
+  if(!layer){ src.classList.remove('drawing'); return true; }
+  const lr=src.getBoundingClientRect(), rr=dst.getBoundingClientRect();
+  const ax=lr.right-10, ay=lr.top+lr.height/2, zx=rr.left+10, zy=rr.top+rr.height/2;
+  // re-linking a term replaces whatever line it had before
+  const cur=ensureMatchAns();
+  cur.wires=(cur.wires||[]).filter(w=>String(w.leftId)!==String(src.dataset.id));
+  if(cur.pairs) delete cur.pairs[src.dataset.id];
+  const pts=[];
+  for(let i=0;i<=16;i++){ pts.push(boardPoint(layer,{clientX:ax+(zx-ax)*i/16, clientY:ay+(zy-ay)*i/16})); }
+  setLinkDrawing(true);
+  drawState={q,side:'L',id:src.dataset.id,points:pts,btn:src};
+  onDrawUp({clientX:zx,clientY:zy,pointerId:-1,kb:true});
+  return true;
+}
 function kbOptions(){ const o=document.getElementById('options'); return o ? [...o.querySelectorAll('.opt')].filter(b=>!b.disabled && b.offsetParent!==null) : []; }
 function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
   const typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
+  if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && kbLinkKey(e)) return;
   if(e.key==='f'||e.key==='F'){ if(!typing && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); toggleFullscreen(); } }
   /* keyboard answering for choice questions / steps: ↑ ↓ or 1–n highlight (same look as hover), same number again or Enter chooses */
   /* MULTI: 1–n (and Space on the highlighted option) toggle, Enter checks; ↑ ↓ fall through to the shared highlight */
