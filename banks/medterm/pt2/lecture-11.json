@@ -2208,7 +2208,7 @@
        "Flat bone",
        "Irregular bone"
       ],
-      "correct": 2
+      "correct": 3
      },
      {
       "id": "3",
@@ -2250,7 +2250,7 @@
       "accept": []
      }
     ],
-    "explain": "Pelvis is a flat bone of the hip and forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. Pelvus and Pelviss are misspellings, and a repeated Pelvis line is not a second bone. It is not a long, short, or irregular bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
+    "explain": "Pelvis is an irregular bone of the hip: each hip bone is formed by the fused ilium, ischium and pubis. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. Pelvus and Pelviss are misspellings, and a repeated Pelvis line is not a second bone. It is not a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
     "image": "banks/medterm/img/bones/bone-mt11089.png",
     "alt": "Front view of the skeleton with the basin-shaped ring of bones at the hips highlighted in red.",
     "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
