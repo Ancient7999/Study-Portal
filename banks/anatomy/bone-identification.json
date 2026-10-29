@@ -3893,7 +3893,7 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat",
+          "irregular",
           "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-1.webp",
@@ -3923,8 +3923,8 @@
               "Sesamoid bone",
               "Long bone"
             ],
-            "correct": 0,
-            "explain": "This is the pelvis. It is a flat bone. Flat bones are thin and often curved."
+            "correct": 1,
+            "explain": "This is the pelvis. It is an irregular bone: each hip bone is formed by the fused ilium, ischium and pubis. Irregular bones have complex shapes that fit no other group."
           },
           {
             "id": "region",
@@ -3951,7 +3951,7 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat",
+          "irregular",
           "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-2.webp",
@@ -3983,7 +3983,7 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat",
+          "irregular",
           "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-3.webp",
@@ -4039,8 +4039,8 @@
               "Short bone",
               "Irregular bone"
             ],
-            "correct": 0,
-            "explain": "This is the pelvis. It is a flat bone. Flat bones are thin and often curved."
+            "correct": 3,
+            "explain": "This is the pelvis. It is an irregular bone: each hip bone is formed by the fused ilium, ischium and pubis. Irregular bones have complex shapes that fit no other group."
           }
         ],
         "pickOne": true
@@ -4054,7 +4054,7 @@
           "all",
           "spine-pelvis",
           "appendicular",
-          "flat",
+          "irregular",
           "pelvic-girdle"
         ],
         "image": "banks/anatomy/img/pelvis-4.webp",
@@ -4073,8 +4073,8 @@
               "Irregular bone",
               "Sesamoid bone"
             ],
-            "correct": 0,
-            "explain": "This is the pelvis. It is a flat bone. Flat bones are thin and often curved."
+            "correct": 2,
+            "explain": "This is the pelvis. It is an irregular bone: each hip bone is formed by the fused ilium, ischium and pubis. Irregular bones have complex shapes that fit no other group."
           },
           {
             "id": "region",
