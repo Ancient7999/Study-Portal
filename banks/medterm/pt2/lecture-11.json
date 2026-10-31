@@ -2277,14 +2277,14 @@
      },
      {
       "id": "2",
-      "prompt": "Which type of bone is this?",
+      "prompt": "The skull is a collection of bones. Which of these skull bones is a flat bone?",
       "options": [
-       "Long bone",
-       "Short bone",
-       "Flat bone",
-       "Irregular bone"
+       "Parietal bone",
+       "Sphenoid bone",
+       "Ethmoid bone",
+       "Mandible"
       ],
-      "correct": 2
+      "correct": 0
      },
      {
       "id": "3",
@@ -2326,7 +2326,7 @@
       "accept": []
      }
     ],
-    "explain": "Skull is a flat bone of the head, in the axial skeleton, and its combining form is Crani/o. Scull and Skulle are misspellings, and skulls is the plural rather than the bone name used here. It is not a long, short, or irregular bone. It is not appendicular. Facial bones are the irregular bones of the face, the chest is the thoracic cage, and the bone at the base of the tongue is the hyoid. Cervic/o means neck, Cost/o means rib, and Carp/o means wrist.",
+    "explain": "Skull is the bony framework of the head, in the axial skeleton, and its combining form is Crani/o. Scull and Skulle are misspellings, and skulls is the plural rather than the name used here. The skull is a collection of bones, so it has no single bone type: the parietal bone is flat, while the sphenoid, the ethmoid and the mandible are irregular. It is not appendicular. Facial bones are the bones of the face, the chest is the thoracic cage, and the bone at the base of the tongue is the hyoid. Cervic/o means neck, Cost/o means rib, and Carp/o means wrist.",
     "image": "banks/medterm/img/bones/bone-mt11090.png",
     "alt": "Front view of the complete bony skeleton of the head, including the braincase and the face.",
     "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",

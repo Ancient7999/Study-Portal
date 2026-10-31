@@ -37,10 +37,10 @@
       "shape": "flat",
       "count": 2,
       "images": [
-        "banks/anatomy/img/parietal-1.webp",
-        "banks/anatomy/img/parietal-2.webp",
-        "banks/anatomy/img/parietal-3.webp",
-        "banks/anatomy/img/parietal-4.webp"
+        "banks/anatomy/img/parietal-1.webp?v=2",
+        "banks/anatomy/img/parietal-2.webp?v=2",
+        "banks/anatomy/img/parietal-3.webp?v=2",
+        "banks/anatomy/img/parietal-4.webp?v=2"
       ]
     },
     {
@@ -51,10 +51,10 @@
       "shape": "irregular",
       "count": 2,
       "images": [
-        "banks/anatomy/img/temporal-1.webp",
-        "banks/anatomy/img/temporal-2.webp",
-        "banks/anatomy/img/temporal-3.webp",
-        "banks/anatomy/img/temporal-4.webp"
+        "banks/anatomy/img/temporal-1.webp?v=2",
+        "banks/anatomy/img/temporal-2.webp?v=2",
+        "banks/anatomy/img/temporal-3.webp?v=2",
+        "banks/anatomy/img/temporal-4.webp?v=2"
       ]
     },
     {
@@ -107,10 +107,10 @@
       "shape": "irregular",
       "count": 2,
       "images": [
-        "banks/anatomy/img/maxilla-1.webp",
-        "banks/anatomy/img/maxilla-2.webp",
-        "banks/anatomy/img/maxilla-3.webp",
-        "banks/anatomy/img/maxilla-4.webp"
+        "banks/anatomy/img/maxilla-1.webp?v=2",
+        "banks/anatomy/img/maxilla-2.webp?v=2",
+        "banks/anatomy/img/maxilla-3.webp?v=2",
+        "banks/anatomy/img/maxilla-4.webp?v=2"
       ]
     },
     {
@@ -121,10 +121,10 @@
       "shape": "irregular",
       "count": 2,
       "images": [
-        "banks/anatomy/img/zygomatic-1.webp",
-        "banks/anatomy/img/zygomatic-2.webp",
-        "banks/anatomy/img/zygomatic-3.webp",
-        "banks/anatomy/img/zygomatic-4.webp"
+        "banks/anatomy/img/zygomatic-1.webp?v=2",
+        "banks/anatomy/img/zygomatic-2.webp?v=2",
+        "banks/anatomy/img/zygomatic-3.webp?v=2",
+        "banks/anatomy/img/zygomatic-4.webp?v=2"
       ]
     },
     {
@@ -135,10 +135,10 @@
       "shape": "flat",
       "count": 2,
       "images": [
-        "banks/anatomy/img/nasal-1.webp",
-        "banks/anatomy/img/nasal-2.webp",
-        "banks/anatomy/img/nasal-3.webp",
-        "banks/anatomy/img/nasal-4.webp"
+        "banks/anatomy/img/nasal-1.webp?v=2",
+        "banks/anatomy/img/nasal-2.webp?v=2",
+        "banks/anatomy/img/nasal-3.webp?v=2",
+        "banks/anatomy/img/nasal-4.webp?v=2"
       ]
     },
     {
@@ -307,10 +307,10 @@
       "shape": "irregular",
       "count": 1,
       "images": [
-        "banks/anatomy/img/sacrum-1.webp",
-        "banks/anatomy/img/sacrum-2.webp",
-        "banks/anatomy/img/sacrum-3.webp",
-        "banks/anatomy/img/sacrum-4.webp"
+        "banks/anatomy/img/sacrum-1.webp?v=2",
+        "banks/anatomy/img/sacrum-2.webp?v=2",
+        "banks/anatomy/img/sacrum-3.webp?v=2",
+        "banks/anatomy/img/sacrum-4.webp?v=2"
       ]
     },
     {

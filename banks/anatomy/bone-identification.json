@@ -3788,11 +3788,11 @@
             "options": [
               "Pelvis",
               "Upper limb",
-              "Lower limb",
+              "Chest",
               "Skull"
             ],
             "correct": 0,
-            "explain": "This is the pelvis. It lies in the pelvis."
+            "explain": "This is the pelvis, the ring formed by the two hip bones (os coxae) with the sacrum. It lies in the pelvic region, below the spine and above the thighs."
           }
         ],
         "pickOne": true
@@ -3863,15 +3863,15 @@
           {
             "id": "region",
             "tag": "region",
-            "prompt": "Which region of the body is the pelvis in?",
+            "prompt": "At the back, each hip bone (os coxae) joins which bone?",
             "options": [
-              "Pelvis",
-              "Upper limb",
-              "Skull",
-              "Neck"
+              "Sacrum",
+              "Coccyx",
+              "Fifth lumbar vertebra",
+              "Twelfth rib"
             ],
             "correct": 0,
-            "explain": "This is the pelvis. It lies in the pelvis."
+            "explain": "Each hip bone (os coxae) joins the sacrum at the sacroiliac joint at the back, and the two hip bones meet each other at the pubic symphysis at the front. The coccyx hangs from the tip of the sacrum, the fifth lumbar vertebra rests on top of the sacrum, and the twelfth rib ends far above the pelvis, so none of them joins the hip bone."
           },
           {
             "id": "div",
@@ -3942,7 +3942,7 @@
               "Chest"
             ],
             "correct": 0,
-            "explain": "This is the pelvis. It lies in the pelvis."
+            "explain": "This is the pelvis, the ring formed by the two hip bones (os coxae) with the sacrum. It lies in the pelvic region, below the spine and above the thighs."
           },
           {
             "id": "div",
@@ -4188,7 +4188,7 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/sacrum-1.webp",
+        "image": "banks/anatomy/img/sacrum-1.webp?v=2",
         "imageSize": "large",
         "alt": "Front view of the skeleton with one bone highlighted in orange.",
         "explain": "The highlighted bone is the sacrum.",
@@ -4241,7 +4241,7 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/sacrum-2.webp",
+        "image": "banks/anatomy/img/sacrum-2.webp?v=2",
         "imageSize": "large",
         "alt": "Back view of the skeleton with one bone highlighted in orange.",
         "explain": "The highlighted bone is the sacrum.",
@@ -4285,7 +4285,7 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/sacrum-3.webp",
+        "image": "banks/anatomy/img/sacrum-3.webp?v=2",
         "imageSize": "large",
         "alt": "Angled back view of the skeleton with one bone highlighted in orange.",
         "explain": "The highlighted bone is the sacrum.",
@@ -4329,7 +4329,7 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/sacrum-4.webp",
+        "image": "banks/anatomy/img/sacrum-4.webp?v=2",
         "imageSize": "large",
         "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
         "explain": "The highlighted bone is the sacrum.",
@@ -4521,8 +4521,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/skull-1.webp",
         "imageSize": "large",
@@ -4533,28 +4532,28 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone is highlighted?",
+            "prompt": "Which of these skull bones is a flat bone?",
             "options": [
-              "Flat bone",
-              "Irregular bone",
-              "Sesamoid bone",
-              "Long bone"
+              "Parietal bone",
+              "Sphenoid bone",
+              "Ethmoid bone",
+              "Maxilla"
             ],
             "correct": 0,
-            "explain": "This is the skull. It is a flat bone. Flat bones are thin and often curved."
+            "explain": "The skull is a collection of bones of different shapes, so it has no single bone type. The parietal bone is a flat bone: thin and curved, forming the roof and sides of the cranium. The sphenoid, the ethmoid and the maxilla have complex shapes and are irregular bones."
           },
           {
             "id": "region",
             "tag": "region",
             "prompt": "Which region of the body is the highlighted bone in?",
             "options": [
-              "Skull",
+              "Head",
               "Spine",
               "Pelvis",
               "Upper limb"
             ],
             "correct": 0,
-            "explain": "This is the skull. It lies in the skull."
+            "explain": "The skull is the bony framework of the head: the cranium encloses the brain and the facial bones shape the face."
           },
           {
             "id": "div",
@@ -4607,8 +4606,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/skull-3.webp",
         "imageSize": "large",
@@ -4641,28 +4639,28 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone is the skull?",
+            "prompt": "The skull is made of many bones. Which of these is a flat bone?",
             "options": [
-              "Flat bone",
-              "Long bone",
-              "Short bone",
-              "Irregular bone"
+              "Occipital bone",
+              "Sphenoid bone",
+              "Ethmoid bone",
+              "Mandible"
             ],
             "correct": 0,
-            "explain": "This is the skull. It is a flat bone. Flat bones are thin and often curved."
+            "explain": "The skull is a collection of bones of different shapes, so it has no single bone type. The occipital bone is a flat bone that forms the back and base of the cranium. The sphenoid, the ethmoid and the mandible have complex shapes and are irregular bones."
           },
           {
             "id": "region",
             "tag": "region",
             "prompt": "Which region of the body is the skull in?",
             "options": [
-              "Skull",
+              "Head",
               "Upper limb",
               "Lower limb",
               "Neck"
             ],
             "correct": 0,
-            "explain": "This is the skull. It lies in the skull."
+            "explain": "The skull is the bony framework of the head: the cranium encloses the brain and the facial bones shape the face."
           }
         ],
         "pickOne": true
@@ -4675,8 +4673,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/skull-4.webp",
         "imageSize": "large",
@@ -4689,13 +4686,13 @@
             "tag": "region",
             "prompt": "Which region of the body is the highlighted bone in?",
             "options": [
-              "Skull",
+              "Head",
               "Lower limb",
               "Neck",
               "Chest"
             ],
             "correct": 0,
-            "explain": "This is the skull. It lies in the skull."
+            "explain": "The skull is the bony framework of the head: the cranium encloses the brain and the facial bones shape the face."
           },
           {
             "id": "div",
@@ -4711,15 +4708,15 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone is highlighted?",
+            "prompt": "Which of these skull bones is an irregular bone?",
             "options": [
-              "Flat bone",
-              "Short bone",
-              "Irregular bone",
-              "Sesamoid bone"
+              "Sphenoid bone",
+              "Parietal bone",
+              "Frontal bone",
+              "Occipital bone"
             ],
             "correct": 0,
-            "explain": "This is the skull. It is a flat bone. Flat bones are thin and often curved."
+            "explain": "The skull is a collection of bones of different shapes, so it has no single bone type. The sphenoid is an irregular bone with a complex, wing-like shape at the base of the cranium. The parietal, frontal and occipital bones are thin, curved flat bones."
           }
         ],
         "pickOne": true
@@ -4943,8 +4940,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/cranial-1.webp",
         "imageSize": "large",
@@ -4990,15 +4986,15 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone are the cranial bones?",
+            "prompt": "The cranial bones differ in shape. Which of these is a flat bone?",
             "options": [
-              "Flat bone",
-              "Long bone",
-              "Short bone",
-              "Irregular bone"
+              "Parietal bone",
+              "Sphenoid bone",
+              "Ethmoid bone",
+              "Mandible"
             ],
             "correct": 0,
-            "explain": "These are the cranial bones. They are flat bones. Flat bones are thin and often curved."
+            "explain": "The cranial bones are a group of eight bones of different shapes, so they have no single bone type. The parietal bone is flat: thin and curved over the top and sides of the brain. The sphenoid, the ethmoid and the mandible are irregular bones."
           }
         ],
         "pickOne": true
@@ -5011,8 +5007,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/cranial-2.webp",
         "imageSize": "large",
@@ -5034,15 +5029,15 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone is highlighted?",
+            "prompt": "Which of these cranial bones is an irregular bone?",
             "options": [
-              "Flat bone",
-              "Short bone",
-              "Irregular bone",
-              "Sesamoid bone"
+              "Ethmoid bone",
+              "Parietal bone",
+              "Frontal bone",
+              "Occipital bone"
             ],
             "correct": 0,
-            "explain": "These are the cranial bones. They are flat bones. Flat bones are thin and often curved."
+            "explain": "The cranial bones are a group of eight bones of different shapes, so they have no single bone type. The ethmoid is an irregular bone between the eye sockets with a complex, sponge-like shape. The parietal, frontal and occipital bones are thin, curved flat bones."
           },
           {
             "id": "region",
@@ -5068,8 +5063,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/cranial-3.webp",
         "imageSize": "large",
@@ -5080,15 +5074,15 @@
           {
             "id": "type",
             "tag": "type",
-            "prompt": "Which type of bone is highlighted?",
+            "prompt": "Which of these cranial bones is an irregular bone?",
             "options": [
-              "Flat bone",
-              "Irregular bone",
-              "Sesamoid bone",
-              "Long bone"
+              "Sphenoid bone",
+              "Frontal bone",
+              "Parietal bone",
+              "Occipital bone"
             ],
             "correct": 0,
-            "explain": "These are the cranial bones. They are flat bones. Flat bones are thin and often curved."
+            "explain": "The cranial bones are a group of eight bones of different shapes, so they have no single bone type. The sphenoid is an irregular, wing-shaped bone at the base of the cranium. The frontal, parietal and occipital bones are thin, curved flat bones."
           },
           {
             "id": "region",
@@ -5125,8 +5119,7 @@
         "tags": [
           "all",
           "skull-neck",
-          "axial",
-          "flat"
+          "axial"
         ],
         "image": "banks/anatomy/img/cranial-4.webp",
         "imageSize": "large",
@@ -5364,10 +5357,10 @@
           "axial",
           "flat"
         ],
-        "image": "banks/anatomy/img/parietal-1.webp",
+        "image": "banks/anatomy/img/parietal-1.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the parietal bone.",
+        "alt": "Side view of the skeleton with the left and right parietal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right parietal bones, which form the roof and upper sides of the cranium.",
         "q": "Study the bone shown in orange.",
         "steps": [
           {
@@ -5421,17 +5414,19 @@
           "axial",
           "flat"
         ],
-        "image": "banks/anatomy/img/parietal-2.webp",
+        "image": "banks/anatomy/img/parietal-2.webp?v=2",
         "imageSize": "large",
-        "alt": "View from above of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the parietal bone.",
+        "alt": "View from above of the skeleton with the left and right parietal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right parietal bones, which form the roof and upper sides of the cranium.",
         "q": "Type the name of the bone shown in orange.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Parietal bone",
-            "accept": [],
+            "accept": [
+              "Parietal bones"
+            ],
             "complete": false,
             "prompt": "Type its name."
           }
@@ -5448,17 +5443,19 @@
           "axial",
           "flat"
         ],
-        "image": "banks/anatomy/img/parietal-3.webp",
+        "image": "banks/anatomy/img/parietal-3.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled back view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the parietal bone.",
+        "alt": "Angled back view of the skeleton with the left and right parietal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right parietal bones, which form the roof and upper sides of the cranium.",
         "q": "Look at the highlighted bone.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Parietal bone",
-            "accept": [],
+            "accept": [
+              "Parietal bones"
+            ],
             "complete": false,
             "prompt": "Name the bone.",
             "showFirst": true
@@ -5514,11 +5511,11 @@
           "axial",
           "flat"
         ],
-        "image": "banks/anatomy/img/parietal-4.webp",
+        "image": "banks/anatomy/img/parietal-4.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the parietal bone.",
-        "q": "One bone is highlighted.",
+        "alt": "Angled front view of the skeleton with the left and right parietal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right parietal bones, which form the roof and upper sides of the cranium.",
+        "q": "A pair of bones is highlighted.",
         "steps": [
           {
             "id": "div",
@@ -5570,10 +5567,10 @@
           "skull-neck",
           "axial"
         ],
-        "image": "banks/anatomy/img/temporal-1.webp",
+        "image": "banks/anatomy/img/temporal-1.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the temporal bone.",
+        "alt": "Side view of the skeleton with the left and right temporal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right temporal bones, at the sides and base of the cranium around the ears.",
         "q": "Study the bone shown in orange.",
         "steps": [
           {
@@ -5613,11 +5610,11 @@
           "skull-neck",
           "axial"
         ],
-        "image": "banks/anatomy/img/temporal-2.webp",
+        "image": "banks/anatomy/img/temporal-2.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the temporal bone.",
-        "q": "One bone is highlighted.",
+        "alt": "Angled front view of the skeleton with the left and right temporal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right temporal bones, at the sides and base of the cranium around the ears.",
+        "q": "A pair of bones is highlighted.",
         "steps": [
           {
             "id": "div",
@@ -5656,17 +5653,19 @@
           "skull-neck",
           "axial"
         ],
-        "image": "banks/anatomy/img/temporal-3.webp",
+        "image": "banks/anatomy/img/temporal-3.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the temporal bone.",
+        "alt": "Side view of the skeleton with the left and right temporal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right temporal bones, at the sides and base of the cranium around the ears.",
         "q": "Which bone is highlighted? Type its name.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Temporal bone",
-            "accept": [],
+            "accept": [
+              "Temporal bones"
+            ],
             "complete": false,
             "prompt": "Type its name."
           }
@@ -5682,17 +5681,19 @@
           "skull-neck",
           "axial"
         ],
-        "image": "banks/anatomy/img/temporal-4.webp",
+        "image": "banks/anatomy/img/temporal-4.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled back view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the temporal bone.",
+        "alt": "Angled back view of the skeleton with the left and right temporal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right temporal bones, at the sides and base of the cranium around the ears.",
         "q": "Look at the highlighted bone.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Temporal bone",
-            "accept": [],
+            "accept": [
+              "Temporal bones"
+            ],
             "complete": false,
             "prompt": "Name the bone.",
             "showFirst": true
@@ -6149,10 +6150,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/nasal-1.webp",
+        "image": "banks/anatomy/img/nasal-1.webp?v=2",
         "imageSize": "large",
-        "alt": "Front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the nasal bone.",
+        "alt": "Front view of the skeleton with the left and right nasal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right nasal bones, which form the bridge of the nose.",
         "q": "Study the bone shown in orange.",
         "steps": [
           {
@@ -6206,17 +6207,19 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/nasal-2.webp",
+        "image": "banks/anatomy/img/nasal-2.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the nasal bone.",
+        "alt": "Angled front view of the skeleton with the left and right nasal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right nasal bones, which form the bridge of the nose.",
         "q": "Type the name of the bone shown in orange.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Nasal bone",
-            "accept": [],
+            "accept": [
+              "Nasal bones"
+            ],
             "complete": false,
             "prompt": "Type its name."
           }
@@ -6233,17 +6236,19 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/nasal-3.webp",
+        "image": "banks/anatomy/img/nasal-3.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the nasal bone.",
+        "alt": "Side view of the skeleton with the left and right nasal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right nasal bones, which form the bridge of the nose.",
         "q": "Look at the highlighted bone.",
         "steps": [
           {
             "id": "name",
             "type": "saq",
             "answer": "Nasal bone",
-            "accept": [],
+            "accept": [
+              "Nasal bones"
+            ],
             "complete": false,
             "prompt": "Name the bone.",
             "showFirst": true
@@ -6299,11 +6304,11 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/nasal-4.webp",
+        "image": "banks/anatomy/img/nasal-4.webp?v=2",
         "imageSize": "large",
-        "alt": "View from above of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the nasal bone.",
-        "q": "One bone is highlighted.",
+        "alt": "View from above of the skeleton with the left and right nasal bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right nasal bones, which form the bridge of the nose.",
+        "q": "A pair of bones is highlighted.",
         "steps": [
           {
             "id": "type",
@@ -6356,10 +6361,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/zygomatic-1.webp",
+        "image": "banks/anatomy/img/zygomatic-1.webp?v=2",
         "imageSize": "large",
-        "alt": "Front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the zygomatic bone, also called the cheekbone.",
+        "alt": "Front view of the skeleton with the left and right zygomatic bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right zygomatic bones, also called the cheekbones.",
         "q": "Study the bone shown in orange.",
         "steps": [
           {
@@ -6413,11 +6418,11 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/zygomatic-2.webp",
+        "image": "banks/anatomy/img/zygomatic-2.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the zygomatic bone, also called the cheekbone.",
-        "q": "One bone is highlighted.",
+        "alt": "Angled front view of the skeleton with the left and right zygomatic bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right zygomatic bones, also called the cheekbones.",
+        "q": "A pair of bones is highlighted.",
         "steps": [
           {
             "id": "region",
@@ -6470,10 +6475,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/zygomatic-3.webp",
+        "image": "banks/anatomy/img/zygomatic-3.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the zygomatic bone, also called the cheekbone.",
+        "alt": "Side view of the skeleton with the left and right zygomatic bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right zygomatic bones, also called the cheekbones.",
         "q": "Which bone is highlighted? Type its name.",
         "steps": [
           {
@@ -6482,7 +6487,10 @@
             "answer": "Zygomatic bone",
             "accept": [
               "Cheekbone",
-              "Cheek bone"
+              "Cheek bone",
+              "Zygomatic bones",
+              "Cheekbones",
+              "Cheek bones"
             ],
             "complete": false,
             "prompt": "Type its name."
@@ -6500,10 +6508,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/zygomatic-4.webp",
+        "image": "banks/anatomy/img/zygomatic-4.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the zygomatic bone, also called the cheekbone.",
+        "alt": "Angled front view of the skeleton with the left and right zygomatic bones highlighted in orange.",
+        "explain": "The highlighted bones are the left and right zygomatic bones, also called the cheekbones.",
         "q": "Look at the highlighted bone.",
         "steps": [
           {
@@ -6512,7 +6520,10 @@
             "answer": "Zygomatic bone",
             "accept": [
               "Cheekbone",
-              "Cheek bone"
+              "Cheek bone",
+              "Zygomatic bones",
+              "Cheekbones",
+              "Cheek bones"
             ],
             "complete": false,
             "prompt": "Name the bone.",
@@ -6569,10 +6580,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/maxilla-1.webp",
+        "image": "banks/anatomy/img/maxilla-1.webp?v=2",
         "imageSize": "large",
-        "alt": "Front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the maxilla, also called the upper jaw.",
+        "alt": "Front view of the skeleton with the left and right maxillae highlighted in orange.",
+        "explain": "The highlighted bones are the left and right maxillae, which together form the upper jaw; each one is called a maxilla.",
         "q": "Look at the highlighted bone.",
         "steps": [
           {
@@ -6582,7 +6593,9 @@
             "accept": [
               "Upper jaw",
               "Upper jawbone",
-              "Upper jaw bone"
+              "Upper jaw bone",
+              "Maxillae",
+              "Upper jaw bones"
             ],
             "complete": false,
             "prompt": "Name the bone.",
@@ -6639,10 +6652,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/maxilla-2.webp",
+        "image": "banks/anatomy/img/maxilla-2.webp?v=2",
         "imageSize": "large",
-        "alt": "Angled front view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the maxilla, also called the upper jaw.",
+        "alt": "Angled front view of the skeleton with the left and right maxillae highlighted in orange.",
+        "explain": "The highlighted bones are the left and right maxillae, which together form the upper jaw; each one is called a maxilla.",
         "q": "Study the bone shown in orange.",
         "steps": [
           {
@@ -6696,11 +6709,11 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/maxilla-3.webp",
+        "image": "banks/anatomy/img/maxilla-3.webp?v=2",
         "imageSize": "large",
-        "alt": "Side view of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the maxilla, also called the upper jaw.",
-        "q": "One bone is highlighted.",
+        "alt": "Side view of the skeleton with the left and right maxillae highlighted in orange.",
+        "explain": "The highlighted bones are the left and right maxillae, which together form the upper jaw; each one is called a maxilla.",
+        "q": "A pair of bones is highlighted.",
         "steps": [
           {
             "id": "div",
@@ -6753,10 +6766,10 @@
           "axial",
           "irregular"
         ],
-        "image": "banks/anatomy/img/maxilla-4.webp",
+        "image": "banks/anatomy/img/maxilla-4.webp?v=2",
         "imageSize": "large",
-        "alt": "View from below of the skeleton with one bone highlighted in orange.",
-        "explain": "The highlighted bone is the maxilla, also called the upper jaw.",
+        "alt": "View from below of the skeleton with the left and right maxillae highlighted in orange.",
+        "explain": "The highlighted bones are the left and right maxillae, which together form the upper jaw; each one is called a maxilla.",
         "q": "Identify the highlighted bone by name.",
         "steps": [
           {
@@ -6766,7 +6779,9 @@
             "accept": [
               "Upper jaw",
               "Upper jawbone",
-              "Upper jaw bone"
+              "Upper jaw bone",
+              "Maxillae",
+              "Upper jaw bones"
             ],
             "complete": false,
             "prompt": "Type its name."
